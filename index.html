@@ -1,0 +1,1724 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jasmin Schmidtke – Die besten Tipps für Frauen ab 40</title>
+  <meta name="description" content="Heilpraktikerin Jasmin schickt dir jede Woche die wichtigsten Insider-Tipps zu Haut, Hormonen und Energie – verständlich erklärt, sofort umsetzbar." />
+
+  <!-- Fonts: Playfair Display (headings) + Poppins (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ─────────────────────────────────────────
+       CSS VARIABLES
+    ───────────────────────────────────────── */
+    :root {
+      --cream:         #FBF7F4;   /* rgb(251,247,244) — exakt vom Original */
+      --cream-footer:  #FCF7F5;   /* leicht wärmer als Seiten-BG */
+      --text-dark:     #2D2B30;   /* rgb(45,43,48) — dunkel-anthrazit, nicht schwarz */
+      --text-body:     #5A5550;
+      --text-muted:    #808080;   /* rgb(128,128,128) — Footer-Links-Farbe exakt */
+      --accent:        #BFA492;   /* rgb(191,164,146) — "Frauen ab 40" exakt */
+      --green-btn:     #6B8C5A;   /* rgb(107,140,90) — Button exakt */
+      --green-hover:   #7A9E68;
+      --border:        #DDD6CE;
+      --grid-line:     rgba(150, 130, 110, 0.12);
+    }
+
+    /* ─────────────────────────────────────────
+       RESET & BASE
+    ───────────────────────────────────────── */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Poppins', system-ui, sans-serif;
+      background-color: var(--cream);
+      color: var(--text-dark);
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    a { text-decoration: none; color: inherit; }
+
+    /* ─────────────────────────────────────────
+       BACKGROUND GRID  (subtle fade — wie im Original)
+    ───────────────────────────────────────── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(var(--grid-line) 1px, transparent 1px),
+        linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+      background-size: 68px 68px;
+      /* Fade-Effekt: Grid nur in der Bildschirmmitte sichtbar, Ränder transparent */
+      -webkit-mask-image: radial-gradient(
+        ellipse 70% 60% at 58% 38%,
+        rgba(0,0,0,0.55) 0%,
+        rgba(0,0,0,0.25) 45%,
+        transparent 75%
+      );
+      mask-image: radial-gradient(
+        ellipse 70% 60% at 58% 38%,
+        rgba(0,0,0,0.55) 0%,
+        rgba(0,0,0,0.25) 45%,
+        transparent 75%
+      );
+    }
+
+    /* Stacking context helpers */
+    nav, main, footer { position: relative; z-index: 1; }
+
+    /* ─────────────────────────────────────────
+       ENTRANCE ANIMATIONS (fast + premium)
+    ───────────────────────────────────────── */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(18px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+
+    .navbar {
+      animation: fadeIn 0.5s cubic-bezier(0.25, 0.1, 0.25, 1) 0s both;
+    }
+
+    .hero-heading {
+      animation: fadeInUp 0.55s cubic-bezier(0.25, 0.1, 0.25, 1) 0.08s both;
+    }
+
+    .hero-body {
+      animation: fadeInUp 0.55s cubic-bezier(0.25, 0.1, 0.25, 1) 0.16s both;
+    }
+
+    .newsletter-form {
+      animation: fadeInUp 0.55s cubic-bezier(0.25, 0.1, 0.25, 1) 0.24s both;
+    }
+
+    .hero-image-wrap {
+      animation: fadeInUp 0.6s cubic-bezier(0.25, 0.1, 0.25, 1) 0.1s both;
+    }
+
+
+    /* ─────────────────────────────────────────
+       NAVBAR
+    ───────────────────────────────────────── */
+    nav.navbar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 18px 44px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: transparent;
+      transition: background 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    nav.navbar.scrolled {
+      background: rgba(255, 255, 255, 0.97);
+      box-shadow: 0 1px 12px rgba(0, 0, 0, 0.06);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+
+    /* Navbar CTA — nur sichtbar beim Scrollen */
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background-color: var(--green-btn);
+      color: #fff;
+      border-radius: 257px;
+      padding: 9px 20px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+      opacity: 0;
+      transform: translateY(-4px);
+      pointer-events: none;
+      transition: opacity 0.3s ease, transform 0.3s ease, background 0.2s ease;
+    }
+
+    nav.navbar.scrolled .nav-cta {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: all;
+    }
+
+    .nav-cta:hover {
+      background-color: var(--green-hover);
+    }
+
+    .nav-cta svg {
+      width: 14px; height: 14px;
+      flex-shrink: 0;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Playfair Display', Georgia, serif;  /* Original: Playfair */
+      font-weight: 500;            /* Original: 500 */
+      font-size: 16px;             /* Original: 16px */
+      color: var(--text-dark);     /* #2D2B30 */
+      line-height: 1.15;
+    }
+
+    .logo-icon { width: 32px; height: 32px; flex-shrink: 0; }
+
+    .logo-lines { display: flex; flex-direction: column; gap: 0px; }
+    .logo-lines span { display: block; }
+
+    /* ─────────────────────────────────────────
+       HERO SECTION
+    ───────────────────────────────────────── */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 80px 44px 56px;
+    }
+
+    .hero-inner {
+      max-width: 1240px;
+      width: 100%;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.3fr 1fr;
+      align-items: center;
+      gap: 40px;
+    }
+
+    /* ─────────────────────────────────────────
+       LEFT – TEXT CONTENT
+    ───────────────────────────────────────── */
+    .hero-text { position: relative; }
+
+
+    /* Main heading – Playfair Display */
+    .hero-heading {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(2.2rem, 4.5vw, 64px);  /* Original: 64px at 1437px */
+      font-weight: 700;
+      line-height: 1;
+      color: var(--text-dark);
+      margin-bottom: 28px;
+      letter-spacing: normal;
+    }
+
+    .hero-heading .accent {
+      color: var(--accent);
+      font-style: italic;
+    }
+
+    /* Body text – Poppins */
+    .hero-body {
+      font-family: 'Poppins', sans-serif;
+      font-size: 18px;            /* Original: 18px */
+      font-weight: 400;           /* Original: 400 */
+      line-height: 1.4;           /* Original: 25.2px / 18px = 1.4 */
+      color: #4D4D4D;             /* Original: rgb(77,77,77) */
+      max-width: 615px;           /* Original: 615px */
+      margin-bottom: 36px;
+    }
+
+    /* ─────────────────────────────────────────
+       NEWSLETTER FORM
+    ───────────────────────────────────────── */
+    .newsletter-form { max-width: 595px; /* Original: 595px */ }
+
+    /* Email input row */
+    .input-row {
+      display: flex;
+      align-items: center;
+      background: #fff;
+      border: 1.5px solid var(--border);
+      border-radius: 10px;         /* Original: 10px */
+      padding: 3px 3px 3px 16px;
+      margin-bottom: 14px;
+      transition: border-color 0.2s;
+    }
+    .input-row:focus-within { border-color: var(--accent); }
+
+    .input-row input[type="email"] {
+      flex: 1;
+      border: none;
+      outline: none;
+      background: transparent;
+      font-family: 'Poppins', sans-serif;
+      font-size: 14px;            /* Original: 14px */
+      font-weight: 400;
+      color: var(--text-dark);
+      padding: 10px 0;
+    }
+    .input-row input[type="email"]::placeholder { color: var(--text-muted); }
+
+    .input-icon {
+      padding: 6px 10px;
+      display: flex;
+      align-items: center;
+      color: var(--accent);
+    }
+
+    /* Submit button */
+    .btn-submit {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background-color: var(--green-btn);
+      color: #fff;
+      border: none;
+      border-radius: 257px;       /* Original: 257px */
+      padding: 12px 28px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 14px;
+      font-weight: 600;           /* Original: 600 (Inter) */
+      letter-spacing: 0.01em;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s;
+      margin-bottom: 14px;
+    }
+    .btn-submit:hover {
+      background-color: var(--green-hover);
+      transform: translateY(-1px);
+    }
+    /* Button bleibt immer voll sichtbar — Validierung passiert on click */
+
+    .btn-arrow {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 15px;
+      transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    .btn-submit:hover .btn-arrow {
+      transform: translateX(4px);
+    }
+
+    @keyframes arrowNudge {
+      0%, 100% { transform: translateX(0); }
+      50%      { transform: translateX(3px); }
+    }
+
+    .btn-arrow {
+      animation: arrowNudge 2s ease-in-out infinite;
+    }
+
+    .btn-submit:hover .btn-arrow {
+      animation: none;
+      transform: translateX(4px);
+    }
+
+    /* Checkbox row */
+    .checkbox-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      margin-top: 2px;
+    }
+    /* Echte Checkbox verstecken */
+    .checkbox-row input[type="checkbox"] {
+      position: absolute;
+      opacity: 0;
+      width: 0; height: 0;
+      pointer-events: none;
+    }
+
+    /* Custom Checkbox Box */
+    .custom-check {
+      width: 18px; height: 18px;
+      flex-shrink: 0;
+      margin-top: 1px;
+      border: 1.5px solid var(--border);
+      border-radius: 4px;
+      background: #fff;
+      cursor: pointer;
+      position: relative;
+      transition: border-color 0.25s ease, background 0.25s ease, transform 0.2s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .custom-check svg {
+      width: 12px; height: 12px;
+      stroke-dasharray: 16;
+      stroke-dashoffset: 16;
+      transition: stroke-dashoffset 0.3s cubic-bezier(0.65, 0, 0.35, 1);
+    }
+
+    /* Checked state */
+    .checkbox-row input[type="checkbox"]:checked + .custom-check {
+      background: var(--accent);
+      border-color: var(--accent);
+      transform: scale(1.1);
+    }
+
+    .checkbox-row input[type="checkbox"]:checked + .custom-check svg {
+      stroke-dashoffset: 0;
+    }
+
+    /* Bounce back after click */
+    @keyframes checkBounce {
+      0%   { transform: scale(1.1); }
+      40%  { transform: scale(1.25); }
+      70%  { transform: scale(0.95); }
+      100% { transform: scale(1); }
+    }
+
+    .custom-check.animate {
+      animation: checkBounce 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+    }
+
+    /* Focus ring for accessibility */
+    .checkbox-row input[type="checkbox"]:focus-visible + .custom-check {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+
+    /* Hover */
+    .custom-check:hover {
+      border-color: var(--accent);
+    }
+    .checkbox-row label {
+      font-size: 12px;            /* Original: 12px */
+      font-weight: 400;
+      color: #888888;             /* Original: rgb(136,136,136) */
+      cursor: pointer;
+      line-height: 1.5;
+    }
+    .checkbox-row label a {
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      color: var(--text-body);
+      transition: color 0.15s;
+    }
+    .checkbox-row label a:hover { color: var(--text-dark); }
+
+    /* Success message (hidden — replaced by redirect) */
+    .success-msg {
+      display: none;
+      background: #EEF3E8;
+      border: 1px solid #BDD3A0;
+      border-radius: 8px;
+      padding: 14px 18px;
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--green-btn);
+      line-height: 1.6;
+      margin-top: 6px;
+    }
+    .success-msg.visible { display: block; }
+
+    /* ── Submit Overlay Animation ── */
+    .submit-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+    .submit-overlay.active {
+      pointer-events: all;
+      opacity: 1;
+    }
+    .submit-overlay-bg {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at center, rgba(251,247,244,0.97) 0%, rgba(251,247,244,1) 70%);
+    }
+    .submit-overlay-content {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      text-align: center;
+      padding: 24px;
+    }
+    .submit-overlay-check {
+      width: 64px; height: 64px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent) 0%, #d4bfb0 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      transform: scale(0);
+      animation: popIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) 0.15s forwards;
+    }
+    .submit-overlay-text {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(1.4rem, 3vw, 28px);
+      font-weight: 700;
+      color: var(--text-dark);
+      opacity: 0;
+      transform: translateY(10px);
+      animation: fadeInUp 0.4s ease 0.4s forwards;
+    }
+    .submit-overlay-text .accent {
+      color: var(--accent);
+      font-style: italic;
+    }
+
+    @keyframes popIn {
+      from { transform: scale(0) rotate(-10deg); }
+      to   { transform: scale(1) rotate(0deg); }
+    }
+
+    /* Petal animation for overlay */
+    .overlay-petal {
+      position: absolute;
+      border-radius: 50% 0 50% 0;
+      pointer-events: none;
+      opacity: 0;
+      animation: petalFall linear forwards;
+    }
+    @keyframes petalFall {
+      0%   { transform: translateY(0) rotate(0deg); opacity: 0; }
+      10%  { opacity: 0.8; }
+      80%  { opacity: 0.6; }
+      100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+    }
+
+    /* ─────────────────────────────────────────
+       RIGHT – IMAGE + BADGE
+    ───────────────────────────────────────── */
+    .hero-image-wrap {
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      position: relative;
+    }
+
+    /* Outer frame that holds badge + image */
+    .arch-frame {
+      position: relative;
+      width: 460px;              /* Original: 468px */
+      max-width: 100%;
+    }
+
+    /* The arch-shaped image container */
+    .arch-img-container {
+      width: 100%;
+      /* Original ratio: 468/657 ≈ 0.712 → aspect-ratio 1/1.404 */
+      aspect-ratio: 468 / 657;
+      border-radius: 999px 999px 0 0;   /* Original: 999px 999px 0px 0px */
+      overflow: hidden;
+      background-color: #E2D9D0;
+    }
+    .arch-img-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center bottom;
+      display: block;
+      background-color: #E2D9D0;
+    }
+
+    /* ─────────────────────────────────────────
+       ROTATING CIRCULAR BADGE
+       Text + Stern drehen unabhängig voneinander
+    ───────────────────────────────────────── */
+    .rotating-badge {
+      position: absolute;
+      top: -42px;
+      left: -55px;
+      width: 158px;
+      height: 158px;
+    }
+
+    /* Text-Ring dreht sich normal */
+    .badge-text-ring {
+      position: absolute;
+      inset: 0;
+      animation: spin-text 18s linear infinite;
+      transform-origin: center;
+    }
+
+    /* Stern dreht sich LANGSAMER */
+    .badge-star-ring {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: spin-star 45s linear infinite;
+      transform-origin: center;
+    }
+
+    @keyframes spin-text {
+      from { transform: rotate(0deg); }
+      to   { transform: rotate(360deg); }
+    }
+
+    @keyframes spin-star {
+      from { transform: rotate(0deg); }
+      to   { transform: rotate(360deg); }
+    }
+
+    .badge-svg {
+      width: 100%;
+      height: 100%;
+      overflow: visible;
+    }
+
+    /* Circular text — enger am Stern, semi-transparent */
+    .badge-svg .badge-text {
+      font-family: 'Poppins', sans-serif;
+      font-size: 7.5px;
+      font-weight: 400;
+      letter-spacing: 1.85px;
+      fill: rgba(47, 47, 48, 0.6);
+    }
+
+    /* Stern zentriert */
+    .badge-star-svg {
+      width: 55%;
+      height: 55%;
+      pointer-events: none;
+    }
+
+    /* ─────────────────────────────────────────
+       SPARKLE STAR (bottom-right of image)
+       — 4-Punkte-Stern als SVG, exakt wie Original
+    ───────────────────────────────────────── */
+    .sparkle {
+      position: absolute;
+      bottom: 20px;
+      right: -22px;
+      width: 36px;
+      height: 36px;
+      animation: oscillate 5s ease-in-out infinite;
+      transform-origin: center;
+    }
+
+    .sparkle svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    @keyframes oscillate {
+      0%   { transform: rotate(-15deg); }
+      50%  { transform: rotate(15deg); }
+      100% { transform: rotate(-15deg); }
+    }
+
+    /* ─────────────────────────────────────────
+       GALLERY / 3 BILDER SEKTION
+    ───────────────────────────────────────── */
+    .gallery {
+      padding: 40px 44px 80px;
+      background-color: var(--cream);
+    }
+
+    .gallery-inner {
+      max-width: 1240px;
+      margin: 0 auto;
+    }
+
+    .gallery-heading {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(1.5rem, 3vw, 36px);
+      font-weight: 700;
+      color: var(--text-dark);
+      text-align: center;
+      margin-bottom: 12px;
+    }
+
+    .gallery-heading .accent {
+      color: var(--accent);
+      font-style: italic;
+    }
+
+    .gallery-sub {
+      font-size: 16px;
+      color: var(--text-muted);
+      text-align: center;
+      max-width: 480px;
+      margin: 0 auto 48px;
+      line-height: 1.5;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .gallery-card {
+      border-radius: 16px;
+      overflow: hidden;
+      background: #fff;
+      border: 1px solid var(--border);
+      /* Start hidden for scroll animation */
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s cubic-bezier(0.25, 0.1, 0.25, 1),
+                  transform 0.6s cubic-bezier(0.25, 0.1, 0.25, 1);
+    }
+
+    .gallery-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .gallery-card:nth-child(2) { transition-delay: 0.12s; }
+    .gallery-card:nth-child(3) { transition-delay: 0.24s; }
+
+    .gallery-card-img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      overflow: hidden;
+    }
+
+    .gallery-card-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;  /* Kopf nicht abschneiden */
+      display: block;
+      transition: transform 0.5s ease;
+    }
+
+    .gallery-card:hover .gallery-card-img img {
+      transform: scale(1.04);
+    }
+
+    .gallery-card-body {
+      padding: 20px 22px;
+    }
+
+    .gallery-card-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 8px;
+    }
+
+    .gallery-card-text {
+      font-size: 14px;
+      color: var(--text-body);
+      line-height: 1.55;
+    }
+
+    /* ─────────────────────────────────────────
+       YOUTUBE SEKTION
+    ───────────────────────────────────────── */
+    .youtube-section {
+      padding: 80px 44px;
+      background: linear-gradient(165deg, #F5F0EB 0%, var(--cream) 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Großes SVG Play-Icon im Hintergrund — rechts, scroll-animiert */
+    .yt-bg-icon {
+      position: absolute;
+      right: -60px;
+      bottom: -80px;
+      width: 480px;
+      height: 480px;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(60px);
+      transition: opacity 0.8s cubic-bezier(0.25, 0.1, 0.25, 1),
+                  transform 1s cubic-bezier(0.25, 0.1, 0.25, 1);
+    }
+
+    .yt-bg-icon.visible {
+      opacity: 0.045;
+      transform: translateY(0);
+    }
+
+    .youtube-inner {
+      max-width: 1240px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .youtube-header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .youtube-heading {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(1.5rem, 3vw, 36px);
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 14px;
+    }
+
+    .youtube-heading .accent {
+      color: var(--accent);
+      font-style: italic;
+    }
+
+    .youtube-sub {
+      font-size: 16px;
+      color: var(--text-muted);
+      line-height: 1.55;
+      max-width: 540px;
+      margin: 0 auto;
+    }
+
+    .youtube-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .yt-card {
+      border-radius: 16px;
+      overflow: hidden;
+      background: #fff;
+      border: 1px solid var(--border);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      /* Scroll animation */
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.6s cubic-bezier(0.25, 0.1, 0.25, 1),
+                  transform 0.6s cubic-bezier(0.25, 0.1, 0.25, 1),
+                  box-shadow 0.3s ease;
+    }
+
+    .yt-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .yt-card:nth-child(2) { transition-delay: 0.12s; }
+    .yt-card:nth-child(3) { transition-delay: 0.24s; }
+
+    .yt-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 28px rgba(0,0,0,0.08);
+    }
+
+    .yt-card-thumb {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: #E8E0D8;
+      overflow: hidden;
+    }
+
+    .yt-card-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Play-Button Overlay auf Thumbnail */
+    .yt-play-overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(45, 43, 48, 0.15);
+      transition: background 0.25s ease;
+    }
+
+    .yt-card:hover .yt-play-overlay {
+      background: rgba(45, 43, 48, 0.3);
+    }
+
+    .yt-play-btn {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.92);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+      transition: transform 0.25s ease, background 0.25s ease;
+    }
+
+    .yt-card:hover .yt-play-btn {
+      transform: scale(1.08);
+      background: #fff;
+    }
+
+    .yt-play-btn svg {
+      width: 20px;
+      height: 20px;
+      margin-left: 2px;  /* optischer Ausgleich */
+    }
+
+    .yt-card-body {
+      padding: 18px 20px;
+    }
+
+    .yt-card-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 6px;
+      line-height: 1.35;
+    }
+
+    .yt-card-desc {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* CTA unter den Videos */
+    .youtube-cta {
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .youtube-cta a {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--text-dark);
+      color: #fff;
+      border-radius: 257px;
+      padding: 13px 30px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+      transition: background 0.2s, transform 0.15s;
+    }
+
+    .youtube-cta a:hover {
+      background: #444;
+      transform: translateY(-1px);
+    }
+
+    .youtube-cta a svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    /* ─────────────────────────────────────────
+       FOOTER
+    ───────────────────────────────────────── */
+    footer {
+      background-color: var(--cream-footer);
+      padding: 52px 44px 28px;
+      /* Footer slide-up animation: starts slightly below, fades in */
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s cubic-bezier(0.25, 0.1, 0.25, 1),
+                  transform 0.6s cubic-bezier(0.25, 0.1, 0.25, 1);
+    }
+
+    footer.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .footer-inner { max-width: 1240px; margin: 0 auto; }
+
+    /* Footer logo + tagline */
+    .footer-brand { margin-bottom: 36px; }
+
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      margin-bottom: 12px;
+    }
+
+    .footer-tagline {
+      font-size: 18px;            /* Original: 18px */
+      font-weight: 400;           /* Original: 400 */
+      color: var(--text-muted);   /* #808080 */
+      line-height: 1.4;           /* Original: 25.2px / 18px */
+      max-width: none;            /* Einzeilig wie im Original */
+    }
+
+    /* Bottom row */
+    .footer-divider { height: 1px; background: var(--border); margin-bottom: 20px; }
+
+    .footer-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 24px;
+    }
+    .footer-links a {
+      font-size: 16px;            /* Original: 16px */
+      font-weight: 500;
+      color: var(--text-muted);   /* #808080 */
+      transition: color 0.15s;
+    }
+    .footer-links a:hover { color: var(--text-dark); }
+
+    /* Social icons */
+    .footer-social {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .footer-social-label {
+      font-size: 16px;            /* Original: 16px */
+      font-weight: 500;           /* Original: 500 */
+      color: #111111;             /* Original: rgb(17,17,17) — dunkel! */
+      margin-right: 6px;
+    }
+
+    .social-icon {
+      width: 34px; height: 34px;
+      border-radius: 50%;
+      border: 1.5px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-dark);
+      transition: border-color 0.25s, background 0.25s, color 0.25s;
+    }
+    .social-icon:hover {
+      border-color: var(--text-dark);
+      background: rgba(0,0,0,0.04);
+    }
+    .social-icon svg { width: 15px; height: 15px; }
+
+    /* Instagram Hover — Gradient-Farbe */
+    .social-icon--ig:hover {
+      color: #E1306C;
+      border-color: #E1306C;
+      background: rgba(225, 48, 108, 0.08);
+    }
+    /* WhatsApp Hover — Grün */
+    .social-icon--wa:hover {
+      color: #25D366;
+      border-color: #25D366;
+      background: rgba(37, 211, 102, 0.08);
+    }
+    /* YouTube Hover — Rot */
+    .social-icon--yt:hover {
+      color: #FF0000;
+      border-color: #FF0000;
+      background: rgba(255, 0, 0, 0.08);
+    }
+
+    /* Copyright */
+    .footer-copy {
+      text-align: center;
+      font-size: 14px;            /* Original: 14px */
+      font-weight: 400;
+      color: var(--text-muted);   /* #808080 */
+      margin-top: 24px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+    }
+    .footer-copy strong { font-weight: 600; color: var(--text-dark); }
+
+    /* ─────────────────────────────────────────
+       RESPONSIVE – TABLET
+    ───────────────────────────────────────── */
+    @media (max-width: 960px) {
+      nav.navbar { padding: 16px 24px; }
+      .nav-cta { font-size: 12px; padding: 8px 16px; }
+      .nav-cta svg { width: 12px; height: 12px; }
+
+      .hero {
+        padding: 82px 24px 48px;
+        align-items: flex-start;
+      }
+
+      .hero-inner {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+
+      /* Image above text on mobile */
+      .hero-image-wrap {
+        order: -1;
+        justify-content: center;
+        margin-bottom: 36px;
+      }
+
+      .arch-frame { width: 280px; }
+
+      .rotating-badge {
+        width: 130px; height: 130px;
+        top: -30px; left: -38px;
+      }
+
+      .newsletter-form { max-width: 100%; }
+
+
+      .hero-heading {
+        font-size: clamp(1.75rem, 6.5vw, 2.4rem);
+        text-align: center;
+      }
+      .hero-body { text-align: center; margin: 0 auto 28px; }
+      .newsletter-form { margin: 0 auto; }
+
+      .gallery { padding: 32px 24px 60px; }
+      .gallery-grid { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; gap: 20px; }
+
+      .youtube-section { padding: 60px 24px; }
+      .youtube-grid { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; gap: 20px; }
+      .yt-bg-icon { width: 240px; height: 240px; right: -40px; bottom: -40px; }
+
+      footer { padding: 40px 24px 24px; }
+      .footer-bottom { flex-direction: column; align-items: flex-start; }
+    }
+
+    /* ─────────────────────────────────────────
+       RESPONSIVE – MOBILE
+    ───────────────────────────────────────── */
+    @media (max-width: 480px) {
+      .hero { padding: 76px 18px 36px; }
+      .arch-frame { width: 230px; }
+      .hero-heading { font-size: clamp(1.8rem, 8vw, 2.4rem); }
+
+      .rotating-badge {
+        width: 108px; height: 108px;
+        top: -22px; left: -30px;
+      }
+
+      .sparkle { width: 26px; height: 26px; right: -12px; bottom: 14px; }
+
+      .gallery { padding: 24px 18px 48px; }
+      .youtube-section { padding: 48px 18px; }
+
+      footer { padding: 32px 18px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════
+       NAVBAR
+  ═══════════════════════════════════════ -->
+  <nav class="navbar" role="navigation" aria-label="Hauptnavigation">
+    <a href="/" class="logo" aria-label="Jasmin Schmidtke – Startseite">
+      <!-- Logo icon: gefüllter Kreis in Accent-Farbe mit Blatt -->
+      <svg class="logo-icon" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="16" cy="16" r="15.5" fill="#BFA492"/>
+        <!-- Blatt/Auge-Design (weiß) -->
+        <path d="M 6.5 16 Q 16 6.5 25.5 16 Q 16 25.5 6.5 16 Z" fill="none" stroke="white" stroke-width="1.1" opacity="0.85"/>
+        <line x1="16" y1="6.8" x2="16" y2="25.2" stroke="white" stroke-width="0.9" opacity="0.85"/>
+      </svg>
+      <span class="logo-lines">
+        <span>Jasmin</span>
+        <span>Schmidtke</span>
+      </span>
+    </a>
+    <a href="#" onclick="event.preventDefault();window.scrollTo({top:0,behavior:'smooth'});" class="nav-cta">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <rect x="2" y="4" width="20" height="16" rx="2"/>
+        <polyline points="2,4 12,13 22,4"/>
+      </svg>
+      Kostenlos Tipps erhalten
+    </a>
+  </nav>
+
+  <!-- ═══════════════════════════════════════
+       HERO / MAIN
+  ═══════════════════════════════════════ -->
+  <main>
+    <section class="hero" aria-label="Newsletter Anmeldung">
+      <div class="hero-inner">
+
+        <!-- ── LEFT: Text + Form ── -->
+        <div class="hero-text">
+
+          <h1 class="hero-heading">
+            Die besten Tipps für<br>
+            <span class="accent">Frauen ab 40</span>, direkt<br>
+            in dein Mail-Postfach
+          </h1>
+
+          <p class="hero-body">
+            Heilpraktikerin Jasmin schickt dir jede Woche die wichtigsten
+            Insider-Tipps zu Haut, Hormonen und Energie – verständlich erklärt,
+            sofort umsetzbar, direkt aus der Praxis. Mehr brauchst du nicht.
+          </p>
+
+          <!-- Newsletter Form -->
+          <form
+            class="newsletter-form"
+            id="newsletter-form"
+            novalidate
+            onsubmit="handleSubmit(event)"
+            aria-label="Newsletter Anmeldeformular"
+          >
+            <!-- E-Mail input -->
+            <div class="input-row">
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Deine E-Mail Adresse"
+                autocomplete="email"
+                aria-label="Deine E-Mail Adresse"
+                required
+              />
+              <span class="input-icon" aria-hidden="true">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none"
+                     stroke="currentColor" stroke-width="1.8"
+                     stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="4" width="20" height="16" rx="2"/>
+                  <polyline points="2,4 12,13 22,4"/>
+                </svg>
+              </span>
+            </div>
+
+            <!-- Submit button -->
+            <button
+              type="submit"
+              class="btn-submit"
+              id="submit-btn"
+              aria-describedby="datenschutz-label"
+            >
+              Tipps erhalten
+              <span class="btn-arrow" aria-hidden="true">→</span>
+            </button>
+
+            <!-- Privacy checkbox -->
+            <div class="checkbox-row">
+              <input
+                type="checkbox"
+                id="datenschutz"
+                name="datenschutz"
+                onchange="handleCheckboxChange(this)"
+                aria-required="true"
+              />
+              <span class="custom-check" onclick="toggleCheckbox()" role="presentation">
+                <svg viewBox="0 0 12 12" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="2.5 6 5 8.5 9.5 3.5"/>
+                </svg>
+              </span>
+              <label for="datenschutz" id="datenschutz-label">
+                Ich akzeptiere die
+                <a href="datenschutz.html">Datenschutzbestimmungen</a>
+              </label>
+            </div>
+
+            <!-- Success state -->
+            <div class="success-msg" id="success-msg" role="alert" aria-live="polite">
+              ✓ &nbsp;Danke! Du bist dabei. Schau in dein Postfach – deine erste Mail ist unterwegs.
+            </div>
+          </form>
+        </div>
+
+        <!-- ── RIGHT: Image ── -->
+        <div class="hero-image-wrap" aria-hidden="true">
+          <div class="arch-frame">
+
+            <!-- Rotating circular badge — Text + Stern drehen unabhängig -->
+            <div class="rotating-badge" role="presentation">
+
+              <!-- Ring 1: Text (dreht sich schneller: 18s) -->
+              <div class="badge-text-ring">
+                <svg class="badge-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                  <defs>
+                    <path
+                      id="circlePath"
+                      d="M 14 50 A 36 36 0 0 1 86 50 A 36 36 0 0 1 14 50"
+                    />
+                  </defs>
+                  <text class="badge-text">
+                    <textPath href="#circlePath" startOffset="0%">
+                      Attraktiv ab 40 und  aufblühen statt altern -
+                    </textPath>
+                  </text>
+                </svg>
+              </div>
+
+              <!-- Ring 2: Stern (dreht sich langsamer: 45s) -->
+              <div class="badge-star-ring">
+                <svg class="badge-star-svg" viewBox="0 0 62 62" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M 30.983 0.01 C 30.983 0.026 30.878 0.785 30.756 1.694 C 29.475 11.144 28.343 15.936 26.531 19.559 C 23.826 24.98 19.617 27.528 10.339 29.375 C 8.02 29.837 3.993 30.47 0.721 30.884 C 0.324 30.937 0.003 30.981 0.012 30.985 C 0.016 30.99 0.449 31.05 0.973 31.123 C 7.562 32 11.702 32.759 14.922 33.684 C 22.975 35.997 26.462 39.738 28.66 48.429 C 29.41 51.379 30.075 55.181 30.817 60.744 C 30.91 61.421 30.991 61.985 30.995 61.994 C 31.003 61.998 31.02 61.884 31.036 61.738 C 31.08 61.3 31.494 58.297 31.693 56.991 C 33.12 47.484 34.624 42.813 37.362 39.385 C 37.816 38.813 38.85 37.786 39.454 37.307 C 41.323 35.822 43.501 34.759 46.591 33.822 C 49.762 32.86 53.983 32.065 60.702 31.164 C 61.379 31.071 61.943 30.994 61.947 30.985 C 61.955 30.981 61.78 30.953 61.561 30.925 C 58.313 30.511 54.684 29.951 52.267 29.496 C 45.934 28.303 41.98 26.782 39.235 24.485 C 37.637 23.146 36.392 21.507 35.354 19.377 C 33.586 15.737 32.402 10.629 31.182 1.361 C 31.024 0.144 30.995 -0.051 30.983 0.01 Z" fill="#BFA492"/>
+                </svg>
+              </div>
+
+            </div>
+
+            <!-- Arch photo -->
+            <div class="arch-img-container">
+              <img
+                src="jasmin.jpg"
+                alt="Jasmin Schmidtke – Heilpraktikerin und Coach für Frauen ab 40"
+                loading="eager"
+                width="320"
+                height="437"
+              />
+            </div>
+
+            <!-- Oscillating sparkle star — 4-Punkte SVG wie im Original -->
+            <div class="sparkle" aria-hidden="true">
+              <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- Schmaler 4-Punkte-Stern wie Framer Original -->
+                <path d="M18 1 C18 1 19.5 14 27 18 C19.5 22 18 35 18 35 C18 35 16.5 22 9 18 C16.5 14 18 1 18 1Z" fill="#2D2B30"/>
+                <path d="M18 7 C18 7 19 14.5 23 18 C19 21.5 18 29 18 29 C18 29 17 21.5 13 18 C17 14.5 18 7 18 7Z" fill="#2D2B30" opacity="0.0"/>
+              </svg>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+         GALLERY – 3 Bilder mit Scroll-Animation
+    ═══════════════════════════════════════ -->
+    <section class="gallery" aria-label="Einblicke">
+      <div class="gallery-inner">
+
+        <h2 class="gallery-heading">
+          Einblicke in <span class="accent">deine Reise</span>
+        </h2>
+        <p class="gallery-sub">
+          Haut, Hormone und Energie – ganzheitlich betrachtet, verständlich erklärt.
+        </p>
+
+        <div class="gallery-grid">
+
+          <!-- Bild 1 – Mindset -->
+          <div class="gallery-card">
+            <div class="gallery-card-img">
+              <img
+                src="gallery-1.jpg"
+                alt="Positives Mindset und innere Stärke"
+                loading="lazy"
+                width="400" height="300"
+              />
+            </div>
+            <div class="gallery-card-body">
+              <h3 class="gallery-card-title">Starkes Mindset</h3>
+              <p class="gallery-card-text">
+                Deine innere Haltung entscheidet. Lerne, wie du mit dem richtigen Mindset in deine beste Phase startest.
+              </p>
+            </div>
+          </div>
+
+          <!-- Bild 2 – Körperspannung / Handstand -->
+          <div class="gallery-card">
+            <div class="gallery-card-img">
+              <img
+                src="gallery-2.jpg"
+                alt="Jasmin Schmidtke im Handstand – Körperspannung und Kraft"
+                loading="lazy"
+                width="400" height="300"
+              />
+            </div>
+            <div class="gallery-card-body">
+              <h3 class="gallery-card-title">Körper &amp; Kraft</h3>
+              <p class="gallery-card-text">
+                Körperspannung, Beweglichkeit und Energie – zeig deinem Körper, was in ihm steckt.
+              </p>
+            </div>
+          </div>
+
+          <!-- Bild 3 – Haut & Haare -->
+          <div class="gallery-card">
+            <div class="gallery-card-img">
+              <img
+                src="gallery-3.jpg"
+                alt="Gesunde Haut und glänzende Haare"
+                loading="lazy"
+                width="400" height="300"
+              />
+            </div>
+            <div class="gallery-card-body">
+              <h3 class="gallery-card-title">Haut &amp; Haare</h3>
+              <p class="gallery-card-text">
+                Natürlich schön – mit Tipps, die deine Haut strahlen lassen und deinen Haaren neue Kraft geben.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+         YOUTUBE SEKTION
+    ═══════════════════════════════════════ -->
+    <section class="youtube-section" aria-label="YouTube Videos">
+
+      <!-- Großes Play-Icon als Hintergrund-SVG -->
+      <svg class="yt-bg-icon" id="yt-bg-icon" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect x="4" y="20" width="112" height="80" rx="20" stroke="#BFA492" stroke-width="2" fill="none"/>
+        <polygon points="48,38 48,82 84,60" stroke="#BFA492" stroke-width="2" fill="none" stroke-linejoin="round"/>
+      </svg>
+
+      <div class="youtube-inner">
+
+        <div class="youtube-header">
+          <h2 class="youtube-heading">
+            Schau mir auf <span class="accent">YouTube</span> zu
+          </h2>
+          <p class="youtube-sub">
+            Neueste Insights, Tipps und Podcast-Folgen – direkt von mir für dich. Jede Woche neue Impulse rund um Haut, Hormone und dein Wohlgefühl.
+          </p>
+        </div>
+
+        <div class="youtube-grid">
+
+          <!-- Video 1 – Calisthenics for Beginners -->
+          <a class="yt-card" href="https://youtu.be/-ra-e1RAkgo?si=S8oVkpy3X_9pAZCr" target="_blank" rel="noopener noreferrer">
+            <div class="yt-card-thumb">
+              <img src="https://img.youtube.com/vi/-ra-e1RAkgo/maxresdefault.jpg" alt="Calisthenics for Complete Beginners" loading="lazy" width="400" height="225" />
+              <div class="yt-play-overlay">
+                <div class="yt-play-btn">
+                  <svg viewBox="0 0 24 24" fill="var(--text-dark)"><polygon points="8,5 20,12 8,19"/></svg>
+                </div>
+              </div>
+            </div>
+            <div class="yt-card-body">
+              <h3 class="yt-card-title">Calisthenics for Complete Beginners</h3>
+              <p class="yt-card-desc">Form &amp; Safety Tips – auch ganz einfach von zu Hause aus.</p>
+            </div>
+          </a>
+
+          <!-- Video 2 – Waist & Core Training -->
+          <a class="yt-card" href="https://youtu.be/-ra-e1RAkgo?si=S8oVkpy3X_9pAZCr" target="_blank" rel="noopener noreferrer">
+            <div class="yt-card-thumb">
+              <img src="https://img.youtube.com/vi/-ra-e1RAkgo/maxresdefault.jpg" alt="The Real Way To Shrink Your Waist" loading="lazy" width="400" height="225" />
+              <div class="yt-play-overlay">
+                <div class="yt-play-btn">
+                  <svg viewBox="0 0 24 24" fill="var(--text-dark)"><polygon points="8,5 20,12 8,19"/></svg>
+                </div>
+              </div>
+            </div>
+            <div class="yt-card-body">
+              <h3 class="yt-card-title">The Real Way To Shrink Your Waist</h3>
+              <p class="yt-card-desc">So trainierst du deine Core-Muskulatur richtig und effektiv.</p>
+            </div>
+          </a>
+
+          <!-- Video 3 – Train Your Core -->
+          <a class="yt-card" href="https://youtu.be/-ra-e1RAkgo?si=S8oVkpy3X_9pAZCr" target="_blank" rel="noopener noreferrer">
+            <div class="yt-card-thumb">
+              <img src="https://img.youtube.com/vi/-ra-e1RAkgo/maxresdefault.jpg" alt="Train Your Core" loading="lazy" width="400" height="225" />
+              <div class="yt-play-overlay">
+                <div class="yt-play-btn">
+                  <svg viewBox="0 0 24 24" fill="var(--text-dark)"><polygon points="8,5 20,12 8,19"/></svg>
+                </div>
+              </div>
+            </div>
+            <div class="yt-card-body">
+              <h3 class="yt-card-title">Train Your Core</h3>
+              <p class="yt-card-desc">Körperspannung und Kraft – die Basics für deinen Alltag.</p>
+            </div>
+          </a>
+
+        </div>
+
+        <!-- CTA Button -->
+        <div class="youtube-cta">
+          <a href="https://youtube.com/@jasminschmidtke" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 28 20" aria-hidden="true">
+              <rect width="28" height="20" rx="6" fill="#FF0000"/>
+              <polygon points="11,4.5 11,15.5 20,10" fill="#fff"/>
+            </svg>
+            Zum YouTube-Kanal
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════ -->
+  <footer role="contentinfo">
+    <div class="footer-inner">
+
+      <!-- Brand block -->
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <svg width="26" height="26" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <circle cx="16" cy="16" r="15.5" fill="#BFA492"/>
+            <path d="M 6.5 16 Q 16 6.5 25.5 16 Q 16 25.5 6.5 16 Z" fill="none" stroke="white" stroke-width="1.1" opacity="0.85"/>
+            <line x1="16" y1="6.8" x2="16" y2="25.2" stroke="white" stroke-width="0.9" opacity="0.85"/>
+          </svg>
+          <span class="logo-lines" style="font-family:'Playfair Display',Georgia,serif;font-weight:500;font-size:12px;letter-spacing:0.05em;">
+            <span>Jasmin</span>
+            <span>Schmidtke</span>
+          </span>
+        </div>
+        <p class="footer-tagline">
+          Schönheit von innen. Sichtbar nach außen. Für Frauen, die sich selbst nicht vergessen haben.
+        </p>
+      </div>
+
+      <div class="footer-divider" aria-hidden="true"></div>
+
+      <!-- Links + Social -->
+      <div class="footer-bottom">
+        <nav class="footer-links" aria-label="Footer Navigation">
+          <a href="impressum.html">Impressum</a>
+          <a href="datenschutz.html">Datenschutz</a>
+        </nav>
+
+        <div class="footer-social">
+          <span class="footer-social-label">Folge mir hier</span>
+
+          <!-- Instagram -->
+          <a class="social-icon social-icon--ig" href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5"/>
+              <circle cx="12" cy="12" r="4"/>
+              <circle cx="17.5" cy="6.5" r="0.6" fill="currentColor" stroke="none"/>
+            </svg>
+          </a>
+
+          <!-- WhatsApp -->
+          <a class="social-icon social-icon--wa" href="https://wa.me/" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+            <svg viewBox="0 0 24 24" fill="currentColor" stroke="none">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+          </a>
+
+          <!-- YouTube -->
+          <a class="social-icon social-icon--yt" href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/>
+              <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="currentColor" stroke="none"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Copyright -->
+      <p class="footer-copy">
+        © 2026 – <strong>Jasmin Schmidtke</strong> · Marketing von Schmidtke GmbH
+      </p>
+
+    </div>
+  </footer>
+
+  <!-- Submit overlay animation -->
+  <div class="submit-overlay" id="submit-overlay" aria-hidden="true">
+    <div class="submit-overlay-bg"></div>
+    <div class="submit-overlay-content">
+      <div class="submit-overlay-check">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="20 6 9 17 4 12"/>
+        </svg>
+      </div>
+      <div class="submit-overlay-text">Einen kleinen Moment<span class="accent"> ...</span></div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════
+       JAVASCRIPT
+  ═══════════════════════════════════════ -->
+  <script>
+    /* Sticky navbar: add 'scrolled' class on scroll */
+    (function() {
+      const nav = document.querySelector('.navbar');
+      let ticking = false;
+      window.addEventListener('scroll', function() {
+        if (!ticking) {
+          requestAnimationFrame(function() {
+            if (window.scrollY > 40) {
+              nav.classList.add('scrolled');
+            } else {
+              nav.classList.remove('scrolled');
+            }
+            ticking = false;
+          });
+          ticking = true;
+        }
+      }, { passive: true });
+    })();
+
+    /* Footer slide-up animation on scroll into view */
+    (function() {
+      const footer = document.querySelector('footer');
+      const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            footer.classList.add('visible');
+          }
+        });
+      }, { threshold: 0.05 });
+      observer.observe(footer);
+    })();
+
+    /* Gallery + YouTube cards scroll-in animation */
+    (function() {
+      var cards = document.querySelectorAll('.gallery-card, .yt-card');
+      if (!cards.length) return;
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15 });
+      cards.forEach(function(card) { observer.observe(card); });
+    })();
+
+    /* YouTube background SVG scroll-in animation */
+    (function() {
+      var ytBg = document.getElementById('yt-bg-icon');
+      if (!ytBg) return;
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            ytBg.classList.add('visible');
+            observer.unobserve(ytBg);
+          }
+        });
+      }, { threshold: 0.1 });
+      observer.observe(ytBg);
+    })();
+
+    /* Clear checkbox hint when user checks the box */
+    /* Toggle checkbox when clicking custom-check span */
+    function toggleCheckbox() {
+      var cb = document.getElementById('datenschutz');
+      cb.checked = !cb.checked;
+      handleCheckboxChange(cb);
+    }
+
+    /* Animate checkbox + clear error hints */
+    function handleCheckboxChange(cb) {
+      var customCheck = cb.parentElement.querySelector('.custom-check');
+      if (cb.checked) {
+        customCheck.classList.remove('animate');
+        /* Force reflow so animation replays */
+        void customCheck.offsetWidth;
+        customCheck.classList.add('animate');
+      } else {
+        customCheck.classList.remove('animate');
+      }
+      clearCheckboxHint();
+    }
+
+    function clearCheckboxHint() {
+      const label = document.getElementById('datenschutz-label');
+      label.style.color = '';
+      const hint = document.getElementById('checkbox-hint');
+      if (hint) hint.remove();
+    }
+
+    /* Handle form submission */
+    function handleSubmit(e) {
+      e.preventDefault();
+
+      const email   = document.getElementById('email').value.trim();
+      const checked = document.getElementById('datenschutz').checked;
+      const label   = document.getElementById('datenschutz-label');
+
+      /* E-Mail-Validierung */
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        const input = document.getElementById('email');
+        input.style.outline = '2px solid #e06060';
+        input.focus();
+        setTimeout(() => { input.style.outline = ''; }, 2500);
+        return;
+      }
+
+      /* Checkbox-Validierung */
+      if (!checked) {
+        label.style.color = '#c06040';
+        /* Zeige Hinweis falls noch nicht da */
+        if (!document.getElementById('checkbox-hint')) {
+          const hint = document.createElement('span');
+          hint.id = 'checkbox-hint';
+          hint.style.cssText = 'display:block;font-size:11px;color:#c06040;margin-top:5px;';
+          hint.textContent = 'Bitte akzeptiere die Datenschutzbestimmungen.';
+          label.parentElement.appendChild(hint);
+        }
+        return;
+      }
+
+      /*
+       * ── NEWSLETTER INTEGRATION (Active Campaign) ──────────────
+       * Ersetze diesen Kommentar mit deinem Active Campaign API Call:
+       *
+       * fetch('https://DEINE-ACCOUNT.api-us1.com/api/3/contacts', {
+       *   method: 'POST',
+       *   headers: {
+       *     'Content-Type': 'application/json',
+       *     'Api-Token': 'DEIN_API_TOKEN'
+       *   },
+       *   body: JSON.stringify({
+       *     contact: { email: email }
+       *   })
+       * });
+       * ────────────────────────────────────────────────────────
+       */
+
+      /* Erfolg: Feminine Overlay-Animation zeigen, dann weiterleiten */
+      showSubmitAnimation();
+    }
+
+    function showSubmitAnimation() {
+      var overlay = document.getElementById('submit-overlay');
+      overlay.classList.add('active');
+
+      /* Blütenblätter erzeugen */
+      var colors = ['rgba(191,164,146,0.4)', 'rgba(214,193,178,0.35)', 'rgba(107,140,90,0.25)', 'rgba(191,164,146,0.25)', 'rgba(220,200,185,0.3)'];
+      for (var i = 0; i < 20; i++) {
+        var petal = document.createElement('div');
+        petal.className = 'overlay-petal';
+        var size = 6 + Math.random() * 14;
+        petal.style.width = size + 'px';
+        petal.style.height = size + 'px';
+        petal.style.left = (Math.random() * 100) + '%';
+        petal.style.top = (-5 - Math.random() * 15) + '%';
+        petal.style.background = colors[Math.floor(Math.random() * colors.length)];
+        petal.style.animationDuration = (3 + Math.random() * 4) + 's';
+        petal.style.animationDelay = (Math.random() * 1.2) + 's';
+        overlay.appendChild(petal);
+      }
+
+      /* Nach 2 Sekunden zur Danke-Seite weiterleiten */
+      setTimeout(function() {
+        window.location.href = 'danke.html';
+      }, 2000);
+    }
+  </script>
+
+</body>
+</html>
