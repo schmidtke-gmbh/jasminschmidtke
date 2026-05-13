@@ -1,0 +1,1943 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<title>Welche Ü40-Frau bist du wirklich? · Jasmin Schmidtke</title>
+<meta name="description" content="In 3 Minuten zu deinem persönlichen Ü40-Typ – mit Energie-Plan und Blutwerte-PDF.">
+<meta property="og:title" content="Welche Ü40-Frau bist du wirklich?">
+<meta property="og:description" content="15 Fragen, 4 Typen, dein persönliches Ergebnis. Plus die 12 wichtigsten Blutwerte ab Ü40 als PDF.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    /* Cream / Background */
+    --bg:           #FAF6F0;
+    --bg-soft:      #F2EBDD;
+    --bg-deep:      #E8DDC9;
+    --pill:         #ECE3D2;
+
+    /* Ink / Text */
+    --ink:          #1F1A1B;
+    --ink-soft:     #5C5256;
+    --ink-faint:    #8A8084;
+
+    /* Brand accents */
+    --taupe:        #B5957A;       /* Italic-Akzent */
+    --taupe-deep:   #95775E;
+    --sage:         #6B8551;       /* CTA Button */
+    --sage-deep:    #587140;
+    --sage-soft:    #DCE5D2;
+
+    /* Type colors */
+    --type-f:       #C2604A;       /* Feuerseele · warmes Coral */
+    --type-m:       #5E5E8E;       /* Mondwandlerin · Twilight-Indigo */
+    --type-t:       #A87B9F;       /* Tieffühlende · Dusty Rose */
+    --type-w:       #6B8551;       /* Wandlerin · Sage Green */
+
+    /* Effects */
+    --shadow:       0 4px 18px rgba(31,26,27,.06), 0 1px 3px rgba(31,26,27,.04);
+    --shadow-lg:    0 12px 40px rgba(31,26,27,.10), 0 2px 6px rgba(31,26,27,.04);
+  }
+  *,*::before,*::after{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    font-family:'Poppins','Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+    background:var(--bg);
+    color:var(--ink);
+    line-height:1.6;
+    font-size:15.5px;
+    font-weight:400;
+    -webkit-font-smoothing:antialiased;
+    min-height:100vh;
+  }
+  h1,h2,h3{
+    font-family:'Cormorant Garamond',Georgia,serif;
+    color:var(--ink);
+    font-weight:600;
+    letter-spacing:-.015em;
+    margin:0;
+  }
+  .italic-accent{
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    color:var(--taupe);
+    font-weight:500;
+  }
+
+  .container{
+    max-width:680px;
+    margin:0 auto;
+    padding:24px 22px 56px;
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+  }
+
+  /* ============ BRAND MARK ============ */
+  .brand-mark{
+    text-align:center;
+    margin-bottom:22px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+  }
+  .brand-mark .logo{
+    width:32px;
+    height:32px;
+    color:var(--taupe);
+    flex-shrink:0;
+  }
+  .brand-mark .name{
+    font-family:'Cormorant Garamond',serif;
+    font-size:1.05em;
+    color:var(--ink);
+    line-height:1.05;
+    font-weight:600;
+    text-align:left;
+  }
+  .brand-mark .name span{
+    display:block;
+    font-size:.78em;
+    color:var(--ink-soft);
+    font-weight:400;
+    margin-top:1px;
+  }
+
+  /* ============ SCREEN ============ */
+  .screen{
+    display:none;
+    flex:1;
+    flex-direction:column;
+    animation:fadeIn .4s ease;
+  }
+  .screen.active{display:flex}
+  @keyframes fadeIn{
+    from{opacity:0;transform:translateY(10px)}
+    to{opacity:1;transform:translateY(0)}
+  }
+
+  /* ============ HERO ============ */
+  .hero{text-align:center;padding-top:14px}
+  .hero .pill{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:7px 18px;
+    background:var(--pill);
+    border-radius:50px;
+    font-size:.78em;
+    color:var(--ink);
+    font-weight:500;
+    margin-bottom:1.6em;
+    align-self:center;
+  }
+  .hero .pill .sparkle{width:13px;height:13px;color:var(--taupe-deep)}
+  .hero h1{
+    font-size:2.7em;
+    line-height:1.05;
+    color:var(--ink);
+    margin-bottom:.2em;
+    font-weight:700;
+  }
+  .hero h1 em{font-style:italic;color:var(--taupe);font-weight:500}
+  .hero .lead{
+    font-size:1em;
+    line-height:1.6;
+    color:var(--ink-soft);
+    margin:1em auto 1.8em;
+    max-width:520px;
+    font-weight:400;
+  }
+
+  .types-preview{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+    max-width:520px;
+    margin:0 auto 1.8em;
+  }
+  .type-preview{
+    background:#fff;
+    border-radius:14px;
+    padding:14px;
+    border:1px solid var(--bg-deep);
+    text-align:left;
+    display:flex;
+    gap:12px;
+    align-items:center;
+  }
+  .type-preview .badge{
+    width:54px;
+    height:54px;
+    border-radius:14px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-shrink:0;
+  }
+  .type-preview .badge svg{width:34px;height:34px}
+  .type-preview.F .badge{background:rgba(194,96,74,.15);color:var(--type-f)}
+  .type-preview.M .badge{background:rgba(94,94,142,.15);color:var(--type-m)}
+  .type-preview.T .badge{background:rgba(168,123,159,.18);color:var(--type-t)}
+  .type-preview.W .badge{background:rgba(107,133,81,.16);color:var(--type-w)}
+  .type-preview .meta{flex:1;min-width:0}
+  .type-preview .meta .name{
+    font-family:'Cormorant Garamond',serif;
+    font-size:1.1em;
+    color:var(--ink);
+    font-weight:600;
+    line-height:1.1;
+    margin-bottom:2px;
+  }
+  .type-preview .meta .desc{
+    font-size:.76em;
+    color:var(--ink-soft);
+    line-height:1.4;
+  }
+
+  .hero .meta-row{
+    display:flex;
+    justify-content:center;
+    gap:24px;
+    flex-wrap:wrap;
+    font-size:.82em;
+    color:var(--ink-soft);
+    margin:1em 0 1.6em;
+  }
+  .hero .meta-row span{display:flex;align-items:center;gap:6px}
+  .hero .meta-row b{color:var(--ink);font-weight:600}
+
+  .hero .social-proof{
+    font-size:.82em;
+    color:var(--ink-soft);
+    margin-top:1em;
+  }
+  .hero .social-proof b{color:var(--ink);font-weight:500}
+
+  /* ============ BUTTON ============ */
+  .btn{
+    background:var(--sage);
+    color:#fff;
+    border:none;
+    padding:14px 36px;
+    border-radius:50px;
+    font-family:'Poppins',sans-serif;
+    font-weight:600;
+    font-size:.95em;
+    letter-spacing:.01em;
+    cursor:pointer;
+    box-shadow:0 4px 14px rgba(107,133,81,.25);
+    transition:transform .15s, background .2s, box-shadow .2s;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    align-self:center;
+  }
+  .btn:hover{background:var(--sage-deep);transform:translateY(-2px);box-shadow:0 6px 20px rgba(107,133,81,.32)}
+  .btn:active{transform:translateY(0)}
+  .btn:disabled{opacity:.4;cursor:not-allowed;transform:none;background:var(--ink-faint)}
+  .btn .arrow{display:inline-block;transition:transform .2s}
+  .btn:hover .arrow{transform:translateX(3px)}
+
+  /* ============ PROGRESS ============ */
+  .top-bar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:8px;
+    padding:0 4px;
+  }
+  .progress-text{
+    font-size:.7em;
+    color:var(--ink-soft);
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    font-weight:500;
+  }
+  .progress-back{
+    background:none;
+    border:none;
+    color:var(--ink-soft);
+    cursor:pointer;
+    font-size:.78em;
+    padding:6px 10px;
+    font-family:'Poppins',sans-serif;
+  }
+  .progress-back:hover{color:var(--taupe-deep)}
+  .progress-bar{
+    height:5px;
+    background:var(--bg-deep);
+    border-radius:3px;
+    overflow:hidden;
+    margin-bottom:32px;
+  }
+  .progress-fill{
+    height:100%;
+    background:var(--sage);
+    width:0;
+    transition:width .5s ease;
+    border-radius:3px;
+  }
+
+  /* ============ QUESTION ============ */
+  .question .q-eyebrow{
+    text-align:center;
+    font-size:.7em;
+    letter-spacing:.22em;
+    text-transform:uppercase;
+    color:var(--taupe-deep);
+    margin-bottom:.8em;
+    font-weight:600;
+  }
+  .question h2{
+    font-size:1.85em;
+    line-height:1.2;
+    color:var(--ink);
+    margin-bottom:.4em;
+    text-align:center;
+    font-weight:600;
+  }
+  .question h2 em{font-style:italic;color:var(--taupe);font-weight:500}
+  .question .q-helper{
+    text-align:center;
+    font-size:.88em;
+    color:var(--ink-soft);
+    margin-bottom:1.6em;
+  }
+
+  /* Single Choice */
+  .answers{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    max-width:520px;
+    margin:0 auto;
+    width:100%;
+  }
+  .answer{
+    background:#fff;
+    border:1px solid var(--bg-deep);
+    border-radius:14px;
+    padding:15px 20px;
+    text-align:left;
+    cursor:pointer;
+    font-family:'Poppins',sans-serif;
+    font-size:.96em;
+    color:var(--ink);
+    line-height:1.4;
+    transition:all .2s;
+    display:flex;
+    align-items:center;
+    gap:14px;
+  }
+  .answer:hover{
+    border-color:var(--taupe);
+    background:#fff;
+    transform:translateX(4px);
+    box-shadow:var(--shadow);
+  }
+  .answer .a-text{flex:1;display:flex;flex-direction:column;gap:3px}
+  .answer .a-text .a-hint{
+    font-size:.82em;
+    color:var(--ink-soft);
+    font-weight:300;
+  }
+
+  /* Image Grid */
+  .image-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+    max-width:520px;
+    margin:0 auto;
+  }
+  .image-card{
+    background:#fff;
+    border:1px solid var(--bg-deep);
+    border-radius:16px;
+    padding:18px 16px 18px;
+    cursor:pointer;
+    text-align:center;
+    transition:all .2s;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:10px;
+    font-family:'Poppins',sans-serif;
+  }
+  .image-card:hover{
+    border-color:var(--taupe);
+    transform:translateY(-3px);
+    box-shadow:var(--shadow-lg);
+  }
+  .image-card .ic-visual{
+    width:78px;
+    height:78px;
+    border-radius:50%;
+    background:var(--bg-soft);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin-bottom:2px;
+  }
+  .image-card .ic-visual svg{width:42px;height:42px}
+  .image-card .ic-title{
+    font-family:'Cormorant Garamond',serif;
+    font-size:1.18em;
+    color:var(--ink);
+    font-weight:600;
+    line-height:1.2;
+  }
+  .image-card .ic-desc{
+    font-size:.82em;
+    color:var(--ink-soft);
+    line-height:1.4;
+    font-weight:300;
+  }
+
+  /* Slider */
+  .slider-wrap{
+    max-width:520px;
+    margin:0 auto;
+    width:100%;
+    text-align:center;
+  }
+  .slider-value{
+    font-family:'Cormorant Garamond',serif;
+    font-size:4.4em;
+    color:var(--taupe);
+    line-height:1;
+    margin-bottom:.05em;
+    font-weight:500;
+    font-style:italic;
+  }
+  .slider-label{
+    font-size:1em;
+    color:var(--ink);
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    margin-bottom:1.6em;
+    min-height:1.5em;
+    font-weight:500;
+  }
+  .range-input{
+    -webkit-appearance:none;
+    appearance:none;
+    width:100%;
+    height:6px;
+    background:var(--bg-deep);
+    border-radius:6px;
+    outline:none;
+    margin-bottom:14px;
+  }
+  .range-input::-webkit-slider-thumb{
+    -webkit-appearance:none;
+    appearance:none;
+    width:28px;
+    height:28px;
+    border-radius:50%;
+    background:var(--sage);
+    border:3px solid #fff;
+    cursor:pointer;
+    box-shadow:0 4px 12px rgba(107,133,81,.3);
+    transition:transform .1s;
+  }
+  .range-input::-webkit-slider-thumb:hover{transform:scale(1.15)}
+  .range-input::-moz-range-thumb{
+    width:24px;
+    height:24px;
+    border-radius:50%;
+    background:var(--sage);
+    border:3px solid #fff;
+    cursor:pointer;
+  }
+  .range-edges{
+    display:flex;
+    justify-content:space-between;
+    font-size:.76em;
+    color:var(--ink-soft);
+    margin-bottom:2em;
+  }
+
+  /* Multi-Select */
+  .multi-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:8px;
+    max-width:520px;
+    margin:0 auto 1.6em;
+  }
+  .multi-card{
+    background:#fff;
+    border:1px solid var(--bg-deep);
+    border-radius:12px;
+    padding:13px 16px;
+    cursor:pointer;
+    font-size:.9em;
+    color:var(--ink);
+    line-height:1.4;
+    transition:all .2s;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-family:'Poppins',sans-serif;
+    text-align:left;
+  }
+  .multi-card .check{
+    width:20px;
+    height:20px;
+    border-radius:5px;
+    border:1.5px solid var(--bg-deep);
+    flex-shrink:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#fff;
+    transition:all .2s;
+  }
+  .multi-card.selected{
+    border-color:var(--sage);
+    background:var(--sage-soft);
+  }
+  .multi-card.selected .check{
+    background:var(--sage);
+    border-color:var(--sage);
+  }
+  .multi-card.selected .check::after{
+    content:'';
+    width:5px;
+    height:9px;
+    border:solid #fff;
+    border-width:0 2px 2px 0;
+    transform:rotate(45deg) translate(-1px,-1px);
+  }
+  .multi-card:hover{
+    border-color:var(--taupe);
+  }
+  .multi-helper{
+    text-align:center;
+    font-size:.8em;
+    color:var(--ink-soft);
+    margin-top:1em;
+  }
+
+  /* Name Input */
+  .name-screen{
+    text-align:center;
+    padding-top:30px;
+  }
+  .name-screen .greet-icon{
+    width:60px;
+    height:60px;
+    margin:0 auto 1em;
+    color:var(--taupe);
+  }
+  .name-screen h2{
+    font-size:2em;
+    color:var(--ink);
+    margin-bottom:.4em;
+    font-weight:600;
+  }
+  .name-screen h2 em{font-style:italic;color:var(--taupe);font-weight:500}
+  .name-screen .lead{
+    font-size:1em;
+    color:var(--ink-soft);
+    margin:.6em auto 1.6em;
+    max-width:440px;
+    line-height:1.6;
+  }
+  .input-field{
+    width:100%;
+    max-width:380px;
+    padding:14px 22px;
+    border:1px solid var(--bg-deep);
+    border-radius:50px;
+    font-size:.96em;
+    font-family:'Poppins',sans-serif;
+    background:#fff;
+    color:var(--ink);
+    margin-bottom:14px;
+    text-align:center;
+    transition:border-color .2s, box-shadow .2s;
+  }
+  .input-field:focus{
+    outline:none;
+    border-color:var(--sage);
+    box-shadow:0 0 0 3px var(--sage-soft);
+  }
+
+  /* Interludes */
+  .interlude{
+    text-align:center;
+    padding:30px 0;
+  }
+  .interlude .stat-big{
+    font-family:'Cormorant Garamond',serif;
+    font-size:5.5em;
+    color:var(--taupe);
+    line-height:.95;
+    font-style:italic;
+    font-weight:500;
+    margin-bottom:.1em;
+  }
+  .interlude .stat-label{
+    font-family:'Cormorant Garamond',serif;
+    font-size:1.45em;
+    color:var(--ink);
+    line-height:1.3;
+    max-width:480px;
+    margin:.4em auto 1.6em;
+    font-weight:500;
+  }
+  .interlude .stat-label em{font-style:italic;color:var(--taupe)}
+  .interlude .stat-sub{
+    color:var(--ink-soft);
+    font-size:.94em;
+    max-width:440px;
+    margin:0 auto 2em;
+    line-height:1.6;
+  }
+  .interlude .stat-sub b{color:var(--ink);font-weight:600}
+
+  .testimonial{
+    background:#fff;
+    border-radius:18px;
+    padding:24px 26px;
+    box-shadow:var(--shadow);
+    max-width:520px;
+    margin:0 auto 1.6em;
+    text-align:left;
+    border-left:3px solid var(--taupe);
+  }
+  .testimonial .quote{
+    font-family:'Cormorant Garamond',serif;
+    font-size:1.18em;
+    color:var(--ink);
+    line-height:1.5;
+    font-style:italic;
+    margin-bottom:.8em;
+    font-weight:500;
+  }
+  .testimonial .author{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-size:.84em;
+    color:var(--ink-soft);
+  }
+  .testimonial .avatar{
+    width:34px;
+    height:34px;
+    border-radius:50%;
+    background:var(--bg-soft);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:var(--taupe-deep);
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    font-weight:600;
+    font-size:1em;
+    flex-shrink:0;
+  }
+  .testimonial .author b{color:var(--ink);font-weight:600}
+
+  /* Loading */
+  .loading{
+    text-align:center;
+    padding:60px 20px;
+  }
+  .loading h2{
+    font-size:1.7em;
+    color:var(--ink);
+    margin-bottom:1em;
+    font-family:'Cormorant Garamond',serif;
+    font-weight:600;
+  }
+  .loading h2 em{font-style:italic;color:var(--taupe);font-weight:500}
+  .loader-ring{
+    width:64px;
+    height:64px;
+    border:3px solid var(--bg-deep);
+    border-top:3px solid var(--sage);
+    border-radius:50%;
+    animation:spin 1s linear infinite;
+    margin:0 auto 1.6em;
+  }
+  @keyframes spin{to{transform:rotate(360deg)}}
+  .loading-cycle{
+    color:var(--ink-soft);
+    font-style:italic;
+    font-family:'Cormorant Garamond',serif;
+    font-size:1.2em;
+    min-height:1.6em;
+    transition:opacity .4s;
+    font-weight:500;
+  }
+  .loading-progress{
+    max-width:300px;
+    margin:1.6em auto 0;
+    height:4px;
+    background:var(--bg-deep);
+    border-radius:3px;
+    overflow:hidden;
+  }
+  .loading-progress-fill{
+    height:100%;
+    background:var(--sage);
+    width:0;
+    transition:width 4s linear;
+    border-radius:3px;
+  }
+  .loading-quote{
+    margin-top:2.4em;
+    padding:18px 22px;
+    background:#fff;
+    border-radius:14px;
+    max-width:440px;
+    margin-left:auto;
+    margin-right:auto;
+    font-size:.92em;
+    color:var(--ink);
+    font-style:italic;
+    line-height:1.55;
+    font-family:'Cormorant Garamond',serif;
+    border-left:3px solid var(--taupe);
+    text-align:left;
+  }
+  .loading-quote .src{
+    display:block;
+    margin-top:8px;
+    font-size:.78em;
+    color:var(--ink-soft);
+    font-style:normal;
+    letter-spacing:.05em;
+    font-family:'Poppins',sans-serif;
+    font-weight:500;
+  }
+
+  /* Email Gate */
+  .email-screen{text-align:center;padding-top:24px}
+  .email-screen .gate-pill{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:7px 18px;
+    background:var(--sage-soft);
+    border-radius:50px;
+    font-size:.78em;
+    color:var(--sage-deep);
+    font-weight:500;
+    margin-bottom:1.4em;
+    align-self:center;
+  }
+  .email-screen .gate-pill .sparkle{width:13px;height:13px;color:var(--sage)}
+  .email-screen h1{
+    font-size:2.2em;
+    color:var(--ink);
+    margin-bottom:.4em;
+    font-weight:700;
+  }
+  .email-screen h1 em{font-style:italic;color:var(--taupe);font-weight:500}
+  .email-screen .lead{
+    color:var(--ink-soft);
+    font-size:1em;
+    margin:.5em auto 1.4em;
+    max-width:480px;
+    line-height:1.6;
+  }
+  .email-form{max-width:420px;margin:0 auto;width:100%}
+  .email-form .input-field{
+    text-align:left;
+    max-width:none;
+    width:100%;
+  }
+  .email-form .btn{width:100%;justify-content:center;margin-top:6px}
+  .privacy{
+    font-size:.78em;
+    color:var(--ink-soft);
+    margin-top:1.2em;
+    line-height:1.5;
+  }
+  .privacy a{color:var(--taupe-deep);text-decoration:underline}
+  .bonus-callout{
+    background:var(--bg-soft);
+    border-radius:14px;
+    padding:14px 18px;
+    margin:1.2em auto 1em;
+    max-width:440px;
+    text-align:left;
+    border-left:3px solid var(--taupe);
+    display:flex;
+    gap:12px;
+    align-items:center;
+  }
+  .bonus-callout .gift-icon{
+    width:30px;
+    height:30px;
+    color:var(--taupe-deep);
+    flex-shrink:0;
+  }
+  .bonus-callout strong{
+    display:block;
+    font-size:.7em;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:var(--taupe-deep);
+    font-weight:700;
+    margin-bottom:3px;
+  }
+  .bonus-callout span{
+    color:var(--ink);
+    font-family:'Cormorant Garamond',serif;
+    font-size:1em;
+    font-style:italic;
+    line-height:1.3;
+    display:block;
+    font-weight:500;
+  }
+
+  /* Result */
+  .result{
+    background:#fff;
+    border-radius:18px;
+    padding:36px 32px;
+    box-shadow:var(--shadow-lg);
+    margin-bottom:24px;
+    border-top:6px solid var(--taupe);
+  }
+  .type-hero-icon{
+    width:88px;
+    height:88px;
+    border-radius:20px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin:0 auto 1.2em;
+    position:relative;
+  }
+  .type-hero-icon::before{
+    content:'';
+    position:absolute;
+    inset:0;
+    background:currentColor;
+    opacity:.13;
+    border-radius:20px;
+  }
+  .type-hero-icon svg{
+    width:54px;
+    height:54px;
+    position:relative;
+    z-index:1;
+  }
+  .result .type-eyebrow{
+    text-align:center;
+    font-size:.7em;
+    letter-spacing:.26em;
+    text-transform:uppercase;
+    color:var(--taupe-deep);
+    margin-bottom:1em;
+    font-weight:600;
+  }
+  .result .type-name{
+    text-align:center;
+    font-family:'Cormorant Garamond',serif;
+    font-size:2.5em;
+    color:var(--ink);
+    line-height:1.1;
+    margin-bottom:.2em;
+    font-weight:700;
+  }
+  .result .type-name em{font-style:italic;color:var(--taupe);font-weight:500}
+  .result .type-tagline{
+    text-align:center;
+    font-family:'Cormorant Garamond',serif;
+    font-size:1.2em;
+    color:var(--ink-soft);
+    margin-bottom:1.6em;
+    font-style:italic;
+    font-weight:500;
+  }
+  .result .description{
+    color:var(--ink);
+    font-size:.96em;
+    line-height:1.7;
+    margin-bottom:1.4em;
+  }
+  .result .description b{color:var(--ink);font-weight:600}
+  .result h3{
+    font-family:'Poppins',sans-serif !important;
+    font-weight:600;
+    text-transform:uppercase;
+    letter-spacing:.1em;
+    font-size:.7em;
+    color:var(--taupe-deep);
+    margin:1.6em 0 .8em;
+  }
+  .result ul{list-style:none;padding:0;margin:0 0 1.5em}
+  .result ul li{
+    padding:8px 0 8px 26px;
+    position:relative;
+    line-height:1.55;
+    color:var(--ink);
+    font-size:.94em;
+  }
+  .result ul li::before{
+    content:'';
+    position:absolute;
+    left:6px;
+    top:14px;
+    width:8px;
+    height:8px;
+    border:1.5px solid var(--taupe);
+    border-radius:50%;
+  }
+  .result .score-bars{
+    background:var(--bg-soft);
+    border-radius:12px;
+    padding:18px 20px;
+    margin:1em 0 1.4em;
+  }
+  .score-row{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:8px;
+  }
+  .score-row:last-child{margin-bottom:0}
+  .score-row .lbl{
+    flex:0 0 90px;
+    font-size:.82em;
+    color:var(--ink);
+    font-weight:500;
+  }
+  .score-row .bar-wrap{
+    flex:1;
+    height:8px;
+    background:#fff;
+    border-radius:4px;
+    overflow:hidden;
+  }
+  .score-row .bar{
+    height:100%;
+    border-radius:4px;
+    transition:width .8s ease;
+  }
+  .score-row .pct{
+    flex:0 0 36px;
+    font-size:.78em;
+    color:var(--ink-soft);
+    text-align:right;
+    font-weight:500;
+  }
+
+  /* Blutwerte-Disclaimer-Box */
+  .data-disclaimer{
+    background:var(--bg-soft);
+    border-radius:14px;
+    padding:18px 20px;
+    margin:1.6em 0 .4em;
+    display:flex;
+    gap:14px;
+    align-items:flex-start;
+    border-left:3px solid var(--taupe);
+  }
+  .data-disclaimer .dd-icon{
+    width:24px;
+    height:24px;
+    color:var(--taupe-deep);
+    flex-shrink:0;
+    margin-top:2px;
+  }
+  .data-disclaimer .dd-icon svg{width:100%;height:100%}
+  .data-disclaimer .dd-body strong{
+    display:block;
+    font-size:.7em;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:var(--taupe-deep);
+    font-weight:700;
+    margin-bottom:6px;
+  }
+  .data-disclaimer .dd-body p{
+    margin:0;
+    font-size:.92em;
+    line-height:1.6;
+    color:var(--ink);
+  }
+  .data-disclaimer .dd-body b{color:var(--ink);font-weight:600}
+
+  /* Pitch */
+  .pitch{
+    background:var(--ink);
+    color:#fff;
+    border-radius:18px;
+    padding:34px 28px;
+    text-align:center;
+  }
+  .pitch h3{
+    font-family:'Cormorant Garamond',serif !important;
+    font-size:1.7em !important;
+    color:#fff !important;
+    margin:0 0 .5em !important;
+    text-transform:none !important;
+    letter-spacing:0 !important;
+    font-weight:600;
+  }
+  .pitch h3 em{font-style:italic;color:var(--taupe);font-weight:500}
+  .pitch p{
+    color:rgba(255,255,255,.85);
+    font-size:.94em;
+    margin:0 0 1.4em;
+    line-height:1.6;
+  }
+  .pitch p b{color:#fff;font-weight:600}
+  .pitch .btn{
+    background:var(--sage);
+    color:#fff;
+  }
+  .pitch .btn:hover{background:var(--sage-deep)}
+  .pitch .small{
+    display:block;
+    margin-top:1.1em;
+    font-size:.8em;
+    color:rgba(255,255,255,.6);
+    font-style:italic;
+    font-family:'Cormorant Garamond',serif;
+  }
+
+  .footer{
+    text-align:center;
+    margin-top:32px;
+    font-size:.8em;
+    color:var(--ink-soft);
+    line-height:1.6;
+  }
+  .footer a{color:var(--taupe-deep);font-weight:500}
+
+  .continue-bar{
+    margin-top:1.8em;
+    text-align:center;
+  }
+
+  /* Mobile */
+  @media (max-width:540px){
+    .container{padding:18px 14px 32px}
+    .hero h1{font-size:2.05em}
+    .hero .lead{font-size:.96em}
+    .types-preview{grid-template-columns:1fr}
+    .question h2{font-size:1.45em}
+    .answer{padding:13px 16px;font-size:.92em}
+    .image-grid{gap:10px}
+    .image-card{padding:14px 12px}
+    .image-card .ic-visual{width:64px;height:64px}
+    .image-card .ic-visual svg{width:34px;height:34px}
+    .image-card .ic-title{font-size:1.05em}
+    .multi-grid{grid-template-columns:1fr}
+    .slider-value{font-size:3.4em}
+    .interlude .stat-big{font-size:3.8em}
+    .interlude .stat-label{font-size:1.18em}
+    .result{padding:28px 22px}
+    .result .type-name{font-size:1.95em}
+    .pitch{padding:28px 22px}
+    .pitch h3{font-size:1.4em !important}
+    .email-screen h1{font-size:1.8em}
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <div class="brand-mark">
+    <svg class="logo" viewBox="0 0 32 32" fill="none">
+      <circle cx="16" cy="16" r="14" stroke="currentColor" stroke-width="1.5"/>
+      <path d="M9 19c0-3.9 3.1-7 7-7s7 3.1 7 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      <path d="M23 13c0 3.9-3.1 7-7 7s-7-3.1-7-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+    </svg>
+    <div class="name">
+      Jasmin Schmidtke
+      <span>Heilpraktikerin · Ü40 Coach</span>
+    </div>
+  </div>
+
+  <div id="app"></div>
+
+</div>
+
+<script>
+/* ============================================================
+   QUIZ-FUNNEL Ü40 v3 · 17 Steps · 4 Typen
+   E = Energie · H = Hormon · I = Identität · R = Reset
+   ============================================================ */
+
+const TYPES = {
+  F: {
+    short: 'F', name: 'Die Feuerseele', short_name: 'Feuerseele', color: '#C2604A',
+    short_desc: 'Leidenschaftlich, unter Hochdruck',
+    tagline: 'Leidenschaftlich, engagiert, immer im Einsatz – aber dein System läuft gerade auf Überdruck.',
+    description: 'Du bist eine Frau mit Feuer. Du gibst viel, du trägst viel, du forderst viel von dir selbst. Aber die hormonellen Veränderungen ab 40 erhöhen deinen Cortisolspiegel und machen dein Nervensystem empfindlicher. Das bedeutet: Der Stress, den du früher gut weggesteckt hast, trifft dich jetzt härter. <b>Das ist keine Schwäche – das ist Biologie.</b> Und du kannst direkt gegensteuern.',
+    needs: [
+      '<b>Magnesium Glycinat</b> (300–400 mg abends): Beruhigt direkt dein Nervensystem und hilft beim Abschalten – ein Game-Changer für viele Frauen.',
+      '<b>4-7-8 Atemübung</b> (5 Min täglich): Einatmen 4 Sek, halten 7 Sek, ausatmen 8 Sek. Aktiviert sofort dein parasympathisches Nervensystem.',
+      '<b>Koffein nach 14 Uhr streichen</b>: Dein Cortisol ist bereits erhöht. Koffein verstärkt die Spirale und hält deinen Kopf länger auf Hochtouren.',
+      '<b>20-Min Abendritual einführen</b>: Kein Handy, kein Social Media – stattdessen Spaziergang, leichte Dehnung oder ein Buch. Off-Switch für dein System.'
+    ],
+    pitch: 'Genau für dich haben wir den <b>Stress &amp; Cortisol-Reset</b> entwickelt: Magnesium-Plan, Atem-Routinen und das bewährte 12-Wochen-Abend-Ritual.'
+  },
+  M: {
+    short: 'M', name: 'Die Mondwandlerin', short_name: 'Mondwandlerin', color: '#5E5E8E',
+    short_desc: 'Sucht tiefen Schlaf und Erholung',
+    tagline: 'Du trägst vieles still mit dir – und dein Körper sucht dringend nach tiefem Schlaf und Erholung.',
+    description: 'Deine Nächte sind unruhig, und dieser Schlafmangel zieht sich wie ein roter Faden durch deinen Tag. Ob Einschlafprobleme, nächtliches Erwachen oder Schwitzen – du findest keine echte Ruhe. Das hat einen direkten Grund: <b>Östrogen und Progesteron regulieren deine Schlafarchitektur.</b> Wenn sie sinken, leidet der Schlaf. Das ist real, messbar – und du kannst konkret etwas dagegen tun.',
+    needs: [
+      '<b>Feste Schlafenszeit + 60-Min Wind-Down</b>: Selbe Uhrzeit jeden Abend, kein Blaulicht die letzte Stunde. Dein Körper braucht dieses Signal.',
+      '<b>Schlafzimmer auf 16–18 °C kühlen</b>: Deine Körpertemperatur ist in den Wechseljahren oft zu hoch. Kühle schlägt jede Schlaftablette.',
+      '<b>Vitamin B6 + Magnesium Kombi</b>: Beide sind direkt an der Melatonin-Bildung beteiligt und häufig mangelhaft. Großer Effekt mit kleinem Aufwand.',
+      '<b>Keine Nachrichten / Social Media nach 20 Uhr</b>: Jeder Cortisol-Trigger am Abend sabotiert deine Nacht. Eine Regel, die mehr verändert, als die meisten ahnen.'
+    ],
+    pitch: 'Phase 2 unserer Masterclass ist genau für dich: <b>Schlaf-Architektur</b>, Hormon-Schlaf-Achse und 4 Mikro-Rituale, die dein Nervensystem abends herunterfahren.'
+  },
+  T: {
+    short: 'T', name: 'Die Tieffühlende', short_name: 'Tieffühlende', color: '#A87B9F',
+    short_desc: 'Fühlt tief – Stärke und Herausforderung',
+    tagline: 'Du fühlst tief und intensiv – das ist deine Stärke. Und gerade auch deine größte Herausforderung.',
+    description: 'Emotionale Achterbahnen, unerwartete Tränen, Reizbarkeit ohne Grund – das ist kein Charakterfehler, das ist <b>Neurochemie</b>. Sinkende Östrogenspiegel reduzieren direkt deine Serotonin-Verfügbarkeit. Du wirst nicht „schwächer" oder „verrückter" – dein Gehirn arbeitet gerade mit einem anderen Hormoncocktail. Diese Veränderung ist real, nachvollziehbar und vor allem: <b>beeinflussbar</b>.',
+    needs: [
+      '<b>Täglich 30 Min Bewegung</b>: Der stärkste natürliche Stimmungshebel – setzt Endorphine, Serotonin und BDNF frei. Wirkt wie ein leichtes Antidepressivum, ohne Nebenwirkungen.',
+      '<b>Vitamin D3 + K2 messen lassen</b>: Mangel ist bei Stimmungstiefs extrem häufig und wird massiv unterschätzt. Ein einfacher Bluttest, ein echter Gamechanger.',
+      '<b>Tages-Mini-Ritual: 3 Highlights</b>: Jeden Abend 3 Dinge aufschreiben, die gut waren – auch kleine. Das ist keine Wellness-Romantik, das ist nachweislich neuroplastisch wirksam.',
+      '<b>Sozialen Kontakt aktiv halten</b>: Isolation verstärkt Stimmungstiefs drastisch. Gespräche, Lachen, echte Verbindung sind hormonell wirksame Ereignisse.'
+    ],
+    pitch: 'Phase 3 der Masterclass arbeitet genau hier: <b>Mood &amp; Mind</b> – Bewegungs-Plan, Vitamin-D-Optimierung, neuroplastische Mikro-Routinen und ehrliche Community.'
+  },
+  W: {
+    short: 'W', name: 'Die Wandlerin', short_name: 'Wandlerin', color: '#6B8551',
+    short_desc: 'Mitten in der körperlichen Transformation',
+    tagline: 'Dein Körper durchläuft gerade eine kraftvolle Transformation – du brauchst die richtigen Werkzeuge.',
+    description: 'Hitzewallungen, Gewichtsveränderungen, Gelenkschmerzen, Hautveränderungen – dein Körper sendet starke Signale. Das alles ist die Sprache einer tiefen biologischen Transformation. <b>Du bist nicht krank – du wandelst dich.</b> Und mit den richtigen Maßnahmen kann dieser Wandel sanfter, verständlicher und kontrollierbarer werden.',
+    needs: [
+      '<b>Phytoöstrogene in der Ernährung</b>: Täglich 2 EL frisch gemahlene Leinsamen, fermentierte Sojaprodukte oder Rotklee-Tee. Wirken wie schwache Östrogene und können Hitzewallungen deutlich reduzieren.',
+      '<b>Krafttraining 2× pro Woche</b>: Der wirksamste Hebel gegen hormonelle Gewichtszunahme, Knochendichteverlust und Gelenkschmerzen. Kein Marathon – 2 × 30 Min reichen.',
+      '<b>Vitamin D3 + Calcium überprüfen</b>: Gerade bei Gelenk- und Muskelschmerzen sehr häufig mangelhaft. Ein Bluttest beim Arzt klärt das in einem Schritt.',
+      '<b>Ärztin für individuellen Hormonstatus</b>: Wenn die Beschwerden stark sind, lohnt sich eine Gynäkologin mit Wechseljahre-Schwerpunkt. Du musst das nicht alleine durchstehen.'
+    ],
+    pitch: 'Phase 1 unserer Masterclass ist <b>genau für dich</b>: Phytoöstrogen-Ernährung, Krafttraining-Protokoll für zuhause und die Hormon-Bluttest-Anleitung.'
+  }
+};
+
+const STEPS = [
+
+  /* 0 — HERO */
+  { type: 'hero' },
+
+  /* 1 — NAME */
+  { type: 'name' },
+
+  /* 2 — Q1: ALTER */
+  {
+    type: 'single',
+    eyebrow: 'Frage 1 · Lebensphase',
+    question: 'Wie alt bist du gerade?',
+    options: [
+      { label: '35–39 Jahre · Pre-Wechseljahre',  hint: 'Erste Anzeichen, oft noch unbemerkt', scores: {} },
+      { label: '40–44 Jahre · erste Veränderungen', hint: 'Energie, Schlaf, Zyklus verschieben sich', scores: {} },
+      { label: '45–49 Jahre · mittendrin',         hint: 'Peri-Menopause, hormonelle Achterbahn', scores: { W:1 } },
+      { label: '50+ Jahre · neue Lebensphase',     hint: 'Post-Menopause, neue Balance finden',  scores: { W:1 } }
+    ]
+  },
+
+  /* 3 — Q2: ZYKLUS */
+  {
+    type: 'single',
+    eyebrow: 'Frage 2 · Zyklus',
+    question: 'Wie ist dein Zyklus aktuell?',
+    options: [
+      { label: 'Regelmäßig wie immer',                            scores: {} },
+      { label: 'Unregelmäßig geworden – mal länger, mal kürzer',  scores: { W:2 } },
+      { label: 'Sehr unregelmäßig oder bleibt zeitweise aus',     scores: { W:3 } },
+      { label: 'Schon seit über einem Jahr ausgeblieben',         scores: { W:2, M:1 } },
+      { label: 'Ich achte da ehrlich gesagt nicht drauf',         scores: { T:1 } }
+    ]
+  },
+
+  /* 4 — Q3: ALLTAGS-MOMENT (Image Grid · direkt typ-mappend) */
+  {
+    type: 'image',
+    eyebrow: 'Frage 3 · Dein Alltag',
+    question: 'Welcher Moment beschreibt deinen Alltag am ehesten?',
+    helper: 'Sei ehrlich – nur du siehst deine Antwort.',
+    options: [
+      { icon: 'flame',        title: 'Im Einsatz',        desc: 'Ich rase durch den Tag, abends nicht runter.', scores: { F:3 } },
+      { icon: 'moon_rest',    title: 'Schon erschöpft',   desc: 'Ich wache morgens schon müde auf.', scores: { M:3 } },
+      { icon: 'heart_soft',   title: 'Sehr sensibel',     desc: 'Tränen oder Reizbarkeit ohne klaren Grund.', scores: { T:3 } },
+      { icon: 'sprout',       title: 'Im Wandel',         desc: 'Mein Körper macht, was er will.', scores: { W:3 } }
+    ]
+  },
+
+  /* 5 — INTERLUDE: STAT */
+  {
+    type: 'interlude',
+    variant: 'stat',
+    big: '78%',
+    label: '… der Frauen Ü40 antworten in den ersten Fragen <em>ähnlich wie du</em>.',
+    sub: 'Du bist mit dem Gefühl, dich gerade nicht ganz wiederzuerkennen, <b>nicht allein</b>. Du bist nur in einer Lebensphase, über die kaum jemand offen spricht.'
+  },
+
+  /* 6 — Q4: ENERGIE-SLIDER */
+  {
+    type: 'slider',
+    eyebrow: 'Frage 4 · Energie',
+    question: 'Wie ist deine Energie um 15 Uhr?',
+    helper: '1 = ich brauche dringend ein Nickerchen · 10 = voll im Saft',
+    min: 1, max: 10, default: 5,
+    labels: { 1:'Komplett leer', 2:'Sehr müde', 3:'Ausgelaugt', 4:'Schlapp', 5:'Naja, geht so', 6:'Solide', 7:'Gut drauf', 8:'Wach und fokussiert', 9:'Power', 10:'Voll im Saft' },
+    scoreFn: (v) => {
+      if (v <= 3) return { M: 2, F: 1 };
+      if (v <= 5) return { M: 1 };
+      return {};
+    },
+    edgeLeft: '1 — leer', edgeRight: '10 — voll im Saft'
+  },
+
+  /* 7 — Q5: SCHLAF */
+  {
+    type: 'single',
+    eyebrow: 'Frage 5 · Schlaf',
+    question: 'Wie schläfst du in den letzten 6 Monaten?',
+    options: [
+      { label: 'Erholsam, ich wache ausgeruht auf',                scores: {} },
+      { label: 'Mal gut, mal nicht – wechselhaft',                  scores: { M:1 } },
+      { label: 'Ich wache nachts oft auf',                          scores: { M:3 } },
+      { label: 'Ich schlafe schlecht ein und wache erschöpft auf',  scores: { M:3, F:1 } }
+    ]
+  },
+
+  /* 8 — Q6: STRESS-SLIDER */
+  {
+    type: 'slider',
+    eyebrow: 'Frage 6 · Stress',
+    question: 'Wie hoch ist dein Stress-Level der letzten 3 Monate?',
+    helper: '1 = entspannt · 10 = am Limit',
+    min: 1, max: 10, default: 5,
+    labels: { 1:'Entspannt', 2:'Ruhig', 3:'Locker', 4:'Etwas angespannt', 5:'Mittel', 6:'Spürbar gestresst', 7:'Stark gestresst', 8:'Überfordert', 9:'Am Limit', 10:'Burn-out-nah' },
+    scoreFn: (v) => {
+      if (v <= 3) return {};
+      if (v <= 6) return { F: 1 };
+      if (v <= 8) return { F: 3 };
+      return { F: 3, T: 1 };
+    },
+    edgeLeft: '1 — entspannt', edgeRight: '10 — am Limit'
+  },
+
+  /* 9 — Q7: SYMPTOME (Multi-Select) */
+  {
+    type: 'multi',
+    eyebrow: 'Frage 7 · Symptome',
+    question: 'Welche Symptome kennst du seit Ü40?',
+    helper: 'Mehrfachauswahl – kreuz alles an, was zutrifft.',
+    options: [
+      { label: 'Bauchfett, das nicht weggeht',           scores: { W:2 } },
+      { label: 'Hitzewallungen, Schweißausbrüche',       scores: { W:3 } },
+      { label: 'Schlafstörungen, nächtliches Aufwachen', scores: { M:3 } },
+      { label: 'Energielosigkeit, Erschöpfung',          scores: { F:1, M:1 } },
+      { label: 'Innere Anspannung, kann nicht abschalten', scores: { F:3 } },
+      { label: 'Stimmungsschwankungen, Reizbarkeit',     scores: { T:3 } },
+      { label: 'Tränen ohne klaren Grund',               scores: { T:3 } },
+      { label: 'Konzentrationsprobleme, „Brain Fog"',    scores: { F:1, M:1 } },
+      { label: 'Haarausfall, dünner werdendes Haar',     scores: { W:2 } },
+      { label: 'Gelenkschmerzen, Steifheit',             scores: { W:2 } },
+      { label: 'Libido-Verlust, Trockenheit',            scores: { W:2 } },
+      { label: 'Nichts davon – mir geht es gut',         scores: {} }
+    ]
+  },
+
+  /* 10 — INTERLUDE: TESTIMONIAL */
+  {
+    type: 'interlude',
+    variant: 'testimonial',
+    quote: 'Ich dachte, das wäre ‚halt das Alter`. Bis Jasmin mir gezeigt hat, dass es einen Plan gibt – mit Daten, nicht mit Bauchgefühl. Heute schlafe ich wieder durch und erkenne mich im Spiegel.',
+    name: 'Sandra, 47',
+    role: 'Marketing-Leiterin, 2 Kinder',
+    initials: 'S',
+    big: 'Es geht nicht ums <em>jünger aussehen</em>.',
+    label: 'Es geht darum, dich wieder zu erkennen.'
+  },
+
+  /* 11 — Q8: BEWEGUNG-SLIDER */
+  {
+    type: 'slider',
+    eyebrow: 'Frage 8 · Bewegung',
+    question: 'Wie viele Tage pro Woche bewegst du dich aktiv (mindestens 30 Min)?',
+    helper: 'Spaziergänge zählen mit',
+    min: 0, max: 7, default: 3,
+    labels: { 0:'0 Tage – ehrlich', 1:'1 Tag', 2:'2 Tage', 3:'3 Tage', 4:'4 Tage', 5:'5 Tage', 6:'6 Tage', 7:'Jeden Tag' },
+    scoreFn: (v) => {
+      if (v <= 1) return { T: 1, F: 1 };
+      return {};
+    },
+    edgeLeft: '0 Tage', edgeRight: '7 Tage'
+  },
+
+  /* 12 — Q9: STRESS-REAKTION (Image Grid · direkt typ-mappend) */
+  {
+    type: 'image',
+    eyebrow: 'Frage 9 · Stress-Reaktion',
+    question: 'Wenn du Stress hast – wie zeigt sich das bei dir?',
+    options: [
+      { icon: 'flame',      title: 'Innere Anspannung',  desc: 'Ich kann nicht abschalten, bin auf Hochtouren.', scores: { F:3 } },
+      { icon: 'moon_rest',  title: 'Schlechter Schlaf',  desc: 'Ich liege wach oder wache nachts auf.', scores: { M:3 } },
+      { icon: 'heart_soft', title: 'Tränen / Stimmung',  desc: 'Ich werde sensibler, weine oder bin gereizt.', scores: { T:3 } },
+      { icon: 'sprout',     title: 'Körperliche Symptome', desc: 'Hitze, Verspannung, Schmerzen.', scores: { W:3 } }
+    ]
+  },
+
+  /* 13 — Q10: BLUTTESTS */
+  {
+    type: 'single',
+    eyebrow: 'Frage 10 · Daten',
+    question: 'Hast du schon mal einen ausführlichen Bluttest oder Hormoncheck machen lassen?',
+    options: [
+      { label: 'Ja, ausführlich – privat oder beim Spezialisten', scores: {} },
+      { label: 'Nur das Übliche beim Hausarzt',                    scores: {} },
+      { label: 'Nein, nie – ich wüsste nicht, was relevant ist',   scores: { W:1 } },
+      { label: 'Möchte ich, weiß aber nicht wo anfangen',          scores: { W:1 } }
+    ]
+  },
+
+  /* 14 — Q11: BISHERIGE WEGE (Multi-Select) */
+  {
+    type: 'multi',
+    eyebrow: 'Frage 11 · Was du schon probiert hast',
+    question: 'Was hast du bisher ausprobiert, um dich besser zu fühlen?',
+    helper: 'Mehrfachauswahl – kreuz alles an.',
+    options: [
+      { label: 'Diäten und Ernährungsumstellungen',  scores: { W:1 } },
+      { label: 'Sport, Yoga, Pilates',                scores: { T:1 } },
+      { label: 'Cremes und Beauty-Produkte',          scores: {} },
+      { label: 'Nahrungsergänzungsmittel',            scores: {} },
+      { label: 'Coachings, Bücher, Onlinekurse',      scores: {} },
+      { label: 'Ärztliche Hormonberatung',            scores: { W:1 } },
+      { label: 'Vieles parallel – nichts dauerhaft',  scores: {} },
+      { label: 'Ehrlich gesagt: noch wenig',          scores: {} }
+    ]
+  },
+
+  /* 15 — Q12: ZEIT FÜR MICH */
+  {
+    type: 'single',
+    eyebrow: 'Frage 12 · Selbstfürsorge',
+    question: 'Wie viel bewusste Zeit nimmst du dir wöchentlich nur für dich?',
+    options: [
+      { label: 'Mehrere Stunden täglich',                       hint: 'Selbstfürsorge ist fest verankert', scores: {} },
+      { label: '30–60 Minuten täglich',                         hint: 'Mein kleines Ritual gönne ich mir', scores: {} },
+      { label: 'Ein paar Mal pro Woche',                        hint: 'Wenn der Alltag es zulässt', scores: { T:1 } },
+      { label: 'Selten – ich komme nicht dazu',                 hint: 'Familie, Job, alles geht vor', scores: { F:2, T:1 } },
+      { label: 'Fast nie – und ich fühle mich oft schuldig dabei', hint: 'Sich Zeit nehmen fällt mir schwer', scores: { F:2, T:2 } }
+    ]
+  },
+
+  /* 16 — INTERLUDE: 12-BLUTWERTE */
+  {
+    type: 'interlude',
+    variant: 'stat',
+    big: '12',
+    label: 'Das ist die Anzahl der <em>Blutwerte</em>, die ab Ü40 wirklich entscheidend sind.',
+    sub: 'Die meisten Hausärzte messen davon nur 3 oder 4 – und sagen dann <b>„Ihre Werte sind im Normbereich"</b>. Du wirst gleich erfahren, welche dir vermutlich gefehlt haben.'
+  },
+
+  /* 17 — Q13: LEBENSPHASE (Image Grid) */
+  {
+    type: 'image',
+    eyebrow: 'Frage 13 · Lebensphase',
+    question: 'Welches Bild passt aktuell am besten zu deinem Lebensgefühl?',
+    options: [
+      { icon: 'sun',        title: 'Frühling',  desc: 'Ich öffne mich neu, fühle Aufbruch.', scores: {} },
+      { icon: 'tree',       title: 'Sommer',    desc: 'Viel los, ich gebe alles, blühe.', scores: { F:1 } },
+      { icon: 'leaf',       title: 'Herbst',    desc: 'Ich sortiere mich neu, werde nachdenklich.', scores: { T:2 } },
+      { icon: 'moon',       title: 'Winter',    desc: 'Ich brauche Rückzug, fühle mich leer.', scores: { M:2, T:1 } }
+    ]
+  },
+
+  /* 18 — Q14: LEBENS-SLIDER */
+  {
+    type: 'slider',
+    eyebrow: 'Frage 14 · Lebensgefühl',
+    question: 'Wie zufrieden bist du gerade mit deiner Lebensphase?',
+    helper: '1 = ich kämpfe mich durch · 10 = ich blühe auf',
+    min: 1, max: 10, default: 5,
+    labels: { 1:'Ich kämpfe', 2:'Es zerrt an mir', 3:'Mich vermisse ich oft', 4:'Ausgebremst', 5:'Ambivalent', 6:'Akzeptiert', 7:'Im Fluss', 8:'Ich finde mich wieder', 9:'Stark verbunden', 10:'Ich blühe auf' },
+    scoreFn: (v) => {
+      if (v <= 3) return { T: 2, F: 1 };
+      if (v <= 5) return { T: 1 };
+      return {};
+    },
+    edgeLeft: '1 — kämpfe', edgeRight: '10 — blühe'
+  },
+
+  /* 19 — Q15: GRÖSSTER WUNSCH */
+  {
+    type: 'single',
+    eyebrow: 'Letzte Frage · Vision',
+    question: 'Wenn du dir ein Ergebnis aussuchen dürftest – was wäre dein wichtigstes?',
+    options: [
+      { label: 'Wieder wirklich abschalten und runterkommen',          scores: { F:3 } },
+      { label: 'Endlich wieder durchschlafen',                          scores: { M:3 } },
+      { label: 'Emotional ausgeglichen und in meiner Mitte sein',       scores: { T:3 } },
+      { label: 'Den körperlichen Wandel verstehen und steuern können',  scores: { W:3 } }
+    ]
+  },
+
+  /* 20 — EMAIL (NEUE Position: VOR Loading) */
+  { type: 'email' },
+
+  /* 21 — LOADING (jetzt nach Email) */
+  { type: 'loading' },
+
+  /* 22 — RESULT */
+  { type: 'result' }
+];
+
+/* ============================================================
+   STATE
+   ============================================================ */
+
+let state = {
+  step: 0,
+  scores: { F:0, M:0, T:0, W:0 },
+  answers: [],
+  user: { name: '', email: '' }
+};
+
+/* ============================================================
+   ICONS
+   ============================================================ */
+
+const ICONS = {
+  greet: '<svg viewBox="0 0 60 60" fill="none"><circle cx="30" cy="22" r="10" stroke="currentColor" stroke-width="2.5"/><path d="M14 50c0-8.8 7.2-16 16-16s16 7.2 16 16" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>',
+
+  sparkle: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0L13.5 9.5L24 12L13.5 14.5L12 24L10.5 14.5L0 12L10.5 9.5Z"/></svg>',
+
+  sun: '<svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="9" stroke="#B5957A" stroke-width="2.5"/><path d="M24 6v6M24 36v6M6 24h6M36 24h6M11 11l4 4M33 33l4 4M11 37l4-4M33 15l4-4" stroke="#B5957A" stroke-width="2.5" stroke-linecap="round"/></svg>',
+
+  cloud_sun: '<svg viewBox="0 0 48 48" fill="none"><circle cx="32" cy="16" r="6" stroke="#B5957A" stroke-width="2.5"/><path d="M32 4v3M32 25v3M22 16h-3M45 16h-3M25 9l2 2M37 21l2 2" stroke="#B5957A" stroke-width="2.5" stroke-linecap="round"/><path d="M11 36c-2.8 0-5-2.2-5-5s2.2-5 5-5h.5C12 22 15 19 19 19c4.3 0 7.5 3.5 7.5 7.5 0 .3 0 .7-.1 1H29c2.8 0 5 2.2 5 5s-2.2 5-5 5H11z" stroke="#5C5256" stroke-width="2.5"/></svg>',
+
+  cloud_rain: '<svg viewBox="0 0 48 48" fill="none"><path d="M11 28c-2.8 0-5-2.2-5-5s2.2-5 5-5h.5C12 14 15 11 19 11c4.3 0 7.5 3.5 7.5 7.5 0 .3 0 .7-.1 1H29c2.8 0 5 2.2 5 5s-2.2 5-5 5H11z" stroke="#3D2C35" stroke-width="2.5"/><path d="M14 36l-2 4M22 36l-2 4M30 36l-2 4" stroke="#B5957A" stroke-width="2.5" stroke-linecap="round"/></svg>',
+
+  moon: '<svg viewBox="0 0 48 48" fill="none"><path d="M30 8c-9 1-16 8.5-16 17.5S21 41.5 30 42.5C20 41.5 12 33.6 12 24S20 6.5 30 8z" stroke="#3D2C35" stroke-width="2.5" stroke-linejoin="round"/></svg>',
+
+  tree: '<svg viewBox="0 0 48 48" fill="none"><path d="M24 8c-6 0-10 4-10 9 0 2 0 3 1 4-3 1-5 4-5 7 0 4 4 7 8 7h12c4 0 8-3 8-7 0-3-2-6-5-7 1-1 1-2 1-4 0-5-4-9-10-9z" stroke="#6B8551" stroke-width="2.5"/><path d="M24 35v8M21 43h6" stroke="#6B8551" stroke-width="2.5" stroke-linecap="round"/></svg>',
+
+  question: '<svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="18" stroke="#B5957A" stroke-width="2.5"/><path d="M19 19c0-3 2-5 5-5s5 2 5 5c0 2-1 3-3 4-1.5.7-2 1.5-2 3" stroke="#B5957A" stroke-width="2.5" stroke-linecap="round"/><circle cx="24" cy="33" r="1.5" fill="#B5957A"/></svg>',
+
+  lightning: '<svg viewBox="0 0 48 48" fill="none"><path d="M28 4l-16 22h10l-4 18 16-22h-10l4-18z" stroke="#B84A62" stroke-width="2.5" stroke-linejoin="round"/></svg>',
+
+  fade: '<svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="20" r="7" stroke="#3D2C35" stroke-width="2.5" stroke-dasharray="2 3"/><path d="M11 42c0-7.2 5.8-13 13-13s13 5.8 13 13" stroke="#3D2C35" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="3 4"/></svg>',
+
+  leaf: '<svg viewBox="0 0 48 48" fill="none"><path d="M8 40s4-26 32-32c0 0 4 28-32 32z" stroke="#B5957A" stroke-width="2.5" stroke-linejoin="round"/><path d="M22 26c4-4 8-8 12-12" stroke="#B5957A" stroke-width="2" stroke-linecap="round"/></svg>',
+
+  gift: '<svg viewBox="0 0 32 32" fill="none"><path d="M5 12h22v16H5z" stroke="currentColor" stroke-width="2"/><path d="M16 12v16M3 12h26v-3H3v3zM16 9c-3-2-7-2-7 1s4 1 7 0c3 1 7 1 7-1s-4-3-7-1z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>',
+
+  /* === Type Icons (4 Frauentypen Ü40) === */
+
+  /* F - Feuerseele · stilisierte Flamme */
+  type_f: '<svg viewBox="0 0 64 64" fill="none"><path d="M32 8C32 8 30 14 30 18C30 22 32 24 32 24C30 22 28 20 27 18C24 22 20 28 20 36C20 45 25 54 32 54C39 54 44 45 44 36C44 30 41 24 38 20C38 24 36 28 33 28C31 28 30 26 30 22C30 16 32 12 32 8Z" fill="currentColor"/><ellipse cx="32" cy="42" rx="5" ry="7" fill="white" opacity="0.4"/></svg>',
+
+  /* M - Mondwandlerin · Sichelmond mit Stern */
+  type_m: '<svg viewBox="0 0 64 64" fill="none"><path d="M40 16c-9 1-16 8.5-16 17.5S31 50 40 51c-7-2-12-9-12-17.5S33 17 40 16z" fill="currentColor"/><path d="M50 22l1.2 3 3 1.2-3 1.2-1.2 3-1.2-3-3-1.2 3-1.2z" fill="currentColor" opacity="0.75"/><circle cx="20" cy="20" r="1.6" fill="currentColor" opacity="0.6"/><circle cx="50" cy="46" r="1.4" fill="currentColor" opacity="0.55"/></svg>',
+
+  /* T - Tieffühlende · Herz */
+  type_t: '<svg viewBox="0 0 64 64" fill="none"><path d="M32 52C32 52 12 38 12 24C12 17 17 12 23 12C27 12 30 14 32 17C34 14 37 12 41 12C47 12 52 17 52 24C52 38 32 52 32 52Z" fill="currentColor"/><path d="M20 22C20 18 23 16 26 17" stroke="white" stroke-width="2" stroke-linecap="round" opacity="0.45" fill="none"/></svg>',
+
+  /* W - Wandlerin · Spross / Pflanze */
+  type_w: '<svg viewBox="0 0 64 64" fill="none"><path d="M32 54V30" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path d="M32 32C40 32 48 26 50 14C42 14 32 20 32 32Z" fill="currentColor"/><path d="M32 38C24 38 16 32 14 20C22 20 32 26 32 38Z" fill="currentColor"/><path d="M40 22L34 30" stroke="white" stroke-width="1.5" stroke-linecap="round" opacity="0.45"/><path d="M22 28L31 35" stroke="white" stroke-width="1.5" stroke-linecap="round" opacity="0.45"/></svg>',
+
+  /* === Image-Grid Icons für Q3 + Q9 (klein, in cream-Kreis) === */
+
+  flame: '<svg viewBox="0 0 48 48" fill="none"><path d="M24 6C24 6 23 10 23 13C23 16 24 17 24 17C23 16 22 15 21 13C19 16 16 21 16 27C16 34 19 41 24 41C29 41 32 34 32 27C32 23 30 19 28 16C28 19 27 21 25 21C23 21 22 20 22 16C22 12 24 9 24 6Z" fill="#C2604A"/></svg>',
+
+  moon_rest: '<svg viewBox="0 0 48 48" fill="none"><path d="M30 12c-7 1-12 7-12 13S23 37 30 38c-5-2-9-7-9-13S25 14 30 12z" fill="#5E5E8E"/><circle cx="38" cy="16" r="1.4" fill="#5E5E8E" opacity="0.7"/><circle cx="14" cy="32" r="1.2" fill="#5E5E8E" opacity="0.6"/></svg>',
+
+  heart_soft: '<svg viewBox="0 0 48 48" fill="none"><path d="M24 38C24 38 9 28 9 18C9 13 13 9 18 9C21 9 23 11 24 13C25 11 27 9 30 9C35 9 39 13 39 18C39 28 24 38 24 38Z" fill="#A87B9F"/></svg>',
+
+  sprout: '<svg viewBox="0 0 48 48" fill="none"><path d="M24 40V24" stroke="#6B8551" stroke-width="2.5" stroke-linecap="round"/><path d="M24 26C30 26 36 22 37 12C31 12 24 17 24 26Z" fill="#6B8551"/><path d="M24 30C18 30 12 26 11 16C17 16 24 21 24 30Z" fill="#6B8551"/></svg>'
+};
+
+/* ============================================================
+   RENDER
+   ============================================================ */
+
+let multiSelected = new Set();
+
+function $app(){ return document.getElementById('app'); }
+
+function totalQuestionSteps(){
+  return STEPS.filter(s => ['single','image','slider','multi'].includes(s.type)).length;
+}
+function currentQuestionIndex(){
+  let count = 0;
+  for (let i = 0; i <= state.step; i++) {
+    if (['single','image','slider','multi'].includes(STEPS[i]?.type)) count++;
+  }
+  return count;
+}
+
+function progressBar(){
+  const total = totalQuestionSteps();
+  const done = currentQuestionIndex();
+  const pct = Math.min(100, (done / total) * 100);
+  return `
+    <div class="top-bar">
+      ${state.step > 1 ? `<button class="progress-back" onclick="goBack()">← zurück</button>` : '<span></span>'}
+      <span class="progress-text">Frage ${done} von ${total}</span>
+      <span style="width:60px"></span>
+    </div>
+    <div class="progress-bar"><div class="progress-fill" style="width:${pct}%"></div></div>
+  `;
+}
+
+function renderHero(){
+  $app().innerHTML = `
+    <section class="screen active hero">
+      <div class="pill">
+        <span class="sparkle">${ICONS.sparkle}</span>
+        Der Diagnose-Test für Frauen Ü40
+      </div>
+      <h1>Was blockiert deine <em>Energie,<br/>Ausstrahlung und Figur</em><br/>ab 40 wirklich?</h1>
+      <p class="lead">
+        In 3 Minuten findest du heraus, welche deiner 4 Hormon-Baustellen aktuell am stärksten auf dich wirkt – und bekommst 3 konkrete Sofortmaßnahmen, die du heute Abend schon starten kannst.
+      </p>
+
+      <div class="types-preview">
+        ${Object.values(TYPES).map(t => `
+          <div class="type-preview ${t.short}">
+            <div class="badge">${ICONS['type_' + t.short.toLowerCase()]}</div>
+            <div class="meta">
+              <div class="name">${t.short_name}</div>
+              <div class="desc">${t.short_desc}</div>
+            </div>
+          </div>
+        `).join('')}
+      </div>
+
+      <div class="meta-row">
+        <span><b>15</b> Fragen</span>
+        <span><b>~3 Min.</b> Dauer</span>
+        <span><b>PDF</b> &amp; Plan</span>
+      </div>
+
+      <button class="btn" onclick="next()">Test jetzt starten <span class="arrow">→</span></button>
+
+      <p class="social-proof">
+        Über <b>1.200+ Frauen</b> haben den Test bereits gemacht. Wissenschaftlich orientiert · Kein Verkaufsdruck.
+      </p>
+    </section>
+  `;
+}
+
+function renderName(){
+  $app().innerHTML = `
+    <section class="screen active name-screen">
+      <div class="greet-icon">${ICONS.greet}</div>
+      <h2>Erstmal <em>zu dir</em>.</h2>
+      <p class="lead">Wie sollen wir dich ansprechen? Damit dein Ergebnis sich nach dir anfühlt.</p>
+      <form onsubmit="submitName(event)">
+        <input type="text" class="input-field" id="name-input" placeholder="Dein Vorname" required autofocus>
+        <div class="continue-bar">
+          <button type="submit" class="btn">Weiter <span class="arrow">→</span></button>
+        </div>
+      </form>
+      <p class="privacy" style="margin-top:1.6em;">Wir brauchen jetzt nur deinen Vornamen. Deine E-Mail kommt erst, wenn das Ergebnis fertig ist.</p>
+    </section>
+  `;
+}
+
+function renderSingle(s){
+  $app().innerHTML = `
+    ${progressBar()}
+    <section class="screen active question">
+      <div class="q-eyebrow">${s.eyebrow}</div>
+      <h2>${personalize(s.question)}</h2>
+      ${s.helper ? `<p class="q-helper">${s.helper}</p>` : ''}
+      <div class="answers">
+        ${s.options.map((o, i) => `
+          <button class="answer" onclick="selectSingle(${i})">
+            <span class="a-text">
+              <span>${o.label}</span>
+              ${o.hint ? `<span class="a-hint">${o.hint}</span>` : ''}
+            </span>
+          </button>
+        `).join('')}
+      </div>
+    </section>
+  `;
+}
+
+function renderImage(s){
+  $app().innerHTML = `
+    ${progressBar()}
+    <section class="screen active question">
+      <div class="q-eyebrow">${s.eyebrow}</div>
+      <h2>${personalize(s.question)}</h2>
+      ${s.helper ? `<p class="q-helper">${s.helper}</p>` : ''}
+      <div class="image-grid">
+        ${s.options.map((o, i) => `
+          <button class="image-card" onclick="selectSingle(${i})">
+            <span class="ic-visual">${ICONS[o.icon] || ICONS.sun}</span>
+            <span class="ic-title">${o.title}</span>
+            <span class="ic-desc">${o.desc}</span>
+          </button>
+        `).join('')}
+      </div>
+    </section>
+  `;
+}
+
+function renderSlider(s){
+  $app().innerHTML = `
+    ${progressBar()}
+    <section class="screen active question">
+      <div class="q-eyebrow">${s.eyebrow}</div>
+      <h2>${personalize(s.question)}</h2>
+      ${s.helper ? `<p class="q-helper">${s.helper}</p>` : ''}
+      <div class="slider-wrap">
+        <div class="slider-value" id="slider-value">${s.default}</div>
+        <div class="slider-label" id="slider-label">${s.labels[s.default] || ''}</div>
+        <input type="range" class="range-input" id="slider-input"
+          min="${s.min}" max="${s.max}" value="${s.default}" step="1"
+          oninput="updateSlider()">
+        <div class="range-edges">
+          <span>${s.edgeLeft}</span>
+          <span>${s.edgeRight}</span>
+        </div>
+        <div class="continue-bar">
+          <button class="btn" onclick="submitSlider()">Weiter <span class="arrow">→</span></button>
+        </div>
+      </div>
+    </section>
+  `;
+}
+
+function renderMulti(s){
+  multiSelected = new Set();
+  $app().innerHTML = `
+    ${progressBar()}
+    <section class="screen active question">
+      <div class="q-eyebrow">${s.eyebrow}</div>
+      <h2>${personalize(s.question)}</h2>
+      ${s.helper ? `<p class="q-helper">${s.helper}</p>` : ''}
+      <div class="multi-grid" id="multi-grid">
+        ${s.options.map((o, i) => `
+          <button class="multi-card" data-idx="${i}" onclick="toggleMulti(${i})">
+            <span class="check"></span>
+            <span>${o.label}</span>
+          </button>
+        `).join('')}
+      </div>
+      <p class="multi-helper" id="multi-helper">Wähle mindestens eine Antwort.</p>
+      <div class="continue-bar">
+        <button class="btn" id="multi-submit" disabled onclick="submitMulti()">Weiter <span class="arrow">→</span></button>
+      </div>
+    </section>
+  `;
+}
+
+function renderInterlude(s){
+  if (s.variant === 'stat') {
+    $app().innerHTML = `
+      ${progressBar()}
+      <section class="screen active interlude">
+        <div class="stat-big">${s.big}</div>
+        <div class="stat-label">${personalize(s.label)}</div>
+        <div class="stat-sub">${personalize(s.sub)}</div>
+        <div class="continue-bar">
+          <button class="btn" onclick="next()">Weiter <span class="arrow">→</span></button>
+        </div>
+      </section>
+    `;
+  } else if (s.variant === 'testimonial') {
+    $app().innerHTML = `
+      ${progressBar()}
+      <section class="screen active interlude">
+        <div class="stat-big" style="font-size:3.4em">${s.big}</div>
+        <div class="stat-label">${s.label}</div>
+        <div class="testimonial">
+          <div class="quote">„${s.quote}"</div>
+          <div class="author">
+            <div class="avatar">${s.initials}</div>
+            <div><b>${s.name}</b> · ${s.role}</div>
+          </div>
+        </div>
+        <div class="continue-bar">
+          <button class="btn" onclick="next()">Weiter <span class="arrow">→</span></button>
+        </div>
+      </section>
+    `;
+  }
+}
+
+function renderEmail(){
+  $app().innerHTML = `
+    <section class="screen active email-screen">
+      <div class="gate-pill">
+        <span class="sparkle">${ICONS.sparkle}</span>
+        Vielen Dank${state.user.name ? ', ' + state.user.name : ''}!
+      </div>
+      <h1>Dein Ergebnis ist <em>fertig</em>.</h1>
+      <p class="lead">
+        Trag deine E-Mail ein, damit wir dir dein vollständiges Profil schicken können – plus die <b>12 wichtigsten Blutwerte ab Ü40</b> als PDF.
+      </p>
+      <div class="bonus-callout">
+        <span class="gift-icon">${ICONS.gift}</span>
+        <div>
+          <strong>Dein Geschenk dazu</strong>
+          <span>„Die 12 wichtigsten Blutwerte ab Ü40" – PDF mit Erklärungen</span>
+        </div>
+      </div>
+      <form class="email-form" onsubmit="submitEmail(event)">
+        <input type="email" class="input-field" id="user-email" placeholder="deine@email.de" required>
+        <button type="submit" class="btn">Mein Ergebnis ansehen <span class="arrow">→</span></button>
+      </form>
+      <p class="privacy">
+        Wir gehen sorgsam mit deinen Daten um. Du kannst dich jederzeit wieder austragen.<br/>
+        <a href="#">Datenschutz</a> · <a href="#">Impressum</a>
+      </p>
+    </section>
+  `;
+}
+
+function renderLoading(){
+  $app().innerHTML = `
+    <section class="screen active loading">
+      <div class="loader-ring"></div>
+      <h2>Wir analysieren deine <em>15 Antworten</em>${state.user.name ? ', ' + state.user.name : ''}…</h2>
+      <p class="loading-cycle" id="loading-cycle">Profilachsen werden ausgewertet</p>
+      <div class="loading-progress">
+        <div class="loading-progress-fill" id="loading-progress-fill"></div>
+      </div>
+      <div class="loading-quote">
+        „Der größte Hebel für Frauen Ü40 ist nicht eine neue Diät. Es ist Verstehen, was im eigenen Körper passiert – und einen Plan zu haben, dem man vertraut."
+        <span class="src">— Jasmin Schmidtke</span>
+      </div>
+    </section>
+  `;
+  // Progress fill animation
+  setTimeout(() => {
+    const fill = document.getElementById('loading-progress-fill');
+    if (fill) fill.style.width = '100%';
+  }, 50);
+
+  // Cycling messages
+  const msgs = [
+    'Profilachsen werden ausgewertet',
+    'Hormon-Signale werden gewichtet',
+    'Identitäts-Indikatoren prüfen',
+    'Energie-Muster erkennen',
+    'Dein persönlicher Typ wird erstellt'
+  ];
+  let i = 0;
+  const el = document.getElementById('loading-cycle');
+  const interval = setInterval(() => {
+    i++;
+    if (i >= msgs.length || !document.getElementById('loading-cycle')) {
+      clearInterval(interval);
+      return;
+    }
+    el.style.opacity = 0;
+    setTimeout(() => {
+      el.textContent = msgs[i];
+      el.style.opacity = 1;
+    }, 300);
+  }, 800);
+  setTimeout(() => next(), 4200);
+}
+
+function renderResult(){
+  // Compute winner here (after email submission)
+  if (!state.user.winner) {
+    state.user.winner = Object.entries(state.scores).sort((a,b) => b[1]-a[1])[0][0];
+  }
+  const t = TYPES[state.user.winner];
+  const totalScore = Object.values(state.scores).reduce((a,b)=> a+b, 0) || 1;
+  const pct = (k) => Math.round((state.scores[k] / totalScore) * 100);
+
+  $app().innerHTML = `
+    <section class="screen active">
+      <div class="result" style="border-top-color:${t.color}">
+        <div class="type-eyebrow">Deine größte Baustelle${state.user.name ? ', ' + state.user.name : ''}</div>
+        <div class="type-hero-icon" style="color:${t.color}">${ICONS['type_' + t.short.toLowerCase()]}</div>
+        <h2 class="type-name">${t.name.replace(t.short_name, '<em>'+t.short_name+'</em>')}</h2>
+        <p class="type-tagline">„${t.tagline}"</p>
+        <p class="description">${t.description}</p>
+
+        <h3>Wo deine Blockaden sitzen</h3>
+        <div class="score-bars">
+          ${Object.entries(TYPES).map(([k, tt]) => `
+            <div class="score-row">
+              <div class="lbl">${tt.short_name}</div>
+              <div class="bar-wrap"><div class="bar" style="width:${pct(k)}%;background:${tt.color}"></div></div>
+              <div class="pct">${pct(k)}%</div>
+            </div>
+          `).join('')}
+        </div>
+
+        <h3>Deine 3 Sofortmaßnahmen</h3>
+        <ul>${t.needs.slice(0, 3).map(n => `<li>${n}</li>`).join('')}</ul>
+
+        <div class="data-disclaimer">
+          <div class="dd-icon">${ICONS.sparkle}</div>
+          <div class="dd-body">
+            <strong>Wichtig zu wissen</strong>
+            <p>Ohne <b>echte Blutwerte</b> bleibt diese Auswertung eine fundierte Vermutung. Die wirkliche Ursache deiner Beschwerden zeigt sich erst, wenn wir <b>Hormone, Vitamin D, Eisen, Schilddrüse &amp; Co.</b> tatsächlich messen. Genau das machen wir im Kurs gemeinsam.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="pitch">
+        <h3>Bereit, das <em>wirklich</em> anzugehen?</h3>
+        <p>${t.pitch}</p>
+        <p style="margin-bottom:1.6em">Im <b>„Fresh &amp; Attraktiv Ü40"</b>-Kurs gehen wir genau deine Baustelle Schritt für Schritt an – inklusive Anleitung zur Blutanalyse und persönlichem Auswertungs-Call. <b>Setz dich auf die Warteliste</b>, bevor die Plätze weg sind.</p>
+        <button class="btn" onclick="goToMasterclass()">Jetzt auf die Warteliste <span class="arrow">→</span></button>
+        <span class="small">Nächster Kurs-Start: September 2026 · Begrenzte Plätze</span>
+      </div>
+
+      <div class="footer">
+        <p>Du hast eine Frage zu deinem Ergebnis? Schreib Jasmin auf Instagram <a href="https://instagram.com/" target="_blank">@jasminschmidtke</a></p>
+      </div>
+    </section>
+  `;
+}
+
+/* ============================================================
+   ACTIONS
+   ============================================================ */
+
+function personalize(text){
+  if (!text) return '';
+  return text.replace(/\{name\}/g, state.user.name || '');
+}
+
+function next(){
+  state.step++;
+  render();
+}
+function goBack(){
+  if (state.step > 0) {
+    state.step = Math.max(0, state.step - 1);
+    render();
+  }
+}
+function submitName(e){
+  e.preventDefault();
+  state.user.name = document.getElementById('name-input').value.trim();
+  next();
+}
+function selectSingle(i){
+  const s = STEPS[state.step];
+  applyScores(s.options[i].scores);
+  state.answers.push({ step: state.step, choice: i });
+  setTimeout(next, 200);
+}
+function updateSlider(){
+  const s = STEPS[state.step];
+  const v = parseInt(document.getElementById('slider-input').value);
+  document.getElementById('slider-value').textContent = v;
+  document.getElementById('slider-label').textContent = s.labels[v] || '';
+}
+function submitSlider(){
+  const s = STEPS[state.step];
+  const v = parseInt(document.getElementById('slider-input').value);
+  applyScores(s.scoreFn(v));
+  state.answers.push({ step: state.step, value: v });
+  next();
+}
+function toggleMulti(idx){
+  const card = document.querySelector(`.multi-card[data-idx="${idx}"]`);
+  if (multiSelected.has(idx)) {
+    multiSelected.delete(idx);
+    card.classList.remove('selected');
+  } else {
+    multiSelected.add(idx);
+    card.classList.add('selected');
+  }
+  document.getElementById('multi-submit').disabled = multiSelected.size === 0;
+  document.getElementById('multi-helper').textContent =
+    multiSelected.size === 0 ? 'Wähle mindestens eine Antwort.' : `${multiSelected.size} ausgewählt`;
+}
+function submitMulti(){
+  const s = STEPS[state.step];
+  multiSelected.forEach(idx => applyScores(s.options[idx].scores));
+  state.answers.push({ step: state.step, choices: Array.from(multiSelected) });
+  next();
+}
+function applyScores(scores){
+  if (!scores) return;
+  for (const [k, v] of Object.entries(scores)) {
+    state.scores[k] = (state.scores[k] || 0) + v;
+  }
+}
+function submitEmail(e){
+  e.preventDefault();
+  state.user.email = document.getElementById('user-email').value.trim();
+
+  // Compute winner now so loading + result are ready
+  state.user.winner = Object.entries(state.scores).sort((a,b)=> b[1]-a[1])[0][0];
+
+  /* ============================================================
+     >>> INTEGRATIONS-PUNKT FÜR EUREN E-MAIL-ANBIETER <<<
+     ============================================================
+     Hier eure echte E-Mail-Integration einbauen. Beispiele:
+
+     – ConvertKit (Kit), ActiveCampaign, Brevo, Klaviyo:
+       fetch('YOUR_ENDPOINT', {
+         method:'POST',
+         headers:{'Content-Type':'application/json'},
+         body: JSON.stringify({
+           email: state.user.email,
+           first_name: state.user.name,
+           tags:[`Quiz_Typ_${state.user.winner}`]
+         })
+       });
+
+     Tags „Quiz_Typ_E", „Quiz_Typ_H", „Quiz_Typ_I", „Quiz_Typ_R"
+     ermöglichen typ-spezifische E-Mail-Sequenzen.
+     ============================================================ */
+  console.log('[Quiz] Lead:', state.user, '· Typ:', state.user.winner, '· Scores:', state.scores);
+
+  next();
+}
+function goToMasterclass(){
+  /* >>> Hier eure Salespage- oder Warteliste-URL einsetzen <<< */
+  window.location.href = '#warteliste';
+}
+
+/* ============================================================
+   ROUTER
+   ============================================================ */
+function render(){
+  const s = STEPS[state.step];
+  if (!s) return;
+  switch (s.type) {
+    case 'hero':       return renderHero();
+    case 'name':       return renderName();
+    case 'single':     return renderSingle(s);
+    case 'image':      return renderImage(s);
+    case 'slider':     return renderSlider(s);
+    case 'multi':      return renderMulti(s);
+    case 'interlude':  return renderInterlude(s);
+    case 'email':      return renderEmail();
+    case 'loading':    return renderLoading();
+    case 'result':     return renderResult();
+  }
+  window.scrollTo({ top:0, behavior:'smooth' });
+}
+render();
+</script>
+
+</body>
+</html>
