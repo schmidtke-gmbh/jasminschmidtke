@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <!-- Kreis – nur Kontur, kein Fill -->
+  <circle
+    cx="100"
+    cy="100"
+    r="82"
+    fill="none"
+    stroke="#BFA492"
+    stroke-width="11"
+  />
+  <!-- Fließende S-Welle durch die Mitte -->
+  <path
+    d="M 18,100 C 45,118 65,118 100,95 C 135,72 155,72 182,100"
+    fill="none"
+    stroke="#BFA492"
+    stroke-width="7"
+    stroke-linecap="round"
+  />
+</svg>
