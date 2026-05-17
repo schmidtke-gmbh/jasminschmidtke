@@ -2981,6 +2981,14 @@ function goToMasterclass(){
 function render(){
   const s = STEPS[state.step];
   if (!s) return;
+
+  // Sofort zum Seitenanfang springen, bevor das neue Screen gerendert wird.
+  // Wichtig für Mobile: ohne diesen Scroll-Reset ist die obere Hälfte
+  // der neuen Frage unsichtbar (User klebt am alten Scroll-Stand).
+  window.scrollTo(0, 0);
+  if (document.documentElement) document.documentElement.scrollTop = 0;
+  if (document.body) document.body.scrollTop = 0;
+
   switch (s.type) {
     case 'hero':       return renderHero();
     case 'name':       return renderName();
@@ -2993,7 +3001,6 @@ function render(){
     case 'loading':    return renderLoading();
     case 'result':     return renderResult();
   }
-  window.scrollTo({ top:0, behavior:'smooth' });
 }
 render();
 </script>
