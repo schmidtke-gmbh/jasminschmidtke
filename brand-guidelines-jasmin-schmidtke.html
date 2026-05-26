@@ -1,0 +1,1520 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Brand Guidelines · Jasmin Schmidtke</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,700&family=Poppins:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+<style>
+:root{
+  /* Core Brand */
+  --cream:         #FBF7F4;
+  --cream-footer:  #FCF7F5;
+  --cream-soft:    #F5F0EB;
+  --text-dark:     #2D2B30;
+  --text-body:     #5A5550;
+  --text-muted:    #808080;
+  --accent:        #BFA492;     /* Hauptmarken-Beige */
+  --accent-soft:   #E2D9D0;
+  --accent-pale:   #E8E0D8;
+  --accent-mid:    #D4BFB0;
+  --green-btn:     #6B8C5A;
+  --green-hover:   #7A9E68;
+  --green-soft:    #BDD3A0;
+  --green-pale:    #EEF3E8;
+  --border:        #DDD6CE;
+  --grid-line:     rgba(150, 130, 110, 0.12);
+
+  /* Video / Social Accent (aus YouTube-Stills extrahiert) */
+  --peach:         #E8B5A5;
+  --peach-deep:    #D69E8C;
+  --peach-pale:    #F5DDD2;
+
+  /* Funktional */
+  --shadow-sm: 0 1px 3px rgba(45,43,48,0.04), 0 1px 2px rgba(45,43,48,0.03);
+  --shadow-md: 0 8px 24px rgba(45,43,48,0.06), 0 2px 6px rgba(45,43,48,0.04);
+  --shadow-lg: 0 24px 60px rgba(45,43,48,0.10);
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 28px;
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Poppins',system-ui,sans-serif;
+  background:var(--cream);
+  color:var(--text-dark);
+  font-weight:400;
+  line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+
+/* Subtle grid background */
+body::before{
+  content:'';
+  position:fixed;inset:0;z-index:0;pointer-events:none;
+  background-image:
+    linear-gradient(var(--grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+  background-size:68px 68px;
+  -webkit-mask-image:radial-gradient(ellipse 70% 60% at 50% 30%, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.2) 45%, transparent 75%);
+  mask-image:radial-gradient(ellipse 70% 60% at 50% 30%, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.2) 45%, transparent 75%);
+}
+
+main, section, header, nav, footer{position:relative;z-index:1}
+
+/* ───── Layout ───── */
+.wrap{max-width:1180px;margin:0 auto;padding:0 32px}
+section{padding:96px 0;border-bottom:1px solid var(--border)}
+section:last-of-type{border-bottom:none}
+
+h1,h2,h3,h4{font-family:'Playfair Display',Georgia,serif;color:var(--text-dark);font-weight:700;line-height:1.15}
+h1{font-size:clamp(2.4rem,5vw,4.6rem);letter-spacing:-0.01em}
+h2{font-size:clamp(1.8rem,3.2vw,2.6rem);margin-bottom:8px}
+h3{font-size:1.4rem;margin-bottom:6px}
+h4{font-size:1.1rem;font-weight:500}
+p{color:var(--text-body);max-width:62ch}
+
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-family:'Poppins',sans-serif;font-size:12px;font-weight:600;
+  letter-spacing:0.16em;text-transform:uppercase;
+  color:var(--accent);
+  background:rgba(191,164,146,0.12);
+  border:1.5px solid rgba(191,164,146,0.35);
+  border-radius:50px;padding:7px 16px;
+  margin-bottom:18px;
+}
+.eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--accent)}
+
+.section-head{margin-bottom:48px;max-width:780px}
+.section-head .lead{font-size:1.05rem;margin-top:14px;color:var(--text-body)}
+
+/* ───── Navbar ───── */
+nav.top{
+  position:sticky;top:0;
+  background:rgba(251,247,244,0.85);
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--border);
+  padding:14px 32px;display:flex;align-items:center;justify-content:space-between;
+}
+.brandmark{display:flex;align-items:center;gap:10px;font-family:'Playfair Display',serif;font-weight:500;font-size:15px}
+.brandmark svg{width:28px;height:28px}
+nav.top ul{list-style:none;display:flex;gap:6px}
+nav.top a{
+  display:inline-block;padding:8px 14px;border-radius:8px;
+  font-size:13px;font-weight:500;color:var(--text-body);
+  transition:background .2s, color .2s;text-decoration:none;
+}
+nav.top a:hover{background:var(--accent-pale);color:var(--text-dark)}
+
+/* ───── Hero ───── */
+.hero{
+  padding:120px 0 100px;
+  background:
+    radial-gradient(ellipse 60% 50% at 80% 20%, rgba(191,164,146,0.18), transparent 70%),
+    radial-gradient(ellipse 50% 40% at 10% 80%, rgba(232,181,165,0.14), transparent 70%);
+}
+.hero h1{margin-bottom:24px}
+.hero h1 .italic{font-style:italic;color:var(--accent);font-weight:700}
+.hero .lead{font-size:1.15rem;color:var(--text-body);max-width:62ch}
+.hero-meta{
+  display:flex;gap:32px;margin-top:48px;flex-wrap:wrap;
+  font-size:13px;color:var(--text-muted);
+}
+.hero-meta div strong{display:block;color:var(--text-dark);font-size:14px;font-weight:600;letter-spacing:0.02em;margin-bottom:2px}
+
+/* ───── Cards ───── */
+.card{
+  background:#fff;border:1px solid var(--border);
+  border-radius:var(--radius-md);padding:28px;
+  box-shadow:var(--shadow-sm);
+}
+.grid{display:grid;gap:24px}
+.grid-2{grid-template-columns:repeat(2,1fr)}
+.grid-3{grid-template-columns:repeat(3,1fr)}
+.grid-4{grid-template-columns:repeat(4,1fr)}
+@media(max-width:880px){
+  .grid-2,.grid-3,.grid-4{grid-template-columns:1fr}
+}
+
+/* ───── Color Swatches ───── */
+.swatch{
+  border-radius:var(--radius-md);overflow:hidden;
+  border:1px solid var(--border);background:#fff;
+  box-shadow:var(--shadow-sm);
+  transition:transform .25s ease, box-shadow .25s ease;
+}
+.swatch:hover{transform:translateY(-3px);box-shadow:var(--shadow-md)}
+.swatch .chip{height:130px;width:100%;position:relative}
+.swatch .chip .pill{
+  position:absolute;left:14px;bottom:14px;
+  background:rgba(255,255,255,0.92);color:var(--text-dark);
+  font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;
+  padding:5px 9px;border-radius:6px;
+}
+.swatch.dark .chip .pill{background:rgba(45,43,48,0.85);color:#fff}
+.swatch-body{padding:16px 18px}
+.swatch-body .name{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;margin-bottom:2px}
+.swatch-body .role{font-size:12px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.08em}
+.swatch-body .vals{display:flex;flex-direction:column;gap:3px;margin-top:10px;font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--text-body)}
+
+/* ───── Typography Specimen ───── */
+.specimen{
+  background:#fff;border:1px solid var(--border);
+  border-radius:var(--radius-md);padding:40px;box-shadow:var(--shadow-sm);
+}
+.specimen + .specimen{margin-top:24px}
+.specimen .alpha{font-size:96px;line-height:1;letter-spacing:-0.02em}
+.specimen .alpha.serif{font-family:'Playfair Display',serif;font-weight:700}
+.specimen .alpha.sans{font-family:'Poppins',sans-serif;font-weight:600}
+.specimen .alpha.italic{font-style:italic;color:var(--accent)}
+.specimen .meta{display:flex;gap:24px;margin-top:24px;flex-wrap:wrap;font-size:13px;color:var(--text-muted)}
+.specimen .meta strong{display:block;color:var(--text-dark);font-weight:600;font-size:13px}
+.specimen .weights{display:flex;flex-direction:column;gap:6px;margin-top:24px}
+.specimen .weights span{font-size:22px;letter-spacing:-0.005em}
+.specimen .weights span small{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--text-muted);margin-left:14px;letter-spacing:0}
+
+.scale{
+  display:grid;grid-template-columns:120px 1fr 140px;gap:18px;align-items:baseline;
+  padding:14px 0;border-bottom:1px dashed var(--border);
+}
+.scale:last-child{border-bottom:none}
+.scale .tag{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--text-muted)}
+.scale .demo{font-family:'Playfair Display',serif;font-weight:700;color:var(--text-dark);line-height:1.1}
+.scale.sans .demo{font-family:'Poppins',sans-serif;font-weight:500}
+.scale .specs{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--text-muted);text-align:right}
+
+/* ───── Logo Block ───── */
+.logo-block{
+  display:flex;align-items:center;justify-content:center;
+  background:var(--cream-soft);border:1px solid var(--border);
+  border-radius:var(--radius-md);padding:56px;min-height:260px;
+}
+.logo-block.dark{background:var(--text-dark)}
+.logo-block.dark .brandmark-lg{color:#fff}
+.logo-block.accent{background:var(--accent)}
+.logo-block.accent .brandmark-lg{color:#fff}
+.brandmark-lg{display:flex;align-items:center;gap:14px;font-family:'Playfair Display',serif;font-weight:500;font-size:24px;color:var(--text-dark);line-height:1.15}
+.brandmark-lg svg{width:54px;height:54px}
+.brandmark-lg .lines span{display:block}
+
+/* ───── Buttons ───── */
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:14px 28px;border-radius:257px;
+  font-family:'Poppins',sans-serif;font-size:14px;font-weight:600;
+  letter-spacing:0.01em;border:none;cursor:pointer;
+  transition:transform .2s ease, background .2s ease, box-shadow .2s ease;
+}
+.btn-primary{background:var(--green-btn);color:#fff}
+.btn-primary:hover{background:var(--green-hover);transform:translateY(-1px);box-shadow:var(--shadow-md)}
+.btn-secondary{background:var(--text-dark);color:#fff}
+.btn-secondary:hover{background:#1a1a1a}
+.btn-ghost{background:transparent;border:1.5px solid var(--accent);color:var(--accent)}
+.btn-ghost:hover{background:rgba(191,164,146,0.1)}
+
+/* ───── Code ───── */
+pre, code{font-family:'JetBrains Mono',monospace;font-size:12.5px}
+.code-block{
+  background:#2D2B30;color:#F5F0EB;
+  border-radius:var(--radius-sm);padding:18px 20px;
+  overflow-x:auto;line-height:1.55;
+}
+.code-block .key{color:#D4BFB0}
+.code-block .val{color:#BDD3A0}
+.code-block .com{color:#888}
+
+/* ───── Voice & Tone ───── */
+.tone-table{
+  background:#fff;border:1px solid var(--border);border-radius:var(--radius-md);
+  overflow:hidden;box-shadow:var(--shadow-sm);
+}
+.tone-row{display:grid;grid-template-columns:160px 1fr 1fr;border-bottom:1px solid var(--border)}
+.tone-row:last-child{border-bottom:none}
+.tone-row > div{padding:20px 22px}
+.tone-row .label{background:var(--cream-soft);font-weight:600;font-family:'Playfair Display',serif;font-size:1.05rem;display:flex;align-items:center}
+.tone-row .yes{border-left:3px solid var(--green-btn)}
+.tone-row .no{border-left:3px solid #c06040;color:var(--text-body)}
+.tone-row .yes::before, .tone-row .no::before{
+  display:block;font-family:'Poppins',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:6px;
+}
+.tone-row .yes::before{content:'Wir sind';color:var(--green-btn)}
+.tone-row .no::before{content:'Wir sind nicht';color:#c06040}
+@media(max-width:760px){
+  .tone-row{grid-template-columns:1fr}
+  .tone-row .label{background:var(--accent-pale)}
+}
+
+/* ───── Video Mockup ───── */
+.video-frame{
+  position:relative;width:100%;aspect-ratio:16/9;
+  background:#FBF7F4;
+  border-radius:var(--radius-md);overflow:hidden;
+  border:1px solid var(--border);
+  box-shadow:var(--shadow-lg);
+}
+/* sanfter Studio-Hintergrund (Vorhang/Wand) */
+.video-frame .backdrop{
+  position:absolute;inset:0;
+  background:
+    linear-gradient(180deg, #F9F1EA 0%, #F1E5DB 100%);
+}
+.video-frame .backdrop::before{
+  /* dezente vertikale Vorhang-Linien */
+  content:'';position:absolute;inset:0;
+  background:repeating-linear-gradient(90deg, transparent 0 60px, rgba(45,43,48,0.025) 60px 61px);
+  opacity:0.7;
+}
+/* Pflanze links – sanftes Sage-Grün */
+.video-frame .plant-deco{
+  position:absolute;left:0;top:0;width:22%;height:100%;
+  pointer-events:none;
+}
+/* Jasmin-Silhouette rechts (klare SVG-Person) */
+.video-frame .jasmin{
+  position:absolute;right:0;bottom:0;width:54%;height:100%;
+  display:flex;align-items:flex-end;justify-content:center;
+  pointer-events:none;
+}
+.video-frame .jasmin svg{width:100%;height:100%;display:block}
+/* Annotation-Pfeile & Labels */
+.video-frame .annotation{
+  position:absolute;font-family:'Poppins',sans-serif;
+  font-size:11px;font-weight:600;letter-spacing:0.04em;
+  color:#fff;background:#8a4a3a;
+  padding:5px 11px;border-radius:50px;
+  white-space:nowrap;z-index:8;
+  box-shadow:0 4px 12px rgba(45,43,48,0.18);
+}
+.video-frame .annotation.person{background:#7a5c47}
+.video-frame .annotation.logo{background:var(--text-dark)}
+.video-frame .annotation::before{
+  content:'';position:absolute;
+  width:8px;height:8px;background:inherit;
+  transform:rotate(45deg);
+}
+.video-frame .annotation.pointer-down::before{bottom:-3px;left:50%;margin-left:-4px}
+.video-frame .annotation.pointer-up::before{top:-3px;left:50%;margin-left:-4px}
+.video-frame .annotation.pointer-left::before{left:-3px;top:50%;margin-top:-4px}
+.video-frame .annotation.pointer-right::before{right:-3px;top:50%;margin-top:-4px}
+
+.video-frame .v-title{
+  position:absolute;left:8%;top:24%;
+  display:inline-block;
+  background:var(--peach);
+  color:var(--text-dark);
+  font-family:'Playfair Display',serif;font-style:italic;font-weight:700;
+  font-size:clamp(20px,2.6vw,38px);
+  padding:6px 22px;border-radius:14px;
+  box-shadow:0 6px 18px rgba(45,43,48,0.08);z-index:3;
+}
+.video-frame .v-sub{
+  position:absolute;left:8%;top:calc(24% + 56px);
+  font-family:'Poppins',sans-serif;font-weight:500;
+  font-size:clamp(16px,2vw,28px);color:var(--text-dark);z-index:3;
+}
+.video-frame .v-list{
+  position:absolute;left:8%;top:24%;display:flex;flex-direction:column;gap:18px;z-index:3;
+}
+.video-frame .v-list .item{
+  display:flex;align-items:center;gap:14px;
+  font-family:'Poppins',sans-serif;font-weight:500;
+  font-size:clamp(14px,1.6vw,22px);color:var(--text-dark);
+}
+.video-frame .v-list .play{
+  width:30px;height:30px;border-radius:8px;background:var(--peach);
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+  box-shadow:0 3px 8px rgba(214,158,140,0.45);
+}
+.video-frame .v-list .play::after{
+  content:'';width:0;height:0;
+  border-left:9px solid #fff;border-top:6px solid transparent;border-bottom:6px solid transparent;margin-left:3px;
+}
+.video-frame .watermark{
+  position:absolute;right:18px;bottom:18px;
+  width:34px;height:34px;border-radius:50%;
+  background:rgba(45,43,48,0.55);
+  display:flex;align-items:center;justify-content:center;color:#fff;
+  font-family:'Playfair Display',serif;font-size:16px;font-style:italic;z-index:4;
+  border:1.5px solid rgba(255,255,255,0.4);
+}
+
+.frame-label{
+  display:flex;align-items:center;justify-content:space-between;margin-top:14px;
+  font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--text-muted);
+}
+.frame-label .tag{
+  background:var(--accent-pale);color:var(--text-dark);padding:3px 9px;border-radius:6px;font-weight:500;
+}
+
+/* ───── Layout zones ───── */
+.zones{
+  position:relative;width:100%;aspect-ratio:16/9;
+  background:#FBF7F4;border:1px solid var(--border);border-radius:var(--radius-md);overflow:hidden;
+}
+.zones .zone-jasmin-illu{
+  position:absolute;right:0;bottom:0;width:54%;height:100%;opacity:0.55;
+}
+.zones .zone-jasmin-illu svg{width:100%;height:100%;display:block}
+.zones .zone{
+  position:absolute;border-radius:10px;
+  font-family:'JetBrains Mono',monospace;font-size:11px;text-align:left;
+  padding:14px 16px;line-height:1.35;z-index:2;
+}
+.zones .zone strong{
+  display:block;font-family:'Playfair Display',serif;font-size:18px;font-weight:700;margin-bottom:6px;
+}
+.zones .text-zone{
+  left:6%;top:18%;width:38%;height:64%;
+  background:rgba(232,181,165,0.22);border:2px dashed var(--peach);color:#8a4a3a;
+  display:flex;flex-direction:column;justify-content:center;
+}
+.zones .person-zone{
+  right:3%;top:5%;width:50%;height:92%;
+  background:rgba(191,164,146,0.16);border:2px dashed var(--accent);color:#7a5c47;
+  display:flex;flex-direction:column;justify-content:flex-start;
+}
+.zones .logo-zone{
+  right:18px;bottom:18px;width:80px;height:80px;
+  background:rgba(45,43,48,0.10);border:2px dashed var(--text-dark);color:var(--text-dark);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;
+  font-size:10px;
+}
+.zones .axis-label{
+  position:absolute;font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--text-muted);
+  letter-spacing:0.06em;
+}
+.zones .axis-label.top{top:8px;left:50%;transform:translateX(-50%)}
+.zones .axis-label.bottom{bottom:6px;left:50%;transform:translateX(-50%)}
+
+/* ───── Components Sample ───── */
+.badge-demo{
+  display:inline-flex;align-items:center;gap:7px;
+  background:rgba(191,164,146,0.12);
+  border:1.5px solid rgba(191,164,146,0.35);
+  border-radius:50px;padding:8px 18px;
+  font-family:'Poppins',sans-serif;font-size:13px;font-weight:500;color:var(--accent);
+}
+.highlight-pill{
+  display:inline-block;background:var(--peach);color:var(--text-dark);
+  font-family:'Playfair Display',serif;font-style:italic;font-weight:700;
+  padding:4px 18px;border-radius:12px;font-size:1.4rem;
+}
+.highlight-pill.light{background:var(--peach-pale)}
+.highlight-pill.deep{background:var(--peach-deep);color:#fff}
+
+.bullet-demo{display:flex;flex-direction:column;gap:14px;margin-top:8px}
+.bullet-demo .row{display:flex;align-items:center;gap:12px;font-family:'Poppins',sans-serif;font-weight:500;font-size:17px}
+.bullet-demo .play{width:26px;height:26px;border-radius:7px;background:var(--peach);display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 8px rgba(214,158,140,0.4)}
+.bullet-demo .play::after{content:'';width:0;height:0;border-left:8px solid #fff;border-top:5px solid transparent;border-bottom:5px solid transparent;margin-left:3px}
+
+/* Animation specs */
+.anim-card{
+  background:#fff;border:1px solid var(--border);border-radius:var(--radius-md);
+  padding:24px;box-shadow:var(--shadow-sm);
+}
+.anim-card .preview{
+  height:120px;background:var(--cream-soft);border-radius:var(--radius-sm);
+  display:flex;align-items:center;justify-content:center;margin-bottom:16px;
+  position:relative;overflow:hidden;
+}
+.anim-card .preview .pill-anim{
+  background:var(--peach);color:var(--text-dark);
+  font-family:'Playfair Display',serif;font-style:italic;font-weight:700;
+  padding:6px 20px;border-radius:12px;font-size:20px;
+  animation:popIn 2s ease-in-out infinite alternate;
+}
+.anim-card .preview .text-anim{
+  font-family:'Poppins',sans-serif;font-weight:500;font-size:18px;color:var(--text-dark);
+  animation:fadeUp 2s ease-in-out infinite alternate;
+}
+.anim-card .preview .play-anim{
+  display:flex;align-items:center;gap:10px;font-family:'Poppins',sans-serif;font-weight:500;font-size:17px;
+  animation:slideIn 2s ease-in-out infinite alternate;
+}
+.anim-card .preview .play-anim .icon{width:24px;height:24px;border-radius:6px;background:var(--peach);display:flex;align-items:center;justify-content:center}
+.anim-card .preview .play-anim .icon::after{content:'';border-left:7px solid #fff;border-top:5px solid transparent;border-bottom:5px solid transparent;margin-left:2px}
+@keyframes popIn{
+  0%{transform:scale(0.6);opacity:0}
+  40%{transform:scale(1.05);opacity:1}
+  100%{transform:scale(1);opacity:1}
+}
+@keyframes fadeUp{
+  0%{transform:translateY(20px);opacity:0}
+  100%{transform:translateY(0);opacity:1}
+}
+@keyframes slideIn{
+  0%{transform:translateX(-30px);opacity:0}
+  100%{transform:translateX(0);opacity:1}
+}
+
+/* Do / Don't */
+.dodont{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+@media(max-width:760px){.dodont{grid-template-columns:1fr}}
+.dodont .item{padding:24px;border-radius:var(--radius-md);border:1px solid var(--border);background:#fff}
+.dodont .item.do{border-top:4px solid var(--green-btn)}
+.dodont .item.dont{border-top:4px solid #c06040}
+.dodont .item h4{margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.dodont .item.do h4::before{content:'';width:18px;height:18px;border-radius:50%;background:var(--green-btn);background-image:linear-gradient(135deg, var(--green-btn) 50%, var(--green-hover));position:relative}
+.dodont .item.dont h4::before{content:'';width:18px;height:18px;border-radius:50%;background:#c06040}
+
+/* Footer */
+footer{padding:60px 0 80px;text-align:center;color:var(--text-muted);font-size:13px;border-top:1px solid var(--border)}
+footer .mark{font-family:'Playfair Display',serif;font-size:18px;color:var(--text-dark);margin-bottom:8px;font-style:italic}
+
+.note{
+  background:var(--green-pale);border-left:4px solid var(--green-btn);
+  padding:18px 22px;border-radius:8px;margin-top:24px;color:#3d5234;font-size:14px;
+}
+.note strong{color:#2c3a25}
+
+/* Section IDs offset for sticky nav */
+section[id]{scroll-margin-top:90px}
+
+/* ───── Palette compare (Web vs Video) ───── */
+.palette-block{
+  background:#fff;border:1px solid var(--border);border-radius:var(--radius-md);
+  padding:32px;box-shadow:var(--shadow-sm);position:relative;overflow:hidden;
+}
+.palette-block.web{border-top:5px solid var(--accent)}
+.palette-block.video{border-top:5px solid var(--peach)}
+.palette-block .palette-header{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:24px;flex-wrap:wrap;gap:14px}
+.palette-block .palette-header h3{margin-bottom:4px;font-size:1.6rem}
+.palette-block .palette-header .scope{
+  font-family:'Poppins';font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;
+  padding:6px 12px;border-radius:50px;
+}
+.palette-block.web .palette-header .scope{background:rgba(191,164,146,0.18);color:#7a5c47}
+.palette-block.video .palette-header .scope{background:rgba(232,181,165,0.25);color:#a05c4b}
+.palette-row{display:grid;grid-template-columns:repeat(6,1fr);gap:10px}
+@media(max-width:760px){.palette-row{grid-template-columns:repeat(3,1fr)}}
+.color-tile{
+  border-radius:10px;overflow:hidden;border:1px solid var(--border);
+  background:#fff;box-shadow:var(--shadow-sm);
+}
+.color-tile .swatch-fill{height:78px;width:100%;position:relative}
+.color-tile .swatch-fill .role-tag{
+  position:absolute;top:6px;right:6px;
+  font-family:'Poppins';font-size:9px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;
+  background:rgba(255,255,255,0.92);color:var(--text-dark);
+  padding:2px 6px;border-radius:4px;
+}
+.color-tile.dark .swatch-fill .role-tag{background:rgba(45,43,48,0.85);color:#fff}
+.color-tile .swatch-meta{padding:8px 10px}
+.color-tile .swatch-meta .nm{font-family:'Playfair Display',serif;font-weight:700;font-size:13px;color:var(--text-dark);line-height:1.1}
+.color-tile .swatch-meta .hx{font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--text-muted);margin-top:2px}
+.color-tile.forbidden{position:relative;opacity:0.7}
+.color-tile.forbidden::after{
+  content:'';position:absolute;inset:0;border-radius:10px;pointer-events:none;
+  background:
+    linear-gradient(135deg, transparent calc(50% - 1px), #c06040 calc(50% - 1px), #c06040 calc(50% + 1px), transparent calc(50% + 1px));
+}
+.color-tile.forbidden .nope{
+  position:absolute;top:6px;left:6px;z-index:2;
+  background:#c06040;color:#fff;font-family:'Poppins';font-size:9px;font-weight:700;
+  letter-spacing:0.08em;text-transform:uppercase;padding:3px 7px;border-radius:4px;
+}
+.palette-note{
+  margin-top:18px;padding:14px 18px;border-radius:8px;font-size:13px;
+}
+.palette-note.web{background:rgba(191,164,146,0.12);color:#5d4737;border-left:3px solid var(--accent)}
+.palette-note.video{background:rgba(232,181,165,0.18);color:#7a3e2c;border-left:3px solid var(--peach)}
+.palette-note.warn{background:#fbe6df;color:#8a3010;border-left:3px solid #c06040}
+
+/* Annotation arrows */
+.callout-line{
+  position:absolute;background:transparent;
+  border-top:1.5px dashed rgba(45,43,48,0.35);
+  z-index:5;
+}
+.callout-dot{
+  position:absolute;width:10px;height:10px;border-radius:50%;
+  background:#fff;border:2px solid var(--text-dark);z-index:6;
+}
+
+/* Side-by-side Web vs Video Vergleich */
+.compare{
+  display:grid;grid-template-columns:1fr 1fr;gap:0;
+  border:1px solid var(--border);border-radius:var(--radius-md);overflow:hidden;
+  box-shadow:var(--shadow-md);margin-bottom:32px;
+}
+@media(max-width:760px){.compare{grid-template-columns:1fr}}
+.compare-side{padding:32px;position:relative}
+.compare-side.web{background:linear-gradient(160deg, #FBF7F4 0%, #F0E6D8 100%)}
+.compare-side.video{background:linear-gradient(160deg, #FBF7F4 0%, #F5DDD2 100%);border-left:1px solid var(--border)}
+@media(max-width:760px){.compare-side.video{border-left:none;border-top:1px solid var(--border)}}
+.compare-side .label{
+  display:inline-block;font-family:'Poppins';font-size:11px;font-weight:700;
+  letter-spacing:0.18em;text-transform:uppercase;padding:5px 12px;border-radius:50px;
+  margin-bottom:12px;
+}
+.compare-side.web .label{background:#6B8C5A;color:#fff}
+.compare-side.video .label{background:#E8B5A5;color:var(--text-dark)}
+.compare-side h4{font-family:'Playfair Display';font-size:1.5rem;margin-bottom:14px}
+.compare-side .where{font-family:'Poppins';font-size:12px;color:var(--text-body);margin-bottom:18px;font-weight:500}
+.compare-side .colors{display:flex;gap:6px;margin-bottom:18px;flex-wrap:wrap}
+.compare-side .colors span{
+  width:36px;height:36px;border-radius:8px;display:block;
+  border:1.5px solid rgba(255,255,255,0.7);box-shadow:0 2px 6px rgba(45,43,48,0.08);
+  position:relative;
+}
+.compare-side .colors span::after{
+  content:attr(data-name);position:absolute;left:50%;bottom:-22px;transform:translateX(-50%);
+  font-family:'JetBrains Mono';font-size:9px;color:var(--text-muted);white-space:nowrap;
+}
+.compare-side .keypoints{list-style:none;font-size:13px;color:var(--text-body);margin-top:32px;display:flex;flex-direction:column;gap:6px}
+.compare-side .keypoints li::before{content:'✓ ';color:#5a8045;font-weight:700;margin-right:4px}
+.compare-side .keypoints li.no::before{content:'✗ ';color:#c06040}
+.compare-side .keypoints li.no{color:#8a3010}
+
+/* Annotation pointer system in mockups */
+.pointer-arrow{
+  position:absolute;z-index:7;pointer-events:none;
+}
+.pointer-arrow svg{display:block;overflow:visible}
+
+/* ───── Real Photo Mockup ───── */
+.photo-mockup{
+  position:relative;width:100%;aspect-ratio:16/9;
+  border-radius:var(--radius-md);overflow:hidden;
+  border:1px solid var(--border);
+  box-shadow:var(--shadow-lg);
+  background:#FBF7F4;
+}
+.photo-mockup img{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;
+}
+/* Zone-Overlay über dem Foto */
+.photo-mockup .zone-overlay{
+  position:absolute;border-radius:8px;z-index:3;pointer-events:none;
+}
+.photo-mockup .zone-overlay.text{
+  left:4%;top:14%;width:44%;height:70%;
+  border:2px dashed #D69E8C;
+  background:rgba(232,181,165,0.06);
+}
+.photo-mockup .zone-overlay.person{
+  right:2%;top:3%;width:50%;height:94%;
+  border:2px dashed #BFA492;
+  background:rgba(191,164,146,0.04);
+}
+.photo-mockup .zone-overlay.logo{
+  right:14px;bottom:14px;width:56px;height:56px;
+  border:2px dashed var(--text-dark);
+  background:rgba(45,43,48,0.04);border-radius:50%;
+}
+/* Mass-Labels */
+.photo-mockup .measure{
+  position:absolute;z-index:5;
+  font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:500;
+  color:#fff;padding:3px 8px;border-radius:4px;
+  letter-spacing:0.04em;
+}
+.photo-mockup .measure.text{background:#8a4a3a}
+.photo-mockup .measure.person{background:#7a5c47}
+.photo-mockup .measure.logo{background:var(--text-dark)}
+/* Toggle Annotation-Layer */
+.photo-mockup.clean .zone-overlay,
+.photo-mockup.clean .measure{display:none}
+
+.mockup-caption{
+  display:grid;grid-template-columns:1fr auto;gap:18px;align-items:flex-start;
+  margin-top:14px;padding:14px 18px;
+  background:#fff;border:1px solid var(--border);border-radius:10px;
+}
+.mockup-caption .info{font-size:13px;color:var(--text-body);line-height:1.6}
+.mockup-caption .info strong{color:var(--text-dark);display:block;font-family:'Playfair Display';font-size:15px;margin-bottom:3px}
+.mockup-caption .specs{
+  font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--text-muted);
+  text-align:right;line-height:1.7;min-width:180px;
+}
+.mockup-caption .specs span{display:block}
+.mockup-caption .specs span strong{color:var(--text-dark)}
+
+.mockup-row{display:grid;gap:36px}
+@media(min-width:881px){.mockup-row{grid-template-columns:1fr 1fr}}
+
+.toggle-row{
+  display:flex;align-items:center;gap:10px;margin-bottom:18px;
+  font-family:'Poppins';font-size:13px;color:var(--text-body);
+}
+.toggle-btn{
+  display:inline-flex;align-items:center;gap:6px;
+  padding:6px 12px;border-radius:50px;border:1.5px solid var(--border);
+  background:#fff;cursor:pointer;font-family:'Poppins';font-size:12px;font-weight:500;
+  color:var(--text-body);transition:all .2s;
+}
+.toggle-btn:hover{background:var(--cream-soft);border-color:var(--accent)}
+.toggle-btn.active{background:var(--text-dark);color:#fff;border-color:var(--text-dark)}
+</style>
+</head>
+<body>
+
+<!-- ───────────── NAV ───────────── -->
+<nav class="top">
+  <div class="brandmark">
+    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <circle cx="100" cy="100" r="92" fill="none" stroke="#BFA492" stroke-width="6"/>
+      <path d="M70 60 Q100 90 130 60 Q140 100 130 140 Q100 110 70 140 Q60 100 70 60 Z" fill="#BFA492"/>
+    </svg>
+    <span>Jasmin Schmidtke · Brand Guide</span>
+  </div>
+  <ul>
+    <li><a href="#essence">Essenz</a></li>
+    <li><a href="#logo">Logo</a></li>
+    <li><a href="#colors">Farben</a></li>
+    <li><a href="#typography">Typo</a></li>
+    <li><a href="#components">UI</a></li>
+    <li><a href="#voice">Voice</a></li>
+    <li><a href="#video">Video</a></li>
+  </ul>
+</nav>
+
+<!-- ───────────── HERO ───────────── -->
+<header class="hero">
+  <div class="wrap">
+    <span class="eyebrow"><span class="dot"></span> Brand Guidelines · Version 1.0 · Mai 2026</span>
+    <h1>Schönheit von <span class="italic">innen.</span><br/>Sichtbar nach außen.</h1>
+    <p class="lead">Die visuelle und tonale Identität von Jasmin Schmidtke – Heilpraktikerin & Coach für Frauen ab 40. Dieses Dokument legt fest, wie die Marke in Web, Social Media und vor allem in YouTube-Videos aussehen, klingen und sich anfühlen soll.</p>
+    <div class="hero-meta">
+      <div><strong>Marke</strong>Jasmin Schmidtke</div>
+      <div><strong>Domain</strong>jasminschmidtke.de</div>
+      <div><strong>Zielgruppe</strong>Frauen Ü40</div>
+      <div><strong>Themen</strong>Haut · Hormone · Energie</div>
+    </div>
+  </div>
+</header>
+
+<!-- ───────────── ESSENCE ───────────── -->
+<section id="essence">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow"><span class="dot"></span> 01 · Markenessenz</span>
+      <h2>Wofür wir stehen</h2>
+      <p class="lead">Jasmin steht für ganzheitliche, fundierte und warmherzige Begleitung – die Schnittstelle aus Heilpraxis und persönlichem Coaching. Premium ohne Distanz, fundiert ohne Belehrung, schön ohne Filter.</p>
+    </div>
+
+    <div class="grid grid-3">
+      <div class="card">
+        <span class="eyebrow" style="margin-bottom:14px"><span class="dot"></span>Mission</span>
+        <h3>Aufblühen statt altern</h3>
+        <p>Wir helfen Frauen ab 40, ihren Körper, ihre Hormone und ihre Energie zu verstehen – und ihre beste Phase aktiv zu gestalten.</p>
+      </div>
+      <div class="card">
+        <span class="eyebrow" style="margin-bottom:14px"><span class="dot"></span>Persönlichkeit</span>
+        <h3>Warm, klar, professionell</h3>
+        <p>Wie eine gut informierte Freundin mit Heilpraktikerin-Hintergrund: nahbar, aber kompetent. Sanft, aber bestimmt.</p>
+      </div>
+      <div class="card">
+        <span class="eyebrow" style="margin-bottom:14px"><span class="dot"></span>Versprechen</span>
+        <h3>Verständlich. Sofort umsetzbar.</h3>
+        <p>Keine Wellness-Floskeln, keine Wundermittel. Praxiserprobte Insider-Tipps zu Haut, Hormonen und Energie.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────── LOGO ───────────── -->
+<section id="logo">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow"><span class="dot"></span> 02 · Logo & Markenzeichen</span>
+      <h2>Das Logo</h2>
+      <p class="lead">Der Wortmark "Jasmin Schmidtke" wird zweizeilig in Playfair Display Medium gesetzt und mit dem floralen Markenzeichen kombiniert. Der Schutzraum entspricht der Höhe des Buchstabens "J".</p>
+    </div>
+
+    <div class="grid grid-3">
+      <div class="logo-block">
+        <div class="brandmark-lg">
+          <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <circle cx="100" cy="100" r="92" fill="none" stroke="#BFA492" stroke-width="6"/>
+            <path d="M70 60 Q100 90 130 60 Q140 100 130 140 Q100 110 70 140 Q60 100 70 60 Z" fill="#BFA492"/>
+          </svg>
+          <div class="lines"><span>Jasmin</span><span>Schmidtke</span></div>
+        </div>
+      </div>
+      <div class="logo-block dark">
+        <div class="brandmark-lg">
+          <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <circle cx="100" cy="100" r="92" fill="none" stroke="#FBF7F4" stroke-width="6"/>
+            <path d="M70 60 Q100 90 130 60 Q140 100 130 140 Q100 110 70 140 Q60 100 70 60 Z" fill="#FBF7F4"/>
+          </svg>
+          <div class="lines"><span>Jasmin</span><span>Schmidtke</span></div>
+        </div>
+      </div>
+      <div class="logo-block accent">
+        <div class="brandmark-lg">
+          <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <circle cx="100" cy="100" r="92" fill="none" stroke="#FBF7F4" stroke-width="6"/>
+            <path d="M70 60 Q100 90 130 60 Q140 100 130 140 Q100 110 70 140 Q60 100 70 60 Z" fill="#FBF7F4"/>
+          </svg>
+          <div class="lines"><span>Jasmin</span><span>Schmidtke</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid grid-2" style="margin-top:24px">
+      <div class="card">
+        <h4 style="margin-bottom:8px">Mindestgrößen</h4>
+        <p style="margin-bottom:14px">Damit das Markenzeichen klar erkennbar bleibt:</p>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:8px;font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--text-body)">
+          <li>Web / Digital · <strong style="color:var(--text-dark)">min. 24 px</strong> Symbolhöhe</li>
+          <li>Print · <strong style="color:var(--text-dark)">min. 10 mm</strong> Symbolhöhe</li>
+          <li>Favicon · <strong style="color:var(--text-dark)">16 × 16 px</strong></li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4 style="margin-bottom:8px">Verwendung</h4>
+        <p>Auf cremefarbenen Hintergründen die Standardvariante (Akzent-Beige). Auf dunklen Bildern oder Foto-Overlays die Outline-Variante in Cremeweiß. Niemals verzerren, drehen oder mit Schlagschatten versehen.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────── COLORS ───────────── -->
+<section id="colors">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow"><span class="dot"></span> 03 · Farbsystem</span>
+      <h2>Zwei Paletten, eine Marke</h2>
+      <p class="lead">Die Marke nutzt <strong>zwei klar getrennte Farbsysteme</strong>: die <strong>Web-Palette</strong> mit Salbeigrün als Call-to-Action für jasminschmidtke.de und die <strong>Video-Palette</strong> mit Peach als Highlight-Farbe für YouTube. Beide teilen Cream, Anthrazit und Taupe als gemeinsame Basis – Grün bleibt aber bewusst draußen aus den Videos.</p>
+    </div>
+
+    <!-- DIREKTER VERGLEICH -->
+    <div class="compare">
+      <div class="compare-side web">
+        <span class="label">Web</span>
+        <h4>Salbei + Taupe</h4>
+        <div class="where">jasminschmidtke.de · Newsletter · Print</div>
+        <div class="colors">
+          <span style="background:#FBF7F4" data-name="Cream"></span>
+          <span style="background:#2D2B30" data-name="Anthrazit"></span>
+          <span style="background:#BFA492" data-name="Taupe"></span>
+          <span style="background:#6B8C5A" data-name="Sage CTA"></span>
+        </div>
+        <ul class="keypoints">
+          <li>Cremefarbene Fläche, Taupe als Akzent</li>
+          <li>Salbeigrün <strong>nur</strong> für Buttons &amp; CTAs</li>
+          <li>Italics in Taupe (z. B. "ab 40")</li>
+          <li>Sage-Hover für interaktive Elemente</li>
+        </ul>
+      </div>
+      <div class="compare-side video">
+        <span class="label">Video</span>
+        <h4>Peach + Taupe</h4>
+        <div class="where">YouTube · Reels · Shorts · Thumbnails</div>
+        <div class="colors">
+          <span style="background:#FBF7F4" data-name="Cream"></span>
+          <span style="background:#2D2B30" data-name="Anthrazit"></span>
+          <span style="background:#BFA492" data-name="Taupe"></span>
+          <span style="background:#E8B5A5" data-name="Peach"></span>
+        </div>
+        <ul class="keypoints">
+          <li>Peach ersetzt Salbei als Highlight-Farbe</li>
+          <li>Pills, Play-Icons &amp; Boxen immer in Peach</li>
+          <li class="no"><strong>Kein</strong> Salbeigrün als Akzent</li>
+          <li class="no"><strong>Kein</strong> reines Schwarz · immer Anthrazit</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- WEB PALETTE -->
+    <div class="palette-block web" style="margin-bottom:32px">
+      <div class="palette-header">
+        <div>
+          <span class="eyebrow"><span class="dot"></span> Web · jasminschmidtke.de · Newsletter · Print</span>
+          <h3>Web-Palette</h3>
+        </div>
+        <span class="scope">Online &amp; Print</span>
+      </div>
+
+      <div style="font-size:13px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-muted);margin-bottom:10px">Basis · Cream &amp; Text</div>
+      <div class="palette-row" style="margin-bottom:18px">
+        <div class="color-tile"><div class="swatch-fill" style="background:#FBF7F4"><span class="role-tag">BG</span></div><div class="swatch-meta"><div class="nm">Cream</div><div class="hx">#FBF7F4</div></div></div>
+        <div class="color-tile"><div class="swatch-fill" style="background:#FCF7F5"><span class="role-tag">Footer</span></div><div class="swatch-meta"><div class="nm">Cream Warm</div><div class="hx">#FCF7F5</div></div></div>
+        <div class="color-tile"><div class="swatch-fill" style="background:#F5F0EB"><span class="role-tag">Card</span></div><div class="swatch-meta"><div class="nm">Cream Soft</div><div class="hx">#F5F0EB</div></div></div>
+        <div class="color-tile dark"><div class="swatch-fill" style="background:#2D2B30"><span class="role-tag">Text</span></div><div class="swatch-meta"><div class="nm">Anthrazit</div><div class="hx">#2D2B30</div></div></div>
+        <div class="color-tile"><div class="swatch-fill" style="background:#5A5550"><span class="role-tag" style="background:rgba(255,255,255,0.85)">Body</span></div><div class="swatch-meta"><div class="nm">Body Brown</div><div class="hx">#5A5550</div></div></div>
+        <div class="color-tile"><div class="swatch-fill" style="background:#808080"><span class="role-tag" style="background:rgba(255,255,255,0.9)">Meta</span></div><div class="swatch-meta"><div class="nm">Mute Grey</div><div class="hx">#808080</div></div></div>
+      </div>
+
+      <div style="font-size:13px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-muted);margin-bottom:10px">Akzent · Taupe (Italic-Highlights, Badges)</div>
+      <div class="palette-row" style="margin-bottom:18px">
+        <div class="color-tile"><div class="swatch-fill" style="background:#BFA492"><span class="role-tag">Accent</span></div><div class="swatch-meta"><div class="nm">Taupe</div><div class="hx">#BFA492</div></div></div>
+        <div class="color-tile"><div class="swatch-fill" style="background:#D4BFB0"><span class="role-tag">Border</span></div><div class="swatch-meta"><div class="nm">Taupe Mid</div><div class="hx">#D4BFB0</div></div></div>
+        <div class="color-tile"><div class="swatch-fill" style="background:#E2D9D0"><span class="role-tag">Soft</span></div><div class="swatch-meta"><div class="nm">Taupe Soft</div><div class="hx">#E2D9D0</div></div></div>
+        <div class="color-tile"><div class="swatch-fill" style="background:#E8E0D8"><span class="role-tag">Pale</span></div><div class="swatch-meta"><div class="nm">Taupe Pale</div><div class="hx">#E8E0D8</div></div></div>
+        <div class="color-tile"><div class="swatch-fill" style="background:#DDD6CE"><span class="role-tag">Line</span></div><div class="swatch-meta"><div class="nm">Border</div><div class="hx">#DDD6CE</div></div></div>
+        <div class="color-tile" style="background:transparent;border-style:dashed;opacity:0.4"><div class="swatch-fill" style="background:transparent"></div><div class="swatch-meta"><div class="nm" style="color:var(--text-muted)">—</div><div class="hx">reserve</div></div></div>
+      </div>
+
+      <div style="font-size:13px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-muted);margin-bottom:10px">Call-to-Action · Sage Green <span style="color:#c06040;text-transform:none;letter-spacing:0">— nur Web!</span></div>
+      <div class="palette-row">
+        <div class="color-tile"><div class="swatch-fill" style="background:#6B8C5A"><span class="role-tag" style="background:rgba(255,255,255,0.92)">Button</span></div><div class="swatch-meta"><div class="nm">Sage Button</div><div class="hx">#6B8C5A</div></div></div>
+        <div class="color-tile"><div class="swatch-fill" style="background:#7A9E68"><span class="role-tag" style="background:rgba(255,255,255,0.92)">Hover</span></div><div class="swatch-meta"><div class="nm">Sage Hover</div><div class="hx">#7A9E68</div></div></div>
+        <div class="color-tile"><div class="swatch-fill" style="background:#BDD3A0"><span class="role-tag">Tag</span></div><div class="swatch-meta"><div class="nm">Sage Soft</div><div class="hx">#BDD3A0</div></div></div>
+        <div class="color-tile"><div class="swatch-fill" style="background:#EEF3E8"><span class="role-tag">Note</span></div><div class="swatch-meta"><div class="nm">Sage Mist</div><div class="hx">#EEF3E8</div></div></div>
+        <div class="color-tile" style="background:transparent;border-style:dashed;opacity:0.4"><div class="swatch-fill" style="background:transparent"></div><div class="swatch-meta"><div class="nm" style="color:var(--text-muted)">—</div><div class="hx">reserve</div></div></div>
+        <div class="color-tile" style="background:transparent;border-style:dashed;opacity:0.4"><div class="swatch-fill" style="background:transparent"></div><div class="swatch-meta"><div class="nm" style="color:var(--text-muted)">—</div><div class="hx">reserve</div></div></div>
+      </div>
+
+      <div class="palette-note web">
+        <strong>So einsetzen:</strong> Cream als 80–90% Flächenfarbe · Anthrazit für Text · Taupe als kursive Akzentfarbe für Worte wie <em>"für Frauen ab 40"</em> · Sage-Grün ausschließlich für CTAs ("Tipps erhalten →").
+      </div>
+    </div>
+
+    <!-- VIDEO PALETTE -->
+    <div class="palette-block video">
+      <div class="palette-header">
+        <div>
+          <span class="eyebrow" style="background:rgba(232,181,165,0.18);border-color:rgba(232,181,165,0.5);color:#a05c4b"><span class="dot" style="background:#D69E8C"></span> YouTube · Reels · Shorts · Thumbnails</span>
+          <h3>Video-Palette</h3>
+        </div>
+        <span class="scope">Bewegtbild &amp; Social</span>
+      </div>
+
+      <div style="font-size:13px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-muted);margin-bottom:10px">Basis · Cream &amp; Text (gleich wie Web)</div>
+      <div class="palette-row" style="margin-bottom:18px">
+        <div class="color-tile"><div class="swatch-fill" style="background:#FBF7F4"><span class="role-tag">BG</span></div><div class="swatch-meta"><div class="nm">Cream</div><div class="hx">#FBF7F4</div></div></div>
+        <div class="color-tile"><div class="swatch-fill" style="background:#F9F1EA"><span class="role-tag">Studio</span></div><div class="swatch-meta"><div class="nm">Studio Warm</div><div class="hx">#F9F1EA</div></div></div>
+        <div class="color-tile dark"><div class="swatch-fill" style="background:#2D2B30"><span class="role-tag">Text</span></div><div class="swatch-meta"><div class="nm">Anthrazit</div><div class="hx">#2D2B30</div></div></div>
+        <div class="color-tile"><div class="swatch-fill" style="background:#BFA492"><span class="role-tag">Wardrobe</span></div><div class="swatch-meta"><div class="nm">Taupe</div><div class="hx">#BFA492</div></div></div>
+        <div class="color-tile"><div class="swatch-fill" style="background:#E8E0D8"><span class="role-tag">Wand</span></div><div class="swatch-meta"><div class="nm">Taupe Pale</div><div class="hx">#E8E0D8</div></div></div>
+        <div class="color-tile" style="background:transparent;border-style:dashed;opacity:0.4"><div class="swatch-fill" style="background:transparent"></div><div class="swatch-meta"><div class="nm" style="color:var(--text-muted)">—</div><div class="hx">reserve</div></div></div>
+      </div>
+
+      <div style="font-size:13px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-muted);margin-bottom:10px">Highlight · Peach <span style="color:#a05c4b;text-transform:none;letter-spacing:0">— Marken-Signatur im Video</span></div>
+      <div class="palette-row" style="margin-bottom:18px">
+        <div class="color-tile"><div class="swatch-fill" style="background:#E8B5A5"><span class="role-tag">Pill</span></div><div class="swatch-meta"><div class="nm">Peach Soft</div><div class="hx">#E8B5A5</div></div></div>
+        <div class="color-tile"><div class="swatch-fill" style="background:#F5DDD2"><span class="role-tag">Box 2</span></div><div class="swatch-meta"><div class="nm">Peach Pale</div><div class="hx">#F5DDD2</div></div></div>
+        <div class="color-tile"><div class="swatch-fill" style="background:#D69E8C"><span class="role-tag" style="background:rgba(255,255,255,0.92)">Shadow</span></div><div class="swatch-meta"><div class="nm">Peach Deep</div><div class="hx">#D69E8C</div></div></div>
+        <div class="color-tile" style="background:transparent;border-style:dashed;opacity:0.4"><div class="swatch-fill" style="background:transparent"></div><div class="swatch-meta"><div class="nm" style="color:var(--text-muted)">—</div><div class="hx">reserve</div></div></div>
+        <div class="color-tile" style="background:transparent;border-style:dashed;opacity:0.4"><div class="swatch-fill" style="background:transparent"></div><div class="swatch-meta"><div class="nm" style="color:var(--text-muted)">—</div><div class="hx">reserve</div></div></div>
+        <div class="color-tile" style="background:transparent;border-style:dashed;opacity:0.4"><div class="swatch-fill" style="background:transparent"></div><div class="swatch-meta"><div class="nm" style="color:var(--text-muted)">—</div><div class="hx">reserve</div></div></div>
+      </div>
+
+      <div style="font-size:13px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:#c06040;margin-bottom:10px">Verboten im Video</div>
+      <div class="palette-row">
+        <div class="color-tile forbidden">
+          <span class="nope">Kein Video</span>
+          <div class="swatch-fill" style="background:#6B8C5A"></div>
+          <div class="swatch-meta"><div class="nm">Sage Button</div><div class="hx">#6B8C5A</div></div>
+        </div>
+        <div class="color-tile forbidden">
+          <span class="nope">Kein Video</span>
+          <div class="swatch-fill" style="background:#7A9E68"></div>
+          <div class="swatch-meta"><div class="nm">Sage Hover</div><div class="hx">#7A9E68</div></div>
+        </div>
+        <div class="color-tile forbidden">
+          <span class="nope">Kein Video</span>
+          <div class="swatch-fill" style="background:#BDD3A0"></div>
+          <div class="swatch-meta"><div class="nm">Sage Soft</div><div class="hx">#BDD3A0</div></div>
+        </div>
+        <div class="color-tile forbidden">
+          <span class="nope">Kein Video</span>
+          <div class="swatch-fill" style="background:#EEF3E8"></div>
+          <div class="swatch-meta"><div class="nm">Sage Mist</div><div class="hx">#EEF3E8</div></div>
+        </div>
+        <div class="color-tile forbidden">
+          <span class="nope">Tabu</span>
+          <div class="swatch-fill" style="background:#000000"></div>
+          <div class="swatch-meta"><div class="nm">Pure Black</div><div class="hx">#000000</div></div>
+        </div>
+        <div class="color-tile" style="background:transparent;border-style:dashed;opacity:0.4"><div class="swatch-fill" style="background:transparent"></div><div class="swatch-meta"><div class="nm" style="color:var(--text-muted)">—</div><div class="hx">reserve</div></div></div>
+      </div>
+
+      <div class="palette-note warn">
+        <strong>Wichtig:</strong> Salbeigrün ist die CTA-Farbe der Website, gehört aber <strong>nicht ins Video</strong>. Grün taucht in YouTube-Frames höchstens als unscharfe Pflanzen-Deko im Hintergrund auf – nie als Box, Text oder Akzent. Auch reines Schwarz ist in Overlays tabu – immer Anthrazit <code>#2D2B30</code> nutzen.
+      </div>
+    </div>
+
+    <h3 style="margin:48px 0 18px;font-size:1.2rem">Code-Snippet · CSS Variablen (getrennt)</h3>
+    <div class="grid grid-2">
+      <pre class="code-block"><span class="com">/* WEB · jasminschmidtke.de */</span>
+:root {
+  <span class="key">--cream</span>:        <span class="val">#FBF7F4</span>;
+  <span class="key">--cream-soft</span>:   <span class="val">#F5F0EB</span>;
+  <span class="key">--text-dark</span>:    <span class="val">#2D2B30</span>;
+  <span class="key">--text-body</span>:    <span class="val">#5A5550</span>;
+  <span class="key">--accent</span>:       <span class="val">#BFA492</span>;
+  <span class="key">--cta-green</span>:    <span class="val">#6B8C5A</span>;
+  <span class="key">--cta-hover</span>:    <span class="val">#7A9E68</span>;
+  <span class="key">--border</span>:       <span class="val">#DDD6CE</span>;
+}</pre>
+      <pre class="code-block"><span class="com">/* VIDEO · YouTube · Reels */</span>
+:root {
+  <span class="key">--cream</span>:        <span class="val">#FBF7F4</span>;
+  <span class="key">--studio</span>:       <span class="val">#F9F1EA</span>;
+  <span class="key">--text-dark</span>:    <span class="val">#2D2B30</span>;
+  <span class="key">--accent</span>:       <span class="val">#BFA492</span>;
+  <span class="key">--peach</span>:        <span class="val">#E8B5A5</span>;
+  <span class="key">--peach-pale</span>:   <span class="val">#F5DDD2</span>;
+  <span class="key">--peach-deep</span>:   <span class="val">#D69E8C</span>;
+  <span class="com">/* KEIN Grün, KEIN reines Rot/Schwarz */</span>
+}</pre>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────── TYPOGRAPHY ───────────── -->
+<section id="typography">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow"><span class="dot"></span> 04 · Typografie</span>
+      <h2>Schriftarten</h2>
+      <p class="lead">Zwei Google-Fonts tragen die gesamte Markenkommunikation. <strong>Playfair Display</strong> bringt redaktionellen Premium-Charakter in Headlines. <strong>Poppins</strong> sorgt für klare, freundliche Lesbarkeit in Texten, Buttons und Listen.</p>
+    </div>
+
+    <div class="specimen">
+      <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:24px;flex-wrap:wrap;gap:14px">
+        <div>
+          <div style="font-family:'Poppins';font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent)">Headline-Schrift</div>
+          <div style="font-family:'Playfair Display',serif;font-size:34px;font-weight:700">Playfair Display</div>
+        </div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--text-muted)">
+          fonts.google.com/specimen/Playfair+Display
+        </div>
+      </div>
+      <div class="alpha serif">Aa <span class="italic">Bb</span> Cc</div>
+      <div class="weights">
+        <span style="font-family:'Playfair Display';font-weight:500">Aufblühen statt altern. <small>Medium · 500</small></span>
+        <span style="font-family:'Playfair Display';font-weight:700">Schönheit von innen. <small>Bold · 700</small></span>
+        <span style="font-family:'Playfair Display';font-weight:900">Sichtbar nach außen. <small>Black · 900</small></span>
+        <span style="font-family:'Playfair Display';font-style:italic;font-weight:700;color:var(--accent)">für Frauen ab 40 <small>Bold Italic · 700</small></span>
+      </div>
+      <div class="meta">
+        <div><strong>Verwendung</strong>H1–H4, Hervorhebungen, Logo, Highlight-Pills im Video</div>
+        <div><strong>Tracking</strong>0 bis –1%</div>
+        <div><strong>Line-Height</strong>1.1 – 1.2</div>
+      </div>
+    </div>
+
+    <div class="specimen">
+      <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:24px;flex-wrap:wrap;gap:14px">
+        <div>
+          <div style="font-family:'Poppins';font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent)">Body-Schrift</div>
+          <div style="font-family:'Poppins',sans-serif;font-size:34px;font-weight:600">Poppins</div>
+        </div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--text-muted)">
+          fonts.google.com/specimen/Poppins
+        </div>
+      </div>
+      <div class="alpha sans">Aa Bb Cc</div>
+      <div class="weights">
+        <span style="font-family:'Poppins';font-weight:300">Verständlich erklärt, sofort umsetzbar. <small>Light · 300</small></span>
+        <span style="font-family:'Poppins';font-weight:400">Direkt aus der Praxis – mehr brauchst du nicht. <small>Regular · 400</small></span>
+        <span style="font-family:'Poppins';font-weight:500">Dein wöchentlicher Impuls für Haut, Hormone, Energie. <small>Medium · 500</small></span>
+        <span style="font-family:'Poppins';font-weight:600">Tipps erhalten → <small>SemiBold · 600</small></span>
+      </div>
+      <div class="meta">
+        <div><strong>Verwendung</strong>Body, Buttons, Listen, Navigation, Captions, Bullets im Video</div>
+        <div><strong>Tracking</strong>0 bis +0.5%</div>
+        <div><strong>Line-Height</strong>1.5 – 1.6 (Body) / 1.2 (UI)</div>
+      </div>
+    </div>
+
+    <h3 style="margin:48px 0 18px;font-size:1.2rem">Typo-Skala</h3>
+    <div class="card" style="padding:8px 28px">
+      <div class="scale">
+        <div class="tag">H1 · Display</div>
+        <div class="demo" style="font-size:64px">Aufblühen statt altern</div>
+        <div class="specs">64 / 64 · –1%</div>
+      </div>
+      <div class="scale">
+        <div class="tag">H2 · Section</div>
+        <div class="demo" style="font-size:42px">Schönheit von innen</div>
+        <div class="specs">42 / 48 · 0%</div>
+      </div>
+      <div class="scale">
+        <div class="tag">H3 · Subhead</div>
+        <div class="demo" style="font-size:28px">Dein wöchentlicher Impuls</div>
+        <div class="specs">28 / 34 · 0%</div>
+      </div>
+      <div class="scale">
+        <div class="tag">H4 · Card</div>
+        <div class="demo" style="font-size:20px;font-weight:500">Starkes Mindset</div>
+        <div class="specs">20 / 26 · 0%</div>
+      </div>
+      <div class="scale sans">
+        <div class="tag">Lead · Intro</div>
+        <div class="demo" style="font-size:20px;color:var(--text-body)">Die wichtigsten Insider-Tipps zu Haut, Hormonen und Energie.</div>
+        <div class="specs">20 / 30 · Poppins 400</div>
+      </div>
+      <div class="scale sans">
+        <div class="tag">Body</div>
+        <div class="demo" style="font-size:16px;color:var(--text-body)">Verständlich erklärt, sofort umsetzbar, direkt aus der Praxis.</div>
+        <div class="specs">16 / 26 · Poppins 400</div>
+      </div>
+      <div class="scale sans">
+        <div class="tag">Caption</div>
+        <div class="demo" style="font-size:13px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.12em">Der einzige Newsletter, den du brauchst</div>
+        <div class="specs">13 / 18 · Poppins 500 · +12%</div>
+      </div>
+    </div>
+
+    <div class="note">
+      <strong>Goldene Regel:</strong> Playfair Display nie als Fließtext, Poppins nie für emotionale Highlights. Italic ist Playfair-Domain – sie trägt die Marken-Wärme.
+    </div>
+  </div>
+</section>
+
+<!-- ───────────── COMPONENTS ───────────── -->
+<section id="components">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow"><span class="dot"></span> 05 · UI-Komponenten</span>
+      <h2>Bausteine</h2>
+      <p class="lead">Wiederkehrende Elemente, die das Look-&amp;-Feel der Marke prägen – online wie im Video.</p>
+    </div>
+
+    <div class="grid grid-2">
+      <div class="card">
+        <h4 style="margin-bottom:14px">Badge / Eyebrow</h4>
+        <span class="badge-demo">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4-6.2-4.5-6.2 4.5 2.4-7.4L2 9.4h7.6z"/></svg>
+          Der einzige Newsletter, den du brauchst
+        </span>
+        <pre class="code-block" style="margin-top:18px">background: rgba(191,164,146,0.12);
+border: 1.5px solid rgba(191,164,146,0.35);
+border-radius: 50px; padding: 8px 18px;
+color: <span class="val">#BFA492</span>;</pre>
+      </div>
+
+      <div class="card">
+        <h4 style="margin-bottom:14px">Buttons</h4>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:18px">
+          <button class="btn btn-primary">Tipps erhalten <span>→</span></button>
+          <button class="btn btn-secondary">Mehr erfahren</button>
+          <button class="btn btn-ghost">Sekundär</button>
+        </div>
+        <pre class="code-block">.btn-primary {
+  background: <span class="val">#6B8C5A</span>;
+  color: <span class="val">#fff</span>;
+  border-radius: 257px; padding: 14px 28px;
+  font-weight: 600;
+}</pre>
+      </div>
+
+      <div class="card">
+        <h4 style="margin-bottom:14px">Highlight-Pill (Video-typisch)</h4>
+        <p style="margin-bottom:14px">Die zentrale Bildmarke für hervorgehobene Begriffe – sowohl in Videos als auch in Hero-Bereichen.</p>
+        <div style="display:flex;flex-direction:column;gap:14px;align-items:flex-start">
+          <span class="highlight-pill">Deine Lust (Libido)</span>
+          <span class="highlight-pill light">Ganzheitlich erklärt</span>
+          <span class="highlight-pill deep">Premium-Variante</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <h4 style="margin-bottom:14px">Bullet-Liste mit Play-Icon</h4>
+        <p style="margin-bottom:6px">Marken-Signatur für Aufzählungen in Videos und auf Landing Pages.</p>
+        <div class="bullet-demo">
+          <div class="row"><span class="play"></span>Keine Lust mehr auf Sex</div>
+          <div class="row"><span class="play"></span>Oder mehr Lust auf Sex</div>
+          <div class="row"><span class="play"></span>Weniger erregt / gar nicht</div>
+          <div class="row"><span class="play"></span>Vaginale Trockenheit</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h4 style="margin-bottom:14px">Card / Tipp-Block</h4>
+        <div style="background:var(--cream-soft);border:1px solid var(--border);border-radius:12px;padding:20px">
+          <div style="font-family:'Poppins';font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);margin-bottom:8px">Tipp der Woche</div>
+          <h4 style="margin-bottom:6px">Morgenlicht verändert alles</h4>
+          <p style="font-size:14px">5 Minuten Tageslicht in den ersten Stunden – Hormone, Stimmung, Haut. Mehr braucht es nicht.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <h4 style="margin-bottom:14px">Grid-Background</h4>
+        <p style="margin-bottom:14px">Subtile, fadende Linien-Textur (68 × 68 px) im Hero – nie über die ganze Seite.</p>
+        <div style="height:140px;border-radius:8px;border:1px solid var(--border);background-image:linear-gradient(rgba(150,130,110,0.18) 1px, transparent 1px), linear-gradient(90deg, rgba(150,130,110,0.18) 1px, transparent 1px);background-size:34px 34px;background-color:var(--cream)"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────── VOICE ───────────── -->
+<section id="voice">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow"><span class="dot"></span> 06 · Voice &amp; Tone</span>
+      <h2>So klingt Jasmin</h2>
+      <p class="lead">Du-Ansprache, kurze Sätze, klare Bilder. Wissenschaft trifft Wohnzimmer. Wir sind nie belehrend, nie esoterisch, nie reißerisch.</p>
+    </div>
+
+    <div class="tone-table">
+      <div class="tone-row">
+        <div class="label">Klarheit</div>
+        <div class="yes">"Morgendliches Tageslicht reguliert deinen Hormonhaushalt – 5 Minuten reichen."</div>
+        <div class="no">"Es gibt da diese ganz besondere Energie am Morgen, die das ganze System öffnen kann …"</div>
+      </div>
+      <div class="tone-row">
+        <div class="label">Wärme</div>
+        <div class="yes">"Schön, dass du dabei bist."</div>
+        <div class="no">"Sehr geehrte Damen, in unserem heutigen Newsletter …"</div>
+      </div>
+      <div class="tone-row">
+        <div class="label">Kompetenz</div>
+        <div class="yes">"Als Heilpraktikerin sehe ich in meiner Praxis jeden Tag …"</div>
+        <div class="no">"Wundermittel · Anti-Aging-Geheimnis · 1 Trick"</div>
+      </div>
+      <div class="tone-row">
+        <div class="label">Ansprache</div>
+        <div class="yes">"Du" – immer. Augenhöhe, Frau zu Frau.</div>
+        <div class="no">"Sie" oder neutrale Distanz. Keine "Damen ab einem gewissen Alter".</div>
+      </div>
+      <div class="tone-row">
+        <div class="label">Versprechen</div>
+        <div class="yes">"Verständlich erklärt, sofort umsetzbar."</div>
+        <div class="no">"In 7 Tagen 10 Jahre jünger."</div>
+      </div>
+    </div>
+
+    <h3 style="margin:48px 0 18px;font-size:1.2rem">Marken-Phrasen</h3>
+    <div class="grid grid-3">
+      <div class="card"><strong style="font-family:'Playfair Display';font-style:italic;color:var(--accent);font-size:1.2rem">Aufblühen statt altern.</strong><p style="margin-top:6px;font-size:14px">Claim für Hero, Reels, Visitenkarten.</p></div>
+      <div class="card"><strong style="font-family:'Playfair Display';font-style:italic;color:var(--accent);font-size:1.2rem">Schönheit von innen.<br/>Sichtbar nach außen.</strong><p style="margin-top:6px;font-size:14px">Tagline für Footer, About, Bio.</p></div>
+      <div class="card"><strong style="font-family:'Playfair Display';font-style:italic;color:var(--accent);font-size:1.2rem">Haut · Hormone · Energie.</strong><p style="margin-top:6px;font-size:14px">Themen-Triade für Listen und Hashtags.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────── VIDEO ───────────── -->
+<section id="video">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow"><span class="dot"></span> 07 · Video &amp; YouTube</span>
+      <h2>So sieht Jasmin auf Kamera aus</h2>
+      <p class="lead">Die wichtigste Markenbühne: YouTube-Videos und Reels. Die Optik bleibt cremig-warm, der Akzent verschiebt sich von Taupe (Web) zu Peach (Video), damit Texte vor Kamera sichtbar bleiben.</p>
+    </div>
+
+    <h3 style="margin-bottom:18px;font-size:1.2rem">Layout-Prinzip · Talking-Head-Frame</h3>
+    <p style="margin-bottom:24px">Jasmin sitzt immer <strong>rechts</strong> im Bild (von Zuschauer aus, ca. Mitte bis rechter Bildrand). Texte und Overlays kommen <strong>links</strong> – in der lesefreien Zone, die nicht durch Schulter oder Haare verdeckt wird. Das Logo-Wasserzeichen sitzt permanent unten rechts.</p>
+
+    <div class="zones">
+      <span class="axis-label top">↑ 16:9 · 1920 × 1080 px · Safe Area 88%</span>
+
+      <!-- Jasmin als sichtbare Silhouette (rechts) -->
+      <div class="zone-jasmin-illu" style="opacity:0.85">
+        <svg viewBox="0 0 540 540" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMax meet" aria-hidden="true">
+          <path d="M30 540 L30 430 Q30 350 130 305 Q200 280 245 268 L270 258 Q300 248 330 245 Q400 240 460 275 Q510 315 515 395 L515 540 Z" fill="#D9C3B0" stroke="#B9A38F" stroke-width="1.5"/>
+          <path d="M268 258 Q272 232 274 215 L322 215 Q324 232 328 258 Z" fill="#C4A593"/>
+          <ellipse cx="297" cy="172" rx="62" ry="74" fill="#D9B49E"/>
+          <ellipse cx="275" cy="170" rx="3" ry="2" fill="#3A2E2D"/>
+          <ellipse cx="319" cy="170" rx="3" ry="2" fill="#3A2E2D"/>
+          <path d="M285 198 Q297 204 309 198" stroke="#B07C68" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          <path d="M234 145 Q224 110 248 80 Q272 60 300 58 Q345 56 370 82 Q388 108 380 145 Q392 200 386 270 Q376 340 350 390 L308 408 Q318 340 314 280 Q312 230 300 210 Q294 210 286 226 Q276 260 274 300 Q274 340 258 388 Q238 348 232 290 Q226 230 234 145 Z" fill="#2B2220"/>
+          <path d="M236 160 Q220 220 218 290 Q224 360 248 410 L268 410 Q254 360 252 310 Q252 250 264 200 Z" fill="#2B2220" opacity="0.85"/>
+        </svg>
+      </div>
+
+      <div class="zone text-zone">
+        <strong style="color:#8a4a3a">① Text-Zone</strong>
+        Headline · Pills · Bullets · Highlights<br/>
+        <span style="font-size:10px;color:var(--text-muted);margin-top:6px;display:block">x: 6–46% &middot; y: 18–82%</span>
+      </div>
+      <div class="zone person-zone" style="background:rgba(191,164,146,0.08);border-color:rgba(191,164,146,0.7)">
+        <strong style="color:#7a5c47">② Jasmin · Brustbild</strong>
+        Mittig bis rechter Rand,<br/>Kopf auf ~30% Höhe<br/>
+        <span style="font-size:10px;color:var(--text-muted);margin-top:6px;display:block">x: 50–96% &middot; volle Höhe</span>
+      </div>
+      <div class="zone logo-zone">
+        <strong style="font-size:11px;margin-bottom:2px">③ Logo</strong>
+        30 × 30 px<br/>unten rechts
+      </div>
+
+      <span class="axis-label bottom">Safe Area · 88% · Title-safe (kein Text außerhalb)</span>
+    </div>
+    <div class="frame-label">
+      <span>16:9 · 1920 × 1080 · Safe area 88%</span>
+      <span class="tag">Layout · Talking-Head</span>
+    </div>
+
+    <h3 style="margin:56px 0 18px;font-size:1.2rem">Beispiel-Frames · fotorealistisch</h3>
+    <p style="margin-bottom:24px">Zwei finale Referenz-Frames für die Videoproduktion – exakt so soll der Look aussehen. Jasmin sitzt rechts im Bild, Augen auf Kamerahöhe, Text-Overlay links auf der Cream-Fläche. Mit dem Schalter unten kannst du die <strong>Maßangaben (Zonen)</strong> ein- und ausblenden.</p>
+
+    <div class="toggle-row" id="zone-toggle-row">
+      <span>Maße &amp; Zonen:</span>
+      <button class="toggle-btn active" onclick="document.querySelectorAll('.photo-mockup').forEach(m=>m.classList.remove('clean'));document.querySelectorAll('#zone-toggle-row .toggle-btn').forEach(b=>b.classList.remove('active'));this.classList.add('active');">Anzeigen</button>
+      <button class="toggle-btn" onclick="document.querySelectorAll('.photo-mockup').forEach(m=>m.classList.add('clean'));document.querySelectorAll('#zone-toggle-row .toggle-btn').forEach(b=>b.classList.remove('active'));this.classList.add('active');">Ausblenden</button>
+    </div>
+
+    <div class="mockup-row">
+      <!-- FRAME 1 -->
+      <div>
+        <div class="photo-mockup">
+          <img src="mockup-frame-1-pill.png" alt="Mockup Frame 1: Highlight-Pill mit Subline – Jasmin rechts im Bild, Text-Overlay links" />
+
+          <!-- Zone-Overlays -->
+          <div class="zone-overlay text"></div>
+          <div class="zone-overlay person"></div>
+          <div class="zone-overlay logo"></div>
+
+          <!-- Maß-Labels -->
+          <span class="measure text" style="left:4%;top:calc(14% - 22px)">① Text-Zone · x 4–48% · y 14–84%</span>
+          <span class="measure person" style="right:2%;top:calc(3% - 22px)">② Jasmin · x 50–98% · volle Höhe</span>
+          <span class="measure logo" style="right:14px;bottom:78px">③ Logo · 56×56 px</span>
+        </div>
+        <div class="mockup-caption">
+          <div class="info">
+            <strong>Frame 1 · Pill-Intro</strong>
+            Highlight-Pill mit Subline. Wird zu Video-Beginn (0–4 s) eingeblendet, danach kommt der Body-Text oder die Bullet-Liste. Pop-In-Animation auf der Pill.
+          </div>
+          <div class="specs">
+            <span><strong>Pill</strong></span>
+            <span>Playfair Italic 700</span>
+            <span>72 px · Peach #E8B5A5</span>
+            <span><strong>Subline</strong></span>
+            <span>Poppins 500 · 56 px</span>
+            <span>Anthrazit #2D2B30</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- FRAME 2 -->
+      <div>
+        <div class="photo-mockup">
+          <img src="mockup-frame-2-bullets.png" alt="Mockup Frame 2: Bullet-Liste mit Play-Icons – Jasmin rechts im Bild, vier Punkte links" />
+
+          <div class="zone-overlay text"></div>
+          <div class="zone-overlay person"></div>
+          <div class="zone-overlay logo"></div>
+
+          <span class="measure text" style="left:4%;top:calc(14% - 22px)">① Text-Zone · x 4–48% · y 14–84%</span>
+          <span class="measure person" style="right:2%;top:calc(3% - 22px)">② Jasmin · x 50–98% · volle Höhe</span>
+          <span class="measure logo" style="right:14px;bottom:78px">③ Logo · 56×56 px</span>
+        </div>
+        <div class="mockup-caption">
+          <div class="info">
+            <strong>Frame 2 · Bullet-Liste</strong>
+            Vier Bullet-Items mit Peach-Play-Icons. Jedes Item erscheint im 120-ms-Abstand per Slide-In von links. Komplette Liste bleibt mindestens 4 s sichtbar.
+          </div>
+          <div class="specs">
+            <span><strong>Bullet-Text</strong></span>
+            <span>Poppins 500 · 38 px</span>
+            <span>Anthrazit #2D2B30</span>
+            <span><strong>Play-Icon</strong></span>
+            <span>52×52 px · Radius 12</span>
+            <span>Peach #E8B5A5</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="palette-note video" style="margin-top:24px">
+      <strong>Maß-Referenz für die Produktion:</strong> Alle Prozent-Angaben beziehen sich auf das 1920 × 1080-Frame. Die Text-Zone (①) ist die <em>Safe Zone für Overlays</em> – nichts Wichtiges außerhalb 4–48% horizontal. Die Person-Zone (②) ist die <em>No-Cover-Zone</em> – kein Text darüber, da sonst das Gesicht verdeckt wird. Logo (③) sitzt fix unten rechts mit 14 px Außenabstand.
+    </div>
+
+    <div class="palette-note warn" style="margin-top:14px">
+      <strong>Kein Grün im Frame:</strong> Beachte, dass in den Referenz-Mockups bewusst keine grüne Pflanze, kein Salbei-Akzent und kein farbiges Element auftaucht. Wer das Video stumm sieht, soll <strong>Peach und Cream</strong> wahrnehmen – sonst nichts.
+    </div>
+
+    <h3 style="margin:56px 0 18px;font-size:1.2rem">Typografie im Video</h3>
+    <div class="grid grid-2">
+      <div class="card">
+        <h4 style="margin-bottom:10px">Highlight-Pill</h4>
+        <p style="margin-bottom:14px">Zentrale Schlagworte oder Themen-Anker. <strong>Playfair Display Italic Bold</strong> auf <code>#E8B5A5</code>. Box-Padding 6 × 22 px, Border-Radius 14 px, leichter Shadow.</p>
+        <span class="highlight-pill">Deine Lust (Libido)</span>
+        <pre class="code-block" style="margin-top:18px">font-family: 'Playfair Display';
+font-style: italic; font-weight: 700;
+font-size: 64–96 px (HD);
+background: <span class="val">#E8B5A5</span>;
+padding: 6px 22px;
+border-radius: 14px;</pre>
+      </div>
+      <div class="card">
+        <h4 style="margin-bottom:10px">Subline / Fließsatz</h4>
+        <p style="margin-bottom:14px">Erläuterung unter der Pill. <strong>Poppins Medium 500</strong>, ohne Box, direkt auf Cream-Background. Anthrazit (<code>#2D2B30</code>) – nie reines Schwarz.</p>
+        <span style="font-family:'Poppins';font-weight:500;font-size:24px;color:var(--text-dark)">hat sich verändert</span>
+        <pre class="code-block" style="margin-top:18px">font-family: 'Poppins';
+font-weight: 500;
+font-size: 44–60 px (HD);
+color: <span class="val">#2D2B30</span>;
+line-height: 1.15;</pre>
+      </div>
+      <div class="card">
+        <h4 style="margin-bottom:10px">Bullet-Item</h4>
+        <p style="margin-bottom:14px"><strong>Poppins 500</strong>, davor ein Play-Icon im Peach-Quadrat mit weißem Dreieck. Vertikaler Abstand ≥ 24 px, Icon 30 × 30 px, Radius 8 px.</p>
+        <div class="bullet-demo"><div class="row"><span class="play"></span>Keine Lust mehr auf Sex</div></div>
+        <pre class="code-block" style="margin-top:18px">.play {
+  width: 30px; height: 30px;
+  border-radius: 8px;
+  background: <span class="val">#E8B5A5</span>;
+  /* weißes ▶ zentriert */
+}</pre>
+      </div>
+      <div class="card">
+        <h4 style="margin-bottom:10px">Logo-Wasserzeichen</h4>
+        <p style="margin-bottom:14px">Permanent unten rechts, ~30 × 30 px. Outline-Logo in <code>#FBF7F4</code> auf halbtransparentem Anthrazit-Kreis (<code>rgba(45,43,48,0.55)</code>).</p>
+        <div style="width:60px;height:60px;border-radius:50%;background:rgba(45,43,48,0.6);display:flex;align-items:center;justify-content:center;color:#fff;font-family:'Playfair Display';font-size:24px;font-style:italic">J</div>
+      </div>
+    </div>
+
+    <h3 style="margin:56px 0 18px;font-size:1.2rem">Animationen · Einblendungen</h3>
+    <p style="margin-bottom:24px">Bewegungen sind <strong>sanft, kurz und niemals verspielt</strong>. Maximal eine Animation pro Element. Standard-Easing: <code>cubic-bezier(0.25, 0.1, 0.25, 1)</code>.</p>
+
+    <div class="grid grid-3">
+      <div class="anim-card">
+        <div class="preview"><span class="pill-anim">Deine Lust</span></div>
+        <h4 style="margin-bottom:6px">Pop-In</h4>
+        <p style="font-size:13px">Highlight-Pills erscheinen mit Scale 0.6 → 1.05 → 1.<br/><strong>Dauer:</strong> 400 ms · <strong>Easing:</strong> easeOutBack</p>
+      </div>
+      <div class="anim-card">
+        <div class="preview"><span class="text-anim">hat sich verändert</span></div>
+        <h4 style="margin-bottom:6px">Fade-Up</h4>
+        <p style="font-size:13px">Sublines &amp; Body-Texte: Y +20 px → 0, Opacity 0 → 1.<br/><strong>Dauer:</strong> 500 ms · <strong>Delay:</strong> +120 ms nach Pill</p>
+      </div>
+      <div class="anim-card">
+        <div class="preview"><span class="play-anim"><span class="icon"></span>Keine Lust mehr</span></div>
+        <h4 style="margin-bottom:6px">Slide-In Staggered</h4>
+        <p style="font-size:13px">Bullets von links X −30 px → 0, gestaffelt im Abstand <strong>120 ms</strong>. Erst Icon-Pop, dann Text-Fade.</p>
+      </div>
+    </div>
+
+    <h3 style="margin:56px 0 18px;font-size:1.2rem">Timing &amp; Lesbarkeit</h3>
+    <div class="card">
+      <div style="display:grid;grid-template-columns:160px 1fr;gap:18px 24px;font-size:14px">
+        <div style="font-family:'JetBrains Mono';font-size:12px;color:var(--text-muted)">Mindestdauer Pill</div>
+        <div><strong>2.5 s</strong> sichtbar – Lesezeit bei Mobil-Betrachtung sicherstellen</div>
+        <div style="font-family:'JetBrains Mono';font-size:12px;color:var(--text-muted)">Mindestdauer Bullet</div>
+        <div><strong>1.5 s</strong> pro Eintrag, danach Liste komplett ≥ 4 s halten</div>
+        <div style="font-family:'JetBrains Mono';font-size:12px;color:var(--text-muted)">Maximalzeichen Pill</div>
+        <div><strong>≤ 24 Zeichen</strong> – sonst zwei Zeilen oder kürzen</div>
+        <div style="font-family:'JetBrains Mono';font-size:12px;color:var(--text-muted)">Outro-Frame</div>
+        <div>Letzte 3 s: Logo + Call-to-Action (z. B. "Newsletter abonnieren" + URL <strong>jasminschmidtke.de</strong>)</div>
+        <div style="font-family:'JetBrains Mono';font-size:12px;color:var(--text-muted)">Kontrast-Check</div>
+        <div>Pill-Text auf Peach: <strong>#2D2B30</strong> · WCAG-Kontrast 7,1 :1 ✓</div>
+      </div>
+    </div>
+
+    <h3 style="margin:56px 0 18px;font-size:1.2rem">Thumbnail-Regeln</h3>
+    <div class="grid grid-2">
+      <div class="card">
+        <h4 style="margin-bottom:10px">Aufbau</h4>
+        <p>Gesicht von Jasmin links oder rechts (50 % der Fläche), kurzer Hook-Text gegenüberliegend in <strong>Playfair Display 700</strong>, max. <strong>5–6 Wörter</strong>. Peach-Pill für 1 Schlüsselbegriff.</p>
+      </div>
+      <div class="card">
+        <h4 style="margin-bottom:10px">Farbe</h4>
+        <p>Cream-Background <code>#FBF7F4</code>, Akzent <code>#E8B5A5</code>, Text <code>#2D2B30</code>. Kein Rot, kein Gelb, keine Pfeile oder Schock-Symbole.</p>
+      </div>
+    </div>
+
+    <h3 style="margin:56px 0 18px;font-size:1.2rem">Setting · Look auf Kamera</h3>
+    <div class="grid grid-3">
+      <div class="card">
+        <h4 style="margin-bottom:8px">Hintergrund</h4>
+        <p>Helle, neutrale Wand (Creme/Off-White), Vorhang oder Holz. Optional: Pflanze (Monstera, Bird-of-Paradise) als grünes Accent links im Bild.</p>
+      </div>
+      <div class="card">
+        <h4 style="margin-bottom:8px">Wardrobe</h4>
+        <p>Töne aus der Brand-Palette: Creme, Taupe, sanftes Beige, Sage. Off-Shoulder, schlichte Schnitte. Kein Schwarz, keine Muster.</p>
+      </div>
+      <div class="card">
+        <h4 style="margin-bottom:8px">Licht</h4>
+        <p>Weiches Tageslicht oder ein großes Softbox-Setup. Warmweißton (3200–4000 K). Keine harten Schatten.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────── DO / DONT ───────────── -->
+<section id="dodont">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow"><span class="dot"></span> 08 · Do &amp; Don't</span>
+      <h2>Was die Marke trägt – und was nicht</h2>
+    </div>
+
+    <div class="dodont">
+      <div class="item do">
+        <h4>Cream + Taupe + Sage</h4>
+        <p>Warme, hautnahe Töne aus der Palette. Playfair für Highlights, Poppins für Klartext. Italics in Akzent-Beige.</p>
+      </div>
+      <div class="item dont">
+        <h4>Reine Schwarz/Weiß-Kontraste</h4>
+        <p>Niemals echtes <code>#000</code> oder <code>#fff</code> – immer Anthrazit <code>#2D2B30</code> und Creme <code>#FBF7F4</code>.</p>
+      </div>
+      <div class="item do">
+        <h4>Eine Highlight-Pill pro Frame</h4>
+        <p>Im Video maximal ein Pill-Element gleichzeitig sichtbar. Bullets dürfen mehrfach erscheinen, aber gestaffelt.</p>
+      </div>
+      <div class="item dont">
+        <h4>Pill-Stapel</h4>
+        <p>Mehrere Peach-Boxen übereinander wirken laut und billig. Wenn nötig, eine Box mit Untertext ergänzen.</p>
+      </div>
+      <div class="item do">
+        <h4>Du-Ansprache, kurze Sätze</h4>
+        <p>"Wusstest du das?" – "Mehr brauchst du nicht." – "Schau in dein Postfach."</p>
+      </div>
+      <div class="item dont">
+        <h4>Werbe-Sprache &amp; Clickbait</h4>
+        <p>"Schock!" – "Wundermittel" – "Du wirst nicht glauben …" passen nicht zur Marke.</p>
+      </div>
+      <div class="item do">
+        <h4>Logo unten rechts permanent</h4>
+        <p>In jedem Video-Frame als Wasserzeichen sichtbar – signalisiert Wiedererkennung &amp; Eigentum.</p>
+      </div>
+      <div class="item dont">
+        <h4>Animierte oder rotierende Logos</h4>
+        <p>Kein Bouncing, kein Spinning, keine Schlagschatten. Das Logo ist still und stabil.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────── ASSETS ───────────── -->
+<section id="assets">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow"><span class="dot"></span> 09 · Assets &amp; Quellen</span>
+      <h2>Was du brauchst</h2>
+    </div>
+    <div class="grid grid-3">
+      <div class="card">
+        <h4 style="margin-bottom:8px">Fonts</h4>
+        <p style="font-size:14px">Beide kostenlos via Google Fonts – über <code>&lt;link&gt;</code>-Tag einbinden:</p>
+        <pre class="code-block" style="margin-top:12px;font-size:11px">family=Playfair+Display:
+  ital,wght@0,500;0,700;0,900;1,700
+family=Poppins:
+  wght@300;400;500;600</pre>
+      </div>
+      <div class="card">
+        <h4 style="margin-bottom:8px">Editing-Tools</h4>
+        <p style="font-size:14px">Empfohlen für Video-Overlays:</p>
+        <ul style="list-style:none;font-size:14px;margin-top:8px;display:flex;flex-direction:column;gap:6px">
+          <li>· <strong>CapCut</strong> oder <strong>DaVinci Resolve</strong> für Schnitt</li>
+          <li>· <strong>Figma</strong> für Thumbnails &amp; Pill-Vorlagen</li>
+          <li>· <strong>Canva</strong> Templates für Reels-Quickies</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4 style="margin-bottom:8px">Bildformate</h4>
+        <ul style="list-style:none;font-size:14px;display:flex;flex-direction:column;gap:6px">
+          <li>· YouTube · <strong>1920 × 1080</strong> (16:9)</li>
+          <li>· Thumbnail · <strong>1280 × 720</strong></li>
+          <li>· Reels / Shorts · <strong>1080 × 1920</strong> (9:16)</li>
+          <li>· Instagram Feed · <strong>1080 × 1350</strong> (4:5)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="mark">Aufblühen statt altern.</div>
+    <div>Brand Guidelines · Jasmin Schmidtke · Version 1.0 · Mai 2026</div>
+    <div style="margin-top:8px">Marketing &amp; Brand by Schmidtke GmbH</div>
+  </div>
+</footer>
+
+</body>
+</html>
