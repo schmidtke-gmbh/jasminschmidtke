@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Du bist dabei! | Live-Webinar mit Jasmin Schmidtke</title>
+<meta name="robots" content="noindex">
+
+<!-- ════════════════ META PIXEL ════════════════
+     1) Basis-Pixel-Code aus dem Meta Events Manager HIER einfügen
+     2) Danach das Event unten aktivieren (Zeile auskommentieren entfernen)
+     Diese Seite wird NUR nach erfolgreicher Anmeldung aufgerufen,
+     daher ist hier der richtige Ort für das Conversion-Event.
+-->
+<!--
+<script>
+  fbq('track', 'CompleteRegistration');
+</script>
+-->
+<!-- ════════════════════════════════════════════ -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#FBF7F4;--cream2:#F5EFE9;--text-dark:#2D2B30;--text-body:#5A5550;--text-muted:#7a7068;
+    --accent:#BFA492;--accent-deep:#A8876F;--accent-text:#8C6743;--green-btn:#6B8C5A;--green-hover:#7A9E68;
+    --border:#E4DBD2;--grid-line:rgba(150,130,110,0.10);
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Poppins',system-ui,sans-serif;background:var(--cream);color:var(--text-dark);line-height:1.6;min-height:100vh;display:flex;flex-direction:column;overflow-x:hidden;overflow-x:clip}
+  body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;
+    background-image:linear-gradient(var(--grid-line) 1px,transparent 1px),linear-gradient(90deg,var(--grid-line) 1px,transparent 1px);background-size:64px 64px;
+    -webkit-mask-image:radial-gradient(ellipse 70% 60% at 50% 35%,#000 0%,transparent 75%);mask-image:radial-gradient(ellipse 70% 60% at 50% 35%,#000 0%,transparent 75%)}
+  .leaf{position:fixed;pointer-events:none;border-radius:0 76% 0 76%;background:rgba(191,164,146,.10);z-index:0}
+  .leaf-1{width:220px;height:270px;left:-85px;bottom:-80px;transform:rotate(38deg)}
+  .leaf-2{width:170px;height:215px;right:-70px;top:-50px;transform:rotate(-140deg)}
+
+  header{position:relative;z-index:1;padding:20px 28px;display:flex;justify-content:center}
+  .logo{display:flex;align-items:center;gap:10px;font-family:'Playfair Display',serif;font-weight:700;font-size:18px}
+  .logo img{width:32px;height:32px}
+
+  main{position:relative;z-index:1;flex:1;display:flex;align-items:center;justify-content:center;padding:24px 18px 60px}
+  .card{background:#fff;border:1px solid var(--border);border-radius:22px;padding:44px 38px;max-width:560px;width:100%;text-align:center;box-shadow:0 24px 64px rgba(80,55,40,.14)}
+  .check{width:70px;height:70px;border-radius:50%;background:linear-gradient(135deg,var(--green-btn),var(--green-hover));display:flex;align-items:center;justify-content:center;margin:0 auto 20px;transform:scale(0);animation:pop .5s cubic-bezier(.34,1.56,.64,1) .15s forwards}
+  .check svg{width:32px;height:32px;stroke:#fff;fill:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+  @keyframes pop{to{transform:scale(1)}}
+  h1{font-family:'Poppins';font-weight:700;font-size:clamp(1.7rem,5vw,34px);line-height:1.15;margin-bottom:8px}
+  h1 .ac{font-family:'Playfair Display',serif;font-style:italic;color:var(--accent-deep)}
+  .sub{font-size:15.5px;color:var(--text-body);max-width:420px;margin:0 auto 26px}
+  .when{display:inline-flex;align-items:center;gap:9px;background:rgba(191,164,146,.13);border:1.5px solid rgba(191,164,146,.4);border-radius:50px;padding:9px 20px;font-weight:600;font-size:14px;margin-bottom:28px}
+  .steps{text-align:left;margin:0 0 26px;display:flex;flex-direction:column;gap:14px}
+  .step{display:grid;grid-template-columns:34px 1fr;gap:14px;align-items:start}
+  .step .n{width:30px;height:30px;border-radius:50%;background:var(--green-btn);color:#fff;font-weight:700;font-size:14px;display:flex;align-items:center;justify-content:center;margin-top:2px}
+  .step b{display:block;font-size:15px;font-weight:600}
+  .step p{font-size:13.5px;color:var(--text-body);line-height:1.5}
+  .btn{display:inline-flex;align-items:center;gap:9px;background:var(--green-btn);color:#fff;border-radius:257px;padding:14px 28px;font:600 14.5px 'Poppins';text-decoration:none;transition:.2s}
+  .btn:hover{background:var(--green-hover);transform:translateY(-2px);box-shadow:0 10px 24px rgba(107,140,90,.3)}
+  .hint{margin-top:22px;background:var(--cream2);border:1px solid var(--border);border-radius:12px;padding:13px 16px;font-size:12.5px;color:var(--text-body);line-height:1.55}
+  footer{position:relative;z-index:1;text-align:center;padding:0 18px 26px;font-size:11.5px;color:var(--text-muted);line-height:1.6}
+  footer a{color:var(--text-muted)}
+  @media(max-width:480px){.card{padding:32px 22px}.steps{gap:12px}}
+</style>
+</head>
+<body>
+<div class="leaf leaf-1"></div><div class="leaf leaf-2"></div>
+
+<header>
+  <div class="logo"><img src="logo.svg" alt="Jasmin Schmidtke Logo"> Jasmin Schmidtke</div>
+</header>
+
+<main>
+  <div class="card">
+    <div class="check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+    <h1>Du bist <span class="ac">dabei!</span></h1>
+    <p class="sub">Deine Anmeldung war erfolgreich. Schau gleich in dein Postfach, dein persönlicher Teilnahme-Link ist unterwegs.</p>
+    <div class="when">📅 Sonntag, 14. Juni · 11:00 Uhr · live &amp; online</div>
+    <div class="steps">
+      <div class="step"><span class="n">1</span><div><b>E-Mail öffnen</b><p>Du bekommst in den nächsten Minuten eine Bestätigung mit deinem persönlichen Teilnahme-Link. Nichts bekommen? Schau in den Spam-Ordner.</p></div></div>
+      <div class="step"><span class="n">2</span><div><b>Termin blocken</b><p>Trag dir den Sonntagvormittag fest ein. 60 Minuten nur für dich, mit Zeit für deine Fragen.</p></div></div>
+      <div class="step"><span class="n">3</span><div><b>Live dabei sein</b><p>Klick zur Webinar-Zeit einfach auf deinen Link. Direkt im Browser, keine Installation nötig.</p></div></div>
+    </div>
+    <a class="btn" download="webinar-jasmin-schmidtke.ics" href="data:text/calendar;charset=utf-8,BEGIN:VCALENDAR%0D%0AVERSION:2.0%0D%0APRODID:-//Jasmin%20Schmidtke//Webinar//DE%0D%0ABEGIN:VEVENT%0D%0ADTSTAMP:20260604T120000Z%0D%0ADTSTART:20260614T090000Z%0D%0ADTEND:20260614T103000Z%0D%0ASUMMARY:Kostenloses%20Live-Webinar%20mit%20Jasmin%20Schmidtke%0D%0ADESCRIPTION:Dein%20pers%C3%B6nlicher%20Teilnahme-Link%20steht%20in%20deiner%20Best%C3%A4tigungs-E-Mail.%0D%0AEND:VEVENT%0D%0AEND:VCALENDAR">📅 In meinen Kalender eintragen <span>→</span></a>
+    <div class="hint">💡 Tipp: Zieh die Bestätigungs-E-Mail in deinen Haupt-Posteingang und markiere sie als wichtig, damit du die Erinnerungen sicher bekommst.</div>
+  </div>
+</main>
+
+<footer>
+  © 2026 Jasmin Schmidtke · <a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a><br>
+  Dieses Webinar dient der Information und ersetzt keine ärztliche Diagnose oder Behandlung.
+</footer>
+</body>
+</html>
