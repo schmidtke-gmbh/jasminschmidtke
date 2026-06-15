@@ -3,64 +3,92 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Du bist dabei! | Live-Webinar mit Jasmin Schmidtke</title>
+<title>Fast geschafft! | Live-Workshop mit Jasmin Schmidtke</title>
 <meta name="robots" content="noindex">
 
-<!-- ════════════════ META PIXEL ════════════════
-     1) Basis-Pixel-Code aus dem Meta Events Manager HIER einfügen
-     2) Danach das Event unten aktivieren (Zeile auskommentieren entfernen)
-     Diese Seite wird NUR nach erfolgreicher Anmeldung aufgerufen,
-     daher ist hier der richtige Ort für das Conversion-Event.
+<!-- Cookiebot Consent (gleiche Domain wie Startseite) -->
+<script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="d7edd666-c373-4b8b-b522-fe1891c11381" data-blockingmode="auto" type="text/javascript"></script>
+<!-- ============ META PIXEL (2 Konten) ============
+     Gleiche PIXEL-IDs wie auf der Landingpage eintragen.
+     Lead feuert beim Laden -> zaehlt IMMER als Webinar-Lead, auch ohne ausgefuellten Fragebogen.
 -->
-<!--
-<script>
-  fbq('track', 'CompleteRegistration');
+<script type="text/plain" data-cookieconsent="marketing">
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', 'SCHMIDTKE_GMBH_PIXEL_ID');
+fbq('init', 'NEU_PIXEL_ID');
+fbq('track', 'PageView');
+fbq('track', 'Lead');
 </script>
--->
-<!-- ════════════════════════════════════════════ -->
+<!-- =============================================== -->
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-  :root{
-    --cream:#FBF7F4;--cream2:#F5EFE9;--text-dark:#2D2B30;--text-body:#5A5550;--text-muted:#7a7068;
+  :root{--cream:#FBF7F4;--cream2:#F5EFE9;--text-dark:#2D2B30;--text-body:#5A5550;--text-muted:#7a7068;
     --accent:#BFA492;--accent-deep:#A8876F;--accent-text:#8C6743;--green-btn:#6B8C5A;--green-hover:#7A9E68;
-    --border:#E4DBD2;--grid-line:rgba(150,130,110,0.10);
-  }
+    --border:#E4DBD2;--grid-line:rgba(150,130,110,0.10);}
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-  body{font-family:'Poppins',system-ui,sans-serif;background:var(--cream);color:var(--text-dark);line-height:1.6;min-height:100vh;display:flex;flex-direction:column;overflow-x:hidden;overflow-x:clip}
+  body{font-family:'Poppins',system-ui,sans-serif;background:var(--cream);color:var(--text-dark);line-height:1.6;min-height:100vh;display:flex;flex-direction:column;overflow-x:clip}
   body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;
     background-image:linear-gradient(var(--grid-line) 1px,transparent 1px),linear-gradient(90deg,var(--grid-line) 1px,transparent 1px);background-size:64px 64px;
-    -webkit-mask-image:radial-gradient(ellipse 70% 60% at 50% 35%,#000 0%,transparent 75%);mask-image:radial-gradient(ellipse 70% 60% at 50% 35%,#000 0%,transparent 75%)}
+    -webkit-mask-image:radial-gradient(ellipse 70% 60% at 50% 30%,#000 0%,transparent 75%);mask-image:radial-gradient(ellipse 70% 60% at 50% 30%,#000 0%,transparent 75%)}
   .leaf{position:fixed;pointer-events:none;border-radius:0 76% 0 76%;background:rgba(191,164,146,.10);z-index:0}
   .leaf-1{width:220px;height:270px;left:-85px;bottom:-80px;transform:rotate(38deg)}
   .leaf-2{width:170px;height:215px;right:-70px;top:-50px;transform:rotate(-140deg)}
-
   header{position:relative;z-index:1;padding:20px 28px;display:flex;justify-content:center}
   .logo{display:flex;align-items:center;gap:10px;font-family:'Playfair Display',serif;font-weight:700;font-size:18px}
   .logo img{width:32px;height:32px}
-
-  main{position:relative;z-index:1;flex:1;display:flex;align-items:center;justify-content:center;padding:24px 18px 60px}
-  .card{background:#fff;border:1px solid var(--border);border-radius:22px;padding:44px 38px;max-width:560px;width:100%;text-align:center;box-shadow:0 24px 64px rgba(80,55,40,.14)}
-  .check{width:70px;height:70px;border-radius:50%;background:linear-gradient(135deg,var(--green-btn),var(--green-hover));display:flex;align-items:center;justify-content:center;margin:0 auto 20px;transform:scale(0);animation:pop .5s cubic-bezier(.34,1.56,.64,1) .15s forwards}
-  .check svg{width:32px;height:32px;stroke:#fff;fill:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
-  @keyframes pop{to{transform:scale(1)}}
-  h1{font-family:'Poppins';font-weight:700;font-size:clamp(1.7rem,5vw,34px);line-height:1.15;margin-bottom:8px}
+  main{position:relative;z-index:1;flex:1;display:flex;align-items:flex-start;justify-content:center;padding:14px 18px 60px}
+  .card{background:#fff;border:1px solid var(--border);border-radius:22px;padding:40px 38px;max-width:580px;width:100%;box-shadow:0 24px 64px rgba(80,55,40,.14)}
+  .progress-wrap{margin-bottom:24px}
+  .progress-label{display:flex;justify-content:space-between;font-size:11.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-text);margin-bottom:8px}
+  .progress-bar{height:7px;background:var(--cream2);border-radius:50px;overflow:hidden}
+  .progress-fill{height:100%;width:10%;background:linear-gradient(90deg,var(--green-btn),var(--green-hover));border-radius:50px;transition:width .45s ease}
+  h1{font-family:'Poppins';font-weight:700;font-size:clamp(1.6rem,5vw,32px);line-height:1.15;margin-bottom:10px;text-align:center}
   h1 .ac{font-family:'Playfair Display',serif;font-style:italic;color:var(--accent-deep)}
-  .sub{font-size:15.5px;color:var(--text-body);max-width:420px;margin:0 auto 26px}
-  .when{display:inline-flex;align-items:center;gap:9px;background:rgba(191,164,146,.13);border:1.5px solid rgba(191,164,146,.4);border-radius:50px;padding:9px 20px;font-weight:600;font-size:14px;margin-bottom:28px}
-  .steps{text-align:left;margin:0 0 26px;display:flex;flex-direction:column;gap:14px}
-  .step{display:grid;grid-template-columns:34px 1fr;gap:14px;align-items:start}
-  .step .n{width:30px;height:30px;border-radius:50%;background:var(--green-btn);color:#fff;font-weight:700;font-size:14px;display:flex;align-items:center;justify-content:center;margin-top:2px}
-  .step b{display:block;font-size:15px;font-weight:600}
-  .step p{font-size:13.5px;color:var(--text-body);line-height:1.5}
-  .btn{display:inline-flex;align-items:center;gap:9px;background:var(--green-btn);color:#fff;border-radius:257px;padding:14px 28px;font:600 14.5px 'Poppins';text-decoration:none;transition:.2s}
-  .btn:hover{background:var(--green-hover);transform:translateY(-2px);box-shadow:0 10px 24px rgba(107,140,90,.3)}
-  .hint{margin-top:22px;background:var(--cream2);border:1px solid var(--border);border-radius:12px;padding:13px 16px;font-size:12.5px;color:var(--text-body);line-height:1.55}
+  .sub{font-size:15px;color:var(--text-body);text-align:center;max-width:470px;margin:0 auto 12px}
+  .sub strong{color:var(--text-dark)}
+  .when{display:flex;justify-content:center;margin-bottom:26px}
+  .when span{display:inline-flex;align-items:center;gap:9px;background:rgba(191,164,146,.13);border:1.5px solid rgba(191,164,146,.4);border-radius:50px;padding:8px 18px;font-weight:600;font-size:13.5px}
+
+  /* Wizard: eine Frage sichtbar */
+  .wstep{display:none}
+  .wstep.active{display:block;animation:fade .35s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+  .qlabel{display:block;font-size:17px;font-weight:600;color:var(--text-dark);margin-bottom:14px;text-align:center}
+  .opts{display:flex;flex-direction:column;gap:9px}
+  .opt{display:flex;align-items:center;gap:12px;border:1.5px solid var(--border);border-radius:12px;padding:14px 16px;cursor:pointer;transition:.15s;font-size:15px;color:var(--text-body)}
+  .opt:hover{border-color:var(--accent);background:rgba(191,164,146,.06)}
+  .opt input{accent-color:var(--green-btn);width:18px;height:18px;flex-shrink:0}
+  .opt:has(input:checked){border-color:var(--green-btn);background:rgba(107,140,90,.08);color:var(--text-dark);font-weight:500}
+  textarea{width:100%;border:1.5px solid var(--border);border-radius:12px;padding:13px 15px;font-family:'Poppins';font-size:15px;color:var(--text-dark);resize:vertical;min-height:96px;outline:none}
+  textarea:focus{border-color:var(--accent)}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;background:var(--green-btn);color:#fff;border:none;border-radius:257px;padding:16px 30px;font:600 15.5px 'Poppins';cursor:pointer;transition:.2s;width:100%;margin-top:16px}
+  .btn:hover{background:var(--green-hover);transform:translateY(-2px);box-shadow:0 10px 26px rgba(107,140,90,.28)}
+  .wnav{display:flex;justify-content:center;margin-top:16px}
+  .back{background:none;border:none;color:var(--text-muted);font:500 13px 'Poppins';cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+  .back:hover{color:var(--text-dark)}
+  .formnote{font-size:11.5px;color:var(--text-muted);text-align:center;margin-top:14px}
+
+  .done{display:none;text-align:center}
+  .done.show{display:block;animation:fade .5s ease}
+  .check{width:66px;height:66px;border-radius:50%;background:linear-gradient(135deg,var(--green-btn),var(--green-hover));display:flex;align-items:center;justify-content:center;margin:0 auto 18px}
+  .check svg{width:30px;height:30px;stroke:#fff;fill:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+  .steps{text-align:left;margin:22px 0 6px;display:flex;flex-direction:column;gap:13px}
+  .step{display:grid;grid-template-columns:30px 1fr;gap:13px;align-items:start}
+  .step .n{width:28px;height:28px;border-radius:50%;background:var(--green-btn);color:#fff;font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:center;margin-top:1px}
+  .step b{display:block;font-size:14.5px}
+  .step p{font-size:13px;color:var(--text-body);line-height:1.5}
+  .cal{display:inline-flex;align-items:center;gap:8px;background:var(--green-btn);color:#fff;border-radius:257px;padding:13px 26px;font:600 14px 'Poppins';text-decoration:none;margin-top:14px}
+  .cal:hover{background:var(--green-hover)}
   footer{position:relative;z-index:1;text-align:center;padding:0 18px 26px;font-size:11.5px;color:var(--text-muted);line-height:1.6}
   footer a{color:var(--text-muted)}
-  @media(max-width:480px){.card{padding:32px 22px}.steps{gap:12px}}
+  @media(max-width:480px){.card{padding:30px 22px}}
 </style>
 </head>
 <body>
@@ -72,23 +100,99 @@
 
 <main>
   <div class="card">
-    <div class="check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
-    <h1>Du bist <span class="ac">dabei!</span></h1>
-    <p class="sub">Deine Anmeldung war erfolgreich. Schau gleich in dein Postfach, dein persönlicher Teilnahme-Link ist unterwegs.</p>
-    <div class="when">📅 Sonntag, 14. Juni · 11:00 Uhr · live &amp; online</div>
-    <div class="steps">
-      <div class="step"><span class="n">1</span><div><b>E-Mail öffnen</b><p>Du bekommst in den nächsten Minuten eine Bestätigung mit deinem persönlichen Teilnahme-Link. Nichts bekommen? Schau in den Spam-Ordner.</p></div></div>
-      <div class="step"><span class="n">2</span><div><b>Termin blocken</b><p>Trag dir den Sonntagvormittag fest ein. 60 Minuten nur für dich, mit Zeit für deine Fragen.</p></div></div>
-      <div class="step"><span class="n">3</span><div><b>Live dabei sein</b><p>Klick zur Webinar-Zeit einfach auf deinen Link. Direkt im Browser, keine Installation nötig.</p></div></div>
+    <div id="formview">
+      <div class="progress-wrap">
+        <div class="progress-label"><span id="plabel">Frage 1 von 3</span><span>Fast geschafft</span></div>
+        <div class="progress-bar"><div class="progress-fill" id="pfill"></div></div>
+      </div>
+      <h1>Fast <span class="ac">geschafft!</span></h1>
+      <p class="sub">Deine Daten sind da, aber deine Anmeldung ist noch <strong>nicht ganz abgeschlossen</strong>. Ein letzter Schritt: Beantworte noch 3 kurze Fragen, dann bist du fix dabei und Jasmin kann sich optimal auf dich vorbereiten.</p>
+      <div class="when"><span>&#128197; So., 28. Juni &middot; 11:00 Uhr &middot; live &amp; online</span></div>
+
+      <!-- ======== WIZARD-FORMULAR (Netlify Form, eine Frage pro Schritt) ======== -->
+      <form id="qform" name="webinar-qualifizierung" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="return finishQ(event)">
+        <input type="hidden" name="form-name" value="webinar-qualifizierung">
+        <p hidden><label>Bitte nicht ausfüllen: <input name="bot-field"></label></p>
+
+        <div class="wstep active" data-step="1">
+          <label class="qlabel">Wie lange begleiten dich diese Beschwerden schon?</label>
+          <div class="opts">
+            <label class="opt"><input type="radio" name="dauer" value="unter_1j"> Weniger als 1 Jahr</label>
+            <label class="opt"><input type="radio" name="dauer" value="1_3j"> 1 bis 3 Jahre</label>
+            <label class="opt"><input type="radio" name="dauer" value="3_5j"> 3 bis 5 Jahre</label>
+            <label class="opt"><input type="radio" name="dauer" value="ueber_5j"> L&auml;nger als 5 Jahre</label>
+          </div>
+        </div>
+
+        <div class="wstep" data-step="2">
+          <label class="qlabel">Wie viel hast du bisher investiert, um das zu l&ouml;sen?</label>
+          <div class="opts">
+            <label class="opt"><input type="radio" name="invest" value="0"> Noch nichts Nennenswertes</label>
+            <label class="opt"><input type="radio" name="invest" value="bis_500"> Bis ca. 500 &euro;</label>
+            <label class="opt"><input type="radio" name="invest" value="500_2000"> 500 &euro; bis 2.000 &euro;</label>
+            <label class="opt"><input type="radio" name="invest" value="ueber_2000"> Mehr als 2.000 &euro;</label>
+          </div>
+          <div class="wnav"><button type="button" class="back" onclick="goStep(1)">&larr; zur&uuml;ck</button></div>
+        </div>
+
+        <div class="wstep" data-step="3">
+          <label class="qlabel">Was m&ouml;chtest du im Workshop am meisten lernen?</label>
+          <textarea name="ziel" placeholder="Z. B.: warum ich st&auml;ndig m&uuml;de bin, wie ich wieder abnehme, mehr Energie im Alltag &hellip;" required></textarea>
+          <button type="submit" class="btn">Absenden &amp; Platz best&auml;tigen <span>&rarr;</span></button>
+          <div class="wnav"><button type="button" class="back" onclick="goStep(2)">&larr; zur&uuml;ck</button></div>
+          <div class="formnote">&#128274; Deine Angaben sieht nur Jasmin, zur Vorbereitung des Workshops.</div>
+        </div>
+      </form>
     </div>
-    <a class="btn" download="webinar-jasmin-schmidtke.ics" href="data:text/calendar;charset=utf-8,BEGIN:VCALENDAR%0D%0AVERSION:2.0%0D%0APRODID:-//Jasmin%20Schmidtke//Webinar//DE%0D%0ABEGIN:VEVENT%0D%0ADTSTAMP:20260604T120000Z%0D%0ADTSTART:20260614T090000Z%0D%0ADTEND:20260614T103000Z%0D%0ASUMMARY:Kostenloses%20Live-Webinar%20mit%20Jasmin%20Schmidtke%0D%0ADESCRIPTION:Dein%20pers%C3%B6nlicher%20Teilnahme-Link%20steht%20in%20deiner%20Best%C3%A4tigungs-E-Mail.%0D%0AEND:VEVENT%0D%0AEND:VCALENDAR">📅 In meinen Kalender eintragen <span>→</span></a>
-    <div class="hint">💡 Tipp: Zieh die Bestätigungs-E-Mail in deinen Haupt-Posteingang und markiere sie als wichtig, damit du die Erinnerungen sicher bekommst.</div>
+
+    <div id="doneview" class="done">
+      <div class="check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+      <h1>Perfekt, du bist <span class="ac">dabei!</span></h1>
+      <p class="sub">Danke dir. Jasmin bereitet den Workshop jetzt genau auf Frauen wie dich vor. Schau in dein Postfach: dein pers&ouml;nlicher Zoom-Link ist unterwegs.</p>
+      <div class="steps">
+        <div class="step"><span class="n">1</span><div><b>E-Mail &ouml;ffnen</b><p>Du bekommst eine Best&auml;tigung mit deinem Zoom-Link. Nichts da? Bitte im Spam-Ordner schauen.</p></div></div>
+        <div class="step"><span class="n">2</span><div><b>Termin blocken</b><p>So., 28. Juni, 11:00 Uhr. 60 Minuten nur f&uuml;r dich, mit Zeit f&uuml;r deine Fragen.</p></div></div>
+        <div class="step"><span class="n">3</span><div><b>Live dabei sein</b><p>Klick zur Workshop-Zeit einfach auf deinen Zoom-Link. Fertig.</p></div></div>
+      </div>
+      <a class="cal" download="webinar-jasmin-schmidtke.ics" href="data:text/calendar;charset=utf-8,BEGIN:VCALENDAR%0D%0AVERSION:2.0%0D%0APRODID:-//Jasmin%20Schmidtke//Webinar//DE%0D%0ABEGIN:VEVENT%0D%0ADTSTAMP:20260604T120000Z%0D%0ADTSTART:20260628T090000Z%0D%0ADTEND:20260628T103000Z%0D%0ASUMMARY:Kostenloser%20Live-Workshop%20mit%20Jasmin%20Schmidtke%0D%0ADESCRIPTION:Dein%20pers%C3%B6nlicher%20Zoom-Link%20steht%20in%20deiner%20Best%C3%A4tigungs-E-Mail.%0D%0AEND:VEVENT%0D%0AEND:VCALENDAR">&#128197; In meinen Kalender eintragen</a>
+    </div>
   </div>
 </main>
 
 <footer>
-  © 2026 Jasmin Schmidtke · <a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a><br>
-  Dieses Webinar dient der Information und ersetzt keine ärztliche Diagnose oder Behandlung.
+  &copy; 2026 Jasmin Schmidtke &middot; <a href="impressum.html">Impressum</a> &middot; <a href="datenschutz.html">Datenschutz</a><br>
+  Dieser Workshop dient der Information und ersetzt keine &auml;rztliche Diagnose oder Behandlung.
 </footer>
+
+<script>
+  var TOTAL=3, cur=1;
+  var fill=document.getElementById('pfill'), plabel=document.getElementById('plabel');
+  function render(){
+    document.querySelectorAll('.wstep').forEach(function(el){el.classList.toggle('active', +el.dataset.step===cur);});
+    fill.style.width=Math.round(cur/TOTAL*100)+'%';
+    plabel.textContent='Frage '+cur+' von '+TOTAL;
+  }
+  function goStep(n){cur=Math.max(1,Math.min(TOTAL,n));render();}
+  // Auto-weiter, sobald eine Antwort gewählt wurde
+  document.querySelectorAll('.wstep[data-step="1"] input, .wstep[data-step="2"] input').forEach(function(inp){
+    inp.addEventListener('change', function(){ setTimeout(function(){ goStep(cur+1); }, 220); });
+  });
+  // Absenden: an Netlify senden, dann Danke-Zustand
+  function finishQ(e){
+    e.preventDefault();
+    var f=e.target;
+    if(!f.ziel.value.trim()){ f.ziel.reportValidity(); return false; }
+    var body=new URLSearchParams(new FormData(f)).toString();
+    var done=function(){
+      if(window.fbq){ fbq('track','SubmitApplication'); }
+      document.getElementById('formview').style.display='none';
+      document.getElementById('doneview').classList.add('show');
+      window.scrollTo({top:0,behavior:'smooth'});
+    };
+    fetch('/', {method:'POST', headers:{'Content-Type':'application/x-www-form-urlencoded'}, body:body}).then(done).catch(done);
+    return false;
+  }
+  render();
+</script>
 </body>
 </html>
