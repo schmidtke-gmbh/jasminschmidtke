@@ -59,7 +59,8 @@ fbq('track', 'Lead');
   .wstep{display:none}
   .wstep.active{display:block;animation:fade .35s ease}
   @keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
-  .qlabel{display:block;font-size:17px;font-weight:600;color:var(--text-dark);margin-bottom:14px;text-align:center}
+  .qlabel{display:block;font-size:17px;font-weight:600;color:var(--text-dark);margin-bottom:6px;text-align:center}
+  .qhint{text-align:center;font-size:12.5px;color:var(--text-muted);margin:0 0 14px}
   .opts{display:flex;flex-direction:column;gap:9px}
   .opt{display:flex;align-items:center;gap:12px;border:1.5px solid var(--border);border-radius:12px;padding:14px 16px;cursor:pointer;transition:.15s;font-size:15px;color:var(--text-body)}
   .opt:hover{border-color:var(--accent);background:rgba(191,164,146,.06)}
@@ -84,6 +85,10 @@ fbq('track', 'Lead');
   .step b{display:block;font-size:14.5px}
   .step p{font-size:13px;color:var(--text-body);line-height:1.5}
   .cal{display:inline-flex;align-items:center;gap:8px;background:var(--green-btn);color:#fff;border-radius:257px;padding:13px 26px;font:600 14px 'Poppins';text-decoration:none;margin-top:14px}
+  .caltitle{font-family:'Poppins';font-weight:500;font-size:14.5px;color:var(--text-dark);margin:22px 0 12px}
+  .calrow{display:flex;flex-wrap:wrap;justify-content:center;gap:9px}
+  .calpill{display:inline-block;font-family:'Poppins';font-weight:500;font-size:13.5px;color:var(--text-dark);text-decoration:none;background:#fff;border:1.5px solid var(--accent);border-radius:50px;padding:11px 20px}
+  .calpill:hover{background:var(--cream2)}
   .cal:hover{background:var(--green-hover)}
   footer{position:relative;z-index:1;text-align:center;padding:0 18px 26px;font-size:11.5px;color:var(--text-muted);line-height:1.6}
   footer a{color:var(--text-muted)}
@@ -114,23 +119,28 @@ fbq('track', 'Lead');
         <p hidden><label>Bitte nicht ausfüllen: <input name="bot-field"></label></p>
 
         <div class="wstep active" data-step="1">
-          <label class="qlabel">Wie lange begleiten dich diese Beschwerden schon?</label>
+          <label class="qlabel">Was beschreibt deine Situation gerade am besten?</label>
+          <p class="qhint">Mehrfachauswahl m&ouml;glich</p>
           <div class="opts">
-            <label class="opt"><input type="radio" name="dauer" value="unter_1j"> Weniger als 1 Jahr</label>
-            <label class="opt"><input type="radio" name="dauer" value="1_3j"> 1 bis 3 Jahre</label>
-            <label class="opt"><input type="radio" name="dauer" value="3_5j"> 3 bis 5 Jahre</label>
-            <label class="opt"><input type="radio" name="dauer" value="ueber_5j"> L&auml;nger als 5 Jahre</label>
+            <label class="opt"><input type="checkbox" name="situation[]" value="staendig_muede"> 😴 Ich bin st&auml;ndig m&uuml;de, obwohl ich genug schlafe</label>
+            <label class="opt"><input type="checkbox" name="situation[]" value="energie_unberechenbar"> ⚡ Mein Energielevel ist unberechenbar, mal okay, mal komplett im Keller</label>
+            <label class="opt"><input type="checkbox" name="situation[]" value="gewicht"> ⚖️ Ich nehme zu oder halte mein Gewicht nicht, obwohl ich aufpasse</label>
+            <label class="opt"><input type="checkbox" name="situation[]" value="nicht_ich_selbst"> 😞 Ich f&uuml;hle mich einfach nicht mehr wie ich selbst</label>
           </div>
+          <button type="button" class="btn" onclick="goStep(2)">Weiter <span>&rarr;</span></button>
         </div>
 
         <div class="wstep" data-step="2">
-          <label class="qlabel">Wie viel hast du bisher investiert, um das zu l&ouml;sen?</label>
+          <label class="qlabel">Was hast du schon probiert?</label>
+          <p class="qhint">Mehrfachauswahl m&ouml;glich</p>
           <div class="opts">
-            <label class="opt"><input type="radio" name="invest" value="0"> Noch nichts Nennenswertes</label>
-            <label class="opt"><input type="radio" name="invest" value="bis_500"> Bis ca. 500 &euro;</label>
-            <label class="opt"><input type="radio" name="invest" value="500_2000"> 500 &euro; bis 2.000 &euro;</label>
-            <label class="opt"><input type="radio" name="invest" value="ueber_2000"> Mehr als 2.000 &euro;</label>
+            <label class="opt"><input type="checkbox" name="versuche[]" value="diaeten"> 🥗 Di&auml;ten oder Ern&auml;hrungsumstellungen</label>
+            <label class="opt"><input type="checkbox" name="versuche[]" value="sport"> 🏃 Mehr Sport oder Bewegung</label>
+            <label class="opt"><input type="checkbox" name="versuche[]" value="supplements"> 💊 Supplements oder Vitamine</label>
+            <label class="opt"><input type="checkbox" name="versuche[]" value="schlaf_stress"> 😴 Fr&uuml;her schlafen oder Stressreduktion</label>
+            <label class="opt"><input type="checkbox" name="versuche[]" value="weiss_nicht"> 🤷 Ich wei&szlig; ehrlich gesagt nicht, wo ich anfangen soll</label>
           </div>
+          <button type="button" class="btn" onclick="goStep(3)">Weiter <span>&rarr;</span></button>
           <div class="wnav"><button type="button" class="back" onclick="goStep(1)">&larr; zur&uuml;ck</button></div>
         </div>
 
@@ -149,11 +159,16 @@ fbq('track', 'Lead');
       <h1>Perfekt, du bist <span class="ac">dabei!</span></h1>
       <p class="sub">Danke dir. Jasmin bereitet den Workshop jetzt genau auf Frauen wie dich vor. Schau in dein Postfach: dein pers&ouml;nlicher Zoom-Link ist unterwegs.</p>
       <div class="steps">
-        <div class="step"><span class="n">1</span><div><b>E-Mail &ouml;ffnen</b><p>Du bekommst eine Best&auml;tigung mit deinem Zoom-Link. Nichts da? Bitte im Spam-Ordner schauen.</p></div></div>
+        <div class="step"><span class="n">1</span><div><b>E-Mail checken (auch im Spam!)</b><p>Du bekommst gleich eine Best&auml;tigung mit deinem Zoom-Link. Das kann ein paar Minuten dauern. Schau bitte auch im <strong>Spam-/Werbe-Ordner</strong> nach und zieh die Mail in deinen Posteingang &ndash; dann bekommst du auch die Erinnerungen sicher.</p></div></div>
         <div class="step"><span class="n">2</span><div><b>Termin blocken</b><p>So., 28. Juni, 11:00 Uhr. 60 Minuten nur f&uuml;r dich, mit Zeit f&uuml;r deine Fragen.</p></div></div>
         <div class="step"><span class="n">3</span><div><b>Live dabei sein</b><p>Klick zur Workshop-Zeit einfach auf deinen Zoom-Link. Fertig.</p></div></div>
       </div>
-      <a class="cal" download="webinar-jasmin-schmidtke.ics" href="data:text/calendar;charset=utf-8,BEGIN:VCALENDAR%0D%0AVERSION:2.0%0D%0APRODID:-//Jasmin%20Schmidtke//Webinar//DE%0D%0ABEGIN:VEVENT%0D%0ADTSTAMP:20260604T120000Z%0D%0ADTSTART:20260628T090000Z%0D%0ADTEND:20260628T103000Z%0D%0ASUMMARY:Kostenloser%20Live-Workshop%20mit%20Jasmin%20Schmidtke%0D%0ADESCRIPTION:Dein%20pers%C3%B6nlicher%20Zoom-Link%20steht%20in%20deiner%20Best%C3%A4tigungs-E-Mail.%0D%0AEND:VEVENT%0D%0AEND:VCALENDAR">&#128197; In meinen Kalender eintragen</a>
+      <p class="caltitle">📅 Trag dir den Termin gleich in deinen Kalender ein:</p>
+      <div class="calrow">
+        <a class="calpill" target="_blank" rel="noopener" href="https://zoom.us/webinar/tZModeigpzsjH9ay9syXkvOWSB1aeXwf8cgs/calendar/google/add">📅 Google</a>
+        <a class="calpill" target="_blank" rel="noopener" href="https://zoom.us/webinar/tZModeigpzsjH9ay9syXkvOWSB1aeXwf8cgs/ics">📅 Outlook</a>
+        <a class="calpill" target="_blank" rel="noopener" href="https://calendar.yahoo.com/?v=60&VIEW=d&TITLE=F%C3%BChl%20dich%20ab%2040%2B%20wieder%20frisch%20%26%20attraktiv&in_loc=https%3A%2F%2Fus06web.zoom.us%2Fj%2F87521890952%3Fpwd%3D0XskB6DzV7aP3UssITHnjebDGqhj9m.1&URL=https%3A%2F%2Fus06web.zoom.us%2Fj%2F87521890952%3Fpwd%3D0XskB6DzV7aP3UssITHnjebDGqhj9m.1&ST=20260628T090000Z&DUR=0130&DESC=Thema%3A%20F%C3%BChl%20dich%20ab%2040%2B%20wieder%20frisch%20%26%20attraktiv">📅 Yahoo</a>
+      </div>
     </div>
   </div>
 </main>
@@ -171,11 +186,8 @@ fbq('track', 'Lead');
     fill.style.width=Math.round(cur/TOTAL*100)+'%';
     plabel.textContent='Frage '+cur+' von '+TOTAL;
   }
-  function goStep(n){cur=Math.max(1,Math.min(TOTAL,n));render();}
-  // Auto-weiter, sobald eine Antwort gewählt wurde
-  document.querySelectorAll('.wstep[data-step="1"] input, .wstep[data-step="2"] input').forEach(function(inp){
-    inp.addEventListener('change', function(){ setTimeout(function(){ goStep(cur+1); }, 220); });
-  });
+  function goStep(n){cur=Math.max(1,Math.min(TOTAL,n));render();window.scrollTo({top:0,behavior:'smooth'});}
+  // Mehrfachauswahl: kein Auto-Weiter, der Nutzer geht selbst per "Weiter"-Button vor.
   // Absenden: an Netlify senden, dann Danke-Zustand
   function finishQ(e){
     e.preventDefault();

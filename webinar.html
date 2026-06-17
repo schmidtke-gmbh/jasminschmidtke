@@ -44,6 +44,8 @@ fbq('track', 'PageView');
   .btn .arr{display:inline-flex;width:22px;height:22px;border-radius:50%;background:rgba(255,255,255,.22);align-items:center;justify-content:center;font-size:13px;transition:transform .3s}
   .btn:hover .arr{transform:translateX(3px)}
   .btn.lg{padding:18px 42px;font-size:16px}
+  .t-short{display:none}
+  .badge .badge-txt{text-align:left}
 
   /* section scaffolding */
   section{position:relative}
@@ -512,8 +514,14 @@ fbq('track', 'PageView');
     .sticky-count .cd-box{padding:4px 7px 3px}
     .sticky-count .cd-box b{font-size:15px}
     .sticky-count .cd-box span{font-size:8px}
-    .sticky .btn{flex:1;justify-content:center;padding:13px 14px;font-size:13.5px}
-    .foot-top{flex-direction:column;align-items:flex-start;text-align:left}
+    .sticky .btn{flex:0 0 auto;justify-content:center;padding:13px 18px;font-size:13.5px;overflow:visible}
+    .sticky-count .cd-box:nth-child(4){display:none}   /* Sekunden raus, Platz für Button */
+    nav .btn{flex-shrink:0;overflow:visible;padding:10px 16px}
+    .logo{font-size:15px;min-width:0}
+    .t-full{display:none}
+    .t-short{display:inline}
+    .foot-top{flex-direction:column;align-items:center;text-align:center}
+    .foot-tag{margin:0 auto;text-align:center;max-width:none}
     .marquee .mq span{font-size:18px}
     /* Platz für die dauerhafte Anmelden-Leiste am unteren Rand */
     footer{padding-bottom:96px}
@@ -540,7 +548,7 @@ fbq('track', 'PageView');
 <nav id="nav">
   <div class="nav-inner">
     <div class="logo"><img src="logo.svg" alt="Jasmin Schmidtke Logo"> Jasmin Schmidtke</div>
-    <a href="#anmelden" class="btn">Kostenlos anmelden <span class="arr">→</span></a>
+    <a href="#anmelden" class="btn"><span class="t-full">Kostenlos anmelden</span><span class="t-short">Anmelden</span> <span class="arr">→</span></a>
   </div>
 </nav>
 
@@ -550,7 +558,7 @@ fbq('track', 'PageView');
   <div class="wrap">
     <div class="hero-grid">
       <div>
-        <div class="badge"><span class="live"></span> Kostenloser Live-Workshop · So., 28. Juni · 11:00 Uhr</div>
+        <div class="badge"><span class="live"></span><span class="badge-txt">Kostenloser Live-Workshop<br>Sonntag, 28. Juni, um 11:00&nbsp;Uhr für Frauen ab 40</span></div>
         <div class="hero-kicker">Für Frauen ab 40+</div>
         <h1>Fühl dich ab 40+ wieder<br><span class="ac">frisch &amp; attraktiv</span></h1>
         <p class="hero-lead">Fühlst du dich schon länger müde, ausgelaugt und nicht mehr richtig attraktiv? Es liegt nicht an dir. Und auch nicht „einfach am Alter".</p>
@@ -835,7 +843,7 @@ fbq('track', 'PageView');
       <div class="cd-box"><b data-u="m">–</b><span>Min</span></div>
       <div class="cd-box"><b data-u="s">–</b><span>Sek</span></div>
     </div>
-    <a href="#anmelden" class="btn">Kostenlos anmelden <span class="arr">→</span></a>
+    <a href="#anmelden" class="btn"><span class="t-full">Kostenlos anmelden</span><span class="t-short">Anmelden</span> <span class="arr">→</span></a>
   </div>
 </div>
 
