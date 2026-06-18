@@ -46,6 +46,9 @@ fbq('track', 'PageView');
   .btn.lg{padding:18px 42px;font-size:16px}
   .t-short{display:none}
   .badge .badge-txt{text-align:left}
+  /* CTA-Anker landet direkt auf dem Formular (Eingabefeld + Button sichtbar) */
+  #anmelden{scroll-margin-top:96px}
+  @media(max-width:600px){#anmelden{scroll-margin-top:78px}}
 
   /* section scaffolding */
   section{position:relative}
@@ -563,7 +566,7 @@ fbq('track', 'PageView');
         <h1>Fühl dich ab 40+ wieder<br><span class="ac">frisch &amp; attraktiv</span></h1>
         <p class="hero-lead">Fühlst du dich schon länger müde, ausgelaugt und nicht mehr richtig attraktiv? Es liegt nicht an dir. Und auch nicht „einfach am Alter".</p>
         <p class="hero-claim">Es sind deine <span class="ac">Hormone</span>.</p>
-        <p class="hero-lead2"><strong>Heilpraktikerin</strong> Jasmin Schmidtke zeigt dir live, was in der <strong>(Peri-)Menopause</strong> wirklich in deinem Körper passiert und wie du Hormone, Nervensystem und Energie zurück in Balance bringst.</p>
+        <p class="hero-lead2"><strong>Heilpraktikerin</strong> Jasmin Schmidtke zeigt dir live, was in der <strong>Perimenopause</strong> wirklich in deinem Körper passiert und wie du Hormone, Nervensystem und Energie zurück in Balance bringst.</p>
         <div class="no-list">
           <span class="nochip"><svg viewBox="0 0 12 12"><path d="M3 3l6 6M9 3l-6 6"/></svg> ohne strenge Diäten</span>
           <span class="nochip"><svg viewBox="0 0 12 12"><path d="M3 3l6 6M9 3l-6 6"/></svg> ohne Abnehmspritze</span>
@@ -614,7 +617,7 @@ fbq('track', 'PageView');
         <div class="pnum">01<span>Teil 1</span></div>
         <div>
           <h3>Warum dir die Energie fehlt</h3>
-          <p>Die wahren Ursachen hinter Erschöpfung ab 40, von den Hormonen bis zur (Peri-)Menopause, und warum Kaffee, Diäten und die Abnehmspritze sie nicht beheben.</p>
+          <p>Die wahren Ursachen hinter Erschöpfung ab 40, von den Hormonen bis zur Perimenopause, und warum Kaffee, Diäten und die Abnehmspritze sie nicht beheben.</p>
           <div class="takeaway">Das nimmst du mit</div>
           <ul>
             <li><span class="tk"><svg viewBox="0 0 12 12"><polyline points="2.5 6 5 8.5 9.5 3.5"/></svg></span>Was ab 40 in deinem Körper wirklich passiert, verständlich erklärt</li>
@@ -760,14 +763,14 @@ fbq('track', 'PageView');
     <div class="faq" style="text-align:left">
       <details class="qa rv" open><summary>Ist der Workshop wirklich kostenlos?<span class="pm">+</span></summary><div class="ans">Ja, die Teilnahme ist komplett kostenlos und unverbindlich. Du nimmst echten Mehrwert mit, ganz ohne Risiko.</div></details>
       <details class="qa rv"><summary>Ich habe schon so viel probiert. Lohnt sich das für mich?<span class="pm">+</span></summary><div class="ans">Gerade dann. Die meisten Dinge wirken nicht dauerhaft, weil sie an Symptomen ansetzen statt an der Ursache. Genau da setzt dieser Abend an.</div></details>
-      <details class="qa rv"><summary>Hat das mit (Peri-)Menopause zu tun?<span class="pm">+</span></summary><div class="ans">Ja. Viele Beschwerden ab 40 hängen mit den hormonellen Veränderungen der (Peri-)Menopause zusammen. Jasmin erklärt verständlich, was in deinem Körper passiert und was du dagegen tun kannst.</div></details>
+      <details class="qa rv"><summary>Hat das mit Perimenopause zu tun?<span class="pm">+</span></summary><div class="ans">Ja. Viele Beschwerden ab 40 hängen mit den hormonellen Veränderungen der Perimenopause zusammen. Jasmin erklärt verständlich, was in deinem Körper passiert und was du dagegen tun kannst.</div></details>
       <details class="qa rv"><summary>Kann ich live meine Fragen stellen?<span class="pm">+</span></summary><div class="ans">Ja, unbedingt! Am Ende gibt es eine offene Fragerunde (Q&amp;A). Jasmin beantwortet deine Fragen direkt und persönlich. Genau dafür lohnt es sich, live dabei zu sein.</div></details>
     </div>
   </div>
 </section>
 
 <!-- FINAL CTA -->
-<section class="final" id="anmelden">
+<section class="final">
   <div class="leaf leaf-f1"></div><div class="leaf leaf-f2"></div>
   <div class="leaf leaf-f3"></div><div class="leaf leaf-f4"></div>
   <div class="leaf-dot"></div>
@@ -790,7 +793,7 @@ fbq('track', 'PageView');
          - In Netlify unter "Forms -> Notifications" einen Outgoing-Webhook (Zapier/Make) auf neue Submissions setzen.
          - Dieser meldet den Kontakt zum Zoom-Webinar an (Zoom "Add Registrant") und legt ihn in ActiveCampaign an.
     ═══════════════════════════════════════════════════════════ -->
-    <div class="wj-card">
+    <div class="wj-card" id="anmelden">
       <div class="wj-title">Sichere dir jetzt deinen kostenlosen Platz</div>
       <div class="wj-sub">Trag dich ein und du bekommst deinen persönlichen Zoom-Link für den Workshop per E-Mail.</div>
       <div class="wj-slot">
@@ -851,11 +854,15 @@ fbq('track', 'PageView');
   // Nav background on scroll + sticky CTA after hero
   const nav=document.getElementById('nav'), sticky=document.getElementById('sticky'), hero=document.querySelector('.hero');
   const progress=document.getElementById('progress');
+  const anmForm=document.getElementById('anmelden');
   function onScroll(){
     const y=window.scrollY;
     nav.classList.toggle('scrolled', y>40);
-    // Anmelden-Leiste dauerhaft sichtbar, sobald gescrollt wird
-    sticky.classList.toggle('show', y>220);
+    // Anmelden-Leiste dauerhaft sichtbar, sobald gescrollt wird – aber ausblenden,
+    // sobald das Anmelde-Formular im Bild ist (sonst verdeckt sie den Button)
+    let atForm=false;
+    if(anmForm){const r=anmForm.getBoundingClientRect();atForm=r.top<window.innerHeight*0.8 && r.bottom>60;}
+    sticky.classList.toggle('show', y>220 && !atForm);
     // Scroll-Fortschritt
     const max=document.documentElement.scrollHeight-window.innerHeight;
     progress.style.width=(max>0?Math.min(100,y/max*100):0)+'%';
