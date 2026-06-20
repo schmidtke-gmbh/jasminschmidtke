@@ -5,19 +5,20 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Kostenloser Live-Workshop für Frauen ab 40: Wieder frisch & attraktiv fühlen | Jasmin Schmidtke</title>
 <meta name="description" content="Kostenloser Live-Workshop mit Heilpraktikerin Jasmin Schmidtke: Fühl dich ab 40+ wieder frisch, attraktiv und voller Energie. Finde die wahre Ursache, statt Symptome zu behandeln. Jetzt kostenlos anmelden.">
-<!-- Cookiebot Consent (gleiche Domain wie Startseite) -->
-<script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="d7edd666-c373-4b8b-b522-fe1891c11381" data-blockingmode="auto" type="text/javascript"></script>
 <!-- ════════════ META PIXEL (Jasmin) ════════════
      Pixel-ID: 1626754815196504 = Jasmin (Facebook)
+     Wird erst nach Einwilligung ueber den eigenen Cookie-Banner geladen.
 -->
-<script type="text/plain" data-cookieconsent="marketing">
+<script>
+window.loadJasminPixel=function(){if(window._jpxLoaded)return;window._jpxLoaded=1;
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
 n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
 n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
 t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1626754815196504');              /* Jasmin (Facebook) */
+fbq('init', '1626754815196504');
 fbq('track', 'PageView');
+};
 </script>
 <!-- ═══════════════════════════════════════════════ -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -800,6 +801,7 @@ fbq('track', 'PageView');
         <form class="reg-form" name="webinar-anmeldung" method="POST" action="/webinar-danke.html" data-netlify="true" netlify-honeypot="bot-field">
           <input type="hidden" name="form-name" value="webinar-anmeldung">
           <p hidden><label>Bitte nicht ausfüllen: <input name="bot-field"></label></p>
+          <input type="hidden" name="utm_source"><input type="hidden" name="utm_medium"><input type="hidden" name="utm_campaign"><input type="hidden" name="utm_content"><input type="hidden" name="utm_term">
           <input type="text" name="name" placeholder="Dein Vorname" autocomplete="given-name" required>
           <input type="email" name="email" placeholder="Deine E-Mail-Adresse" autocomplete="email" required>
           <label class="reg-check"><input type="checkbox" name="consent" required><span>Ich akzeptiere die <a href="datenschutz.html" target="_blank" rel="noopener">Datenschutzbestimmungen</a>.</span></label>
@@ -851,6 +853,16 @@ fbq('track', 'PageView');
 </div>
 
 <script>
+  // UTM-Parameter aus der URL in die Formularfelder schreiben (Tracking pro Anzeige)
+  (function(){
+    var keys=['utm_source','utm_medium','utm_campaign','utm_content','utm_term'];
+    var p=new URLSearchParams(location.search), store={};
+    try{store=JSON.parse(sessionStorage.getItem('jutm')||'{}')}catch(e){}
+    keys.forEach(function(k){var v=p.get(k);if(v)store[k]=v;});
+    try{sessionStorage.setItem('jutm',JSON.stringify(store))}catch(e){}
+    keys.forEach(function(k){document.querySelectorAll('[name="'+k+'"]').forEach(function(el){if(store[k])el.value=store[k];});});
+  })();
+
   // Nav background on scroll + sticky CTA after hero
   const nav=document.getElementById('nav'), sticky=document.getElementById('sticky'), hero=document.querySelector('.hero');
   const progress=document.getElementById('progress');
@@ -921,5 +933,7 @@ fbq('track', 'PageView');
   }
   tick(); setInterval(tick,1000);
 </script>
+<!-- TEST OHNE BANNER: Pixel feuert fuer ALLE (nicht DSGVO-konform, nur zum Testen) -->
+<script>window.loadJasminPixel&&loadJasminPixel();</script>
 </body>
 </html>

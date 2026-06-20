@@ -6,13 +6,13 @@
 <title>Fast geschafft! | Live-Workshop mit Jasmin Schmidtke</title>
 <meta name="robots" content="noindex">
 
-<!-- Cookiebot Consent (gleiche Domain wie Startseite) -->
-<script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="d7edd666-c373-4b8b-b522-fe1891c11381" data-blockingmode="auto" type="text/javascript"></script>
 <!-- ============ META PIXEL (Jasmin) ============
      Pixel-ID: 1626754815196504 = Jasmin (Facebook)
-     Lead feuert beim Laden -> zaehlt IMMER als Webinar-Lead, auch ohne ausgefuellten Fragebogen.
+     Wird erst nach Einwilligung ueber den eigenen Cookie-Banner geladen.
+     Lead feuert dann beim Laden -> zaehlt als Webinar-Lead, auch ohne ausgefuellten Fragebogen.
 -->
-<script type="text/plain" data-cookieconsent="marketing">
+<script>
+window.loadJasminPixel=function(){if(window._jpxLoaded)return;window._jpxLoaded=1;
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
 n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
 n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
@@ -21,6 +21,7 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,do
 fbq('init', '1626754815196504');
 fbq('track', 'PageView');
 fbq('track', 'Lead');
+};
 </script>
 <!-- =============================================== -->
 
@@ -117,6 +118,7 @@ fbq('track', 'Lead');
       <form id="qform" name="webinar-qualifizierung" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="return finishQ(event)">
         <input type="hidden" name="form-name" value="webinar-qualifizierung">
         <p hidden><label>Bitte nicht ausfüllen: <input name="bot-field"></label></p>
+        <input type="hidden" name="utm_source"><input type="hidden" name="utm_medium"><input type="hidden" name="utm_campaign"><input type="hidden" name="utm_content"><input type="hidden" name="utm_term">
 
         <div class="wstep active" data-step="1">
           <label class="qlabel">Was beschreibt deine Situation gerade am besten?</label>
@@ -179,6 +181,16 @@ fbq('track', 'Lead');
 </footer>
 
 <script>
+  // UTM aus URL oder gespeicherter Session in die Formularfelder schreiben
+  (function(){
+    var keys=['utm_source','utm_medium','utm_campaign','utm_content','utm_term'];
+    var p=new URLSearchParams(location.search), store={};
+    try{store=JSON.parse(sessionStorage.getItem('jutm')||'{}')}catch(e){}
+    keys.forEach(function(k){var v=p.get(k);if(v)store[k]=v;});
+    try{sessionStorage.setItem('jutm',JSON.stringify(store))}catch(e){}
+    keys.forEach(function(k){document.querySelectorAll('[name="'+k+'"]').forEach(function(el){if(store[k])el.value=store[k];});});
+  })();
+
   var TOTAL=3, cur=1;
   var fill=document.getElementById('pfill'), plabel=document.getElementById('plabel');
   function render(){
@@ -205,5 +217,7 @@ fbq('track', 'Lead');
   }
   render();
 </script>
+<!-- TEST OHNE BANNER: Pixel feuert fuer ALLE (nicht DSGVO-konform, nur zum Testen) -->
+<script>window.loadJasminPixel&&loadJasminPixel();</script>
 </body>
 </html>
