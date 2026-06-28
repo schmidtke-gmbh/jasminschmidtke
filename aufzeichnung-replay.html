@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Webinar-Aufzeichnung · Fresh & Attraktiv Ü40 | Jasmin Schmidtke</title>
+<meta name="robots" content="noindex" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,600;1,700&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{--cream:#FBF7F4;--cream2:#F5EFE9;--text-dark:#2D2B30;--text-body:#5A5550;--text-muted:#7a7068;
+    --accent:#BFA492;--accent-deep:#A8876F;--accent-text:#8C6743;--green-btn:#6B8C5A;--green-hover:#7A9E68;
+    --border:#E4DBD2;--grid-line:rgba(150,130,110,0.10);}
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Poppins',system-ui,sans-serif;background:var(--cream);color:var(--text-dark);line-height:1.6;overflow-x:clip}
+  body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;
+    background-image:linear-gradient(var(--grid-line) 1px,transparent 1px),linear-gradient(90deg,var(--grid-line) 1px,transparent 1px);background-size:64px 64px;
+    -webkit-mask-image:radial-gradient(ellipse 70% 50% at 50% 12%,#000 0%,transparent 72%);mask-image:radial-gradient(ellipse 70% 50% at 50% 12%,#000 0%,transparent 72%)}
+  .topbar{position:relative;z-index:2;background:var(--green-btn);color:#fff;text-align:center;padding:11px 18px;font-size:14px;font-weight:600}
+  header{position:relative;z-index:1;display:flex;justify-content:center;padding:22px 18px 0}
+  .logo{display:flex;align-items:center;gap:10px;font-family:'Playfair Display',serif;font-weight:700;font-size:19px;color:var(--text-dark)}
+  .logo svg{width:36px;height:36px}
+  main{position:relative;z-index:1;max-width:920px;margin:0 auto;padding:30px 22px 70px;text-align:center}
+  .eyebrow{font-size:13px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--accent-text);margin-bottom:12px}
+  h1{font-family:'Poppins';font-weight:800;font-size:clamp(1.9rem,5vw,2.7rem);line-height:1.1;margin-bottom:12px}
+  h1 .ac{font-family:'Playfair Display',serif;font-style:italic;font-weight:600;color:var(--accent-deep)}
+  .sub{font-size:16px;color:var(--text-body);max-width:560px;margin:0 auto 30px}
+  /* video */
+  .video-wrap{position:relative;width:100%;aspect-ratio:16/9;background:#211f24;border-radius:18px;overflow:hidden;box-shadow:0 26px 60px rgba(120,90,60,.20);border:1px solid var(--border)}
+  .video-wrap iframe,.video-wrap video,.video-wrap .wistia_responsive_padding{position:absolute;inset:0;width:100%!important;height:100%!important;border:0}
+  /* fallback placeholder, sichtbar bis du das Embed einsetzt */
+  .placeholder{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;color:#fff;background:linear-gradient(155deg,#3a352f,#2d2b30 55%,#211f24);text-align:center;padding:24px}
+  .placeholder .pl{width:78px;height:78px;border-radius:50%;background:var(--green-btn);display:flex;align-items:center;justify-content:center;box-shadow:0 14px 34px rgba(107,140,90,.45)}
+  .placeholder .pl svg{width:30px;height:30px;margin-left:5px;fill:#fff}
+  .placeholder b{font-family:'Playfair Display',serif;font-style:italic;font-size:22px}
+  .placeholder span{font-size:13px;color:rgba(255,255,255,.65);max-width:420px}
+  /* offer */
+  .offer{margin-top:46px;background:#fff;border:1px solid var(--border);border-radius:20px;padding:34px 30px;box-shadow:0 18px 50px rgba(120,90,60,.08)}
+  .offer h2{font-size:22px;font-weight:800;margin-bottom:10px}
+  .offer h2 .ac{font-family:'Playfair Display',serif;font-style:italic;font-weight:600;color:var(--accent-deep)}
+  .offer p{font-size:15.5px;color:var(--text-body);max-width:560px;margin:0 auto 14px}
+  .price{display:inline-block;background:var(--cream2);border:1px solid var(--border);border-radius:40px;padding:8px 18px;font-size:14px;font-weight:600;color:var(--accent-text);margin-bottom:22px}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--green-btn);color:#fff;border:none;border-radius:257px;padding:17px 34px;font:700 16.5px 'Poppins';cursor:pointer;text-decoration:none;box-shadow:0 14px 30px rgba(107,140,90,.3);transition:.2s}
+  .btn:hover{transform:translateY(-2px);background:var(--green-hover)}
+  .btn svg{width:20px;height:20px;fill:#fff}
+  footer{position:relative;z-index:1;text-align:center;padding:14px 18px 30px;font-size:11.5px;color:var(--text-muted)}
+  footer a{color:var(--text-muted)}
+  @media(max-width:480px){
+    main{padding:24px 16px 54px}
+    .offer{padding:26px 20px}
+    .topbar{font-size:12.5px}
+  }
+</style>
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1626754815196504');
+fbq('track', 'PageView');
+fbq('track', 'Lead');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1626754815196504&ev=PageView&noscript=1"/></noscript>
+<!-- End Meta Pixel Code -->
+</head>
+<body>
+<div class="topbar">Schön, dass du da bist · Viel Freude mit der Aufzeichnung</div>
+<header>
+  <div class="logo"><svg viewBox="0 0 200 200"><circle cx="100" cy="100" r="82" fill="none" stroke="#BFA492" stroke-width="11"/><path d="M 18,100 C 45,118 65,118 100,95 C 135,72 155,72 182,100" fill="none" stroke="#BFA492" stroke-width="7" stroke-linecap="round"/></svg> Jasmin Schmidtke</div>
+</header>
+
+<main>
+  <div class="eyebrow">Webinar-Aufzeichnung</div>
+  <h1>Fresh &amp; <span class="ac">Attraktiv Ü40</span></h1>
+  <p class="sub">Nimm dir die knappe Stunde bewusst Zeit, am besten ungestört, mit einem Glas Wasser. Es lohnt sich bis zum Ende.</p>
+
+  <div class="video-wrap">
+    <!--
+      ============================================================
+      VIDEO HIER EINBETTEN: Lösche den kompletten <div class="placeholder">-Block
+      und füge stattdessen EINEN der folgenden Embed-Codes ein.
+      ============================================================
+
+      YOUTUBE (schnellste Option, Video auf "Nicht gelistet" stellen) — nur die Video-ID einsetzen.
+      Der Teil hinter "v=" in der YouTube-URL ist die ID. rel=0 begrenzt vorgeschlagene Videos:
+      <iframe src="https://www.youtube-nocookie.com/embed/DEINE_VIDEO_ID?rel=0&modestbranding=1"
+              allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
+              allowfullscreen frameborder="0"
+              title="Fresh & Attraktiv Ü40"></iframe>
+
+      WISTIA (am schönsten) — Embed-Code aus Wistia > Embed & Share kopieren, z. B.:
+      <iframe src="https://fast.wistia.net/embed/iframe/DEINE_VIDEO_ID?seo=true"
+              allow="autoplay; fullscreen" allowtransparency="true" frameborder="0"
+              scrolling="no" class="wistia_embed" name="wistia_embed"
+              title="Fresh & Attraktiv Ü40"></iframe>
+
+      VIMEO — Video-ID einsetzen:
+      <iframe src="https://player.vimeo.com/video/DEINE_VIDEO_ID"
+              allow="autoplay; fullscreen; picture-in-picture" frameborder="0"
+              title="Fresh & Attraktiv Ü40"></iframe>
+
+      LOOM — Share-ID einsetzen:
+      <iframe src="https://www.loom.com/embed/DEINE_SHARE_ID"
+              allowfullscreen frameborder="0"
+              title="Fresh & Attraktiv Ü40"></iframe>
+      ============================================================
+    -->
+    <iframe src="https://www.youtube-nocookie.com/embed/ePHL-v5jWKo?rel=0&modestbranding=1"
+            allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
+            allowfullscreen frameborder="0"
+            title="Fresh & Attraktiv Ü40 · Webinar-Aufzeichnung"></iframe>
+  </div>
+
+  <!-- Bootcamp-Angebot -->
+  <div class="offer">
+    <h2>Bereit für den <span class="ac">nächsten Schritt?</span></h2>
+    <p>Wissen allein verändert noch nichts. Im 6-Wochen-Bootcamp „Fresh &amp; Attraktiv Ü40" begleite ich dich live in einer kleinen Gruppe, Schritt für Schritt durch alle vier Säulen.</p>
+    <div class="price">Test-Preis der ersten Runde: 349 € · auch in 2 Raten</div>
+    <div>
+      <a class="btn" href="https://www.copecart.com/products/01a09103/checkout" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.17 4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+        Jetzt meinen Platz sichern
+      </a>
+    </div>
+  </div>
+</main>
+
+<footer>
+  &copy; 2026 Jasmin Schmidtke &middot; <a href="impressum.html">Impressum</a> &middot; <a href="datenschutz.html">Datenschutz</a>
+</footer>
+</body>
+</html>

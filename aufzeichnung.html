@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Webinar-Aufzeichnung sichern · Fresh & Attraktiv Ü40 | Jasmin Schmidtke</title>
+<meta name="robots" content="noindex" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,600;1,700&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{--cream:#FBF7F4;--cream2:#F5EFE9;--text-dark:#2D2B30;--text-body:#5A5550;--text-muted:#7a7068;
+    --accent:#BFA492;--accent-deep:#A8876F;--accent-text:#8C6743;--green-btn:#6B8C5A;--green-hover:#7A9E68;
+    --border:#E4DBD2;--grid-line:rgba(150,130,110,0.10);}
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Poppins',system-ui,sans-serif;background:var(--cream);color:var(--text-dark);line-height:1.6;overflow-x:clip}
+  body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;
+    background-image:linear-gradient(var(--grid-line) 1px,transparent 1px),linear-gradient(90deg,var(--grid-line) 1px,transparent 1px);background-size:64px 64px;
+    -webkit-mask-image:radial-gradient(ellipse 75% 55% at 50% 12%,#000 0%,transparent 72%);mask-image:radial-gradient(ellipse 75% 55% at 50% 12%,#000 0%,transparent 72%)}
+  .topbar{position:relative;z-index:2;background:var(--green-btn);color:#fff;text-align:center;padding:13px 18px;font-size:14px;font-weight:600;line-height:1.4;letter-spacing:.01em}
+  header{position:relative;z-index:1;display:flex;justify-content:center;padding:26px 18px 0}
+  .logo{display:flex;align-items:center;gap:10px;font-family:'Playfair Display',serif;font-weight:700;font-size:19px;color:var(--text-dark)}
+  .logo svg{width:36px;height:36px}
+  main{position:relative;z-index:1;max-width:1100px;margin:0 auto;padding:42px 24px 80px}
+  .grid{display:grid;grid-template-columns:1.02fr .98fr;gap:56px;align-items:center}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--accent-text);margin-bottom:18px}
+  .eyebrow::before{content:'';width:26px;height:2px;background:var(--accent);border-radius:2px}
+  h1{font-family:'Poppins';font-weight:800;font-size:clamp(2.1rem,5.4vw,3.15rem);line-height:1.06;letter-spacing:-.015em;margin-bottom:16px}
+  h1 .ac{font-family:'Playfair Display',serif;font-style:italic;font-weight:600;color:var(--accent-deep)}
+  .sub{font-size:16.5px;color:var(--text-body);max-width:520px;margin-bottom:26px}
+  .bullets{list-style:none;display:flex;flex-direction:column;gap:13px;margin-bottom:30px}
+  .bullets li{display:flex;gap:13px;align-items:flex-start;font-size:15.5px;color:var(--text-body)}
+  .bullets .ck{flex-shrink:0;width:25px;height:25px;border-radius:50%;background:rgba(107,140,90,.15);color:var(--green-btn);display:flex;align-items:center;justify-content:center;font-size:13px;margin-top:1px}
+  .intro{display:flex;flex-direction:column}
+  /* video cover */
+  .cover-wrap{display:flex;justify-content:center}
+  .cover{width:100%;max-width:460px;aspect-ratio:16/10;background:
+      radial-gradient(ellipse 80% 70% at 50% 30%,rgba(191,164,146,.30),transparent 68%),
+      linear-gradient(150deg,#46403a 0%,#2d2b30 52%,#211f24 100%);
+    border-radius:22px;box-shadow:0 30px 70px rgba(74,58,44,.30),inset 0 0 0 1px rgba(255,255,255,.06);
+    position:relative;display:flex;flex-direction:column;justify-content:space-between;padding:26px 28px;overflow:hidden;cursor:pointer}
+  .cover .wave{position:absolute;right:-30px;bottom:-30px;width:75%;opacity:.10;pointer-events:none}
+  .cover .wave path{stroke:#fff;stroke-width:7;fill:none;stroke-linecap:round}
+  .cover .topline{position:relative;z-index:1;display:flex;justify-content:space-between;align-items:center}
+  .cover .von{display:inline-flex;align-items:center;gap:7px;font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--accent)}
+  .cover .rec{width:8px;height:8px;border-radius:50%;background:#e0654b;box-shadow:0 0 0 0 rgba(224,101,75,.5);animation:pulse 2s infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(224,101,75,.5)}70%{box-shadow:0 0 0 9px rgba(224,101,75,0)}100%{box-shadow:0 0 0 0 rgba(224,101,75,0)}}
+  .cover .dur{font-size:11px;font-weight:600;color:#fff;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.22);padding:4px 11px;border-radius:40px;backdrop-filter:blur(4px)}
+  .cover .play{position:relative;z-index:1;align-self:center;width:84px;height:84px;border-radius:50%;background:var(--green-btn);display:flex;align-items:center;justify-content:center;box-shadow:0 16px 40px rgba(107,140,90,.5);transition:transform .25s ease, background .25s ease}
+  .cover .play::before{content:'';position:absolute;inset:-12px;border-radius:50%;border:2px solid rgba(255,255,255,.22)}
+  .cover:hover .play{transform:scale(1.07);background:var(--green-hover)}
+  .cover .play svg{width:32px;height:32px;margin-left:6px;fill:#fff}
+  .cover .ttl{position:relative;z-index:1}
+  .cover .ttl .t{font-family:'Playfair Display',serif;font-style:italic;font-weight:700;font-size:28px;line-height:1.05;color:#fff}
+  .cover .ttl .s{font-size:12.5px;color:rgba(255,255,255,.72);margin-top:7px}
+  /* form */
+  .card{background:#fff;border:1px solid var(--border);border-radius:22px;padding:30px 30px 30px;box-shadow:0 20px 55px rgba(120,90,60,.10);position:relative}
+  .card .badge{display:inline-flex;align-items:center;gap:7px;font-size:11.5px;font-weight:600;letter-spacing:.04em;color:var(--green-btn);background:rgba(107,140,90,.12);padding:5px 12px;border-radius:40px;margin-bottom:14px}
+  .card .badge svg{width:13px;height:13px;fill:var(--green-btn)}
+  .card h2{font-size:20px;font-weight:700;margin-bottom:5px;line-height:1.25}
+  .card p.hint{font-size:13.5px;color:var(--text-muted);margin-bottom:20px}
+  label{display:block;font-size:13.5px;font-weight:600;color:var(--text-dark);margin:0 0 7px}
+  input[type=text],input[type=email]{width:100%;padding:14px 16px;border:1.5px solid var(--border);border-radius:13px;font:400 16px 'Poppins';color:var(--text-dark);background:var(--cream);margin-bottom:17px;transition:border-color .15s, box-shadow .15s}
+  input:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(191,164,146,.18)}
+  .consent{display:flex;gap:10px;align-items:flex-start;font-size:12.5px;color:var(--text-muted);margin-bottom:20px;line-height:1.5}
+  .consent input{margin-top:3px;width:16px;height:16px;flex-shrink:0;accent-color:var(--green-btn)}
+  .btn{width:100%;display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--green-btn);color:#fff;border:none;border-radius:257px;padding:18px 28px;font:700 16.5px 'Poppins';cursor:pointer;box-shadow:0 14px 32px rgba(107,140,90,.32);transition:.2s}
+  .btn:hover{transform:translateY(-2px);background:var(--green-hover);box-shadow:0 18px 38px rgba(107,140,90,.4)}
+  .btn svg{width:20px;height:20px;fill:#fff}
+  .trust{display:flex;align-items:center;justify-content:center;gap:8px;font-size:12px;color:var(--text-muted);margin-top:14px}
+  .trust svg{width:14px;height:14px;fill:var(--accent-deep)}
+  .hp{position:absolute;left:-9999px}
+  footer{position:relative;z-index:1;text-align:center;padding:8px 18px 34px;font-size:11.5px;color:var(--text-muted)}
+  footer a{color:var(--text-muted)}
+
+  /* tablet */
+  @media(max-width:880px){
+    main{padding:34px 22px 64px}
+    .grid{grid-template-columns:1fr;gap:30px;max-width:560px;margin:0 auto}
+    .cover-wrap{order:-1}
+    .cover{max-width:560px;aspect-ratio:16/9}
+    h1{text-align:center}
+    .eyebrow{align-self:center}
+    .sub{text-align:center;margin-left:auto;margin-right:auto}
+    .bullets{max-width:440px;margin-left:auto;margin-right:auto;margin-bottom:26px}
+  }
+  /* phone */
+  @media(max-width:480px){
+    .topbar{font-size:12.5px;padding:11px 14px}
+    main{padding:26px 16px 52px}
+    .grid{gap:26px}
+    h1{font-size:2rem;letter-spacing:-.02em}
+    .sub{font-size:15.5px}
+    .bullets li{font-size:15px}
+    .cover{padding:20px 20px;border-radius:18px}
+    .cover .play{width:66px;height:66px}
+    .cover .play svg{width:26px;height:26px}
+    .cover .ttl .t{font-size:23px}
+    .card{padding:24px 20px}
+    .card h2{font-size:18.5px}
+    .btn{padding:16px 22px;font-size:15.5px}
+  }
+  @media(max-width:360px){
+    h1{font-size:1.8rem}
+    .cover .ttl .t{font-size:20px}
+  }
+</style>
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1626754815196504');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1626754815196504&ev=PageView&noscript=1"/></noscript>
+<!-- End Meta Pixel Code -->
+</head>
+<body>
+<div class="topbar">Webinar verpasst? Hier ist deine Aufzeichnung.</div>
+<header>
+  <div class="logo"><svg viewBox="0 0 200 200"><circle cx="100" cy="100" r="82" fill="none" stroke="#BFA492" stroke-width="11"/><path d="M 18,100 C 45,118 65,118 100,95 C 135,72 155,72 182,100" fill="none" stroke="#BFA492" stroke-width="7" stroke-linecap="round"/></svg> Jasmin Schmidtke</div>
+</header>
+
+<main>
+  <div class="grid">
+    <!-- LEFT -->
+    <div class="intro">
+      <div class="eyebrow">Deine Aufzeichnung</div>
+      <h1>Schau dir das Webinar <span class="ac">in Ruhe an.</span></h1>
+      <p class="sub">Du konntest nicht live dabei sein? Kein Problem. Trag dich kurz ein, dann bekommst du sofort Zugang zur kompletten Aufzeichnung von „Fresh &amp; Attraktiv Ü40".</p>
+      <ul class="bullets">
+        <li><span class="ck">✓</span> Warum sich dein Körper ab 40 wirklich verändert</li>
+        <li><span class="ck">✓</span> Die vier Hebel, mit denen du wieder zu Energie kommst</li>
+        <li><span class="ck">✓</span> Konkrete erste Schritte, die du sofort umsetzen kannst</li>
+      </ul>
+
+      <div class="card">
+        <div class="badge"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg> Sofort verfügbar</div>
+        <h2>Trag dich ein, schau direkt zu</h2>
+        <p class="hint">Vorname und E-Mail genügen. Danach geht es direkt zur Aufzeichnung.</p>
+        <form name="webinar-aufzeichnung" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/aufzeichnung-replay.html">
+          <input type="hidden" name="form-name" value="webinar-aufzeichnung" />
+          <p class="hp"><label>Bitte freilassen: <input name="bot-field" /></label></p>
+          <label for="vorname">Vorname</label>
+          <input type="text" id="vorname" name="vorname" placeholder="Dein Vorname" required />
+          <label for="email">E-Mail</label>
+          <input type="email" id="email" name="email" placeholder="deine@email.de" required />
+          <label class="consent"><input type="checkbox" name="einverstanden" required /> Ja, schickt mir die Aufzeichnung und gelegentlich hilfreiche Tipps für Frauen ab 40 per E-Mail. Ich bin einverstanden.</label>
+          <button class="btn" type="submit">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+            Zur Aufzeichnung
+          </button>
+          <div class="trust"><svg viewBox="0 0 24 24"><path d="M12 1 3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg> 100% kostenlos · jederzeit abbestellbar</div>
+        </form>
+      </div>
+    </div>
+
+    <!-- RIGHT video cover -->
+    <div class="cover-wrap">
+      <div class="cover">
+        <svg class="wave" viewBox="0 0 200 120" aria-hidden="true"><path d="M 5,70 C 50,100 80,100 120,55 C 150,22 175,22 198,55"/></svg>
+        <div class="topline">
+          <span class="von"><span class="rec"></span> Live-Webinar</span>
+          <span class="dur">▶ ca. 80 Min</span>
+        </div>
+        <div class="play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></div>
+        <div class="ttl">
+          <div class="t">Fresh &amp; Attraktiv Ü40</div>
+          <div class="s">Die komplette Webinar-Aufzeichnung mit Jasmin Schmidtke</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  &copy; 2026 Jasmin Schmidtke &middot; <a href="impressum.html">Impressum</a> &middot; <a href="datenschutz.html">Datenschutz</a>
+</footer>
+</body>
+</html>
