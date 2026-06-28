@@ -31,6 +31,7 @@
   .bullets{list-style:none;display:flex;flex-direction:column;gap:12px;margin-bottom:28px}
   .bullets li{display:flex;gap:12px;align-items:flex-start;font-size:16px;color:var(--text-body)}
   .bullets .ck{flex-shrink:0;width:24px;height:24px;border-radius:50%;background:rgba(107,140,90,.15);color:var(--green-btn);display:flex;align-items:center;justify-content:center;font-size:13px;margin-top:1px}
+  .intro{display:flex;flex-direction:column}
   /* cover */
   .cover-wrap{display:flex;justify-content:center}
   .cover{width:300px;aspect-ratio:3/4;background:linear-gradient(160deg,#FBF7F4,#F1E8DF);border:1px solid var(--border);border-radius:18px;box-shadow:0 26px 60px rgba(120,90,60,.20);display:flex;flex-direction:column;justify-content:space-between;padding:32px 28px}
@@ -55,11 +56,18 @@
   .hp{position:absolute;left:-9999px}
   footer{position:relative;z-index:1;text-align:center;padding:8px 18px 30px;font-size:11.5px;color:var(--text-muted)}
   footer a{color:var(--text-muted)}
+  @media(max-width:860px){
+    .cover-wrap{margin-bottom:2px}
+    .cover-wrap img{max-width:230px!important}
+    .intro .card{order:1}
+    .intro .bullets{order:2;margin:18px 0 0}
+    .intro .sub{margin-bottom:18px}
+  }
   @media(max-width:480px){
-    main{padding:24px 16px 56px}
-    .cover{width:240px;padding:26px 24px}
-    .cover .tt{font-size:36px}
-    .card{padding:22px 18px 24px}
+    main{padding:20px 16px 52px}
+    .cover-wrap img{max-width:200px!important}
+    h1{font-size:1.9rem}
+    .card{padding:20px 18px 22px}
     .btn{padding:16px 20px;font-size:15.5px}
     .topbar{font-size:12.5px}
   }
@@ -74,7 +82,7 @@
 <main>
   <div class="grid">
     <!-- LEFT -->
-    <div>
+    <div class="intro">
       <div class="eyebrow">Mein Geschenk an dich</div>
       <h1>Wer bin <span class="ac">ich jetzt?</span></h1>
       <p class="sub">Dein Reflexions-Begleiter für die zweite Lebenshälfte. Weil jetzt genau die richtige Zeit ist, dir selbst zu begegnen.</p>
