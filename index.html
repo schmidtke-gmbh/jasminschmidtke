@@ -387,8 +387,16 @@
     .ba-card .mc-checks .ck { background: var(--cream2); }
     .ba-ctas { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
     @media (max-width: 860px) {
-      .ba { margin-top: 60px; padding: 56px 0; background-position: 74% center; }
-      .ba-card { max-width: none; padding: 32px 24px; }
+      .ba { margin-top: 60px; padding: 0 0 52px; background: #F6EDD9; }
+      .ba::before {
+        content: ''; display: block; height: 240px;
+        background: url('blutanalyse-banner.jpg') 70% 45% / cover no-repeat;
+      }
+      .ba-card {
+        max-width: none; padding: 32px 24px;
+        position: relative; margin-top: -48px;
+        background: #fff;
+      }
       .ba-card h2 { white-space: normal; font-size: clamp(24px, 6vw, 28px); }
     }
 
@@ -932,7 +940,7 @@
     <section class="ba" aria-label="Blutanalyse">
       <div class="wrap">
         <div class="ba-card reveal">
-          <h2>Hör auf zu raten: deine <span class="accent">Blutanalyse</span></h2>
+          <h2>Hör auf zu raten: <span style="white-space: nowrap;">deine <span class="accent">Blutanalyse</span></span></h2>
           <p>
             Müdigkeit, Haut, Figur, Stimmung: Das meiste davon hat eine messbare Ursache. Mit einer individuellen Blutanalyse siehst du, was dein Körper wirklich braucht und wo das Grundproblem liegt, statt weiter auf Verdacht zu probieren.
           </p>
