@@ -81,7 +81,7 @@
     }
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
-    html { overflow-x: hidden; }
+    html { overflow-x: clip; }
     body {
       background: var(--cream);
       color: var(--text-dark);
@@ -611,7 +611,7 @@
       padding: 100px 30px 34px;
       opacity: 0; visibility: hidden; pointer-events: none;
       transition: opacity 0.32s ease, visibility 0.32s;
-      overflow-y: auto;
+      overflow-y: auto; overflow-x: hidden; overscroll-behavior: contain;
     }
     .mobile-menu::after {
       content: ''; position: absolute; right: -70px; top: -60px;
@@ -1261,6 +1261,7 @@
       document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape') setOpen(false);
       });
+      window.addEventListener('pageshow', function() { setOpen(false); });
     })();
   </script>
 
