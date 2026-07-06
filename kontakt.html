@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <!-- Cookiebot Consent Management, muss als ERSTES im head stehen -->
+  <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="d7edd666-c373-4b8b-b522-fe1891c11381" data-blockingmode="auto" type="text/javascript"></script>
+
+  <!-- Google Analytics 4, von Cookiebot blockiert bis Statistik-Consent -->
+  <script type="text/plain" data-cookieconsent="statistics" async src="https://www.googletagmanager.com/gtag/js?id=G-D2D1N21BTL"></script>
+  <script type="text/plain" data-cookieconsent="statistics">
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-D2D1N21BTL', { anonymize_ip: true });
+  </script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kontakt | Jasmin Schmidtke</title>
+  <meta name="description" content="Du hast eine Frage an Jasmin Schmidtke? Schreib ihr über das Kontaktformular oder per E-Mail. Sie meldet sich so schnell wie möglich zurück." />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="Jasmin Schmidtke" />
+  <link rel="canonical" href="https://www.jasminschmidtke.de/kontakt.html" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="favicon-32x32.png" sizes="32x32" type="image/png" />
+  <link rel="icon" href="favicon-16x16.png" sizes="16x16" type="image/png" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  <meta name="theme-color" content="#BFA492" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Kontakt | Jasmin Schmidtke" />
+  <meta property="og:description" content="Schreib Jasmin über das Kontaktformular oder per E-Mail." />
+  <meta property="og:url" content="https://www.jasminschmidtke.de/kontakt.html" />
+  <meta property="og:image" content="https://www.jasminschmidtke.de/og-image.jpg" />
+  <meta property="og:locale" content="de_DE" />
+
+  <!-- Fonts: Playfair Display (headings) + Poppins (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --cream:         #FBF7F4;
+      --cream2:        #F5EFE9;
+      --cream-footer:  #FCF7F5;
+      --text-dark:     #2D2B30;
+      --text-body:     #4C4640;
+      --text-muted:    #808080;
+      --accent:        #BFA492;
+      --accent-deep:   #A8876F;
+      --accent-text:   #8C6743;
+      --green-btn:     #6B8C5A;
+      --green-hover:   #7A9E68;
+      --border:        #DDD6CE;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    html { overflow-x: hidden; }
+    body {
+      background: var(--cream);
+      color: var(--text-dark);
+      font-family: 'Poppins', sans-serif;
+      font-weight: 400;
+      line-height: 1.7;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { text-decoration: none; color: inherit; }
+
+    /* ───── NAVBAR ───── */
+    nav.navbar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      padding: 14px max(44px, calc((100% - 1240px) / 2));
+      display: flex; align-items: center; justify-content: space-between;
+      background: rgba(251,247,244,0.92);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      box-shadow: 0 1px 0 var(--border);
+    }
+    .logo { display: flex; align-items: center; gap: 10px; }
+    .logo-icon { width: 32px; height: 32px; }
+    .logo-lines {
+      display: flex; flex-direction: column;
+      font-family: 'Playfair Display', Georgia, serif;
+      font-weight: 500; font-size: 16px; line-height: 1.15;
+    }
+    .nav-right { display: flex; align-items: center; gap: 24px; }
+    .nav-link { font-size: 14px; font-weight: 500; color: var(--text-dark); white-space: nowrap; transition: color 0.2s ease; }
+    .nav-link:hover { color: var(--accent); }
+    .nav-link.active { color: var(--accent-text); }
+    .nav-cta {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--green-btn); color: #fff;
+      font-size: 14px; font-weight: 600; letter-spacing: 0.01em;
+      padding: 10px 22px; border-radius: 257px;
+      transition: background 0.2s ease; white-space: nowrap;
+    }
+    .nav-cta:hover { background: var(--green-hover); }
+    .nav-cta svg { width: 16px; height: 16px; }
+
+    /* ───── CONTENT ───── */
+    .page {
+      max-width: 1000px; margin: 0 auto;
+      padding: 150px 28px 80px;
+      display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 52px;
+      align-items: start;
+    }
+    .section-label {
+      display: block; font-size: 13px; font-weight: 600;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--accent-deep); margin-bottom: 12px;
+    }
+    h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-weight: 700; font-size: clamp(32px, 4.4vw, 46px);
+      line-height: 1.15; margin-bottom: 18px;
+    }
+    h1 .accent { color: var(--accent); font-style: italic; }
+    .intro p { font-size: 16px; color: var(--text-body); margin-bottom: 18px; max-width: 420px; }
+    .contact-card {
+      background: var(--cream2); border-radius: 16px;
+      padding: 20px 22px; margin-top: 8px;
+      display: grid; grid-template-columns: auto 1fr; gap: 14px; align-items: center;
+      max-width: 420px;
+    }
+    .contact-card .c-icon {
+      width: 44px; height: 44px; border-radius: 50%;
+      background: #fff; color: var(--accent-deep);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .contact-card .c-icon svg { width: 20px; height: 20px; }
+    .contact-card b { display: block; font-size: 14px; font-weight: 600; }
+    .contact-card a { font-size: 14.5px; color: var(--accent-text); text-decoration: underline; text-underline-offset: 3px; }
+
+    /* ───── FORM ───── */
+    .form-box {
+      background: #fff; border: 1px solid var(--border); border-radius: 24px;
+      padding: 38px 36px;
+      box-shadow: 0 16px 50px rgba(80,55,40,0.09);
+    }
+    form { display: flex; flex-direction: column; gap: 14px; }
+    label { font-size: 13.5px; font-weight: 500; color: var(--text-dark); }
+    input[type="text"], input[type="email"], input[type="tel"], textarea {
+      width: 100%; padding: 13px 17px;
+      border: 1.5px solid var(--border); border-radius: 12px;
+      font-family: 'Poppins', sans-serif; font-size: 15px; color: var(--text-dark);
+      background: #fff; outline: none;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+      resize: vertical;
+    }
+    input::placeholder, textarea::placeholder { color: #A9A29A; }
+    input:focus, textarea:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(191,164,146,0.15); }
+    textarea { min-height: 140px; }
+    .consent {
+      display: grid; grid-template-columns: auto 1fr; gap: 10px;
+      font-size: 12.5px; color: var(--text-muted); line-height: 1.5; margin-top: 4px;
+    }
+    .consent input { margin-top: 3px; accent-color: var(--green-btn); }
+    .consent a { color: var(--accent-text); text-decoration: underline; text-underline-offset: 2px; }
+    .hp { position: absolute; left: -9999px; }
+    /* Anliegen-Auswahl: natives Dropdown, mobil öffnet sich der System-Picker */
+    .select-wrap { position: relative; }
+    select {
+      width: 100%; padding: 13px 44px 13px 17px;
+      border: 1.5px solid var(--border); border-radius: 12px;
+      font-family: 'Poppins', sans-serif; font-size: 15px; color: var(--text-dark);
+      background: #fff; outline: none; cursor: pointer;
+      appearance: none; -webkit-appearance: none; -moz-appearance: none;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+      min-height: 50px;
+    }
+    select:invalid { color: #A9A29A; }
+    select:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(191,164,146,0.15); }
+    .select-wrap::after {
+      content: ''; position: absolute; right: 18px; top: 50%;
+      width: 9px; height: 9px; pointer-events: none;
+      border-right: 2px solid var(--accent-deep); border-bottom: 2px solid var(--accent-deep);
+      transform: translateY(-70%) rotate(45deg);
+    }
+    /* Foto unter der E-Mail-Karte: ruhiger Karten-Rahmen statt Bogen */
+    .intro-photo {
+      position: relative;
+      max-width: 340px; margin-top: 32px;
+    }
+    .intro-photo img {
+      width: 100%; aspect-ratio: 5/4; object-fit: cover; object-position: center 30%;
+      border-radius: 18px;
+      box-shadow: 0 18px 45px rgba(80,55,40,0.15);
+      position: relative; z-index: 1;
+    }
+    .intro-photo::after {
+      content: ''; position: absolute; inset: 0;
+      transform: translate(12px, 12px);
+      border: 1.5px solid var(--accent); opacity: 0.45;
+      border-radius: 18px;
+      z-index: 0; pointer-events: none;
+    }
+    @media (max-width: 820px) { .intro-photo { display: none; } }
+    .btn-green {
+      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+      background: var(--green-btn); color: #fff;
+      font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: 500;
+      padding: 15px 30px; border-radius: 50px; border: none; cursor: pointer;
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
+    .btn-green:hover { background: var(--green-hover); transform: translateY(-2px); }
+    .btn-green svg { width: 18px; height: 18px; }
+
+    /* ───── FOOTER (einheitlich, wie Startseite) ───── */
+    footer { background: var(--cream-footer); border-top: 1px solid var(--border); padding: 48px 28px 24px; }
+    .footer-inner { max-width: 1100px; margin: 0 auto; }
+    .footer-brand { display: flex; flex-direction: column; align-items: center; gap: 12px; text-align: center; }
+    .footer-logo { display: flex; align-items: center; gap: 9px; }
+    .footer-tagline { font-size: 14px; color: var(--text-body); max-width: 420px; }
+    .footer-divider { height: 1px; background: var(--border); margin: 30px 0 22px; }
+    .footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 18px; }
+    .footer-links { display: flex; gap: 22px; flex-wrap: wrap; }
+    .footer-links a { font-size: 13.5px; color: var(--text-muted); transition: color 0.2s ease; }
+    .footer-links a:hover { color: var(--accent-text); }
+    .footer-social { display: flex; align-items: center; gap: 12px; }
+    .footer-social-label { font-size: 13px; color: var(--text-muted); }
+    .social-icon {
+      width: 34px; height: 34px; border-radius: 50%;
+      border: 1px solid var(--border); color: var(--text-body);
+      display: flex; align-items: center; justify-content: center;
+      transition: all 0.2s ease;
+    }
+    .social-icon svg { width: 16px; height: 16px; }
+    .social-icon:hover { border-color: var(--accent); color: var(--accent-text); }
+    .footer-disclaimer { font-size: 11.5px; color: var(--text-muted); margin-top: 26px; text-align: center; line-height: 1.6; }
+    .footer-copy { font-size: 12.5px; color: var(--text-muted); margin-top: 14px; text-align: center; }
+    .footer-copy a { color: var(--text-muted); text-decoration: underline; text-underline-offset: 2px; }
+    @media (max-width: 860px) { .footer-bottom { flex-direction: column; } }
+
+    /* ───── RESPONSIVE ───── */
+    @media (max-width: 960px) {
+      nav.navbar { padding: 12px 20px; }
+      .nav-right { gap: 14px; }
+      .nav-link { font-size: 13px; }
+      .nav-cta { display: none; }
+    }
+    @media (max-width: 820px) {
+      .page { grid-template-columns: 1fr; gap: 36px; padding: 120px 22px 56px; }
+      .form-box { padding: 30px 22px; }
+    }
+
+    /* ───── MEGA-MENÜ ───── */
+    .nav-item { position: relative; }
+    .nav-item > .nav-link { display: inline-flex; align-items: center; gap: 5px; }
+    .caret { width: 10px; height: 6px; stroke: currentColor; fill: none; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; transition: transform 0.2s ease; }
+    .nav-item:hover .caret { transform: rotate(180deg); }
+    .mega {
+      position: absolute; top: calc(100% + 16px); left: 50%;
+      width: 330px;
+      background: #fff; border: 1px solid var(--border); border-radius: 18px;
+      box-shadow: 0 24px 60px rgba(80,55,40,0.16);
+      padding: 20px;
+      opacity: 0; visibility: hidden; pointer-events: none;
+      transform: translateX(-50%) translateY(8px);
+      transition: opacity 0.22s ease, transform 0.22s ease, visibility 0.22s;
+      z-index: 120;
+    }
+    .mega::before { content: ''; position: absolute; top: -16px; left: 0; right: 0; height: 16px; }
+    .nav-item:hover .mega, .nav-item:focus-within .mega {
+      opacity: 1; visibility: visible; pointer-events: auto;
+      transform: translateX(-50%) translateY(0);
+    }
+    .mega-head { font-family: 'Playfair Display', Georgia, serif; font-size: 17px; font-weight: 700; margin-bottom: 2px; }
+    .mega-sub { font-size: 12.5px; color: var(--text-muted); margin-bottom: 12px; }
+    .m-item {
+      display: grid; grid-template-columns: auto 1fr; gap: 12px; align-items: center;
+      padding: 10px; border-radius: 12px;
+      transition: background 0.15s ease;
+    }
+    .m-item:hover { background: var(--cream2); }
+    .m-item .mi-ico {
+      width: 36px; height: 36px; border-radius: 50%;
+      background: var(--cream2); color: var(--accent-deep);
+      display: flex; align-items: center; justify-content: center; flex: none;
+    }
+    .m-item:hover .mi-ico { background: #fff; }
+    .m-item .mi-ico svg { width: 17px; height: 17px; }
+    .m-item b { display: block; font-size: 14px; font-weight: 600; color: var(--text-dark); }
+    .m-item span { display: block; font-size: 12px; color: var(--text-muted); line-height: 1.4; }
+    .m-cta {
+      display: block; text-align: center; margin-top: 10px;
+      background: var(--green-btn); color: #fff;
+      border-radius: 257px; padding: 11px 16px;
+      font-size: 13.5px; font-weight: 600;
+      transition: background 0.2s ease;
+    }
+    .m-cta:hover { background: var(--green-hover); }
+    @media (max-width: 960px) { .mega, .caret { display: none; } }
+
+    /* ───── MOBILE MENÜ ───── */
+    .burger {
+      display: none;
+      width: 44px; height: 44px;
+      border: none; background: transparent; cursor: pointer;
+      flex-direction: column; align-items: center; justify-content: center; gap: 5px;
+      position: relative; z-index: 260; flex: none;
+    }
+    .burger span {
+      display: block; width: 22px; height: 2px; border-radius: 2px;
+      background: var(--text-dark);
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+    body.menu-open nav.navbar { z-index: 300; background: transparent; box-shadow: none; }
+    body.menu-open .burger span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    body.menu-open .burger span:nth-child(2) { opacity: 0; }
+    body.menu-open .burger span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .mobile-menu {
+      position: fixed; inset: 0; z-index: 250;
+      background: var(--cream);
+      display: flex; flex-direction: column;
+      padding: 100px 30px 34px;
+      opacity: 0; visibility: hidden; pointer-events: none;
+      transition: opacity 0.32s ease, visibility 0.32s;
+      overflow-y: auto;
+    }
+    .mobile-menu::after {
+      content: ''; position: absolute; right: -70px; top: -60px;
+      width: 230px; height: 290px;
+      background: rgba(191,164,146,0.13);
+      border-radius: 0 100% 0 100%;
+      transform: rotate(24deg); pointer-events: none;
+    }
+    body.menu-open .mobile-menu { opacity: 1; visibility: visible; pointer-events: auto; }
+    .mm-links { display: flex; flex-direction: column; position: relative; z-index: 1; }
+    .mm-links a {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 27px; font-weight: 700; color: var(--text-dark);
+      padding: 14px 2px; border-bottom: 1px solid var(--border);
+      display: flex; justify-content: space-between; align-items: center;
+      opacity: 0; transform: translateY(14px);
+      transition: opacity 0.4s ease, transform 0.4s ease, color 0.2s ease;
+    }
+    .mm-links a:active { color: var(--accent-text); }
+    .mm-links a.mm-active { color: var(--accent-text); }
+    .mm-links .mm-arrow { font-family: 'Poppins', sans-serif; font-size: 20px; font-weight: 400; color: var(--accent); }
+    body.menu-open .mm-links a { opacity: 1; transform: none; }
+    body.menu-open .mm-links a:nth-child(1) { transition-delay: 0.06s; }
+    body.menu-open .mm-links a:nth-child(2) { transition-delay: 0.11s; }
+    body.menu-open .mm-links a:nth-child(3) { transition-delay: 0.16s; }
+    body.menu-open .mm-links a:nth-child(4) { transition-delay: 0.21s; }
+    body.menu-open .mm-links a:nth-child(5) { transition-delay: 0.26s; }
+    body.menu-open .mm-links a:nth-child(6) { transition-delay: 0.31s; }
+    body.menu-open .mm-links a:nth-child(7) { transition-delay: 0.36s; }
+    .mm-bottom {
+      margin-top: auto; padding-top: 30px; position: relative; z-index: 1;
+      opacity: 0; transform: translateY(14px);
+      transition: opacity 0.4s ease 0.38s, transform 0.4s ease 0.38s;
+    }
+    body.menu-open .mm-bottom { opacity: 1; transform: none; }
+    .mm-cta {
+      display: flex; align-items: center; justify-content: center; gap: 10px;
+      background: var(--green-btn); color: #fff;
+      font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: 600;
+      padding: 17px 20px; border-radius: 257px;
+    }
+    .mm-cta svg { width: 18px; height: 18px; }
+    .mm-social { display: flex; justify-content: center; align-items: center; gap: 14px; margin-top: 20px; }
+    .mm-social span { font-size: 13px; color: var(--text-muted); }
+    .mm-social a {
+      width: 40px; height: 40px; border-radius: 50%;
+      border: 1px solid var(--border); color: var(--text-body);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .mm-social a svg { width: 17px; height: 17px; }
+    @media (max-width: 960px) {
+      nav.navbar { justify-content: space-between; }
+      .nav-right { display: none; }
+      .burger { display: flex; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══════ NAVBAR ═══════ -->
+  <nav class="navbar" role="navigation" aria-label="Hauptnavigation">
+    <a href="index.html" class="logo" aria-label="Jasmin Schmidtke, Startseite">
+      <svg class="logo-icon" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="100" cy="100" r="82" fill="none" stroke="#BFA492" stroke-width="11"/>
+        <path d="M 18,100 C 45,118 65,118 100,95 C 135,72 155,72 182,100" fill="none" stroke="#BFA492" stroke-width="7" stroke-linecap="round"/>
+      </svg>
+      <span class="logo-lines">
+        <span>Jasmin</span>
+        <span>Schmidtke</span>
+      </span>
+    </a>
+    <div class="nav-right">
+      <a href="index.html" class="nav-link">Startseite</a>
+      <a href="ueber-mich.html" class="nav-link">Über mich</a>
+      <div class="nav-item">
+        <a href="blutanalyse.html" class="nav-link">Blutanalyse<svg class="caret" viewBox="0 0 10 6" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg></a>
+        <div class="mega" aria-label="Blutanalyse Untermenü">
+          <p class="mega-head">Blutanalyse</p>
+          <p class="mega-sub">Verstehen, was dein Körper wirklich braucht</p>
+          <a class="m-item" href="blutanalyse.html#ablauf">
+            <span class="mi-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16"/><path d="M4 12h10"/><path d="M4 18h7"/></svg></span>
+            <span><b>So läuft es ab</b><span>In 5 Schritten, egal wo du wohnst</span></span>
+          </a>
+          <a class="m-item" href="blutanalyse.html#preise">
+            <span class="mi-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12l-8 8-8-8 8-8 3 3"/><circle cx="14" cy="10" r="1.5"/></svg></span>
+            <span><b>Preise &amp; Leistungen</b><span>Transparent: alles inklusive, ein Komplettpreis</span></span>
+          </a>
+          <a class="m-cta" href="kontakt.html?anliegen=blutanalyse">Kostenloses Erstgespräch anfragen</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="warteliste.html" class="nav-link">Coaching<svg class="caret" viewBox="0 0 10 6" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg></a>
+        <div class="mega" aria-label="Coaching Untermenü">
+          <p class="mega-head">Coaching</p>
+          <p class="mega-sub">Die neue Masterclass für Frauen ab 40</p>
+          <a class="m-item" href="warteliste.html">
+            <span class="mi-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1.7 2.7 3 6 3s6-1.3 6-3v-5"/></svg></span>
+            <span><b>Die Masterclass</b><span>Erscheint in Kürze: Stoffwechsel, Hormone und deine Routinen</span></span>
+          </a>
+          <a class="m-item" href="quiz.html">
+            <span class="mi-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/><circle cx="12" cy="12" r="10"/></svg></span>
+            <span><b>Welcher Ü40-Typ bist du?</b><span>Mach den kostenlosen Test, in 3 Minuten</span></span>
+          </a>
+          <a class="m-item" href="kontakt.html?anliegen=masterclass">
+            <span class="mi-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></span>
+            <span><b>Frage zum Coaching</b><span>Schreib Jasmin direkt über das Kontaktformular</span></span>
+          </a>
+          <a class="m-cta" href="warteliste.html">Jetzt kostenlos auf die Warteliste</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="index.html#youtube" class="nav-link">YouTube<svg class="caret" viewBox="0 0 10 6" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg></a>
+        <div class="mega" aria-label="YouTube Untermenü">
+          <p class="mega-head">YouTube</p>
+          <p class="mega-sub">Jede Woche neue Impulse für Frauen ab 40</p>
+          <a class="m-item" href="https://www.youtube.com/@jasmin-schmidtke" target="_blank" rel="noopener noreferrer">
+            <span class="mi-ico" style="background:#FDECEA;color:#D0312D;"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z" fill="#D0312D"/><polygon points="9.75,15.02 15.5,12 9.75,8.98" fill="#fff"/></svg></span>
+            <span><b>Zum YouTube-Kanal</b><span>Abonnieren und nichts verpassen</span></span>
+          </a>
+        </div>
+      </div>
+      <a href="kontakt.html" class="nav-link active" aria-current="page">Kontakt</a>
+      <a href="newsletter.html" class="nav-cta">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="2" y="4" width="20" height="16" rx="2"/>
+          <polyline points="2,4 12,13 22,4"/>
+        </svg>
+        Kostenlos Tipps erhalten
+      </a>
+    </div>
+    <button class="burger" id="burger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobile-menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- ═══════ MOBILES MENÜ ═══════ -->
+  <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+    <nav class="mm-links" aria-label="Mobiles Menü">
+      <a href="index.html">Startseite <span class="mm-arrow">→</span></a>
+      <a href="ueber-mich.html">Über mich <span class="mm-arrow">→</span></a>
+      <a href="blutanalyse.html">Blutanalyse <span class="mm-arrow">→</span></a>
+      <a href="warteliste.html">Coaching <span class="mm-arrow">→</span></a>
+      <a href="quiz.html">Der Ü40-Test <span class="mm-arrow">→</span></a>
+      <a href="index.html#youtube">YouTube <span class="mm-arrow">→</span></a>
+      <a href="kontakt.html" class="mm-active">Kontakt <span class="mm-arrow">→</span></a>
+    </nav>
+    <div class="mm-bottom">
+      <a class="mm-cta" href="newsletter.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="2" y="4" width="20" height="16" rx="2"/>
+          <polyline points="2,4 12,13 22,4"/>
+        </svg>
+        Kostenlos Tipps erhalten
+      </a>
+      <div class="mm-social">
+        <span>Folge mir hier</span>
+        <a href="https://www.instagram.com/jasmin.schmidtke/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.6" fill="currentColor" stroke="none"/></svg>
+        </a>
+        <a href="https://www.youtube.com/@jasmin-schmidtke" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="currentColor" stroke="none"/></svg>
+        </a>
+          <a href="https://de.linkedin.com/in/jasmin-schmidtke-516755198" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4V8h4"/>
+              <rect x="2" y="9" width="4" height="12"/>
+              <circle cx="4" cy="4" r="2"/>
+            </svg>
+          </a>
+      </div>
+    </div>
+  </div>
+
+  <main class="page">
+
+    <div class="intro">
+      <span class="section-label">Kontakt</span>
+      <h1>Schreib mir, ich freue mich <span class="accent">von dir zu hören</span></h1>
+      <p>
+        Du hast eine Frage zu meinen Angeboten, dem Newsletter oder der Masterclass? Nutz einfach das Formular oder schreib mir direkt per E-Mail. Ich melde mich so schnell wie möglich zurück.
+      </p>
+      <div class="contact-card">
+        <div class="c-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
+        </div>
+        <div>
+          <b>E-Mail</b>
+          <a href="mailto:jasmin@jasmin-schmidtke.de">jasmin@jasmin-schmidtke.de</a>
+        </div>
+      </div>
+      <div class="intro-photo">
+        <img src="a7409224.jpg" alt="Jasmin Schmidtke freut sich auf deine Nachricht" loading="lazy" />
+      </div>
+    </div>
+
+    <div class="form-box">
+      <form name="kontakt" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/kontakt-danke.html">
+        <input type="hidden" name="form-name" value="kontakt" />
+        <p class="hp"><label>Bitte freilassen: <input name="bot-field" /></label></p>
+        <label for="name">Dein Name</label>
+        <input type="text" id="name" name="name" placeholder="Vor- und Nachname" autocomplete="name" required />
+        <label for="email">Deine E-Mail</label>
+        <input type="email" id="email" name="email" placeholder="deine@email.de" autocomplete="email" required />
+        <label for="telefon">Deine Telefonnummer <span style="font-weight:400;color:var(--text-muted);">(für Rückrufe)</span></label>
+        <input type="tel" id="telefon" name="telefon" placeholder="z. B. 0171 1234567" autocomplete="tel" />
+        <label for="anliegen">Worum geht es?</label>
+        <div class="select-wrap">
+          <select id="anliegen" name="anliegen" required>
+            <option value="" disabled selected hidden>Bitte auswählen ...</option>
+            <option value="Blutanalyse">🩸 Blutanalyse</option>
+            <option value="Masterclass und Coaching">🎓 Masterclass &amp; Coaching</option>
+            <option value="Vortrag, Presse und Kooperation">🎤 Vortrag &amp; Kooperation</option>
+            <option value="Etwas anderes">💬 Etwas anderes</option>
+          </select>
+        </div>
+        <label for="nachricht">Deine Nachricht</label>
+        <textarea id="nachricht" name="nachricht" placeholder="Worum geht es?" required></textarea>
+        <label class="consent">
+          <input type="checkbox" name="datenschutz" required />
+          <span>Ich habe die <a href="datenschutz.html" target="_blank" rel="noopener">Datenschutzerklärung</a> gelesen und bin einverstanden, dass meine Angaben zur Beantwortung meiner Anfrage verwendet werden.</span>
+        </label>
+        <button class="btn-green" type="submit">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          Nachricht senden
+        </button>
+      </form>
+    </div>
+
+  </main>
+
+  <!-- ═══════ FOOTER (einheitlich) ═══════ -->
+  <footer role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <svg width="26" height="26" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <circle cx="100" cy="100" r="82" fill="none" stroke="#BFA492" stroke-width="11"/>
+            <path d="M 18,100 C 45,118 65,118 100,95 C 135,72 155,72 182,100" fill="none" stroke="#BFA492" stroke-width="7" stroke-linecap="round"/>
+          </svg>
+          <span class="logo-lines" style="font-family:'Playfair Display',Georgia,serif;font-weight:500;font-size:12px;">
+            <span>Jasmin</span>
+            <span>Schmidtke</span>
+          </span>
+        </div>
+        <p class="footer-tagline">
+          Schönheit von innen. Sichtbar nach außen. Für Frauen, die sich selbst nicht vergessen wollen.
+        </p>
+      </div>
+      <div class="footer-divider" aria-hidden="true"></div>
+      <div class="footer-bottom">
+        <nav class="footer-links" aria-label="Footer Navigation">
+          <a href="index.html">Startseite</a>
+          <a href="ueber-mich.html">Über mich</a>
+          <a href="blutanalyse.html">Blutanalyse</a>
+          <a href="warteliste.html">Coaching</a>
+          <a href="newsletter.html">Newsletter</a>
+          <a href="kontakt.html">Kontakt</a>
+          <a href="impressum.html">Impressum</a>
+          <a href="datenschutz.html">Datenschutz</a>
+        </nav>
+        <div class="footer-social">
+          <span class="footer-social-label">Folge mir hier</span>
+          <a class="social-icon" href="https://www.instagram.com/jasmin.schmidtke/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5"/>
+              <circle cx="12" cy="12" r="4"/>
+              <circle cx="17.5" cy="6.5" r="0.6" fill="currentColor" stroke="none"/>
+            </svg>
+          </a>
+          <a class="social-icon" href="https://www.youtube.com/@jasmin-schmidtke" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/>
+              <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="currentColor" stroke="none"/>
+            </svg>
+          </a>
+          <a class="social-icon" href="https://de.linkedin.com/in/jasmin-schmidtke-516755198" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4V8h4"/>
+              <rect x="2" y="9" width="4" height="12"/>
+              <circle cx="4" cy="4" r="2"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+      <p class="footer-disclaimer">
+        Hinweis: Die Inhalte dieser Website dienen ausschließlich der allgemeinen Information und Gesundheitsförderung. Sie ersetzen keine professionelle medizinische Beratung, Diagnose oder Behandlung. Alle Angaben basieren auf Erfahrungswerten und erheben keinen Anspruch auf Heilversprechen. Bei gesundheitlichen Beschwerden wende dich bitte an einen Arzt oder Therapeuten.
+      </p>
+      <p class="footer-copy">
+        © 2026 <strong>Jasmin Schmidtke</strong> · Marketing von <a href="https://www.schmidtke-gmbh.de?utm_source=jasminschmidtke&utm_medium=website&utm_campaign=footer_link" target="_blank" rel="noopener noreferrer">Schmidtke GmbH</a>
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    /* Anliegen aus URL vorauswählen, z. B. kontakt.html?anliegen=blutanalyse */
+    (function() {
+      var map = {
+        blutanalyse: 'Blutanalyse',
+        masterclass: 'Masterclass und Coaching',
+        vortrag: 'Vortrag, Presse und Kooperation',
+        sonstiges: 'Etwas anderes'
+      };
+      var wert = new URLSearchParams(window.location.search).get('anliegen');
+      var sel = document.getElementById('anliegen');
+      if (wert && sel && map[wert.toLowerCase()]) {
+        sel.value = map[wert.toLowerCase()];
+      }
+    })();
+  </script>
+
+  <script>
+    /* Mobiles Menü */
+    (function() {
+      var burger = document.getElementById('burger');
+      var menu = document.getElementById('mobile-menu');
+      if (!burger || !menu) return;
+      function setOpen(open) {
+        document.body.classList.toggle('menu-open', open);
+        burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+        burger.setAttribute('aria-label', open ? 'Menü schließen' : 'Menü öffnen');
+        menu.setAttribute('aria-hidden', open ? 'false' : 'true');
+        document.body.style.overflow = open ? 'hidden' : '';
+      }
+      burger.addEventListener('click', function() {
+        setOpen(!document.body.classList.contains('menu-open'));
+      });
+      menu.querySelectorAll('a').forEach(function(a) {
+        a.addEventListener('click', function() { setOpen(false); });
+      });
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') setOpen(false);
+      });
+    })();
+  </script>
+
+</body>
+</html>

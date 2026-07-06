@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <!-- Cookiebot Consent Management, muss als ERSTES im head stehen -->
+  <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="d7edd666-c373-4b8b-b522-fe1891c11381" data-blockingmode="auto" type="text/javascript"></script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nachricht gesendet | Jasmin Schmidtke</title>
+  <meta name="robots" content="noindex, nofollow" />
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="favicon-32x32.png" sizes="32x32" type="image/png" />
+  <meta name="theme-color" content="#BFA492" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --cream: #FBF7F4; --cream2: #F5EFE9;
+      --text-dark: #2D2B30; --text-body: #4C4640; --text-muted: #808080;
+      --accent: #BFA492; --accent-text: #8C6743;
+      --green-btn: #6B8C5A; --green-hover: #7A9E68; --border: #DDD6CE;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: var(--cream); color: var(--text-dark);
+      font-family: 'Poppins', sans-serif; font-weight: 400; line-height: 1.7;
+      min-height: 100vh; display: flex; flex-direction: column;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { text-decoration: none; color: inherit; }
+    .top { display: flex; justify-content: center; align-items: center; gap: 10px; padding: 26px 20px; }
+    .top svg { width: 36px; height: 36px; }
+    .logo-lines {
+      display: flex; flex-direction: column;
+      font-family: 'Playfair Display', Georgia, serif;
+      font-weight: 500; font-size: 16px; line-height: 1.15;
+    }
+    main { flex: 1; display: flex; align-items: center; justify-content: center; padding: 20px 24px 60px; }
+    .card {
+      max-width: 540px; text-align: center;
+      background: #fff; border: 1px solid var(--border); border-radius: 24px;
+      padding: 48px 40px;
+      box-shadow: 0 20px 60px rgba(80,55,40,0.10);
+    }
+    .badge {
+      width: 66px; height: 66px; border-radius: 50%;
+      background: var(--cream2); color: var(--green-btn);
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 22px;
+    }
+    .badge svg { width: 30px; height: 30px; }
+    h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-weight: 700; font-size: clamp(26px, 4vw, 32px); line-height: 1.2;
+      margin-bottom: 14px;
+    }
+    h1 .accent { color: var(--accent); font-style: italic; }
+    p { font-size: 15.5px; color: var(--text-body); margin-bottom: 26px; }
+    .btn-green {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: var(--green-btn); color: #fff;
+      font-size: 15px; font-weight: 500;
+      padding: 14px 28px; border-radius: 50px;
+      transition: background 0.2s ease;
+    }
+    .btn-green:hover { background: var(--green-hover); }
+    footer { padding: 22px; text-align: center; font-size: 12px; color: var(--text-muted); }
+    footer a { text-decoration: underline; text-underline-offset: 2px; }
+    @media (max-width: 600px) { .card { padding: 36px 22px; } }
+  </style>
+</head>
+<body>
+
+  <header class="top" aria-label="Jasmin Schmidtke">
+    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <circle cx="100" cy="100" r="82" fill="none" stroke="#BFA492" stroke-width="11"/>
+      <path d="M 18,100 C 45,118 65,118 100,95 C 135,72 155,72 182,100" fill="none" stroke="#BFA492" stroke-width="7" stroke-linecap="round"/>
+    </svg>
+    <span class="logo-lines"><span>Jasmin</span><span>Schmidtke</span></span>
+  </header>
+
+  <main>
+    <div class="card">
+      <div class="badge" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+      </div>
+      <h1>Deine Nachricht ist <span class="accent">angekommen!</span></h1>
+      <p>
+        Danke, dass du dir die Zeit genommen hast. Jasmin liest jede Nachricht persönlich und meldet sich so schnell wie möglich bei dir zurück.
+      </p>
+      <a href="index.html" class="btn-green">Zurück zur Startseite</a>
+    </div>
+  </main>
+
+  <footer>
+    © 2026 Jasmin Schmidtke · <a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a>
+  </footer>
+
+</body>
+</html>

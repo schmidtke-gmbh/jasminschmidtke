@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <!-- Cookiebot Consent Management – muss als ERSTES im head stehen -->
+  <!-- Cookiebot Consent Management, muss als ERSTES im head stehen -->
   <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="d7edd666-c373-4b8b-b522-fe1891c11381" data-blockingmode="auto" type="text/javascript"></script>
 
-  <!-- Google Analytics 4 – von Cookiebot blockiert bis Statistik-Consent -->
+  <!-- Google Analytics 4, von Cookiebot blockiert bis Statistik-Consent -->
   <script type="text/plain" data-cookieconsent="statistics" async src="https://www.googletagmanager.com/gtag/js?id=G-D2D1N21BTL"></script>
   <script type="text/plain" data-cookieconsent="statistics">
     window.dataLayer = window.dataLayer || [];
@@ -15,8 +15,8 @@
 
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jasmin Schmidtke – Die besten Tipps für Frauen ab 40</title>
-  <meta name="description" content="Heilpraktikerin Jasmin schickt dir jede Woche die wichtigsten Insider-Tipps zu Haut, Hormonen und Energie – verständlich erklärt, sofort umsetzbar. Jetzt kostenlos anmelden." />
+  <title>Jasmin Schmidtke | Heilpraktikerin für Frauen ab 40</title>
+  <meta name="description" content="Ständig müde ab 40 und das Gewicht geht nicht runter? Heilpraktikerin Jasmin Schmidtke erklärt die Ursachen: Stoffwechsel und Hormone, verständlich und alltagstauglich. Für Frauen ab 40." />
   <meta name="google-site-verification" content="3axhoH941eOntxlUfRaxe5W69vcNnQx6XCOyZLuuMac" />
   <meta name="robots" content="index, follow" />
   <meta name="author" content="Jasmin Schmidtke" />
@@ -30,10 +30,10 @@
   <link rel="manifest" href="site.webmanifest" />
   <meta name="theme-color" content="#BFA492" />
 
-  <!-- Open Graph (Facebook, LinkedIn, WhatsApp) -->
+  <!-- Open Graph -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Jasmin Schmidtke – Die besten Tipps für Frauen ab 40" />
-  <meta property="og:description" content="Jede Woche die wichtigsten Insider-Tipps zu Haut, Hormonen und Energie – verständlich erklärt, sofort umsetzbar. Kostenlos anmelden." />
+  <meta property="og:title" content="Jasmin Schmidtke | Heilpraktikerin für Frauen ab 40" />
+  <meta property="og:description" content="Zurück zu Energie, Ausstrahlung und einem guten Gefühl im eigenen Körper. Haut, Hormone und Stoffwechsel, verständlich erklärt." />
   <meta property="og:url" content="https://www.jasminschmidtke.de/" />
   <meta property="og:image" content="https://www.jasminschmidtke.de/og-image.jpg" />
   <meta property="og:image:width" content="1200" />
@@ -43,1603 +43,11 @@
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Jasmin Schmidtke – Die besten Tipps für Frauen ab 40" />
-  <meta name="twitter:description" content="Jede Woche Insider-Tipps zu Haut, Hormonen und Energie – kostenlos anmelden." />
+  <meta name="twitter:title" content="Jasmin Schmidtke | Heilpraktikerin für Frauen ab 40" />
+  <meta name="twitter:description" content="Zurück zu Energie, Ausstrahlung und einem guten Gefühl im eigenen Körper." />
   <meta name="twitter:image" content="https://www.jasminschmidtke.de/og-image.jpg" />
 
-  <!-- Fonts: Playfair Display (headings) + Poppins (body) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
-
-  <style>
-    /* ─────────────────────────────────────────
-       CSS VARIABLES
-    ───────────────────────────────────────── */
-    :root {
-      --cream:         #FBF7F4;   /* rgb(251,247,244) — exakt vom Original */
-      --cream-footer:  #FCF7F5;   /* leicht wärmer als Seiten-BG */
-      --text-dark:     #2D2B30;   /* rgb(45,43,48) — dunkel-anthrazit, nicht schwarz */
-      --text-body:     #5A5550;
-      --text-muted:    #808080;   /* rgb(128,128,128) — Footer-Links-Farbe exakt */
-      --accent:        #BFA492;   /* rgb(191,164,146) — "Frauen ab 40" exakt */
-      --green-btn:     #6B8C5A;   /* rgb(107,140,90) — Button exakt */
-      --green-hover:   #7A9E68;
-      --border:        #DDD6CE;
-      --grid-line:     rgba(150, 130, 110, 0.12);
-    }
-
-    /* ─────────────────────────────────────────
-       RESET & BASE
-    ───────────────────────────────────────── */
-    *, *::before, *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      font-family: 'Poppins', system-ui, sans-serif;
-      background-color: var(--cream);
-      color: var(--text-dark);
-      overflow-x: hidden;
-      position: relative;
-    }
-
-    a { text-decoration: none; color: inherit; }
-
-    /* ─────────────────────────────────────────
-       BACKGROUND GRID  (subtle fade — wie im Original)
-    ───────────────────────────────────────── */
-    body::before {
-      content: '';
-      position: fixed;
-      inset: 0;
-      z-index: 0;
-      pointer-events: none;
-      background-image:
-        linear-gradient(var(--grid-line) 1px, transparent 1px),
-        linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
-      background-size: 68px 68px;
-      /* Fade-Effekt: Grid nur in der Bildschirmmitte sichtbar, Ränder transparent */
-      -webkit-mask-image: radial-gradient(
-        ellipse 70% 60% at 58% 38%,
-        rgba(0,0,0,0.55) 0%,
-        rgba(0,0,0,0.25) 45%,
-        transparent 75%
-      );
-      mask-image: radial-gradient(
-        ellipse 70% 60% at 58% 38%,
-        rgba(0,0,0,0.55) 0%,
-        rgba(0,0,0,0.25) 45%,
-        transparent 75%
-      );
-    }
-
-    /* Stacking context helpers */
-    nav, main, footer { position: relative; z-index: 1; }
-
-    /* ─────────────────────────────────────────
-       ENTRANCE ANIMATIONS (fast + premium)
-    ───────────────────────────────────────── */
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(18px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to   { opacity: 1; }
-    }
-
-    .navbar {
-      animation: fadeIn 0.5s cubic-bezier(0.25, 0.1, 0.25, 1) 0s both;
-    }
-
-    /* Badge über der Überschrift */
-    .hero-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-      background: rgba(191, 164, 146, 0.12);
-      border: 1.5px solid rgba(191, 164, 146, 0.35);
-      border-radius: 50px;
-      padding: 8px 18px;
-      font-family: 'Poppins', sans-serif;
-      font-size: 13px;
-      font-weight: 500;
-      color: var(--accent);
-      letter-spacing: 0.01em;
-      margin-bottom: 20px;
-      animation: fadeInUp 0.55s cubic-bezier(0.25, 0.1, 0.25, 1) 0.02s both;
-    }
-
-    .hero-badge svg {
-      width: 16px;
-      height: 16px;
-      flex-shrink: 0;
-    }
-
-    .hero-heading {
-      animation: fadeInUp 0.55s cubic-bezier(0.25, 0.1, 0.25, 1) 0.08s both;
-    }
-
-    .hero-body {
-      animation: fadeInUp 0.55s cubic-bezier(0.25, 0.1, 0.25, 1) 0.16s both;
-    }
-
-    .newsletter-form {
-      animation: fadeInUp 0.55s cubic-bezier(0.25, 0.1, 0.25, 1) 0.24s both;
-    }
-
-    .hero-image-wrap {
-      animation: fadeInUp 0.6s cubic-bezier(0.25, 0.1, 0.25, 1) 0.1s both;
-    }
-
-
-    /* ─────────────────────────────────────────
-       NAVBAR
-    ───────────────────────────────────────── */
-    nav.navbar {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
-      padding: 18px 44px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      background: transparent;
-      transition: background 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    nav.navbar.scrolled {
-      background: rgba(255, 255, 255, 0.97);
-      box-shadow: 0 1px 12px rgba(0, 0, 0, 0.06);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-    }
-
-    /* Navbar CTA — nur sichtbar beim Scrollen */
-    .nav-cta {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background-color: var(--green-btn);
-      color: #fff;
-      border-radius: 257px;
-      padding: 9px 20px;
-      font-family: 'Poppins', sans-serif;
-      font-size: 13px;
-      font-weight: 600;
-      letter-spacing: 0.01em;
-      opacity: 0;
-      transform: translateY(-4px);
-      pointer-events: none;
-      transition: opacity 0.3s ease, transform 0.3s ease, background 0.2s ease;
-    }
-
-    nav.navbar.scrolled .nav-cta {
-      opacity: 1;
-      transform: translateY(0);
-      pointer-events: all;
-    }
-
-    .nav-cta:hover {
-      background-color: var(--green-hover);
-    }
-
-    .nav-cta svg {
-      width: 14px; height: 14px;
-      flex-shrink: 0;
-    }
-
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-family: 'Playfair Display', Georgia, serif;  /* Original: Playfair */
-      font-weight: 500;            /* Original: 500 */
-      font-size: 16px;             /* Original: 16px */
-      color: var(--text-dark);     /* #2D2B30 */
-      line-height: 1.15;
-    }
-
-    .logo-icon { width: 32px; height: 32px; flex-shrink: 0; }
-
-    .logo-lines { display: flex; flex-direction: column; gap: 0px; }
-    .logo-lines span { display: block; }
-
-    /* ─────────────────────────────────────────
-       HERO SECTION
-    ───────────────────────────────────────── */
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      padding: 80px 44px 56px;
-    }
-
-    .hero-inner {
-      max-width: 1240px;
-      width: 100%;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1.3fr 1fr;
-      align-items: center;
-      gap: 40px;
-    }
-
-    /* ─────────────────────────────────────────
-       LEFT – TEXT CONTENT
-    ───────────────────────────────────────── */
-    .hero-text { position: relative; }
-
-
-    /* Main heading – Playfair Display */
-    .hero-heading {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: clamp(2.2rem, 4.5vw, 64px);  /* Original: 64px at 1437px */
-      font-weight: 700;
-      line-height: 1;
-      color: var(--text-dark);
-      margin-bottom: 28px;
-      letter-spacing: normal;
-    }
-
-    .hero-heading .accent {
-      color: var(--accent);
-      font-style: italic;
-    }
-
-    /* Body text – Poppins */
-    .hero-body {
-      font-family: 'Poppins', sans-serif;
-      font-size: 18px;            /* Original: 18px */
-      font-weight: 400;           /* Original: 400 */
-      line-height: 1.4;           /* Original: 25.2px / 18px = 1.4 */
-      color: #4D4D4D;             /* Original: rgb(77,77,77) */
-      max-width: 615px;           /* Original: 615px */
-      margin-bottom: 36px;
-    }
-
-    /* ─────────────────────────────────────────
-       NEWSLETTER FORM
-    ───────────────────────────────────────── */
-    .newsletter-form { max-width: 595px; /* Original: 595px */ }
-
-    /* Email input row */
-    .input-row {
-      display: flex;
-      align-items: center;
-      background: #fff;
-      border: 1.5px solid var(--border);
-      border-radius: 10px;         /* Original: 10px */
-      padding: 3px 3px 3px 16px;
-      margin-bottom: 14px;
-      transition: border-color 0.2s;
-    }
-    .input-row:focus-within { border-color: var(--accent); }
-
-    .input-row input[type="email"] {
-      flex: 1;
-      border: none;
-      outline: none;
-      background: transparent;
-      font-family: 'Poppins', sans-serif;
-      font-size: 14px;            /* Original: 14px */
-      font-weight: 400;
-      color: var(--text-dark);
-      padding: 10px 0;
-    }
-    .input-row input[type="email"]::placeholder { color: var(--text-muted); }
-
-    .input-icon {
-      padding: 6px 10px;
-      display: flex;
-      align-items: center;
-      color: var(--accent);
-    }
-
-    /* Submit button */
-    .btn-submit {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background-color: var(--green-btn);
-      color: #fff;
-      border: none;
-      border-radius: 257px;       /* Original: 257px */
-      padding: 12px 28px;
-      font-family: 'Poppins', sans-serif;
-      font-size: 14px;
-      font-weight: 600;           /* Original: 600 (Inter) */
-      letter-spacing: 0.01em;
-      cursor: pointer;
-      transition: background 0.2s, transform 0.15s;
-      margin-bottom: 14px;
-    }
-    .btn-submit:hover {
-      background-color: var(--green-hover);
-      transform: translateY(-1px);
-    }
-    /* Button bleibt immer voll sichtbar — Validierung passiert on click */
-
-    .btn-arrow {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 15px;
-      transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    }
-
-    .btn-submit:hover .btn-arrow {
-      transform: translateX(4px);
-    }
-
-    @keyframes arrowNudge {
-      0%, 100% { transform: translateX(0); }
-      50%      { transform: translateX(3px); }
-    }
-
-    .btn-arrow {
-      animation: arrowNudge 2s ease-in-out infinite;
-    }
-
-    .btn-submit:hover .btn-arrow {
-      animation: none;
-      transform: translateX(4px);
-    }
-
-    /* Checkbox row */
-    .checkbox-row {
-      display: flex;
-      align-items: flex-start;
-      gap: 8px;
-      margin-top: 2px;
-    }
-    /* Echte Checkbox verstecken */
-    .checkbox-row input[type="checkbox"] {
-      position: absolute;
-      opacity: 0;
-      width: 0; height: 0;
-      pointer-events: none;
-    }
-
-    /* Custom Checkbox Box */
-    .custom-check {
-      width: 18px; height: 18px;
-      flex-shrink: 0;
-      margin-top: 1px;
-      border: 1.5px solid var(--border);
-      border-radius: 4px;
-      background: #fff;
-      cursor: pointer;
-      position: relative;
-      transition: border-color 0.25s ease, background 0.25s ease, transform 0.2s ease;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .custom-check svg {
-      width: 12px; height: 12px;
-      stroke-dasharray: 16;
-      stroke-dashoffset: 16;
-      transition: stroke-dashoffset 0.3s cubic-bezier(0.65, 0, 0.35, 1);
-    }
-
-    /* Checked state */
-    .checkbox-row input[type="checkbox"]:checked + .custom-check {
-      background: var(--accent);
-      border-color: var(--accent);
-      transform: scale(1.1);
-    }
-
-    .checkbox-row input[type="checkbox"]:checked + .custom-check svg {
-      stroke-dashoffset: 0;
-    }
-
-    /* Bounce back after click */
-    @keyframes checkBounce {
-      0%   { transform: scale(1.1); }
-      40%  { transform: scale(1.25); }
-      70%  { transform: scale(0.95); }
-      100% { transform: scale(1); }
-    }
-
-    .custom-check.animate {
-      animation: checkBounce 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
-    }
-
-    /* Focus ring for accessibility */
-    .checkbox-row input[type="checkbox"]:focus-visible + .custom-check {
-      outline: 2px solid var(--accent);
-      outline-offset: 2px;
-    }
-
-    /* Hover */
-    .custom-check:hover {
-      border-color: var(--accent);
-    }
-    .checkbox-row label {
-      font-size: 12px;            /* Original: 12px */
-      font-weight: 400;
-      color: #888888;             /* Original: rgb(136,136,136) */
-      cursor: pointer;
-      line-height: 1.5;
-    }
-    .checkbox-row label a {
-      text-decoration: underline;
-      text-underline-offset: 2px;
-      color: var(--text-body);
-      transition: color 0.15s;
-    }
-    .checkbox-row label a:hover { color: var(--text-dark); }
-
-    /* Success message (hidden — replaced by redirect) */
-    .success-msg {
-      display: none;
-      background: #EEF3E8;
-      border: 1px solid #BDD3A0;
-      border-radius: 8px;
-      padding: 14px 18px;
-      font-size: 13px;
-      font-weight: 300;
-      color: var(--green-btn);
-      line-height: 1.6;
-      margin-top: 6px;
-    }
-    .success-msg.visible { display: block; }
-
-    /* ── Submit Overlay Animation ── */
-    .submit-overlay {
-      position: fixed;
-      inset: 0;
-      z-index: 9999;
-      pointer-events: none;
-      opacity: 0;
-      transition: opacity 0.4s ease;
-    }
-    .submit-overlay.active {
-      pointer-events: all;
-      opacity: 1;
-    }
-    .submit-overlay-bg {
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse at center, rgba(251,247,244,0.97) 0%, rgba(251,247,244,1) 70%);
-    }
-    .submit-overlay-content {
-      position: relative;
-      z-index: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100%;
-      text-align: center;
-      padding: 24px;
-    }
-    .submit-overlay-check {
-      width: 64px; height: 64px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--accent) 0%, #d4bfb0 100%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 20px;
-      transform: scale(0);
-      animation: popIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) 0.15s forwards;
-    }
-    .submit-overlay-text {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: clamp(1.4rem, 3vw, 28px);
-      font-weight: 700;
-      color: var(--text-dark);
-      opacity: 0;
-      transform: translateY(10px);
-      animation: fadeInUp 0.4s ease 0.4s forwards;
-    }
-    .submit-overlay-text .accent {
-      color: var(--accent);
-      font-style: italic;
-    }
-
-    @keyframes popIn {
-      from { transform: scale(0) rotate(-10deg); }
-      to   { transform: scale(1) rotate(0deg); }
-    }
-
-    /* Petal animation for overlay */
-    .overlay-petal {
-      position: absolute;
-      border-radius: 50% 0 50% 0;
-      pointer-events: none;
-      opacity: 0;
-      animation: petalFall linear forwards;
-    }
-    @keyframes petalFall {
-      0%   { transform: translateY(0) rotate(0deg); opacity: 0; }
-      10%  { opacity: 0.8; }
-      80%  { opacity: 0.6; }
-      100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
-    }
-
-    /* ─────────────────────────────────────────
-       RIGHT – IMAGE + BADGE
-    ───────────────────────────────────────── */
-    .hero-image-wrap {
-      display: flex;
-      justify-content: center;
-      align-items: flex-end;
-      position: relative;
-    }
-
-    /* Outer frame that holds badge + image */
-    .arch-frame {
-      position: relative;
-      width: 460px;              /* Original: 468px */
-      max-width: 100%;
-    }
-
-    /* The arch-shaped image container */
-    .arch-img-container {
-      width: 100%;
-      /* Original ratio: 468/657 ≈ 0.712 → aspect-ratio 1/1.404 */
-      aspect-ratio: 468 / 657;
-      border-radius: 999px 999px 0 0;   /* Original: 999px 999px 0px 0px */
-      overflow: hidden;
-      background-color: #E2D9D0;
-    }
-    .arch-img-container img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      object-position: center bottom;
-      display: block;
-      background-color: #E2D9D0;
-    }
-
-    /* ─────────────────────────────────────────
-       ROTATING CIRCULAR BADGE
-       Text + Stern drehen unabhängig voneinander
-    ───────────────────────────────────────── */
-    .rotating-badge {
-      position: absolute;
-      top: -10px;
-      left: -55px;
-      width: 158px;
-      height: 158px;
-    }
-
-    /* Text-Ring dreht sich normal */
-    .badge-text-ring {
-      position: absolute;
-      inset: 0;
-      animation: spin-text 18s linear infinite;
-      transform-origin: center;
-    }
-
-    /* Stern dreht sich LANGSAMER */
-    .badge-star-ring {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      animation: spin-star 45s linear infinite;
-      transform-origin: center;
-    }
-
-    @keyframes spin-text {
-      from { transform: rotate(0deg); }
-      to   { transform: rotate(360deg); }
-    }
-
-    @keyframes spin-star {
-      from { transform: rotate(0deg); }
-      to   { transform: rotate(360deg); }
-    }
-
-    .badge-svg {
-      width: 100%;
-      height: 100%;
-      overflow: visible;
-    }
-
-    /* Circular text — enger am Stern, semi-transparent */
-    .badge-svg .badge-text {
-      font-family: 'Poppins', sans-serif;
-      font-size: 7.5px;
-      font-weight: 400;
-      letter-spacing: 1.85px;
-      fill: rgba(47, 47, 48, 0.6);
-    }
-
-    /* Stern zentriert */
-    .badge-star-svg {
-      width: 36%;
-      height: 36%;
-      pointer-events: none;
-    }
-
-    /* ─────────────────────────────────────────
-       SPARKLE STAR (bottom-right of image)
-       — 4-Punkte-Stern als SVG, exakt wie Original
-    ───────────────────────────────────────── */
-    .sparkle {
-      position: absolute;
-      bottom: 20px;
-      right: -22px;
-      width: 36px;
-      height: 36px;
-      animation: oscillate 5s ease-in-out infinite;
-      transform-origin: center;
-    }
-
-    .sparkle svg {
-      width: 100%;
-      height: 100%;
-    }
-
-    @keyframes oscillate {
-      0%   { transform: rotate(-15deg); }
-      50%  { transform: rotate(15deg); }
-      100% { transform: rotate(-15deg); }
-    }
-
-    /* ─────────────────────────────────────────
-       GALLERY / 3 BILDER SEKTION
-    ───────────────────────────────────────── */
-    .gallery {
-      padding: 40px 44px 80px;
-      background-color: var(--cream);
-    }
-
-    .gallery-inner {
-      max-width: 1240px;
-      margin: 0 auto;
-    }
-
-    .gallery-heading {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: clamp(1.5rem, 3vw, 36px);
-      font-weight: 700;
-      color: var(--text-dark);
-      text-align: center;
-      margin-bottom: 12px;
-    }
-
-    .gallery-heading .accent {
-      color: var(--accent);
-      font-style: italic;
-    }
-
-    .gallery-sub {
-      font-size: 16px;
-      color: var(--text-muted);
-      text-align: center;
-      max-width: 480px;
-      margin: 0 auto 48px;
-      line-height: 1.5;
-    }
-
-    /* ─────────────────────────────────────────
-       PHONE MOCKUP SECTION
-    ───────────────────────────────────────── */
-    .phone-section {
-      padding: 60px 44px 80px;
-      overflow: hidden;
-    }
-
-    .phone-inner {
-      max-width: 1240px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      gap: 48px;
-    }
-
-    .phone-text {
-      flex: 1.2;
-      min-width: 0;
-    }
-
-    .phone-text h2 {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: clamp(1.8rem, 3.5vw, 38px);
-      font-weight: 700;
-      color: var(--text-dark);
-      line-height: 1.15;
-      margin-bottom: 18px;
-    }
-
-    .phone-text h2 .accent {
-      color: var(--accent);
-      font-style: italic;
-    }
-
-    .phone-text p {
-      font-size: 16px;
-      color: var(--text-body);
-      line-height: 1.65;
-      max-width: 440px;
-      margin-bottom: 28px;
-    }
-
-    .phone-cta {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background-color: var(--green-btn);
-      color: #fff;
-      border-radius: 257px;
-      padding: 14px 30px;
-      font-family: 'Poppins', sans-serif;
-      font-size: 15px;
-      font-weight: 600;
-      letter-spacing: 0.01em;
-      transition: background 0.2s, transform 0.15s;
-      cursor: pointer;
-    }
-
-    .phone-cta:hover {
-      background-color: var(--green-hover);
-      transform: translateY(-1px);
-    }
-
-    .phone-cta svg {
-      width: 16px;
-      height: 16px;
-      flex-shrink: 0;
-    }
-
-    .phone-cta .cta-arrow {
-      display: inline-block;
-      transition: transform 0.3s ease;
-    }
-
-    .phone-cta:hover .cta-arrow {
-      transform: translateX(3px);
-    }
-
-    /* iPhone frame */
-    .phone-wrap {
-      flex-shrink: 0;
-      position: relative;
-      width: 300px;
-    }
-
-    .phone-device {
-      width: 280px;
-      border-radius: 40px;
-      background: #1a1a1a;
-      padding: 14px;
-      box-shadow:
-        0 30px 60px rgba(0,0,0,0.12),
-        0 8px 24px rgba(0,0,0,0.08),
-        inset 0 0 0 1.5px rgba(255,255,255,0.08);
-      position: relative;
-    }
-
-    /* Notch */
-    .phone-notch {
-      position: absolute;
-      top: 12px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 100px;
-      height: 28px;
-      background: #1a1a1a;
-      border-radius: 0 0 18px 18px;
-      z-index: 3;
-    }
-
-    .phone-screen {
-      width: 100%;
-      border-radius: 28px;
-      overflow: hidden;
-      background: #fff;
-      position: relative;
-    }
-
-    /* Newsletter content inside phone */
-    .phone-content {
-      padding: 44px 20px 24px;
-      font-family: 'Poppins', sans-serif;
-    }
-
-    .phone-content .pc-from {
-      font-size: 9px;
-      color: var(--text-muted);
-      margin-bottom: 4px;
-      letter-spacing: 0.03em;
-    }
-
-    .phone-content .pc-subject {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 16px;
-      font-weight: 700;
-      color: var(--text-dark);
-      line-height: 1.25;
-      margin-bottom: 14px;
-    }
-
-    .phone-content .pc-divider {
-      height: 1px;
-      background: var(--border);
-      margin-bottom: 14px;
-    }
-
-    .phone-content .pc-greeting {
-      font-size: 11px;
-      color: var(--text-body);
-      margin-bottom: 10px;
-      line-height: 1.5;
-    }
-
-    .phone-content .pc-heading {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 13px;
-      font-weight: 700;
-      color: var(--text-dark);
-      margin-bottom: 8px;
-    }
-
-    .phone-content .pc-body {
-      font-size: 10.5px;
-      color: var(--text-body);
-      line-height: 1.6;
-      margin-bottom: 12px;
-    }
-
-    .phone-content .pc-tip {
-      background: rgba(191,164,146,0.1);
-      border-left: 3px solid var(--accent);
-      border-radius: 0 8px 8px 0;
-      padding: 10px 12px;
-      margin-bottom: 14px;
-    }
-
-    .phone-content .pc-tip strong {
-      display: block;
-      font-size: 10px;
-      font-weight: 600;
-      color: var(--accent);
-      margin-bottom: 3px;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-    }
-
-    .phone-content .pc-tip span {
-      font-size: 10.5px;
-      color: var(--text-body);
-      line-height: 1.5;
-    }
-
-    .phone-content .pc-cta {
-      display: block;
-      text-align: center;
-      background: var(--accent);
-      color: #fff;
-      font-size: 10.5px;
-      font-weight: 600;
-      padding: 9px 16px;
-      border-radius: 50px;
-      letter-spacing: 0.02em;
-    }
-
-    /* Floating trust badges */
-    .trust-badge {
-      position: absolute;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      background: #fff;
-      border-radius: 14px;
-      padding: 10px 16px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.08), 0 1px 4px rgba(0,0,0,0.04);
-      white-space: nowrap;
-      z-index: 4;
-    }
-
-    .trust-badge-icon {
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-      background: rgba(191,164,146,0.12);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
-
-    .trust-badge-icon svg {
-      width: 16px;
-      height: 16px;
-      stroke: var(--accent);
-      fill: none;
-      stroke-width: 2;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-    }
-
-    .trust-badge-text {
-      font-size: 12px;
-      font-weight: 600;
-      color: var(--text-dark);
-      line-height: 1.3;
-    }
-
-    .trust-badge--top {
-      top: 30px;
-      left: -60px;
-      animation: floatBadge 3s ease-in-out infinite;
-    }
-
-    .trust-badge--right {
-      top: 50%;
-      right: -70px;
-      animation: floatBadge 3s ease-in-out 0.5s infinite;
-    }
-
-    .trust-badge--bottom {
-      bottom: 50px;
-      left: -50px;
-      animation: floatBadge 3s ease-in-out 1s infinite;
-    }
-
-    @keyframes floatBadge {
-      0%, 100% { transform: translateY(0); }
-      50%      { transform: translateY(-6px); }
-    }
-
-    /* Scroll reveal for phone section */
-    .phone-section .phone-inner {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
-    }
-
-    .phone-section .phone-inner.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-    }
-
-    .gallery-card {
-      border-radius: 16px;
-      overflow: hidden;
-      background: #fff;
-      border: 1px solid var(--border);
-      /* Start hidden for scroll animation */
-      opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 0.6s cubic-bezier(0.25, 0.1, 0.25, 1),
-                  transform 0.6s cubic-bezier(0.25, 0.1, 0.25, 1);
-    }
-
-    .gallery-card.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .gallery-card:nth-child(2) { transition-delay: 0.12s; }
-    .gallery-card:nth-child(3) { transition-delay: 0.24s; }
-
-    .gallery-card-img {
-      width: 100%;
-      aspect-ratio: 4 / 5;
-      overflow: hidden;
-    }
-
-    .gallery-card-img img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center top;  /* Kopf nicht abschneiden */
-      display: block;
-      transition: transform 0.5s ease;
-    }
-
-    .gallery-card:hover .gallery-card-img img {
-      transform: scale(1.04);
-    }
-
-    .gallery-card-body {
-      padding: 20px 22px;
-    }
-
-    .gallery-card-title {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 18px;
-      font-weight: 700;
-      color: var(--text-dark);
-      margin-bottom: 8px;
-    }
-
-    .gallery-card-text {
-      font-size: 14px;
-      color: var(--text-body);
-      line-height: 1.55;
-    }
-
-    /* ─────────────────────────────────────────
-       YOUTUBE SEKTION
-    ───────────────────────────────────────── */
-    .youtube-section {
-      padding: 80px 44px;
-      background: linear-gradient(165deg, #F5F0EB 0%, var(--cream) 100%);
-      position: relative;
-      overflow: hidden;
-    }
-
-    /* Großes SVG Play-Icon im Hintergrund — rechts, scroll-animiert */
-    .yt-bg-icon {
-      position: absolute;
-      right: -60px;
-      bottom: -80px;
-      width: 480px;
-      height: 480px;
-      opacity: 0;
-      pointer-events: none;
-      transform: translateY(60px);
-      transition: opacity 0.8s cubic-bezier(0.25, 0.1, 0.25, 1),
-                  transform 1s cubic-bezier(0.25, 0.1, 0.25, 1);
-    }
-
-    .yt-bg-icon.visible {
-      opacity: 0.045;
-      transform: translateY(0);
-    }
-
-    .youtube-inner {
-      max-width: 1240px;
-      margin: 0 auto;
-      position: relative;
-      z-index: 1;
-    }
-
-    .youtube-header {
-      text-align: center;
-      margin-bottom: 48px;
-    }
-
-    .youtube-heading {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: clamp(1.5rem, 3vw, 36px);
-      font-weight: 700;
-      color: var(--text-dark);
-      margin-bottom: 14px;
-    }
-
-    .youtube-heading .accent {
-      color: var(--accent);
-      font-style: italic;
-    }
-
-    .youtube-sub {
-      font-size: 16px;
-      color: var(--text-muted);
-      line-height: 1.55;
-      max-width: 540px;
-      margin: 0 auto;
-    }
-
-    .youtube-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-    }
-
-    .yt-card {
-      border-radius: 16px;
-      overflow: hidden;
-      background: #fff;
-      border: 1px solid var(--border);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      /* Scroll animation */
-      opacity: 0;
-      transform: translateY(28px);
-      transition: opacity 0.6s cubic-bezier(0.25, 0.1, 0.25, 1),
-                  transform 0.6s cubic-bezier(0.25, 0.1, 0.25, 1),
-                  box-shadow 0.3s ease;
-    }
-
-    .yt-card.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .yt-card:nth-child(2) { transition-delay: 0.12s; }
-    .yt-card:nth-child(3) { transition-delay: 0.24s; }
-
-    .yt-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 28px rgba(0,0,0,0.08);
-    }
-
-    .yt-card-thumb {
-      position: relative;
-      width: 100%;
-      aspect-ratio: 16 / 9;
-      background: #E8E0D8;
-      overflow: hidden;
-    }
-
-    .yt-card-thumb img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    /* Play-Button Overlay auf Thumbnail */
-    .yt-play-overlay {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      align-items: flex-end;
-      justify-content: flex-end;
-      padding: 12px;
-      background: transparent;
-      transition: background 0.25s ease;
-    }
-
-    .yt-card:hover .yt-play-overlay {
-      background: rgba(45, 43, 48, 0.12);
-    }
-
-    .yt-play-btn {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      padding: 7px 14px;
-      border-radius: 50px;
-      background: rgba(255,255,255,0.94);
-      box-shadow: 0 2px 12px rgba(0,0,0,0.12);
-      transition: transform 0.25s ease, background 0.25s ease;
-    }
-
-    .yt-card:hover .yt-play-btn {
-      transform: scale(1.05);
-      background: #fff;
-    }
-
-    .yt-play-btn svg {
-      width: 14px;
-      height: 14px;
-      flex-shrink: 0;
-    }
-
-    .yt-play-btn span {
-      font-family: 'Poppins', sans-serif;
-      font-size: 11px;
-      font-weight: 600;
-      color: var(--text-dark);
-      letter-spacing: 0.02em;
-    }
-
-    .yt-card-body {
-      padding: 18px 20px;
-    }
-
-    .yt-card-title {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 16px;
-      font-weight: 700;
-      color: var(--text-dark);
-      margin-bottom: 6px;
-      line-height: 1.35;
-    }
-
-    .yt-card-desc {
-      font-size: 13px;
-      color: var(--text-muted);
-      line-height: 1.5;
-    }
-
-    /* CTA unter den Videos */
-    .youtube-cta {
-      text-align: center;
-      margin-top: 40px;
-    }
-
-    .youtube-cta a {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: var(--text-dark);
-      color: #fff;
-      border-radius: 257px;
-      padding: 13px 30px;
-      font-family: 'Poppins', sans-serif;
-      font-size: 14px;
-      font-weight: 600;
-      letter-spacing: 0.01em;
-      transition: background 0.2s, transform 0.15s;
-    }
-
-    .youtube-cta a:hover {
-      background: #444;
-      transform: translateY(-1px);
-    }
-
-    .youtube-cta a svg {
-      width: 18px;
-      height: 18px;
-    }
-
-    /* ─────────────────────────────────────────
-       FOOTER
-    ───────────────────────────────────────── */
-    footer {
-      background-color: var(--cream-footer);
-      padding: 52px 44px 28px;
-      /* Footer slide-up animation: starts slightly below, fades in */
-      opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 0.6s cubic-bezier(0.25, 0.1, 0.25, 1),
-                  transform 0.6s cubic-bezier(0.25, 0.1, 0.25, 1);
-    }
-
-    footer.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .footer-inner { max-width: 1240px; margin: 0 auto; }
-
-    /* Footer logo + tagline */
-    .footer-brand { margin-bottom: 36px; }
-
-    .footer-logo {
-      display: flex;
-      align-items: center;
-      gap: 9px;
-      margin-bottom: 12px;
-    }
-
-    .footer-tagline {
-      font-size: 18px;            /* Original: 18px */
-      font-weight: 400;           /* Original: 400 */
-      color: var(--text-muted);   /* #808080 */
-      line-height: 1.4;           /* Original: 25.2px / 18px */
-      max-width: none;            /* Einzeilig wie im Original */
-    }
-
-    /* Bottom row */
-    .footer-divider { height: 1px; background: var(--border); margin-bottom: 20px; }
-
-    .footer-bottom {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 14px;
-    }
-
-    .footer-links {
-      display: flex;
-      gap: 24px;
-    }
-    .footer-links a {
-      font-size: 16px;            /* Original: 16px */
-      font-weight: 500;
-      color: var(--text-muted);   /* #808080 */
-      transition: color 0.15s;
-    }
-    .footer-links a:hover { color: var(--text-dark); }
-
-    /* Social icons */
-    .footer-social {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    .footer-social-label {
-      font-size: 16px;            /* Original: 16px */
-      font-weight: 500;           /* Original: 500 */
-      color: #111111;             /* Original: rgb(17,17,17) — dunkel! */
-      margin-right: 6px;
-    }
-
-    .social-icon {
-      width: 34px; height: 34px;
-      border-radius: 50%;
-      border: 1.5px solid var(--border);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--text-dark);
-      transition: border-color 0.25s, background 0.25s, color 0.25s;
-    }
-    .social-icon:hover {
-      border-color: var(--text-dark);
-      background: rgba(0,0,0,0.04);
-    }
-    .social-icon svg { width: 15px; height: 15px; }
-
-    /* Instagram Hover — Gradient-Farbe */
-    .social-icon--ig:hover {
-      color: #E1306C;
-      border-color: #E1306C;
-      background: rgba(225, 48, 108, 0.08);
-    }
-    /* YouTube Hover — Rot */
-    .social-icon--yt:hover {
-      color: #FF0000;
-      border-color: #FF0000;
-      background: rgba(255, 0, 0, 0.08);
-    }
-
-    /* Copyright */
-    .footer-copy {
-      text-align: center;
-      font-size: 14px;            /* Original: 14px */
-      font-weight: 400;
-      color: var(--text-muted);   /* #808080 */
-      margin-top: 24px;
-      padding-top: 16px;
-      border-top: 1px solid var(--border);
-    }
-    .footer-copy strong { font-weight: 600; color: var(--text-dark); }
-
-    /* Health Disclaimer */
-    .footer-disclaimer {
-      text-align: center;
-      font-size: 12px;
-      font-weight: 300;
-      color: var(--text-muted);
-      line-height: 1.55;
-      max-width: 760px;
-      margin: 20px auto 0;
-      padding-top: 16px;
-      border-top: 1px solid var(--border);
-      opacity: 0.8;
-    }
-
-    /* ─────────────────────────────────────────
-       RESPONSIVE – TABLET
-    ───────────────────────────────────────── */
-    @media (max-width: 960px) {
-      /* Navbar zentriert auf mobile */
-      nav.navbar {
-        padding: 16px 24px;
-        justify-content: center;
-      }
-      .nav-cta { display: none; }
-
-      .hero {
-        padding: 82px 24px 48px;
-        align-items: flex-start;
-      }
-
-      .hero-inner {
-        grid-template-columns: 1fr;
-        gap: 0;
-      }
-
-      /* Text first, image below on mobile */
-      .hero-text {
-        order: -1;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .hero-image-wrap {
-        order: 1;
-        justify-content: center;
-        margin-top: 36px;
-      }
-
-      .arch-frame { width: 280px; }
-
-      .rotating-badge {
-        width: 130px; height: 130px;
-        top: -30px; left: -38px;
-      }
-
-      .newsletter-form {
-        max-width: 100%;
-        margin: 0 auto;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .hero-badge {
-        margin: 0 auto 18px;
-        font-size: 12px;
-        padding: 7px 14px;
-        text-align: center;
-      }
-
-      .hero-heading {
-        font-size: clamp(1.75rem, 6.5vw, 2.4rem);
-        text-align: center;
-      }
-
-      .hero-body {
-        text-align: center;
-        margin: 0 auto 28px;
-      }
-
-      .input-row { width: 100%; }
-
-      .btn-submit {
-        align-self: center;
-      }
-
-      .checkbox-row {
-        justify-content: center;
-      }
-
-      /* Phone mockup section – tablet */
-      .phone-section { padding: 40px 24px 40px; }
-      .phone-inner { flex-direction: column; gap: 36px; text-align: center; }
-      .phone-text p { margin: 0 auto 24px; }
-      .phone-cta { padding: 12px 26px; font-size: 14px; }
-
-      /* Crop phone to upper portion with fade-out */
-      .phone-wrap {
-        width: 100%;
-        max-width: 320px;
-        margin: 0 auto;
-        position: relative;
-        height: 380px;
-        overflow: hidden;
-      }
-
-      /* Fade-out gradient at bottom */
-      .phone-wrap::after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        height: 120px;
-        background: linear-gradient(to bottom, transparent, var(--cream));
-        z-index: 5;
-        pointer-events: none;
-      }
-
-      .phone-device {
-        width: 260px;
-        margin: 0 auto;
-      }
-
-      /* Reposition badges for cropped phone */
-      .trust-badge { padding: 8px 12px; }
-      .trust-badge-text { font-size: 11px; }
-      .trust-badge-icon { width: 28px; height: 28px; }
-      .trust-badge-icon svg { width: 14px; height: 14px; }
-      .trust-badge--top { left: 0px; top: 10px; }
-      .trust-badge--right { right: 0px; top: 35%; }
-      .trust-badge--bottom { left: 5px; bottom: auto; top: 60%; }
-
-      .gallery { padding: 32px 24px 60px; }
-      .gallery-grid { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; gap: 20px; }
-
-      .youtube-section { padding: 60px 24px; }
-      .youtube-grid { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; gap: 20px; }
-      .yt-bg-icon { width: 240px; height: 240px; right: -40px; bottom: -40px; }
-
-      footer { padding: 40px 24px 24px; }
-      .footer-bottom { flex-direction: column; align-items: flex-start; }
-    }
-
-    /* ─────────────────────────────────────────
-       RESPONSIVE – MOBILE
-    ───────────────────────────────────────── */
-    @media (max-width: 480px) {
-      nav.navbar { padding: 14px 18px; }
-
-      .hero { padding: 76px 18px 36px; }
-      .arch-frame { width: 230px; }
-      .hero-heading { font-size: clamp(1.8rem, 8vw, 2.4rem); }
-      .hero-badge { font-size: 11px; padding: 6px 12px; gap: 5px; }
-      .hero-badge svg { width: 14px; height: 14px; }
-
-      .rotating-badge {
-        width: 108px; height: 108px;
-        top: -22px; left: -30px;
-      }
-
-      .sparkle { width: 26px; height: 26px; right: -12px; bottom: 14px; }
-
-      .phone-section { padding: 28px 18px 32px; }
-      .phone-wrap { height: 340px; max-width: 290px; }
-      .phone-device { width: 230px; border-radius: 34px; padding: 11px; }
-      .phone-screen { border-radius: 24px; }
-      .phone-notch { width: 82px; height: 22px; }
-      .phone-content { padding: 38px 16px 20px; }
-      .phone-content .pc-subject { font-size: 14px; }
-      .phone-content .pc-body { font-size: 10px; margin-bottom: 10px; }
-      .phone-content .pc-tip span { font-size: 10px; }
-      .phone-content .pc-tip { padding: 8px 10px; margin-bottom: 10px; }
-      .trust-badge--top { left: -5px; top: 5px; }
-      .trust-badge--right { right: -5px; top: 30%; }
-      .trust-badge--bottom { left: 0; top: 58%; }
-      .trust-badge { padding: 6px 10px; border-radius: 10px; }
-      .trust-badge-text { font-size: 10px; }
-      .trust-badge-icon { width: 24px; height: 24px; }
-      .trust-badge-icon svg { width: 12px; height: 12px; }
-      .gallery { padding: 24px 18px 48px; }
-      .youtube-section { padding: 48px 18px; }
-
-      footer { padding: 32px 18px 20px; }
-    }
-    /* ═══════ PROMO-BANNER + MENÜ-LINKS (nachträglich ergänzt) ═══════ */
-    :root { --promo-h: 46px; }
-    body { padding-top: var(--promo-h); }
-    nav.navbar { top: var(--promo-h); }
-    .hero { min-height: calc(100vh - var(--promo-h)); }
-    #youtube, #newsletter-form { scroll-margin-top: calc(var(--promo-h) + 84px); }
-
-    .promo-bar {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
-      min-height: var(--promo-h);
-      background: linear-gradient(90deg, #6B8C5A, #7A9E68);
-      color: #fff; text-decoration: none;
-      display: flex; align-items: center; justify-content: center; gap: 16px;
-      padding: 8px 18px; text-align: center;
-      font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: 500; line-height: 1.25;
-    }
-    .promo-bar .p-short { display: none; }
-    .promo-cta {
-      display: inline-flex; align-items: center; gap: 7px;
-      background: #fff; color: #3f5435; border-radius: 50px;
-      padding: 6px 16px; font-weight: 700; font-size: 13.5px;
-      white-space: nowrap; transition: background 0.2s ease;
-    }
-    .promo-bar:hover .promo-cta { background: #f0ece6; }
-
-    .nav-right {
-      display: flex; align-items: center; gap: 24px;
-      opacity: 0; transform: translateY(-4px); pointer-events: none;
-      transition: opacity 0.3s ease, transform 0.3s ease;
-    }
-    nav.navbar.scrolled .nav-right { opacity: 1; transform: none; pointer-events: all; }
-    .nav-link {
-      font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: 500;
-      color: var(--text-dark); white-space: nowrap; transition: color 0.2s ease;
-    }
-    .nav-link:hover { color: var(--accent); }
-    .nav-link .l-short { display: none; }
-
-    @media (max-width: 960px) {
-      nav.navbar { justify-content: space-between; }
-      .nav-right { gap: 14px; }
-      .nav-link { font-size: 13px; }
-      .nav-link .l-full { display: none; }
-      .nav-link .l-short { display: inline; }
-    }
-    @media (max-width: 600px) {
-      :root { --promo-h: 44px; }
-      .promo-bar { font-size: 12px; gap: 9px; padding: 7px 12px; }
-      .promo-bar .p-full { display: none; }
-      .promo-bar .p-short { display: inline; }
-      .promo-cta { font-size: 12px; padding: 5px 13px; }
-      .nav-right { gap: 11px; }
-    }
-  </style>
-
-  <!-- Meta Pixel (Facebook) -->
+  <!-- Meta Pixel (Facebook), von Cookiebot blockiert bis Marketing-Consent -->
   <script type="text/plain" data-cookieconsent="marketing">
     !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
     n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
@@ -1649,31 +57,625 @@
     fbq('init', '1626754815196504');
     fbq('track', 'PageView');
   </script>
-  <noscript>
-    <img height="1" width="1" style="display:none"
-      src="https://www.facebook.com/tr?id=1626754815196504&ev=PageView&noscript=1" />
-  </noscript>
-  <!-- End Meta Pixel -->
+
+  <!-- Fonts: Playfair Display (headings) + Poppins (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --cream:         #FBF7F4;
+      --cream2:        #F5EFE9;
+      --cream-footer:  #FCF7F5;
+      --text-dark:     #2D2B30;
+      --text-body:     #4C4640;
+      --text-muted:    #808080;
+      --accent:        #BFA492;
+      --accent-deep:   #A8876F;
+      --accent-text:   #8C6743;
+      --green-btn:     #6B8C5A;
+      --green-hover:   #7A9E68;
+      --border:        #DDD6CE;
+      --grid-line:     rgba(150, 130, 110, 0.12);
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    html { overflow-x: hidden; }
+    body {
+      background: var(--cream);
+      color: var(--text-dark);
+      font-family: 'Poppins', system-ui, sans-serif;
+      font-weight: 400;
+      line-height: 1.65;
+      overflow-x: hidden;
+      position: relative;
+      -webkit-font-smoothing: antialiased;
+    }
+    /* Hintergrund-Grid mit Fade, wie Newsletter-Seite */
+    body::before {
+      content: '';
+      position: fixed; inset: 0; z-index: 0; pointer-events: none;
+      background-image:
+        linear-gradient(var(--grid-line) 1px, transparent 1px),
+        linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+      background-size: 68px 68px;
+      -webkit-mask-image: radial-gradient(ellipse 70% 60% at 58% 38%, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.25) 45%, transparent 75%);
+      mask-image: radial-gradient(ellipse 70% 60% at 58% 38%, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.25) 45%, transparent 75%);
+    }
+    nav, main, footer { position: relative; z-index: 1; }
+    a { text-decoration: none; color: inherit; }
+    img { display: block; max-width: 100%; }
+    .wrap { max-width: 1100px; margin: 0 auto; padding: 0 28px; }
+
+    /* ───── ENTRANCE ANIMATIONS ───── */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+    .hero-badge  { animation: fadeInUp 0.55s cubic-bezier(0.25,0.1,0.25,1) 0.02s both; }
+    .hero h1     { animation: fadeInUp 0.55s cubic-bezier(0.25,0.1,0.25,1) 0.08s both; }
+    .hero-body   { animation: fadeInUp 0.55s cubic-bezier(0.25,0.1,0.25,1) 0.16s both; }
+    .hero-ctas   { animation: fadeInUp 0.55s cubic-bezier(0.25,0.1,0.25,1) 0.24s both; }
+    .hero-image-wrap { animation: fadeInUp 0.6s cubic-bezier(0.25,0.1,0.25,1) 0.10s both; }
+
+    /* Scroll-Reveal */
+    .reveal {
+      opacity: 0; transform: translateY(24px);
+      transition: opacity 0.6s cubic-bezier(0.25,0.1,0.25,1), transform 0.6s cubic-bezier(0.25,0.1,0.25,1);
+    }
+    .reveal.visible { opacity: 1; transform: none; }
+    .reveal:nth-child(2) { transition-delay: 0.08s; }
+    .reveal:nth-child(3) { transition-delay: 0.16s; }
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { opacity: 1; transform: none; transition: none; }
+      .hero-badge, .hero h1, .hero-body, .hero-ctas, .hero-image-wrap { animation: none; }
+    }
+
+    /* ───── NAVBAR ───── */
+    nav.navbar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      padding: 18px max(44px, calc((100% - 1240px) / 2));
+      display: flex; align-items: center; justify-content: space-between;
+      background: transparent;
+      transition: background 0.3s ease, box-shadow 0.3s ease, padding 0.3s ease;
+      animation: fadeIn 0.5s cubic-bezier(0.25,0.1,0.25,1) 0s both;
+    }
+    nav.navbar.scrolled {
+      padding: 14px max(44px, calc((100% - 1240px) / 2));
+      background: rgba(255,255,255,0.97);
+      box-shadow: 0 1px 12px rgba(0,0,0,0.06);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+    .logo { display: flex; align-items: center; gap: 10px; }
+    .logo-icon { width: 32px; height: 32px; }
+    .logo-lines {
+      display: flex; flex-direction: column;
+      font-family: 'Playfair Display', Georgia, serif;
+      font-weight: 500; font-size: 16px; line-height: 1.15;
+    }
+    .nav-right { display: flex; align-items: center; gap: 24px; }
+    .nav-link {
+      font-size: 14px; font-weight: 500; color: var(--text-dark);
+      white-space: nowrap; transition: color 0.2s ease;
+    }
+    .nav-link:hover { color: var(--accent); }
+    .nav-cta {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--green-btn); color: #fff;
+      font-size: 14px; font-weight: 600; letter-spacing: 0.01em;
+      padding: 10px 22px; border-radius: 257px;
+      white-space: nowrap;
+      transition: background 0.2s ease;
+    }
+    .nav-cta:hover { background: var(--green-hover); }
+    .nav-cta svg { width: 16px; height: 16px; }
+
+    /* ───── TYPO ───── */
+    h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-weight: 700; font-size: clamp(36px, 5vw, 56px);
+      line-height: 1.12; margin-bottom: 22px;
+    }
+    h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-weight: 700; font-size: clamp(28px, 3.6vw, 40px);
+      line-height: 1.18; margin-bottom: 18px;
+    }
+    h1 .accent, h2 .accent { color: var(--accent); font-style: italic; }
+    .section-label {
+      display: block; font-size: 13px; font-weight: 600;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--accent-deep); margin-bottom: 12px;
+    }
+
+    /* ───── BUTTONS ───── */
+    .btn-green {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: var(--green-btn); color: #fff;
+      font-size: 15px; font-weight: 600; letter-spacing: 0.01em;
+      padding: 16px 32px; border-radius: 257px;
+      transition: background 0.2s ease, transform 0.15s ease;
+    }
+    .btn-green:hover { background: var(--green-hover); transform: translateY(-1px); }
+    .btn-green svg { width: 18px; height: 18px; flex: none; }
+    .btn-arrow {
+      display: inline-flex; align-items: center; justify-content: center;
+      font-size: 15px;
+      animation: arrowNudge 2s ease-in-out infinite;
+      transition: transform 0.3s cubic-bezier(0.25,0.46,0.45,0.94);
+    }
+    .btn-green:hover .btn-arrow { animation: none; transform: translateX(4px); }
+    @keyframes arrowNudge {
+      0%, 100% { transform: translateX(0); }
+      50%      { transform: translateX(3px); }
+    }
+    .btn-ghost {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 15.5px; font-weight: 500; color: var(--accent-text);
+      padding: 15px 6px;
+      border-bottom: 1.5px solid transparent;
+      transition: border-color 0.2s ease;
+    }
+    .btn-ghost:hover { border-color: var(--accent); }
+    .btn-ghost svg { width: 16px; height: 16px; }
+
+    /* ───── HERO (Layout wie Newsletter-Seite) ───── */
+    .hero {
+      min-height: 92vh;
+      display: flex; align-items: center;
+      padding: 110px 44px 56px;
+    }
+    .hero-inner {
+      max-width: 1240px; width: 100%; margin: 0 auto;
+      display: grid; grid-template-columns: 1.3fr 1fr;
+      align-items: center; gap: 40px;
+    }
+    .hero h1 {
+      font-size: clamp(2.2rem, 4.5vw, 64px);
+      line-height: 1.05; margin-bottom: 28px;
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 7px;
+      background: rgba(191, 164, 146, 0.12);
+      border: 1.5px solid rgba(168, 135, 111, 0.45);
+      border-radius: 50px; padding: 8px 18px;
+      font-size: 13px; font-weight: 600; color: var(--accent-text);
+      letter-spacing: 0.01em;
+      margin-bottom: 20px;
+    }
+    .hero-badge svg { width: 16px; height: 16px; flex-shrink: 0; }
+    .hero-body { font-size: 18px; line-height: 1.4; color: #4D4D4D; max-width: 615px; margin-bottom: 36px; }
+    .hero-body strong { font-weight: 600; color: var(--text-dark); }
+    .hero-ctas { display: flex; align-items: center; gap: 22px; flex-wrap: wrap; }
+    /* Arch-Bild wie Newsletter-Seite */
+    .hero-image-wrap {
+      display: flex; justify-content: center; align-items: flex-end;
+      position: relative;
+    }
+    .arch-frame { position: relative; width: 460px; max-width: 100%; }
+    .arch-img-container {
+      width: 100%;
+      aspect-ratio: 468 / 657;
+      border-radius: 999px 999px 0 0;
+      overflow: hidden;
+      background-color: #E2D9D0;
+    }
+    .arch-img-container img {
+      width: 100%; height: 100%;
+      object-fit: contain; object-position: center bottom;
+      display: block; background-color: #E2D9D0;
+    }
+    /* Rotierendes Kreis-Badge wie Newsletter-Seite */
+    .rotating-badge { position: absolute; top: -10px; left: -55px; width: 158px; height: 158px; z-index: 2; }
+    .badge-text-ring { position: absolute; inset: 0; animation: spin-text 18s linear infinite; transform-origin: center; }
+    .badge-star-ring { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; animation: spin-star 45s linear infinite; transform-origin: center; }
+    @keyframes spin-text { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+    @keyframes spin-star { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+    .badge-svg { width: 100%; height: 100%; overflow: visible; }
+    .badge-svg .badge-text {
+      font-family: 'Poppins', sans-serif; font-size: 7.5px; font-weight: 400;
+      letter-spacing: 1.85px; fill: rgba(47,47,48,0.6);
+    }
+    .badge-star-svg { width: 36%; height: 36%; pointer-events: none; }
+    .sparkle {
+      position: absolute; bottom: 20px; right: -22px; width: 36px; height: 36px;
+      animation: oscillate 5s ease-in-out infinite; transform-origin: center;
+    }
+    .sparkle svg { width: 100%; height: 100%; }
+    @keyframes oscillate {
+      0%   { transform: rotate(-15deg); }
+      50%  { transform: rotate(15deg); }
+      100% { transform: rotate(-15deg); }
+    }
+
+    /* ───── KENNST DU DAS? ───── */
+    .relate { padding: 10px 0 84px; }
+    .relate-head { text-align: center; max-width: 720px; margin: 0 auto 40px; }
+    .relate-body {
+      display: grid; grid-template-columns: 0.72fr 1.28fr;
+      gap: 44px; align-items: center; margin-bottom: 44px;
+    }
+    .relate-photo { position: relative; }
+    .relate-photo img {
+      width: 100%; aspect-ratio: 3/4; object-fit: cover;
+      border-radius: 170px 170px 20px 20px;
+      box-shadow: 0 20px 50px rgba(80,55,40,0.16);
+    }
+    .relate-photo::after {
+      content: ''; position: absolute; inset: -10px;
+      border: 1.5px solid var(--accent); opacity: 0.35;
+      border-radius: 180px 180px 26px 26px;
+      pointer-events: none;
+    }
+    .relate-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .relate-card {
+      position: relative;
+      background: #fff; border: 1px solid var(--border); border-radius: 18px;
+      padding: 28px 28px 24px 30px;
+    }
+    .relate-card::before {
+      content: '\201E';
+      position: absolute; top: -6px; left: 18px;
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 58px; line-height: 1; color: var(--accent);
+      opacity: 0.55;
+    }
+    .relate-card p {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-style: italic; font-size: 18.5px; line-height: 1.5;
+      color: var(--text-dark);
+    }
+    .relate-outro { max-width: 720px; margin: 0 auto; text-align: center; }
+    .relate-outro p { font-size: 16.5px; color: var(--text-body); margin-bottom: 16px; }
+    .relate-outro p strong { font-weight: 600; color: var(--text-dark); }
+    .relate-outro .btn-ghost { font-size: 16px; }
+    @media (max-width: 860px) {
+      .relate-body { grid-template-columns: 1fr; gap: 28px; }
+      .relate-photo { max-width: 260px; margin: 0 auto; }
+      .relate-photo img { aspect-ratio: 4/4.4; }
+    }
+    @media (max-width: 720px) {
+      .relate-grid { grid-template-columns: 1fr; }
+      .relate { padding-bottom: 64px; }
+    }
+
+    /* ───── THEMEN / GALLERY ───── */
+    .themes { padding: 76px 0; background: var(--cream2); }
+    .themes-head { text-align: center; max-width: 700px; margin: 0 auto 44px; }
+    .themes-head p { font-size: 16px; color: var(--text-body); }
+    .themes-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .theme-card {
+      background: #fff; border: 1px solid var(--border); border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 10px 26px rgba(80,55,40,0.06);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .theme-card:hover { transform: translateY(-4px); box-shadow: 0 18px 40px rgba(80,55,40,0.11); }
+    .theme-card img { width: 100%; aspect-ratio: 4/3; object-fit: cover; }
+    .theme-card-body { padding: 22px 24px 26px; }
+    .theme-card h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 20px; font-weight: 700; margin-bottom: 8px;
+    }
+    .theme-card p { font-size: 14.5px; color: var(--text-body); }
+
+    /* ───── BLUTANALYSE-TEASER (Vollbild-Hintergrund + weiße Card) ───── */
+    .ba {
+      margin-top: 84px;
+      padding: 90px 0;
+      background: #F6EDD9 url('blutanalyse-banner.jpg') right center / cover no-repeat;
+      position: relative;
+    }
+    .ba-card {
+      position: relative;
+      max-width: 560px;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 44px 42px;
+      box-shadow: 0 24px 60px rgba(80,55,40,0.18);
+    }
+    .ba-card h2 { font-size: clamp(22px, 2.2vw, 27px); white-space: nowrap; }
+    .ba-card > p { font-size: 16px; color: var(--text-body); margin-bottom: 22px; }
+    .ba-card .mc-checks .ck { background: var(--cream2); }
+    .ba-ctas { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+    @media (max-width: 860px) {
+      .ba { margin-top: 60px; padding: 56px 0; background-position: 74% center; }
+      .ba-card { max-width: none; padding: 32px 24px; }
+      .ba-card h2 { white-space: normal; font-size: clamp(24px, 6vw, 28px); }
+    }
+
+    /* ───── MASTERCLASS / WARTELISTE ───── */
+    .masterclass { padding: 84px 0; }
+    .mc-grid { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 48px; align-items: center; }
+    .mc-mockup img {
+      max-width: 330px; margin: 0 auto;
+      filter: drop-shadow(0 24px 40px rgba(80,55,40,0.22));
+    }
+    .mc-text > p { font-size: 16px; color: var(--text-body); margin-bottom: 22px; max-width: 540px; }
+    .mc-checks { list-style: none; display: flex; flex-direction: column; gap: 13px; margin-bottom: 30px; }
+    .mc-checks li { display: grid; grid-template-columns: auto 1fr; gap: 12px; font-size: 15.5px; color: var(--text-body); }
+    .mc-checks .ck {
+      width: 22px; height: 22px; border-radius: 50%;
+      background: var(--cream2); color: var(--green-btn);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 13px; font-weight: 600; margin-top: 3px;
+    }
+    .mc-checks strong { font-weight: 600; color: var(--text-dark); }
+    .mc-note { font-size: 13px; color: var(--text-muted); margin-top: 12px; }
+
+    /* ───── YOUTUBE ───── */
+    .youtube { padding: 80px 0; background: var(--cream2); }
+    .yt-head { text-align: center; max-width: 700px; margin: 0 auto 44px; }
+    .yt-head p { font-size: 16px; color: var(--text-body); }
+    .yt-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-bottom: 40px; }
+    .yt-card {
+      background: #fff; border: 1px solid var(--border); border-radius: 18px;
+      overflow: hidden; display: block;
+      box-shadow: 0 10px 26px rgba(80,55,40,0.06);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .yt-card:hover { transform: translateY(-4px); box-shadow: 0 18px 40px rgba(80,55,40,0.11); }
+    .yt-thumb { position: relative; aspect-ratio: 16/9; background: var(--cream2); overflow: hidden; }
+    .yt-thumb img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+    .yt-play {
+      position: absolute; inset: 0;
+      display: flex; align-items: center; justify-content: center;
+      background: rgba(45,43,48,0.0); transition: background 0.2s ease;
+    }
+    .yt-card:hover .yt-play { background: rgba(45,43,48,0.18); }
+    .yt-play span {
+      width: 52px; height: 52px; border-radius: 50%;
+      background: rgba(255,255,255,0.92);
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 6px 18px rgba(45,43,48,0.25);
+    }
+    .yt-play svg { width: 20px; height: 20px; margin-left: 3px; }
+    .yt-card-body { padding: 18px 20px 22px; }
+    .yt-card h3 { font-size: 15.5px; font-weight: 600; line-height: 1.4; margin-bottom: 6px; }
+    .yt-card p { font-size: 13.5px; color: var(--text-body); }
+    .yt-cta { text-align: center; }
+    .yt-cta a {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: #fff; border: 1px solid var(--border); border-radius: 50px;
+      padding: 13px 26px; font-size: 15px; font-weight: 500;
+      transition: box-shadow 0.2s ease, transform 0.2s ease;
+    }
+    .yt-cta a:hover { transform: translateY(-2px); box-shadow: 0 10px 26px rgba(80,55,40,0.10); }
+    .yt-cta svg { width: 26px; height: 19px; }
+
+    /* ───── NEWSLETTER-TEASER ───── */
+    .nl { padding: 84px 0; }
+    .nl-box {
+      background: linear-gradient(135deg, #F5EFE9, #F0E6DC);
+      border: 1px solid var(--border); border-radius: 26px;
+      padding: 54px 48px; text-align: center;
+      max-width: 820px; margin: 0 auto;
+    }
+    .nl-box p { font-size: 16px; color: var(--text-body); max-width: 560px; margin: 0 auto 28px; }
+    .nl-micro { font-size: 13px; color: var(--text-muted); margin-top: 14px; }
+
+    /* ───── ÜBER MICH TEASER ───── */
+    .about-teaser { padding: 0 0 84px; }
+    .at-grid { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 46px; align-items: center; }
+    .at-photo img {
+      width: 100%; aspect-ratio: 3/4; object-fit: cover;
+      border-radius: 170px 170px 20px 20px;
+      box-shadow: 0 20px 50px rgba(80,55,40,0.16);
+    }
+    .at-text p { font-size: 16px; color: var(--text-body); margin-bottom: 18px; max-width: 540px; }
+    .at-text blockquote {
+      font-family: 'Playfair Display', Georgia, serif; font-style: italic;
+      font-size: 19px; line-height: 1.5; color: var(--accent-text);
+      border-left: 3px solid var(--accent); padding-left: 18px; margin: 0 0 26px;
+    }
+
+    /* ───── KONTAKT-TEASER ───── */
+    .contact { padding: 0 0 90px; text-align: center; }
+    .contact p { font-size: 16px; color: var(--text-body); max-width: 520px; margin: 0 auto 26px; }
+    .contact .mail { font-weight: 500; color: var(--accent-text); text-decoration: underline; text-underline-offset: 3px; }
+
+    /* ───── FOOTER ───── */
+    footer {
+      background: var(--cream-footer); border-top: 1px solid var(--border); padding: 48px 28px 24px;
+      opacity: 0; transform: translateY(18px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    footer.visible { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) { footer { opacity: 1; transform: none; transition: none; } }
+    .footer-inner { max-width: 1100px; margin: 0 auto; }
+    .footer-brand { display: flex; flex-direction: column; align-items: center; gap: 12px; text-align: center; }
+    .footer-logo { display: flex; align-items: center; gap: 9px; }
+    .footer-tagline { font-size: 14px; color: var(--text-body); max-width: 420px; }
+    .footer-divider { height: 1px; background: var(--border); margin: 30px 0 22px; }
+    .footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 18px; }
+    .footer-links { display: flex; gap: 22px; flex-wrap: wrap; }
+    .footer-links a { font-size: 13.5px; color: var(--text-muted); transition: color 0.2s ease; }
+    .footer-links a:hover { color: var(--accent-text); }
+    .footer-social { display: flex; align-items: center; gap: 12px; }
+    .footer-social-label { font-size: 13px; color: var(--text-muted); }
+    .social-icon {
+      width: 34px; height: 34px; border-radius: 50%;
+      border: 1px solid var(--border); color: var(--text-body);
+      display: flex; align-items: center; justify-content: center;
+      transition: all 0.2s ease;
+    }
+    .social-icon svg { width: 16px; height: 16px; }
+    .social-icon:hover { border-color: var(--accent); color: var(--accent-text); }
+    .footer-disclaimer { font-size: 11.5px; color: var(--text-muted); margin-top: 26px; text-align: center; line-height: 1.6; }
+    .footer-copy { font-size: 12.5px; color: var(--text-muted); margin-top: 14px; text-align: center; }
+    .footer-copy a { color: var(--text-muted); text-decoration: underline; text-underline-offset: 2px; }
+
+    /* ───── RESPONSIVE ───── */
+    @media (max-width: 960px) {
+      nav.navbar { padding: 12px 20px; }
+      .nav-right { gap: 14px; }
+      .nav-link { font-size: 13px; }
+      .nav-cta { display: none; }
+    }
+    @media (max-width: 860px) {
+      .hero { padding: 110px 24px 48px; min-height: 0; }
+      .hero-inner { grid-template-columns: 1fr; gap: 40px; text-align: center; }
+      .hero-body { margin-left: auto; margin-right: auto; }
+      .hero-ctas { justify-content: center; }
+      .hero-image-wrap { order: 1; }
+      .arch-frame { width: 300px; }
+      .rotating-badge { width: 120px; height: 120px; left: -34px; }
+      .themes-grid, .yt-grid { grid-template-columns: 1fr; }
+      .mc-grid { grid-template-columns: 1fr; text-align: center; }
+      .mc-mockup img { max-width: 240px; }
+      .mc-checks { text-align: left; }
+      .at-grid { grid-template-columns: 1fr; }
+      .at-photo { max-width: 320px; margin: 0 auto; }
+      .nl-box { padding: 40px 24px; }
+      .footer-bottom { flex-direction: column; }
+    }
+
+    /* ───── MEGA-MENÜ ───── */
+    .nav-item { position: relative; }
+    .nav-item > .nav-link { display: inline-flex; align-items: center; gap: 5px; }
+    .caret { width: 10px; height: 6px; stroke: currentColor; fill: none; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; transition: transform 0.2s ease; }
+    .nav-item:hover .caret { transform: rotate(180deg); }
+    .mega {
+      position: absolute; top: calc(100% + 16px); left: 50%;
+      width: 330px;
+      background: #fff; border: 1px solid var(--border); border-radius: 18px;
+      box-shadow: 0 24px 60px rgba(80,55,40,0.16);
+      padding: 20px;
+      opacity: 0; visibility: hidden; pointer-events: none;
+      transform: translateX(-50%) translateY(8px);
+      transition: opacity 0.22s ease, transform 0.22s ease, visibility 0.22s;
+      z-index: 120;
+    }
+    .mega::before { content: ''; position: absolute; top: -16px; left: 0; right: 0; height: 16px; }
+    .nav-item:hover .mega, .nav-item:focus-within .mega {
+      opacity: 1; visibility: visible; pointer-events: auto;
+      transform: translateX(-50%) translateY(0);
+    }
+    .mega-head { font-family: 'Playfair Display', Georgia, serif; font-size: 17px; font-weight: 700; margin-bottom: 2px; }
+    .mega-sub { font-size: 12.5px; color: var(--text-muted); margin-bottom: 12px; }
+    .m-item {
+      display: grid; grid-template-columns: auto 1fr; gap: 12px; align-items: center;
+      padding: 10px; border-radius: 12px;
+      transition: background 0.15s ease;
+    }
+    .m-item:hover { background: var(--cream2); }
+    .m-item .mi-ico {
+      width: 36px; height: 36px; border-radius: 50%;
+      background: var(--cream2); color: var(--accent-deep);
+      display: flex; align-items: center; justify-content: center; flex: none;
+    }
+    .m-item:hover .mi-ico { background: #fff; }
+    .m-item .mi-ico svg { width: 17px; height: 17px; }
+    .m-item b { display: block; font-size: 14px; font-weight: 600; color: var(--text-dark); }
+    .m-item span { display: block; font-size: 12px; color: var(--text-muted); line-height: 1.4; }
+    .m-cta {
+      display: block; text-align: center; margin-top: 10px;
+      background: var(--green-btn); color: #fff;
+      border-radius: 257px; padding: 11px 16px;
+      font-size: 13.5px; font-weight: 600;
+      transition: background 0.2s ease;
+    }
+    .m-cta:hover { background: var(--green-hover); }
+    @media (max-width: 960px) { .mega, .caret { display: none; } }
+
+    /* ───── MOBILE MENÜ ───── */
+    .burger {
+      display: none;
+      width: 44px; height: 44px;
+      border: none; background: transparent; cursor: pointer;
+      flex-direction: column; align-items: center; justify-content: center; gap: 5px;
+      position: relative; z-index: 260; flex: none;
+    }
+    .burger span {
+      display: block; width: 22px; height: 2px; border-radius: 2px;
+      background: var(--text-dark);
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+    body.menu-open nav.navbar { z-index: 300; background: transparent; box-shadow: none; }
+    body.menu-open .burger span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    body.menu-open .burger span:nth-child(2) { opacity: 0; }
+    body.menu-open .burger span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .mobile-menu {
+      position: fixed; inset: 0; z-index: 250;
+      background: var(--cream);
+      display: flex; flex-direction: column;
+      padding: 100px 30px 34px;
+      opacity: 0; visibility: hidden; pointer-events: none;
+      transition: opacity 0.32s ease, visibility 0.32s;
+      overflow-y: auto;
+    }
+    .mobile-menu::after {
+      content: ''; position: absolute; right: -70px; top: -60px;
+      width: 230px; height: 290px;
+      background: rgba(191,164,146,0.13);
+      border-radius: 0 100% 0 100%;
+      transform: rotate(24deg); pointer-events: none;
+    }
+    body.menu-open .mobile-menu { opacity: 1; visibility: visible; pointer-events: auto; }
+    .mm-links { display: flex; flex-direction: column; position: relative; z-index: 1; }
+    .mm-links a {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 27px; font-weight: 700; color: var(--text-dark);
+      padding: 14px 2px; border-bottom: 1px solid var(--border);
+      display: flex; justify-content: space-between; align-items: center;
+      opacity: 0; transform: translateY(14px);
+      transition: opacity 0.4s ease, transform 0.4s ease, color 0.2s ease;
+    }
+    .mm-links a:active { color: var(--accent-text); }
+    .mm-links a.mm-active { color: var(--accent-text); }
+    .mm-links .mm-arrow { font-family: 'Poppins', sans-serif; font-size: 20px; font-weight: 400; color: var(--accent); }
+    body.menu-open .mm-links a { opacity: 1; transform: none; }
+    body.menu-open .mm-links a:nth-child(1) { transition-delay: 0.06s; }
+    body.menu-open .mm-links a:nth-child(2) { transition-delay: 0.11s; }
+    body.menu-open .mm-links a:nth-child(3) { transition-delay: 0.16s; }
+    body.menu-open .mm-links a:nth-child(4) { transition-delay: 0.21s; }
+    body.menu-open .mm-links a:nth-child(5) { transition-delay: 0.26s; }
+    body.menu-open .mm-links a:nth-child(6) { transition-delay: 0.31s; }
+    body.menu-open .mm-links a:nth-child(7) { transition-delay: 0.36s; }
+    .mm-bottom {
+      margin-top: auto; padding-top: 30px; position: relative; z-index: 1;
+      opacity: 0; transform: translateY(14px);
+      transition: opacity 0.4s ease 0.38s, transform 0.4s ease 0.38s;
+    }
+    body.menu-open .mm-bottom { opacity: 1; transform: none; }
+    .mm-cta {
+      display: flex; align-items: center; justify-content: center; gap: 10px;
+      background: var(--green-btn); color: #fff;
+      font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: 600;
+      padding: 17px 20px; border-radius: 257px;
+    }
+    .mm-cta svg { width: 18px; height: 18px; }
+    .mm-social { display: flex; justify-content: center; align-items: center; gap: 14px; margin-top: 20px; }
+    .mm-social span { font-size: 13px; color: var(--text-muted); }
+    .mm-social a {
+      width: 40px; height: 40px; border-radius: 50%;
+      border: 1px solid var(--border); color: var(--text-body);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .mm-social a svg { width: 17px; height: 17px; }
+    @media (max-width: 960px) {
+      nav.navbar { justify-content: space-between; }
+      .nav-right { display: none; }
+      .burger { display: flex; }
+    }
+  </style>
 </head>
 <body>
-
-  <!-- ═══════════════════════════════════════
-       PROMO-BANNER (dauerhaft sichtbar)
-  ═══════════════════════════════════════ -->
-  <a href="webinar.html" class="promo-bar" aria-label="Zum kostenlosen Live-Workshop anmelden">
-    <span>
-      <span class="p-full">🌿 Kostenloser Live-Workshop am Sonntag, 28. Juni</span>
-      <span class="p-short">🌿 Live-Workshop · 28. Juni</span>
-    </span>
-    <span class="promo-cta"><span class="p-full">Jetzt anmelden</span><span class="p-short">Anmelden</span> →</span>
-  </a>
 
   <!-- ═══════════════════════════════════════
        NAVBAR
   ═══════════════════════════════════════ -->
   <nav class="navbar" role="navigation" aria-label="Hauptnavigation">
-    <a href="/" class="logo" aria-label="Jasmin Schmidtke – Startseite">
-      <!-- Logo icon: gefüllter Kreis in Accent-Farbe mit Blatt -->
+    <a href="index.html" class="logo" aria-label="Jasmin Schmidtke, Startseite">
       <svg class="logo-icon" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
         <circle cx="100" cy="100" r="82" fill="none" stroke="#BFA492" stroke-width="11"/>
         <path d="M 18,100 C 45,118 65,118 100,95 C 135,72 155,72 182,100" fill="none" stroke="#BFA492" stroke-width="7" stroke-linecap="round"/>
@@ -1684,9 +686,56 @@
       </span>
     </a>
     <div class="nav-right">
-      <a href="#youtube" class="nav-link"><span class="l-full">YouTube-Videos</span><span class="l-short">YouTube</span></a>
-      <a href="#newsletter-form" class="nav-link"><span class="l-full">Newsletter anmelden</span><span class="l-short">Newsletter</span></a>
-      <a href="#newsletter-form" class="nav-cta">
+      <a href="ueber-mich.html" class="nav-link">Über mich</a>
+      <div class="nav-item">
+        <a href="blutanalyse.html" class="nav-link">Blutanalyse<svg class="caret" viewBox="0 0 10 6" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg></a>
+        <div class="mega" aria-label="Blutanalyse Untermenü">
+          <p class="mega-head">Blutanalyse</p>
+          <p class="mega-sub">Verstehen, was dein Körper wirklich braucht</p>
+          <a class="m-item" href="blutanalyse.html#ablauf">
+            <span class="mi-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16"/><path d="M4 12h10"/><path d="M4 18h7"/></svg></span>
+            <span><b>So läuft es ab</b><span>In 5 Schritten, egal wo du wohnst</span></span>
+          </a>
+          <a class="m-item" href="blutanalyse.html#preise">
+            <span class="mi-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12l-8 8-8-8 8-8 3 3"/><circle cx="14" cy="10" r="1.5"/></svg></span>
+            <span><b>Preise &amp; Leistungen</b><span>Transparent: alles inklusive, ein Komplettpreis</span></span>
+          </a>
+          <a class="m-cta" href="kontakt.html?anliegen=blutanalyse">Kostenloses Erstgespräch anfragen</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="warteliste.html" class="nav-link">Coaching<svg class="caret" viewBox="0 0 10 6" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg></a>
+        <div class="mega" aria-label="Coaching Untermenü">
+          <p class="mega-head">Coaching</p>
+          <p class="mega-sub">Die neue Masterclass für Frauen ab 40</p>
+          <a class="m-item" href="warteliste.html">
+            <span class="mi-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1.7 2.7 3 6 3s6-1.3 6-3v-5"/></svg></span>
+            <span><b>Die Masterclass</b><span>Erscheint in Kürze: Stoffwechsel, Hormone und deine Routinen</span></span>
+          </a>
+          <a class="m-item" href="quiz.html">
+            <span class="mi-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/><circle cx="12" cy="12" r="10"/></svg></span>
+            <span><b>Welcher Ü40-Typ bist du?</b><span>Mach den kostenlosen Test, in 3 Minuten</span></span>
+          </a>
+          <a class="m-item" href="kontakt.html?anliegen=masterclass">
+            <span class="mi-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></span>
+            <span><b>Frage zum Coaching</b><span>Schreib Jasmin direkt über das Kontaktformular</span></span>
+          </a>
+          <a class="m-cta" href="warteliste.html">Jetzt kostenlos auf die Warteliste</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="#youtube" class="nav-link">YouTube<svg class="caret" viewBox="0 0 10 6" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg></a>
+        <div class="mega" aria-label="YouTube Untermenü">
+          <p class="mega-head">YouTube</p>
+          <p class="mega-sub">Jede Woche neue Impulse für Frauen ab 40</p>
+          <a class="m-item" href="https://www.youtube.com/@jasmin-schmidtke" target="_blank" rel="noopener noreferrer">
+            <span class="mi-ico" style="background:#FDECEA;color:#D0312D;"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z" fill="#D0312D"/><polygon points="9.75,15.02 15.5,12 9.75,8.98" fill="#fff"/></svg></span>
+            <span><b>Zum YouTube-Kanal</b><span>Abonnieren und nichts verpassen</span></span>
+          </a>
+        </div>
+      </div>
+      <a href="kontakt.html" class="nav-link">Kontakt</a>
+      <a href="newsletter.html" class="nav-cta">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <rect x="2" y="4" width="20" height="16" rx="2"/>
           <polyline points="2,4 12,13 22,4"/>
@@ -1694,398 +743,290 @@
         Kostenlos Tipps erhalten
       </a>
     </div>
+    <button class="burger" id="burger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobile-menu">
+      <span></span><span></span><span></span>
+    </button>
   </nav>
 
-  <!-- ═══════════════════════════════════════
-       HERO / MAIN
-  ═══════════════════════════════════════ -->
-  <main>
-    <section class="hero" aria-label="Newsletter Anmeldung">
-      <div class="hero-inner">
-
-        <!-- ── LEFT: Text + Form ── -->
-        <div class="hero-text">
-
-          <div class="hero-badge">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/>
+  <!-- ═══════ MOBILES MENÜ ═══════ -->
+  <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+    <nav class="mm-links" aria-label="Mobiles Menü">
+      <a href="index.html" class="mm-active">Startseite <span class="mm-arrow">→</span></a>
+      <a href="ueber-mich.html">Über mich <span class="mm-arrow">→</span></a>
+      <a href="blutanalyse.html">Blutanalyse <span class="mm-arrow">→</span></a>
+      <a href="warteliste.html">Coaching <span class="mm-arrow">→</span></a>
+      <a href="quiz.html">Der Ü40-Test <span class="mm-arrow">→</span></a>
+      <a href="#youtube">YouTube <span class="mm-arrow">→</span></a>
+      <a href="kontakt.html">Kontakt <span class="mm-arrow">→</span></a>
+    </nav>
+    <div class="mm-bottom">
+      <a class="mm-cta" href="newsletter.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="2" y="4" width="20" height="16" rx="2"/>
+          <polyline points="2,4 12,13 22,4"/>
+        </svg>
+        Kostenlos Tipps erhalten
+      </a>
+      <div class="mm-social">
+        <span>Folge mir hier</span>
+        <a href="https://www.instagram.com/jasmin.schmidtke/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.6" fill="currentColor" stroke="none"/></svg>
+        </a>
+        <a href="https://www.youtube.com/@jasmin-schmidtke" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="currentColor" stroke="none"/></svg>
+        </a>
+          <a href="https://de.linkedin.com/in/jasmin-schmidtke-516755198" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4V8h4"/>
+              <rect x="2" y="9" width="4" height="12"/>
+              <circle cx="4" cy="4" r="2"/>
             </svg>
-            Der einzige Newsletter, den du als Frau Ü40 brauchst
-          </div>
+          </a>
+      </div>
+    </div>
+  </div>
 
-          <h1 class="hero-heading">
-            Die besten Tipps für<br>
-            <span class="accent">Frauen ab 40</span>, direkt<br>
-            in dein Mail-Postfach
-          </h1>
+  <main>
 
-          <p class="hero-body">
-            Heilpraktikerin Jasmin schickt dir jede Woche die wichtigsten
-            Insider-Tipps zu Haut, Hormonen und Energie – verständlich erklärt,
-            sofort umsetzbar, direkt aus der Praxis. Mehr brauchst du nicht.
-          </p>
-
-          <!-- Newsletter Form -->
-          <form
-            class="newsletter-form"
-            id="newsletter-form"
-            novalidate
-            onsubmit="handleSubmit(event)"
-            aria-label="Newsletter Anmeldeformular"
-          >
-            <!-- E-Mail input -->
-            <div class="input-row">
-              <input
-                type="email"
-                id="email"
-                name="email"
-                placeholder="Deine E-Mail Adresse"
-                autocomplete="email"
-                aria-label="Deine E-Mail Adresse"
-                required
-              />
-              <span class="input-icon" aria-hidden="true">
-                <svg width="17" height="17" viewBox="0 0 24 24" fill="none"
-                     stroke="currentColor" stroke-width="1.8"
-                     stroke-linecap="round" stroke-linejoin="round">
-                  <rect x="2" y="4" width="20" height="16" rx="2"/>
-                  <polyline points="2,4 12,13 22,4"/>
-                </svg>
-              </span>
-            </div>
-
-            <!-- Submit button -->
-            <button
-              type="submit"
-              class="btn-submit"
-              id="submit-btn"
-              aria-describedby="datenschutz-label"
-            >
-              Tipps erhalten
-              <span class="btn-arrow" aria-hidden="true">→</span>
-            </button>
-
-            <!-- Privacy checkbox -->
-            <div class="checkbox-row">
-              <input
-                type="checkbox"
-                id="datenschutz"
-                name="datenschutz"
-                onchange="handleCheckboxChange(this)"
-                aria-required="true"
-              />
-              <span class="custom-check" onclick="toggleCheckbox()" role="presentation">
-                <svg viewBox="0 0 12 12" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="2.5 6 5 8.5 9.5 3.5"/>
-                </svg>
-              </span>
-              <label for="datenschutz" id="datenschutz-label">
-                Ich akzeptiere die
-                <a href="datenschutz.html">Datenschutzbestimmungen</a>
-              </label>
-            </div>
-
-            <!-- Success state -->
-            <div class="success-msg" id="success-msg" role="alert" aria-live="polite">
-              ✓ &nbsp;Danke! Du bist dabei. Schau in dein Postfach – deine erste Mail ist unterwegs.
-            </div>
-          </form>
+    <!-- ═══════════════════════════════════════
+         HERO
+    ═══════════════════════════════════════ -->
+    <section class="hero" aria-label="Willkommen">
+      <div class="hero-inner">
+      <div>
+        <p class="hero-badge">
+          <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <circle cx="100" cy="100" r="82" fill="none" stroke="currentColor" stroke-width="14"/>
+            <path d="M 18,100 C 45,118 65,118 100,95 C 135,72 155,72 182,100" fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round"/>
+          </svg>
+          Coaching für Frauen ab 40
+        </p>
+        <h1>
+          Fresh, attraktiv und vital über 40.<br>
+          Und wieder mitten im <span class="accent">Leben</span> stehen.
+        </h1>
+        <p class="hero-body">
+          Ich bin <strong>Jasmin</strong>, Heilpraktikerin und vierfache Mama. Ich zeige dir, warum du ab 40 ständig müde bist und schwerer abnimmst, obwohl du schon so viel probiert hast. Und wie du wieder zu Energie und einem guten Gefühl im eigenen Körper kommst.
+        </p>
+        <div class="hero-ctas">
+          <a href="newsletter.html" class="btn-green">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="2" y="4" width="20" height="16" rx="2"/>
+              <polyline points="2,4 12,13 22,4"/>
+            </svg>
+            Kostenlose Tipps per E-Mail
+          </a>
+          <a href="ueber-mich.html" class="btn-ghost">
+            Lerne mich kennen
+            <span class="btn-arrow" aria-hidden="true">→</span>
+          </a>
         </div>
-
-        <!-- ── RIGHT: Image ── -->
-        <div class="hero-image-wrap" aria-hidden="true">
-          <div class="arch-frame">
-
-            <!-- Rotating circular badge — Text + Stern drehen unabhängig -->
-            <div class="rotating-badge" role="presentation">
-
-              <!-- Ring 1: Text (dreht sich schneller: 18s) -->
-              <div class="badge-text-ring">
-                <svg class="badge-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                  <defs>
-                    <path
-                      id="circlePath"
-                      d="M 14 50 A 36 36 0 0 1 86 50 A 36 36 0 0 1 14 50"
-                    />
-                  </defs>
-                  <text class="badge-text">
-                    <textPath href="#circlePath" startOffset="0%">
-                      Attraktiv ab 40 und aufblühen statt altern &#160;-&#160;
-                    </textPath>
-                  </text>
-                </svg>
-              </div>
-
-              <!-- Ring 2: Stern (dreht sich langsamer: 45s) -->
-              <div class="badge-star-ring">
-                <svg class="badge-star-svg" viewBox="0 0 62 62" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M 30.983 0.01 C 30.983 0.026 30.878 0.785 30.756 1.694 C 29.475 11.144 28.343 15.936 26.531 19.559 C 23.826 24.98 19.617 27.528 10.339 29.375 C 8.02 29.837 3.993 30.47 0.721 30.884 C 0.324 30.937 0.003 30.981 0.012 30.985 C 0.016 30.99 0.449 31.05 0.973 31.123 C 7.562 32 11.702 32.759 14.922 33.684 C 22.975 35.997 26.462 39.738 28.66 48.429 C 29.41 51.379 30.075 55.181 30.817 60.744 C 30.91 61.421 30.991 61.985 30.995 61.994 C 31.003 61.998 31.02 61.884 31.036 61.738 C 31.08 61.3 31.494 58.297 31.693 56.991 C 33.12 47.484 34.624 42.813 37.362 39.385 C 37.816 38.813 38.85 37.786 39.454 37.307 C 41.323 35.822 43.501 34.759 46.591 33.822 C 49.762 32.86 53.983 32.065 60.702 31.164 C 61.379 31.071 61.943 30.994 61.947 30.985 C 61.955 30.981 61.78 30.953 61.561 30.925 C 58.313 30.511 54.684 29.951 52.267 29.496 C 45.934 28.303 41.98 26.782 39.235 24.485 C 37.637 23.146 36.392 21.507 35.354 19.377 C 33.586 15.737 32.402 10.629 31.182 1.361 C 31.024 0.144 30.995 -0.051 30.983 0.01 Z" fill="#BFA492"/>
-                </svg>
-              </div>
-
-            </div>
-
-            <!-- Arch photo -->
-            <div class="arch-img-container">
-              <img
-                src="jasmin.jpg"
-                alt="Jasmin Schmidtke – Heilpraktikerin und Coach für Frauen ab 40"
-                loading="eager"
-                width="320"
-                height="437"
-              />
-            </div>
-
-            <!-- Oscillating sparkle star — 4-Punkte SVG wie im Original -->
-            <div class="sparkle" aria-hidden="true">
-              <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <!-- Schmaler 4-Punkte-Stern wie Framer Original -->
-                <path d="M18 1 C18 1 19.5 14 27 18 C19.5 22 18 35 18 35 C18 35 16.5 22 9 18 C16.5 14 18 1 18 1Z" fill="#2D2B30"/>
-                <path d="M18 7 C18 7 19 14.5 23 18 C19 21.5 18 29 18 29 C18 29 17 21.5 13 18 C17 14.5 18 7 18 7Z" fill="#2D2B30" opacity="0.0"/>
+      </div>
+      <div class="hero-image-wrap" aria-hidden="true">
+        <div class="arch-frame">
+          <!-- Rotierendes Kreis-Badge, wie Newsletter-Seite -->
+          <div class="rotating-badge" role="presentation">
+            <div class="badge-text-ring">
+              <svg class="badge-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <path id="circlePath" d="M 14 50 A 36 36 0 0 1 86 50 A 36 36 0 0 1 14 50" />
+                </defs>
+                <text class="badge-text">
+                  <textPath href="#circlePath" startOffset="0%">Attraktiv ab 40 und aufblühen statt altern &#160;-&#160;</textPath>
+                </text>
               </svg>
             </div>
-
+            <div class="badge-star-ring">
+              <svg class="badge-star-svg" viewBox="0 0 62 62" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M 30.983 0.01 C 30.983 0.026 30.878 0.785 30.756 1.694 C 29.475 11.144 28.343 15.936 26.531 19.559 C 23.826 24.98 19.617 27.528 10.339 29.375 C 8.02 29.837 3.993 30.47 0.721 30.884 C 0.324 30.937 0.003 30.981 0.012 30.985 C 0.016 30.99 0.449 31.05 0.973 31.123 C 7.562 32 11.702 32.759 14.922 33.684 C 22.975 35.997 26.462 39.738 28.66 48.429 C 29.41 51.379 30.075 55.181 30.817 60.744 C 30.91 61.421 30.991 61.985 30.995 61.994 C 31.003 61.998 31.02 61.884 31.036 61.738 C 31.08 61.3 31.494 58.297 31.693 56.991 C 33.12 47.484 34.624 42.813 37.362 39.385 C 37.816 38.813 38.85 37.786 39.454 37.307 C 41.323 35.822 43.501 34.759 46.591 33.822 C 49.762 32.86 53.983 32.065 60.702 31.164 C 61.379 31.071 61.943 30.994 61.947 30.985 C 61.955 30.981 61.78 30.953 61.561 30.925 C 58.313 30.511 54.684 29.951 52.267 29.496 C 45.934 28.303 41.98 26.782 39.235 24.485 C 37.637 23.146 36.392 21.507 35.354 19.377 C 33.586 15.737 32.402 10.629 31.182 1.361 C 31.024 0.144 30.995 -0.051 30.983 0.01 Z" fill="#BFA492"/>
+              </svg>
+            </div>
           </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ═══════════════════════════════════════
-         PHONE MOCKUP – Newsletter Preview
-    ═══════════════════════════════════════ -->
-    <section class="phone-section" aria-label="Newsletter Vorschau">
-      <div class="phone-inner">
-
-        <!-- Text left -->
-        <div class="phone-text">
-          <h2>
-            So sieht dein<br><span class="accent">wöchentlicher Impuls</span> aus
-          </h2>
-          <p>
-            Jede Woche bekommst du eine kompakte E-Mail mit den besten Tipps rund um Haut, Hormone und Energie – praxisnah, leicht umsetzbar und speziell für Frauen ab 40.
-          </p>
-
-          <a href="#" onclick="event.preventDefault();window.scrollTo({top:0,behavior:'smooth'});" class="phone-cta">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/>
+          <!-- Funkel-Stern unten rechts -->
+          <div class="sparkle" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 1 L13.8 10.2 L23 12 L13.8 13.8 L12 23 L10.2 13.8 L1 12 L10.2 10.2 Z" fill="#2D2B30"/>
             </svg>
-            Kostenlos Tipps erhalten
-            <span class="cta-arrow">→</span>
-          </a>
+          </div>
+          <div class="arch-img-container">
+            <img src="jasmin.jpg" alt="Jasmin Schmidtke, Heilpraktikerin" loading="eager" width="460" height="646" />
+          </div>
         </div>
-
-        <!-- Phone right -->
-        <div class="phone-wrap">
-
-          <!-- Trust badge: top-left -->
-          <div class="trust-badge trust-badge--top">
-            <div class="trust-badge-icon">
-              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-            </div>
-            <span class="trust-badge-text">Jederzeit<br>abbestellbar</span>
-          </div>
-
-          <!-- Trust badge: right -->
-          <div class="trust-badge trust-badge--right">
-            <div class="trust-badge-icon">
-              <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-            </div>
-            <span class="trust-badge-text">Kein Spam.<br>Nur Qualität.</span>
-          </div>
-
-          <!-- Trust badge: bottom-left -->
-          <div class="trust-badge trust-badge--bottom">
-            <div class="trust-badge-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10h12M4 14h12M19.5 9a6.5 6.5 0 1 0 0 6"/></svg>
-            </div>
-            <span class="trust-badge-text">100%<br>kostenlos</span>
-          </div>
-
-          <!-- iPhone device -->
-          <div class="phone-device">
-            <div class="phone-notch"></div>
-            <div class="phone-screen">
-              <div class="phone-content">
-
-                <p class="pc-from">Von: Jasmin Schmidtke</p>
-                <p class="pc-subject">Dein Wochentipp: Warum Morgenlicht alles verändert</p>
-                <div class="pc-divider"></div>
-
-                <p class="pc-greeting">Hallo und schön, dass du dabei bist!</p>
-
-                <p class="pc-heading">Wusstest du das?</p>
-                <p class="pc-body">
-                  Morgendliches Tageslicht ist ein echter biologischer Schalter – es reguliert deinen Hormonhaushalt, hebt die Stimmung und gibt deiner Haut den natürlichen Glow.
-                </p>
-
-                <div class="pc-tip">
-                  <strong>Tipp der Woche</strong>
-                  <span>Gehe ab jetzt jeden Morgen in den ersten Minuten, wo du noch allein bist, 5 Minuten ans Tageslicht. Offenes Fenster, Balkon, Terrasse – das reicht schon.</span>
-                </div>
-
-                <span class="pc-cta">Mehr dazu lesen →</span>
-
-              </div>
-            </div>
-          </div>
-
-        </div>
+      </div>
       </div>
     </section>
 
     <!-- ═══════════════════════════════════════
-         GALLERY – 3 Bilder mit Scroll-Animation
+         KENNST DU DAS?
     ═══════════════════════════════════════ -->
-    <section class="gallery" aria-label="Einblicke">
-      <div class="gallery-inner">
-
-        <h2 class="gallery-heading">
-          Einblicke in <span class="accent">deine Reise</span>
-        </h2>
-        <p class="gallery-sub">
-          Haut, Hormone und Energie – ganzheitlich betrachtet, verständlich erklärt.
-        </p>
-
-        <div class="gallery-grid">
-
-          <!-- Bild 1 – Mindset -->
-          <div class="gallery-card">
-            <div class="gallery-card-img">
-              <img
-                src="gallery-1.jpg"
-                alt="Positives Mindset und innere Stärke"
-                loading="lazy"
-                width="400" height="300"
-              />
-            </div>
-            <div class="gallery-card-body">
-              <h3 class="gallery-card-title">Starkes Mindset</h3>
-              <p class="gallery-card-text">
-                Deine innere Haltung entscheidet. Lerne, wie du mit dem richtigen Mindset in deine beste Phase startest.
-              </p>
-            </div>
-          </div>
-
-          <!-- Bild 2 – Körperspannung / Handstand -->
-          <div class="gallery-card">
-            <div class="gallery-card-img">
-              <img
-                src="gallery-2.jpg"
-                alt="Jasmin Schmidtke im Handstand – Körperspannung und Kraft"
-                loading="lazy"
-                width="400" height="300"
-              />
-            </div>
-            <div class="gallery-card-body">
-              <h3 class="gallery-card-title">Körper &amp; Kraft</h3>
-              <p class="gallery-card-text">
-                Verstehe, warum Muskelmasse fundamental ist und wie du Krafttraining zur effektiven Routine machst.
-              </p>
-            </div>
-          </div>
-
-          <!-- Bild 3 – Haut & Haare -->
-          <div class="gallery-card">
-            <div class="gallery-card-img">
-              <img
-                src="gallery-3.jpg"
-                alt="Gesunde Haut und glänzende Haare"
-                loading="lazy"
-                width="400" height="300"
-              />
-            </div>
-            <div class="gallery-card-body">
-              <h3 class="gallery-card-title">Haut &amp; Haare</h3>
-              <p class="gallery-card-text">
-                Natürlich schön – mit Tipps, die deine Haut wieder strahlen lassen und deinen Haaren neue Kraft geben.
-              </p>
-            </div>
-          </div>
-
+    <section class="relate" aria-label="Kennst du das?">
+      <div class="wrap">
+        <div class="relate-head">
+          <span class="section-label">Kennst du das?</span>
+          <h2>Erkennst du dich hier <span class="accent">wieder?</span></h2>
         </div>
-      </div>
-    </section>
-
-    <!-- ═══════════════════════════════════════
-         YOUTUBE SEKTION
-    ═══════════════════════════════════════ -->
-    <section id="youtube" class="youtube-section" aria-label="YouTube Videos">
-
-      <!-- Großes Play-Icon als Hintergrund-SVG -->
-      <svg class="yt-bg-icon" id="yt-bg-icon" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <rect x="4" y="20" width="112" height="80" rx="20" stroke="#BFA492" stroke-width="2" fill="none"/>
-        <polygon points="48,38 48,82 84,60" stroke="#BFA492" stroke-width="2" fill="none" stroke-linejoin="round"/>
-      </svg>
-
-      <div class="youtube-inner">
-
-        <div class="youtube-header">
-          <h2 class="youtube-heading">
-            Schau mir auf <span class="accent">YouTube</span> zu
-          </h2>
-          <p class="youtube-sub">
-            Neueste Insights, Tipps und Podcast-Folgen – direkt von mir für dich. Jede Woche neue Impulse rund um Haut, Hormone und dein Wohlgefühl.
+        <div class="relate-body">
+          <div class="relate-photo reveal">
+            <img src="a7409414.jpg" alt="Zur Ruhe kommen und den eigenen Körper verstehen" style="object-position: 22% center;" loading="lazy" />
+          </div>
+          <div class="relate-grid">
+            <div class="relate-card reveal"><p>Meine Energie ist völlig unberechenbar. An manchen Tagen geht alles, an anderen geht gar nichts.</p></div>
+            <div class="relate-card reveal"><p>Ich fühle mich einfach nicht mehr wie ich selbst.</p></div>
+            <div class="relate-card reveal"><p>Mein Gewicht geht nicht mehr runter, egal was ich mache.</p></div>
+            <div class="relate-card reveal"><p>Ich bin ständig müde, auch wenn ich eigentlich genug schlafe, und kann mich gar nicht mehr leiden.</p></div>
+          </div>
+        </div>
+        <div class="relate-outro reveal">
+          <p>
+            Und das Frustrierendste daran: Du hast es längst versucht. Diäten, Supplements, mehr Sport, früher ins Bett. Fast die Hälfte der Frauen, die zu mir kommen, sagt: <strong>„Ich weiß nicht, was ich noch versuchen soll."</strong>
           </p>
+          <p>
+            Die gute Nachricht: <strong>Es liegt nicht an deiner Disziplin.</strong> Dein Körper folgt ab 40 einer anderen Logik. Und wenn du die Ursache kennst, statt weiter zu raten, ändert sich alles.
+          </p>
+          <a href="blutanalyse.html" class="btn-ghost">
+            Der erste Schritt: verstehen statt raten
+            <span class="btn-arrow" aria-hidden="true">→</span>
+          </a>
         </div>
+      </div>
+    </section>
 
-        <div class="youtube-grid">
-
-          <!-- Video 1 – Mein altes Video hat mich SCHOCKIERT -->
-          <a class="yt-card" href="https://youtu.be/uLYx3eBHj0k" target="_blank" rel="noopener noreferrer">
-            <div class="yt-card-thumb">
-              <img src="https://img.youtube.com/vi/uLYx3eBHj0k/maxresdefault.jpg" alt="Mein altes Video hat mich SCHOCKIERT! (Frau Ü40)" loading="lazy" width="400" height="225" />
-              <div class="yt-play-overlay">
-                <div class="yt-play-btn">
-                  <svg viewBox="0 0 24 24" fill="var(--text-dark)"><polygon points="8,5 20,12 8,19"/></svg>
-                  <span>Abspielen</span>
-                </div>
-              </div>
-            </div>
-            <div class="yt-card-body">
-              <h3 class="yt-card-title">Mein altes Video hat mich SCHOCKIERT!</h3>
-              <p class="yt-card-desc">Wie sich mein Weg als Frau Ü40 wirklich verändert hat.</p>
-            </div>
-          </a>
-
-          <!-- Video 2 – Krafttraining ab 40 -->
-          <a class="yt-card" href="https://youtu.be/jotumaaeZLw" target="_blank" rel="noopener noreferrer">
-            <div class="yt-card-thumb">
-              <img src="https://img.youtube.com/vi/jotumaaeZLw/maxresdefault.jpg" alt="Krafttraining ab 40: Warum Yoga allein nicht reicht" loading="lazy" width="400" height="225" />
-              <div class="yt-play-overlay">
-                <div class="yt-play-btn">
-                  <svg viewBox="0 0 24 24" fill="var(--text-dark)"><polygon points="8,5 20,12 8,19"/></svg>
-                  <span>Abspielen</span>
-                </div>
-              </div>
-            </div>
-            <div class="yt-card-body">
-              <h3 class="yt-card-title">Krafttraining ab 40: Warum Yoga allein nicht reicht</h3>
-              <p class="yt-card-desc">Warum Muskelmasse so wichtig ist und wie du Krafttraining in deinen Alltag integrierst.</p>
-            </div>
-          </a>
-
-          <!-- Video 3 – Ü40 Fehler vermeiden -->
-          <a class="yt-card" href="https://youtu.be/NHRxg_QJmhk" target="_blank" rel="noopener noreferrer">
-            <div class="yt-card-thumb">
-              <img src="https://img.youtube.com/vi/NHRxg_QJmhk/maxresdefault.jpg" alt="Mach als Ü40 Frau nicht die gleichen Fehler wie alle anderen!" loading="lazy" width="400" height="225" />
-              <div class="yt-play-overlay">
-                <div class="yt-play-btn">
-                  <svg viewBox="0 0 24 24" fill="var(--text-dark)"><polygon points="8,5 20,12 8,19"/></svg>
-                  <span>Abspielen</span>
-                </div>
-              </div>
-            </div>
-            <div class="yt-card-body">
-              <h3 class="yt-card-title">Mach als Ü40 Frau nicht die gleichen Fehler wie alle anderen!</h3>
-              <p class="yt-card-desc">Die häufigsten Fehler, die Frauen ab 40 machen – und wie du sie vermeidest.</p>
-            </div>
-          </a>
-
+    <!-- ═══════════════════════════════════════
+         THEMEN
+    ═══════════════════════════════════════ -->
+    <section class="themes" aria-label="Themen">
+      <div class="wrap">
+        <div class="themes-head">
+          <span class="section-label">Deine Reise</span>
+          <h2>Was ab 40 wieder <span class="accent">möglich wird</span></h2>
+          <p>Es geht nicht um Perfektion. Es geht darum, dass du dich in deinem Körper wieder zu Hause fühlst.</p>
         </div>
+        <div class="themes-grid">
+          <div class="theme-card reveal">
+            <img src="jasmin-energie.jpg" alt="Jasmin Schmidtke im Gym: wieder Energie im Alltag als Frau ab 40" loading="lazy" />
+            <div class="theme-card-body">
+              <h3>Endlich wieder Energie</h3>
+              <p>Nicht mehr jeden Morgen erschöpft aufwachen. Verstehe, woher deine Müdigkeit kommt und was dir deine Kraft zurückgibt.</p>
+            </div>
+          </div>
+          <div class="theme-card reveal">
+            <img src="jasmin-wohlfuehlkoerper.jpg" alt="Jasmin Schmidtke beim Krafttraining, Wohlfühlkörper ab 40" style="object-position: 32% center;" loading="lazy" />
+            <div class="theme-card-body">
+              <h3>Dein Wohlfühlkörper</h3>
+              <p>Abnehmen und dich straffer fühlen, ohne Diätstress: im Einklang mit deinem Stoffwechsel, statt gegen ihn zu kämpfen.</p>
+            </div>
+          </div>
+          <div class="theme-card reveal">
+            <img src="jasmin-du-selbst.jpg" alt="Jasmin Schmidtke: sich als Frau ab 40 wieder wie man selbst fühlen" loading="lazy" />
+            <div class="theme-card-body">
+              <h3>Wieder du selbst sein</h3>
+              <p>Dieses Gefühl, dass die Frau im Spiegel und die Frau in deinem Kopf auseinandergelaufen sind? Bring sie wieder in Einklang.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <!-- CTA Button -->
-        <div class="youtube-cta">
+    <!-- ═══════════════════════════════════════
+         BLUTANALYSE-TEASER
+    ═══════════════════════════════════════ -->
+    <section class="ba" aria-label="Blutanalyse">
+      <div class="wrap">
+        <div class="ba-card reveal">
+          <h2>Hör auf zu raten: deine <span class="accent">Blutanalyse</span></h2>
+          <p>
+            Müdigkeit, Haut, Figur, Stimmung: Das meiste davon hat eine messbare Ursache. Mit einer individuellen Blutanalyse siehst du, was dein Körper wirklich braucht und wo das Grundproblem liegt, statt weiter auf Verdacht zu probieren.
+          </p>
+          <ul class="mc-checks">
+            <li><span class="ck">✓</span><span><strong>Individuell auf dich abgestimmt,</strong> von Mikronährstoffen bis Stoffwechsel</span></li>
+            <li><span class="ck">✓</span><span><strong>Egal wo du wohnst:</strong> Blutabnahme in deiner Region, Auswertung per Zoom</span></li>
+            <li><span class="ck">✓</span><span><strong>Persönlich besprochen</strong> mit Jasmin, inklusive konkreter Empfehlungen</span></li>
+          </ul>
+          <div class="ba-ctas">
+            <a href="blutanalyse.html" class="btn-green">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg>
+              Mehr zur Blutanalyse
+            </a>
+            <a href="blutanalyse.html#preise" class="btn-ghost">
+              Preise ansehen
+              <span class="btn-arrow" aria-hidden="true">→</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+         MASTERCLASS / WARTELISTE
+    ═══════════════════════════════════════ -->
+    <section class="masterclass" aria-label="Masterclass Warteliste">
+      <div class="wrap mc-grid">
+        <div class="mc-mockup reveal">
+          <img src="masterclass-mockup.jpg" alt="Die Video-Masterclass von Jasmin Schmidtke" loading="lazy" />
+        </div>
+        <div class="mc-text reveal">
+          <span class="section-label">Neu · Erscheint in Kürze</span>
+          <h2>Die <span class="accent">Masterclass</span> für Frauen ab 40</h2>
+          <p>
+            Verstehe, was sich ab 40 in deinem Körper wirklich verändert und wie du selbst mit Stoffwechsel, Hormonen und den richtigen Routinen zurück zu Energie und Ausstrahlung kommst. Trag dich jetzt auf die Warteliste ein und sichere dir exklusive Vorteile:
+          </p>
+          <ul class="mc-checks">
+            <li><span class="ck">✓</span><span><strong>Der günstigste Preis,</strong> den es für die Masterclass jemals geben wird</span></li>
+            <li><span class="ck">✓</span><span><strong>Als Erste informiert sein,</strong> sobald sich die Türen öffnen</span></li>
+            <li><span class="ck">✓</span><span><strong>Exklusives Begleitmaterial,</strong> das du demnächst als Erste erhältst</span></li>
+          </ul>
+          <a href="warteliste.html" class="btn-green">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg>
+            Jetzt kostenlos auf die Warteliste
+          </a>
+          <p class="mc-note">100 % kostenlos und unverbindlich</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+         YOUTUBE
+    ═══════════════════════════════════════ -->
+    <section id="youtube" class="youtube" aria-label="YouTube Videos">
+      <div class="wrap">
+        <div class="yt-head">
+          <span class="section-label">YouTube</span>
+          <h2>Schau mir auf <span class="accent">YouTube</span> zu</h2>
+          <p>Neueste Insights, Tipps und Podcast-Folgen: direkt von mir für dich. Jede Woche neue Impulse rund um Energie, Hormone und dein Wohlgefühl.</p>
+        </div>
+        <div class="yt-grid">
+          <a class="yt-card reveal" href="https://youtu.be/uLYx3eBHj0k" target="_blank" rel="noopener noreferrer">
+            <div class="yt-thumb">
+              <img src="yt-thumb-1.jpg" alt="Mein altes Video hat mich SCHOCKIERT! (Frau Ü40)" loading="lazy" width="400" height="225" />
+              <div class="yt-play"><span><svg viewBox="0 0 24 24" fill="var(--text-dark)"><polygon points="8,5 20,12 8,19"/></svg></span></div>
+            </div>
+            <div class="yt-card-body">
+              <h3>Mein altes Video hat mich SCHOCKIERT!</h3>
+              <p>Wie sich mein Weg als Frau Ü40 wirklich verändert hat.</p>
+            </div>
+          </a>
+          <a class="yt-card reveal" href="https://youtu.be/PqmFJ9cX-a4" target="_blank" rel="noopener noreferrer">
+            <div class="yt-thumb">
+              <img src="yt-thumb-2.jpg" alt="Ab 40 Kalorien zählen? Deshalb nimmst du als Frau zu" loading="lazy" width="400" height="225" />
+              <div class="yt-play"><span><svg viewBox="0 0 24 24" fill="var(--text-dark)"><polygon points="8,5 20,12 8,19"/></svg></span></div>
+            </div>
+            <div class="yt-card-body">
+              <h3>Ab 40 Kalorien zählen? DESHALB nimmst du zu als Frau!</h3>
+              <p>Warum Kalorienzählen ab 40 oft nicht mehr funktioniert und was wirklich dahintersteckt.</p>
+            </div>
+          </a>
+          <a class="yt-card reveal" href="https://youtu.be/NHRxg_QJmhk" target="_blank" rel="noopener noreferrer">
+            <div class="yt-thumb">
+              <img src="yt-thumb-3.jpg" alt="Mach als Ü40 Frau nicht die gleichen Fehler wie alle anderen!" loading="lazy" width="400" height="225" />
+              <div class="yt-play"><span><svg viewBox="0 0 24 24" fill="var(--text-dark)"><polygon points="8,5 20,12 8,19"/></svg></span></div>
+            </div>
+            <div class="yt-card-body">
+              <h3>Mach als Ü40 Frau nicht die gleichen Fehler wie alle anderen!</h3>
+              <p>Die häufigsten Fehler, die Frauen ab 40 machen, und wie du sie vermeidest.</p>
+            </div>
+          </a>
+        </div>
+        <div class="yt-cta">
           <a href="https://www.youtube.com/@jasmin-schmidtke" target="_blank" rel="noopener noreferrer">
             <svg viewBox="0 0 28 20" aria-hidden="true">
               <rect width="28" height="20" rx="6" fill="#FF0000"/>
@@ -2094,7 +1035,71 @@
             Zum YouTube-Kanal
           </a>
         </div>
+      </div>
+    </section>
 
+    <!-- ═══════════════════════════════════════
+         NEWSLETTER-TEASER
+    ═══════════════════════════════════════ -->
+    <section class="nl" aria-label="Newsletter">
+      <div class="wrap">
+        <div class="nl-box reveal">
+          <span class="section-label">Newsletter</span>
+          <h2>Die besten Tipps, direkt in dein <span class="accent">Postfach</span></h2>
+          <p>
+            Jede Woche schicke ich dir die wichtigsten Insider-Tipps zu Energie, Hormonen und Stoffwechsel: verständlich erklärt, sofort umsetzbar, direkt aus der Praxis. Mehr brauchst du nicht.
+          </p>
+          <a href="newsletter.html" class="btn-green">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="2" y="4" width="20" height="16" rx="2"/>
+              <polyline points="2,4 12,13 22,4"/>
+            </svg>
+            Jetzt kostenlos anmelden
+          </a>
+          <p class="nl-micro">100 % kostenlos. Jederzeit abbestellbar.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+         ÜBER MICH TEASER
+    ═══════════════════════════════════════ -->
+    <section class="about-teaser" aria-label="Über Jasmin">
+      <div class="wrap at-grid">
+        <div class="at-photo reveal">
+          <img src="a7409224.jpg" alt="Jasmin Schmidtke" loading="lazy" />
+        </div>
+        <div class="at-text reveal">
+          <span class="section-label">Über mich</span>
+          <h2>Heilpraktikerin. Vierfach-Mama. <span class="accent">Wegbegleiterin.</span></h2>
+          <p>
+            Ich weiß aus eigenem Erleben, wie es ist, wenn der Alltag alles fordert und die eigene Energie hinten runterfällt. Als Heilpraktikerin schaue ich nicht auf einzelne Beschwerden, sondern dahin, wo bei Frauen ab 40 wirklich alles zusammenläuft.
+          </p>
+          <blockquote>
+            „Du bist nicht zu alt, zu undiszipliniert oder einfach kaputt. Dein Körper folgt einer Logik. Und wenn du die Ursache verstehst, kommt deine Energie zurück."
+          </blockquote>
+          <a href="ueber-mich.html" class="btn-ghost">
+            Meine Geschichte lesen
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+         KONTAKT-TEASER
+    ═══════════════════════════════════════ -->
+    <section class="contact" aria-label="Kontakt">
+      <div class="wrap reveal">
+        <span class="section-label">Kontakt</span>
+        <h2>Du hast eine <span class="accent">Frage?</span></h2>
+        <p>
+          Schreib mir gerne. Ich freue mich, von dir zu hören, und melde mich so schnell wie möglich zurück.
+        </p>
+        <a href="kontakt.html" class="btn-green">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+          Zum Kontaktformular
+        </a>
       </div>
     </section>
 
@@ -2106,7 +1111,6 @@
   <footer role="contentinfo">
     <div class="footer-inner">
 
-      <!-- Brand block -->
       <div class="footer-brand">
         <div class="footer-logo">
           <svg width="26" height="26" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -2125,101 +1129,77 @@
 
       <div class="footer-divider" aria-hidden="true"></div>
 
-      <!-- Links + Social -->
       <div class="footer-bottom">
         <nav class="footer-links" aria-label="Footer Navigation">
+          <a href="index.html">Startseite</a>
+          <a href="ueber-mich.html">Über mich</a>
+          <a href="blutanalyse.html">Blutanalyse</a>
+          <a href="warteliste.html">Coaching</a>
+          <a href="newsletter.html">Newsletter</a>
+          <a href="kontakt.html">Kontakt</a>
           <a href="impressum.html">Impressum</a>
           <a href="datenschutz.html">Datenschutz</a>
         </nav>
 
         <div class="footer-social">
           <span class="footer-social-label">Folge mir hier</span>
-
-          <!-- Instagram -->
-          <a class="social-icon social-icon--ig" href="https://www.instagram.com/jasmin.schmidtke/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <a class="social-icon" href="https://www.instagram.com/jasmin.schmidtke/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
               <rect x="2" y="2" width="20" height="20" rx="5"/>
               <circle cx="12" cy="12" r="4"/>
               <circle cx="17.5" cy="6.5" r="0.6" fill="currentColor" stroke="none"/>
             </svg>
           </a>
-
-          <!-- YouTube -->
-          <a class="social-icon social-icon--yt" href="https://www.youtube.com/@jasmin-schmidtke" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+          <a class="social-icon" href="https://www.youtube.com/@jasmin-schmidtke" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
               <path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/>
               <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="currentColor" stroke="none"/>
             </svg>
           </a>
+          <a class="social-icon" href="https://de.linkedin.com/in/jasmin-schmidtke-516755198" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4V8h4"/>
+              <rect x="2" y="9" width="4" height="12"/>
+              <circle cx="4" cy="4" r="2"/>
+            </svg>
+          </a>
         </div>
       </div>
 
-      <!-- Health Disclaimer -->
       <p class="footer-disclaimer">
         Hinweis: Die Inhalte dieser Website dienen ausschließlich der allgemeinen Information und Gesundheitsförderung. Sie ersetzen keine professionelle medizinische Beratung, Diagnose oder Behandlung. Alle Tipps basieren auf Erfahrungswerten und erheben keinen Anspruch auf Heilversprechen. Bei gesundheitlichen Beschwerden wende dich bitte an einen Arzt oder Therapeuten.
       </p>
 
-      <!-- Copyright -->
       <p class="footer-copy">
-        © 2026 – <strong>Jasmin Schmidtke</strong> · Marketing von <a href="https://www.schmidtke-gmbh.de?utm_source=jasminschmidtke&utm_medium=website&utm_campaign=footer_link" target="_blank" rel="noopener noreferrer" style="color:var(--text-muted);text-decoration:underline;text-underline-offset:2px;">Schmidtke GmbH</a>
+        © 2026 <strong>Jasmin Schmidtke</strong> · Marketing von <a href="https://www.schmidtke-gmbh.de?utm_source=jasminschmidtke&utm_medium=website&utm_campaign=footer_link" target="_blank" rel="noopener noreferrer">Schmidtke GmbH</a>
       </p>
 
     </div>
   </footer>
 
-  <!-- Submit overlay animation -->
-  <div class="submit-overlay" id="submit-overlay" aria-hidden="true">
-    <div class="submit-overlay-bg"></div>
-    <div class="submit-overlay-content">
-      <div class="submit-overlay-check">
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-          <polyline points="20 6 9 17 4 12"/>
-        </svg>
-      </div>
-      <div class="submit-overlay-text">Einen kleinen Moment<span class="accent"> ...</span></div>
-    </div>
-  </div>
-
-  <!-- ═══════════════════════════════════════
-       JAVASCRIPT
-  ═══════════════════════════════════════ -->
   <script>
-    /* Sticky navbar: add 'scrolled' class on scroll */
+    /* Sticky navbar: 'scrolled' Klasse beim Scrollen */
     (function() {
-      const nav = document.querySelector('.navbar');
-      let ticking = false;
+      var nav = document.querySelector('.navbar');
+      var ticking = false;
+      function update() {
+        if (window.scrollY > 40) { nav.classList.add('scrolled'); }
+        else { nav.classList.remove('scrolled'); }
+        ticking = false;
+      }
       window.addEventListener('scroll', function() {
-        if (!ticking) {
-          requestAnimationFrame(function() {
-            if (window.scrollY > 40) {
-              nav.classList.add('scrolled');
-            } else {
-              nav.classList.remove('scrolled');
-            }
-            ticking = false;
-          });
-          ticking = true;
-        }
+        if (!ticking) { requestAnimationFrame(update); ticking = true; }
       }, { passive: true });
+      update();
     })();
 
-    /* Footer slide-up animation on scroll into view */
+    /* Scroll-Reveal für Sektionen und Karten */
     (function() {
-      const footer = document.querySelector('footer');
-      const observer = new IntersectionObserver(function(entries) {
-        entries.forEach(function(entry) {
-          if (entry.isIntersecting) {
-            footer.classList.add('visible');
-          }
-        });
-      }, { threshold: 0.05 });
-      observer.observe(footer);
-    })();
-
-    /* Phone section scroll-in */
-    (function() {
-      var phoneInner = document.querySelector('.phone-inner');
-      if (!phoneInner) return;
+      var els = document.querySelectorAll('.reveal, footer');
+      if (!('IntersectionObserver' in window)) {
+        els.forEach(function(el) { el.classList.add('visible'); });
+        return;
+      }
       var observer = new IntersectionObserver(function(entries) {
         entries.forEach(function(entry) {
           if (entry.isIntersecting) {
@@ -2227,150 +1207,9 @@
             observer.unobserve(entry.target);
           }
         });
-      }, { threshold: 0.15 });
-      observer.observe(phoneInner);
+      }, { threshold: 0.12 });
+      els.forEach(function(el) { observer.observe(el); });
     })();
-
-    /* Gallery + YouTube cards scroll-in animation */
-    (function() {
-      var cards = document.querySelectorAll('.gallery-card, .yt-card');
-      if (!cards.length) return;
-      var observer = new IntersectionObserver(function(entries) {
-        entries.forEach(function(entry) {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.15 });
-      cards.forEach(function(card) { observer.observe(card); });
-    })();
-
-    /* YouTube background SVG scroll-in animation */
-    (function() {
-      var ytBg = document.getElementById('yt-bg-icon');
-      if (!ytBg) return;
-      var observer = new IntersectionObserver(function(entries) {
-        entries.forEach(function(entry) {
-          if (entry.isIntersecting) {
-            ytBg.classList.add('visible');
-            observer.unobserve(ytBg);
-          }
-        });
-      }, { threshold: 0.1 });
-      observer.observe(ytBg);
-    })();
-
-    /* Clear checkbox hint when user checks the box */
-    /* Toggle checkbox when clicking custom-check span */
-    function toggleCheckbox() {
-      var cb = document.getElementById('datenschutz');
-      cb.checked = !cb.checked;
-      handleCheckboxChange(cb);
-    }
-
-    /* Animate checkbox + clear error hints */
-    function handleCheckboxChange(cb) {
-      var customCheck = cb.parentElement.querySelector('.custom-check');
-      if (cb.checked) {
-        customCheck.classList.remove('animate');
-        /* Force reflow so animation replays */
-        void customCheck.offsetWidth;
-        customCheck.classList.add('animate');
-      } else {
-        customCheck.classList.remove('animate');
-      }
-      clearCheckboxHint();
-    }
-
-    function clearCheckboxHint() {
-      const label = document.getElementById('datenschutz-label');
-      label.style.color = '';
-      const hint = document.getElementById('checkbox-hint');
-      if (hint) hint.remove();
-    }
-
-    /* Handle form submission */
-    function handleSubmit(e) {
-      e.preventDefault();
-
-      const email   = document.getElementById('email').value.trim();
-      const checked = document.getElementById('datenschutz').checked;
-      const label   = document.getElementById('datenschutz-label');
-
-      /* E-Mail-Validierung */
-      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-        const input = document.getElementById('email');
-        input.style.outline = '2px solid #e06060';
-        input.focus();
-        setTimeout(() => { input.style.outline = ''; }, 2500);
-        return;
-      }
-
-      /* Checkbox-Validierung */
-      if (!checked) {
-        label.style.color = '#c06040';
-        /* Zeige Hinweis falls noch nicht da */
-        if (!document.getElementById('checkbox-hint')) {
-          const hint = document.createElement('span');
-          hint.id = 'checkbox-hint';
-          hint.style.cssText = 'display:block;font-size:11px;color:#c06040;margin-top:5px;';
-          hint.textContent = 'Bitte akzeptiere die Datenschutzbestimmungen.';
-          label.parentElement.appendChild(hint);
-        }
-        return;
-      }
-
-      /* ── Active Campaign Integration ────────────────────── */
-      var formData = new FormData();
-      formData.append('u', '1');
-      formData.append('f', '1');
-      formData.append('s', '');
-      formData.append('c', '0');
-      formData.append('m', '0');
-      formData.append('act', 'sub');
-      formData.append('v', '2');
-      formData.append('or', '5bc6d892-039c-4f17-9b26-fe1550cf55b6');
-      formData.append('email', email);
-
-      /* Animation sofort starten */
-      showSubmitAnimation();
-
-      /* Daten an Active Campaign senden */
-      fetch('https://jasminschmidtke70927.activehosted.com/proc.php', {
-        method: 'POST',
-        body: formData,
-        mode: 'no-cors'
-      }).catch(function() {
-        /* Fehler still ignorieren – Nutzer wird trotzdem weitergeleitet */
-      });
-    }
-
-    function showSubmitAnimation() {
-      var overlay = document.getElementById('submit-overlay');
-      overlay.classList.add('active');
-
-      /* Blütenblätter erzeugen */
-      var colors = ['rgba(191,164,146,0.4)', 'rgba(214,193,178,0.35)', 'rgba(107,140,90,0.25)', 'rgba(191,164,146,0.25)', 'rgba(220,200,185,0.3)'];
-      for (var i = 0; i < 20; i++) {
-        var petal = document.createElement('div');
-        petal.className = 'overlay-petal';
-        var size = 6 + Math.random() * 14;
-        petal.style.width = size + 'px';
-        petal.style.height = size + 'px';
-        petal.style.left = (Math.random() * 100) + '%';
-        petal.style.top = (-5 - Math.random() * 15) + '%';
-        petal.style.background = colors[Math.floor(Math.random() * colors.length)];
-        petal.style.animationDuration = (3 + Math.random() * 4) + 's';
-        petal.style.animationDelay = (Math.random() * 1.2) + 's';
-        overlay.appendChild(petal);
-      }
-
-      /* Nach 2 Sekunden zur Danke-Seite weiterleiten */
-      setTimeout(function() {
-        window.location.href = 'danke.html';
-      }, 2000);
-    }
   </script>
 
   <!-- Structured Data (Schema.org) -->
@@ -2380,27 +1219,50 @@
     "@type": "Person",
     "name": "Jasmin Schmidtke",
     "jobTitle": "Heilpraktikerin",
-    "description": "Coach und Heilpraktikerin für Frauen ab 40 – Tipps zu Haut, Hormonen und Energie.",
-    "url": "https://www.jasminschmidtke.de",
+    "url": "https://www.jasminschmidtke.de/",
+    "image": "https://www.jasminschmidtke.de/og-image.jpg",
     "sameAs": [
       "https://www.instagram.com/jasmin.schmidtke/",
       "https://www.youtube.com/@jasmin-schmidtke"
-    ]
-  }
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "Jasmin Schmidtke",
-    "url": "https://www.jasminschmidtke.de",
-    "description": "Die besten Tipps für Frauen ab 40 – Haut, Hormone und Energie",
-    "inLanguage": "de-DE",
-    "publisher": {
-      "@type": "Person",
-      "name": "Jasmin Schmidtke"
+    ],
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Schmidtke GmbH",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Neckartal 200",
+        "postalCode": "78628",
+        "addressLocality": "Rottweil",
+        "addressCountry": "DE"
+      }
     }
   }
   </script>
+
+  <script>
+    /* Mobiles Menü */
+    (function() {
+      var burger = document.getElementById('burger');
+      var menu = document.getElementById('mobile-menu');
+      if (!burger || !menu) return;
+      function setOpen(open) {
+        document.body.classList.toggle('menu-open', open);
+        burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+        burger.setAttribute('aria-label', open ? 'Menü schließen' : 'Menü öffnen');
+        menu.setAttribute('aria-hidden', open ? 'false' : 'true');
+        document.body.style.overflow = open ? 'hidden' : '';
+      }
+      burger.addEventListener('click', function() {
+        setOpen(!document.body.classList.contains('menu-open'));
+      });
+      menu.querySelectorAll('a').forEach(function(a) {
+        a.addEventListener('click', function() { setOpen(false); });
+      });
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') setOpen(false);
+      });
+    })();
+  </script>
+
 </body>
 </html>
