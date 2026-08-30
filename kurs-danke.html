@@ -3,11 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kontakt | Dr. André Alesi</title>
-<meta name="description" content="Kontakt zu Dr. André Alesi: Fragen zum Schlafkurs, Presseanfragen, Kooperationen und Vorträge.">
+<title>Willkommen im Kurs | Die Durchschlaf-Formel</title>
+<meta name="description" content="Dein Kauf war erfolgreich. So startest du mit der Durchschlaf-Formel.">
+<meta name="robots" content="noindex">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Kontakt | Dr. André Alesi">
-<meta property="og:description" content="Kontakt zu Dr. André Alesi: Fragen zum Schlafkurs, Presseanfragen, Kooperationen und Vorträge.">
+<meta property="og:title" content="Willkommen im Kurs | Die Durchschlaf-Formel">
+<meta property="og:description" content="Dein Kauf war erfolgreich. So startest du mit der Durchschlaf-Formel.">
 <meta property="og:locale" content="de_DE">
 <!-- ▼ og:image nach Deploy eintragen: <meta property="og:image" content="https://DEINE-DOMAIN/og-image.jpg"> -->
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -16,16 +17,19 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="site.css">
 <style>
-.contact-wrap{max-width:720px;margin:0 auto;padding:172px 28px 90px;position:relative;z-index:1}
-.contact-wrap h1{font-weight:600;font-size:clamp(1.9rem,4vw,44px);margin-bottom:12px;animation:blurin 1s cubic-bezier(.25,.1,.25,1) .1s backwards}
-.contact-wrap h1 .ac{color:var(--copper-light)}
-.contact-wrap .lead{color:var(--muted);font-weight:300;font-size:16px;margin-bottom:36px;animation:blurin 1s cubic-bezier(.25,.1,.25,1) .25s backwards}
-.cform{padding:38px 36px;display:flex;flex-direction:column;gap:20px;animation:blurin 1s cubic-bezier(.25,.1,.25,1) .35s backwards}
-.frow{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-.cnote{font-size:12px;color:var(--muted2);line-height:1.6}
-.direct{margin-top:26px;text-align:center;font-size:13.5px;color:var(--muted);font-weight:300}
-.direct a{color:var(--copper-light)}
-@media(max-width:600px){.frow{grid-template-columns:1fr}.contact-wrap{padding-top:140px}}
+.card-page{max-width:600px;margin:0 auto;padding:180px 28px 100px;text-align:center;position:relative;z-index:1}
+.card-page .glass{padding:44px 38px}
+.check{width:70px;height:70px;border-radius:50%;background:linear-gradient(135deg,var(--copper-light),var(--copper-dark));display:flex;align-items:center;justify-content:center;margin:0 auto 20px;transform:scale(0);animation:pop .5s cubic-bezier(.34,1.56,.64,1) .15s forwards;box-shadow:0 14px 36px rgba(187,137,97,.3)}
+.check svg{width:32px;height:32px;stroke:#10151E;fill:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+@keyframes pop{to{transform:scale(1)}}
+.card-page h1{font-weight:600;font-size:clamp(1.7rem,4.5vw,34px);margin-bottom:10px}
+.card-page h1 .ac{color:var(--copper-light)}
+.card-page .sub{font-size:15px;color:var(--muted);font-weight:300;margin-bottom:26px}
+.steps{text-align:left;display:flex;flex-direction:column;gap:14px;margin-bottom:26px}
+.step{display:grid;grid-template-columns:34px 1fr;gap:14px;align-items:start}
+.step .n{width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,var(--copper-light),var(--copper-dark));color:#10151E;font-weight:600;font-size:14px;display:flex;align-items:center;justify-content:center;margin-top:2px}
+.step b{display:block;font-size:15px;font-weight:500}
+.step p{font-size:13.5px;color:var(--muted);line-height:1.6;font-weight:300}
 </style>
 </head>
 <body>
@@ -38,7 +42,7 @@
       <a href="ueber-mich.html">Über mich</a>
       <a href="kurs.html">Schlafkurs</a>
       <a href="webinar.html">Webinar</a>
-      <a href="kontakt.html" class="active">Kontakt</a>
+      <a href="kontakt.html">Kontakt</a>
     </div>
     <div class="nav-right">
       <a href="kurs.html" class="btn nav-btn">Kurs starten <span class="arr">→</span></a>
@@ -58,35 +62,24 @@
   </div>
 </nav>
 
-<div class="contact-wrap">
-  <div class="stars" style="position:fixed"></div>
-  <div class="eyebrow">Kontakt</div>
-  <h1>Du hast <span class="ac">eine Frage?</span></h1>
-  <p class="lead">Schreib mir gerne. Ob Frage zum Kurs, Presseanfrage oder Kooperation: Ich melde mich so schnell wie möglich zurück.</p>
-  <!-- ▼ FORMULAR-BACKEND einrichten: action durch z. B. Formspree-Endpoint ersetzen (https://formspree.io) -->
-  <form class="glass cform" action="#" method="POST">
-    <div class="frow">
-      <div class="field"><label for="name">Name</label><input id="name" name="name" type="text" required placeholder="Dein Name"></div>
-      <div class="field"><label for="email">E-Mail</label><input id="email" name="email" type="email" required placeholder="deine@mail.de"></div>
+<!-- ════════ META PIXEL ════════
+     Purchase-Event nach Kauf: Basis-Pixel einfügen und Event aktivieren:
+     fbq('track', 'Purchase', {value: 997.00, currency: 'EUR'});
+════════════════════════════ -->
+<div class="card-page">
+  <div class="glass">
+    <div class="check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+    <h1>Willkommen <span class="ac">im Kurs!</span></h1>
+    <p class="sub">Dein Kauf war erfolgreich. Deine nächste ruhige Nacht beginnt jetzt.</p>
+    <div class="steps">
+      <div class="step"><span class="n">1</span><div><b>E-Mail öffnen</b><p>Du bekommst in den nächsten Minuten deine Zugangsdaten und die Rechnung per E-Mail. Nichts bekommen? Schau in den Spam-Ordner.</p></div></div>
+      <div class="step"><span class="n">2</span><div><b>Einloggen und starten</b><p>Melde dich im Kursbereich an und starte direkt mit Modul 1. Alle 12 Module und die 4 Boni sind sofort freigeschaltet.</p></div></div>
+      <div class="step"><span class="n">3</span><div><b>Heute Nacht anwenden</b><p>Schon Modul 1 nimmt dir den Druck aus der Nacht. Hör es dir noch heute an.</p></div></div>
     </div>
-    <div class="field"><label for="anliegen">Anliegen</label>
-      <select id="anliegen" name="anliegen">
-        <option>Frage zum Schlafkurs</option>
-        <option>Frage zum Webinar</option>
-        <option>Presse und Medien</option>
-        <option>Kooperation und Vorträge</option>
-        <option>Sonstiges</option>
-      </select>
-    </div>
-    <div class="field"><label for="msg">Nachricht</label><textarea id="msg" name="nachricht" required placeholder="Deine Nachricht"></textarea></div>
-    <div class="field" style="flex-direction:row;align-items:flex-start;gap:10px">
-      <input type="checkbox" id="ds" required style="width:auto;margin-top:5px">
-      <label for="ds" style="text-transform:none;letter-spacing:0;font-size:12.5px;font-weight:300;color:var(--muted);line-height:1.6">Ich habe die <a href="datenschutz.html" style="color:var(--copper-light)">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Daten zur Bearbeitung der Anfrage zu.</label>
-    </div>
-    <button class="btn lg" type="submit" style="justify-content:center">Nachricht senden <span class="arr">→</span></button>
-    <p class="cnote">Deine Daten werden nur zur Bearbeitung deiner Anfrage verwendet.</p>
-  </form>
-  <p class="direct">Oder direkt per E-Mail: <a href="mailto:kontakt@andre-alesi.de">kontakt@andre-alesi.de</a></p>
+    <!-- ▼ KURSBEREICH-LINK einsetzen (z. B. Mitgliederbereich von Digistore24, Coachy, Memberspot) -->
+    <a href="#" class="btn lg" style="justify-content:center">Zum Kursbereich <span class="arr">→</span></a>
+    <p style="margin-top:18px;font-size:12px;color:var(--muted2)">Fragen zum Zugang? Schreib an <a href="mailto:kontakt@andre-alesi.de" style="color:var(--copper-light)">kontakt@andre-alesi.de</a></p>
+  </div>
 </div>
 
 <footer>

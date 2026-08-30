@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dr. André Alesi — Style Guide</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --midnight:#0D1117;
+    --deepblue:#2A344A;
+    --mistblue:#6B708E;
+    --sand:#B4A189;
+    --copper:#BB8961;
+    --copper-light:#D2A47D;
+    --copper-dark:#A5754E;
+    --porcelain:#F4F4F2;
+    --white:#FFFFFF;
+    --card-dark:#131A26;
+    --line-dark:rgba(244,244,242,.08);
+    --line-light:rgba(13,17,23,.09);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Poppins',sans-serif;background:var(--porcelain);color:var(--midnight);-webkit-font-smoothing:antialiased}
+
+  .kicker{font-size:11px;font-weight:500;letter-spacing:.38em;text-transform:uppercase;color:var(--mistblue)}
+  .kicker .num{color:var(--copper)}
+  .wrap{max-width:1160px;margin:0 auto;padding:0 40px}
+  section{padding:96px 0}
+  .section-head{margin-bottom:52px}
+  .section-head h2{font-size:30px;font-weight:300;letter-spacing:.04em;margin-top:14px}
+  .section-head p{color:var(--mistblue);font-size:14.5px;font-weight:300;max-width:560px;margin-top:10px;line-height:1.7}
+
+  /* ---------- HERO ---------- */
+  .hero{background:radial-gradient(1200px 600px at 70% -10%, #1A2233 0%, var(--midnight) 60%);color:var(--porcelain);padding:110px 0 100px;text-align:center;position:relative;overflow:hidden}
+  .hero .mark{width:150px;margin:0 auto 38px;display:block;height:auto}
+  .hero h1{font-size:44px;font-weight:300;letter-spacing:.22em;text-transform:uppercase}
+  .hero h1 .dr{color:var(--copper)}
+  .hero .slp{margin-top:18px;font-size:14px;font-weight:400;letter-spacing:.42em;text-transform:uppercase;color:var(--mistblue)}
+  .hero .slp b{font-weight:400;color:var(--copper)}
+  .hero .slp .dot{color:var(--copper);padding:0 .35em}
+  .hero .tagline{margin-top:30px;font-size:12px;font-weight:300;letter-spacing:.3em;text-transform:uppercase;color:#9BA3B5;display:flex;align-items:center;justify-content:center;gap:22px}
+  .hero .tagline::before,.hero .tagline::after{content:"";width:44px;height:1px;background:var(--copper);opacity:.8}
+  .hero .meta{margin-top:66px;font-size:10.5px;letter-spacing:.3em;text-transform:uppercase;color:#4A5468}
+
+  /* ---------- GRID / CARDS ---------- */
+  .grid{display:grid;gap:22px}
+  .card{background:var(--white);border:1px solid var(--line-light);border-radius:14px;overflow:hidden}
+  .card .cap{padding:16px 22px;border-top:1px solid var(--line-light);font-size:10.5px;letter-spacing:.28em;text-transform:uppercase;color:var(--mistblue);font-weight:500}
+  .tile{display:flex;align-items:center;justify-content:center;min-height:260px;padding:36px}
+  .tile.dark{background:var(--midnight)}
+  .tile.deep{background:radial-gradient(600px 300px at 35% 20%, #1A2233 0%, var(--midnight) 70%)}
+
+  /* ---------- LOGO SECTION ---------- */
+  .logo-grid{grid-template-columns:1.4fr 1fr}
+  .logo-grid-2{grid-template-columns:repeat(3,1fr);margin-top:22px}
+  .lockup{display:flex;align-items:center;gap:34px}
+  .lockup .divider{width:1px;height:96px;background:linear-gradient(to bottom,transparent,var(--mistblue),transparent);opacity:.55}
+  .lockup .words .name{font-size:25px;font-weight:300;letter-spacing:.24em;text-transform:uppercase;white-space:nowrap}
+  .lockup .words .sub{margin-top:9px;font-size:10.5px;font-weight:400;letter-spacing:.4em;text-transform:uppercase;color:var(--mistblue)}
+  .lockup .words .sub b{font-weight:400;color:var(--copper)}
+  .lockup .words .sub .dot{color:var(--copper);padding:0 .3em}
+  .lockup.on-dark .words .name{color:var(--porcelain)}
+  .lockup.on-dark .words .name .dr{color:var(--copper)}
+  .lockup.on-light .words .name{color:var(--midnight)}
+  .appicon{width:120px;height:120px;border-radius:28px;background:linear-gradient(145deg,#161D2B,#0D1117);box-shadow:0 18px 40px rgba(13,17,23,.35), inset 0 1px 0 rgba(255,255,255,.06);display:flex;align-items:center;justify-content:center}
+  .appicon img{width:66px}
+  .fav-row{display:flex;align-items:flex-end;gap:34px}
+  .fav-item{text-align:center}
+  .fav-item .box{background:var(--porcelain);border:1px solid var(--line-light);border-radius:10px;padding:14px;display:flex;align-items:center;justify-content:center}
+  .fav-item span{display:block;margin-top:10px;font-size:10px;letter-spacing:.2em;color:var(--mistblue)}
+  .logo-note{margin-top:22px;background:var(--white);border:1px solid var(--line-light);border-radius:14px;padding:34px 40px;display:grid;grid-template-columns:auto 1fr;gap:40px;align-items:center}
+  .logo-note h3{font-size:15px;font-weight:500;letter-spacing:.14em;text-transform:uppercase}
+  .logo-note p{color:var(--mistblue);font-size:14px;font-weight:300;line-height:1.75;margin-top:8px;max-width:640px}
+  .logo-note img{width:64px}
+
+  /* ---------- FARBEN ---------- */
+  .color-grid{grid-template-columns:repeat(5,1fr)}
+  .swatch{border-radius:14px;overflow:hidden;border:1px solid var(--line-light);background:var(--white);cursor:pointer;transition:transform .2s}
+  .swatch:hover{transform:translateY(-4px)}
+  .swatch .chip{height:150px}
+  .swatch .info{padding:18px 20px}
+  .swatch .info .name{font-size:12.5px;font-weight:500;letter-spacing:.1em;text-transform:uppercase}
+  .swatch .info .hex{font-size:12px;color:var(--mistblue);margin-top:4px;letter-spacing:.08em}
+  .swatch .info .use{font-size:11px;color:var(--mistblue);margin-top:10px;font-weight:300;line-height:1.5}
+
+  /* ---------- TYPOGRAFIE ---------- */
+  .type-intro{display:grid;grid-template-columns:auto 1fr;gap:56px;align-items:center;background:var(--white);border:1px solid var(--line-light);border-radius:14px;padding:48px 52px}
+  .type-intro .aa{font-size:110px;font-weight:300;line-height:1}
+  .type-intro .aa span{font-weight:600}
+  .type-intro h3{font-size:22px;font-weight:500;letter-spacing:.3em;text-transform:uppercase}
+  .type-intro p{color:var(--mistblue);font-size:14px;font-weight:300;line-height:1.75;margin-top:10px;max-width:520px}
+  .weights{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:22px}
+  .weight{background:var(--white);border:1px solid var(--line-light);border-radius:14px;padding:28px}
+  .weight .big{font-size:44px;line-height:1.1}
+  .weight .lbl{margin-top:14px;font-size:10.5px;letter-spacing:.25em;text-transform:uppercase;color:var(--mistblue)}
+  .scale{background:var(--white);border:1px solid var(--line-light);border-radius:14px;margin-top:22px;padding:14px 52px}
+  .scale .row{display:grid;grid-template-columns:190px 1fr;gap:30px;align-items:baseline;padding:26px 0;border-bottom:1px solid var(--line-light)}
+  .scale .row:last-child{border-bottom:none}
+  .scale .tag{font-size:10.5px;letter-spacing:.25em;text-transform:uppercase;color:var(--mistblue)}
+  .t-display{font-size:46px;font-weight:200;letter-spacing:.02em}
+  .t-h1{font-size:34px;font-weight:300}
+  .t-h2{font-size:24px;font-weight:400}
+  .t-h3{font-size:17px;font-weight:500;letter-spacing:.06em}
+  .t-body{font-size:15px;font-weight:300;line-height:1.8;color:#3A4254;max-width:640px}
+  .t-label{font-size:11px;font-weight:500;letter-spacing:.38em;text-transform:uppercase;color:var(--copper)}
+
+  /* ---------- ICONS ---------- */
+  .icon-grid{grid-template-columns:repeat(4,1fr)}
+  .icon-card{background:var(--white);border:1px solid var(--line-light);border-radius:14px;padding:38px 28px;text-align:center;transition:transform .2s}
+  .icon-card:hover{transform:translateY(-4px)}
+  .icon-card svg{width:46px;height:46px;stroke:var(--deepblue);fill:none;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round}
+  .icon-card.copper svg{stroke:var(--copper)}
+  .icon-card h4{margin-top:20px;font-size:12.5px;font-weight:500;letter-spacing:.28em;text-transform:uppercase}
+  .icon-card p{margin-top:8px;font-size:12px;color:var(--mistblue);font-weight:300;line-height:1.6}
+
+  /* ---------- UI ELEMENTE ---------- */
+  .ui-grid{grid-template-columns:1fr 1fr}
+  .ui-panel{border-radius:14px;padding:44px;display:flex;flex-direction:column;gap:26px;border:1px solid var(--line-light)}
+  .ui-panel.dark{background:var(--midnight)}
+  .ui-panel.light{background:var(--white)}
+  .ui-row{display:flex;gap:16px;flex-wrap:wrap;align-items:center}
+  .btn{font-family:'Poppins',sans-serif;font-size:11.5px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;padding:15px 30px;border-radius:100px;border:none;cursor:pointer;transition:all .25s}
+  .btn-copper{background:linear-gradient(135deg,var(--copper-light),var(--copper) 55%,var(--copper-dark));color:#10151E}
+  .btn-copper:hover{filter:brightness(1.07)}
+  .btn-ghost-dark{background:transparent;color:var(--porcelain);border:1px solid rgba(244,244,242,.28)}
+  .btn-ghost-dark:hover{border-color:var(--copper);color:var(--copper)}
+  .btn-navy{background:var(--midnight);color:var(--porcelain)}
+  .btn-navy:hover{background:var(--deepblue)}
+  .btn-ghost-light{background:transparent;color:var(--midnight);border:1px solid rgba(13,17,23,.25)}
+  .btn-ghost-light:hover{border-color:var(--copper);color:var(--copper-dark)}
+  .link-copper{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--copper);text-decoration:none;border-bottom:1px solid var(--copper);padding-bottom:4px}
+  .ui-panel .lbl{font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--mistblue)}
+
+  /* ---------- WEBSITE PREVIEWS ---------- */
+  .browser{border-radius:16px;overflow:hidden;box-shadow:0 30px 80px rgba(13,17,23,.18);border:1px solid var(--line-light)}
+  .browser-bar{display:flex;align-items:center;gap:14px;padding:13px 20px;background:#E7E7E4}
+  .browser-bar .dots{display:flex;gap:7px}
+  .browser-bar .dots i{width:11px;height:11px;border-radius:50%;background:#CFCFCA;display:block}
+  .browser-bar .url{flex:1;max-width:420px;margin:0 auto;background:var(--white);border-radius:100px;font-size:11px;color:var(--mistblue);padding:7px 18px;text-align:center;letter-spacing:.06em}
+  .browser-bar.dark{background:#191F2C}
+  .browser-bar.dark .dots i{background:#2E3648}
+  .browser-bar.dark .url{background:#0D1117;color:#6B708E}
+
+  .site{padding:0}
+  .site header{display:flex;align-items:center;justify-content:space-between;padding:26px 54px}
+  .site .brand{display:flex;align-items:center;gap:16px}
+  .site .brand img{width:30px}
+  .site .brand .n{font-size:13px;font-weight:400;letter-spacing:.22em;text-transform:uppercase}
+  .site nav{display:flex;gap:34px}
+  .site nav a{font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;text-decoration:none;font-weight:400}
+  .site .hero-area{display:grid;grid-template-columns:1.15fr .85fr;align-items:center;gap:30px;padding:64px 54px 70px}
+  .site .hk{font-size:10.5px;font-weight:500;letter-spacing:.4em;text-transform:uppercase;color:var(--copper)}
+  .site h2.head{font-size:42px;font-weight:200;line-height:1.18;margin-top:20px;letter-spacing:.01em}
+  .site h2.head em{font-style:normal;color:var(--copper)}
+  .site .hero-area p{font-size:14px;font-weight:300;line-height:1.85;margin-top:20px;max-width:470px}
+  .site .cta-row{display:flex;gap:16px;margin-top:34px}
+  .site .visual{display:flex;align-items:center;justify-content:center}
+  .site .visual img{width:210px}
+  .site .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;padding:0 54px 64px}
+  .site .pcard{border-radius:14px;padding:30px 28px}
+  .site .pcard svg{width:30px;height:30px;fill:none;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round}
+  .site .pcard h5{font-size:12px;font-weight:500;letter-spacing:.3em;text-transform:uppercase;margin-top:16px}
+  .site .pcard p{font-size:12px;font-weight:300;line-height:1.7;margin-top:8px}
+  .site .foot{display:flex;align-items:center;justify-content:space-between;padding:22px 54px;font-size:10px;letter-spacing:.26em;text-transform:uppercase}
+
+  /* dark theme site */
+  .site.dark{background:radial-gradient(900px 500px at 75% -5%, #1A2233 0%, var(--midnight) 60%);color:var(--porcelain)}
+  .site.dark header{border-bottom:1px solid var(--line-dark)}
+  .site.dark .brand .n{color:var(--porcelain)}
+  .site.dark nav a{color:#9BA3B5}
+  .site.dark nav a:hover{color:var(--copper)}
+  .site.dark .hero-area p{color:#9BA3B5}
+  .site.dark .pcard{background:rgba(42,52,74,.28);border:1px solid var(--line-dark)}
+  .site.dark .pcard svg{stroke:var(--copper)}
+  .site.dark .pcard p{color:#8A93A8}
+  .site.dark .foot{border-top:1px solid var(--line-dark);color:#4A5468}
+  .site.dark .foot b{color:var(--copper);font-weight:500}
+
+  /* light theme site */
+  .site.light{background:var(--porcelain);color:var(--midnight)}
+  .site.light header{border-bottom:1px solid var(--line-light);background:var(--white)}
+  .site.light nav a{color:var(--mistblue)}
+  .site.light nav a:hover{color:var(--copper-dark)}
+  .site.light .hero-area p{color:var(--mistblue)}
+  .site.light .pcard{background:var(--white);border:1px solid var(--line-light)}
+  .site.light .pcard svg{stroke:var(--copper-dark)}
+  .site.light .pcard p{color:var(--mistblue)}
+  .site.light .foot{border-top:1px solid var(--line-light);color:var(--mistblue);background:var(--white)}
+  .site.light .foot b{color:var(--copper-dark);font-weight:500}
+
+  /* ---------- FOOTER ---------- */
+  .page-foot{background:var(--midnight);color:#9BA3B5;text-align:center;padding:54px 0}
+  .page-foot .line{font-size:13px;letter-spacing:.4em;text-transform:uppercase;font-weight:300}
+  .page-foot .line b{color:var(--copper);font-weight:400}
+  .page-foot .sub{margin-top:16px;font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:#4A5468}
+
+  .toast{position:fixed;bottom:30px;left:50%;transform:translate(-50%,20px);background:var(--midnight);color:var(--porcelain);font-size:11px;letter-spacing:.2em;text-transform:uppercase;padding:13px 26px;border-radius:100px;opacity:0;pointer-events:none;transition:all .3s}
+  .toast.show{opacity:1;transform:translate(-50%,0)}
+
+  @media (max-width:960px){
+    .wrap{padding:0 22px}
+    .logo-grid,.ui-grid{grid-template-columns:1fr}
+    .logo-grid-2,.icon-grid{grid-template-columns:repeat(2,1fr)}
+    .color-grid{grid-template-columns:repeat(2,1fr)}
+    .weights{grid-template-columns:repeat(2,1fr)}
+    .site .hero-area{grid-template-columns:1fr}
+    .site .visual{display:none}
+    .site .cards{grid-template-columns:1fr}
+    .site nav{display:none}
+    .hero h1{font-size:26px}
+    .type-intro{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+
+<!-- ======= HERO ======= -->
+<div class="hero">
+  <div class="wrap">
+    <img class="mark" src="logo-zeichen-dunkel.svg" alt="Zeichen">
+    <h1><span class="dr">Dr.</span> André Alesi</h1>
+    <div class="slp">Sleep<span class="dot">•</span>Recover<span class="dot">•</span><b>Perform</b></div>
+    <div class="tagline">Better today. Stronger tomorrow.</div>
+    <div class="meta">Brand &amp; Web Style Guide — Version 1.0</div>
+  </div>
+</div>
+
+<!-- ======= 01 LOGO ======= -->
+<section id="logo">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker"><span class="num">01</span> — Logo</div>
+      <h2>Das Zeichen &amp; die Wortmarke</h2>
+      <p>Zwei Welten. Ein Rhythmus. Tag und Nacht im Einklang — für bessere Erholung, mehr Energie und nachhaltige Performance.</p>
+    </div>
+
+    <div class="grid logo-grid">
+      <div class="card">
+        <div class="tile deep">
+          <img src="logo-lockup-dunkel.svg" alt="Logo auf Dunkel" style="width:min(480px,92%)">
+        </div>
+        <div class="cap">Primäres Logo — auf Dunkel</div>
+      </div>
+      <div class="card">
+        <div class="tile">
+          <img src="logo-lockup-hell.svg" alt="Logo auf Hell" style="width:min(440px,92%)">
+        </div>
+        <div class="cap">Logo — auf Hell</div>
+      </div>
+    </div>
+
+    <div class="grid logo-grid-2">
+      <div class="card">
+        <div class="tile">
+          <img src="logo-zeichen-hell.svg" alt="Zeichen" style="width:96px">
+        </div>
+        <div class="cap">Zeichen solo — Hell</div>
+      </div>
+      <div class="card">
+        <div class="tile dark">
+          <div class="appicon"><img src="logo-zeichen-dunkel.svg" alt=""></div>
+        </div>
+        <div class="cap">App Icon</div>
+      </div>
+      <div class="card">
+        <div class="tile">
+          <div class="fav-row">
+            <div class="fav-item"><div class="box"><img src="favicon.svg" width="64" height="64" alt="Favicon 64"></div><span>64 px</span></div>
+            <div class="fav-item"><div class="box"><img src="favicon.svg" width="32" height="32" alt="Favicon 32"></div><span>32 px</span></div>
+            <div class="fav-item"><div class="box"><img src="favicon.svg" width="16" height="16" alt="Favicon 16"></div><span>16 px</span></div>
+          </div>
+        </div>
+        <div class="cap">Favicon — favicon.svg</div>
+      </div>
+    </div>
+
+    <div class="logo-note">
+      <img src="logo-zeichen-hell.svg" alt="">
+      <div>
+        <h3>Konstruktion</h3>
+        <p>Der dunkle Halbkreis steht für die Nacht und erholsamen Schlaf, die kupferfarbene Sichel für den Tag und aufsteigende Energie. Die vertikale Linie verbindet beide Welten — Balance als Grundlage von Leistung. Mindestschutzzone: die halbe Zeichenhöhe umlaufend.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======= 02 FARBEN ======= -->
+<section id="farben" style="padding-top:0">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker"><span class="num">02</span> — Farbpalette</div>
+      <h2>Farben</h2>
+      <p>Tiefe, ruhige Blautöne treffen auf warmes Sand und Kupfer. Klick auf eine Farbe kopiert den Hex-Wert. Hinweis: Der im Original-Board notierte Wert #6B708E entspricht nicht der sichtbaren Farbe — verwendet wird der aus dem Board gesampelte Sandton.</p>
+    </div>
+    <div class="grid color-grid">
+      <div class="swatch" data-hex="#0D1117">
+        <div class="chip" style="background:#0D1117"></div>
+        <div class="info"><div class="name">Mitternacht</div><div class="hex">#0D1117</div><div class="use">Primärfläche Dark Mode, Text auf Hell</div></div>
+      </div>
+      <div class="swatch" data-hex="#2A344A">
+        <div class="chip" style="background:#2A344A"></div>
+        <div class="info"><div class="name">Tiefblau</div><div class="hex">#2A344A</div><div class="use">Sekundärflächen, Karten, Hover</div></div>
+      </div>
+      <div class="swatch" data-hex="#B4A189">
+        <div class="chip" style="background:#B4A189"></div>
+        <div class="info"><div class="name">Sand</div><div class="hex">#B4A189</div><div class="use">Sekundäre Akzente, ruhige Flächen, Text auf Dunkel</div></div>
+      </div>
+      <div class="swatch" data-hex="#BB8961">
+        <div class="chip" style="background:linear-gradient(135deg,#D2A47D,#BB8961 55%,#A5754E)"></div>
+        <div class="info"><div class="name">Kupfer</div><div class="hex">#BB8961</div><div class="use">Akzent, CTAs, Highlights — sparsam einsetzen</div></div>
+      </div>
+      <div class="swatch" data-hex="#F4F4F2">
+        <div class="chip" style="background:#F4F4F2;border-bottom:1px solid var(--line-light)"></div>
+        <div class="info"><div class="name">Porzellan</div><div class="hex">#F4F4F2</div><div class="use">Hintergrund Light Mode, Text auf Dunkel</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======= 03 TYPOGRAFIE ======= -->
+<section id="typografie" style="padding-top:0">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker"><span class="num">03</span> — Typografie</div>
+      <h2>Poppins</h2>
+      <p>Modern. Klar. Menschlich. Vertrauensvoll. Eine Schriftfamilie für alle Anwendungen — Headlines leicht und großzügig gesperrt, Fließtext ruhig und gut lesbar.</p>
+    </div>
+
+    <div class="type-intro">
+      <div class="aa">A<span>a</span></div>
+      <div>
+        <h3>Poppins</h3>
+        <p>Geometrische Sans-Serif mit weichem, menschlichem Charakter. Verwendete Schnitte: ExtraLight 200 (Display), Light 300 (Headlines), Regular 400 (Fließtext), Medium 500 (Labels &amp; Buttons), SemiBold 600 (Auszeichnung).</p>
+        <p style="margin-top:14px;letter-spacing:.06em">ABCDEFGHIJKLMNOPQRSTUVWXYZ&nbsp;&nbsp;abcdefghijklmnopqrstuvwxyz&nbsp;&nbsp;0123456789</p>
+      </div>
+    </div>
+
+    <div class="weights">
+      <div class="weight"><div class="big" style="font-weight:200">Aa</div><div class="lbl">ExtraLight 200</div></div>
+      <div class="weight"><div class="big" style="font-weight:300">Aa</div><div class="lbl">Light 300</div></div>
+      <div class="weight"><div class="big" style="font-weight:400">Aa</div><div class="lbl">Regular 400</div></div>
+      <div class="weight"><div class="big" style="font-weight:500">Aa</div><div class="lbl">Medium 500</div></div>
+    </div>
+
+    <div class="scale">
+      <div class="row"><div class="tag">Display — 46 / 200</div><div class="t-display">Better today. Stronger tomorrow.</div></div>
+      <div class="row"><div class="tag">H1 — 34 / 300</div><div class="t-h1">Erholsamer Schlaf ist trainierbar</div></div>
+      <div class="row"><div class="tag">H2 — 24 / 400</div><div class="t-h2">Regeneration für Körper &amp; Geist</div></div>
+      <div class="row"><div class="tag">H3 — 17 / 500</div><div class="t-h3">Die drei Säulen der Methode</div></div>
+      <div class="row"><div class="tag">Body — 15 / 300</div><div class="t-body">Wissenschaftlich fundierte Strategien für besseren Schlaf, echte Erholung und nachhaltige Leistungsfähigkeit — verständlich erklärt und alltagstauglich umgesetzt.</div></div>
+      <div class="row"><div class="tag">Label — 11 / 500</div><div class="t-label">Sleep • Recover • Perform</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ======= 04 ICONS ======= -->
+<section id="icons" style="padding-top:0">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker"><span class="num">04</span> — Icons</div>
+      <h2>Ikonografie</h2>
+      <p>Feine Linien-Icons, 1,4 pt Strichstärke, abgerundete Enden. Grundfarbe Tiefblau — Balance als einziges Icon in Kupfer.</p>
+    </div>
+    <div class="grid icon-grid">
+      <div class="icon-card">
+        <svg viewBox="0 0 24 24"><path d="M20.5 14.2A8.6 8.6 0 0 1 9.8 3.5a8.6 8.6 0 1 0 10.7 10.7z"/></svg>
+        <h4>Sleep</h4><p>Erholsamer Schlaf</p>
+      </div>
+      <div class="icon-card">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.6"/></svg>
+        <h4>Recover</h4><p>Regeneration für Körper &amp; Geist</p>
+      </div>
+      <div class="icon-card">
+        <svg viewBox="0 0 24 24"><path d="M4 20 19 5"/><path d="M11 5h8v8"/></svg>
+        <h4>Perform</h4><p>Leistung steigern</p>
+      </div>
+      <div class="icon-card copper">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.4M12 19.1v2.4M2.5 12h2.4M19.1 12h2.4M5.3 5.3l1.7 1.7M17 17l1.7 1.7M18.7 5.3 17 7M7 17l-1.7 1.7"/></svg>
+        <h4>Balance</h4><p>Ganzheitliches Wohlbefinden</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======= 05 UI ELEMENTE ======= -->
+<section id="ui" style="padding-top:0">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker"><span class="num">05</span> — UI-Elemente</div>
+      <h2>Buttons &amp; Links</h2>
+    </div>
+    <div class="grid ui-grid">
+      <div class="ui-panel dark">
+        <div class="lbl">Dark Mode</div>
+        <div class="ui-row">
+          <button class="btn btn-copper">Jetzt starten</button>
+          <button class="btn btn-ghost-dark">Mehr erfahren</button>
+        </div>
+        <div class="ui-row"><a class="link-copper" href="#">Methode entdecken</a></div>
+      </div>
+      <div class="ui-panel light">
+        <div class="lbl">Light Mode</div>
+        <div class="ui-row">
+          <button class="btn btn-copper">Jetzt starten</button>
+          <button class="btn btn-navy">Termin anfragen</button>
+          <button class="btn btn-ghost-light">Mehr erfahren</button>
+        </div>
+        <div class="ui-row"><a class="link-copper" href="#" style="color:var(--copper-dark);border-color:var(--copper-dark)">Methode entdecken</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======= 06 WEBSITE DARK ======= -->
+<section id="web-dark" style="padding-top:0">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker"><span class="num">06</span> — Website</div>
+      <h2>Dark Mode</h2>
+      <p>Der Standard-Auftritt: Mitternachtsblau mit warmem Kupfer — ruhig, hochwertig, fokussiert.</p>
+    </div>
+    <div class="browser">
+      <div class="browser-bar dark"><div class="dots"><i></i><i></i><i></i></div><div class="url">andre-alesi.de</div></div>
+      <div class="site dark">
+        <header>
+          <div class="brand">
+            <img src="logo-zeichen-dunkel.svg" alt="">
+            <div class="n"><span style="color:var(--copper)">Dr.</span> André Alesi</div>
+          </div>
+          <nav><a href="#">Methode</a><a href="#">Programm</a><a href="#">Über mich</a><a href="#">Kontakt</a></nav>
+          <button class="btn btn-copper" style="padding:12px 24px">Termin anfragen</button>
+        </header>
+        <div class="hero-area">
+          <div>
+            <div class="hk">Sleep • Recover • Perform</div>
+            <h2 class="head">Better today.<br><em>Stronger tomorrow.</em></h2>
+            <p>Wissenschaftlich fundierte Strategien für erholsamen Schlaf, echte Regeneration und nachhaltige Performance — für Menschen, die viel leisten und gut leben wollen.</p>
+            <div class="cta-row">
+              <button class="btn btn-copper">Jetzt starten</button>
+              <button class="btn btn-ghost-dark">Mehr erfahren</button>
+            </div>
+          </div>
+          <div class="visual">
+            <img src="logo-zeichen-dunkel.svg" alt="">
+          </div>
+        </div>
+        <div class="cards">
+          <div class="pcard">
+            <svg viewBox="0 0 24 24"><path d="M20.5 14.2A8.6 8.6 0 0 1 9.8 3.5a8.6 8.6 0 1 0 10.7 10.7z"/></svg>
+            <h5>Sleep</h5><p>Erholsamer, tiefer Schlaf als Fundament für Gesundheit und Leistungsfähigkeit.</p>
+          </div>
+          <div class="pcard">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.6"/></svg>
+            <h5>Recover</h5><p>Gezielte Regeneration für Körper und Geist — messbar und alltagstauglich.</p>
+          </div>
+          <div class="pcard">
+            <svg viewBox="0 0 24 24"><path d="M4 20 19 5"/><path d="M11 5h8v8"/></svg>
+            <h5>Perform</h5><p>Mehr Energie, Fokus und Leistung — heute besser, morgen stärker.</p>
+          </div>
+        </div>
+        <div class="foot"><span>© Dr. André Alesi</span><span>Wissenschaft. Mensch. <b>Performance.</b></span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======= 07 WEBSITE LIGHT ======= -->
+<section id="web-light" style="padding-top:0">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker"><span class="num">07</span> — Website</div>
+      <h2>Light Mode</h2>
+      <p>Die helle Variante: Porzellan-Grundton, Weiß für Karten, Tiefblau für Text — Kupfer bleibt der Akzent.</p>
+    </div>
+    <div class="browser">
+      <div class="browser-bar"><div class="dots"><i></i><i></i><i></i></div><div class="url">andre-alesi.de</div></div>
+      <div class="site light">
+        <header>
+          <div class="brand">
+            <img src="logo-zeichen-hell.svg" alt="">
+            <div class="n">Dr. André Alesi</div>
+          </div>
+          <nav><a href="#">Methode</a><a href="#">Programm</a><a href="#">Über mich</a><a href="#">Kontakt</a></nav>
+          <button class="btn btn-navy" style="padding:12px 24px">Termin anfragen</button>
+        </header>
+        <div class="hero-area">
+          <div>
+            <div class="hk" style="color:var(--copper-dark)">Sleep • Recover • Perform</div>
+            <h2 class="head">Better today.<br><em style="color:var(--copper-dark)">Stronger tomorrow.</em></h2>
+            <p>Wissenschaftlich fundierte Strategien für erholsamen Schlaf, echte Regeneration und nachhaltige Performance — für Menschen, die viel leisten und gut leben wollen.</p>
+            <div class="cta-row">
+              <button class="btn btn-copper">Jetzt starten</button>
+              <button class="btn btn-ghost-light">Mehr erfahren</button>
+            </div>
+          </div>
+          <div class="visual">
+            <img src="logo-zeichen-hell.svg" alt="">
+          </div>
+        </div>
+        <div class="cards">
+          <div class="pcard">
+            <svg viewBox="0 0 24 24"><path d="M20.5 14.2A8.6 8.6 0 0 1 9.8 3.5a8.6 8.6 0 1 0 10.7 10.7z"/></svg>
+            <h5>Sleep</h5><p>Erholsamer, tiefer Schlaf als Fundament für Gesundheit und Leistungsfähigkeit.</p>
+          </div>
+          <div class="pcard">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.6"/></svg>
+            <h5>Recover</h5><p>Gezielte Regeneration für Körper und Geist — messbar und alltagstauglich.</p>
+          </div>
+          <div class="pcard">
+            <svg viewBox="0 0 24 24"><path d="M4 20 19 5"/><path d="M11 5h8v8"/></svg>
+            <h5>Perform</h5><p>Mehr Energie, Fokus und Leistung — heute besser, morgen stärker.</p>
+          </div>
+        </div>
+        <div class="foot"><span>© Dr. André Alesi</span><span>Wissenschaft. Mensch. <b>Performance.</b></span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======= FOOTER ======= -->
+<div class="page-foot">
+  <div class="line">Wissenschaft. Mensch. <b>Performance.</b></div>
+  <div class="sub">Dr. André Alesi — Style Guide · Poppins · #0D1117 · #2A344A · #B4A189 · #BB8961 · #F4F4F2</div>
+</div>
+
+<div class="toast" id="toast">Kopiert</div>
+
+<script>
+  document.querySelectorAll('.swatch').forEach(function(s){
+    s.addEventListener('click', function(){
+      var hex = s.getAttribute('data-hex');
+      navigator.clipboard && navigator.clipboard.writeText(hex);
+      var t = document.getElementById('toast');
+      t.textContent = hex + ' kopiert';
+      t.classList.add('show');
+      clearTimeout(t._h);
+      t._h = setTimeout(function(){ t.classList.remove('show'); }, 1600);
+    });
+  });
+</script>
+</body>
+</html>
