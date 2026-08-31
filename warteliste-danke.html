@@ -1,45 +1,122 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Du bist auf der Liste | Dr. André Alesi</title>
-  <meta name="robots" content="noindex">
-  <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <meta name="theme-color" content="#0D1117">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <!-- Cookiebot Consent Management, muss als ERSTES im head stehen -->
+  <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="d7edd666-c373-4b8b-b522-fe1891c11381" data-blockingmode="auto" type="text/javascript"></script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Du bist auf der Liste | Jasmin Schmidtke</title>
+  <meta name="robots" content="noindex, nofollow" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="favicon-32x32.png" sizes="32x32" type="image/png" />
+  <meta name="theme-color" content="#BFA492" />
+
+  <!-- Meta Pixel (Facebook), Lead-Event, von Cookiebot blockiert bis Marketing-Consent -->
+  <script type="text/plain" data-cookieconsent="marketing">
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}
+    (window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1626754815196504');
+    fbq('track', 'PageView');
+    fbq('track', 'Lead');
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
   <style>
-    :root{--night:#0D1117;--copper:#BB8961;--copper-deep:#A5744E;--border-dark:rgba(187,137,97,0.28)}
-    *{margin:0;padding:0;box-sizing:border-box}
-    body{background:radial-gradient(900px 460px at 50% 0%,rgba(187,137,97,0.14),transparent 62%),var(--night);color:#fff;font-family:'Poppins',sans-serif;font-weight:300;line-height:1.7;min-height:100vh;display:flex;flex-direction:column}
-    header{display:flex;justify-content:center;padding:30px 20px}
-    header img{height:58px;width:auto}
-    main{flex:1;display:flex;align-items:center;justify-content:center;padding:24px 18px 60px}
-    .box{max-width:560px;width:100%;background:rgba(255,255,255,0.04);border:1px solid var(--border-dark);border-radius:24px;padding:46px 40px;text-align:center;box-shadow:0 26px 70px rgba(0,0,0,0.4)}
-    .check{width:68px;height:68px;border-radius:50%;background:var(--copper);display:flex;align-items:center;justify-content:center;margin:0 auto 22px;transform:scale(0);animation:pop .5s cubic-bezier(.34,1.56,.64,1) .15s forwards;box-shadow:0 12px 32px rgba(187,137,97,.35)}
-    .check svg{width:30px;height:30px;stroke:var(--night);fill:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
-    @keyframes pop{to{transform:scale(1)}}
-    h1{font-weight:500;font-size:clamp(1.6rem,4.5vw,32px);line-height:1.25;margin-bottom:10px}
-    h1 span{color:var(--copper)}
-    p{font-size:15px;font-weight:400;color:#CED3DC}
-    .hint{margin-top:22px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.12);border-radius:12px;padding:13px 16px;font-size:12.5px;color:#A2A8B9;line-height:1.6}
-    footer{text-align:center;padding:0 18px 26px;font-size:12px;color:#868D9D}
-    footer a{color:#A2A8B9;text-decoration:none}
-    @media(max-width:480px){.box{padding:34px 22px}}
+    :root {
+      --cream: #FBF7F4; --cream2: #F5EFE9;
+      --text-dark: #2D2B30; --text-body: #5A5550; --text-muted: #808080;
+      --accent: #BFA492; --accent-deep: #A8876F; --accent-text: #8C6743;
+      --green-btn: #6B8C5A; --border: #DDD6CE;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: var(--cream); color: var(--text-dark);
+      font-family: 'Poppins', sans-serif; font-weight: 300; line-height: 1.65;
+      min-height: 100vh; display: flex; flex-direction: column;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { text-decoration: none; color: inherit; }
+    .top { display: flex; justify-content: center; align-items: center; gap: 10px; padding: 26px 20px; }
+    .top svg { width: 36px; height: 36px; }
+    .logo-lines {
+      display: flex; flex-direction: column;
+      font-family: 'Playfair Display', Georgia, serif;
+      font-weight: 500; font-size: 16px; line-height: 1.15;
+    }
+    main { flex: 1; display: flex; align-items: center; justify-content: center; padding: 20px 24px 60px; }
+    .card {
+      max-width: 560px; text-align: center;
+      background: #fff; border: 1px solid var(--border); border-radius: 24px;
+      padding: 48px 40px;
+      box-shadow: 0 20px 60px rgba(80,55,40,0.10);
+    }
+    .badge {
+      width: 66px; height: 66px; border-radius: 50%;
+      background: var(--cream2); color: var(--green-btn);
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 22px;
+    }
+    .badge svg { width: 30px; height: 30px; }
+    h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-weight: 700; font-size: clamp(26px, 4vw, 34px); line-height: 1.2;
+      margin-bottom: 16px;
+    }
+    h1 .accent { color: var(--accent); font-style: italic; }
+    p { font-size: 15.5px; color: var(--text-body); margin-bottom: 14px; }
+    p strong { font-weight: 600; color: var(--text-dark); }
+    .hint {
+      background: var(--cream2); border-radius: 14px; padding: 16px 18px;
+      font-size: 14px; margin: 22px 0 0; text-align: left;
+      display: grid; grid-template-columns: auto 1fr; gap: 10px; align-items: start;
+    }
+    .hint svg { width: 18px; height: 18px; color: var(--accent-deep); margin-top: 3px; }
+    footer { padding: 22px; text-align: center; font-size: 12px; color: var(--text-muted); }
+    footer a { text-decoration: underline; text-underline-offset: 2px; }
+    @media (max-width: 600px) { .card { padding: 36px 22px; } }
   </style>
 </head>
 <body>
-  <header><img src="logo-header-dunkel.svg" alt="Dr. André Alesi"></header>
+
+  <header class="top" aria-label="Jasmin Schmidtke">
+    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <circle cx="100" cy="100" r="82" fill="none" stroke="#BFA492" stroke-width="11"/>
+      <path d="M 18,100 C 45,118 65,118 100,95 C 135,72 155,72 182,100" fill="none" stroke="#BFA492" stroke-width="7" stroke-linecap="round"/>
+    </svg>
+    <span class="logo-lines"><span>Jasmin</span><span>Schmidtke</span></span>
+  </header>
+
   <main>
-    <div class="box">
-      <div class="check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
-      <h1>Du bist <span>auf der Liste!</span></h1>
-      <p>Deine Eintragung war erfolgreich. Du erfährst als Erster, wenn die Masterclass startet, und bekommst vorab exklusives Bonusmaterial von André per E-Mail.</p>
-      <div class="hint">Tipp: Schau kurz in dein Postfach und bestätige deine E-Mail-Adresse, falls eine Bestätigungsmail angekommen ist. So gehen keine Infos verloren.</div>
+    <div class="card">
+      <div class="badge" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+      </div>
+      <h1>Du bist auf der <span class="accent">Liste!</span></h1>
+      <p>
+        Schön, dass du dabei bist. Du gehörst jetzt zu den Ersten, die erfahren, wenn die Masterclass startet, und sicherst dir alle Vorteile der Warteliste.
+      </p>
+      <p>
+        <strong>Schau gleich in dein E-Mail-Postfach:</strong> Dort wartet schon die erste Nachricht von Jasmin auf dich.
+      </p>
+      <div class="hint">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        <span>Keine E-Mail bekommen? Wirf einen Blick in deinen Spam- oder Werbung-Ordner und markiere die Mail als „Kein Spam", damit du nichts verpasst.</span>
+      </div>
     </div>
   </main>
-  <footer>© 2026 Dr. André Alesi · <a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></footer>
+
+  <footer>
+    © 2026 Jasmin Schmidtke · <a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a>
+  </footer>
+
 </body>
 </html>
