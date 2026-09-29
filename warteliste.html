@@ -70,7 +70,7 @@
       --shadow:       0 20px 50px rgba(80,55,40,0.14);
       --shadow-sm:    0 10px 26px rgba(80,55,40,0.07);
       --radius:       20px;
-      --wrap:         1120px;
+      --wrap:         1180px;
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -91,7 +91,9 @@
 
     /* ───── TYPOGRAFIE ───── */
     h1, h2, h3 { font-family: 'Playfair Display', Georgia, serif; font-weight: 700; color: var(--text-dark); text-wrap: balance; }
-    h1 { font-size: clamp(32px, 4.4vw, 52px); line-height: 1.14; letter-spacing: -0.005em; margin-bottom: 22px; }
+    h1 { font-size: clamp(32px, 2.75vw, 38px); line-height: 1.18; letter-spacing: -0.005em; margin-bottom: 18px; }
+    .br-d { display: none; }
+    @media (min-width: 901px) { .br-d { display: inline; } }
     h2 { font-size: clamp(27px, 3.3vw, 40px); line-height: 1.18; margin-bottom: 18px; }
     h3 { font-size: 20px; line-height: 1.3; }
     .ac { font-style: italic; font-weight: 700; color: var(--accent-deep); }
@@ -143,7 +145,7 @@
     .top {
       position: relative; z-index: 3;
       display: flex; justify-content: center; align-items: center; gap: 10px;
-      padding: 26px 20px 30px;
+      padding: 20px 20px 18px;
     }
     .top .logo-icon { width: 36px; height: 36px; }
     .top .logo-lines {
@@ -160,7 +162,7 @@
     .dark .leaf { background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12); }
 
     /* ───── HERO ───── */
-    .hero { position: relative; overflow: hidden; padding: 0 0 80px; }
+    .hero { position: relative; overflow: hidden; padding: 0 0 64px; }
     .hero-bg { position: absolute; inset: 0; z-index: 0; }
     .hero-bg video, .hero-bg img.poster {
       position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center;
@@ -173,21 +175,22 @@
         linear-gradient(180deg, rgba(251,247,244,.66) 0%, rgba(251,247,244,.58) 50%, rgba(251,247,244,.96) 92%, var(--cream) 100%);
     }
     .hero-grid {
-      display: grid; grid-template-columns: 1.05fr .95fr; gap: 56px; align-items: center;
+      display: grid; grid-template-columns: 1.38fr .62fr; gap: 40px; align-items: center;
     }
-    .hero-copy { padding-top: 14px; }
+    .hero-copy { max-width: 740px; }
     .badge {
       display: inline-flex; align-items: center; gap: 9px;
       background: rgba(255,255,255,.82); border: 1.5px solid var(--border); border-radius: 50px;
       padding: 8px 16px 8px 12px; font-size: 12.5px; font-weight: 600; text-transform: uppercase; letter-spacing: .06em;
-      color: var(--text-dark); margin-bottom: 22px; backdrop-filter: blur(6px);
+      color: var(--text-dark); margin-bottom: 18px; backdrop-filter: blur(6px);
     }
     .badge .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--green-btn); box-shadow: 0 0 0 0 rgba(107,140,90,.5); animation: pulse 1.8s infinite; }
     @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(107,140,90,.5); } 70% { box-shadow: 0 0 0 9px rgba(107,140,90,0); } 100% { box-shadow: 0 0 0 0 rgba(107,140,90,0); } }
-    .kicker { font-size: 15px; color: var(--text-body); margin-bottom: 14px; }
-    .hero .lead { margin-bottom: 26px; max-width: 560px; }
-    .hero-checks { display: flex; flex-direction: column; gap: 12px; margin-bottom: 30px; }
-    .hero-checks li { display: grid; grid-template-columns: auto 1fr; gap: 12px; align-items: start; font-size: 15px; color: var(--text-body); }
+    .kicker { font-size: 14.5px; color: var(--text-body); margin-bottom: 12px; max-width: 600px; }
+    .hero .lead { margin-bottom: 24px; max-width: 600px; font-size: 17px; }
+    .hero-checks { display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px; }
+    .hero-checks li { display: inline-flex; gap: 10px; align-items: center; font-size: 15px; color: var(--text-body); }
+    .hero-checks .ck { margin-top: 0; }
     .ck {
       width: 24px; height: 24px; border-radius: 50%; flex: none; margin-top: 2px;
       background: #fff; color: var(--green-btn); border: 1.5px solid rgba(107,140,90,.35);
@@ -202,7 +205,7 @@
     }
     .chip::before { content: '✦ '; color: var(--accent-deep); }
 
-    .hero-visual { position: relative; justify-self: end; width: 100%; max-width: 440px; }
+    .hero-visual { position: relative; justify-self: end; width: 100%; max-width: 360px; }
     .arch {
       aspect-ratio: 468 / 640; border-radius: 999px 999px 26px 26px; overflow: hidden;
       background: #E2D9D0; box-shadow: var(--shadow);
@@ -220,7 +223,7 @@
       background: rgba(255,255,255,.9); backdrop-filter: blur(8px);
       border: 1px solid var(--border); border-radius: 16px; padding: 14px 18px;
       box-shadow: var(--shadow-sm); display: grid; grid-template-columns: auto 1fr; gap: 12px; align-items: center;
-      max-width: 270px;
+      max-width: 300px;
     }
     .hero-card .ic { width: 42px; height: 42px; border-radius: 50%; background: var(--cream2); color: var(--accent-deep); display: flex; align-items: center; justify-content: center; }
     .hero-card .ic svg { width: 20px; height: 20px; }
@@ -445,11 +448,11 @@
     @media (max-width: 900px) {
       .band { padding: 60px 0; }
       .hero { padding: 0 0 56px; }
-      .top { padding-bottom: 22px; }
+      .top { padding: 22px 20px 20px; }
       .hero-grid { grid-template-columns: 1fr; gap: 34px; }
-      .hero-copy { text-align: center; padding-top: 6px; }
-      .hero .lead { margin-left: auto; margin-right: auto; }
-      .hero-checks { text-align: left; max-width: 520px; margin-left: auto; margin-right: auto; }
+      .hero-copy { text-align: center; max-width: none; }
+      .hero .lead, .kicker { margin-left: auto; margin-right: auto; }
+      .hero-checks { align-items: center; text-align: left; }
       .hero-cta { align-items: center; }
       .hero-cta .btn { width: 100%; max-width: 440px; }
       .trust-row { justify-content: center; }
@@ -518,28 +521,20 @@
       <div class="wrap">
         <div class="hero-grid">
           <div class="hero-copy">
-            <span class="badge fade d1"><span class="dot"></span> Warteliste geöffnet · Start Herbst 2026</span>
-            <p class="kicker fade d2">Für Frauen ab 40, die spüren, dass ihr Körper anders reagiert als früher. Und die sich damit nicht abfinden wollen.</p>
-            <h1 class="fade d3">Warum dein Körper ab 40 anders tickt. Und wie du wieder zu <span class="ac">Energie, Ausstrahlung</span> und einem straffen Körpergefühl kommst.</h1>
-            <p class="lead fade d4">
-              In ihrer neuen Video-Masterclass zeigt dir Heilpraktikerin <strong>Jasmin Schmidtke</strong>, welche Rolle Stoffwechsel und Hormone dabei spielen, dass du dich erschöpft und fremd im eigenen Körper fühlst. Und wie du beides Schritt für Schritt wieder in eine gute Regulation bringst: Woche für Woche, mit Begleitung statt Einzeltipps.
-            </p>
-            <ul class="hero-checks fade d5">
-              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span><strong>Sofort nach der Eintragung:</strong> die Übersicht „Die 5 wichtigsten Blutwerte ab 40“ als PDF</span></li>
-              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span><strong>Der günstigste Preis,</strong> den es für die Masterclass je geben wird. Nur für die Warteliste</span></li>
-              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span><strong>Frühzugang:</strong> Die Türen öffnen sich für dich, bevor die Masterclass öffentlich startet</span></li>
+            <span class="badge fade d1"><span class="dot"></span> Warteliste geöffnet · Start Herbst&nbsp;2026</span>
+            <h1 class="fade d2">Verstehe deine Blutwerte.<br class="br-d" /> Und nutze&nbsp;sie für&nbsp;mehr<br class="br-d" /> <span class="ac">Energie und Ausstrahlung</span> ab&nbsp;40.</h1>
+            <p class="lead fade d3">Die neue Video-Masterclass von Heilpraktikerin <strong>Jasmin Schmidtke</strong>: Du lernst, was deine Blutwerte über Stoffwechsel und Hormone verraten, und nutzt dieses Wissen, um Schritt für Schritt wieder in Balance zu kommen. Mit Begleitung statt Einzeltipps.</p>
+            <ul class="hero-checks fade d4">
+              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span><strong>Sofort gratis:</strong> das PDF „Die 5 wichtigsten Blutwerte ab&nbsp;40“</span></li>
+              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span><strong>Günstigster Preis,</strong> nur für die Warteliste</span></li>
+              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span><strong>Frühzugang</strong> vor dem offiziellen Start</span></li>
             </ul>
             <div class="hero-cta fade d5">
               <a href="#warteliste" class="btn">
                 <span class="lbl">Jetzt kostenlos auf die Warteliste</span>
                 <span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></span>
               </a>
-              <p class="micro">100 % kostenlos · unverbindlich · jederzeit abbestellbar</p>
-              <div class="trust-row">
-                <span class="chip">Heilpraktikerin</span>
-                <span class="chip">Vierfach-Mama</span>
-                <span class="chip">Spezialgebiet Ü40</span>
-              </div>
+              <p class="micro">100&nbsp;% kostenlos · unverbindlich · jederzeit abbestellbar</p>
             </div>
           </div>
 
@@ -550,8 +545,8 @@
             <span class="seats-badge"><span class="dot"></span> Gratis-PDF sofort</span>
             <svg class="sparkle" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0c.6 7 5 11.4 12 12-7 .6-11.4 5-12 12-.6-7-5-11.4-12-12 7-.6 11.4-5 12-12z"/></svg>
             <div class="hero-card">
-              <div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M8 2v4M16 2v4M3 10h18"/></svg></div>
-              <div><b>Start im Herbst 2026</b><span>Die Warteliste erfährt es zuerst</span></div>
+              <div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a7 7 0 0 1 7 7c0 3-2 5-4 6l-.5 3h-5L9 15c-2-1-4-3-4-6a7 7 0 0 1 7-7z"/><path d="M9 21h6"/></svg></div>
+              <div><b>Jasmin Schmidtke</b><span>Heilpraktikerin · Vierfach-Mama</span></div>
             </div>
           </div>
         </div>
@@ -572,14 +567,14 @@
             <img src="5-blutwerte-cover-scharf.jpg" width="991" height="1400" alt="PDF-Übersicht: Die 5 wichtigsten Blutwerte ab 40" loading="lazy" />
           </div>
           <div class="gift-body">
-            <span class="tagpill">PDF-Übersicht · Kostenlos · 3 Seiten</span>
-            <h3>Die 5 wichtigsten Blutwerte ab 40</h3>
+            <span class="tagpill">PDF-Übersicht · Kostenlos · 3&nbsp;Seiten</span>
+            <h3>Die 5 wichtigsten Blutwerte ab&nbsp;40</h3>
             <p class="sub">Dein Arzt sagt „alles im Normbereich“, und du fühlst dich trotzdem müde? <strong>Normal ist nicht gleich optimal.</strong> Diese Übersicht zeigt dir beides nebeneinander: den Laborbereich und den funktionellen Optimalbereich.</p>
             <ul>
               <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>Ferritin, Vitamin D, B12, TSH und HbA1c mit Laborbereich und Optimalbereich</span></li>
               <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>Woran du merkst, dass ein Wert nicht dort ist, wo er sein könnte</span></li>
               <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>Der eine Satz, mit dem du beim nächsten Arzttermin die richtigen Werte bekommst</span></li>
-              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>Speziell für Frauen ab 40, verständlich erklärt, ohne Fachchinesisch</span></li>
+              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>Speziell für Frauen ab&nbsp;40, verständlich erklärt, ohne Fachchinesisch</span></li>
             </ul>
             <a href="#warteliste" class="btn">
               <span class="lbl">Eintragen und PDF sichern</span>
@@ -614,7 +609,7 @@
         </div>
         <div class="bridge rv">
           <span class="leaf" style="width:200px;height:200px;right:-70px;top:-60px;transform:rotate(25deg)"></span>
-          <p>Das ist keine Frage von Disziplin. Ab 40 verändern sich <span class="ac">Hormone und Stoffwechsel</span>. Maßnahmen, die einzeln nichts bringen, greifen erst, wenn sie ineinandergreifen. Genau dafür ist die Masterclass gebaut.</p>
+          <p>Das ist keine Frage von Disziplin. Ab 40 verändern sich <span class="ac">Hormone und Stoffwechsel</span>. Maßnahmen, die einzeln nichts bringen, greifen erst, wenn sie ineinandergreifen. Genau dafür ist die Masterclass gebaut: für Frauen, die ihr Wohlbefinden selbst in die Hand nehmen wollen.</p>
           <a href="#warteliste" class="btn">
             <span class="lbl">Auf die Warteliste</span>
             <span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></span>
@@ -719,7 +714,7 @@
           </div>
           <div class="card bcard rv">
             <div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V5a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v14"/><path d="M4 19a2 2 0 0 0 2 2h14"/><path d="M9 7h6M9 11h6"/></svg></div>
-            <h3>Deine Bibliothek ab Tag 1</h3>
+            <h3>Deine Bibliothek ab Tag&nbsp;1</h3>
             <p>Werte-Videos zu Eisen, Schilddrüse, Stoffwechsel, Entzündung und Vitaminen, ein Notfall-Kit und die Sektion „Wenn sich nichts bewegt“. Sofort verfügbar, ohne Wochenrhythmus.</p>
           </div>
           <div class="card bcard rv">
@@ -739,7 +734,7 @@
         <div class="perks-wrap">
           <div class="perks-sticky rv">
             <span class="eyebrow">Warum jetzt eintragen?</span>
-            <h2>Die Masterclass startet im <span class="ac">Herbst 2026</span>. Wer auf der Warteliste steht, hat fünf Vorteile.</h2>
+            <h2>Die Masterclass startet im <span class="ac">Herbst&nbsp;2026</span>. Wer auf der Warteliste steht, hat fünf Vorteile.</h2>
             <p class="lead">Die Türen öffnen sich zuerst für die Warteliste. Alles, was es zum Start an Vorteilen gibt, gibt es nur hier.</p>
             <a href="#warteliste" class="btn">
               <span class="lbl">Jetzt kostenlos eintragen</span>
@@ -750,7 +745,7 @@
           <ol class="perk-list">
             <li class="perk first rv">
               <span class="n">01</span>
-              <div><b>Sofort-Geschenk <span class="pill">Jetzt</span></b><p>Die Übersicht „Die 5 wichtigsten Blutwerte ab 40“ als PDF, direkt nach der Eintragung. Kein Warten bis zum Start.</p></div>
+              <div><b>Sofort-Geschenk <span class="pill">Jetzt</span></b><p>Die Übersicht „Die 5 wichtigsten Blutwerte ab&nbsp;40“ als PDF, direkt nach der Eintragung. Kein Warten bis zum Start.</p></div>
             </li>
             <li class="perk rv">
               <span class="n">02</span>
@@ -785,11 +780,11 @@
           <span class="eyebrow">Deine Expertin</span>
           <h2>Heilpraktikerin. Vierfach-Mama. <span class="ac">Wegbegleiterin.</span></h2>
           <p>Jasmin ist Heilpraktikerin und Mutter von vier Kindern. Sie weiß aus eigener Erfahrung, wie es ist, wenn der Alltag alles fordert und die eigene Energie hinten runterfällt.</p>
-          <p>Als Heilpraktikerin schaut sie nicht auf einzelne Beschwerden, sondern dahin, wo bei Frauen ab 40 wirklich alles zusammenläuft: beim Stoffwechsel und den Hormonen. Ihr Ansatz setzt an der Ursache an, nicht am Symptom. Verständlich erklärt, ohne Fachchinesisch und ohne Diätstress.</p>
+          <p>Als Heilpraktikerin schaut sie nicht auf einzelne Beschwerden, sondern dahin, wo bei Frauen ab&nbsp;40 wirklich alles zusammenläuft: beim Stoffwechsel und den Hormonen. Ihr Ansatz setzt an der Ursache an, nicht am Symptom. Verständlich erklärt, ohne Fachchinesisch und ohne Diätstress.</p>
           <p>In der Masterclass bündelt sie dieses Wissen erstmals in strukturierter Form: klar aufgebaut, alltagstauglich und ergänzt um konkrete Schritte aus der Praxis.</p>
           <blockquote>„Du bist nicht zu alt, zu undiszipliniert oder einfach kaputt. Dein Körper folgt einer Logik. Und wenn du die Ursache verstehst, kommt deine Energie zurück.“</blockquote>
           <ul class="about-facts">
-            <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>Heilpraktikerin mit Fokus auf Frauen ab 40</span></li>
+            <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>Heilpraktikerin mit Fokus auf Frauen ab&nbsp;40</span></li>
             <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>Ganzheitlicher Ansatz: Ursache statt Symptom</span></li>
             <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>Vierfach-Mama, kennt den vollen Alltag</span></li>
             <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>Stoffwechsel und Hormone als Spezialgebiet</span></li>
@@ -812,7 +807,7 @@
           </details>
           <details>
             <summary>Wann startet die Masterclass?<span class="plus">+</span></summary>
-            <p>Im Herbst 2026. Den genauen Termin erfährst du als Erste per E-Mail, noch bevor er öffentlich bekannt gegeben wird.</p>
+            <p>Im Herbst&nbsp;2026. Den genauen Termin erfährst du als Erste per E-Mail, noch bevor er öffentlich bekannt gegeben wird.</p>
           </details>
           <details>
             <summary>Muss ich die Masterclass dann kaufen?<span class="plus">+</span></summary>
@@ -820,7 +815,7 @@
           </details>
           <details>
             <summary>Für wen ist die Masterclass gedacht?<span class="plus">+</span></summary>
-            <p>Für Frauen ab 40, die sich erschöpft fühlen, deren Körper anders reagiert als früher und die verstehen wollen, warum. Vorkenntnisse brauchst du nicht. Alles wird verständlich und Schritt für Schritt erklärt.</p>
+            <p>Für Frauen ab&nbsp;40, die spüren, dass ihr Körper anders reagiert als früher, und die ihr Wohlbefinden selbst in die Hand nehmen wollen, statt auf die nächste Diät oder den nächsten Arzttermin zu hoffen. Du bekommst ein System, das dir zeigt, was in deinem Körper passiert und was du selbst tun kannst, um wieder zu Energie, Ausstrahlung und einem guten Körpergefühl zu kommen. Vorkenntnisse brauchst du nicht: Alles wird verständlich und Schritt für Schritt erklärt.</p>
           </details>
           <details>
             <summary>Brauche ich aktuelle Blutwerte?<span class="plus">+</span></summary>
@@ -849,7 +844,7 @@
           <div class="rv">
             <span class="eyebrow">Warteliste</span>
             <h2>Sichere dir jetzt deinen <span class="ac">Frühzugang</span></h2>
-            <p class="lead">Trag dich kostenlos ein. Das PDF „Die 5 wichtigsten Blutwerte ab 40“ bekommst du sofort, und du erfährst als Erste, wenn die Masterclass im Herbst 2026 startet.</p>
+            <p class="lead">Trag dich kostenlos ein. Das PDF „Die 5 wichtigsten Blutwerte ab&nbsp;40“ bekommst du sofort, und du erfährst als Erste, wenn die Masterclass im Herbst&nbsp;2026 startet.</p>
             <ul class="sum">
               <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>Sofort: Blutwerte-Übersicht als PDF</span></li>
               <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>Zum Start: günstigster Preis und Frühzugang</span></li>
@@ -866,14 +861,14 @@
               <input type="text" id="vorname" name="vorname" placeholder="Dein Vorname" autocomplete="given-name" required />
               <label for="email">E-Mail</label>
               <input type="email" id="email" name="email" placeholder="deine@email.de" autocomplete="email" required />
-              <label class="consent"><input type="checkbox" name="einverstanden" required /> Ja, schickt mir die Blutwerte-Übersicht, informiert mich zum Start der Masterclass und gelegentlich mit hilfreichen Tipps für Frauen ab 40 per E-Mail. Ich bin einverstanden. Abmeldung jederzeit möglich.</label>
+              <label class="consent"><input type="checkbox" name="einverstanden" required /> Ja, schickt mir die Blutwerte-Übersicht, informiert mich zum Start der Masterclass und gelegentlich mit hilfreichen Tipps für Frauen ab&nbsp;40 per E-Mail. Ich bin einverstanden. Abmeldung jederzeit möglich.</label>
               <button class="btn" type="submit">
                 <span class="lbl">Jetzt kostenlos eintragen</span>
                 <span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></span>
               </button>
               <div class="trust">
                 <svg viewBox="0 0 24 24"><path d="M12 1 3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
-                100 % kostenlos · jederzeit abbestellbar · keine Weitergabe deiner Daten
+                100&nbsp;% kostenlos · jederzeit abbestellbar · keine Weitergabe deiner Daten
               </div>
             </form>
           </div>
@@ -898,7 +893,7 @@
   <!-- Sticky CTA -->
   <div class="sticky-cta" id="stickyCta" aria-hidden="true">
     <div class="sticky-inner">
-      <div class="txt"><b>Warteliste: Start Herbst 2026</b>Sofort-PDF, günstigster Preis, Frühzugang</div>
+      <div class="txt"><b>Warteliste: Start Herbst&nbsp;2026</b>Sofort-PDF, günstigster Preis, Frühzugang</div>
       <a href="#warteliste" class="btn">
         <span class="lbl">Jetzt kostenlos eintragen</span>
         <span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></span>
@@ -951,6 +946,39 @@
           });
         }, { threshold: 0.05 });
         vids.forEach(function (v) { vio.observe(v); });
+      }
+
+      /* Warteliste: parallel an ActiveCampaign (Liste „Masterclass Warteliste“, Formular 3) und an Netlify Forms */
+      var wlForm = document.querySelector('form[name="masterclass-warteliste"]');
+      if (wlForm && window.fetch && window.URLSearchParams) {
+        wlForm.addEventListener('submit', function (ev) {
+          if (!wlForm.checkValidity()) { return; }
+          ev.preventDefault();
+          var btn = wlForm.querySelector('button[type="submit"]');
+          if (btn.getAttribute('data-busy')) { return; }
+          btn.setAttribute('data-busy', '1'); btn.style.opacity = '.75';
+          var lbl = btn.querySelector('.lbl'); if (lbl) { lbl.textContent = 'Einen Moment bitte'; }
+
+          var vorname = (wlForm.elements['vorname'].value || '').trim();
+          var email = (wlForm.elements['email'].value || '').trim();
+
+          var ac = new FormData();
+          ac.append('u', '3'); ac.append('f', '3'); ac.append('s', ''); ac.append('c', '0'); ac.append('m', '0');
+          ac.append('act', 'sub'); ac.append('v', '2'); ac.append('or', 'a3770ea6-b8d6-4cbc-a6f7-5b6341c4d38e');
+          ac.append('firstname', vorname); ac.append('email', email);
+          var pAC = fetch('https://jasminschmidtke70927.activehosted.com/proc.php', { method: 'POST', body: ac, mode: 'no-cors', keepalive: true }).catch(function () {});
+
+          var pNL = fetch('/', {
+            method: 'POST', keepalive: true,
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: new URLSearchParams(new FormData(wlForm)).toString()
+          }).catch(function () {});
+
+          var done = false;
+          function go() { if (done) { return; } done = true; window.location.href = '/warteliste-danke.html'; }
+          Promise.all([pAC, pNL]).then(go, go);
+          setTimeout(go, 3500);
+        });
       }
 
       /* FAQ: nur ein Eintrag offen */
