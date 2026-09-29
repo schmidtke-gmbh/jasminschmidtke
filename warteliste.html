@@ -340,7 +340,13 @@
     .perk p { font-size: 14.5px; color: var(--text-body); }
     .perk.first { border: 1.5px solid var(--green-btn); background: linear-gradient(135deg, #fff, #F6F9F3); }
     .perk.first .n { color: var(--green-btn); }
-    .perk .pill { display: inline-block; margin-left: 8px; vertical-align: middle; background: var(--green-btn); color: #fff; font-size: 10.5px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; border-radius: 50px; padding: 3px 9px; }
+    .pill { display: inline-block; margin-left: 8px; vertical-align: middle; background: var(--green-btn); color: #fff; font-size: 10.5px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; border-radius: 50px; padding: 3px 9px; white-space: nowrap; }
+    .perk.price { background: linear-gradient(165deg, var(--dark), var(--dark2)); border-color: transparent; color: #fff; position: relative; overflow: hidden; padding: 26px 28px; }
+    .perk.price .n { color: #E7CBB4; }
+    .perk.price b { color: #fff; font-family: 'Playfair Display', Georgia, serif; font-size: 20px; font-weight: 700; line-height: 1.25; }
+    .perk.price p { color: rgba(255,255,255,.86); font-size: 15px; }
+    .perk.price .leaf { background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12); }
+    .perk.price .tagline { display: inline-block; margin-bottom: 8px; font-size: 11.5px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: #E7CBB4; }
     .honest { margin-top: 18px; font-size: 13.5px; color: var(--text-muted); display: flex; gap: 8px; align-items: start; }
     .honest svg { width: 16px; height: 16px; flex: none; margin-top: 4px; fill: var(--green-btn); }
 
@@ -526,7 +532,7 @@
             <p class="lead fade d3">Die neue Video-Masterclass von Heilpraktikerin <strong>Jasmin Schmidtke</strong>: Du lernst, was deine Blutwerte über Stoffwechsel und Hormone verraten, und nutzt dieses Wissen, um Schritt für Schritt wieder in Balance zu kommen. Mit Begleitung statt Einzeltipps.</p>
             <ul class="hero-checks fade d4">
               <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span><strong>Sofort gratis:</strong> das PDF „Die 5 wichtigsten Blutwerte ab&nbsp;40“</span></li>
-              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span><strong>Günstigster Preis,</strong> nur für die Warteliste</span></li>
+              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span><strong>Frühbucherpreis zum Start:</strong> Du erfährst als Erste davon <span class="pill">Als Erste</span></span></li>
               <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span><strong>Frühzugang</strong> vor dem offiziellen Start</span></li>
             </ul>
             <div class="hero-cta fade d5">
@@ -735,7 +741,7 @@
           <div class="perks-sticky rv">
             <span class="eyebrow">Warum jetzt eintragen?</span>
             <h2>Die Masterclass startet im <span class="ac">Herbst&nbsp;2026</span>. Wer auf der Warteliste steht, hat fünf Vorteile.</h2>
-            <p class="lead">Die Türen öffnen sich zuerst für die Warteliste. Alles, was es zum Start an Vorteilen gibt, gibt es nur hier.</p>
+            <p class="lead">Der wichtigste zuerst: Zum Start gibt es die Masterclass zum Frühbucherpreis. Wer auf der Warteliste steht, erfährt zuerst davon und sichert ihn sich, bevor er ausläuft. Dazu Frühzugang, Sofort-Geschenk und Bonusmaterial.</p>
             <a href="#warteliste" class="btn">
               <span class="lbl">Jetzt kostenlos eintragen</span>
               <span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></span>
@@ -743,13 +749,14 @@
             <p class="honest"><svg viewBox="0 0 24 24"><path d="M12 1 3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg><span>Die Eintragung ist kostenlos und unverbindlich. Ob die Masterclass etwas für dich ist, entscheidest du erst zum Start.</span></p>
           </div>
           <ol class="perk-list">
-            <li class="perk first rv">
+            <li class="perk price rv">
+              <span class="leaf" style="width:150px;height:150px;right:-50px;top:-50px;transform:rotate(25deg)"></span>
               <span class="n">01</span>
-              <div><b>Sofort-Geschenk <span class="pill">Jetzt</span></b><p>Die Übersicht „Die 5 wichtigsten Blutwerte ab&nbsp;40“ als PDF, direkt nach der Eintragung. Kein Warten bis zum Start.</p></div>
+              <div><span class="tagline">Frühbucherpreis</span><b>Als Erste zum günstigsten Startpreis</b><p>Zum Start gibt es die Masterclass zum Frühbucherpreis, und der läuft irgendwann aus. Über die Warteliste erfährst du davon, bevor es öffentlich bekannt wird, und hast so genug Zeit, ihn dir in Ruhe zu sichern.</p></div>
             </li>
-            <li class="perk rv">
+            <li class="perk first rv">
               <span class="n">02</span>
-              <div><b>Der günstigste Preis, den es je geben wird</b><p>Den niedrigsten Preis für diese Masterclass gibt es ausschließlich für die Warteliste. Später wird es diesen Preis nicht mehr geben.</p></div>
+              <div><b>Sofort-Geschenk <span class="pill">Jetzt</span></b><p>Die Übersicht „Die 5 wichtigsten Blutwerte ab&nbsp;40“ als PDF, direkt nach der Eintragung. Kein Warten bis zum Start.</p></div>
             </li>
             <li class="perk rv">
               <span class="n">03</span>
@@ -811,7 +818,7 @@
           </details>
           <details>
             <summary>Muss ich die Masterclass dann kaufen?<span class="plus">+</span></summary>
-            <p>Nein. Du entscheidest erst zum Start, ob die Masterclass etwas für dich ist. Wenn du dabei sein willst, bekommst du über die Warteliste den günstigsten Preis und den Frühzugang.</p>
+            <p>Nein. Du entscheidest erst zum Start, ob die Masterclass etwas für dich ist. Wenn du dabei sein willst, erfährst du über die Warteliste als Erste vom Frühbucherpreis und bekommst den Frühzugang.</p>
           </details>
           <details>
             <summary>Für wen ist die Masterclass gedacht?<span class="plus">+</span></summary>
@@ -844,10 +851,10 @@
           <div class="rv">
             <span class="eyebrow">Warteliste</span>
             <h2>Sichere dir jetzt deinen <span class="ac">Frühzugang</span></h2>
-            <p class="lead">Trag dich kostenlos ein. Das PDF „Die 5 wichtigsten Blutwerte ab&nbsp;40“ bekommst du sofort, und du erfährst als Erste, wenn die Masterclass im Herbst&nbsp;2026 startet.</p>
+            <p class="lead">Trag dich kostenlos ein. Das PDF „Die 5 wichtigsten Blutwerte ab&nbsp;40“ bekommst du sofort, vom Frühbucherpreis erfährst du als Erste, und du bist dabei, bevor die Masterclass im Herbst&nbsp;2026 öffentlich startet.</p>
             <ul class="sum">
               <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>Sofort: Blutwerte-Übersicht als PDF</span></li>
-              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>Zum Start: günstigster Preis und Frühzugang</span></li>
+              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span><strong style="color:#fff">Zum Start: als Erste zum Frühbucherpreis,</strong> bevor er ausläuft</span></li>
               <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>Dazwischen: Bonusmaterial von Jasmin, nur für die Warteliste</span></li>
             </ul>
           </div>
@@ -893,7 +900,7 @@
   <!-- Sticky CTA -->
   <div class="sticky-cta" id="stickyCta" aria-hidden="true">
     <div class="sticky-inner">
-      <div class="txt"><b>Warteliste: Start Herbst&nbsp;2026</b>Sofort-PDF, günstigster Preis, Frühzugang</div>
+      <div class="txt"><b>Warteliste: Start Herbst&nbsp;2026</b>Sofort-PDF · als Erste zum Frühbucherpreis · Frühzugang</div>
       <a href="#warteliste" class="btn">
         <span class="lbl">Jetzt kostenlos eintragen</span>
         <span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></span>
