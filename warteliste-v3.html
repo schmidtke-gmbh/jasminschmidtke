@@ -167,8 +167,12 @@
     .hero-visual { position: relative; max-width: 1080px; margin: 36px auto 0; }
     .hero-visual::before { content: ''; position: absolute; left: 4%; right: 4%; top: 8%; bottom: 0; border-radius: 50%; background: radial-gradient(closest-side, rgba(231,203,180,.6), rgba(231,203,180,0)); }
     .hero-visual img { position: relative; width: 100%; }
-    .perks { display: grid; grid-template-columns: repeat(3, auto); justify-content: center; gap: 12px 28px; margin: 26px auto 0; padding-top: 22px; border-top: 1px solid var(--line); max-width: 700px; text-align: left; }
-    .perks li { display: flex; align-items: center; gap: 11px; }
+    .perkbox { position: relative; max-width: 740px; margin: 34px auto 0; background: rgba(255,255,255,.92); border: 1px solid var(--line); border-radius: 22px; box-shadow: 0 20px 46px rgba(80,55,40,.09); padding: 28px 8px 20px; }
+    .perk-h { position: absolute; left: 50%; top: 0; transform: translate(-50%, -50%); white-space: nowrap; background: var(--dark); color: #fff; font-size: 11.5px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; border-radius: 30px; padding: 6px 16px; }
+    .perks { display: grid; grid-template-columns: repeat(3, 1fr); text-align: left; }
+    .perks li { display: flex; align-items: center; justify-content: center; gap: 12px; padding: 2px 14px; position: relative; }
+    .perks li + li::before { content: ''; position: absolute; left: 0; top: 4px; bottom: 4px; width: 1px; background: var(--line); }
+    .perks .pk { display: none; }
     .pi { width: 46px; height: 46px; border-radius: 12px; flex: none; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 18px rgba(80,55,40,.14); background: #EADFD3; }
     .pi img { width: 100%; height: 100%; object-fit: cover; }
     .pi.pdf img { width: 58%; height: auto; transform: rotate(-6deg); border-radius: 2px; box-shadow: 0 4px 8px rgba(80,55,40,.3); }
@@ -366,7 +370,7 @@
     /* ───── Bestandteile, visualisiert ───── */
     .kits { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
     .kc { background: var(--paper); border: 1px solid var(--line); border-radius: 22px; padding: 12px 12px 26px; display: flex; flex-direction: column; }
-    .kc .kv { height: 200px; border-radius: 15px; background: linear-gradient(160deg, #F7F1EB, #EDE2D6); position: relative; overflow: hidden; margin-bottom: 20px; display: flex; align-items: center; justify-content: center; }
+    .kc .kv { aspect-ratio: 10 / 7; border-radius: 15px; background: linear-gradient(160deg, #F7F1EB, #EDE2D6); position: relative; overflow: hidden; margin-bottom: 20px; display: flex; align-items: center; justify-content: center; }
     .kc-lbl { display: inline-flex; align-self: flex-start; align-items: baseline; gap: 6px; margin: 0 10px 10px; font-size: 12px; font-weight: 500; color: var(--muted); background: var(--cream2); border-radius: 30px; padding: 3px 12px; }
     .kc-lbl i { font-family: 'Playfair Display', Georgia, serif; font-style: italic; font-size: 15px; color: var(--accent-deep); }
     .kc-lbl.bonus { background: var(--red); color: #fff; font-weight: 600; }
@@ -374,70 +378,11 @@
     .kc h3 strong { font-weight: 600; }
     .kc p { font-size: 14.5px; color: var(--body); margin: 0 10px; }
     .kc.wide { grid-column: 1 / -1; display: grid; grid-template-columns: 1.2fr 1fr; gap: 40px; align-items: center; padding: 14px 44px 14px 14px; }
-    .kc.wide .kv { height: 300px; margin: 0; }
+    .kc.wide .kv { aspect-ratio: 1200 / 660; margin: 0; }
     .kc.wide h3 { font-size: 30px; line-height: 1.2; margin-bottom: 12px; }
     .kc.wide p { font-size: 16px; }
 
-    .kv-course { display: grid !important; grid-template-columns: 1fr 1fr; gap: 14px; padding: 18px; align-items: stretch !important; }
-    .kv-course .panel { background: #fff; border-radius: 12px; padding: 14px; box-shadow: 0 10px 24px rgba(80,55,40,.08); display: flex; flex-direction: column; gap: 6px; overflow: hidden; }
-    .kv-course .panel small { font-size: 10px; letter-spacing: .14em; font-weight: 600; color: var(--muted); margin-bottom: 2px; }
-    .kv-course .lr { display: flex; align-items: center; gap: 9px; font-size: 12px; line-height: 1.3; color: var(--ink); padding: 6px 8px; border-radius: 9px; border: 1px solid var(--line); white-space: nowrap; }
-    .kv-course .lr i { width: 20px; height: 20px; border-radius: 50%; background: var(--cream2); display: flex; align-items: center; justify-content: center; flex: none; color: var(--accent-deep); }
-    .kv-course .lr i svg { width: 8px; height: 8px; margin-left: 1px; }
-    .kv-course .lr.on { background: var(--dark); color: #fff; border-color: var(--dark); }
-    .kv-course .lr.on i { background: var(--red); color: #fff; }
-    .kv-course .lr.blur { filter: blur(2.5px); opacity: .7; }
-    .kv-course .vid { position: relative; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 24px rgba(80,55,40,.14); }
-    .kv-course .vid img { width: 100%; height: 100%; object-fit: cover; object-position: center 22%; }
-    .mp { position: absolute; left: 50%; top: 50%; width: 46px; height: 46px; margin: -23px 0 0 -23px; border-radius: 50%; background: rgba(255,255,255,.93); display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 20px rgba(0,0,0,.2); color: var(--ink); }
-    .mp svg { width: 15px; height: 15px; margin-left: 3px; }
-    .dur { position: absolute; right: 8px; bottom: 8px; background: rgba(45,43,48,.78); color: #fff; font-size: 10.5px; font-weight: 500; padding: 2px 7px; border-radius: 5px; }
-
-    .kv-live { background: linear-gradient(160deg, #3B3339, #2D2B30) !important; flex-direction: column; gap: 10px; }
-    .kv-live .av { width: 84px; height: 84px; border-radius: 50%; overflow: hidden; border: 3px solid #fff; animation: livering 2.2s ease-out infinite; }
-    .kv-live .av img { width: 100%; height: 100%; object-fit: cover; object-position: center 12%; }
-    @keyframes livering { 0% { box-shadow: 0 0 0 0 rgba(215,53,79,.65); } 80%, 100% { box-shadow: 0 0 0 18px rgba(215,53,79,0); } }
-    .kv-live .nm { color: #fff; font-size: 13px; font-weight: 600; line-height: 1.2; text-align: center; }
-    .kv-live .nm small { display: block; font-weight: 400; font-size: 11px; color: rgba(255,255,255,.65); }
-    .kv-live .badge-live { left: 12px; top: 12px; }
-    .kv-live .q { position: absolute; right: 14px; top: 18px; background: #fff; color: var(--ink); font-size: 11px; font-weight: 500; padding: 6px 11px; border-radius: 12px 12px 3px 12px; }
-
-    .kv-comm { flex-direction: column; gap: 9px; padding: 18px; align-items: stretch !important; }
-    .bub { display: flex; gap: 9px; align-items: center; background: #fff; border-radius: 14px 14px 14px 4px; padding: 10px 12px; width: 80%; box-shadow: 0 8px 18px rgba(80,55,40,.07); }
-    .bub.r { align-self: flex-end; border-radius: 14px 14px 4px 14px; background: #EEF2EA; }
-    .bub i { width: 26px; height: 26px; border-radius: 50%; flex: none; }
-    .bub span { flex: 1; display: flex; flex-direction: column; gap: 6px; }
-    .bub em { display: block; height: 6px; border-radius: 4px; background: #E9E0D7; }
-    .bub.r em { background: rgba(107,140,90,.3); }
-    .bub svg { width: 16px; height: 16px; color: var(--red); flex: none; }
-
-    .kv-lib img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 58%; }
-    .kv-lib .chips { position: absolute; left: 12px; right: 12px; bottom: 12px; display: flex; flex-wrap: wrap; gap: 6px; }
-    .kv-lib .chips span { background: rgba(255,255,255,.94); font-size: 11.5px; font-weight: 500; padding: 4px 10px; border-radius: 30px; color: var(--accent-text); }
-
-    .kv-print .sh { position: absolute; width: 112px; height: 146px; background: #fff; border-radius: 6px; box-shadow: 0 12px 26px rgba(80,55,40,.16); }
-    .kv-print .s1 { transform: translateX(-52px) rotate(-10deg); background: #FBF6F1; }
-    .kv-print .s2 { transform: translateX(52px) rotate(8deg); background: #FBF6F1; }
-    .kv-print .s3 { transform: rotate(-2deg); padding: 14px 12px; display: flex; flex-direction: column; gap: 7px; }
-    .kv-print .s3 small { font-size: 8px; letter-spacing: .14em; font-weight: 600; color: var(--muted); }
-    .kv-print .s3 b { font-family: 'Playfair Display', Georgia, serif; font-size: 13px; font-weight: 600; line-height: 1.15; margin-bottom: 2px; }
-    .kv-print .cbr { display: flex; align-items: center; gap: 6px; }
-    .kv-print .cbr i { width: 10px; height: 10px; border-radius: 3px; border: 1.5px solid var(--line); flex: none; }
-    .kv-print .cbr i.on { background: var(--green); border-color: var(--green); }
-    .kv-print .cbr em { display: block; height: 5px; border-radius: 3px; background: #EFE7DF; flex: 1; }
-
-    .kitbox { width: 128px; height: 150px; background: #fff; border-radius: 6px; overflow: hidden; box-shadow: 0 16px 30px rgba(80,55,40,.2); transform: rotate(-4deg); }
-    .kitbox .band { background: var(--red); color: #fff; padding: 10px 12px 8px; }
-    .kitbox .band small { display: block; font-size: 7px; letter-spacing: .16em; text-transform: uppercase; opacity: .85; }
-    .kitbox .band b { display: block; font-family: 'Playfair Display', Georgia, serif; font-weight: 600; font-size: 16px; line-height: 1.1; }
-    .kitbox .in { padding: 10px 12px; }
-    .kitbox .in svg { width: 34px; height: 20px; color: var(--red); margin-bottom: 6px; }
-    .kitbox .in em { display: block; height: 5px; border-radius: 3px; background: #EFE7DF; margin-bottom: 5px; }
-
-    .book2 { width: 114px; height: 156px; border-radius: 3px 8px 8px 3px; background: linear-gradient(160deg, #433A40, #2D2B30 60%); box-shadow: inset 7px 0 10px rgba(0,0,0,.3), 6px 6px 0 #EFE7DF, 16px 18px 30px rgba(80,55,40,.25); transform: rotate(5deg); padding: 16px 14px; color: #fff; position: relative; }
-    .book2 svg { width: 20px; height: 20px; margin-bottom: 26px; }
-    .book2 small { display: block; font-size: 7.5px; letter-spacing: .16em; text-transform: uppercase; color: var(--sand); margin-bottom: 4px; }
-    .book2 b { display: block; font-family: 'Playfair Display', Georgia, serif; font-style: italic; font-weight: 500; font-size: 16px; line-height: 1.12; }
+    .kc .kv img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 
     /* ───── Persönlich ───── */
     .about { display: grid; grid-template-columns: .75fr 1.25fr; gap: 80px; align-items: center; }
@@ -543,7 +488,7 @@
       .rv { opacity: 1; transform: none; transition: none; }
       .hero-bg video, .final .bg video { display: none; }
       .hero-bg img { display: block; }
-      .anim *, .topbar .live-dot, .badge-live i, .btn.pulse, .btn.pulse .arr svg, .kv-live .av, .mb-note .dot { animation: none !important; }
+      .anim *, .topbar .live-dot, .badge-live i, .btn.pulse, .btn.pulse .arr svg, .mb-note .dot { animation: none !important; }
     }
 
     /* ───── Responsive ───── */
@@ -562,8 +507,12 @@
       .logo { padding-bottom: 28px; }
       .hero { padding-bottom: 24px; }
       .hero-visual { margin: 28px -14px 0; }
-      .perks { grid-template-columns: 1fr; justify-content: stretch; max-width: 300px; gap: 12px; }
-      .perks li { gap: 14px; }
+      .perkbox { max-width: 360px; padding: 24px 16px 6px; }
+      .perk-h { font-size: 10.5px; letter-spacing: .08em; padding: 6px 14px; }
+      .perks { grid-template-columns: 1fr; }
+      .perks li { justify-content: flex-start; gap: 14px; padding: 12px 4px; }
+      .perks li + li::before { left: 4px; right: 4px; top: 0; bottom: auto; width: auto; height: 1px; }
+      .perks .pk { display: inline-flex; margin-left: auto; }
       .stat-sec { padding-top: 32px; }
       .head { margin-bottom: 44px; }
       .probs { grid-template-columns: 1fr; gap: 14px; max-width: 560px; margin: 0 auto; }
@@ -604,8 +553,6 @@
       .lcard .vis { aspect-ratio: 16 / 10; }
       .ls-top { margin-bottom: 12px; }
       .kits { grid-template-columns: 1fr; max-width: 460px; margin: 0 auto; }
-      .kc .kv { height: 190px; }
-      .kc.wide .kv { height: 250px; }
       .kc.wide h3 { font-size: 25px; }
     }
     @media (max-width: 600px) {
@@ -629,8 +576,6 @@
       form .btn { justify-content: center; text-align: center; padding: 14px 10px; }
       form .btn .t b { font-size: 15px; }
       form .btn .t small { font-size: 11.5px; }
-      .kv-course { grid-template-columns: 1fr; }
-      .kv-course .vid { display: none; }
     }
     @media (max-width: 380px) {
       .topbar .sm { font-size: 12px; }
@@ -681,11 +626,14 @@
               <span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg></span>
             </a>
             <p class="micro">Kostenlos · unverbindlich · jederzeit abbestellbar</p>
-            <ul class="perks" aria-label="Deine Vorteile auf der Warteliste">
-              <li><span class="pi pdf"><img src="5-blutwerte-cover.jpg" width="991" height="1400" alt="" /></span><span><b>Blutwerte-PDF</b><small>sofort gratis</small></span></li>
-              <li><span class="pi vid"><img src="a7408939.jpg" width="1600" height="1067" alt="" /><i><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15l13-7.5z"/></svg></i></span><span><b>2 Vorab-Videos</b><small>exklusiv vorab</small></span></li>
-              <li><span class="pi tk">72h</span><span><b>Early-Bird-Preis</b><small>nur Warteliste</small></span></li>
-            </ul>
+            <div class="perkbox">
+              <p class="perk-h">Das bekommst du auf der Warteliste</p>
+              <ul class="perks">
+                <li><span class="pi pdf"><img src="5-blutwerte-cover.jpg" width="991" height="1400" alt="" /></span><span><b>Blutwerte-PDF</b><small>sofort gratis</small></span><span class="pk ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span></li>
+                <li><span class="pi vid"><img src="a7408939.jpg" width="1600" height="1067" alt="" /><i><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15l13-7.5z"/></svg></i></span><span><b>2 Vorab-Videos</b><small>exklusiv vorab</small></span><span class="pk ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span></li>
+                <li><span class="pi tk">72h</span><span><b>Early-Bird-Preis</b><small>nur Warteliste</small></span><span class="pk ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span></li>
+              </ul>
+            </div>
           </div>
           <figure class="hero-visual">
             <img src="masterclass-mockup-v3.webp" width="2400" height="1474" alt="Die Masterclass von Jasmin Schmidtke auf Laptop, Tablet und Smartphone, dazu Workbook, Druck-Sets und Notfall-Kit" fetchpriority="high" />
@@ -1075,18 +1023,7 @@
         </div>
         <div class="kits">
           <article class="kc wide rv">
-            <div class="kv kv-course" aria-hidden="true">
-              <div class="panel">
-                <small>DEINE MODULE</small>
-                <span class="lr"><i><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15l13-7.5z"/></svg></i>Grundlage neu</span>
-                <span class="lr"><i><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15l13-7.5z"/></svg></i>Das Zahnrad</span>
-                <span class="lr"><i><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15l13-7.5z"/></svg></i>Blutzucker und dein Frühstück</span>
-                <span class="lr on"><i><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15l13-7.5z"/></svg></i>Blutwerte verstehen</span>
-                <span class="lr blur"><i><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15l13-7.5z"/></svg></i>Deine Hormone verstehen</span>
-                <span class="lr blur"><i><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15l13-7.5z"/></svg></i>Dein Krafttraining</span>
-              </div>
-              <div class="vid"><img src="jasmin-haut-haare.jpg" width="900" height="600" alt="" loading="lazy" /><span class="mp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15l13-7.5z"/></svg></span><span class="dur">11:48</span></div>
-            </div>
+            <div class="kv"><img src="bestandteil-videos.webp" width="1200" height="660" alt="Kursbereich mit Modulen und Videos auf Laptop und Smartphone" loading="lazy" /></div>
             <div class="txt">
               <span class="kc-lbl">Bestandteil <i>01</i></span>
               <h3><strong>75+ Video-Lektionen</strong> in 16&nbsp;Modulen</h3>
@@ -1094,58 +1031,37 @@
             </div>
           </article>
           <article class="kc rv">
-            <div class="kv kv-live" aria-hidden="true">
-              <span class="badge-live"><i></i>LIVE</span>
-              <span class="q">Deine Frage?</span>
-              <span class="av"><img src="jasmin.jpg" width="933" height="1400" alt="" loading="lazy" /></span>
-              <span class="nm">Jasmin Schmidtke<small>Heilpraktikerin</small></span>
-            </div>
+            <div class="kv"><img src="bestandteil-live-calls.webp" width="800" height="560" alt="Q&amp;A-Live-Call mit Jasmin auf Zoom" loading="lazy" /></div>
             <span class="kc-lbl">Bestandteil <i>02</i></span>
             <h3><strong>Q&amp;A-Live-Calls</strong> mit&nbsp;Jasmin</h3>
             <p>Regelmäßig und passend zum Modul. <strong>Fragen stellen statt grübeln.</strong></p>
           </article>
           <article class="kc rv">
-            <div class="kv kv-comm" aria-hidden="true">
-              <div class="bub"><i style="background:#E7CBB4"></i><span><em style="width:86%"></em><em style="width:58%"></em></span></div>
-              <div class="bub r"><i style="background:#BFA492"></i><span><em style="width:74%"></em><em style="width:46%"></em></span><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21C7 17 3 13.5 3 9.5A5.5 5.5 0 0 1 12 5.7 5.5 5.5 0 0 1 21 9.5c0 4-4 7.5-9 11.5z"/></svg></div>
-              <div class="bub"><i style="background:#D9C7B8"></i><span><em style="width:66%"></em></span></div>
-            </div>
+            <div class="kv"><img src="bestandteil-community.webp" width="800" height="560" alt="Community mit Räumen für Fragen, Wins und Austausch" loading="lazy" /></div>
             <span class="kc-lbl">Bestandteil <i>03</i></span>
             <h3><strong>Community</strong> für&nbsp;Austausch</h3>
             <p>Mit Frauen, die denselben Weg gehen. <strong>Gemeinsam ist es leichter.</strong></p>
           </article>
           <article class="kc rv">
-            <div class="kv kv-lib" aria-hidden="true">
-              <img src="blutanalyse-vial.jpg" width="1600" height="900" alt="" loading="lazy" />
-              <div class="chips"><span>Eisen</span><span>Schilddrüse</span><span>Stoffwechsel</span><span>Entzündung</span><span>Vitamine</span></div>
-            </div>
+            <div class="kv"><img src="bestandteil-werte-bibliothek.webp" width="800" height="560" alt="Werte-Bibliothek auf dem Tablet" loading="lazy" /></div>
             <span class="kc-lbl">Bestandteil <i>04</i></span>
             <h3><strong>Werte-Bibliothek</strong> ab&nbsp;Tag&nbsp;1</h3>
             <p>Deine Laborwerte verständlich erklärt. <strong>Immer griffbereit.</strong></p>
           </article>
           <article class="kc rv">
-            <div class="kv kv-print" aria-hidden="true">
-              <div class="sh s1"></div><div class="sh s2"></div>
-              <div class="sh s3"><small>DRUCK-SET</small><b>Mein Wochenplan</b>
-                <span class="cbr"><i class="on"></i><em></em></span><span class="cbr"><i class="on"></i><em style="flex:.7"></em></span><span class="cbr"><i></i><em></em></span><span class="cbr"><i></i><em style="flex:.6"></em></span>
-              </div>
-            </div>
+            <div class="kv"><img src="bestandteil-druck-sets.webp" width="800" height="560" alt="Druck-Sets: Frühstücks-Protokoll, Abendritual, Werte-Tracker" loading="lazy" /></div>
             <span class="kc-lbl">Bestandteil <i>05</i></span>
             <h3><strong>Druck-Sets</strong> zu jeder&nbsp;Woche</h3>
             <p>Checklisten, Pläne und Karten als PDF. <strong>Damit du direkt umsetzt.</strong></p>
           </article>
           <article class="kc rv">
-            <div class="kv kv-kit" aria-hidden="true">
-              <div class="kitbox"><div class="band"><small>Immer griffbereit</small><b>Notfall-Kit</b></div><div class="in"><svg viewBox="0 0 34 20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 11h7l3-7 5 13 4-9 2 3h11"/></svg><em></em><em style="width:70%"></em></div></div>
-            </div>
+            <div class="kv"><img src="bestandteil-notfall-kit.webp" width="800" height="560" alt="Notfall-Kit als Box und in der App" loading="lazy" /></div>
             <span class="kc-lbl">Bestandteil <i>06</i></span>
             <h3><strong>Notfall-Kit</strong> für schwere&nbsp;Tage</h3>
             <p>Klare Schritte, <strong>wenn sich gerade nichts bewegt</strong>.</p>
           </article>
           <article class="kc rv">
-            <div class="kv kv-book" aria-hidden="true">
-              <div class="book2"><svg viewBox="0 0 200 200" aria-hidden="true"><circle cx="100" cy="100" r="82" fill="none" stroke="#E7CBB4" stroke-width="12"/><path d="M 18,100 C 45,118 65,118 100,95 C 135,72 155,72 182,100" fill="none" stroke="#E7CBB4" stroke-width="8" stroke-linecap="round"/></svg><small>Bonus</small><b>Dein 10-Jahres-Workbook</b></div>
-            </div>
+            <div class="kv"><img src="bestandteil-workbook.webp" width="800" height="560" alt="10-Jahres-Workbook" loading="lazy" /></div>
             <span class="kc-lbl bonus">Bonus</span>
             <h3><strong>10-Jahres-Workbook</strong></h3>
             <p>Dein Plan zum Dranbleiben, <strong>weit über die Masterclass hinaus</strong>.</p>
