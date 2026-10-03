@@ -16,7 +16,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Warteliste | Die Masterclass für Frauen ab 40 von Jasmin Schmidtke</title>
-  <meta name="description" content="Trag dich kostenlos auf die Warteliste ein: Blutwerte-PDF sofort, 2 exklusive Vorab-Videos, Einladung zum Live-Launch-Call und 72 Stunden Early-Bird-Preis mit Launch-Boni, nur für die Warteliste." />
+  <meta name="description" content="Ständig müde und du nimmst nicht mehr ab? Deine Blutwerte kennen die Antwort. Trag dich kostenlos auf die Warteliste ein: Blutwerte-PDF sofort, 2 Vorab-Videos und 72 Stunden Early-Bird-Preis." />
   <meta name="robots" content="noindex, follow" />
   <meta name="author" content="Jasmin Schmidtke" />
 
@@ -27,10 +27,14 @@
   <meta name="theme-color" content="#D7354F" />
 
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Die Masterclass für Frauen ab 40 | Warteliste" />
-  <meta property="og:description" content="Blutwerte-PDF sofort, 2 exklusive Vorab-Videos und 72 Stunden Early-Bird-Preis mit Launch-Boni. Nur für die Warteliste." />
+  <meta property="og:title" content="Warum bist du ständig müde und nimmst nicht mehr ab?" />
+  <meta property="og:description" content="Deine Blutwerte kennen die Antwort. Die Masterclass für Frauen ab 40 von Heilpraktikerin Jasmin Schmidtke. Jetzt auf die Warteliste." />
   <meta property="og:url" content="https://www.jasminschmidtke.de/warteliste.html" />
-  <meta property="og:image" content="https://www.jasminschmidtke.de/jasmin-stoffwechsel.jpg" />
+  <meta property="og:image" content="https://www.jasminschmidtke.de/og-warteliste.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Warum bist du ständig müde und nimmst nicht mehr ab? Die Masterclass von Jasmin Schmidtke" />
+  <meta name="twitter:card" content="summary_large_image" />
   <meta property="og:locale" content="de_DE" />
 
   <!-- Meta Pixel (Facebook), von Cookiebot blockiert bis Marketing-Consent -->
@@ -223,7 +227,12 @@
     .vp { width: 26px; height: 26px; border-radius: 50%; background: var(--cream2); display: flex; align-items: center; justify-content: center; color: var(--ink); }
     .vp svg { width: 9px; height: 9px; margin-left: 2px; }
 
-    /* Zoom-Live-Call */
+    /* Live-Webinar: Studiofoto */
+    .v-live img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 54% 32%; }
+    .v-live::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(45,43,48,0) 55%, rgba(45,43,48,.55)); }
+    .v-live .badge-live { left: 10px; top: 10px; z-index: 2; }
+    .lv-tag { position: absolute; z-index: 2; left: 10px; bottom: 10px; background: rgba(255,255,255,.94); color: var(--ink); font-size: 11px; font-weight: 600; border-radius: 30px; padding: 4px 11px; }
+    /* Zoom-Live-Call (nicht mehr genutzt) */
     .v-zoom { background: var(--dark) !important; padding: 10px; display: grid; grid-template-columns: 1fr 30%; grid-template-rows: 1fr auto; gap: 6px; }
     .v-zoom .main { position: relative; border-radius: 9px; overflow: hidden; grid-row: 1; }
     .v-zoom .main img { width: 100%; height: 100%; object-fit: cover; object-position: center 18%; }
@@ -625,6 +634,13 @@
       .pt-ic { width: 34px; height: 34px; border-radius: 10px; }
       .pt-ic svg { width: 17px; height: 17px; }
     }
+
+    /* Header A: Antwortzeile unter der Warum-Frage */
+    .hero h1 .h1-a { display: block; font-size: .6em; line-height: 1.25; font-style: italic; color: var(--accent-deep); margin-top: 16px; letter-spacing: 0; }
+    .hero h1 .h1-a b { font-weight: 600; color: var(--ink); font-style: italic; }
+    @media (max-width: 600px) { .hero h1 .h1-a { font-size: .64em; margin-top: 12px; } }
+    /* Problem-Karten: 4 Karten im 2x2-Raster */
+    @media (min-width: 901px) { .probs.p4 { grid-template-columns: repeat(2, 1fr); max-width: 900px; margin: 0 auto; } }
   </style>
 </head>
 <body>
@@ -654,9 +670,9 @@
       <div class="wrap">
         <div class="hero-grid">
           <div class="hero-txt">
-            <span class="pill"><span class="dot"></span>Warteliste geöffnet · Launch im Herbst&nbsp;2026</span>
-            <h1>Verstehe deine Blutwerte. Und nutze sie<br class="br-d" /> für&nbsp;mehr <span class="ac">Energie und Ausstrahlung</span> ab&nbsp;40.</h1>
-            <p class="lead">Die neue Video-Masterclass von Heilpraktikerin Jasmin&nbsp;Schmidtke: Du lernst, was deine <strong>Blutwerte über Stoffwechsel und Hormone</strong> verraten, und kommst Schritt für Schritt wieder in&nbsp;Balance.</p>
+            <span class="pill"><span class="dot"></span>Für Frauen ab&nbsp;40 &amp; in den Wechseljahren</span>
+            <h1>Warum bist du <span class="ac">ständig&nbsp;müde</span><br class="br-d" /> und nimmst nicht mehr&nbsp;ab?<span class="h1-a">Deine <b>Blutwerte</b> kennen die&nbsp;Antwort.</span></h1>
+            <p class="lead">In der neuen Video-Masterclass zeigt dir Heilpraktikerin Jasmin&nbsp;Schmidtke, wie du deine Werte liest und <strong>verstehst, was in deinem Körper gerade&nbsp;passiert</strong>.</p>
             <a href="#warteliste" class="btn pulse js-open">
               <span class="t"><b>Benachrichtige mich zum Launch</b><small>und sichere dir den einmaligen Early-Bird-Preis</small></span>
               <span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg></span>
@@ -722,33 +738,25 @@
           <li class="ls hl rv">
             <div class="ls-top"><span class="ls-n">2</span><span class="ls-date" data-when="live">Termin folgt per Mail</span></div>
             <article class="lcard">
-              <div class="vis v-zoom">
-                <div class="main"><img src="jasmin-du-selbst.jpg" width="900" height="600" alt="" loading="lazy" /><span class="badge-live"><i></i>LIVE</span><span class="nm">Jasmin Schmidtke</span></div>
-                <div class="side" aria-hidden="true">
-                  <i><svg viewBox="0 0 40 30" fill="currentColor"><circle cx="20" cy="13" r="7"/><path d="M6 30c0-8 6.3-12 14-12s14 4 14 12z"/></svg></i>
-                  <i><svg viewBox="0 0 40 30" fill="currentColor"><circle cx="20" cy="13" r="7"/><path d="M6 30c0-8 6.3-12 14-12s14 4 14 12z"/></svg></i>
-                  <i><svg viewBox="0 0 40 30" fill="currentColor"><circle cx="20" cy="13" r="7"/><path d="M6 30c0-8 6.3-12 14-12s14 4 14 12z"/></svg></i>
-                </div>
-                <div class="bar" aria-hidden="true">
-                  <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg></span>
-                  <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="13" height="12" rx="2"/><path d="M16 10l5-3v10l-5-3"/></svg></span>
-                  <span class="end"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M4 14c4.5-4 11.5-4 16 0l-2 3-3-1v-2.5a9 9 0 0 0-6 0V16l-3 1z"/></svg></span>
-                </div>
+              <div class="vis v-live">
+                <img src="jasmin-live-webinar.jpg" width="900" height="817" alt="Jasmin Schmidtke live vor der Kamera" loading="lazy" />
+                <span class="badge-live"><i></i>LIVE</span>
+                <span class="lv-tag">Live-Webinar auf Zoom</span>
               </div>
               <div class="body">
-                <span class="excl"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="6"/></svg>Live auf Zoom</span>
-                <h3>Live&#8209;Launch&#8209;Call mit&nbsp;Jasmin</h3>
+                <span class="excl"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="6"/></svg>Live-Launch-Webinar</span>
+                <h3>Warum du ständig müde bist und nicht mehr&nbsp;abnimmst</h3>
                 <div class="cd" data-cd hidden><span><b data-u="d">0</b>Tage</span><span><b data-u="h">00</b>Std.</span><span><b data-u="m">00</b>Min.</span><span><b data-u="s">00</b>Sek.</span></div>
                 <ul class="checks">
-                  <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>Jasmin stellt die Masterclass vor</span></li>
-                  <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>Deine Fragen, live beantwortet</span></li>
+                  <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>Was deine Blutwerte damit zu tun haben</span></li>
+                  <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>Vorstellung der Masterclass und deine Fragen</span></li>
                   <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>Early-Bird-Preis und Boni werden enthüllt</span></li>
                 </ul>
               </div>
             </article>
           </li>
           <li class="ls rv">
-            <div class="ls-top"><span class="ls-n">3</span><span class="ls-date" data-when="earlybird">Direkt nach dem Live-Call</span></div>
+            <div class="ls-top"><span class="ls-n">3</span><span class="ls-date" data-when="earlybird">Direkt danach</span></div>
             <article class="lcard">
               <div class="vis v-ticket">
                 <div class="ticket" aria-hidden="true">
@@ -799,21 +807,22 @@
       <div class="wrap">
         <div class="head rv">
           <span class="pill">Kennst du das?</span>
-          <h2>Für Frauen ab&nbsp;40, die ihr Wohlbefinden <span class="ac">selbst&nbsp;in&nbsp;die&nbsp;Hand</span> nehmen&nbsp;wollen.</h2>
+          <h2>Für Frauen ab&nbsp;40 und in&nbsp;den&nbsp;Wechseljahren, die <span class="ac">endlich&nbsp;verstehen</span> wollen, was los&nbsp;ist.</h2>
         </div>
         <p class="lbl-row rv"><span class="prob-lbl">Das Problem</span></p>
-        <ul class="probs">
-          <li class="prob rv"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></span><b>Du bist müde, obwohl du genug&nbsp;schläfst.</b><p>Kaffee hilft, aber nur kurz. Du willst wissen, <strong>woher die Erschöpfung wirklich kommt</strong>.</p></li>
-          <li class="prob rv"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l3-8 4 16 3-8h4"/></svg></span><b>Dein Körper reagiert nicht mehr wie&nbsp;früher.</b><p>Was jahrelang funktioniert hat, bringt heute nichts. <strong>Obwohl du weniger isst und mehr tust.</strong></p></li>
-          <li class="prob rv"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6v5l4 8a3 3 0 0 1-2.7 4.3H7.7A3 3 0 0 1 5 16l4-8V3z"/><path d="M8 14h8"/></svg></span><b>Beim Arzt ist alles unauffällig.</b><p>Alle Werte im Normbereich, <strong>nur du fühlst dich nicht normal</strong>.</p></li>
+        <ul class="probs p4">
+          <li class="prob rv"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></span><b>Ständig müde, obwohl du genug&nbsp;schläfst.</b><p>Deine Energie ist <strong>unberechenbar</strong>. Kaffee hilft, aber nur&nbsp;kurz.</p></li>
+          <li class="prob rv"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l3-8 4 16 3-8h4"/></svg></span><b>Das Gewicht bewegt sich nicht&nbsp;mehr.</b><p>Obwohl du weniger isst und mehr tust. <strong>Dein Körper reagiert nicht mehr wie&nbsp;früher.</strong></p></li>
+          <li class="prob rv"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="9" width="18" height="6" rx="3" transform="rotate(-45 12 12)"/><path d="M9.2 9.2l5.6 5.6"/></svg></span><b>Du hast schon so viel&nbsp;probiert.</b><p>Nahrungsergänzung, Diäten, mehr Sport. <strong>Nichts hat dauerhaft&nbsp;geholfen.</strong></p></li>
+          <li class="prob rv"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg></span><b>Du fühlst dich nicht mehr wie du&nbsp;selbst.</b><p>Gereizt, antriebslos, wie im Nebel. <strong>Und beim Arzt ist alles&nbsp;unauffällig.</strong></p></li>
         </ul>
         <div class="turn rv" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v16"/><path d="M6 14l6 6 6-6"/></svg></div>
         <div class="sol rv">
           <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21C7 17 3 13.5 3 9.5A5.5 5.5 0 0 1 12 5.7 5.5 5.5 0 0 1 21 9.5c0 4-4 7.5-9 11.5z"/></svg></span>
           <div>
             <span class="sol-lbl">Die Lösung</span>
-            <b>Deine Blutwerte verstehen und gezielt&nbsp;handeln.</b>
-            <p>Kein weiteres Programm zum Abarbeiten. In der Masterclass lernst du, <strong>was dein Körper wirklich braucht</strong>, und setzt es Schritt für Schritt um.</p>
+            <b>Deine Blutwerte zeigen, wo&nbsp;du&nbsp;ansetzen&nbsp;kannst.</b>
+            <p>Statt noch ein Mittel oder noch eine Diät auszuprobieren, lernst du in der Masterclass, deine Werte zu lesen und <strong>gezielt dort anzusetzen, wo es bei dir hakt</strong>.</p>
           </div>
           <a href="#warteliste" class="btn pulse js-open">
               <span class="t"><b>Benachrichtige mich zum Launch</b><small>und sichere dir den einmaligen Early-Bird-Preis</small></span>
@@ -861,7 +870,7 @@
               </svg></div>
             <div class="st-txt">
               <p class="wk">Woche 2<span>Blutzucker und dein Frühstück</span></p>
-              <h3>Deine Energie bleibt stabil, statt am Vormittag&nbsp;abzustürzen.</h3>
+              <h3>Warum deine Energie am Vormittag&nbsp;abstürzt.</h3>
               <ul class="pts"><li><span class="pt-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l3-8 4 16 3-8h4"/></svg></span><span>Du verstehst <strong>deine Blutzuckerkurve</strong>.</span></li><li><span class="pt-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h13v5a6 6 0 0 1-6 6h-1a6 6 0 0 1-6-6z"/><path d="M17 9h2a2 2 0 0 1 0 4h-2"/></svg></span><span>Du machst <strong>dein Frühstück zum Hebel</strong>.</span></li><li><span class="pt-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></svg></span><span>Du lernst, was <strong>Heißhunger und Energietiefs</strong> mit der Kurve zu tun haben.</span></li></ul>
             </div>
           </li>
@@ -888,7 +897,7 @@
               </svg></div>
             <div class="st-txt">
               <p class="wk">Woche 3 und 4<span>Stress und deine Grenzen, Dein Schlaf</span></p>
-              <h3>Wieder zur Ruhe kommen. Am Tag und in der&nbsp;Nacht.</h3>
+              <h3>Warum du müde&nbsp;bist und trotzdem nicht abschalten&nbsp;kannst.</h3>
               <ul class="pts"><li><span class="pt-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.5 9-8 10-4.5-1-8-5-8-10V6z"/></svg></span><span>Du verstehst, <strong>was Cortisol mit deinen Grenzen macht</strong>.</span></li><li><span class="pt-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h11a3 3 0 1 0-3-3M3 12h15a3 3 0 1 1-3 3M3 16h7"/></svg></span><span>Du <strong>baust Stress mit Strategie ab</strong> statt mit Durchhalten.</span></li><li><span class="pt-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></span><span>Du entwickelst <strong>ein Abendritual, das dich erholt</strong>.</span></li></ul>
             </div>
           </li>
@@ -939,7 +948,7 @@
               </svg></div>
             <div class="st-txt">
               <p class="wk">Woche 8<span>Deine Hormone verstehen</span></p>
-              <h3>Du verstehst, was deine Hormone ab 40&nbsp;brauchen.</h3>
+              <h3>Was deine Hormone in den Wechseljahren jetzt&nbsp;brauchen.</h3>
               <ul class="pts"><li><span class="pt-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9c2-3 4-3 6 0s4 3 6 0 4-3 6 0"/><path d="M2 15c2-3 4-3 6 0s4 3 6 0 4-3 6 0"/></svg></span><span>Du lernst, <strong>wie Hormone wirken</strong> und zusammenspielen.</span></li><li><span class="pt-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-1 1"/><path d="M14 11a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7l1-1"/></svg></span><span>Du erkennst <strong>den Zusammenhang mit deinen Blutwerten</strong>.</span></li><li><span class="pt-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/></svg></span><span>Du gehst <strong>gut vorbereitet ins Arztgespräch</strong>.</span></li></ul>
             </div>
           </li>
@@ -974,7 +983,7 @@
               </svg></div>
             <div class="st-txt">
               <p class="wk">Woche 9 bis 11<span>Dein Essen, Krafttraining, Beckenboden und Mobility</span></p>
-              <h3>Dein Körper wird wieder stark. Mit Essen und Training für deinen&nbsp;Alltag.</h3>
+              <h3>Warum weniger essen und mehr Sport nicht&nbsp;reichen.</h3>
               <ul class="pts"><li><span class="pt-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/></svg></span><span>Du findest <strong>dein Eiweißziel</strong> und isst mit Baukasten und Rezepten.</span></li><li><span class="pt-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M6 7v10M18 7v10M3 10v4M21 10v4M6 12h12"/></svg></span><span>Du trainierst <strong>Kraft zu Hause oder im Studio</strong>.</span></li><li><span class="pt-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="4.5" r="2"/><path d="M12 7v6l-3 7M12 13l3 7M6 10h12"/></svg></span><span><strong>Beckenboden und Mobility</strong>, tabufrei erklärt.</span></li></ul>
             </div>
           </li>
@@ -1001,7 +1010,7 @@
               </svg></div>
             <div class="st-txt">
               <p class="wk">Woche 12 und 13<span>Stoffwechsel und Darm, Störfaktoren und Nährstoffe</span></p>
-              <h3>Gezielt statt wahllos: weglassen, was stört. Ergänzen, was&nbsp;fehlt.</h3>
+              <h3>Nahrungsergänzung gezielt statt&nbsp;wahllos.</h3>
               <ul class="pts"><li><span class="pt-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21c0-9 6-15 15-16-1 9-7 15-15 16z"/><path d="M5 21l8-8"/></svg></span><span>Du verstehst, warum <strong>Stoffwechsel nicht erst im Blut beginnt</strong>.</span></li><li><span class="pt-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12h8"/></svg></span><span>Du <strong>lässt weg, was stört</strong>, und ergänzt, was dir fehlt.</span></li><li><span class="pt-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 15-6.7L21 8M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-15 6.7L3 16M3 21v-5h5"/></svg></span><span>Du <strong>prüfst, was sich verändert hat</strong>.</span></li></ul>
             </div>
           </li>
@@ -1083,7 +1092,7 @@
           <h2>Ich begleite dich durch die <span class="ac">Masterclass</span>.</h2>
           <p>Ich bin Heilpraktikerin und Mutter von vier Kindern. Ich weiß, wie es ist, wenn der Alltag alles fordert und die eigene Energie hinten runterfällt.</p>
           <p>Ich schaue nicht auf einzelne Beschwerden, sondern dahin, wo bei Frauen ab&nbsp;40 alles zusammenläuft: <strong>Stoffwechsel und Hormone</strong>. In der Masterclass bündle ich dieses Wissen <strong>zum ersten Mal in einem klaren System</strong>.</p>
-          <blockquote>„Du bist nicht zu alt, zu undiszipliniert oder einfach kaputt. Dein Körper folgt einer Logik. Und wenn du die Ursache verstehst, kommt deine Energie zurück.“</blockquote>
+          <blockquote>„Du bist nicht zu alt, zu undiszipliniert oder einfach kaputt. Dein Körper folgt einer Logik. Und die kannst du verstehen.“</blockquote>
           <p class="sig">Jasmin Schmidtke, Heilpraktikerin</p>
           <a href="#warteliste" class="btn pulse js-open">
             <span class="t"><b>Benachrichtige mich zum Launch</b><small>und sichere dir den einmaligen Early-Bird-Preis</small></span>
@@ -1107,7 +1116,7 @@
             <ul>
               <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>Blutwerte-PDF sofort</span></li>
               <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>2 exklusive Vorab-Videos</span></li>
-              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>Einladung zum Live-Launch-Call</span></li>
+              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>Einladung zum Live-Webinar</span></li>
               <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>72 Stunden Early-Bird-Preis</span></li>
               <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>Exklusive Launch-Boni</span></li>
             </ul>
@@ -1142,15 +1151,15 @@
         <div class="faq rv">
           <details>
             <summary>Was kostet die Masterclass?<span class="pl">+</span></summary>
-            <p>Den Preis verrät Jasmin im Live-Launch-Call. Fest steht: Direkt danach gibt es <strong>72 Stunden lang einen einmaligen Early-Bird-Preis plus Launch-Boni</strong>. Beides gibt es <strong>nur für Frauen auf der Warteliste</strong>.</p>
+            <p>Den Preis verrät Jasmin im Live-Webinar. Fest steht: Direkt danach gibt es <strong>72 Stunden lang einen einmaligen Early-Bird-Preis plus Launch-Boni</strong>. Beides gibt es <strong>nur für Frauen auf der Warteliste</strong>.</p>
           </details>
           <details>
             <summary>Was bekomme ich, wenn ich mich eintrage?<span class="pl">+</span></summary>
-            <p>Sofort die Übersicht „Die 5 wichtigsten Blutwerte ab&nbsp;40“ als PDF. Danach <strong>2 exklusive Vorab-Videos</strong> von Jasmin, die <strong>Einladung zum Live-Launch-Call</strong> auf Zoom und Zugang zum <strong>Early-Bird-Preis mit Launch-Boni</strong>.</p>
+            <p>Sofort die Übersicht „Die 5 wichtigsten Blutwerte ab&nbsp;40“ als PDF. Danach <strong>2 exklusive Vorab-Videos</strong> von Jasmin, die <strong>Einladung zum Live-Webinar</strong> auf Zoom und Zugang zum <strong>Early-Bird-Preis mit Launch-Boni</strong>.</p>
           </details>
           <details>
-            <summary>Wie läuft der Live-Launch-Call ab?<span class="pl">+</span></summary>
-            <p>Jasmin stellt die Masterclass live auf Zoom vor, zeigt dir, was dich erwartet, und beantwortet deine Fragen. Termin und Link bekommst du per Mail. Die Teilnahme ist <strong>kostenlos und unverbindlich</strong>.</p>
+            <summary>Wie läuft das Live-Webinar ab?<span class="pl">+</span></summary>
+            <p>Jasmin erklärt live auf Zoom, <strong>warum so viele Frauen ab 40 ständig müde sind und nicht mehr abnehmen</strong> und was die Blutwerte damit zu tun haben. Danach stellt sie die Masterclass vor und beantwortet deine Fragen. Termin und Link bekommst du per Mail. Die Teilnahme ist <strong>kostenlos und unverbindlich</strong>.</p>
           </details>
           <details>
             <summary>Was passiert nach den 72&nbsp;Stunden?<span class="pl">+</span></summary>
@@ -1158,7 +1167,7 @@
           </details>
           <details>
             <summary>Wann startet die Masterclass?<span class="pl">+</span></summary>
-            <p>Im Herbst&nbsp;2026. Alle Termine für die Vorab-Videos und den Live-Launch-Call bekommst du rechtzeitig per E-Mail.</p>
+            <p>Im Herbst&nbsp;2026. Alle Termine für die Vorab-Videos und das Live-Webinar bekommst du rechtzeitig per E-Mail.</p>
           </details>
           <details>
             <summary>Was sind die Q&amp;A-Live-Calls?<span class="pl">+</span></summary>
@@ -1170,7 +1179,11 @@
           </details>
           <details>
             <summary>Für wen ist die Masterclass gedacht?<span class="pl">+</span></summary>
-            <p>Für Frauen ab&nbsp;40, die spüren, dass ihr Körper anders reagiert als früher, und die ihr Wohlbefinden selbst in die Hand nehmen wollen. <strong>Vorkenntnisse brauchst du nicht</strong>, alles wird verständlich und Schritt für Schritt erklärt.</p>
+            <p>Für Frauen ab&nbsp;40 und in den Wechseljahren, die ständig müde sind, nicht mehr abnehmen oder sich nicht mehr wie sie selbst fühlen. Und die <strong>endlich verstehen wollen, warum</strong>. Vorkenntnisse brauchst du nicht, alles wird verständlich und Schritt für Schritt erklärt.</p>
+          </details>
+          <details>
+            <summary>Ich habe schon so viel probiert. Was ist hier anders?<span class="pl">+</span></summary>
+            <p>Du probierst nicht noch eine Methode aus, sondern schaust zuerst, <strong>was bei dir los ist</strong>. Nahrungsergänzung, Diäten oder mehr Sport setzen oft an der falschen Stelle an, solange die Ursache unklar ist. In der Masterclass lernst du, deine Blutwerte zu lesen und gezielt dort anzusetzen, wo es bei dir hakt.</p>
           </details>
           <details>
             <summary>Brauche ich aktuelle Blutwerte?<span class="pl">+</span></summary>
@@ -1263,7 +1276,7 @@
       <h3 id="wlDialogTitle">Benachrichtige mich zum&nbsp;Launch.</h3>
       <ul class="checks">
         <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>Blutwerte-PDF sofort zum Download</span></li>
-        <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>2 exklusive Vorab-Videos und Einladung zum Live-Call</span></li>
+        <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>2 exklusive Vorab-Videos und Einladung zum Live-Webinar</span></li>
         <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>72 Stunden Early-Bird-Preis mit Launch-Boni</span></li>
       </ul>
       <div class="form-slot"></div>
@@ -1275,7 +1288,7 @@
        TERMINE: Hier eintragen, sobald sie feststehen.
        Format: 'JJJJ-MM-TTTHH:MM' (deutsche Zeit), z. B. '2026-11-10T19:00'
        Leer lassen ('') = auf der Seite steht „Termin folgt per Mail“.
-       Der Early-Bird-Preis läuft automatisch 72 Stunden ab dem Live-Call.
+       Der Early-Bird-Preis läuft automatisch 72 Stunden ab dem Live-Webinar.
        ═══════════════════════════════════════════════════════════════ */
     var TERMINE = {
       video1:   '',
@@ -1333,7 +1346,7 @@
       function tick() {
         if (!live) { return false; }
         var now = Date.now(), ziel, label;
-        if (now < live.getTime()) { ziel = live.getTime(); label = 'Live-Launch in '; }
+        if (now < live.getTime()) { ziel = live.getTime(); label = 'Live-Webinar in '; }
         else if (now < ebEnde.getTime()) { ziel = ebEnde.getTime(); label = 'Early-Bird endet in '; }
         else { if (cdBox) { cdBox.hidden = true; } if (tbCd) { tbCd.hidden = true; } if (mbTxt) { mbTxt.textContent = mbDefault; } return false; }
         var s = Math.floor((ziel - now) / 1000);
