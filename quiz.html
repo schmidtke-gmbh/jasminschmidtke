@@ -27,9 +27,9 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 <title>Welche Ü40-Frau bist du wirklich? · Jasmin Schmidtke</title>
-<meta name="description" content="In 3 Minuten zu deinem persönlichen Ü40-Typ, mit Energie-Plan und Blutwerte-PDF.">
+<meta name="description" content="In 3 bis 4 Minuten zu deinem aktuellen Ü40-Muster, mit 3 ersten Schritten für deinen Alltag. Orientierung statt Diagnose.">
 <meta property="og:title" content="Welche Ü40-Frau bist du wirklich?">
-<meta property="og:description" content="15 Fragen, 4 Typen, dein persönliches Ergebnis. Plus die 12 wichtigsten Blutwerte ab Ü40 als PDF.">
+<meta property="og:description" content="14 Fragen, 4 Typen, dein persönliches Ergebnis mit 3 ersten Schritten für deinen Alltag.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.jasminschmidtke.de/quiz.html">
 <meta property="og:image" content="https://www.jasminschmidtke.de/og-image.jpg">
@@ -1686,15 +1686,146 @@
     }
     .multi-helper{font-size:.78em}
   }
+
+  /* ===== v4 Ergänzungen (2026-10-04) ===== */
+  /* Vorausgewählte Antworten beim Zurückgehen */
+  .answer.selected{border-color:var(--taupe);background:#fff;box-shadow:var(--shadow)}
+  .answer.selected .a-text > span:first-child{font-weight:600}
+  .image-card.selected{border-color:var(--taupe);box-shadow:var(--shadow-lg);background:var(--bg-soft)}
+  .multi-card.exclusive{margin-top:4px}
+  a.btn{text-decoration:none}
+
+  /* Zurück im E-Mail-Gate */
+  .rev-back{
+    background:none;border:0;padding:0 0 10px;cursor:pointer;
+    font-family:'Poppins',sans-serif;font-size:.78em;color:var(--ink-soft);
+    display:block;margin:0 auto;
+  }
+  .rev-back:hover{color:var(--taupe-deep)}
+
+  /* Einwilligung */
+  .consent-check{
+    display:grid;grid-template-columns:auto 1fr;gap:10px;align-items:start;
+    text-align:left;font-size:.76em;line-height:1.5;color:var(--ink-soft);
+    margin:12px 0 4px;cursor:pointer;
+  }
+  .consent-check input{width:20px;height:20px;margin-top:1px;accent-color:var(--sage);cursor:pointer}
+  .consent-check a{color:var(--taupe-deep);text-decoration:underline}
+  .form-error{
+    background:#FBEDEA;color:#8E3B2C;border-radius:10px;padding:10px 12px;
+    font-size:.84em;line-height:1.45;margin:10px 0 4px;text-align:left;
+  }
+
+  /* Ergebnis: Hinweis, Mischprofil, Warum-Liste, Gewichtung */
+  .result-notice{
+    background:var(--bg-soft);border-left:3px solid var(--taupe);
+    border-radius:12px;padding:14px 18px;margin:0 0 1.4em;
+  }
+  .result-notice strong{
+    display:block;font-size:.7em;letter-spacing:.18em;text-transform:uppercase;
+    color:var(--taupe-deep);font-weight:700;margin-bottom:6px;
+  }
+  .result-notice p{margin:0;font-size:.88em;line-height:1.6;color:var(--ink)}
+  .mix-note{
+    text-align:center;font-size:.86em;line-height:1.55;color:var(--ink);
+    background:var(--bg-soft);border-radius:12px;padding:10px 14px;margin:-.6em auto 1.4em;max-width:480px;
+  }
+  .score-row .lbl{flex:0 0 118px;display:flex;flex-direction:column;line-height:1.2}
+  .score-row .lbl .lvl{font-size:.82em;color:var(--ink-soft);font-weight:400;margin-top:2px}
+  .score-note{margin:12px 0 0;font-size:.78em;line-height:1.5;color:var(--ink-soft)}
+  .score-note b{color:var(--ink);font-weight:600}
+  .pdf-link{
+    display:flex;align-items:center;gap:10px;justify-content:center;
+    margin:1em 0 0;padding:12px 16px;border-radius:12px;background:var(--bg-soft);
+    color:var(--taupe-deep);font-weight:600;text-decoration:none;font-size:.92em;
+  }
+  .pdf-link svg{width:22px;height:22px}
+
+  @media (max-width:540px){
+    .score-row .lbl{flex-basis:104px;font-size:.78em}
+    .consent-check{font-size:.74em}
+  }
+
+
+  .interlude .stat-statement{font-size:2.6em;line-height:1.12}
+  @media (max-width:540px){.interlude .stat-statement{font-size:2.05em}}
+
+  /* ===== Animierte Szenen (HyperFrames-Videos) ===== */
+  .anim{position:relative;border-radius:20px;overflow:hidden;aspect-ratio:4/3;background:linear-gradient(160deg,#F8F2EC,#EEE3D8);border:1px solid #ECE4DC;width:100%;margin:0 auto}
+  .anim video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+  .anim-md{max-width:320px}
+  .anim-sm{max-width:240px}
+  .interlude .anim{margin:0 auto 1.4em}
+  .loading .anim{margin:0 auto 1.2em}
+  .result .anim{margin:.2em auto 1.1em}
+  @media (max-width:540px){
+    .anim{border-radius:16px}
+    .anim-md{max-width:264px}
+    .anim-sm{max-width:200px}
+  }
+  /* sehr niedrige Bildschirme (z. B. iPhone SE): Szenen noch etwas kleiner */
+  @media (max-height:700px) and (max-width:540px){
+    .interlude .anim-md{max-width:220px}
+    .loading .anim-sm{max-width:170px}
+  }
+
+  /* Zwischenseiten mobil kompakt, Weiter-Button bleibt sichtbar */
+  @media (max-width:540px){
+    .interlude{padding:10px 0 0}
+    .interlude .stat-statement{font-size:1.7em}
+    .interlude .stat-label{font-size:1.02em;margin:.3em auto 1em}
+    .interlude .stat-sub{font-size:.86em;margin-bottom:.6em}
+    .interlude .continue-bar,.loading .continue-bar{
+      position:sticky;bottom:0;z-index:20;margin-top:.6em;padding:12px 0 10px;
+      background:linear-gradient(to bottom,rgba(251,247,244,0) 0%,var(--bg) 35%,var(--bg) 100%);
+    }
+  }
+
+  /* Startseite: Vorschau-Balken wachsen, Ergebnis-Balken ebenso */
+  .result-preview .rp-bar-fill{transform-origin:left center;animation:qGrow 1.4s cubic-bezier(.2,.8,.3,1) .4s both}
+  .result-preview .rp-bar:nth-child(2) .rp-bar-fill{animation-delay:.55s}
+  .result-preview .rp-bar:nth-child(3) .rp-bar-fill{animation-delay:.7s}
+  .result-preview .rp-bar:nth-child(4) .rp-bar-fill{animation-delay:.85s}
+  .rev-result.revealed .score-row .bar{transform-origin:left center;animation:qGrow 1.2s cubic-bezier(.2,.8,.3,1) .3s both}
+  @keyframes qGrow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+
+  /* Antworten erscheinen gestaffelt */
+  .question .answers .answer,.question .image-card,.question .multi-card{animation:qIn .45s ease-out both}
+  .question .answers .answer:nth-child(1),.question .image-card:nth-child(1),.question .multi-card:nth-child(1){animation-delay:0.00s}
+  .question .answers .answer:nth-child(2),.question .image-card:nth-child(2),.question .multi-card:nth-child(2){animation-delay:0.05s}
+  .question .answers .answer:nth-child(3),.question .image-card:nth-child(3),.question .multi-card:nth-child(3){animation-delay:0.10s}
+  .question .answers .answer:nth-child(4),.question .image-card:nth-child(4),.question .multi-card:nth-child(4){animation-delay:0.15s}
+  .question .answers .answer:nth-child(5),.question .image-card:nth-child(5),.question .multi-card:nth-child(5){animation-delay:0.20s}
+  .question .answers .answer:nth-child(6),.question .image-card:nth-child(6),.question .multi-card:nth-child(6){animation-delay:0.25s}
+  .question .answers .answer:nth-child(7),.question .image-card:nth-child(7),.question .multi-card:nth-child(7){animation-delay:0.30s}
+  .question .answers .answer:nth-child(8),.question .image-card:nth-child(8),.question .multi-card:nth-child(8){animation-delay:0.35s}
+  @keyframes qIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+
+  @media (prefers-reduced-motion:reduce){
+    .result-preview .rp-bar-fill,.score-row .bar,.question .answer,.question .image-card,.question .multi-card{animation:none !important}
+  }
+
 </style>
 </head>
 <body>
 
-<!-- Netlify-Formular (versteckt, nur für die Erkennung beim Deploy) -->
+<!-- Netlify-Formular (versteckt, nur für die Erkennung beim Deploy). Alle Felder, die das Quiz sendet. -->
 <form name="quiz-ue40" data-netlify="true" netlify-honeypot="bot-field" hidden>
-  <input type="text" name="vorname" />
-  <input type="email" name="email" />
-  <input type="text" name="typ" />
+  <input type="text" name="first_name" /><input type="email" name="email" />
+  <input type="text" name="primary_type" /><input type="text" name="secondary_type" />
+  <input type="text" name="score_feuerseele" /><input type="text" name="score_mondwandlerin" />
+  <input type="text" name="score_tieffuehlende" /><input type="text" name="score_wandlerin" />
+  <input type="text" name="mixed_profile" />
+  <input type="text" name="age_band" /><input type="text" name="cycle_stage" />
+  <input type="text" name="energy_class" /><input type="text" name="sleep_class" />
+  <input type="text" name="stress_class" /><input type="text" name="symptom_cluster" />
+  <input type="text" name="movement_class" /><input type="text" name="lab_experience" />
+  <input type="text" name="attempted_solutions" /><input type="text" name="main_barrier" />
+  <input type="text" name="desired_outcome" /><input type="text" name="preferred_support" />
+  <input type="text" name="utm_source" /><input type="text" name="utm_medium" />
+  <input type="text" name="utm_campaign" /><input type="text" name="utm_content" />
+  <input type="text" name="landing_page" />
+  <input type="text" name="consent_timestamp" /><input type="text" name="consent_version" />
   <input type="text" name="bot-field" />
 </form>
 
@@ -1774,133 +1905,190 @@
   </svg>
 </button>
 
+
 <script>
 /* ============================================================
-   QUIZ-FUNNEL Ü40 v3 · 17 Steps · 4 Typen
-   E = Energie · H = Hormon · I = Identität · R = Reset
+   QUIZ-FUNNEL Ü40 · v4 (Stand 2026-10-04)
+   14 Fragen · 4 Typen · Scoring aus dem answers-Objekt
+   F = Feuerseele · M = Mondwandlerin · T = Tieffühlende · W = Wandlerin
+
+   Wichtig: Das Quiz liefert keine Diagnose. Die Typen beschreiben
+   aktuelle Muster und dienen der Orientierung.
    ============================================================ */
 
-const TYPES = {
-  F: {
-    short: 'F', name: 'Die Feuerseele', short_name: 'Feuerseele', color: '#C2604A',
-    short_desc: 'Leidenschaftlich, unter Hochdruck',
-    tagline: 'Leidenschaftlich, engagiert, immer im Einsatz, aber dein System läuft gerade auf Überdruck.',
-    description: 'Du bist eine Frau mit Feuer. Du gibst viel, du trägst viel, du forderst viel von dir selbst. Deine heilpraktische Hauptursache heißt <b>Dauerstress</b>, die Überforderung deines Systems. Die hormonellen Veränderungen ab 40 erhöhen zusätzlich deinen Cortisolspiegel und machen dein Nervensystem empfindlicher. Das bedeutet: Der Stress, den du früher gut weggesteckt hast, trifft dich jetzt härter. <b>Das ist keine Schwäche, das ist Biologie.</b> Und du kannst direkt gegensteuern.',
-    needs: [
-      '<b>Magnesium Glycinat</b> (300 bis 400 mg abends): Beruhigt direkt dein Nervensystem und hilft beim Abschalten, ein Game-Changer für viele Frauen.',
-      '<b>4-7-8 Atemübung</b> (5 Min täglich): Einatmen 4 Sek, halten 7 Sek, ausatmen 8 Sek. Aktiviert sofort dein parasympathisches Nervensystem.',
-      '<b>Koffein nach 14 Uhr streichen</b>: Dein Cortisol ist bereits erhöht. Koffein verstärkt die Spirale und hält deinen Kopf länger auf Hochtouren.',
-      '<b>20-Min Abendritual einführen</b>: Kein Handy, kein Social Media, stattdessen Spaziergang, leichte Dehnung oder ein Buch. Off-Switch für dein System.'
-    ],
-    pitch: 'Genau für dich haben wir den <b>Stress &amp; Cortisol-Reset</b> entwickelt: Magnesium-Plan, Atem-Routinen und das bewährte 12-Wochen-Abend-Ritual.'
-  },
-  M: {
-    short: 'M', name: 'Die Mondwandlerin', short_name: 'Mondwandlerin', color: '#5E5E8E',
-    short_desc: 'Sucht tiefen Schlaf und Erholung',
-    tagline: 'Du trägst vieles still mit dir, und dein Körper sucht dringend nach tiefem Schlaf und Erholung.',
-    description: 'Deine Nächte sind unruhig, und dieser Schlafmangel zieht sich wie ein roter Faden durch deinen Tag. Ob Einschlafprobleme, nächtliches Erwachen oder Schwitzen, du findest keine echte Ruhe. Deine heilpraktische Hauptursache liegt in deiner <b>Mitwelt</b>: Blaulicht am Abend, Hormondisruptoren in Plastik &amp; Kosmetik, Medikamente, ein zu warmes Schlafzimmer. <b>Östrogen und Progesteron regulieren deine Schlafarchitektur</b>, wenn sie sinken UND deine Umwelt dich zusätzlich triggert, leidet der Schlaf doppelt. Das ist real, messbar, und du kannst konkret etwas dagegen tun.',
-    needs: [
-      '<b>Feste Schlafenszeit + 60-Min Wind-Down</b>: Selbe Uhrzeit jeden Abend, kein Blaulicht die letzte Stunde. Dein Körper braucht dieses Signal.',
-      '<b>Schlafzimmer auf 16 bis 18 °C kühlen</b>: Deine Körpertemperatur ist ab 40 oft zu hoch. Kühle schlägt jede Schlaftablette.',
-      '<b>Vitamin B6 + Magnesium Kombi</b>: Beide sind direkt an der Melatonin-Bildung beteiligt und häufig mangelhaft. Großer Effekt mit kleinem Aufwand.',
-      '<b>Keine Nachrichten / Social Media nach 20 Uhr</b>: Jeder Cortisol-Trigger am Abend sabotiert deine Nacht. Eine Regel, die mehr verändert, als die meisten ahnen.'
-    ],
-    pitch: 'Phase 2 unserer Masterclass ist genau für dich: <b>Schlaf-Architektur</b>, Hormon-Schlaf-Achse und 4 Mikro-Rituale, die dein Nervensystem abends herunterfahren.'
-  },
-  T: {
-    short: 'T', name: 'Die Tieffühlende', short_name: 'Tieffühlende', color: '#A87B9F',
-    short_desc: 'Fühlt tief, Stärke und Herausforderung',
-    tagline: 'Du fühlst tief und intensiv, das ist deine Stärke. Und gerade auch deine größte Herausforderung.',
-    description: 'Emotionale Achterbahnen, unerwartete Tränen, Reizbarkeit ohne Grund, das ist kein Charakterfehler, das ist <b>Neurochemie</b>. Deine heilpraktische Hauptursache heißt <b>Mangel an Bewegung</b>: Bewegung ist der direkteste natürliche Hebel für Serotonin, Endorphine und BDNF, und ab 40 wird er noch wichtiger, weil sinkende Östrogenspiegel deine Serotonin-Verfügbarkeit zusätzlich reduzieren. Du wirst nicht „schwächer" oder „verrückter", dein Gehirn arbeitet gerade mit einem anderen Hormoncocktail, und Bewegung ist dein stärkstes Gegenmittel. Diese Veränderung ist real, nachvollziehbar und vor allem: <b>beeinflussbar</b>.',
-    needs: [
-      '<b>Täglich 30 Min Bewegung</b>: Der stärkste natürliche Stimmungshebel, setzt Endorphine, Serotonin und BDNF frei. Wirkt wie ein leichtes Antidepressivum, ohne Nebenwirkungen.',
-      '<b>Vitamin D3 + K2 messen lassen</b>: Mangel ist bei Stimmungstiefs extrem häufig und wird massiv unterschätzt. Ein einfacher Bluttest, ein echter Gamechanger.',
-      '<b>Tages-Mini-Ritual: 3 Highlights</b>: Jeden Abend 3 Dinge aufschreiben, die gut waren, auch kleine. Das ist keine Wellness-Romantik, das ist nachweislich neuroplastisch wirksam.',
-      '<b>Sozialen Kontakt aktiv halten</b>: Isolation verstärkt Stimmungstiefs drastisch. Gespräche, Lachen, echte Verbindung sind hormonell wirksame Ereignisse.'
-    ],
-    pitch: 'Phase 3 der Masterclass arbeitet genau hier: <b>Mood &amp; Mind</b>, Bewegungs-Plan, Vitamin-D-Optimierung, neuroplastische Mikro-Routinen und ehrliche Community.'
-  },
-  W: {
-    short: 'W', name: 'Die Wandlerin', short_name: 'Wandlerin', color: '#6B8551',
-    short_desc: 'Mitten in der körperlichen Transformation',
-    tagline: 'Dein Körper durchläuft gerade eine kraftvolle Transformation, du brauchst die richtigen Werkzeuge.',
-    description: 'Hitzewallungen, Gewichtsveränderungen, Gelenkschmerzen, Hautveränderungen, dein Körper sendet starke Signale. Deine heilpraktische Hauptursache liegt in deiner <b>Ernährung</b>: Dein Stoffwechsel stellt sich ab 40 grundlegend um. Was vorher funktioniert hat (Kalorien zählen, Diäten, viele Zwischenmahlzeiten), arbeitet jetzt gegen dich. Insulin steigt, Hitzewallungen verstärken sich. Das alles ist die Sprache einer tiefen biologischen Transformation. <b>Du bist nicht krank, du wandelst dich.</b> Und mit der richtigen Ernährungsstrategie (Phytoöstrogene, Eiweiß, Blutzucker-Stabilität) kann dieser Wandel sanfter, verständlicher und kontrollierbarer werden.',
-    needs: [
-      '<b>Phytoöstrogene in der Ernährung</b>: Täglich 2 EL frisch gemahlene Leinsamen, fermentierte Sojaprodukte oder Rotklee-Tee. Wirken wie schwache Östrogene und können Hitzewallungen deutlich reduzieren.',
-      '<b>Krafttraining 2× pro Woche</b>: Der wirksamste Hebel gegen hormonelle Gewichtszunahme, Knochendichteverlust und Gelenkschmerzen. Kein Marathon, 2 × 30 Min reichen.',
-      '<b>Vitamin D3 + Calcium überprüfen</b>: Gerade bei Gelenk- und Muskelschmerzen sehr häufig mangelhaft. Ein Bluttest beim Arzt klärt das in einem Schritt.',
-      '<b>Ärztin für individuellen Hormonstatus</b>: Wenn die Beschwerden stark sind, lohnt sich eine Gynäkologin mit Hormon-Schwerpunkt. Du musst das nicht alleine durchstehen.'
-    ],
-    pitch: 'Phase 1 unserer Masterclass ist <b>genau für dich</b>: Phytoöstrogen-Ernährung, Krafttraining-Protokoll für zuhause und die Hormon-Bluttest-Anleitung.'
+/* ------------------------------------------------------------
+   1. ZENTRALE KONFIGURATION · hier Angebotsdaten pflegen
+   ------------------------------------------------------------ */
+const OFFER_CONFIG = {
+  programName: 'Blutwerte-Kompass 40+',   // Name des Programms im Ergebnis
+  nextStartText: '',                       // leer = kein Starttermin anzeigen (z. B. 'Nächster Start: 12. Januar 2027')
+  ctaLabel: 'Meinen nächsten Schritt entdecken',
+  ctaUrl: '/warteliste',
+  pdfUrl: '',                              // leer = kein PDF-Versprechen, kein Downloadlink
+  pdfLabel: 'Ü40-Guide',                   // Bezeichnung des PDFs, nur sichtbar, wenn pdfUrl gesetzt ist
+  consentVersion: '2026-10-04',
+  privacyUrl: 'https://jasminschmidtke.de/datenschutz'
+};
+
+/* ------------------------------------------------------------
+   2. LEAD-INTEGRATION
+   Netlify Forms (Formular "quiz-ue40") ist die bestätigte Übertragung:
+   Das Ergebnis wird erst gezeigt, wenn Netlify mit HTTP 2xx antwortet.
+
+   ActiveCampaign wird optional zusätzlich beliefert, nach demselben
+   Muster wie auf warteliste.html (öffentliches Formular-Endpoint proc.php,
+   kein API-Schlüssel im Frontend). Dafür in ActiveCampaign ein eigenes
+   Formular für das Quiz anlegen und u / f / or hier eintragen.
+   Benutzerdefinierte Felder: AC-Feld-Name (z. B. 'field[12]') je Datenfeld
+   unter fieldMap eintragen. Ohne Eintrag wird das Feld nicht gesendet.
+   ------------------------------------------------------------ */
+const LEAD_CONFIG = {
+  netlifyFormName: 'quiz-ue40',
+  timeoutMs: 12000,
+  activeCampaign: {
+    enabled: false,
+    endpoint: 'https://jasminschmidtke70927.activehosted.com/proc.php',
+    u: '', f: '', or: '',
+    fieldMap: {
+      // primary_type: 'field[XX]',
+      // secondary_type: 'field[XX]',
+    }
   }
 };
 
+/* ------------------------------------------------------------
+   3. TYPEN · Texte ohne Diagnose, ohne Dosierungen
+   ------------------------------------------------------------ */
+const TYPES = {
+  F: {
+    short: 'F', name: 'Die Feuerseele', short_name: 'Feuerseele', color: '#C2604A',
+    tagline: 'Engagiert, verantwortungsvoll und häufig länger im Einsatz, als dir guttut.',
+    description: 'Du gibst viel, organisierst viel und trägst häufig Verantwortung für andere. Deine Antworten deuten darauf hin, dass innere Anspannung und fehlende Erholungsphasen bei dir aktuell besonders viel verstärken können. Das bedeutet nicht, dass Stress die einzige Ursache deiner Beschwerden ist. Es ist vielmehr der Bereich, bei dem sich ein bewusster erster Schritt für dich besonders lohnen könnte.',
+    actions: [
+      'Plane heute eine feste 20-minütige Ruhephase ohne Handy und Aufgaben ein.',
+      'Probiere fünf ruhige Atemzüge mit einer deutlich längeren Ausatmung.',
+      'Notiere eine Aufgabe, die heute nicht mehr erledigt werden muss.'
+    ],
+    bridge: 'Einzelne Pausen helfen. Nachhaltiger wird es, wenn du verstehst, wie Stress, Schlaf, Ernährung, Bewegung und hormonelle Veränderungen zusammenspielen und in welcher Reihenfolge du sie angehen kannst.'
+  },
+  M: {
+    short: 'M', name: 'Die Mondwandlerin', short_name: 'Mondwandlerin', color: '#5E5E8E',
+    tagline: 'Dein Körper sucht gerade besonders nach Schlaf, Ruhe und echter Regeneration.',
+    description: 'Deine Antworten zeigen, dass Schlafqualität und nächtliche Erholung bei dir aktuell besonders viel Aufmerksamkeit brauchen. Schwierigkeiten beim Einschlafen, häufiges Aufwachen oder fehlende Erholung am Morgen können unterschiedliche Gründe haben. Das Quiz stellt keine Ursache fest, zeigt aber, dass Regeneration für dich ein sinnvoller Startpunkt ist.',
+    actions: [
+      'Lege für die nächsten drei Abende eine möglichst ähnliche Schlafenszeit fest.',
+      'Reduziere in der letzten halben Stunde vor dem Schlafen Bildschirm und Nachrichten.',
+      'Notiere morgens kurz, wann du wach warst und wie erholt du dich fühlst.'
+    ],
+    bridge: 'Schlaf lässt sich selten isoliert betrachten. Stress, Tagesrhythmus, Ernährung, Bewegung und hormonelle Veränderungen können gemeinsam eine Rolle spielen. Im Programm lernst du, diese Zusammenhänge verständlich einzuordnen.'
+  },
+  T: {
+    short: 'T', name: 'Die Tieffühlende', short_name: 'Tieffühlende', color: '#A87B9F',
+    tagline: 'Du nimmst Veränderungen und Gefühle besonders intensiv wahr.',
+    description: 'Deine Antworten deuten darauf hin, dass emotionale Empfindlichkeit, Reizbarkeit oder innere Unruhe bei dir gerade besonders präsent sind. Das ist kein Charakterfehler. Gleichzeitig kann ein Quiz nicht feststellen, wodurch diese Veränderungen entstehen. Schlaf, Stress, Lebenssituation, Bewegung und hormonelle Veränderungen können sich gegenseitig beeinflussen.',
+    actions: [
+      'Notiere heute Abend drei Situationen, die dir Energie gegeben oder genommen haben.',
+      'Plane morgen mindestens zehn Minuten Bewegung an der frischen Luft ein.',
+      'Sprich mit einer vertrauten Person darüber, was dich momentan besonders beschäftigt.'
+    ],
+    bridge: 'Du brauchst nicht einfach nur „mehr Disziplin“. Hilfreicher ist ein System, das Körper, Alltag und emotionale Belastung gemeinsam betrachtet und dir konkrete nächste Schritte gibt.'
+  },
+  W: {
+    short: 'W', name: 'Die Wandlerin', short_name: 'Wandlerin', color: '#6B8551',
+    tagline: 'Du bemerkst den Wandel gerade besonders deutlich an deinem Körper.',
+    description: 'Deine Antworten zeigen, dass körperliche Veränderungen bei dir aktuell besonders im Vordergrund stehen. Dazu können beispielsweise ein verändertes Körpergefühl, Hitzewallungen, Gewichtsentwicklung oder Veränderungen an Haut, Haaren und Beweglichkeit gehören. Daraus lässt sich keine einzelne Ursache ableiten. Das Ergebnis zeigt dir lediglich, welcher Bereich gerade besonders viel Aufmerksamkeit verdient.',
+    actions: [
+      'Beobachte eine Woche lang, wann und in welchem Zusammenhang Veränderungen besonders auffallen.',
+      'Ergänze eine Mahlzeit bewusst um eine gute Eiweißquelle und Gemüse.',
+      'Plane zwei kurze, realistische Bewegungseinheiten für die kommende Woche.'
+    ],
+    bridge: 'Körperliche Veränderungen lassen sich oft besser verstehen, wenn Ernährung, Muskulatur, Schlaf, Stress, Hormone und sinnvolle Diagnostik gemeinsam betrachtet werden. Genau dafür brauchst du eine nachvollziehbare Reihenfolge statt weiterer Einzeltipps.'
+  }
+};
+const TYPE_KEYS = ['F', 'M', 'T', 'W'];
+
+/* ------------------------------------------------------------
+   4. FRAGEN + SCORINGMATRIX (zentral an einer Stelle)
+
+   kind: 'type'    → vergibt Typ-Punkte, maxPoints = Obergrenze der Frage
+   kind: 'segment' → vergibt nie Typ-Punkte, nur Segmentierung/E-Mail-Tags
+
+   Scoring je Fragetyp:
+   single/image → scores der gewählten Option
+   slider       → scoreFn(wert)
+   multi        → Summe der gewählten Optionen, danach proportional
+                  auf maxPoints gedeckelt (mehr Kreuze ≠ unbegrenzt mehr Punkte)
+
+   Vergleichbarkeit: Jeder Typ wird durch sein theoretisches Maximum
+   (TYPE_MAX, automatisch aus dieser Matrix berechnet) geteilt.
+   Damit erreichen alle vier Typen denselben Maximalwert 1,0.
+
+   why: Satz für „Warum du dieses Ergebnis erhältst“, nur aus echten Antworten.
+   ------------------------------------------------------------ */
 const STEPS = [
 
-  /* 0, HERO */
-  { type: 'hero' },
+  { type: 'hero', id: 'hero' },
+  { type: 'name', id: 'name' },
 
-  /* 1, NAME */
-  { type: 'name' },
-
-  /* 2, Q1: ALTER */
+  /* Q1 · Alter · Segment */
   {
-    type: 'single',
+    id: 'q_age', kind: 'segment', type: 'single',
     eyebrow: 'Lebensphase',
     question: 'Wie alt bist du gerade?',
     options: [
-      { label: '35 bis 39 Jahre · Die Vorphase',  hint: 'Erste Anzeichen, oft noch unbemerkt', scores: {} },
-      { label: '40 bis 44 Jahre · erste Veränderungen', hint: 'Energie, Schlaf, Zyklus verschieben sich', scores: {} },
-      { label: '45 bis 49 Jahre · mittendrin',         hint: 'Peri-Menopause, hormonelle Achterbahn', scores: { W:1 } },
-      { label: '50+ Jahre · neue Lebensphase',     hint: 'Post-Menopause, neue Balance finden',  scores: { W:1 } }
+      { id: '35-39', label: '35 bis 39' },
+      { id: '40-44', label: '40 bis 44' },
+      { id: '45-49', label: '45 bis 49' },
+      { id: '50-54', label: '50 bis 54' },
+      { id: '55+',   label: '55 oder älter' }
     ]
   },
 
-  /* 3, Q2: ZYKLUS */
+  /* Q2 · Zyklus/Lebensphase · Segment (keine Wandlerin-Wertung) */
   {
-    type: 'single',
+    id: 'q_cycle', kind: 'segment', type: 'single',
     eyebrow: 'Zyklus',
-    question: 'Wie ist dein Zyklus aktuell?',
+    question: 'Wie würdest du deine aktuelle Zyklus- oder Lebensphase beschreiben?',
     options: [
-      { label: 'Regelmäßig wie immer',                            scores: {} },
-      { label: 'Unregelmäßig geworden, mal länger, mal kürzer',  scores: { W:2 } },
-      { label: 'Sehr unregelmäßig oder bleibt zeitweise aus',     scores: { W:3 } },
-      { label: 'Schon seit über einem Jahr ausgeblieben',         scores: { W:2, M:1 } },
-      { label: 'Ich achte da ehrlich gesagt nicht drauf',         scores: { T:1 } }
+      { id: 'regelmaessig',       label: 'Mein Zyklus ist überwiegend regelmäßig.' },
+      { id: 'veraendert',         label: 'Mein Zyklus verändert sich oder ist unregelmäßiger geworden.' },
+      { id: 'laenger_zurueck',    label: 'Meine letzte Blutung liegt länger zurück.' },
+      { id: 'nicht_einordenbar',  label: 'Durch Verhütung, Operation oder andere Gründe kann ich das nicht einordnen.' },
+      { id: 'unbekannt',          label: 'Ich weiß es nicht beziehungsweise achte aktuell nicht darauf.' }
     ]
   },
 
-  /* 4, Q3: ALLTAGS-MOMENT (Image Grid · direkt typ-mappend) */
+  /* Q3 · Alltagssituation · Typfrage, max. 2 Punkte */
   {
-    type: 'image',
+    id: 'q_daily', kind: 'type', type: 'image', maxPoints: 2,
     eyebrow: 'Dein Alltag',
-    question: 'Welcher Moment beschreibt deinen Alltag am ehesten?',
+    question: 'Welcher Moment beschreibt deinen Alltag momentan am besten?',
     helper: 'Sei ehrlich, nur du siehst deine Antwort.',
     options: [
-      { icon: 'flame',        title: 'Im Einsatz',        desc: 'Ich rase durch den Tag, abends nicht runter.', scores: { F:3 } },
-      { icon: 'moon_rest',    title: 'Schon erschöpft',   desc: 'Ich wache morgens schon müde auf.', scores: { M:3 } },
-      { icon: 'heart_soft',   title: 'Sehr sensibel',     desc: 'Tränen oder Reizbarkeit ohne klaren Grund.', scores: { T:3 } },
-      { icon: 'sprout',       title: 'Im Wandel',         desc: 'Mein Körper macht, was er will.', scores: { W:3 } }
-    ]
+      { id: 'im_einsatz', icon: 'flame',      title: 'Im Einsatz',     desc: 'Ich bin ständig im Einsatz und komme schwer zur Ruhe.', scores: { F: 2 } },
+      { id: 'muede',      icon: 'moon_rest',  title: 'Wenig erholt',   desc: 'Ich bin häufig müde und fühle mich wenig erholt.',       scores: { M: 2 } },
+      { id: 'emotional',  icon: 'heart_soft', title: 'Dünnhäutiger',   desc: 'Ich bin schneller gereizt oder emotional als früher.',   scores: { T: 2 } },
+      { id: 'koerper',    icon: 'sprout',     title: 'Im Wandel',      desc: 'Ich bemerke vor allem körperliche Veränderungen.',       scores: { W: 2 } }
+    ],
+    why: (a, q) => { const o = optById(q, a); return o ? `Du hast deinen Alltag so beschrieben: „${o.desc}“` : null; }
   },
 
-  /* 5, INTERLUDE: STAT */
+  /* Zwischenseite ohne Zahlen */
   {
-    type: 'interlude',
-    variant: 'stat',
-    big: '78%',
-    label: '… der Frauen <em>ab 40</em> erleben genau das, was du gerade beschreibst.',
-    sub: 'Was du fühlst ist <b>kein Charakterfehler und kein „Älterwerden"</b>. Es ist die Sprache deiner Hormone in einer Lebensphase, über die kaum jemand offen spricht, die Perimenopause.'
+    type: 'interlude', id: 'i_pattern', variant: 'statement', frame: 'pattern',
+    big: 'Du bist <em>nicht allein</em>.',
+    label: 'Viele Frauen erleben ab 40 Veränderungen, die sie zunächst nicht miteinander in Verbindung bringen.',
+    sub: 'Orientierung beginnt damit, das eigene Muster zu erkennen. Genau dabei helfen dir die nächsten Fragen.'
   },
 
-  /* 6, Q4: ENERGIE-SLIDER */
+  /* Q4 · Energie · Typfrage (schwach gewichtet), max. 3 Punkte */
   {
-    type: 'slider',
+    id: 'q_energy', kind: 'type', type: 'slider', maxPoints: 3,
     eyebrow: 'Energie',
-    question: 'Wie ist deine Energie um 15 Uhr?',
-    helper: '1 = ich brauche dringend ein Nickerchen · 10 = voll im Saft',
+    question: 'Wie ist deine Energie meistens am Nachmittag?',
+    helper: '1 = ich brauche dringend eine Pause · 10 = voller Energie',
     min: 1, max: 10, default: 5,
-    labels: { 1:'Komplett leer', 2:'Sehr müde', 3:'Ausgelaugt', 4:'Schlapp', 5:'Naja, geht so', 6:'Solide', 7:'Gut drauf', 8:'Wach und fokussiert', 9:'Power', 10:'Voll im Saft' },
+    labels: { 1:'Komplett leer', 2:'Sehr müde', 3:'Ausgelaugt', 4:'Schlapp', 5:'Naja, geht so', 6:'Solide', 7:'Gut drauf', 8:'Wach und fokussiert', 9:'Viel Power', 10:'Voller Energie' },
     images: [
       'icons/slider_energy_v1.png','icons/slider_energy_v2.png','icons/slider_energy_v3.png',
       'icons/slider_energy_v4.png','icons/slider_energy_v5.png','icons/slider_energy_v6.png',
@@ -1912,30 +2100,33 @@ const STEPS = [
       if (v <= 5) return { M: 1 };
       return {};
     },
-    edgeLeft: '1, leer', edgeRight: '10, voll im Saft'
+    edgeLeft: '1, leer', edgeRight: '10, voller Energie',
+    why: (v) => `Deine Energie am Nachmittag liegt aktuell bei ${v} von 10.`
   },
 
-  /* 7, Q5: SCHLAF */
+  /* Q5 · Schlaf · Typfrage, max. 3 Punkte */
   {
-    type: 'single',
+    id: 'q_sleep', kind: 'type', type: 'single', maxPoints: 3,
     eyebrow: 'Schlaf',
-    question: 'Wie schläfst du in den letzten 6 Monaten?',
+    question: 'Was beschreibt deinen Schlaf aktuell am besten?',
     options: [
-      { label: 'Erholsam, ich wache ausgeruht auf',                scores: {} },
-      { label: 'Mal gut, mal nicht, wechselhaft',                  scores: { M:1 } },
-      { label: 'Ich wache nachts oft auf',                          scores: { M:3 } },
-      { label: 'Ich schlafe schlecht ein und wache erschöpft auf',  scores: { M:3, F:1 } }
-    ]
+      { id: 'erholsam',      label: 'Ich schlafe meistens erholsam.',                                   scores: {},           why: 'Du hast angegeben, dass du meistens erholsam schläfst.' },
+      { id: 'einschlafen',   label: 'Ich brauche lange zum Einschlafen.',                               scores: { M: 2, F: 1 }, why: 'Du hast angegeben, dass du lange zum Einschlafen brauchst.' },
+      { id: 'durchschlafen', label: 'Ich wache nachts häufiger auf.',                                   scores: { M: 3 },     why: 'Du hast angegeben, dass du nachts häufiger aufwachst.' },
+      { id: 'frueh_wach',    label: 'Ich wache sehr früh auf und kann nicht wieder einschlafen.',       scores: { M: 2, T: 1 }, why: 'Du hast angegeben, dass du sehr früh aufwachst und nicht wieder einschläfst.' },
+      { id: 'unerholt',      label: 'Ich schlafe ausreichend, fühle mich morgens aber nicht erholt.',   scores: { M: 3 },     why: 'Du hast angegeben, dass du dich morgens trotz ausreichend Schlaf nicht erholt fühlst.' }
+    ],
+    why: (a, q) => { const o = optById(q, a); return o ? o.why : null; }
   },
 
-  /* 8, Q6: STRESS-SLIDER */
+  /* Q6 · Stress · Typfrage, max. 3 Punkte */
   {
-    type: 'slider',
-    eyebrow: 'Stress',
-    question: 'Wie hoch ist dein Stress-Level der letzten 3 Monate?',
+    id: 'q_stress', kind: 'type', type: 'slider', maxPoints: 3,
+    eyebrow: 'Belastung',
+    question: 'Wie hoch empfindest du deine Belastung in den letzten Wochen?',
     helper: '1 = entspannt · 10 = am Limit',
     min: 1, max: 10, default: 5,
-    labels: { 1:'Entspannt', 2:'Ruhig', 3:'Locker', 4:'Etwas angespannt', 5:'Mittel', 6:'Spürbar gestresst', 7:'Stark gestresst', 8:'Überfordert', 9:'Am Limit', 10:'Burn-out-nah' },
+    labels: { 1:'Entspannt', 2:'Ruhig', 3:'Locker', 4:'Etwas angespannt', 5:'Mittel', 6:'Spürbar belastet', 7:'Stark belastet', 8:'Überfordert', 9:'Am Limit', 10:'Weit über dem Limit' },
     images: [
       'icons/slider_stress_v1.png','icons/slider_stress_v2.png','icons/slider_stress_v3.png',
       'icons/slider_stress_v4.png','icons/slider_stress_v5.png','icons/slider_stress_v6.png',
@@ -1945,63 +2136,62 @@ const STEPS = [
     scoreFn: (v) => {
       if (v <= 3) return {};
       if (v <= 6) return { F: 1 };
-      if (v <= 8) return { F: 3 };
-      return { F: 3, T: 1 };
+      if (v <= 8) return { F: 2 };
+      return { F: 2, T: 1 };
     },
-    edgeLeft: '1, entspannt', edgeRight: '10, am Limit'
+    edgeLeft: '1, entspannt', edgeRight: '10, am Limit',
+    why: (v) => `Deine Belastung in den letzten Wochen schätzt du auf ${v} von 10.`
   },
 
-  /* 9a, Q7: KÖRPERLICHE SYMPTOME (Multi-Select) */
+  /* Q7 · Körperliche Veränderungen · Typfrage, Mehrfachauswahl, max. 4 Punkte */
   {
-    type: 'multi',
-    eyebrow: 'Körperliche Symptome',
-    question: 'Welche <em>körperlichen</em> Symptome kennst du seit Ü40?',
-    helper: 'Mehrfachauswahl, kreuz alles an, was zutrifft.',
+    id: 'q_body', kind: 'type', type: 'multi', maxPoints: 4,
+    eyebrow: 'Körperliche Veränderungen',
+    question: 'Welche <em>körperlichen</em> Veränderungen fallen dir momentan besonders auf?',
+    helper: 'Mehrfachauswahl, wähle alles, was zutrifft.',
     options: [
-      { label: 'Bauchfett, das nicht weggeht',             scores: { W:2 } },
-      { label: 'Hitzewallungen, Schweißausbrüche',         scores: { W:3 } },
-      { label: 'Schlafstörungen, nächtliches Aufwachen',   scores: { M:3 } },
-      { label: 'Energielosigkeit, Erschöpfung',            scores: { F:1, M:1 } },
-      { label: 'Haarausfall, dünner werdendes Haar',       scores: { W:2 } },
-      { label: 'Gelenkschmerzen, Steifheit',               scores: { W:2 } },
-      { label: 'Libido-Verlust, Trockenheit',              scores: { W:2 } },
-      { label: 'Nichts davon, körperlich geht es mir gut', scores: {} }
-    ]
+      { id: 'gewicht',      label: 'verändertes Gewicht oder Körpergefühl',              short: 'ein verändertes Körpergefühl',        scores: { W: 2 } },
+      { id: 'waerme',       label: 'Wärmegefühl oder Hitzewallungen',                    short: 'Wärmegefühl oder Hitzewallungen',     scores: { W: 2 } },
+      { id: 'schlaf',       label: 'Schlafprobleme',                                     short: 'Schlafprobleme',                      scores: { M: 1 } },
+      { id: 'energie',      label: 'wenig Energie',                                      short: 'wenig Energie',                       scores: { M: 1, F: 1 } },
+      { id: 'haut_haare',   label: 'Veränderungen an Haut oder Haaren',                  short: 'Veränderungen an Haut oder Haaren',   scores: { W: 2 } },
+      { id: 'gelenke',      label: 'Gelenke oder Beweglichkeit fühlen sich anders an',   short: 'eine veränderte Beweglichkeit',       scores: { W: 2 } },
+      { id: 'libido',       label: 'Veränderungen bei Libido oder Intimbereich',         short: 'Veränderungen im Intimbereich',       scores: { W: 2 } },
+      { id: 'nichts',       label: 'nichts davon',                                       exclusive: true, scores: {} }
+    ],
+    why: (a, q) => multiWhy(a, q, 'Dir fallen körperlich gerade besonders auf: ')
   },
 
-  /* 9b, Q8: EMOTIONALE / MENTALE SYMPTOME (Multi-Select) */
+  /* Zwischenseite, ungefähr Halbzeit */
   {
-    type: 'multi',
-    eyebrow: 'Emotionale &amp; mentale Symptome',
-    question: 'Welche <em>emotionalen</em> oder mentalen Symptome kennst du?',
-    helper: 'Mehrfachauswahl, kreuz alles an, was zutrifft.',
-    options: [
-      { label: 'Innere Anspannung, kann nicht abschalten',  scores: { F:3 } },
-      { label: 'Stimmungsschwankungen, Reizbarkeit',        scores: { T:3 } },
-      { label: 'Tränen ohne klaren Grund',                  scores: { T:3 } },
-      { label: 'Konzentrationsprobleme, „Brain Fog"',       scores: { F:1, M:1 } },
-      { label: 'Nichts davon, emotional bin ich stabil',   scores: {} }
-    ]
-  },
-
-  /* 10, INTERLUDE: TESTIMONIAL */
-  {
-    type: 'interlude',
-    variant: 'testimonial',
-    quote: 'Niemand hatte mir gesagt, dass die Perimenopause schon mit 45 anfangen kann. Jasmin hat mir gezeigt, dass es einen Plan gibt, mit Daten, nicht mit Bauchgefühl. Heute schlafe ich wieder durch und erkenne mich im Spiegel.',
-    name: 'Sandra, 47',
-    role: 'Mitten in der Peri-Menopause',
-    initials: 'S',
+    type: 'interlude', id: 'i_halfway', variant: 'statement', frame: 'halfway',
     big: 'Es geht nicht ums <em>jünger aussehen</em>.',
-    label: 'Es geht darum, ab 40 wieder DU zu sein.'
+    label: 'Es geht darum, ab 40 wieder du zu sein.',
+    sub: 'Du hast schon gut die Hälfte geschafft. Noch ein paar kurze Fragen, dann ist dein Ergebnis fertig.'
   },
 
-  /* 11, Q8: BEWEGUNG-SLIDER */
+  /* Q8 · Emotionales Erleben · Typfrage, Mehrfachauswahl, max. 4 Punkte */
   {
-    type: 'slider',
+    id: 'q_emotion', kind: 'type', type: 'multi', maxPoints: 4,
+    eyebrow: 'Emotionales Erleben',
+    question: 'Was kennst du <em>momentan</em> von dir?',
+    helper: 'Mehrfachauswahl, wähle alles, was zutrifft.',
+    options: [
+      { id: 'anspannung',    label: 'innere Anspannung oder schwer abschalten können',                        short: 'innere Anspannung',          scores: { F: 2 } },
+      { id: 'reizbarkeit',   label: 'Reizbarkeit oder Stimmungsschwankungen',                                  short: 'Reizbarkeit',                scores: { T: 2 } },
+      { id: 'traenen',       label: 'Tränen oder starke Gefühle ohne klaren Anlass',                           short: 'starke Gefühle',             scores: { T: 2 } },
+      { id: 'erschoepfung',  label: 'Konzentrationsprobleme oder das Gefühl von mentaler Erschöpfung',         short: 'mentale Erschöpfung',        scores: { M: 1, F: 1 } },
+      { id: 'nichts',        label: 'nichts davon', exclusive: true, scores: {} }
+    ],
+    why: (a, q) => multiWhy(a, q, 'Emotional kennst du momentan: ')
+  },
+
+  /* Q9 · Bewegung · Segment */
+  {
+    id: 'q_movement', kind: 'segment', type: 'slider',
     eyebrow: 'Bewegung',
-    question: 'Wie viele Tage pro Woche bewegst du dich aktiv (mindestens 30 Min)?',
-    helper: 'Spaziergänge zählen mit',
+    question: 'An wie vielen Tagen pro Woche bewegst du dich mindestens 30 Minuten bewusst?',
+    helper: 'Spaziergänge zählen mit.',
     min: 0, max: 7, default: 3,
     labels: { 0:'0 Tage, ehrlich', 1:'1 Tag', 2:'2 Tage', 3:'3 Tage', 4:'4 Tage', 5:'5 Tage', 6:'6 Tage', 7:'Jeden Tag' },
     images: [
@@ -2009,144 +2199,312 @@ const STEPS = [
       'icons/slider_movement_v3.png','icons/slider_movement_v4.png','icons/slider_movement_v5.png',
       'icons/slider_movement_v6.png','icons/slider_movement_v7.png'
     ],
-    scoreFn: (v) => {
-      if (v <= 1) return { T: 1, F: 1 };
-      return {};
-    },
     edgeLeft: '0 Tage', edgeRight: '7 Tage'
   },
 
-  /* 12, Q9: STRESS-REAKTION (Image Grid · direkt typ-mappend) */
+  /* Q10 · Blutwerte/Hormonthemen · Segment */
   {
-    type: 'image',
-    eyebrow: 'Stress-Reaktion',
-    question: 'Wenn du Stress hast, wie zeigt sich das bei dir?',
+    id: 'q_labs', kind: 'segment', type: 'single',
+    eyebrow: 'Blutwerte',
+    question: 'Wie gut fühlst du dich bei Blutwerten und Hormonthemen bisher orientiert?',
     options: [
-      { icon: 'flame',      title: 'Innere Anspannung',  desc: 'Ich kann nicht abschalten, bin auf Hochtouren.', scores: { F:3 } },
-      { icon: 'moon_rest',  title: 'Schlechter Schlaf',  desc: 'Ich liege wach oder wache nachts auf.', scores: { M:3 } },
-      { icon: 'heart_soft', title: 'Tränen / Stimmung',  desc: 'Ich werde sensibler, weine oder bin gereizt.', scores: { T:3 } },
-      { icon: 'sprout',     title: 'Körperliche Symptome', desc: 'Hitze, Verspannung, Schmerzen.', scores: { W:3 } }
+      { id: 'kaum',             label: 'Ich habe mich noch kaum damit beschäftigt.' },
+      { id: 'basiswerte',       label: 'Es wurden bisher nur übliche Basiswerte untersucht.' },
+      { id: 'ausfuehrlich',     label: 'Ich habe bereits ausführlichere Werte bestimmen lassen.' },
+      { id: 'werte_unklar',     label: 'Ich habe Werte, verstehe aber nicht, was sie bedeuten.' },
+      { id: 'erst_informieren', label: 'Ich möchte mich zuerst allgemein informieren.' }
     ]
   },
 
-  /* 13, Q10: BLUTTESTS */
+  /* Q11 · Bisherige Versuche · Segment, Mehrfachauswahl */
   {
-    type: 'single',
-    eyebrow: 'Daten',
-    question: 'Hast du schon mal einen ausführlichen Bluttest oder Hormoncheck machen lassen?',
-    options: [
-      { label: 'Ja, ausführlich, privat oder beim Spezialisten', scores: {} },
-      { label: 'Nur das Übliche beim Hausarzt',                    scores: {} },
-      { label: 'Nein, nie, ich wüsste nicht, was relevant ist',   scores: { W:1 } },
-      { label: 'Möchte ich, weiß aber nicht wo anfangen',          scores: { W:1 } }
-    ]
-  },
-
-  /* 14, Q11: BISHERIGE WEGE (Multi-Select) */
-  {
-    type: 'multi',
-    eyebrow: 'Was du schon probiert hast',
+    id: 'q_tried', kind: 'segment', type: 'multi',
+    eyebrow: 'Bisherige Wege',
     question: 'Was hast du bisher ausprobiert, um dich besser zu fühlen?',
-    helper: 'Mehrfachauswahl, kreuz alles an.',
+    helper: 'Mehrfachauswahl, wähle alles, was zutrifft.',
     options: [
-      { label: 'Diäten und Ernährungsumstellungen',  scores: { W:2 } },
-      { label: 'Sport, Yoga, Pilates',                scores: { T:2 } },
-      { label: 'Cremes und Beauty-Produkte',          scores: { M:1 } },
-      { label: 'Nahrungsergänzungsmittel',            scores: { W:1, M:1 } },
-      { label: 'Coachings, Bücher, Onlinekurse',      scores: { T:1, F:1 } },
-      { label: 'Ärztliche Hormonberatung',            scores: { W:2 } },
-      { label: 'Vieles parallel, nichts dauerhaft',  scores: { F:1 } },
-      { label: 'Ehrlich gesagt: noch wenig',          scores: {} }
+      { id: 'ernaehrung',     label: 'Ernährung oder Diäten' },
+      { id: 'sport',          label: 'Sport, Yoga oder Pilates' },
+      { id: 'routinen',       label: 'Schlaf- oder Entspannungsroutinen' },
+      { id: 'nem',            label: 'Nahrungsergänzungsmittel' },
+      { id: 'kurse',          label: 'Bücher, Coachings oder Onlinekurse' },
+      { id: 'beratung',       label: 'ärztliche oder therapeutische Beratung' },
+      { id: 'vieles',         label: 'vieles gleichzeitig, aber wenig dauerhaft' },
+      { id: 'wenig',          label: 'bisher noch wenig', exclusive: true }
     ]
   },
 
-  /* 15, Q12: ZEIT FÜR MICH */
+  /* Q12 · Umsetzungsbarriere · Segment */
   {
-    type: 'single',
-    eyebrow: 'Selbstfürsorge',
-    question: 'Wie viel bewusste Zeit nimmst du dir wöchentlich nur für dich?',
+    id: 'q_barrier', kind: 'segment', type: 'single',
+    eyebrow: 'Umsetzung',
+    question: 'Was hält dich bisher am stärksten davon ab, nachhaltig etwas zu verändern?',
     options: [
-      { label: 'Mehrere Stunden täglich',                       hint: 'Selbstfürsorge ist fest verankert', scores: {} },
-      { label: '30 bis 60 Minuten täglich',                         hint: 'Mein kleines Ritual gönne ich mir', scores: {} },
-      { label: 'Ein paar Mal pro Woche',                        hint: 'Wenn der Alltag es zulässt', scores: { T:1 } },
-      { label: 'Selten, ich komme nicht dazu',                 hint: 'Familie, Job, alles geht vor', scores: { F:2, T:1 } },
-      { label: 'Fast nie, und ich fühle mich oft schuldig dabei', hint: 'Sich Zeit nehmen fällt mir schwer', scores: { F:2, T:2 } }
+      { id: 'anfang',          label: 'Ich weiß nicht, womit ich anfangen soll.' },
+      { id: 'zeit',            label: 'Mir fehlt im Alltag die Zeit.' },
+      { id: 'dranbleiben',     label: 'Ich starte motiviert, bleibe aber nicht dran.' },
+      { id: 'widersprueche',   label: 'Ich höre überall widersprüchliche Empfehlungen.' },
+      { id: 'orientierung',    label: 'Mir fehlt persönliche Orientierung und Unterstützung.' }
     ]
   },
 
-  /* 16, INTERLUDE: 12-BLUTWERTE */
+  /* Q13 · Größte Beeinträchtigung · Typfrage, max. 3 Punkte, Tie-Breaker 1 */
   {
-    type: 'interlude',
-    variant: 'stat',
-    big: '12',
-    label: 'Das ist die Anzahl der <em>Blutwerte</em>, die ab 40 wirklich entscheidend sind.',
-    sub: 'Die meisten Hausärzte messen davon nur 3 oder 4, und sagen dann <b>„Ihre Werte sind im Normbereich"</b>. Dabei sind Östrogen, Progesteron, Testosteron, Schilddrüse &amp; Co. der Schlüssel zu fast jeder echten Beschwerde ab 40.'
-  },
-
-  /* 17, Q13: LEBENSPHASE (Image Grid) */
-  {
-    type: 'image',
-    eyebrow: 'Lebensphase &amp; Saison',
-    question: 'Welches Bild passt aktuell am besten zu deinem Lebensgefühl?',
+    id: 'q_outcome', kind: 'type', type: 'image', maxPoints: 3,
+    eyebrow: 'Dein Wunsch',
+    question: 'Was würde in deinem Alltag den größten Unterschied machen?',
     options: [
-      { icon: 'spring', title: 'Frühling',  desc: 'Ich öffne mich neu, fühle Aufbruch.', scores: {} },
-      { icon: 'summer', title: 'Sommer',    desc: 'Viel los, ich gebe alles, blühe.', scores: { F:1 } },
-      { icon: 'autumn', title: 'Herbst',    desc: 'Ich sortiere mich neu, werde nachdenklich.', scores: { T:2 } },
-      { icon: 'winter', title: 'Winter',    desc: 'Ich brauche Rückzug, fühle mich leer.', scores: { M:2, T:1 } }
-    ]
-  },
-
-  /* 18, Q14: LEBENS-SLIDER */
-  {
-    type: 'slider',
-    eyebrow: 'Lebensgefühl',
-    question: 'Wie zufrieden bist du gerade mit deiner Lebensphase?',
-    helper: '1 = ich kämpfe mich durch · 10 = ich blühe auf',
-    min: 1, max: 10, default: 5,
-    labels: { 1:'Ich kämpfe', 2:'Es zerrt an mir', 3:'Mich vermisse ich oft', 4:'Ausgebremst', 5:'Ambivalent', 6:'Akzeptiert', 7:'Im Fluss', 8:'Ich finde mich wieder', 9:'Stark verbunden', 10:'Ich blühe auf' },
-    images: [
-      'icons/slider_life_v1.png','icons/slider_life_v2.png','icons/slider_life_v3.png',
-      'icons/slider_life_v4.png','icons/slider_life_v5.png','icons/slider_life_v6.png',
-      'icons/slider_life_v7.png','icons/slider_life_v8.png','icons/slider_life_v9.png',
-      'icons/slider_life_v10.png'
+      { id: 'abschalten', icon: 'flame',      title: 'Abschalten',        desc: 'endlich häufiger abschalten können',                 scores: { F: 3 }, why: 'Du wünschst dir vor allem, endlich häufiger abschalten zu können.' },
+      { id: 'erholt',     icon: 'moon_rest',  title: 'Erholt aufwachen',  desc: 'morgens erholter aufwachen',                         scores: { M: 3 }, why: 'Du wünschst dir vor allem, morgens wieder erholter aufzuwachen.' },
+      { id: 'stabil',     icon: 'heart_soft', title: 'Mehr Stabilität',   desc: 'mich emotional wieder stabiler fühlen',              scores: { T: 3 }, why: 'Du wünschst dir vor allem, dich emotional wieder stabiler zu fühlen.' },
+      { id: 'verstehen',  icon: 'sprout',     title: 'Körper verstehen',  desc: 'meinen Körper wieder besser verstehen und unterstützen', scores: { W: 3 }, why: 'Du wünschst dir vor allem, deinen Körper wieder besser zu verstehen und zu unterstützen.' }
     ],
-    scoreFn: (v) => {
-      if (v <= 3) return { T: 2, F: 1 };
-      if (v <= 5) return { T: 1 };
-      return {};
-    },
-    edgeLeft: '1, kämpfe', edgeRight: '10, blühe'
+    why: (a, q) => { const o = optById(q, a); return o ? o.why : null; }
   },
 
-  /* 19, Q15: GRÖSSTER WUNSCH */
+  /* Q14 · Gewünschte Unterstützung · Segment (für CTA und E-Mails) */
   {
-    type: 'single',
-    eyebrow: 'Letzte Frage · Vision',
-    question: 'Wenn du dir ein Ergebnis aussuchen dürftest, was wäre dein wichtigstes?',
+    id: 'q_support', kind: 'segment', type: 'single',
+    eyebrow: 'Letzte Frage',
+    question: 'Was würde dir momentan am meisten helfen?',
     options: [
-      { label: 'Wieder wirklich abschalten und runterkommen',          scores: { F:3 } },
-      { label: 'Endlich wieder durchschlafen',                          scores: { M:3 } },
-      { label: 'Emotional ausgeglichen und in meiner Mitte sein',       scores: { T:3 } },
-      { label: 'Den körperlichen Wandel verstehen und steuern können',  scores: { W:3 } }
+      { id: 'plan',       label: 'ein klarer Schritt-für-Schritt-Plan' },
+      { id: 'wissen',     label: 'verständliches Wissen über meinen Körper' },
+      { id: 'routinen',   label: 'einfache Routinen für meinen Alltag' },
+      { id: 'austausch',  label: 'Unterstützung und Austausch mit anderen Frauen' },
+      { id: 'praxis',     label: 'Orientierung für Gespräche in der Praxis' }
     ]
   },
 
-  /* 20, LOADING (zuerst: "wir analysieren") */
-  { type: 'loading' },
-
-  /* 21, EMAIL-GATE mit verschwommenem Ergebnis im Hintergrund (STARK-Pattern) */
-  { type: 'email' }
+  { type: 'loading', id: 'loading' },
+  { type: 'email', id: 'email' }
 ];
+
+/* Kernfragen für Tie-Breaker 2 (Alltag, Schlaf, Stress, körperliche und emotionale Veränderungen) */
+const CORE_QUESTION_IDS = ['q_daily', 'q_sleep', 'q_stress', 'q_body', 'q_emotion'];
+
+/* Satz für die Programmbrücke je nach gewünschter Unterstützung (Q14) */
+const SUPPORT_LINES = {
+  plan:      'Du wünschst dir einen klaren Schritt-für-Schritt-Plan. Genau um diese Reihenfolge geht es.',
+  wissen:    'Du möchtest deinen Körper besser verstehen. Jasmin erklärt die Zusammenhänge so, dass du sie im Alltag einordnen kannst.',
+  routinen:  'Du suchst einfache Routinen. Deshalb geht es nicht um noch mehr Regeln, sondern um Schritte, die in deinen Alltag passen.',
+  austausch: 'Dir ist Austausch mit anderen Frauen wichtig. Mit diesen Fragen bist du nicht allein.',
+  praxis:    'Du möchtest besser vorbereitet in Gespräche in der Praxis gehen. Verständliches Wissen hilft dir, die richtigen Fragen zu stellen.'
+};
+
+/* ------------------------------------------------------------
+   5. SCORING · wird nach jeder Änderung komplett neu berechnet
+   ------------------------------------------------------------ */
+const QUESTIONS = STEPS.filter(s => s.kind === 'type' || s.kind === 'segment');
+const QUESTION_BY_ID = Object.fromEntries(QUESTIONS.map(q => [q.id, q]));
+
+function optById(q, id){ return (q.options || []).find(o => o.id === id) || null; }
+function emptyScores(){ return { F: 0, M: 0, T: 0, W: 0 }; }
+
+function multiWhy(ids, q, prefix){
+  if (!Array.isArray(ids)) return null;
+  const picked = ids.map(id => optById(q, id)).filter(o => o && !o.exclusive);
+  if (!picked.length) return null;
+  const shorts = picked.slice(0, 2).map(o => o.short || o.label);
+  return prefix + shorts.join(' und ') + (picked.length > 2 ? ' und weiteres' : '') + '.';
+}
+
+/* Punkte einer einzelnen Frage für eine gegebene Antwort */
+function scoreQuestion(q, answer){
+  const out = emptyScores();
+  if (!q || q.kind !== 'type' || answer === undefined || answer === null) return out;
+  let raw = emptyScores();
+  if (q.type === 'single' || q.type === 'image') {
+    const o = optById(q, answer);
+    if (o && o.scores) for (const k in o.scores) raw[k] += o.scores[k];
+  } else if (q.type === 'slider') {
+    const s = q.scoreFn ? q.scoreFn(Number(answer)) : {};
+    for (const k in s) raw[k] += s[k];
+  } else if (q.type === 'multi') {
+    (Array.isArray(answer) ? answer : []).forEach(id => {
+      const o = optById(q, id);
+      if (o && o.scores) for (const k in o.scores) raw[k] += o.scores[k];
+    });
+  }
+  const total = TYPE_KEYS.reduce((a, k) => a + raw[k], 0);
+  const factor = (q.maxPoints && total > q.maxPoints) ? q.maxPoints / total : 1;
+  TYPE_KEYS.forEach(k => { out[k] = raw[k] * factor; });
+  return out;
+}
+
+/* Alle möglichen Antworten einer Typfrage, um das theoretische Maximum zu berechnen */
+function allAnswers(q){
+  if (q.type === 'single' || q.type === 'image') return q.options.map(o => o.id);
+  if (q.type === 'slider') { const r = []; for (let v = q.min; v <= q.max; v++) r.push(v); return r; }
+  if (q.type === 'multi') {
+    const ids = q.options.filter(o => !o.exclusive).map(o => o.id);
+    const res = [];
+    for (let mask = 1; mask < (1 << ids.length); mask++) res.push(ids.filter((_, i) => mask & (1 << i)));
+    return res;
+  }
+  return [];
+}
+
+/* Theoretisches Maximum je Typ (Summe der Fragen-Maxima) */
+const TYPE_MAX = (() => {
+  const max = emptyScores();
+  QUESTIONS.filter(q => q.kind === 'type').forEach(q => {
+    const best = emptyScores();
+    allAnswers(q).forEach(a => {
+      const s = scoreQuestion(q, a);
+      TYPE_KEYS.forEach(k => { if (s[k] > best[k]) best[k] = s[k]; });
+    });
+    TYPE_KEYS.forEach(k => { max[k] += best[k]; });
+  });
+  return max;
+})();
+
+/* Prozentwerte, die exakt 100 ergeben (Largest-Remainder-Verfahren) */
+function toPercent(values){
+  const total = TYPE_KEYS.reduce((a, k) => a + values[k], 0);
+  if (total <= 0) return { F: 25, M: 25, T: 25, W: 25 };
+  const exact = TYPE_KEYS.map(k => ({ k, v: values[k] / total * 100 }));
+  const floored = exact.map(e => ({ k: e.k, p: Math.floor(e.v), r: e.v - Math.floor(e.v) }));
+  let rest = 100 - floored.reduce((a, e) => a + e.p, 0);
+  floored.slice().sort((a, b) => b.r - a.r || TYPE_KEYS.indexOf(a.k) - TYPE_KEYS.indexOf(b.k))
+    .forEach(e => { if (rest > 0) { e.p++; rest--; } });
+  const out = {}; floored.forEach(e => { out[e.k] = e.p; }); return out;
+}
+
+const EPS = 1e-9;
+
+/* Rangfolge mit bewusstem Tie-Breaker
+   1. Antwort auf „größte Beeinträchtigung“ (q_outcome)
+   2. stärkster Score aus den Kernfragen (CORE_QUESTION_IDS)
+   3. weiterhin Gleichstand → Mischprofil, Haupttyp aus der letzten
+      direkten Typfrage (q_outcome, sonst q_daily, sonst feste Reihenfolge) */
+function pickTop(candidates, norm, core, answers){
+  const best = Math.max(...candidates.map(k => norm[k]));
+  let tied = candidates.filter(k => best - norm[k] < EPS);
+  if (tied.length === 1) return { key: tied[0], mixedWith: [] };
+
+  const outcomeType = typeOfAnswer('q_outcome', answers);
+  if (outcomeType && tied.includes(outcomeType)) return { key: outcomeType, mixedWith: [] };
+
+  const bestCore = Math.max(...tied.map(k => core[k]));
+  const coreTied = tied.filter(k => bestCore - core[k] < EPS);
+  if (coreTied.length === 1) return { key: coreTied[0], mixedWith: [] };
+
+  const order = [typeOfAnswer('q_outcome', answers), typeOfAnswer('q_daily', answers)].concat(TYPE_KEYS);
+  const key = order.find(k => k && coreTied.includes(k));
+  return { key, mixedWith: coreTied.filter(k => k !== key) };
+}
+
+function typeOfAnswer(qid, answers){
+  const q = QUESTION_BY_ID[qid];
+  const o = q ? optById(q, answers[qid]) : null;
+  if (!o || !o.scores) return null;
+  return Object.keys(o.scores)[0] || null;
+}
+
+function computeResult(answers){
+  const raw = emptyScores(), core = emptyScores(), breakdown = {};
+  QUESTIONS.filter(q => q.kind === 'type').forEach(q => {
+    const s = scoreQuestion(q, answers[q.id]);
+    breakdown[q.id] = s;
+    TYPE_KEYS.forEach(k => {
+      raw[k] += s[k];
+      if (CORE_QUESTION_IDS.includes(q.id)) core[k] += s[k];
+    });
+  });
+  const norm = {};
+  TYPE_KEYS.forEach(k => { norm[k] = TYPE_MAX[k] > 0 ? raw[k] / TYPE_MAX[k] : 0; });
+  const primary = pickTop(TYPE_KEYS, norm, core, answers);
+  const secondary = pickTop(TYPE_KEYS.filter(k => k !== primary.key), norm, core, answers);
+  return {
+    raw, norm, core, breakdown,
+    pct: toPercent(norm),
+    primary: primary.key,
+    secondary: secondary.key,
+    mixed: primary.mixedWith.length > 0,
+    mixedWith: primary.mixedWith
+  };
+}
+
+/* ------------------------------------------------------------
+   6. SEGMENTE + DATENFELDER (abgeleitete Klassen statt Rohsymptome)
+   ------------------------------------------------------------ */
+function classify(answers){
+  const e = answers.q_energy, s = answers.q_stress, m = answers.q_movement;
+  const body = (answers.q_body || []).filter(id => id !== 'nichts');
+  const emo = (answers.q_emotion || []).filter(id => id !== 'nichts');
+  let symptom_cluster = 'keine';
+  if (body.length && emo.length) symptom_cluster = 'koerperlich_und_emotional';
+  else if (body.length) symptom_cluster = 'koerperlich';
+  else if (emo.length) symptom_cluster = 'emotional';
+  return {
+    age_band: answers.q_age || '',
+    cycle_stage: answers.q_cycle || '',
+    energy_class: e === undefined ? '' : (e <= 3 ? 'niedrig' : e <= 6 ? 'mittel' : 'hoch'),
+    sleep_class: answers.q_sleep || '',
+    stress_class: s === undefined ? '' : (s <= 3 ? 'niedrig' : s <= 6 ? 'mittel' : s <= 8 ? 'hoch' : 'sehr_hoch'),
+    symptom_cluster,
+    movement_class: m === undefined ? '' : (m <= 0 ? 'keine' : m <= 2 ? 'selten' : m <= 4 ? 'regelmaessig' : 'haeufig'),
+    lab_experience: answers.q_labs || '',
+    attempted_solutions: (answers.q_tried || []).join(','),
+    main_barrier: answers.q_barrier || '',
+    desired_outcome: answers.q_outcome || '',
+    preferred_support: answers.q_support || ''
+  };
+}
+
+/* ------------------------------------------------------------
+   7. UTM-PARAMETER · beim Laden sichern, bis zur Eintragung behalten
+   ------------------------------------------------------------ */
+const UTM_KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content'];
+const CAMPAIGN = (() => {
+  const out = {};
+  let stored = {};
+  try { stored = JSON.parse(sessionStorage.getItem('quiz_utm') || '{}') || {}; } catch (e) {}
+  let params;
+  try { params = new URLSearchParams(window.location.search); } catch (e) { params = new URLSearchParams(''); }
+  UTM_KEYS.forEach(k => { out[k] = params.get(k) || stored[k] || ''; });
+  out.landing_page = stored.landing_page || (window.location.origin + window.location.pathname);
+  try { sessionStorage.setItem('quiz_utm', JSON.stringify(out)); } catch (e) {}
+  return out;
+})();
+
+/* ------------------------------------------------------------
+   8. TRACKING · funktioniert auch ohne Anbieter
+   Sendet nur Schritt, Frage, Haupttyp, Kampagne und Viewportklasse.
+   Niemals E-Mail-Adresse oder Antworten zu Beschwerden.
+   ------------------------------------------------------------ */
+const TRACK_ALLOWED = ['step', 'question_id', 'question_index', 'primary_type', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'viewport', 'error'];
+window.__quizEvents = [];
+
+function viewportClass(){
+  const w = window.innerWidth || 0;
+  return w < 600 ? 'mobile' : w < 1024 ? 'tablet' : 'desktop';
+}
+
+function trackQuizEvent(eventName, payload){
+  try {
+    const data = { viewport: viewportClass() };
+    UTM_KEYS.forEach(k => { if (CAMPAIGN[k]) data[k] = CAMPAIGN[k]; });
+    Object.keys(payload || {}).forEach(k => { if (TRACK_ALLOWED.includes(k)) data[k] = payload[k]; });
+    window.__quizEvents.push({ event: eventName, ...data });
+    if (typeof window.gtag === 'function') window.gtag('event', eventName, data);
+    else if (Array.isArray(window.dataLayer)) window.dataLayer.push({ event: eventName, ...data });
+    if (eventName === 'quiz_lead_success' && typeof window.fbq === 'function') window.fbq('track', 'Lead');
+  } catch (e) { /* Tracking darf den Funnel nie blockieren */ }
+}
 
 /* ============================================================
    STATE
+   answers: { question_id: optionId | sliderWert | [optionIds] }
    ============================================================ */
 
 let state = {
   step: 0,
-  scores: { F:0, M:0, T:0, W:0 },
-  answers: [],
-  user: { name: '', email: '' }
+  answers: {},
+  user: { name: '', email: '' },
+  lead: { status: 'idle' },   // idle | sending | success | error
+  tracked: {}
 };
 
 /* ============================================================
@@ -2486,6 +2844,54 @@ function stopPetalRain() {
   if (_petalStopper) _petalStopper();
 }
 
+
+/* ============================================================
+   ANIMIERTE SZENEN · gerendert mit HyperFrames (HTML → MP4)
+   Quellen: Ordner „Quiz-HyperFrames-Szenen“ (je Szene eine index.html).
+   Videos laden erst, wenn die Szene sichtbar wird, und laufen nur dann.
+   Ohne Video (oder bei reduzierter Bewegung) bleibt das Standbild stehen.
+   ============================================================ */
+const SCENE_LABELS = {
+  pattern: 'Einzelne Beobachtungen verbinden sich zu deinem Muster',
+  halfway: 'Halbzeit, noch 7 kurze Fragen',
+  weigh:   'Deine Antworten werden gewichtet',
+  gears:   'Schlaf, Stress, Ernährung, Bewegung und Hormone greifen ineinander',
+  F: 'Von Anspannung zu einer bewussten Ruhephase',
+  M: 'Ein fester Rhythmus aus Tag und Nacht',
+  T: 'Ein Abendnotizbuch: Was gibt dir Energie?',
+  W: 'Eine Woche beobachten, Muster werden sichtbar'
+};
+
+function frame(key, size){
+  return `<div class="anim anim-${size || 'md'}" role="img" aria-label="${SCENE_LABELS[key] || ''}">
+    <video muted loop playsinline preload="none" poster="quiz-szene-${key}.webp" data-scene="${key}">
+      <source data-src="quiz-szene-${key}.mp4" type="video/mp4">
+      <source data-src="quiz-szene-${key}.webm" type="video/webm">
+    </video>
+  </div>`;
+}
+
+const REDUCE_MOTION = (() => { try { return window.matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (e) { return false; } })();
+let _animObserver = null;
+
+function playScene(v){
+  const srcs = v.querySelectorAll('source[data-src]');
+  if (srcs.length) { srcs.forEach(s => { s.src = s.dataset.src; s.removeAttribute('data-src'); }); v.load(); }
+  const p = v.play(); if (p && p.catch) p.catch(() => {});
+}
+
+function activateAnims(){
+  if (REDUCE_MOTION) return;   // Standbild genügt
+  const vids = Array.from(document.querySelectorAll('.anim video:not([data-obs])'))
+    .filter(v => !v.closest('.rev-result:not(.revealed)'));   // nicht hinter dem E-Mail-Gate laden
+  if (!vids.length) return;
+  if (!('IntersectionObserver' in window)) { vids.forEach(v => { v.dataset.obs = '1'; playScene(v); }); return; }
+  if (!_animObserver) _animObserver = new IntersectionObserver(es => {
+    es.forEach(e => { if (e.isIntersecting) playScene(e.target); else e.target.pause(); });
+  }, { threshold: 0.25 });
+  vids.forEach(v => { v.dataset.obs = '1'; _animObserver.observe(v); });
+}
+
 /* ============================================================
    RENDER
    ============================================================ */
@@ -2494,16 +2900,19 @@ let multiSelected = new Set();
 
 function $app(){ return document.getElementById('app'); }
 
-function totalQuestionSteps(){
-  return STEPS.filter(s => ['single','image','slider','multi'].includes(s.type)).length;
-}
+function isQuestion(s){ return s && (s.kind === 'type' || s.kind === 'segment'); }
+
+function totalQuestionSteps(){ return QUESTIONS.length; }
 function currentQuestionIndex(){
   let count = 0;
-  for (let i = 0; i <= state.step; i++) {
-    if (['single','image','slider','multi'].includes(STEPS[i]?.type)) count++;
-  }
+  for (let i = 0; i <= state.step; i++) if (isQuestion(STEPS[i])) count++;
   return count;
 }
+
+function escapeHtml(str){
+  return String(str || '').replace(/[&<>"']/g, c => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' }[c]));
+}
+function displayName(){ return escapeHtml(state.user.name); }
 
 function progressBar(){
   const total = totalQuestionSteps();
@@ -2512,7 +2921,7 @@ function progressBar(){
   return `
     <div class="top-bar">
       ${state.step > 1 ? `<button class="progress-back" onclick="goBack()">← zurück</button>` : '<span></span>'}
-      <span class="progress-text">Frage ${done} von ${total}</span>
+      <span class="progress-text">Frage ${Math.max(done, 1)} von ${total}</span>
       <span style="width:60px"></span>
     </div>
     <div class="progress-bar"><div class="progress-fill" style="width:${pct}%"></div></div>
@@ -2525,23 +2934,23 @@ function renderHero(){
       <div class="hero-text">
         <div class="pill">
           <span class="sparkle">${ICONS.sparkle}</span>
-          Der Perimenopausen-Test für Frauen Ü40
+          Das Ü40-Quiz für Frauen
         </div>
-        <h1>Was blockiert deine <em>Energie, Ausstrahlung und Figur</em> ab 40 wirklich?</h1>
+        <h1>Was bremst gerade deine <em>Energie, Ausstrahlung und Figur</em> ab 40?</h1>
         <p class="lead">
-          In 3 Minuten findest du heraus, welche der 4 typischen Ü40-Baustellen dich aktuell am stärksten betrifft, und bekommst <b>3 konkrete Sofortmaßnahmen</b>, die du heute Abend schon starten kannst.
+          In 3 bis 4 Minuten erfährst du, welches der 4 typischen Ü40-Muster bei dir gerade im Vordergrund steht, und bekommst <b>3 erste Schritte</b>, die du direkt in deinem Alltag ausprobieren kannst.
         </p>
 
         <div class="meta-row">
-          <span><b>16</b> Fragen</span>
-          <span><b>~3 Min.</b> Dauer</span>
-          <span><b>PDF</b> &amp; Plan</span>
+          <span><b>${totalQuestionSteps()}</b> Fragen</span>
+          <span><b>3 bis 4 Min.</b> Dauer</span>
+          <span><b>3</b> erste Schritte</span>
         </div>
 
-        <button class="btn" onclick="next()">Test jetzt starten <span class="arrow">→</span></button>
+        <button class="btn" onclick="startQuiz()">Quiz jetzt starten <span class="arrow">→</span></button>
 
         <p class="social-proof">
-          Über <b>1.200+ Frauen</b> haben den Test bereits gemacht. Wissenschaftlich orientiert · Kein Verkaufsdruck.
+          Kostenlos · Orientierung statt Diagnose · Kein Verkaufsdruck
         </p>
       </div>
 
@@ -2552,13 +2961,13 @@ function renderHero(){
 
         <div class="rp-hero">
           <div class="rp-icon-wrap">${ICONS.type_f}</div>
-          <div class="rp-label">Deine größte Baustelle</div>
+          <div class="rp-label">Dein aktuelles Muster</div>
           <div class="rp-name blurred">Die Feuerseele</div>
         </div>
 
         <div class="rp-bars">
           ${Object.values(TYPES).map((t, i) => {
-            const pcts = [71, 18, 23, 12];
+            const pcts = [46, 24, 18, 12];   /* Beispielwerte, Summe 100 */
             const icons = ['flame', 'moon_rest', 'heart_soft', 'sprout'];
             return `
               <div class="rp-bar">
@@ -2571,7 +2980,7 @@ function renderHero(){
           }).join('')}
         </div>
 
-        <div class="rp-hint">+ deine 3 Sofortmaßnahmen &amp; Blutwerte-PDF</div>
+        <div class="rp-hint">+ deine 3 ersten Schritte für den Alltag</div>
         </div>
       </div>
     </section>
@@ -2585,7 +2994,7 @@ function renderName(){
       <h2>Erstmal <em>zu dir</em>.</h2>
       <p class="lead">Wie sollen wir dich ansprechen? Damit dein Ergebnis sich nach dir anfühlt.</p>
       <form onsubmit="submitName(event)">
-        <input type="text" class="input-field" id="name-input" placeholder="Dein Vorname" required autofocus>
+        <input type="text" class="input-field" id="name-input" placeholder="Dein Vorname" required autofocus value="${displayName()}">
         <div class="continue-bar">
           <button type="submit" class="btn">Weiter <span class="arrow">→</span></button>
         </div>
@@ -2596,15 +3005,16 @@ function renderName(){
 }
 
 function renderSingle(s){
+  const current = state.answers[s.id];
   $app().innerHTML = `
     ${progressBar()}
-    <section class="screen active question">
+    <section class="screen active question" data-qid="${s.id}">
       <div class="q-eyebrow">${s.eyebrow}</div>
-      <h2>${personalize(s.question)}</h2>
+      <h2>${s.question}</h2>
       ${s.helper ? `<p class="q-helper">${s.helper}</p>` : ''}
       <div class="answers">
         ${s.options.map((o, i) => `
-          <button class="answer" onclick="selectSingle(${i})">
+          <button class="answer${current === o.id ? ' selected' : ''}" data-oid="${o.id}" aria-pressed="${current === o.id}" onclick="selectSingle(${i})">
             <span class="a-text">
               <span>${o.label}</span>
               ${o.hint ? `<span class="a-hint">${o.hint}</span>` : ''}
@@ -2617,15 +3027,16 @@ function renderSingle(s){
 }
 
 function renderImage(s){
+  const current = state.answers[s.id];
   $app().innerHTML = `
     ${progressBar()}
-    <section class="screen active question">
+    <section class="screen active question" data-qid="${s.id}">
       <div class="q-eyebrow">${s.eyebrow}</div>
-      <h2>${personalize(s.question)}</h2>
+      <h2>${s.question}</h2>
       ${s.helper ? `<p class="q-helper">${s.helper}</p>` : ''}
       <div class="image-grid">
         ${s.options.map((o, i) => `
-          <button class="image-card" onclick="selectSingle(${i})">
+          <button class="image-card${current === o.id ? ' selected' : ''}" data-oid="${o.id}" aria-pressed="${current === o.id}" onclick="selectSingle(${i})">
             <span class="ic-visual">${ICONS[o.icon] || ICONS.sun}</span>
             <span class="ic-title">${o.title}</span>
             <span class="ic-desc">${o.desc}</span>
@@ -2637,23 +3048,21 @@ function renderImage(s){
 }
 
 function _sliderImageIdx(v, s){
-  // Direkte Wert-zu-Index-Mapping: Slider-Wert minus Min = Bild-Index
-  // Beispiel: Energy 1-10 → Index 0-9 (10 Bilder)
-  // Beispiel: Bewegung 0-7 → Index 0-7 (8 Bilder)
   if (!s.images) return 0;
   const idx = v - s.min;
   return Math.max(0, Math.min(idx, s.images.length - 1));
 }
 
 function renderSlider(s){
+  const value = state.answers[s.id] !== undefined ? state.answers[s.id] : s.default;
   const hasImages = s.images && s.images.length > 0;
-  const startIdx = hasImages ? _sliderImageIdx(s.default, s) : 0;
+  const startIdx = hasImages ? _sliderImageIdx(value, s) : 0;
 
   $app().innerHTML = `
     ${progressBar()}
-    <section class="screen active question">
+    <section class="screen active question" data-qid="${s.id}">
       <div class="q-eyebrow">${s.eyebrow}</div>
-      <h2>${personalize(s.question)}</h2>
+      <h2>${s.question}</h2>
       ${s.helper ? `<p class="q-helper">${s.helper}</p>` : ''}
       ${hasImages ? `
         <div class="slider-image-stage" id="slider-image-stage">
@@ -2663,10 +3072,11 @@ function renderSlider(s){
         </div>
       ` : ''}
       <div class="slider-wrap">
-        <div class="slider-value" id="slider-value">${s.default}</div>
-        <div class="slider-label" id="slider-label">${s.labels[s.default] || ''}</div>
+        <div class="slider-value" id="slider-value">${value}</div>
+        <div class="slider-label" id="slider-label">${s.labels[value] || ''}</div>
         <input type="range" class="range-input" id="slider-input"
-          min="${s.min}" max="${s.max}" value="${s.default}" step="1"
+          min="${s.min}" max="${s.max}" value="${value}" step="1"
+          aria-label="${escapeHtml(s.question)}"
           oninput="updateSlider()">
         <div class="range-edges">
           <span>${s.edgeLeft}</span>
@@ -2681,105 +3091,130 @@ function renderSlider(s){
 }
 
 function renderMulti(s){
-  multiSelected = new Set();
+  multiSelected = new Set(Array.isArray(state.answers[s.id]) ? state.answers[s.id] : []);
   $app().innerHTML = `
     ${progressBar()}
-    <section class="screen active question">
+    <section class="screen active question" data-qid="${s.id}">
       <div class="q-eyebrow">${s.eyebrow}</div>
-      <h2>${personalize(s.question)}</h2>
+      <h2>${s.question}</h2>
       ${s.helper ? `<p class="q-helper">${s.helper}</p>` : ''}
       <div class="multi-grid" id="multi-grid">
         ${s.options.map((o, i) => `
-          <button class="multi-card" data-idx="${i}" onclick="toggleMulti(${i})">
+          <button class="multi-card${o.exclusive ? ' exclusive' : ''}${multiSelected.has(o.id) ? ' selected' : ''}" data-idx="${i}" data-oid="${o.id}" aria-pressed="${multiSelected.has(o.id)}" onclick="toggleMulti(${i})">
             <span class="check"></span>
             <span>${o.label}</span>
           </button>
         `).join('')}
       </div>
-      <p class="multi-helper" id="multi-helper">Wähle mindestens eine Antwort.</p>
+      <p class="multi-helper" id="multi-helper"></p>
       <div class="continue-bar">
         <button class="btn" id="multi-submit" disabled onclick="submitMulti()">Weiter <span class="arrow">→</span></button>
       </div>
     </section>
   `;
+  syncMultiUi();
 }
 
 function renderInterlude(s){
-  if (s.variant === 'stat') {
-    $app().innerHTML = `
-      ${progressBar()}
-      <section class="screen active interlude">
-        <div class="stat-big">${s.big}</div>
-        <div class="stat-label">${personalize(s.label)}</div>
-        <div class="stat-sub">${personalize(s.sub)}</div>
-        <div class="continue-bar">
-          <button class="btn" onclick="next()">Weiter <span class="arrow">→</span></button>
-        </div>
-      </section>
-    `;
-  } else if (s.variant === 'testimonial') {
-    setTimeout(() => sound.woosh(0.9, 0.07), 100);
-    $app().innerHTML = `
-      ${progressBar()}
-      <section class="screen active interlude">
-        <div class="stat-big" style="font-size:3.4em">${s.big}</div>
-        <div class="stat-label">${s.label}</div>
-        <div class="testimonial">
-          <div class="quote">„${s.quote}"</div>
-          <div class="author">
-            <div class="avatar">${s.initials}</div>
-            <div><b>${s.name}</b> · ${s.role}</div>
-          </div>
-        </div>
-        <div class="continue-bar">
-          <button class="btn" onclick="next()">Weiter <span class="arrow">→</span></button>
-        </div>
-      </section>
-    `;
-  }
+  $app().innerHTML = `
+    ${progressBar()}
+    <section class="screen active interlude">
+      ${s.frame ? frame(s.frame) : ''}
+      <div class="stat-big stat-statement">${s.big}</div>
+      <div class="stat-label">${s.label}</div>
+      <div class="stat-sub">${s.sub}</div>
+      <div class="continue-bar">
+        <button class="btn" onclick="next()">Weiter <span class="arrow">→</span></button>
+      </div>
+    </section>
+  `;
+}
+
+function renderLoading(){
+  $app().innerHTML = `
+    <section class="screen active loading">
+      ${frame('weigh', 'sm')}
+      <h2>Wir werten deine <em>${totalQuestionSteps()} Antworten</em> aus${state.user.name ? ', ' + displayName() : ''}…</h2>
+      <p class="loading-cycle" id="loading-cycle">Antworten werden zusammengefasst</p>
+      <div class="loading-progress">
+        <div class="loading-progress-fill" id="loading-progress-fill"></div>
+      </div>
+      <div class="loading-quote">
+        „Der größte Hebel für Frauen Ü40 ist nicht eine neue Diät. Es ist Verstehen, was im eigenen Körper passiert, und einen Plan zu haben, dem man vertraut.“
+        <span class="src">Jasmin Schmidtke</span>
+      </div>
+    </section>
+  `;
+  setTimeout(() => {
+    const fill = document.getElementById('loading-progress-fill');
+    if (fill) fill.style.width = '100%';
+  }, 50);
+
+  const msgs = [
+    'Antworten werden zusammengefasst',
+    'Muster werden gewichtet',
+    'Deine ersten Schritte werden ausgewählt',
+    'Dein Ergebnis wird erstellt'
+  ];
+  let i = 0;
+  const el = document.getElementById('loading-cycle');
+  const interval = setInterval(() => {
+    i++;
+    if (i >= msgs.length || !document.getElementById('loading-cycle')) { clearInterval(interval); return; }
+    el.style.opacity = 0;
+    setTimeout(() => { el.textContent = msgs[i]; el.style.opacity = 1; }, 300);
+  }, 900);
+  const myStep = state.step;
+  setTimeout(() => { if (state.step === myStep) next(false); }, 4000);
 }
 
 function renderEmail(){
-  // Compute the winner once so the blurred result behind is consistent
-  if (!state.user.winner) {
-    state.user.winner = Object.entries(state.scores).sort((a,b) => b[1]-a[1])[0][0];
-  }
+  const r = computeResult(state.answers);
+  trackOnce('quiz_complete', { primary_type: r.primary });
+  trackQuizEvent('quiz_email_view', { primary_type: r.primary });
+  const hasPdf = !!OFFER_CONFIG.pdfUrl;
+  const sending = state.lead.status === 'sending';
 
   $app().innerHTML = `
     <section class="screen active reveal-screen">
-      <!-- Layer 1: Echtes Ergebnis, verschwommen im Hintergrund -->
-      <div class="rev-result" id="rev-result">
-        ${buildResultBody()}
+      <div class="rev-result" id="rev-result" aria-hidden="true">
+        ${buildResultBody(r)}
       </div>
 
-      <!-- Layer 2: Email-Modal-Gate als Overlay -->
       <div class="rev-modal-wrap" id="rev-modal-wrap">
         <div class="rev-modal">
+          <button type="button" class="rev-back" onclick="goBack()">← zurück zu den Fragen</button>
           <div class="ready-pill">
             <span class="ready-dot"></span>
             Ergebnis bereit
           </div>
-          <div class="ready-sub">Deine Sofortmaßnahmen warten auf dich</div>
+          <div class="ready-sub">Deine ersten Schritte warten auf dich</div>
 
-          <h2>Dein Profil ist <em>fertig</em>${state.user.name ? ', ' + state.user.name : ''}!</h2>
+          <h2>Dein Profil ist <em>fertig</em>${state.user.name ? ', ' + displayName() : ''}!</h2>
           <p class="modal-lead">
-            Trag deine E-Mail ein, um deine <b>3 Sofortmaßnahmen</b> und die <b>12 wichtigsten Blutwerte für Frauen ab 40</b> als PDF freizuschalten.
+            Trag deine E-Mail-Adresse ein und erhalte dein persönliches Ergebnis, die <b>drei ersten Schritte</b>${hasPdf ? ` und den <b>${escapeHtml(OFFER_CONFIG.pdfLabel)}</b>` : ''}. Zusätzlich sendet Jasmin dir in den nächsten Tagen verständliche Impulse rund um Schlaf, Stress, Bewegung, Ernährung und die Veränderungen ab 40. Du kannst dich jederzeit abmelden.
           </p>
 
+          ${hasPdf ? `
           <div class="bonus-callout">
             <span class="gift-icon">${ICONS.gift}</span>
             <div>
               <strong>Dein Geschenk dazu</strong>
-              <span>„Die 12 wichtigsten Blutwerte für Frauen ab 40", PDF mit Erklärungen</span>
+              <span>${escapeHtml(OFFER_CONFIG.pdfLabel)} als PDF</span>
             </div>
-          </div>
+          </div>` : ''}
 
-          <form class="email-form" onsubmit="submitEmail(event)">
-            <input type="email" class="input-field" id="user-email" placeholder="deine@email.de" required>
-            <button type="submit" class="btn">Mein Ergebnis freischalten <span class="arrow">→</span></button>
+          <form class="email-form" id="email-form" onsubmit="submitEmail(event)" novalidate>
+            <input type="email" class="input-field" id="user-email" placeholder="deine@email.de" autocomplete="email" required value="${escapeHtml(state.user.email)}">
+            <label class="consent-check">
+              <input type="checkbox" id="consent-input" required>
+              <span>Ja, ich möchte mein Quiz-Ergebnis und in den nächsten Tagen weitere E-Mails von Jasmin Schmidtke mit Impulsen rund um Schlaf, Stress, Bewegung, Ernährung und die Veränderungen ab 40 erhalten. Dafür dürfen meine Quiz-Antworten in zusammengefasster Form gespeichert werden. Die Einwilligung kann ich jederzeit widerrufen. Mehr dazu in der <a href="${OFFER_CONFIG.privacyUrl}" target="_blank" rel="noopener">Datenschutzerklärung</a>.</span>
+            </label>
+            <p class="form-error" id="form-error" role="alert" hidden></p>
+            <button type="submit" class="btn" id="email-submit"${sending ? ' disabled' : ''}>Mein Ergebnis freischalten <span class="arrow">→</span></button>
           </form>
           <p class="modal-privacy">
-            Kein Spam. Nur ehrlicher Mehrwert. Jederzeit abbestellbar.<br/>
+            Kein Spam. Abmeldung jederzeit mit einem Klick.<br/>
             <a href="https://jasminschmidtke.de/datenschutz" target="_blank" rel="noopener">Datenschutz</a> · <a href="https://jasminschmidtke.de/impressum" target="_blank" rel="noopener">Impressum</a>
           </p>
         </div>
@@ -2787,272 +3222,341 @@ function renderEmail(){
     </section>
   `;
 
-  // Sanfter Blütenregen während des Email-Gates
   setTimeout(() => {
     const screen = document.querySelector('.reveal-screen');
     if (screen) startPetalRain(screen);
   }, 200);
 }
 
-function renderLoading(){
-  $app().innerHTML = `
-    <section class="screen active loading">
-      <div class="loader-ring"></div>
-      <h2>Wir analysieren deine <em>16 Antworten</em>${state.user.name ? ', ' + state.user.name : ''}…</h2>
-      <p class="loading-cycle" id="loading-cycle">Profilachsen werden ausgewertet</p>
-      <div class="loading-progress">
-        <div class="loading-progress-fill" id="loading-progress-fill"></div>
-      </div>
-      <div class="loading-quote">
-        „Der größte Hebel für Frauen Ü40 ist nicht eine neue Diät. Es ist Verstehen, was im eigenen Körper passiert, und einen Plan zu haben, dem man vertraut."
-        <span class="src">Jasmin Schmidtke</span>
-      </div>
-    </section>
-  `;
-  // Progress fill animation
-  setTimeout(() => {
-    const fill = document.getElementById('loading-progress-fill');
-    if (fill) fill.style.width = '100%';
-  }, 50);
-
-  // Cycling messages
-  const msgs = [
-    'Profilachsen werden ausgewertet',
-    'Hormon-Signale werden gewichtet',
-    'Identitäts-Indikatoren prüfen',
-    'Energie-Muster erkennen',
-    'Dein persönlicher Typ wird erstellt'
-  ];
-  let i = 0;
-  const el = document.getElementById('loading-cycle');
-  const interval = setInterval(() => {
-    i++;
-    if (i >= msgs.length || !document.getElementById('loading-cycle')) {
-      clearInterval(interval);
-      return;
-    }
-    el.style.opacity = 0;
-    setTimeout(() => {
-      el.textContent = msgs[i];
-      el.style.opacity = 1;
-    }, 300);
-  }, 800);
-  setTimeout(() => next(false), 4200);
+/* „Warum du dieses Ergebnis erhältst“: drei Sätze aus echten Antworten,
+   sortiert nach ihrem Beitrag zum Haupttyp */
+function buildWhyPoints(r){
+  const candidates = [];
+  QUESTIONS.filter(q => q.kind === 'type' && typeof q.why === 'function').forEach((q, order) => {
+    const a = state.answers[q.id];
+    if (a === undefined) return;
+    const text = q.why(a, q);
+    if (!text) return;
+    const contrib = (r.breakdown[q.id] || {})[r.primary] || 0;
+    candidates.push({ text, contrib, order });
+  });
+  candidates.sort((a, b) => (b.contrib - a.contrib) || (a.order - b.order));
+  return candidates.slice(0, 3).map(c => c.text);
 }
 
-function buildResultBody(){
-  if (!state.user.winner) {
-    state.user.winner = Object.entries(state.scores).sort((a,b) => b[1]-a[1])[0][0];
-  }
-  const t = TYPES[state.user.winner];
-  const totalScore = Object.values(state.scores).reduce((a,b)=> a+b, 0) || 1;
-  const pct = (k) => Math.round((state.scores[k] / totalScore) * 100);
+function buildResultBody(r){
+  r = r || computeResult(state.answers);
+  const t = TYPES[r.primary];
+  const second = TYPES[r.secondary];
+  const why = buildWhyPoints(r);
+  const supportLine = SUPPORT_LINES[state.answers.q_support] || '';
+  const levelLabel = (k) => k === r.primary ? 'stark ausgeprägt' : (k === r.secondary ? 'ebenfalls relevant' : 'aktuell weniger im Vordergrund');
 
   return `
-    <div class="result" style="border-top-color:${t.color}">
-      <div class="type-eyebrow">Deine größte Baustelle${state.user.name ? ', ' + state.user.name : ''}</div>
+    <div class="result" style="border-top-color:${t.color}" data-type="${r.primary}" data-secondary="${r.secondary}">
+      <div class="type-eyebrow">Dein aktuelles Muster${state.user.name ? ', ' + displayName() : ''}</div>
       <div class="type-hero-icon" style="color:${t.color}">${ICONS['type_' + t.short.toLowerCase()]}</div>
-      <h2 class="type-name">${t.name.replace(t.short_name, '<em>'+t.short_name+'</em>')}</h2>
-      <p class="type-tagline">„${t.tagline}"</p>
+      <h2 class="type-name">${t.name.replace(t.short_name, '<em>' + t.short_name + '</em>')}</h2>
+      <p class="type-tagline">„${t.tagline}“</p>
+      ${r.mixed ? `<p class="mix-note">Mischprofil: Bei dir sind <b>${t.short_name}</b> und <b>${r.mixedWith.map(k => TYPES[k].short_name).join(' und ')}</b> gleich stark ausgeprägt. Wir zeigen dir zuerst die ${t.short_name}, weil sie am besten zu dem passt, was du dir am meisten wünschst.</p>` : ''}
       <p class="description">${t.description}</p>
 
-      <h3>Wo deine Blockaden sitzen</h3>
+      <div class="result-notice" role="note">
+        <strong>Wichtig zu wissen</strong>
+        <p>Dein Ergebnis beschreibt ein aktuelles Muster und dient der Orientierung. Es ersetzt keine individuelle medizinische Diagnose oder Behandlung. Bei stärkeren oder anhaltenden Beschwerden lass dich bitte medizinisch abklären.</p>
+      </div>
+
+      <h3>Warum du dieses Ergebnis erhältst</h3>
+      <ul class="why-list">${why.map(w => `<li>${escapeHtml(w)}</li>`).join('')}</ul>
+
+      <h3>Gewichtung deiner Antworten</h3>
       <div class="score-bars">
-        ${Object.entries(TYPES).map(([k, tt]) => `
-          <div class="score-row">
-            <div class="lbl">${tt.short_name}</div>
-            <div class="bar-wrap"><div class="bar" style="width:${pct(k)}%;background:${tt.color}"></div></div>
-            <div class="pct">${pct(k)}%</div>
-          </div>
-        `).join('')}
+        ${TYPE_KEYS.map(k => { const tt = TYPES[k]; return `
+          <div class="score-row" data-key="${k}">
+            <div class="lbl">${tt.short_name}<span class="lvl">${levelLabel(k)}</span></div>
+            <div class="bar-wrap"><div class="bar" style="width:${r.pct[k]}%;background:${tt.color}"></div></div>
+            <div class="pct">${r.pct[k]}%</div>
+          </div>`; }).join('')}
+        <p class="score-note">So verteilen sich deine Antworten auf die vier Muster. Die Werte sind keine Wahrscheinlichkeit und keine Diagnose. Ebenfalls relevant bei dir: <b>${second.short_name}</b>.</p>
       </div>
 
-      <h3>Deine 3 Sofortmaßnahmen</h3>
-      <ul>${t.needs.slice(0, 3).map(n => `<li>${n}</li>`).join('')}</ul>
+      <h3>Was jetzt zuerst sinnvoll sein könnte</h3>
+      ${frame(r.primary)}
+      <ul class="action-list">${t.actions.map(n => `<li>${n}</li>`).join('')}</ul>
 
-      <div class="data-disclaimer">
-        <div class="dd-icon">${ICONS.sparkle}</div>
-        <div class="dd-body">
-          <strong>Wichtig zu wissen</strong>
-          <p>Ohne <b>echte Blutwerte</b> bleibt diese Auswertung eine fundierte Vermutung. Die wirkliche Ursache deiner Beschwerden zeigt sich erst, wenn wir <b>Östrogen, Progesteron, Testosteron, Schilddrüse, Vitamin D &amp; Eisen</b> tatsächlich messen. Genau das machen wir im Kurs gemeinsam.</p>
-        </div>
-      </div>
+      <h3>Warum einzelne Tipps häufig nicht ausreichen</h3>
+      ${frame('gears')}
+      <p class="description">Schlaf, Stress, Ernährung, Bewegung, hormonelle Veränderungen und sinnvolle Diagnostik können sich gegenseitig beeinflussen. Deshalb hilft ein verständlicher Plan oft mehr als weitere isolierte Tipps.</p>
+      <p class="description">${t.bridge}</p>
+
+      ${OFFER_CONFIG.pdfUrl && state.lead.status === 'success' ? `
+      <a class="pdf-link" href="${OFFER_CONFIG.pdfUrl}" target="_blank" rel="noopener">${ICONS.gift}<span>${escapeHtml(OFFER_CONFIG.pdfLabel)} herunterladen</span></a>` : ''}
     </div>
 
     <div class="pitch">
-      <h3>Bereit, das <em>wirklich</em> anzugehen?</h3>
-      <p>${t.pitch}</p>
-      <p style="margin-bottom:1.6em">Im <b>„Fresh &amp; Attraktiv Ü40"</b>-Kurs gehen wir genau deine Baustelle Schritt für Schritt an, inklusive Anleitung zur Hormon-Blutanalyse und persönlichem Auswertungs-Call. <b>Setz dich auf die Warteliste</b>, bevor die Plätze weg sind.</p>
-      <button class="btn" onclick="goToMasterclass()">Jetzt auf die Warteliste <span class="arrow">→</span></button>
-      <span class="small">Nächster Kurs-Start: September 2026 · Begrenzte Plätze</span>
+      <h3>Dein <em>nächster Schritt</em></h3>
+      <p>Dein Ergebnis zeigt, welcher Bereich bei dir gerade besonders viel Aufmerksamkeit braucht. Gleichzeitig wirken Schlaf, Stress, Ernährung, Bewegung, Hormone und Nährstoffversorgung nicht getrennt voneinander. Deshalb brauchst du nicht noch mehr einzelne Tipps, sondern eine verständliche Reihenfolge. In der Masterclass <b>${escapeHtml(OFFER_CONFIG.programName)}</b> zeigt Jasmin dir, welche Schritte zuerst kommen und wie daraus ein umsetzbarer Plan entsteht.</p>
+      ${supportLine ? `<p>${supportLine}</p>` : ''}
+      <a class="btn" id="cta-waitlist" href="${OFFER_CONFIG.ctaUrl}" onclick="goToMasterclass(event)">${escapeHtml(OFFER_CONFIG.ctaLabel)} <span class="arrow">→</span></a>
+      ${OFFER_CONFIG.nextStartText ? `<span class="small">${escapeHtml(OFFER_CONFIG.nextStartText)}</span>` : ''}
     </div>
 
     <div class="footer">
-      <p>Du hast eine Frage zu deinem Ergebnis? Schreib Jasmin auf Instagram <a href="https://instagram.com/" target="_blank">@jasminschmidtke</a></p>
+      <p>Du hast eine Frage zu deinem Ergebnis? Schreib Jasmin auf Instagram <a href="https://www.instagram.com/jasminschmidtke" target="_blank" rel="noopener">@jasminschmidtke</a></p>
     </div>
   `;
 }
-
-function renderResult(){
-  $app().innerHTML = `
-    <section class="screen active">
-      ${buildResultBody()}
-    </section>
-  `;
-}
-
 
 /* ============================================================
    ACTIONS
    ============================================================ */
 
-function personalize(text){
-  if (!text) return '';
-  return text.replace(/\{name\}/g, state.user.name || '');
+function trackOnce(name, payload){
+  if (state.tracked[name]) return;
+  state.tracked[name] = true;
+  trackQuizEvent(name, payload);
+}
+
+function startQuiz(){
+  trackOnce('quiz_start', {});
+  next();
 }
 
 function next(playSound){
   if (playSound !== false) sound.submit();
-  state.step++;
+  state.step = Math.min(state.step + 1, STEPS.length - 1);
   render();
 }
+
+/* Zurück: überspringt den Lade-Screen, Antworten bleiben erhalten */
 function goBack(){
-  if (state.step > 0) {
-    state.step = Math.max(0, state.step - 1);
-    render();
+  if (state.step <= 0) return;
+  let target = state.step - 1;
+  while (target > 0 && STEPS[target].type === 'loading') target--;
+  if (STEPS[state.step].type === 'email') {
+    stopPetalRain();
+    while (target > 0 && !isQuestion(STEPS[target])) target--;
   }
+  state.step = target;
+  render();
 }
+
 function submitName(e){
   e.preventDefault();
   sound.submit();
-  state.user.name = document.getElementById('name-input').value.trim();
+  state.user.name = document.getElementById('name-input').value.trim().slice(0, 40);
   next(false);
 }
+
+function setAnswer(qid, value){
+  state.answers[qid] = value;   // ersetzt eine frühere Antwort vollständig
+}
+
 function selectSingle(i){
   const s = STEPS[state.step];
+  const o = s.options[i];
   sound.click();
-  applyScores(s.options[i].scores);
-  state.answers.push({ step: state.step, choice: i });
-  setTimeout(() => next(false), 220);
+  setAnswer(s.id, o.id);
+  document.querySelectorAll('.answer, .image-card').forEach(b => {
+    const on = b.dataset.oid === o.id;
+    b.classList.toggle('selected', on);
+    b.setAttribute('aria-pressed', on);
+  });
+  const myStep = state.step;
+  setTimeout(() => { if (state.step === myStep) next(false); }, 220);
 }
+
 function updateSlider(){
   const s = STEPS[state.step];
-  const v = parseInt(document.getElementById('slider-input').value);
+  const v = parseInt(document.getElementById('slider-input').value, 10);
   document.getElementById('slider-value').textContent = v;
   document.getElementById('slider-label').textContent = s.labels[v] || '';
-  // Sehr leiser Slider-Tick, throttled
   sound.slider(v, s.max, s.min);
-  // Bild-Wechsel bei Slidern mit Illustration (eine Variante pro Wert)
   if (s.images && s.images.length > 0) {
     const idx = _sliderImageIdx(v, s);
     const stage = document.getElementById('slider-image-stage');
-    if (stage) {
-      stage.querySelectorAll('.slider-img').forEach(img => {
-        img.classList.toggle('active', parseInt(img.dataset.idx) === idx);
-      });
-    }
+    if (stage) stage.querySelectorAll('.slider-img').forEach(img => {
+      img.classList.toggle('active', parseInt(img.dataset.idx, 10) === idx);
+    });
   }
 }
+
 function submitSlider(){
   const s = STEPS[state.step];
   sound.submit();
-  const v = parseInt(document.getElementById('slider-input').value);
-  applyScores(s.scoreFn(v));
-  state.answers.push({ step: state.step, value: v });
+  setAnswer(s.id, parseInt(document.getElementById('slider-input').value, 10));
   next(false);
 }
+
+/* „Nichts davon“ ist exklusiv: deaktiviert alle anderen und umgekehrt */
 function toggleMulti(idx){
-  const card = document.querySelector(`.multi-card[data-idx="${idx}"]`);
+  const s = STEPS[state.step];
+  const o = s.options[idx];
   sound.click();
-  if (multiSelected.has(idx)) {
-    multiSelected.delete(idx);
-    card.classList.remove('selected');
+  if (multiSelected.has(o.id)) {
+    multiSelected.delete(o.id);
+  } else if (o.exclusive) {
+    multiSelected = new Set([o.id]);
   } else {
-    multiSelected.add(idx);
-    card.classList.add('selected');
+    s.options.filter(x => x.exclusive).forEach(x => multiSelected.delete(x.id));
+    multiSelected.add(o.id);
   }
-  document.getElementById('multi-submit').disabled = multiSelected.size === 0;
-  document.getElementById('multi-helper').textContent =
-    multiSelected.size === 0 ? 'Wähle mindestens eine Antwort.' : `${multiSelected.size} ausgewählt`;
+  syncMultiUi();
 }
+
+function syncMultiUi(){
+  document.querySelectorAll('.multi-card').forEach(card => {
+    const on = multiSelected.has(card.dataset.oid);
+    card.classList.toggle('selected', on);
+    card.setAttribute('aria-pressed', on);
+  });
+  const btn = document.getElementById('multi-submit');
+  if (btn) btn.disabled = multiSelected.size === 0;
+  const helper = document.getElementById('multi-helper');
+  if (helper) helper.textContent = multiSelected.size === 0 ? 'Wähle mindestens eine Antwort.' : `${multiSelected.size} ausgewählt`;
+}
+
 function submitMulti(){
   const s = STEPS[state.step];
+  if (!multiSelected.size) return;
   sound.submit();
-  multiSelected.forEach(idx => applyScores(s.options[idx].scores));
-  state.answers.push({ step: state.step, choices: Array.from(multiSelected) });
+  const ordered = s.options.map(o => o.id).filter(id => multiSelected.has(id));
+  setAnswer(s.id, ordered);
   next(false);
 }
-function applyScores(scores){
-  if (!scores) return;
-  for (const [k, v] of Object.entries(scores)) {
-    state.scores[k] = (state.scores[k] || 0) + v;
-  }
+
+/* ------------------------------------------------------------
+   LEAD-ÜBERTRAGUNG
+   buildLeadPayload() → alle gespeicherten Felder
+   sendLead()         → Promise, löst nur bei bestätigter Übertragung auf
+   ------------------------------------------------------------ */
+function buildLeadPayload(consentTimestamp){
+  const r = computeResult(state.answers);
+  return {
+    first_name: state.user.name || '',
+    email: state.user.email || '',
+    primary_type: TYPES[r.primary].short_name,
+    secondary_type: TYPES[r.secondary].short_name,
+    score_feuerseele: r.pct.F,
+    score_mondwandlerin: r.pct.M,
+    score_tieffuehlende: r.pct.T,
+    score_wandlerin: r.pct.W,
+    mixed_profile: r.mixed ? 'ja' : 'nein',
+    ...classify(state.answers),
+    utm_source: CAMPAIGN.utm_source,
+    utm_medium: CAMPAIGN.utm_medium,
+    utm_campaign: CAMPAIGN.utm_campaign,
+    utm_content: CAMPAIGN.utm_content,
+    landing_page: CAMPAIGN.landing_page,
+    consent_timestamp: consentTimestamp,
+    consent_version: OFFER_CONFIG.consentVersion
+  };
 }
+
+function fetchWithTimeout(url, opts, ms){
+  if (typeof AbortController === 'undefined') return fetch(url, opts);
+  const ctrl = new AbortController();
+  const timer = setTimeout(() => ctrl.abort(), ms);
+  return fetch(url, { ...opts, signal: ctrl.signal }).finally(() => clearTimeout(timer));
+}
+
+function sendLead(payload){
+  /* Optional: ActiveCampaign (öffentliches Formular, kein API-Schlüssel).
+     Antwort ist wegen no-cors nicht lesbar, daher nur zusätzlich. */
+  const ac = LEAD_CONFIG.activeCampaign;
+  if (ac.enabled && ac.u && ac.f) {
+    try {
+      const fd = new FormData();
+      fd.append('u', ac.u); fd.append('f', ac.f); fd.append('s', ''); fd.append('c', '0'); fd.append('m', '0');
+      fd.append('act', 'sub'); fd.append('v', '2'); if (ac.or) fd.append('or', ac.or);
+      fd.append('firstname', payload.first_name); fd.append('email', payload.email);
+      Object.keys(ac.fieldMap || {}).forEach(key => { if (payload[key] !== undefined) fd.append(ac.fieldMap[key], payload[key]); });
+      fetch(ac.endpoint, { method: 'POST', body: fd, mode: 'no-cors', keepalive: true }).catch(() => {});
+    } catch (e) {}
+  }
+
+  /* Bestätigte Übertragung: Netlify Forms */
+  const body = new URLSearchParams({ 'form-name': LEAD_CONFIG.netlifyFormName, 'bot-field': '' });
+  Object.keys(payload).forEach(k => body.append(k, payload[k] === undefined ? '' : String(payload[k])));
+  return fetchWithTimeout('/', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: body.toString()
+  }, LEAD_CONFIG.timeoutMs).then(res => {
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    return true;
+  });
+}
+
+function showFormError(msg){
+  const el = document.getElementById('form-error');
+  if (!el) return;
+  el.textContent = msg;
+  el.hidden = !msg;
+}
+
+function setSubmitBusy(busy, label){
+  const btn = document.getElementById('email-submit');
+  if (!btn) return;
+  btn.disabled = busy;
+  btn.innerHTML = label + (busy ? '' : ' <span class="arrow">→</span>');
+}
+
 function submitEmail(e){
   e.preventDefault();
-  state.user.email = document.getElementById('user-email').value.trim();
+  if (state.lead.status === 'sending') return;
+  const email = document.getElementById('user-email').value.trim();
+  const consent = document.getElementById('consent-input').checked;
+  const valid = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email);
+  if (!valid) { showFormError('Bitte gib eine gültige E-Mail-Adresse ein.'); return; }
+  if (!consent) { showFormError('Bitte bestätige die Einwilligung, damit wir dir dein Ergebnis senden dürfen.'); return; }
+  showFormError('');
+  state.user.email = email;
+  state.lead.status = 'sending';
+  setSubmitBusy(true, 'Einen Moment bitte …');
 
-  /* ============================================================
-     >>> INTEGRATIONS-PUNKT FÜR EUREN E-MAIL-ANBIETER <<<
-     ============================================================
-     Hier eure echte E-Mail-Integration einbauen. Beispiele:
+  const payload = buildLeadPayload(new Date().toISOString());
+  const primaryKey = computeResult(state.answers).primary;
 
-    , ConvertKit (Kit), ActiveCampaign, Brevo, Klaviyo:
-       fetch('YOUR_ENDPOINT', {
-         method:'POST',
-         headers:{'Content-Type':'application/json'},
-         body: JSON.stringify({
-           email: state.user.email,
-           first_name: state.user.name,
-           tags:[`Quiz_Typ_${state.user.winner}`]
-         })
-       });
+  sendLead(payload).then(() => {
+    state.lead.status = 'success';
+    trackQuizEvent('quiz_lead_success', { primary_type: primaryKey });
+    revealResult();
+  }).catch(err => {
+    state.lead.status = 'error';
+    trackQuizEvent('quiz_lead_error', { primary_type: primaryKey, error: String(err && err.message || err).slice(0, 60) });
+    showFormError('Das hat leider nicht geklappt. Bitte prüfe deine Internetverbindung und versuche es noch einmal.');
+    setSubmitBusy(false, 'Erneut versuchen');
+  });
+}
 
-     Tags Quiz_Typ_F, Quiz_Typ_M, Quiz_Typ_T, Quiz_Typ_W
-     ermöglichen typ-spezifische E-Mail-Sequenzen.
-     ============================================================ */
-  /* Lead an Netlify Forms übertragen (Formular "quiz-ue40") */
-  try {
-    fetch('/', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: new URLSearchParams({
-        'form-name': 'quiz-ue40',
-        'vorname': state.user.name || '',
-        'email': state.user.email || '',
-        'typ': state.user.winner || ''
-      }).toString()
-    }).catch(function(){ /* still weiter, Ergebnis wird trotzdem gezeigt */ });
-  } catch (err) {}
-  /* Meta Pixel Lead-Event, falls Consent erteilt */
-  if (typeof fbq === 'function') { fbq('track', 'Lead'); }
-
-  // Reveal-Sound (sanfter C-Dur-Akkord, klangschalenähnlich)
+function revealResult(){
   sound.reveal();
-
-  // Petals langsam ausklingen lassen (existierende fallen weiter, keine neuen)
   stopPetalRain();
-
-  // Reveal-Animation: Blur löst sich, Modal fadet weg
   const revResult = document.getElementById('rev-result');
   const revModalWrap = document.getElementById('rev-modal-wrap');
-
-  if (revResult)    revResult.classList.add('revealed');
+  if (revResult) {
+    revResult.innerHTML = buildResultBody();   // inkl. PDF-Link, falls konfiguriert
+    revResult.classList.add('revealed');
+    activateAnims();
+    revResult.removeAttribute('aria-hidden');
+  }
   if (revModalWrap) revModalWrap.classList.add('fading');
-
-  // Sparkles spawnen auf der Result-Card
-  setTimeout(() => {
-    if (revResult) spawnSparkles(revResult, 24);
-  }, 250);
-
-  // Nach der Animation: Scroll to top damit das Ergebnis sichtbar wird
+  setTimeout(() => { if (revResult) spawnSparkles(revResult, 24); }, 250);
   setTimeout(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
     if (revModalWrap) revModalWrap.style.display = 'none';
   }, 900);
+  trackQuizEvent('quiz_result_view', { primary_type: computeResult(state.answers).primary });
 }
-function goToMasterclass(){
-  window.location.href = 'warteliste.html';
+
+function goToMasterclass(e){
+  trackQuizEvent('quiz_waitlist_click', { primary_type: computeResult(state.answers).primary });
+  /* Link-Navigation läuft regulär über href; kurze Verzögerung für Tracking */
+  if (e && typeof window.gtag === 'function') {
+    e.preventDefault();
+    setTimeout(() => { window.location.href = OFFER_CONFIG.ctaUrl; }, 150);
+  }
 }
 
 /* ============================================================
@@ -3062,13 +3566,21 @@ function render(){
   const s = STEPS[state.step];
   if (!s) return;
 
-  // Sofort zum Seitenanfang springen, bevor das neue Screen gerendert wird.
-  // Wichtig für Mobile: ohne diesen Scroll-Reset ist die obere Hälfte
-  // der neuen Frage unsichtbar (User klebt am alten Scroll-Stand).
   window.scrollTo(0, 0);
   if (document.documentElement) document.documentElement.scrollTop = 0;
   if (document.body) document.body.scrollTop = 0;
 
+  if (isQuestion(s)) {
+    const idx = currentQuestionIndex();
+    trackQuizEvent('quiz_question_view', { step: state.step, question_id: s.id, question_index: idx });
+    if (idx >= Math.ceil(totalQuestionSteps() / 2)) trackOnce('quiz_halfway', { question_index: idx });
+  }
+
+  renderStep(s);
+  activateAnims();
+}
+
+function renderStep(s){
   switch (s.type) {
     case 'hero':       return renderHero();
     case 'name':       return renderName();
@@ -3079,10 +3591,60 @@ function render(){
     case 'interlude':  return renderInterlude(s);
     case 'email':      return renderEmail();
     case 'loading':    return renderLoading();
-    case 'result':     return renderResult();
   }
 }
+
+/* ============================================================
+   SELBSTTEST · aufrufbar mit quiz.html?selftest=1
+   Prüft Scoring, Tie-Breaker, Prozentsumme und Segmentfragen.
+   ============================================================ */
+const TEST_PROFILES = {
+  F: { q_age:'45-49', q_cycle:'veraendert', q_daily:'im_einsatz', q_energy:3, q_sleep:'einschlafen', q_stress:9, q_body:['energie'], q_emotion:['anspannung','erschoepfung'], q_movement:2, q_labs:'basiswerte', q_tried:['vieles'], q_barrier:'zeit', q_outcome:'abschalten', q_support:'plan' },
+  M: { q_age:'50-54', q_cycle:'laenger_zurueck', q_daily:'muede', q_energy:2, q_sleep:'durchschlafen', q_stress:4, q_body:['schlaf','energie'], q_emotion:['erschoepfung'], q_movement:3, q_labs:'kaum', q_tried:['routinen'], q_barrier:'anfang', q_outcome:'erholt', q_support:'wissen' },
+  T: { q_age:'40-44', q_cycle:'regelmaessig', q_daily:'emotional', q_energy:6, q_sleep:'frueh_wach', q_stress:9, q_body:['nichts'], q_emotion:['reizbarkeit','traenen'], q_movement:1, q_labs:'erst_informieren', q_tried:['kurse'], q_barrier:'dranbleiben', q_outcome:'stabil', q_support:'austausch' },
+  W: { q_age:'50-54', q_cycle:'veraendert', q_daily:'koerper', q_energy:7, q_sleep:'erholsam', q_stress:3, q_body:['gewicht','waerme','haut_haare','gelenke'], q_emotion:['nichts'], q_movement:4, q_labs:'werte_unklar', q_tried:['ernaehrung','nem'], q_barrier:'widersprueche', q_outcome:'verstehen', q_support:'praxis' }
+};
+
+function runQuizSelfTests(){
+  const results = [];
+  const check = (name, ok) => results.push({ name, ok: !!ok });
+  const sum = p => TYPE_KEYS.reduce((a, k) => a + p[k], 0);
+
+  TYPE_KEYS.forEach(k => {
+    const r = computeResult(TEST_PROFILES[k]);
+    check(`Klares ${TYPES[k].short_name}-Muster ergibt ${TYPES[k].short_name}`, r.primary === k);
+    check(`Prozentsumme ${TYPES[k].short_name} = 100`, sum(r.pct) === 100);
+    check(`Zweittyp ${TYPES[k].short_name} ist nicht der Haupttyp`, r.secondary && r.secondary !== k);
+  });
+
+  const base = { ...TEST_PROFILES.M };
+  const changed = { ...base, q_outcome: 'abschalten' };
+  const back = { ...changed, q_outcome: 'erholt' };
+  check('Geänderte Antwort ersetzt die alte vollständig', JSON.stringify(computeResult(back).raw) === JSON.stringify(computeResult(base).raw));
+  check('Änderung wirkt sich aus', JSON.stringify(computeResult(changed).raw) !== JSON.stringify(computeResult(base).raw));
+
+  const segChanged = { ...TEST_PROFILES.F, q_age:'55+', q_cycle:'unbekannt', q_movement:7, q_labs:'ausfuehrlich', q_tried:['wenig'], q_barrier:'orientierung', q_support:'praxis' };
+  check('Segmentfragen verändern keine Typ-Punkte', JSON.stringify(computeResult(segChanged).raw) === JSON.stringify(computeResult(TEST_PROFILES.F).raw));
+
+  const allBody = scoreQuestion(QUESTION_BY_ID.q_body, ['gewicht','waerme','schlaf','energie','haut_haare','gelenke','libido']);
+  check('Körperfrage vergibt maximal 4 Punkte', sum(allBody) <= 4 + EPS);
+  check('Alle Typen haben ein theoretisches Maximum > 0', TYPE_KEYS.every(k => TYPE_MAX[k] > 0));
+
+  const tie = { q_daily:'muede', q_body:['schlaf'], q_outcome:'abschalten' };   // F und M exakt gleich stark
+  const rTie = computeResult(tie);
+  check('Gleichstand F/M wird über die größte Beeinträchtigung entschieden', Math.abs(rTie.norm.F - rTie.norm.M) < EPS && rTie.primary === 'F');
+
+  return results;
+}
+
+if (/[?&]selftest=1/.test(window.location.search)) {
+  const res = runQuizSelfTests();
+  console.table(res);
+  window.__quizSelfTest = res;
+}
+
 render();
+trackQuizEvent('quiz_view', {});
 </script>
 
 </body>
