@@ -1876,6 +1876,83 @@
     .hero .lead{margin:.6em auto 1.2em}
     .hero .meta-row{margin-bottom:1.2em}
   }
+
+  /* ===== Ergebnisseite clean (Stil Warteliste) ===== */
+  .result.r2{background:none;box-shadow:none;border:0;padding:0;margin:0 auto 18px;max-width:600px}
+  .r2-hero{text-align:center;padding:4px 0 8px}
+  .r2-pill{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--border);border-radius:40px;padding:6px 14px;font-size:.8em;color:var(--ink-soft);font-weight:500}
+  .r2-pill .dot{width:7px;height:7px;border-radius:50%;background:var(--tc)}
+  .r2-icon{width:84px;height:84px;border-radius:50%;overflow:hidden;margin:18px auto 10px;background:var(--bg-soft);box-shadow:0 0 0 6px #fff,0 8px 24px rgba(45,43,48,.08)}
+  .r2-icon .type-img{width:100%;height:100%;object-fit:cover;display:block}
+  .r2-h1{font-family:'Playfair Display',Georgia,serif;font-weight:500;font-size:clamp(1.9em,4.6vw,2.6em);line-height:1.15;color:var(--ink);margin:0 0 .35em;letter-spacing:-.01em}
+  .r2-h1 em{font-style:italic;color:var(--tc)}
+  .r2-lead{font-size:1em;line-height:1.6;color:var(--ink-body);max-width:470px;margin:0 auto 1.2em}
+  .r2-lead b{color:var(--ink);font-weight:600}
+  .r2-mix{font-size:.85em;color:var(--ink-soft);margin:-.6em auto 1em}
+  .r2-scores{display:grid;grid-template-columns:repeat(4,1fr);background:#fff;border:1px solid var(--border);border-radius:18px;box-shadow:var(--shadow);overflow:hidden;max-width:520px;margin:0 auto}
+  .r2-scores .score-row{display:flex;flex-direction:column;align-items:center;gap:2px;padding:14px 6px 12px;margin:0;border-left:1px solid #F0EAE3}
+  .r2-scores .score-row:first-child{border-left:0}
+  .r2-scores .r2-sicon{width:30px;height:30px;border-radius:50%;overflow:hidden;opacity:.55;margin-bottom:4px}
+  .r2-scores .r2-sicon .grid-img{width:100%;height:100%;object-fit:cover;display:block}
+  .r2-scores .pct{font-family:'Playfair Display',Georgia,serif;font-size:1.5em;color:var(--ink-soft);text-align:center;flex:none;font-weight:500}
+  .r2-scores .lbl{font-size:.74em;color:var(--ink-soft);flex:none;font-weight:500}
+  .r2-scores .is-top{background:color-mix(in srgb,var(--tc) 8%,#fff)}
+  .r2-scores .is-top .pct{color:var(--tc);font-style:italic}
+  .r2-scores .is-top .lbl{color:var(--ink);font-weight:600}
+  .r2-scores .is-top .r2-sicon{opacity:1}
+  .r2-scorenote{font-size:.74em;color:var(--ink-faint);margin:.6em 0 1.2em}
+  .r2-notice{display:flex;gap:10px;align-items:flex-start;text-align:left;background:transparent;border:1px solid var(--border);border-left:1px solid var(--border);border-radius:14px;padding:12px 14px;max-width:520px;margin:0 auto}
+  .r2-notice .ic{width:18px;height:18px;flex:none;color:var(--taupe-deep);margin-top:1px}
+  .r2-notice .ic svg{width:100%;height:100%}
+  .r2-notice p{font-size:.78em;line-height:1.55;color:var(--ink-soft);margin:0}
+  .r2-sec{background:#fff;border:1px solid var(--border);border-radius:22px;box-shadow:var(--shadow);padding:26px 26px 22px;margin-top:18px}
+  .r2-label{display:block;font-size:.68em;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--taupe-deep);margin-bottom:12px}
+  .r2-label.light{color:#A9C49A}
+  .r2-h2{font-family:'Playfair Display',Georgia,serif;font-weight:500;font-size:1.5em;line-height:1.2;color:var(--ink);margin:0 0 14px}
+  .r2-h2 em{font-style:italic;color:var(--taupe)}
+  .result.r2 ul.r2-checks{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px}
+  .result.r2 ul.r2-checks li{display:grid;grid-template-columns:24px 1fr;gap:12px;align-items:start;padding:0;font-size:.94em;line-height:1.5;color:var(--ink-body)}
+  .result.r2 ul.r2-checks li::before{display:none}
+  .r2-checks .ck{width:24px;height:24px;border-radius:50%;background:var(--sage-soft);color:var(--sage-deep);display:flex;align-items:center;justify-content:center}
+  .r2-checks .ck svg{width:14px;height:14px}
+  .r2-steps{list-style:none;margin:6px 0 0;padding:0;display:flex;flex-direction:column;gap:10px}
+  .r2-steps li{display:grid;grid-template-columns:34px 1fr;gap:12px;align-items:start;background:var(--bg);border-radius:14px;padding:12px 14px}
+  .r2-steps .n{width:34px;height:34px;border-radius:50%;border:1.5px solid var(--tc);color:var(--tc);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:1.05em}
+  .r2-steps b{display:block;font-size:.95em;color:var(--ink);font-weight:600;margin-bottom:1px}
+  .r2-steps span{font-size:.88em;line-height:1.5;color:var(--ink-body)}
+  .result.r2 .anim{margin:4px auto 14px}
+  .pitch.r2-cta{max-width:600px;margin:0 auto;padding:26px 26px 28px;border-radius:22px}
+  .pitch.r2-cta .anim{margin:0 auto 18px;border-color:rgba(255,255,255,.12)}
+  .pitch.r2-cta h3{font-family:'Playfair Display',Georgia,serif !important;font-weight:500;font-size:1.6em !important;line-height:1.2}
+  .pitch.r2-cta h3 em{color:#D9BFAC}
+  .pitch.r2-cta p{max-width:430px;margin-left:auto;margin-right:auto}
+  .pitch.r2-cta .btn{white-space:nowrap}
+  @media (max-width:540px){
+    .r2-sec{padding:20px 18px 18px;border-radius:18px}
+    .r2-scores{border-radius:16px}
+    .r2-scores .score-row{padding:12px 2px 10px}
+    .r2-scores .pct{font-size:1.25em}
+    .r2-scores .lbl{font-size:.66em}
+    .r2-scores .r2-sicon{width:26px;height:26px}
+    .pitch.r2-cta{padding:22px 18px 24px}
+    .pitch.r2-cta .btn{font-size:.92em;padding-left:18px;padding-right:18px}
+  }
+
+  .result.r2 h3.r2-h2{font-family:'Playfair Display',Georgia,serif !important;font-weight:500;font-size:1.5em;line-height:1.2;color:var(--ink);margin:0 0 14px;text-transform:none;letter-spacing:-.005em}
+  .result.r2 h3.r2-h2 em{font-style:italic;color:var(--taupe);font-weight:500}
+  @media (max-width:380px){
+    .pitch.r2-cta .btn{white-space:normal;font-size:.9em;padding-left:14px;padding-right:14px}
+  }
+  @media (min-width:760px){
+    .result.r2{max-width:680px}
+    .r2-split{display:grid;grid-template-columns:240px 1fr;gap:20px;align-items:start}
+    .r2-split .anim{margin:0 !important;max-width:240px}
+    .r2-steps{margin-top:0}
+    .pitch.r2-cta{max-width:680px;display:grid;grid-template-columns:220px 1fr;gap:6px 26px;text-align:left;align-items:center}
+    .pitch.r2-cta .anim{grid-row:1 / span 5;margin:0 !important;max-width:220px}
+    .pitch.r2-cta p{margin-left:0}
+    .pitch.r2-cta .btn{justify-self:start}
+  }
 </style>
 </head>
 <body>
@@ -3314,65 +3391,91 @@ function buildWhyPoints(r){
   return candidates.slice(0, 3).map(c => c.text);
 }
 
+/* Kurzfassungen für die Ergebnisseite (clean, im Stil der Warteliste) */
+const RESULT_COPY = {
+  F: { intro: 'Du gibst viel und trägst oft Verantwortung für andere. Deine Antworten deuten darauf hin, dass gerade <b>Anspannung und zu wenig Erholung</b> im Vordergrund stehen.',
+       steps: [['20 Minuten Ruhe', 'Plane heute eine feste Pause ohne Handy und Aufgaben ein.'],
+               ['Länger ausatmen', 'Fünf ruhige Atemzüge mit einer deutlich längeren Ausatmung.'],
+               ['Eine Aufgabe streichen', 'Notiere eine Sache, die heute nicht mehr erledigt werden muss.']] },
+  M: { intro: 'Deine Antworten zeigen, dass <b>Schlaf und Erholung</b> gerade besonders viel Aufmerksamkeit brauchen. Dein Startpunkt ist die Regeneration.',
+       steps: [['Feste Schlafenszeit', 'Lege für die nächsten drei Abende eine möglichst ähnliche Uhrzeit fest.'],
+               ['Bildschirm aus', 'In der letzten halben Stunde vor dem Schlafen keine Nachrichten.'],
+               ['Kurz notieren', 'Schreib morgens auf, wann du wach warst und wie erholt du dich fühlst.']] },
+  T: { intro: 'Deine Antworten deuten darauf hin, dass <b>Gefühle und innere Unruhe</b> gerade besonders präsent sind. Das ist kein Charakterfehler.',
+       steps: [['Energie-Notiz', 'Notiere heute Abend drei Situationen, die dir Energie gegeben oder genommen haben.'],
+               ['Raus an die Luft', 'Plane morgen mindestens zehn Minuten Bewegung draußen ein.'],
+               ['Darüber sprechen', 'Erzähl einer vertrauten Person, was dich gerade beschäftigt.']] },
+  W: { intro: 'Deine Antworten zeigen, dass <b>körperliche Veränderungen</b> gerade im Vordergrund stehen, etwa Körpergefühl, Wärme, Haut oder Beweglichkeit.',
+       steps: [['Eine Woche beobachten', 'Wann und in welchem Zusammenhang fallen dir Veränderungen auf?'],
+               ['Eiweiß und Gemüse', 'Ergänze eine Mahlzeit bewusst um eine gute Eiweißquelle und Gemüse.'],
+               ['Zwei kurze Einheiten', 'Plane zwei realistische Bewegungseinheiten für die kommende Woche.']] }
+};
+const CHECK_SVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>';
+const INFO_SVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 7.6v.2"/></svg>';
+
 function buildResultBody(r){
   r = r || computeResult(state.answers);
   const t = TYPES[r.primary];
-  const second = TYPES[r.secondary];
+  const c = RESULT_COPY[r.primary];
   const why = buildWhyPoints(r);
-  const supportLine = SUPPORT_LINES[state.answers.q_support] || '';
-  const levelLabel = (k) => k === r.primary ? 'stark ausgeprägt' : (k === r.secondary ? 'ebenfalls relevant' : 'aktuell weniger im Vordergrund');
+  const nameIcon = { F: 'flame', M: 'moon_rest', T: 'heart_soft', W: 'sprout' };
+  const order = TYPE_KEYS.slice().sort((a, b) => r.pct[b] - r.pct[a]);
 
   return `
-    <div class="result" style="border-top-color:${t.color}" data-type="${r.primary}" data-secondary="${r.secondary}">
-      <div class="type-eyebrow">Dein aktuelles Muster${state.user.name ? ', ' + displayName() : ''}</div>
-      <div class="type-hero-icon" style="color:${t.color}">${ICONS['type_' + t.short.toLowerCase()]}</div>
-      <h2 class="type-name">${t.name.replace(t.short_name, '<em>' + t.short_name + '</em>')}</h2>
-      <p class="type-tagline">„${t.tagline}“</p>
-      ${r.mixed ? `<p class="mix-note">Mischprofil: Bei dir sind <b>${t.short_name}</b> und <b>${r.mixedWith.map(k => TYPES[k].short_name).join(' und ')}</b> gleich stark ausgeprägt. Wir zeigen dir zuerst die ${t.short_name}, weil sie am besten zu dem passt, was du dir am meisten wünschst.</p>` : ''}
-      <p class="description">${t.description}</p>
+    <div class="result r2" data-type="${r.primary}" data-secondary="${r.secondary}" style="--tc:${t.color}">
 
-      <div class="result-notice" role="note">
-        <strong>Wichtig zu wissen</strong>
-        <p>Dein Ergebnis beschreibt ein aktuelles Muster und dient der Orientierung. Es ersetzt keine individuelle medizinische Diagnose oder Behandlung. Bei stärkeren oder anhaltenden Beschwerden lass dich bitte medizinisch abklären.</p>
-      </div>
+      <section class="r2-hero">
+        <span class="r2-pill"><span class="dot"></span>Dein Ergebnis${state.user.name ? ', ' + displayName() : ''}</span>
+        <div class="r2-icon">${ICONS['type_' + t.short.toLowerCase()]}</div>
+        <h2 class="r2-h1">Du bist gerade<br><em>${t.name.replace(/^Die /, 'die ')}</em>.</h2>
+        <p class="r2-lead">${c.intro}</p>
+        ${r.mixed ? `<p class="r2-mix">Mischprofil: <b>${t.short_name}</b> und <b>${r.mixedWith.map(k => TYPES[k].short_name).join(' und ')}</b> sind bei dir gleich stark.</p>` : ''}
 
-      <h3>Warum du dieses Ergebnis erhältst</h3>
-      <ul class="why-list">${why.map(w => `<li>${escapeHtml(w)}</li>`).join('')}</ul>
+        <div class="r2-scores">
+          ${order.map(k => `
+            <div class="score-row${k === r.primary ? ' is-top' : ''}" data-key="${k}">
+              <span class="r2-sicon">${ICONS[nameIcon[k]]}</span>
+              <span class="pct">${r.pct[k]}%</span>
+              <span class="lbl">${TYPES[k].short_name}</span>
+            </div>`).join('')}
+        </div>
+        <p class="r2-scorenote">Gewichtung deiner Antworten, keine Wahrscheinlichkeit.</p>
 
-      <h3>Gewichtung deiner Antworten</h3>
-      <div class="score-bars">
-        ${TYPE_KEYS.map(k => { const tt = TYPES[k]; return `
-          <div class="score-row" data-key="${k}">
-            <div class="lbl">${tt.short_name}<span class="lvl">${levelLabel(k)}</span></div>
-            <div class="bar-wrap"><div class="bar" style="width:${r.pct[k]}%;background:${tt.color}"></div></div>
-            <div class="pct">${r.pct[k]}%</div>
-          </div>`; }).join('')}
-        <p class="score-note">So verteilen sich deine Antworten auf die vier Muster. Die Werte sind keine Wahrscheinlichkeit und keine Diagnose. Ebenfalls relevant bei dir: <b>${second.short_name}</b>.</p>
-      </div>
+        <div class="result-notice r2-notice" role="note">
+          <span class="ic">${INFO_SVG}</span>
+          <p>Dein Ergebnis beschreibt ein aktuelles Muster und dient der Orientierung. Es ersetzt keine individuelle medizinische Diagnose oder Behandlung. Bei stärkeren oder anhaltenden Beschwerden lass dich bitte medizinisch abklären.</p>
+        </div>
+      </section>
 
-      <h3>Was jetzt zuerst sinnvoll sein könnte</h3>
-      ${frame(r.primary)}
-      <ul class="action-list">${t.actions.map(n => `<li>${n}</li>`).join('')}</ul>
+      <section class="r2-sec">
+        <span class="r2-label">Warum dieses Ergebnis</span>
+        <ul class="why-list r2-checks">${why.map(w => `<li><span class="ck">${CHECK_SVG}</span><span>${escapeHtml(w)}</span></li>`).join('')}</ul>
+      </section>
 
-      <h3>Warum einzelne Tipps häufig nicht ausreichen</h3>
-      ${frame('gears')}
-      <p class="description">Schlaf, Stress, Ernährung, Bewegung, hormonelle Veränderungen und sinnvolle Diagnostik können sich gegenseitig beeinflussen. Deshalb hilft ein verständlicher Plan oft mehr als weitere isolierte Tipps.</p>
-      <p class="description">${t.bridge}</p>
+      <section class="r2-sec">
+        <span class="r2-label">Deine ersten Schritte</span>
+        <h3 class="r2-h2">Drei kleine Schritte <em>für&nbsp;diese&nbsp;Woche</em>.</h3>
+        <div class="r2-split">
+          ${frame(r.primary)}
+          <ol class="r2-steps">${c.steps.map(([h, d], i) => `<li><span class="n">${i + 1}</span><div><b>${h}</b><span>${d}</span></div></li>`).join('')}</ol>
+        </div>
+      </section>
 
       ${OFFER_CONFIG.pdfUrl && state.lead.status === 'success' ? `
       <a class="pdf-link" href="${OFFER_CONFIG.pdfUrl}" target="_blank" rel="noopener">${ICONS.gift}<span>${escapeHtml(OFFER_CONFIG.pdfLabel)} herunterladen</span></a>` : ''}
     </div>
 
-    <div class="pitch">
-      <h3>Dein <em>nächster Schritt</em></h3>
-      <p>Dein Ergebnis zeigt, welcher Bereich bei dir gerade besonders viel Aufmerksamkeit braucht. Gleichzeitig wirken Schlaf, Stress, Ernährung, Bewegung, Hormone und Nährstoffversorgung nicht getrennt voneinander. Deshalb brauchst du nicht noch mehr einzelne Tipps, sondern eine verständliche Reihenfolge. In der Masterclass <b>${escapeHtml(OFFER_CONFIG.programName)}</b> zeigt Jasmin dir, welche Schritte zuerst kommen und wie daraus ein umsetzbarer Plan entsteht.</p>
-      ${supportLine ? `<p>${supportLine}</p>` : ''}
+    <div class="pitch r2-cta">
+      ${frame('gears', 'sm')}
+      <span class="r2-label light">Dein nächster Schritt</span>
+      <h3>Einzelne Tipps helfen.<br><em>Ein Plan</em> hilft mehr.</h3>
+      <p>Schlaf, Stress, Ernährung, Bewegung und Hormone hängen zusammen. In der Masterclass <b>${escapeHtml(OFFER_CONFIG.programName)}</b> zeigt Jasmin dir, welche Schritte zuerst kommen.</p>
       <a class="btn" id="cta-waitlist" href="${OFFER_CONFIG.ctaUrl}" onclick="goToMasterclass(event)">${escapeHtml(OFFER_CONFIG.ctaLabel)} <span class="arrow">→</span></a>
       ${OFFER_CONFIG.nextStartText ? `<span class="small">${escapeHtml(OFFER_CONFIG.nextStartText)}</span>` : ''}
     </div>
 
     <div class="footer">
-      <p>Du hast eine Frage zu deinem Ergebnis? Schreib Jasmin auf Instagram <a href="https://www.instagram.com/jasminschmidtke" target="_blank" rel="noopener">@jasminschmidtke</a></p>
+      <p>Fragen zu deinem Ergebnis? Schreib Jasmin auf Instagram <a href="https://www.instagram.com/jasminschmidtke" target="_blank" rel="noopener">@jasminschmidtke</a></p>
     </div>
   `;
 }
