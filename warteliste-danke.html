@@ -14,7 +14,7 @@
   <link rel="icon" href="favicon-32x32.png" sizes="32x32" type="image/png" />
   <meta name="theme-color" content="#BFA492" />
 
-  <!-- Meta Pixel (Facebook), Lead-Event, von Cookiebot blockiert bis Marketing-Consent -->
+  <!-- Meta Pixel (Facebook), Lead-Event nur nach echter Eintragung, von Cookiebot blockiert bis Marketing-Consent -->
   <script type="text/plain" data-cookieconsent="marketing">
     !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
     n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
@@ -23,7 +23,11 @@
     (window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
     fbq('init', '1626754815196504');
     fbq('track', 'PageView');
-    fbq('track', 'Lead');
+    // Lead nur nach echter Eintragung (Weiterleitung mit ?eingetragen=1), nicht bei Neuladen oder Direktaufruf
+    if (/[?&]eingetragen=1(&|$)/.test(window.location.search)) {
+      fbq('track', 'Lead');
+      if (window.history && history.replaceState) { history.replaceState(null, '', window.location.pathname); }
+    }
   </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -99,6 +103,7 @@
     footer { padding: 22px; text-align: center; font-size: 12px; color: var(--text-muted); }
     footer a { text-decoration: underline; text-underline-offset: 2px; }
     @media (max-width: 600px) { .card { padding: 36px 22px; } }
+    .pdf-ic { display: inline-block; width: 14px; height: 17px; vertical-align: -4px; margin-right: 6px; }
   </style>
 </head>
 <body>
@@ -121,10 +126,10 @@
         Schön, dass du dabei bist. Du gehörst jetzt zu den Ersten, die erfahren, wenn die Masterclass im Herbst 2026 startet, und sicherst dir alle Vorteile der Warteliste.
       </p>
       <div class="gift">
-        <img src="5-blutwerte-cover-scharf.jpg" alt="PDF: Die 5 wichtigsten Blutwerte ab 40" loading="lazy" />
+        <img src="5-blutwerte-cover-scharf.jpg" alt="PDF: Die 5 wichtigsten Blutwerte für mehr Energie ab 40" loading="lazy" />
         <div>
-          <span class="tag">Dein Sofort-Geschenk</span>
-          <b>Die 5 wichtigsten Blutwerte ab 40</b>
+          <span class="tag"><svg class="pdf-ic" viewBox="0 0 20 24" aria-hidden="true"><path d="M3.5 1h9.5l6 6v14a2 2 0 0 1-2 2H3.5a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2z" fill="#fff" stroke="#D7354F" stroke-width="1.6"/><path d="M13 1v6h6" fill="none" stroke="#D7354F" stroke-width="1.6"/><rect x="0" y="11.5" width="16.5" height="8" rx="1.6" fill="#D7354F"/><text x="8.25" y="17.7" text-anchor="middle" font-size="6.2" font-weight="700" fill="#fff" font-family="Arial, Helvetica, sans-serif">PDF</text></svg>Dein Sofort-Geschenk als PDF</span>
+          <b>Die 5 wichtigsten Blutwerte für mehr Energie ab&nbsp;40</b>
           <a class="btn" href="Die-5-wichtigsten-Blutwerte-ab-40-Jasmin-Schmidtke.pdf" download="Die-5-wichtigsten-Blutwerte-ab-40-Jasmin-Schmidtke.pdf">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M5 21h14"/></svg>
             PDF jetzt herunterladen
@@ -132,7 +137,7 @@
         </div>
       </div>
       <p>
-        <strong>Schau außerdem in dein E-Mail-Postfach:</strong> Dort wartet schon die erste Nachricht von Jasmin auf dich, mit dem Link zur Übersicht und allem Weiteren.
+        <strong>Schau außerdem in dein E-Mail-Postfach:</strong> Dort wartet schon die erste Nachricht von Jasmin auf dich, mit dem Link zur Blutwerte-Übersicht als PDF und allem Weiteren.
       </p>
       <div class="hint">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>

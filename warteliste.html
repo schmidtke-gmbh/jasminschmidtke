@@ -16,7 +16,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Warteliste | Die Masterclass für Frauen ab 40 von Jasmin Schmidtke</title>
-  <meta name="description" content="Du willst endlich gesund abnehmen, bist aber ständig müde? Deine Blutwerte zeigen dir, wo du ansetzt. Trag dich kostenlos auf die Warteliste ein: Blutwerte-Übersicht sofort, 2 Vorab-Videos und 72 Stunden Frühbucher-Preis." />
+  <meta name="description" content="Du willst endlich gesund abnehmen, bist aber ständig müde? Deine Blutwerte zeigen dir, wo du ansetzt. Trag dich kostenlos auf die Warteliste ein: Blutwerte-Übersicht sofort als PDF, 2 Vorab-Videos und 72 Stunden Frühbucher-Preis." />
   <meta name="robots" content="noindex, follow" />
   <meta name="author" content="Jasmin Schmidtke" />
 
@@ -161,7 +161,7 @@
     .hero-bg { position: absolute; inset: 0; z-index: 0; }
     .hero-bg video, .hero-bg img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
     .hero-bg img { display: none; }
-    .hero-bg::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(251,247,244,.74), rgba(251,247,244,.7) 55%, var(--cream) 100%); }
+    .hero-bg::after { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 58% 42% at 50% 34%, rgba(251,247,244,.72), rgba(251,247,244,0) 72%), linear-gradient(180deg, rgba(251,247,244,.84), rgba(251,247,244,.76) 55%, var(--cream) 100%); }
     .logo { position: relative; z-index: 2; display: flex; justify-content: center; align-items: center; gap: 10px; padding: 24px 20px 36px; }
     .logo svg { width: 34px; height: 34px; }
     .logo span { display: flex; flex-direction: column; font-family: 'Playfair Display', Georgia, serif; font-weight: 600; font-size: 15.5px; line-height: 1.15; }
@@ -717,11 +717,114 @@
       .k-steps li { display: grid; grid-template-columns: 34px 1fr; column-gap: 12px; padding: 14px; }
       .k-n { grid-row: span 2; margin: 0; }
     }
+    /* ───── Ziel: Wo du hin willst / Was du kannst ───── */
+    .goal { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; max-width: 940px; margin: 0 auto; }
+    .goal > div { border-radius: 22px; padding: 28px 30px; }
+    .goal-want { background: var(--dark); }
+    .goal-can { background: var(--paper); border: 1px solid var(--line); box-shadow: 0 16px 38px rgba(80,55,40,.07); }
+    .g-lbl { display: block; font-size: 12px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 18px; }
+    .goal-want .g-lbl { color: var(--sand); }
+    .goal-can .g-lbl { color: var(--green); }
+    .goal ul { display: flex; flex-direction: column; gap: 14px; }
+    .goal li { display: flex; gap: 12px; align-items: flex-start; font-size: 16px; line-height: 1.5; }
+    .goal-want li { color: rgba(255,255,255,.82); }
+    .goal-want strong { color: #fff; font-weight: 600; }
+    .goal-can li { color: var(--body); }
+    .goal-can strong { color: var(--ink); font-weight: 600; }
+    .hz { width: 22px; height: 22px; flex: none; border-radius: 50%; background: rgba(231,203,180,.16); color: var(--sand); display: inline-flex; align-items: center; justify-content: center; margin-top: 2px; }
+    .hz svg { width: 11px; height: 11px; }
+    .goal .ck { margin-top: 2px; }
+    .gains-sec .stats.sm { max-width: 940px; }
+    @media (max-width: 900px) { .goal { grid-template-columns: 1fr; max-width: 560px; } .gains-sec .stats.sm { max-width: 560px; } }
+    @media (max-width: 600px) { .goal > div { padding: 22px 20px; } .goal li { font-size: 15.5px; } }
+    /* ───── Start-Boni ───── */
+    .sboni { max-width: 1000px; margin: 44px auto 0; background: var(--paper); border: 1px solid rgba(215,53,79,.25); border-radius: 22px; padding: 26px 28px 28px; box-shadow: 0 16px 38px rgba(215,53,79,.06); }
+    .sb-h { text-align: center; margin-bottom: 22px; }
+    .sb-h .excl { justify-content: center; }
+    .sb-h b { display: block; font-family: 'Playfair Display', Georgia, serif; font-weight: 500; font-size: 25px; color: var(--ink); line-height: 1.25; }
+    .sboni ul { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .sboni li { display: grid; grid-template-columns: 44px 1fr; gap: 0 12px; align-items: start; }
+    .sb-ic { width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; grid-row: span 2; background: rgba(215,53,79,.08); color: var(--red); }
+    .sb-ic svg { width: 20px; height: 20px; }
+    .sb-ic.zoom { background: #0B5CFF; color: #fff; border-radius: 50%; }
+    .sboni li b { font-size: 15px; font-weight: 600; color: var(--ink); line-height: 1.35; }
+    .sboni li small { display: block; font-size: 13.5px; color: var(--body); line-height: 1.45; margin-top: 4px; }
+    @media (max-width: 900px) { .sboni { max-width: 560px; } .sboni ul { grid-template-columns: 1fr; } }
+    @media (max-width: 600px) { .sboni { padding: 20px 18px 22px; margin-top: 32px; } .sb-h b { font-size: 21px; } }
+    .g-web img { object-position: 54% 30%; }
+    .g-web .badge-live { position: absolute; left: 10px; top: 10px; z-index: 2; }
+    /* ───── Mehr Bilder von Jasmin ───── */
+    .about-vis { position: relative; max-width: 400px; padding-bottom: 74px; }
+    .about-sub { position: absolute; right: -44px; bottom: 0; width: 64%; aspect-ratio: 3 / 2; border-radius: 18px; overflow: hidden; border: 6px solid var(--paper); box-shadow: 0 20px 44px rgba(80,55,40,.2); }
+    .about-sub img { width: 100%; height: 100%; object-fit: cover; object-position: 40% 55%; }
+    .sol .sol-img { width: 168px; aspect-ratio: 4 / 5; border-radius: 18px; overflow: hidden; box-shadow: 0 14px 30px rgba(0,0,0,.25); }
+    .sol .sol-img img { width: 100%; height: 100%; object-fit: cover; object-position: 40% 20%; }
+    .goal-can { display: flex; flex-direction: column; justify-content: center; }
+    .about-sub2 { top: 36px; bottom: auto; width: 50%; }
+    .about-sub2 img { object-position: 35% 55%; }
+    .goal-img { margin: -10px -12px 22px; aspect-ratio: 16 / 9; border-radius: 14px; overflow: hidden; }
+    .goal-img img { width: 100%; height: 100%; object-fit: cover; object-position: 38% 55%; }
+    @media (max-width: 900px) {
+      .about-vis { max-width: 300px; margin: 0 auto; padding-bottom: 58px; }
+      .about-vis .arch { max-width: 260px; margin: 0; }
+      .about-sub { right: -6px; width: 62%; }
+      .about-sub2 { top: 24px; width: 46%; }
+    }
+    @media (max-width: 600px) {
+      .sol .sol-img { width: 132px; }
+      .goal-img { margin: -6px -6px 18px; }
+    }
+    /* ───── PDF-Symbol ───── */
+    .pdf-ic { display: inline-block; width: 17px; height: 20px; flex: none; vertical-align: -4px; margin-right: 7px; }
+    .pdf-slot { width: 22px; flex: none; display: inline-flex; justify-content: center; margin-top: 1px; }
+    .pdf-slot .pdf-ic { width: 19px; height: 23px; margin: 0; }
+    .g-tag .pdf-ic { width: 14px; height: 17px; vertical-align: -4px; margin-right: 6px; }
+    .fchips li .pdf-ic { width: 14px; height: 17px; margin: 0; color: inherit; }
+    .card-form p .pdf-ic { margin-right: 6px; }
+    .faq p .pdf-ic { margin: 0 6px 0 0; }
+    /* ───── Zoom-Icon + 72h-Karte ───── */
+    .zm { white-space: nowrap; }
+    .zoom-ic { display: inline-block; width: 1.1em; height: 1.1em; vertical-align: -0.2em; margin-right: 4px; }
+    .g-ticket .ticket { width: 76%; }
+    /* ───── Blutwerte-Kompass als Grafik ───── */
+    .k-grid { display: grid; grid-template-columns: 1fr 200px 1fr; grid-template-areas: "a dial b" "c dial d"; gap: 14px 24px; align-items: center; }
+    .k-list { display: contents; }
+    .k-dial { grid-area: dial; width: 200px; filter: drop-shadow(0 14px 26px rgba(80,55,40,.14)); }
+    .k-dial svg { width: 100%; height: auto; display: block; }
+    .k-dial .kd text { font-family: 'Playfair Display', Georgia, serif; font-size: 12px; fill: #A8876F; text-anchor: middle; }
+    .k-dial .kb circle { fill: var(--dark); stroke: #fff; stroke-width: 3; }
+    .k-dial .kb text { font-family: 'Playfair Display', Georgia, serif; font-style: italic; font-size: 14px; fill: #fff; text-anchor: middle; }
+    .k-dial .needle { transform-origin: 100px 100px; transform: rotate(45deg); animation: kswing 6s ease-in-out infinite; }
+    @keyframes kswing { 0%, 100% { transform: rotate(40deg); } 50% { transform: rotate(50deg); } }
+    @media (prefers-reduced-motion: reduce) { .k-dial .needle { animation: none; } }
+    .k-list li { background: var(--paper); border: 1px solid var(--line); border-radius: 16px; padding: 14px 16px; display: grid; grid-template-columns: 30px 1fr; column-gap: 12px; align-items: start; }
+    .k-list li:nth-child(1) { grid-area: a; } .k-list li:nth-child(2) { grid-area: b; } .k-list li:nth-child(3) { grid-area: c; } .k-list li:nth-child(4) { grid-area: d; }
+    .k-grid .k-n { width: 30px; height: 30px; font-size: 15px; margin: 0; grid-row: span 2; }
+    .k-list b { display: block; font-size: 15px; font-weight: 600; color: var(--ink); line-height: 1.35; }
+    .k-list p { font-size: 13.5px; color: var(--body); line-height: 1.45; margin-top: 2px; }
+    @media (max-width: 760px) {
+      .k-grid { grid-template-columns: 1fr 1fr; grid-template-areas: "dial dial" "a b" "c d"; gap: 10px; align-items: stretch; }
+      .k-dial { width: 150px; justify-self: center; margin-bottom: 6px; }
+      .k-list li { grid-template-columns: 1fr; padding: 12px; }
+      .k-grid .k-n { grid-row: auto; width: 26px; height: 26px; font-size: 13px; margin-bottom: 8px; }
+      .k-list b { font-size: 14px; }
+      .k-list p { font-size: 12.5px; }
+    }
+    /* ───── Kompass-Video (HyperFrames) ───── */
+    .k-dial { position: relative; height: auto; aspect-ratio: 1; filter: none; }
+    .k-vid { position: absolute; left: 50%; top: 50%; width: 128%; height: 128%; transform: translate(-50%, -50%); object-fit: cover; pointer-events: none; -webkit-mask-image: radial-gradient(closest-side, #000 80%, transparent 100%); mask-image: radial-gradient(closest-side, #000 80%, transparent 100%); }
+    .k-list li { transition: border-color .35s ease, box-shadow .35s ease, transform .35s ease; }
+    .k-list li .k-n { transition: background-color .35s ease; }
+    .k-list li { align-content: start; }
+    @media (max-width: 760px) { .k-dial { width: 172px; } }
+    .k-list li.on { border-color: rgba(215,53,79,.35); box-shadow: 0 12px 26px rgba(215,53,79,.10); transform: translateY(-2px); }
+    .k-list li.on .k-n { background: var(--red); }
+    @media (prefers-reduced-motion: reduce) { .k-list li { transition: none; } .k-list li.on { transform: none; } }
   </style>
 </head>
 <body>
 
-  <a href="#warteliste" class="topbar js-open"><span class="live-dot" aria-hidden="true"></span><span class="lg">Nur für die Warteliste: Frühbucher-Preis und Start-Boni</span><span class="sm">Frühbucher-Preis + Boni nur für die Warteliste</span><span class="tb-cd" hidden></span><span class="go">Jetzt eintragen →</span></a>
+  <a href="#warteliste" class="topbar js-open"><span class="live-dot" aria-hidden="true"></span><span class="lg">Nur für die Warteliste: Frühbucher&#8209;Preis und Start&#8209;Boni</span><span class="sm">Frühbucher&#8209;Preis + Boni nur für die Warteliste</span><span class="tb-cd" hidden></span><span class="go">Jetzt eintragen →</span></a>
 
   <main>
 
@@ -748,9 +851,9 @@
           <div class="hero-txt">
             <span class="pill"><span class="dot"></span>Für Frauen ab&nbsp;40 &amp; in den Wechseljahren</span>
             <h1>Du willst endlich <span class="ac">gesund&nbsp;abnehmen</span>,<br class="br-d" /> bist&nbsp;aber ständig&nbsp;müde?<span class="h1-a">Deine <b>Blutwerte</b> zeigen dir, wo du&nbsp;ansetzt.</span></h1>
-            <p class="lead">Heilpraktikerin Jasmin&nbsp;Schmidtke zeigt dir in ihrer Video-Masterclass das <strong>Blutwerte-Kompass-System</strong>: wie du deine Werte liest und daraus deinen eigenen Plan machst. Statt Diäten und Trainingsplänen von der&nbsp;Stange.</p>
+            <p class="lead">Heilpraktikerin Jasmin&nbsp;Schmidtke zeigt dir in ihrer Video-Masterclass das <strong>Blutwerte-Kompass-System</strong>: wie du deine Werte liest und daraus deinen eigenen Plan für <strong>mehr Energie und gesundes Abnehmen</strong>&nbsp;machst.</p>
             <a href="#warteliste" class="btn pulse js-open">
-              <span class="t"><b>Benachrichtige mich zum Start</b><small>und sichere dir den Frühbucher-Preis</small></span>
+              <span class="t"><b>Benachrichtige mich zum Start</b><small>und sichere dir den Frühbucher&#8209;Preis</small></span>
               <span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg></span>
             </a>
             <p class="micro">Kostenlos · unverbindlich · jederzeit abbestellbar</p>
@@ -768,30 +871,29 @@
         <div class="head rv">
           <span class="pill"><span class="dot"></span>Nur für die Warteliste</span>
           <h2>Das bekommst du, wenn du dich <span class="ac">jetzt&nbsp;einträgst</span>.</h2>
-          <p>Kostenlos. Und schon vor dem Start mit <strong>echtem Nutzen für&nbsp;dich</strong>.</p>
+          <p>Kostenlos. Und du kannst <strong>sofort damit anfangen</strong>, nicht erst zum&nbsp;Start.</p>
         </div>
         <ul class="gifts">
           <li class="gift rv">
             <div class="g-vis g-pdf"><img src="5-blutwerte-cover.jpg" width="991" height="1400" alt="Vorschau: Die 5 wichtigsten Blutwerte für mehr Energie ab 40" loading="lazy" /></div>
-            <span class="g-tag">Sofort als PDF</span>
+            <span class="g-tag"><svg class="pdf-ic" viewBox="0 0 20 24" aria-hidden="true"><path d="M3.5 1h9.5l6 6v14a2 2 0 0 1-2 2H3.5a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2z" fill="#fff" stroke="#D7354F" stroke-width="1.6"/><path d="M13 1v6h6" fill="none" stroke="#D7354F" stroke-width="1.6"/><rect x="0" y="11.5" width="16.5" height="8" rx="1.6" fill="#D7354F"/><text x="8.25" y="17.7" text-anchor="middle" font-size="6.2" font-weight="700" fill="#fff" font-family="Arial, Helvetica, sans-serif">PDF</text></svg>Sofort als PDF</span>
             <h3>Die 5 wichtigsten Blutwerte für mehr Energie ab&nbsp;40</h3>
             <p>Welche fünf Werte du dir ab&nbsp;40 genauer ansehen solltest, wenn du ständig müde bist. <strong>Und warum „im&nbsp;Normbereich“ nicht gleich optimal&nbsp;heißt.</strong></p>
           </li>
-          <!-- Videotitel sind Vorschläge: mit Jasmin abstimmen -->
-          <li class="gift rv">
+                    <li class="gift rv">
             <div class="g-vis g-vid"><img src="a7408939.jpg" width="1600" height="1067" alt="" loading="lazy" /><i><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15l13-7.5z"/></svg></i></div>
             <span class="g-tag">Vorab-Video 1</span>
-            <h3>Warum dein Körper ab&nbsp;40 anders&nbsp;reagiert</h3>
-            <p>Was sich in der Lebensmitte bei Hormonen und Stoffwechsel verändert. <strong>Und warum dieselben Maßnahmen plötzlich nicht mehr&nbsp;wirken.</strong></p>
+            <h3>Welches Hormon macht was in deinem&nbsp;Körper?</h3>
+            <p>Ein klarer Überblick, welches Hormon in deinem Körper welche Aufgabe hat. <strong>Und warum sich ab&nbsp;40 davon so viel spürbar&nbsp;verändert.</strong></p>
           </li>
           <li class="gift rv">
-            <div class="g-vis g-vid"><img src="jasmin-haut-haare.jpg" width="900" height="600" alt="" loading="lazy" /><i><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15l13-7.5z"/></svg></i></div>
-            <span class="g-tag">Vorab-Video 2</span>
-            <h3>Warum weniger essen ab&nbsp;40 oft nicht&nbsp;hilft</h3>
-            <p>Und was dein Körper stattdessen braucht, <strong>um wieder in Schwung zu&nbsp;kommen</strong>.</p>
+            <div class="g-vis g-ticket"><div class="ticket" aria-hidden="true"><div class="main"><small>Frühbucher&#8209;Preis</small><b>72<em>Stunden</em></b><span>Einmalig, mit 3 Start&#8209;Boni</span></div><div class="stub"><span>Nur Warteliste</span></div></div></div>
+            <span class="g-tag">Nur 72 Stunden</span>
+            <h3>Dein Frühbucher&#8209;Preis mit 3&nbsp;Start&#8209;Boni</h3>
+            <p>Direkt nach dem Live-Webinar sicherst du dir die Masterclass 72 Stunden lang zum einmaligen Frühbucher&#8209;Preis. <strong>Danach gilt der reguläre&nbsp;Preis.</strong></p>
           </li>
         </ul>
-        <p class="gifts-more rv">Dazu: dein Platz im <b>Live-Webinar auf <span class="zb">Zoom</span></b> und <b>72&nbsp;Stunden Frühbucher-Preis</b> mit Start-Boni.</p>
+        <p class="gifts-more rv">Dazu: ein <b>zweites Vorab-Video</b> und dein <b>Platz im Live-Webinar</b> auf <span class="zm"><svg class="zoom-ic" viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="6" fill="#0B5CFF"/><path d="M5.2 9.1a1.6 1.6 0 0 1 1.6-1.6h6.3a1.8 1.8 0 0 1 1.8 1.8v5.6a1.6 1.6 0 0 1-1.6 1.6H7a1.8 1.8 0 0 1-1.8-1.8z" fill="#fff"/><path d="M15.6 10.7l3.2-2.2v7l-3.2-2.2z" fill="#fff"/></svg><b class="zb">Zoom</b></span>.</p>
       </div>
     </section>
 
@@ -801,7 +903,7 @@
         <div class="head rv">
           <span class="pill">So geht es los</span>
           <h2>So sicherst du dir den <span class="ac">Frühbucher&#8209;Preis</span>.</h2>
-          <p>Alle Termine bekommst du rechtzeitig per Mail. <strong>Frühbucher-Preis und Start-Boni gibt es nur für die Warteliste.</strong></p>
+          <p>Alle Termine bekommst du rechtzeitig per Mail. <strong>Frühbucher&#8209;Preis und Start&#8209;Boni gibt es nur für die Warteliste.</strong></p>
         </div>
 
         <ol class="launch">
@@ -829,7 +931,7 @@
               <div class="vis v-live">
                 <img src="jasmin-live-webinar.jpg" width="900" height="817" alt="Jasmin Schmidtke live vor der Kamera" loading="lazy" />
                 <span class="badge-live"><i></i>LIVE</span>
-                <span class="lv-tag">Live-Webinar auf <b class="zb">Zoom</b></span>
+                <span class="lv-tag">Live-Webinar auf <span class="zm"><svg class="zoom-ic" viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="6" fill="#0B5CFF"/><path d="M5.2 9.1a1.6 1.6 0 0 1 1.6-1.6h6.3a1.8 1.8 0 0 1 1.8 1.8v5.6a1.6 1.6 0 0 1-1.6 1.6H7a1.8 1.8 0 0 1-1.8-1.8z" fill="#fff"/><path d="M15.6 10.7l3.2-2.2v7l-3.2-2.2z" fill="#fff"/></svg><b class="zb">Zoom</b></span></span>
               </div>
               <div class="body">
                 <span class="excl"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="6"/></svg>Live-Webinar</span>
@@ -838,7 +940,7 @@
                 <ul class="checks">
                   <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>Was deine Blutwerte damit zu tun haben</span></li>
                   <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>Vorstellung der Masterclass und deine Fragen</span></li>
-                  <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>Frühbucher-Preis und Boni werden enthüllt</span></li>
+                  <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>Der Frühbucher&#8209;Preis wird enthüllt</span></li>
                 </ul>
               </div>
             </article>
@@ -848,7 +950,7 @@
             <article class="lcard">
               <div class="vis v-ticket">
                 <div class="ticket" aria-hidden="true">
-                  <div class="main"><small>Frühbucher-Preis</small><b>72<em>Stunden</em></b><span>Einmalig, mit Start-Boni</span></div>
+                  <div class="main"><small>Frühbucher&#8209;Preis</small><b>72<em>Stunden</em></b><span>Einmalig, mit Start&#8209;Boni</span></div>
                   <div class="stub"><span>Nur Warteliste</span></div>
                 </div>
               </div>
@@ -857,7 +959,7 @@
                 <h3>72&nbsp;Stunden Frühbucher&#8209;Preis</h3>
                 <ul class="checks">
                   <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>Einmaliger Preis, nur 72 Stunden</span></li>
-                  <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>Exklusive Start-Boni dazu</span></li>
+                  <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>Mit 3 exklusiven Start&#8209;Boni</span></li>
                   <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>Danach gilt der reguläre Preis</span></li>
                 </ul>
               </div>
@@ -887,6 +989,14 @@
             </article>
           </li>
         </ol>
+        <div class="sboni rv">
+          <div class="sb-h"><span class="excl"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="6"/></svg>Nur 72 Stunden, nur für die Warteliste</span><b>Deine 3 Start&#8209;Boni zum Frühbucher&#8209;Preis</b></div>
+          <ul>
+            <li><span class="sb-ic zoom"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 8a2.5 2.5 0 0 1 2.5-2.5h8A2.5 2.5 0 0 1 16 8v8a2.5 2.5 0 0 1-2.5 2.5h-8A2.5 2.5 0 0 1 3 16z"/><path d="M17 10.2l4-2.6v8.8l-4-2.6z"/></svg></span><b>Extra Live-Call mit Jasmin auf <span class="zb">Zoom</span></b><small>Ein zusätzlicher Live-Call nur für Frühbucherinnen. Jasmin beantwortet deine Fragen zur&nbsp;Masterclass.</small></li>
+            <li><span class="sb-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3s6 6.4 6 11a6 6 0 0 1-12 0c0-4.6 6-11 6-11z"/><path d="M9.5 14.5a2.6 2.6 0 0 0 2.5 2.5"/></svg></span><b>Vorteilspreis für deine Blutanalyse</b><small>Wenn du deine Werte bei Jasmin messen lassen willst, zahlst du als Frühbucherin&nbsp;weniger.</small></li>
+            <li><span class="sb-ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg></span><b>Video „Ballaststoffe: der unterschätzte Baustein“</b><small>Was Ballaststoffe mit Blutzucker, Sättigung und deinem Darm zu tun haben. Und warum sie so oft übersehen&nbsp;werden.</small></li>
+          </ul>
+        </div>
       </div>
     </section>
 
@@ -906,7 +1016,7 @@
         </ul>
         <div class="turn rv" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v16"/><path d="M6 14l6 6 6-6"/></svg></div>
         <div class="sol nobtn rv">
-          <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21C7 17 3 13.5 3 9.5A5.5 5.5 0 0 1 12 5.7 5.5 5.5 0 0 1 21 9.5c0 4-4 7.5-9 11.5z"/></svg></span>
+          <div class="sol-img"><img src="jasmin-entspannt.webp" width="800" height="1000" alt="Jasmin Schmidtke, Heilpraktikerin" loading="lazy" /></div>
           <div>
             <span class="sol-lbl">Warum bisher nichts geklappt hat</span>
             <b>Nicht du bist das Problem. Sondern Pläne, die nicht für dich gemacht&nbsp;sind.</b>
@@ -919,12 +1029,15 @@
             <h3>Das Blutwerte-Kompass-System</h3>
             <p>Vier Schritte, die bei <strong>deinen Werten</strong> anfangen. Nicht bei einem Plan für&nbsp;alle.</p>
           </div>
-          <ol class="k-steps">
-            <li><span class="k-n">1</span><b>Standort bestimmen</b><p>Du weißt, welche Werte du ab&nbsp;40 messen lassen solltest und wo du gerade stehst.</p></li>
-            <li><span class="k-n">2</span><b>Richtung erkennen</b><p>Du siehst, was bei dir nicht optimal ist. Auch wenn alles „im&nbsp;Normbereich“ liegt.</p></li>
-            <li><span class="k-n">3</span><b>Deinen Weg gehen</b><p>Essen, Bewegung, Schlaf und Nährstoffe, abgestimmt auf deine&nbsp;Werte.</p></li>
-            <li><span class="k-n">4</span><b>Kurs prüfen</b><p>Du misst nach und prüfst, was sich bei dir verändert&nbsp;hat.</p></li>
-          </ol>
+          <div class="k-grid">
+            <div class="k-dial"><video class="k-vid" muted loop playsinline preload="none" poster="kompass-system.webp" aria-hidden="true"></video></div>
+            <ol class="k-list">
+              <li><span class="k-n">1</span><b>Standort bestimmen</b><p>Welche Werte zählen und wo du gerade&nbsp;stehst.</p></li>
+              <li><span class="k-n">2</span><b>Richtung erkennen</b><p>Was bei dir nicht optimal ist, auch im&nbsp;Normbereich.</p></li>
+              <li><span class="k-n">3</span><b>Deinen Weg gehen</b><p>Essen, Bewegung, Schlaf und Nährstoffe nach deinen&nbsp;Werten.</p></li>
+              <li><span class="k-n">4</span><b>Kurs prüfen</b><p>Nachmessen und prüfen, was sich bei dir&nbsp;tut.</p></li>
+            </ol>
+          </div>
         </div>
         <div class="cmp rv">
           <div class="cmp-h"><span>Was die meisten machen</span><span>Mit dem Blutwerte-Kompass-System</span></div>
@@ -939,27 +1052,41 @@
         </div>
         <div class="vs-cta sol-cta">
           <a href="#warteliste" class="btn pulse js-open">
-              <span class="t"><b>Benachrichtige mich zum Start</b><small>und sichere dir den Frühbucher-Preis</small></span>
+              <span class="t"><b>Benachrichtige mich zum Start</b><small>und sichere dir den Frühbucher&#8209;Preis</small></span>
               <span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg></span>
             </a>
         </div>
       </div>
     </section>
 
-    <!-- ═══════ NUTZEN: WAS SICH FÜR DICH ÄNDERT ═══════ -->
+    <!-- ═══════ NUTZEN: WO DU HIN WILLST ═══════ -->
     <section class="sec alt gains-sec" aria-label="Was sich für dich ändert">
       <div class="wrap">
         <div class="head rv">
           <span class="pill">Nach der Masterclass</span>
           <h2>Damit du nicht mehr rätst, sondern <span class="ac">weißt, wo du&nbsp;ansetzt</span>.</h2>
         </div>
-        <ul class="gains rv">
-          <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>Du weißt, <strong>warum dein Körper ab&nbsp;40 anders reagiert</strong> und was er jetzt braucht.</span></li>
-          <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>Du kennst <strong>die Blutwerte, die bei Müdigkeit und Gewicht zählen</strong>, und verstehst deine eigenen.</span></li>
-          <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>Du hast <strong>deinen eigenen Plan</strong> für Essen, Bewegung und Schlaf, abgestimmt auf deine Werte.</span></li>
-          <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>Du weißt, wie du ab&nbsp;40 <strong>gesund abnimmst, ohne zu hungern</strong>.</span></li>
-          <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>Du weißt, <strong>welche Nahrungsergänzung du wirklich brauchst</strong> und welche du dir sparen kannst.</span></li>
-        </ul>
+        <div class="goal rv">
+          <div class="goal-want">
+            <span class="g-lbl">Wo du hin willst</span>
+            <ul>
+              <li><span class="hz"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21s-7.5-4.6-9.5-9.2C1.2 8.6 3.2 5 6.6 5c2 0 3.4 1.1 4.4 2.5C12 6.1 13.4 5 15.4 5c3.4 0 5.4 3.6 4.1 6.8C19.5 16.4 12 21 12 21z"/></svg></span><span>Morgens aufwachen und <strong>Energie für den Tag</strong> haben.</span></li>
+              <li><span class="hz"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21s-7.5-4.6-9.5-9.2C1.2 8.6 3.2 5 6.6 5c2 0 3.4 1.1 4.4 2.5C12 6.1 13.4 5 15.4 5c3.4 0 5.4 3.6 4.1 6.8C19.5 16.4 12 21 12 21z"/></svg></span><span>Ein <strong>Gewicht, in dem du dich wohlfühlst</strong>. Ohne zu hungern.</span></li>
+              <li><span class="hz"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21s-7.5-4.6-9.5-9.2C1.2 8.6 3.2 5 6.6 5c2 0 3.4 1.1 4.4 2.5C12 6.1 13.4 5 15.4 5c3.4 0 5.4 3.6 4.1 6.8C19.5 16.4 12 21 12 21z"/></svg></span><span>Dich wieder <strong>frisch und wohl in deiner Haut</strong> fühlen.</span></li>
+              <li><span class="hz"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21s-7.5-4.6-9.5-9.2C1.2 8.6 3.2 5 6.6 5c2 0 3.4 1.1 4.4 2.5C12 6.1 13.4 5 15.4 5c3.4 0 5.4 3.6 4.1 6.8C19.5 16.4 12 21 12 21z"/></svg></span><span><strong>Wieder du selbst</strong> sein: klar, gelassen, mit Lebensfreude.</span></li>
+            </ul>
+          </div>
+          <div class="goal-can">
+            <span class="g-lbl">Was du dafür nach der Masterclass kannst</span>
+            <ul>
+              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>Du verstehst, <strong>warum dein Körper ab&nbsp;40 anders reagiert</strong>.</span></li>
+              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>Du liest deine Blutwerte und <strong>erkennst, was bei dir nicht optimal ist</strong>.</span></li>
+              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>Du <strong>isst und trainierst so, wie es zu deinem Körper</strong> ab&nbsp;40 passt.</span></li>
+              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>Du <strong>ergänzt gezielt</strong>, was dir fehlt, statt auf Verdacht.</span></li>
+              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>Du hast <strong>deinen eigenen Plan</strong> und weißt, wie du dranbleibst.</span></li>
+            </ul>
+          </div>
+        </div>
         <ul class="stats sm rv">
           <li><b>16</b><span>Module</span></li>
           <li><b>8<span class="u">&nbsp;Std.</span></b><span>Material</span></li>
@@ -975,7 +1102,7 @@
         <div class="head rv">
           <span class="pill">Dein Plan, Woche für Woche</span>
           <h2>Dein Weg zurück zu deinem <span class="ac">Wohlfühl&#8209;Ich</span>.</h2>
-          <p>Jede Woche ein neues Modul. Deine <strong>Blutwerte sind der rote Faden</strong>, damit alles ineinandergreift.</p>
+          <p>13 Wochen, Schritt für Schritt. Deine <strong>Blutwerte sind der rote Faden</strong>, damit alles ineinandergreift.</p>
         </div>
         <ol class="tl">
           <li class="st rv">
@@ -1007,7 +1134,7 @@
               </svg></div>
             <div class="st-txt">
               <p class="wk">Woche 2<span>Blutzucker und dein Frühstück</span></p>
-              <h3>Warum deine Energie am Vormittag&nbsp;abstürzt.</h3>
+              <h3>Wie dein Frühstück dich durch den Vormittag&nbsp;trägt.</h3>
               <ul class="pts"><li><span class="pt-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l3-8 4 16 3-8h4"/></svg></span><span>Du verstehst <strong>deine Blutzuckerkurve</strong>.</span></li><li><span class="pt-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h13v5a6 6 0 0 1-6 6h-1a6 6 0 0 1-6-6z"/><path d="M17 9h2a2 2 0 0 1 0 4h-2"/></svg></span><span>Du machst <strong>dein Frühstück zum Hebel</strong>.</span></li><li><span class="pt-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></svg></span><span>Du lernst, was <strong>Heißhunger und Energietiefs</strong> mit der Kurve zu tun haben.</span></li></ul>
             </div>
           </li>
@@ -1034,7 +1161,7 @@
               </svg></div>
             <div class="st-txt">
               <p class="wk">Woche 3 und 4<span>Stress und deine Grenzen, Dein Schlaf</span></p>
-              <h3>Warum du müde&nbsp;bist und trotzdem nicht abschalten&nbsp;kannst.</h3>
+              <h3>Wie du abends abschaltest und erholter&nbsp;aufwachst.</h3>
               <ul class="pts"><li><span class="pt-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.5 9-8 10-4.5-1-8-5-8-10V6z"/></svg></span><span>Du verstehst, <strong>was Cortisol mit deinen Grenzen macht</strong>.</span></li><li><span class="pt-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h11a3 3 0 1 0-3-3M3 12h15a3 3 0 1 1-3 3M3 16h7"/></svg></span><span>Du <strong>baust Stress mit Strategie ab</strong> statt mit Durchhalten.</span></li><li><span class="pt-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></span><span>Du entwickelst <strong>ein Abendritual, das dich erholt</strong>.</span></li></ul>
             </div>
           </li>
@@ -1184,7 +1311,7 @@
             <div class="kv"><img src="bestandteil-live-calls.webp" width="800" height="560" alt="Q&amp;A-Live-Call mit Jasmin auf Zoom" loading="lazy" /></div>
             <span class="kc-lbl">Bestandteil <i>02</i></span>
             <h3><strong>Q&amp;A-Live-Calls</strong> mit&nbsp;Jasmin</h3>
-            <p>Regelmäßig live auf <b class="zb">Zoom</b>, passend zum Modul. <strong>Fragen stellen statt grübeln.</strong></p>
+            <p>Regelmäßig live auf <span class="zm"><svg class="zoom-ic" viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="6" fill="#0B5CFF"/><path d="M5.2 9.1a1.6 1.6 0 0 1 1.6-1.6h6.3a1.8 1.8 0 0 1 1.8 1.8v5.6a1.6 1.6 0 0 1-1.6 1.6H7a1.8 1.8 0 0 1-1.8-1.8z" fill="#fff"/><path d="M15.6 10.7l3.2-2.2v7l-3.2-2.2z" fill="#fff"/></svg><b class="zb">Zoom</b></span>, passend zum Modul. <strong>Fragen stellen statt grübeln.</strong></p>
           </article>
           <article class="kc rv">
             <div class="kv"><img src="bestandteil-community.webp" width="800" height="560" alt="Community mit Räumen für Fragen, Wins und Austausch" loading="lazy" /></div>
@@ -1223,7 +1350,7 @@
     <!-- ═══════ PERSÖNLICH ═══════ -->
     <section class="sec white" aria-label="Über Jasmin Schmidtke">
       <div class="wrap about">
-        <div class="rv"><div class="arch"><img src="jasmin.jpg" width="933" height="1400" alt="Jasmin Schmidtke" loading="lazy" /></div></div>
+        <div class="rv about-vis"><div class="arch"><img src="jasmin.jpg" width="933" height="1400" alt="Jasmin Schmidtke" loading="lazy" /></div><figure class="about-sub about-sub2"><img src="jasmin-a7409424.webp" width="1400" height="933" alt="Jasmin Schmidtke im Kopfstand" loading="lazy" /></figure><figure class="about-sub"><img src="jasmin-gym.webp" width="1400" height="933" alt="Jasmin Schmidtke beim Krafttraining im Studio" loading="lazy" /></figure></div>
         <div class="rv">
           <span class="pill">Persönlich von Jasmin</span>
           <h2>Ich begleite dich durch die <span class="ac">Masterclass</span>.</h2>
@@ -1232,7 +1359,7 @@
           <blockquote>„Du bist nicht zu alt, zu undiszipliniert oder einfach kaputt. Dein Körper folgt einer Logik. Und die kannst du verstehen.“</blockquote>
           <p class="sig">Jasmin Schmidtke, Heilpraktikerin</p>
           <a href="#warteliste" class="btn pulse js-open">
-            <span class="t"><b>Benachrichtige mich zum Start</b><small>und sichere dir den Frühbucher-Preis</small></span>
+            <span class="t"><b>Benachrichtige mich zum Start</b><small>und sichere dir den Frühbucher&#8209;Preis</small></span>
             <span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg></span>
           </a>
         </div>
@@ -1244,34 +1371,34 @@
       <div class="wrap">
         <div class="head rv" style="max-width:860px">
           <span class="pill">Mit oder ohne Warteliste</span>
-          <h2>Kostenlos eintragen.<br class="br-d" /> Frühbucher-Preis und Boni gibt&nbsp;es <span class="ac">nur&nbsp;hier</span>.</h2>
+          <h2>Kostenlos eintragen.<br class="br-d" /> Frühbucher&#8209;Preis und Boni gibt&nbsp;es <span class="ac">nur&nbsp;hier</span>.</h2>
         </div>
         <div class="vs rv">
           <div class="col with">
             <span class="flag">Nur für die Warteliste</span>
             <span class="lbl">Mit Warteliste</span>
             <ul>
-              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>Die 5 wichtigsten Blutwerte ab&nbsp;40 (PDF)</span></li>
+              <li><span class="pdf-slot"><svg class="pdf-ic" viewBox="0 0 20 24" aria-hidden="true"><path d="M3.5 1h9.5l6 6v14a2 2 0 0 1-2 2H3.5a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2z" fill="#fff" stroke="#D7354F" stroke-width="1.6"/><path d="M13 1v6h6" fill="none" stroke="#D7354F" stroke-width="1.6"/><rect x="0" y="11.5" width="16.5" height="8" rx="1.6" fill="#D7354F"/><text x="8.25" y="17.7" text-anchor="middle" font-size="6.2" font-weight="700" fill="#fff" font-family="Arial, Helvetica, sans-serif">PDF</text></svg></span><span>Blutwerte-Übersicht sofort als&nbsp;PDF</span></li>
               <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>2 exklusive Vorab-Videos</span></li>
               <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>Einladung zum Live-Webinar</span></li>
-              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>72 Stunden Frühbucher-Preis</span></li>
-              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>Exklusive Start-Boni</span></li>
+              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>72 Stunden Frühbucher&#8209;Preis</span></li>
+              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>3 exklusive Start&#8209;Boni</span></li>
             </ul>
           </div>
           <div class="col without">
             <span class="lbl">Ohne</span>
             <ul>
-              <li><span class="x"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></span><span>Keine Blutwerte-Übersicht</span></li>
+              <li><span class="x"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></span><span>Keine Blutwerte-Übersicht als PDF</span></li>
               <li><span class="x"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></span><span>Keine Vorab-Videos</span></li>
-              <li><span class="x"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></span><span>Kein Frühbucher-Preis</span></li>
-              <li><span class="x"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></span><span>Keine Start-Boni</span></li>
+              <li><span class="x"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></span><span>Kein Frühbucher&#8209;Preis</span></li>
+              <li><span class="x"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></span><span>Keine Start&#8209;Boni</span></li>
               <li><span class="x"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></span><span>Später nur zum regulären Preis</span></li>
             </ul>
           </div>
         </div>
         <div class="vs-cta rv">
           <a href="#warteliste" class="btn pulse js-open">
-            <span class="t"><b>Benachrichtige mich zum Start</b><small>und sichere dir den Frühbucher-Preis</small></span>
+            <span class="t"><b>Benachrichtige mich zum Start</b><small>und sichere dir den Frühbucher&#8209;Preis</small></span>
             <span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg></span>
           </a>
         </div>
@@ -1288,19 +1415,19 @@
         <div class="faq rv">
           <details>
             <summary>Was kostet die Masterclass?<span class="pl">+</span></summary>
-            <p>Den Preis verrät Jasmin im Live-Webinar. Fest steht: Direkt danach gibt es <strong>72 Stunden lang einen einmaligen Frühbucher-Preis plus Start-Boni</strong>. Beides gibt es <strong>nur für Frauen auf der Warteliste</strong>.</p>
+            <p>Den Preis verrät Jasmin im Live-Webinar. Fest steht: Direkt danach gibt es <strong>72 Stunden lang einen einmaligen Frühbucher&#8209;Preis plus drei Start&#8209;Boni</strong>: einen zusätzlichen Live-Call mit Jasmin auf <span class="zm"><svg class="zoom-ic" viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="6" fill="#0B5CFF"/><path d="M5.2 9.1a1.6 1.6 0 0 1 1.6-1.6h6.3a1.8 1.8 0 0 1 1.8 1.8v5.6a1.6 1.6 0 0 1-1.6 1.6H7a1.8 1.8 0 0 1-1.8-1.8z" fill="#fff"/><path d="M15.6 10.7l3.2-2.2v7l-3.2-2.2z" fill="#fff"/></svg><b class="zb">Zoom</b></span>, einen Vorteilspreis für deine Blutanalyse bei Jasmin und das Video „Ballaststoffe: der unterschätzte Baustein“. Beides gibt es <strong>nur für Frauen auf der Warteliste</strong>.</p>
           </details>
           <details>
             <summary>Was bekomme ich, wenn ich mich eintrage?<span class="pl">+</span></summary>
-            <p>Sofort die Übersicht „Die 5 wichtigsten Blutwerte ab&nbsp;40“ als PDF. Danach <strong>2 exklusive Vorab-Videos</strong> von Jasmin, die <strong>Einladung zum Live-Webinar</strong> auf Zoom und Zugang zum <strong>Frühbucher-Preis mit Start-Boni</strong>.</p>
+            <p><svg class="pdf-ic" viewBox="0 0 20 24" aria-hidden="true"><path d="M3.5 1h9.5l6 6v14a2 2 0 0 1-2 2H3.5a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2z" fill="#fff" stroke="#D7354F" stroke-width="1.6"/><path d="M13 1v6h6" fill="none" stroke="#D7354F" stroke-width="1.6"/><rect x="0" y="11.5" width="16.5" height="8" rx="1.6" fill="#D7354F"/><text x="8.25" y="17.7" text-anchor="middle" font-size="6.2" font-weight="700" fill="#fff" font-family="Arial, Helvetica, sans-serif">PDF</text></svg>Sofort die Blutwerte-Übersicht „Die 5 wichtigsten Blutwerte für mehr Energie ab&nbsp;40“ als PDF. Danach <strong>2 exklusive Vorab-Videos</strong> von Jasmin, die <strong>Einladung zum Live-Webinar</strong> auf <span class="zm"><svg class="zoom-ic" viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="6" fill="#0B5CFF"/><path d="M5.2 9.1a1.6 1.6 0 0 1 1.6-1.6h6.3a1.8 1.8 0 0 1 1.8 1.8v5.6a1.6 1.6 0 0 1-1.6 1.6H7a1.8 1.8 0 0 1-1.8-1.8z" fill="#fff"/><path d="M15.6 10.7l3.2-2.2v7l-3.2-2.2z" fill="#fff"/></svg><b class="zb">Zoom</b></span> und Zugang zum <strong>Frühbucher&#8209;Preis mit Start&#8209;Boni</strong>.</p>
           </details>
           <details>
             <summary>Wie läuft das Live-Webinar ab?<span class="pl">+</span></summary>
-            <p>Jasmin erklärt live auf Zoom, <strong>warum so viele Frauen ab 40 ständig müde sind und nicht mehr abnehmen</strong> und was die Blutwerte damit zu tun haben. Danach stellt sie die Masterclass vor und beantwortet deine Fragen. Termin und Link bekommst du per Mail. Die Teilnahme ist <strong>kostenlos und unverbindlich</strong>.</p>
+            <p>Jasmin erklärt live auf <span class="zm"><svg class="zoom-ic" viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="6" fill="#0B5CFF"/><path d="M5.2 9.1a1.6 1.6 0 0 1 1.6-1.6h6.3a1.8 1.8 0 0 1 1.8 1.8v5.6a1.6 1.6 0 0 1-1.6 1.6H7a1.8 1.8 0 0 1-1.8-1.8z" fill="#fff"/><path d="M15.6 10.7l3.2-2.2v7l-3.2-2.2z" fill="#fff"/></svg><b class="zb">Zoom</b></span>, <strong>warum so viele Frauen ab 40 ständig müde sind und nicht mehr abnehmen</strong> und was die Blutwerte damit zu tun haben. Danach stellt sie die Masterclass vor und beantwortet deine Fragen. Termin und Link bekommst du per Mail. Die Teilnahme ist <strong>kostenlos und unverbindlich</strong>.</p>
           </details>
           <details>
             <summary>Was passiert nach den 72&nbsp;Stunden?<span class="pl">+</span></summary>
-            <p>Dann enden der Frühbucher-Preis und die Start-Boni. Die Masterclass gibt es danach <strong>nur noch zum regulären Preis</strong>.</p>
+            <p>Dann enden der Frühbucher&#8209;Preis und die Start&#8209;Boni. Die Masterclass gibt es danach <strong>nur noch zum regulären Preis</strong>.</p>
           </details>
           <details>
             <summary>Wann startet die Masterclass?<span class="pl">+</span></summary>
@@ -1328,7 +1455,7 @@
           </details>
           <details>
             <summary>Brauche ich aktuelle Blutwerte?<span class="pl">+</span></summary>
-            <p><strong>Nein.</strong> In der Masterclass lernst du, welche Werte für dich relevant sind und wie du sie beim Arzt anforderst. Die kostenlose Übersicht gibt dir schon vorab einen ersten Überblick.</p>
+            <p><strong>Nein.</strong> In der Masterclass lernst du, welche Werte für dich relevant sind und wie du sie beim Arzt anforderst. Die kostenlose <svg class="pdf-ic" viewBox="0 0 20 24" aria-hidden="true"><path d="M3.5 1h9.5l6 6v14a2 2 0 0 1-2 2H3.5a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2z" fill="#fff" stroke="#D7354F" stroke-width="1.6"/><path d="M13 1v6h6" fill="none" stroke="#D7354F" stroke-width="1.6"/><rect x="0" y="11.5" width="16.5" height="8" rx="1.6" fill="#D7354F"/><text x="8.25" y="17.7" text-anchor="middle" font-size="6.2" font-weight="700" fill="#fff" font-family="Arial, Helvetica, sans-serif">PDF</text></svg>Blutwerte-Übersicht als PDF gibt dir schon vorab eine erste Orientierung.</p>
           </details>
           <details>
             <summary>Wie viel Zeit brauche ich pro Woche?<span class="pl">+</span></summary>
@@ -1349,17 +1476,17 @@
       <div class="wrap final-grid">
         <div class="rv">
           <h2>Sichere dir deinen Platz auf der <span class="ac">Warteliste</span>.</h2>
-          <p class="lead">Kostenlos und unverbindlich. <strong>Frühbucher-Preis und Start-Boni gibt es nur für die Warteliste.</strong></p>
+          <p class="lead">Kostenlos und unverbindlich. <strong>Frühbucher&#8209;Preis und Start&#8209;Boni gibt es nur für die Warteliste.</strong></p>
           <figure class="final-mock"><img src="masterclass-mockup-v3.webp" width="2400" height="1474" alt="Die Masterclass auf Laptop, Tablet und Smartphone" loading="lazy" /></figure>
           <ul class="fchips">
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Blutwerte-Übersicht sofort</li>
+            <li><svg class="pdf-ic" viewBox="0 0 20 24" aria-hidden="true"><path d="M3.5 1h9.5l6 6v14a2 2 0 0 1-2 2H3.5a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2z" fill="#fff" stroke="#D7354F" stroke-width="1.6"/><path d="M13 1v6h6" fill="none" stroke="#D7354F" stroke-width="1.6"/><rect x="0" y="11.5" width="16.5" height="8" rx="1.6" fill="#D7354F"/><text x="8.25" y="17.7" text-anchor="middle" font-size="6.2" font-weight="700" fill="#fff" font-family="Arial, Helvetica, sans-serif">PDF</text></svg>Blutwerte-Übersicht sofort</li>
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>2 Vorab-Videos</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>72 Std. Frühbucher-Preis</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>72 Std. Frühbucher&#8209;Preis</li>
           </ul>
         </div>
         <div class="card-form rv">
           <h3>Kostenlos eintragen</h3>
-          <p>Danach geht es direkt zum Download.</p>
+          <p><svg class="pdf-ic" viewBox="0 0 20 24" aria-hidden="true"><path d="M3.5 1h9.5l6 6v14a2 2 0 0 1-2 2H3.5a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2z" fill="#fff" stroke="#D7354F" stroke-width="1.6"/><path d="M13 1v6h6" fill="none" stroke="#D7354F" stroke-width="1.6"/><rect x="0" y="11.5" width="16.5" height="8" rx="1.6" fill="#D7354F"/><text x="8.25" y="17.7" text-anchor="middle" font-size="6.2" font-weight="700" fill="#fff" font-family="Arial, Helvetica, sans-serif">PDF</text></svg>Danach lädst du direkt deine Blutwerte-Übersicht als PDF&nbsp;herunter.</p>
           <div class="form-home">
             <form name="masterclass-warteliste" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/warteliste-danke.html">
               <input type="hidden" name="form-name" value="masterclass-warteliste" />
@@ -1373,9 +1500,9 @@
               <input type="text" id="vorname" name="vorname" placeholder="Dein Vorname" autocomplete="given-name" required />
               <label for="email">E-Mail</label>
               <input type="email" id="email" name="email" placeholder="deine@email.de" autocomplete="email" required />
-              <label class="consent"><input type="checkbox" name="einverstanden" required /> Ja, schickt mir die Blutwerte-Übersicht, die Vorab-Videos und alle Infos zum Start der Masterclass sowie gelegentlich hilfreiche Tipps für Frauen ab&nbsp;40 per E-Mail. Abmeldung jederzeit möglich.</label>
+              <label class="consent"><input type="checkbox" name="einverstanden" required /> Ja, schickt mir die Blutwerte-Übersicht als PDF, die Vorab-Videos und alle Infos zum Start der Masterclass sowie gelegentlich hilfreiche Tipps für Frauen ab&nbsp;40 per E-Mail. Abmeldung jederzeit möglich.</label>
               <button class="btn pulse" type="submit">
-                <span class="t"><b>Benachrichtige mich zum Start</b><small>und sichere dir den Frühbucher-Preis</small></span>
+                <span class="t"><b>Benachrichtige mich zum Start</b><small>und sichere dir den Frühbucher&#8209;Preis</small></span>
                 <span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg></span>
               </button>
               <p class="trust">Unverbindlich · kein Spam · keine Weitergabe deiner Daten</p>
@@ -1398,9 +1525,9 @@
 
   <!-- Schwebende Leiste (Desktop) -->
   <div class="float" id="floatBar" aria-hidden="true">
-    <p class="txt"><b>Nur für die Warteliste:</b> Frühbucher-Preis und Start-Boni</p>
+    <p class="txt"><b>Nur für die Warteliste:</b> Frühbucher&#8209;Preis und Start&#8209;Boni</p>
     <a href="#warteliste" class="btn pulse js-open">
-      <span class="t"><b>Benachrichtige mich zum Start</b><small>und sichere dir den Frühbucher-Preis</small></span>
+      <span class="t"><b>Benachrichtige mich zum Start</b><small>und sichere dir den Frühbucher&#8209;Preis</small></span>
       <span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg></span>
     </a>
   </div>
@@ -1408,10 +1535,10 @@
   <!-- Sticky-CTA (Mobil) -->
   <div class="mbar" id="mBar">
     <a href="#warteliste" class="btn pulse js-open">
-      <span class="t"><b>Benachrichtige mich zum Start</b><small>und sichere dir den Frühbucher-Preis</small></span>
+      <span class="t"><b>Benachrichtige mich zum Start</b><small>und sichere dir den Frühbucher&#8209;Preis</small></span>
       <span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg></span>
     </a>
-    <p class="mb-note"><span class="dot" aria-hidden="true"></span><span class="mb-txt">Frühbucher-Preis und Boni nur für die Warteliste</span></p>
+    <p class="mb-note"><span class="dot" aria-hidden="true"></span><span class="mb-txt">Frühbucher&#8209;Preis und Boni nur für die Warteliste</span></p>
   </div>
 
   <!-- Eintragungs-Dialog: nimmt das Formular aus der letzten Sektion auf -->
@@ -1421,9 +1548,9 @@
       <span class="excl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>Nur für die Warteliste</span>
       <h3 id="wlDialogTitle">Benachrichtige mich zum&nbsp;Start.</h3>
       <ul class="checks">
-        <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>Die 5 wichtigsten Blutwerte ab&nbsp;40 sofort als PDF</span></li>
+        <li><span class="pdf-slot"><svg class="pdf-ic" viewBox="0 0 20 24" aria-hidden="true"><path d="M3.5 1h9.5l6 6v14a2 2 0 0 1-2 2H3.5a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2z" fill="#fff" stroke="#D7354F" stroke-width="1.6"/><path d="M13 1v6h6" fill="none" stroke="#D7354F" stroke-width="1.6"/><rect x="0" y="11.5" width="16.5" height="8" rx="1.6" fill="#D7354F"/><text x="8.25" y="17.7" text-anchor="middle" font-size="6.2" font-weight="700" fill="#fff" font-family="Arial, Helvetica, sans-serif">PDF</text></svg></span><span>Sofort als PDF: „Die 5 wichtigsten Blutwerte für mehr Energie ab&nbsp;40“</span></li>
         <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>2 exklusive Vorab-Videos und Einladung zum Live-Webinar</span></li>
-        <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>72 Stunden Frühbucher-Preis mit Start-Boni</span></li>
+        <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>72 Stunden Frühbucher&#8209;Preis mit 3&nbsp;Start&#8209;Boni</span></li>
       </ul>
       <div class="form-slot"></div>
     </div>
@@ -1598,5 +1725,35 @@
       all.forEach(function (d) { d.addEventListener('toggle', function () { if (d.open) { all.forEach(function (o) { if (o !== d) { o.open = false; } }); } }); });
     })();
   </script>
+<script>
+  /* Kompass-Video: erst laden, wenn sichtbar; Karten im Takt der Nadel hervorheben */
+  (function () {
+    var v = document.querySelector('.k-vid'); if (!v) return;
+    var items = document.querySelectorAll('.k-list li');
+    var still = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    function mark(i) { for (var k = 0; k < items.length; k++) items[k].classList.toggle('on', k === i); }
+    if (still || !('IntersectionObserver' in window)) { mark(0); return; }
+    var raf = null;
+    function step() {
+      var t = v.currentTime % 8;
+      mark(t >= 7.35 || t < 1.35 ? 0 : t < 3.35 ? 1 : t < 5.35 ? 2 : 3);
+      raf = requestAnimationFrame(step);
+    }
+    function load() {
+      if (v.getAttribute('data-ok')) return; v.setAttribute('data-ok', '1');
+      [['kompass-system.webm', 'video/webm'], ['kompass-system.mp4', 'video/mp4']].forEach(function (f) {
+        var s = document.createElement('source'); s.src = f[0]; s.type = f[1]; v.appendChild(s);
+      });
+      v.load();
+    }
+    new IntersectionObserver(function (es) {
+      es.forEach(function (e) {
+        if (e.isIntersecting) { load(); var p = v.play(); if (p && p.catch) p.catch(function () {}); if (!raf) raf = requestAnimationFrame(step); }
+        else { v.pause(); if (raf) { cancelAnimationFrame(raf); raf = null; } }
+      });
+    }, { rootMargin: '150px' }).observe(v);
+    mark(0);
+  })();
+</script>
 </body>
 </html>
