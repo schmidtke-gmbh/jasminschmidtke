@@ -1,0 +1,23 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Jasmin Schmidtke//Webinar//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:webinar-2026-10-20@jasminschmidtke.de
+DTSTAMP:20261007T120000Z
+DTSTART:20261020T170000Z
+DTEND:20261020T183000Z
+SUMMARY:Live-Webinar mit Jasmin Schmidtke: Abnehmen und Energie ab 40
+DESCRIPTION:Kostenloses Live-Webinar mit Heilpraktikerin Jasmin Schmidtke
+ . Deinen persönlichen Zugangslink bekommst du per E-Mail. Der Live-Raum 
+ öffnet sich im Browser. Nur live\, ohne Aufzeichnung.
+LOCATION:Online (Zugangslink per E-Mail)
+URL:https://www.jasminschmidtke.de/webinar
+BEGIN:VALARM
+TRIGGER:-PT30M
+ACTION:DISPLAY
+DESCRIPTION:Gleich startet das Live-Webinar mit Jasmin
+END:VALARM
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,5 @@
+# Warteliste zeigt bis zum Webinar am 20.10.2026 auf die Webinar-Seite.
+# 302 = vorübergehend (kann später ohne Browser-Cache-Probleme zurückgenommen werden).
+# Das ! sorgt dafür, dass die Regel auch greift, obwohl warteliste.html als Datei existiert.
+/warteliste        /webinar   302!
+/warteliste.html   /webinar   302!

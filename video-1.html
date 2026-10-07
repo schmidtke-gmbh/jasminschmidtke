@@ -171,7 +171,7 @@
         <ol class="steps">
           <li class="done"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><div><b>Video 1: „Alles im Normbereich“ und trotzdem erschöpft?</b><small>Heute, genau hier</small></div></li>
           <li><span class="sn">2</span><div><b>Video 2: „Deine Supplemente wirken vielleicht nur halb“</b><small data-when="video2">In ein paar Tagen per Mail</small></div></li>
-          <li><span class="sn">3</span><div><b>Live-Webinar auf <span class="zm"><svg class="zoom-ic" viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="6" fill="#0B5CFF"/><path d="M5.2 9.1a1.6 1.6 0 0 1 1.6-1.6h6.3a1.8 1.8 0 0 1 1.8 1.8v5.6a1.6 1.6 0 0 1-1.6 1.6H7a1.8 1.8 0 0 1-1.8-1.8z" fill="#fff"/><path d="M15.6 10.7l3.2-2.2v7l-3.2-2.2z" fill="#fff"/></svg><b class="zb">Zoom</b></span></b><small data-when="live">Termin und Link bekommst du per Mail</small></div></li>
+          <li><span class="sn">3</span><div><b>Live-Webinar mit Jasmin</b><small data-when="live">Termin und Zugangslink bekommst du per Mail</small></div></li>
         </ol>
       </div>
     </section>
@@ -202,7 +202,7 @@
        pdf: Dateiname des PDFs neben dieser Seite, z. B. 'Checkliste-Mein-Laborgespraech.pdf'.
        sprungmarken: auf true setzen, sobald die Kapitelzeiten (data-t im HTML,
        in Sekunden) zum fertig geschnittenen Video passen. Dann sind die Kapitel klickbar.
-       termine: wie auf der Warteliste, Format '2026-10-20T19:00'. Leer = Text bleibt.
+       termine: Format '2026-10-20T19:00:00+02:00'. Leer = Text bleibt.
        ═══════════════════════════════════════════════════════════════ */
     var VIDEO = {
       nr: 1,
@@ -211,7 +211,7 @@
       pdf: '',
       sprungmarken: false
     };
-    var TERMINE = { video2: '', live: '' };
+    var TERMINE = { video2: '', live: '2026-10-20T19:00:00+02:00' };
   </script>
   <script src="//assets.mediadelivery.net/playerjs/playerjs-latest.min.js"></script>
   <script>
