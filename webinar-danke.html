@@ -6,7 +6,7 @@
 
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Fast geschafft | Live-Webinar mit Jasmin Schmidtke</title>
+  <title>Bitte E-Mail bestätigen | Live-Webinar mit Jasmin Schmidtke</title>
   <meta name="robots" content="noindex, nofollow" />
 
   <!-- Favicon -->
@@ -172,9 +172,22 @@
     @media (prefers-reduced-motion: reduce) { .gift-badge { animation: none; } }
     .rewards { position: relative; margin-top: 34px; }
     .rewards .rw-head { padding-right: 64px; }
+    .alert { position: sticky; top: 0; z-index: 30; background: #D7354F; color: #fff; display: flex; align-items: center; justify-content: center; gap: 12px; padding: 13px 20px; line-height: 1.35; text-align: left; box-shadow: 0 6px 18px rgba(215,53,79,.28); }
+    .alert svg { width: 26px; height: 26px; flex: none; }
+    .alert b { font-weight: 700; font-size: 16.5px; letter-spacing: .01em; }
+    .alert .al-sub { font-weight: 400; font-size: 14.5px; opacity: .95; margin-left: 6px; }
+    @media (max-width: 600px) { .alert { padding: 10px 14px; gap: 10px; } .alert b { display: block; font-size: 15px; line-height: 1.3; } .alert .al-sub { display: block; margin: 2px 0 0; font-size: 12.5px; } .alert svg { width: 22px; height: 22px; } }
+    .badge.warn { position: relative; background: #FBE7EA; color: #D7354F; }
+    .badge.warn::after { content: ""; position: absolute; inset: 0; border-radius: 50%; border: 2px solid #D7354F; opacity: 0; animation: warnPulse 2.2s ease-out infinite; }
+    @keyframes warnPulse { 0% { transform: scale(1); opacity: .55; } 100% { transform: scale(1.45); opacity: 0; } }
+    @media (prefers-reduced-motion: reduce) { .badge.warn::after { animation: none; } }
+    h1 .accent.red { color: #D7354F; }
+    .when .nope { color: #D7354F; font-weight: 600; }
   </style>
 </head>
 <body>
+
+  <div class="alert" role="alert"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.3 3.9L1.8 18.5a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/><line x1="12" y1="9.5" x2="12" y2="13.5"/><circle cx="12" cy="17.2" r=".6" fill="currentColor"/></svg><span><b>Achtung: Bestätige noch deine E&#8209;Mail&#8209;Adresse!</b><span class="al-sub">Sonst ist deine Anmeldung nicht&nbsp;abgeschlossen.</span></span></div>
 
   <header class="top" aria-label="Jasmin Schmidtke">
     <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -186,11 +199,11 @@
 
   <main>
     <div class="card">
-      <div class="badge" aria-hidden="true">
+      <div class="badge warn" aria-hidden="true">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.8 6.6l8.2 6.2 8.2-6.2"/></svg>
       </div>
-      <h1>Fast <span class="accent">geschafft!</span></h1>
-      <p class="when">Dein Platz im kostenlosen Live-Webinar ist vorgemerkt:<br /><strong>Dienstag, 20.&nbsp;Oktober, 19&nbsp;Uhr, live&nbsp;online.</strong></p>
+      <h1>Deine Anmeldung ist noch <span class="accent red">nicht&nbsp;fertig!</span></h1>
+      <p class="when">Dein Platz im kostenlosen Live-Webinar am <strong>Dienstag, 20.&nbsp;Oktober, 19&nbsp;Uhr</strong> ist <span class="nope">noch nicht gesichert</span>. Dafür fehlt nur noch deine Bestätigung per&nbsp;Mail.</p>
       <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="80" aria-label="Anmeldung zu 80 Prozent abgeschlossen"><div class="progress-top"><span><b>Noch 1&nbsp;Schritt:</b> E&#8209;Mail bestätigen</span><span class="pct">80&nbsp;%</span></div><div class="bar"><i style="--p:0.8"></i></div></div>
       <ol class="steps">
         <li class="key"><span class="n">1</span><div><b>Bestätige jetzt deine E&#8209;Mail&#8209;Adresse</b><p>Wir haben dir gerade eine Mail geschickt. Klick dort auf den Bestätigungslink. <strong>Dann bekommst du sofort dein kostenloses PDF und verpasst deine zwei exklusiven Vorab&#8209;Videos nicht</strong>, die du vor dem Webinar per Mail erhältst. Auch deinen Zugangslink schicken wir dir per&nbsp;Mail.</p><p class="small">Keine Mail da? Schau auch im Spam- oder Werbung-Ordner nach.</p></div></li>
