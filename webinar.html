@@ -16,7 +16,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kostenloses Live-Webinar am 20. Oktober | Jasmin Schmidtke</title>
-  <meta name="description" content="Kostenloses Live-Webinar mit Heilpraktikerin Jasmin Schmidtke am Dienstag, 20. Oktober, um 19 Uhr: Du willst ab 40 endlich wieder abnehmen und mehr Energie haben? Deine Blutwerte zeigen dir, wo es bei dir hakt." />
+  <meta name="description" content="Kostenloses Live-Webinar mit Heilpraktikerin Jasmin Schmidtke am Dienstag, 20. Oktober, um 19 Uhr: Du willst ab 40 endlich wieder abnehmen und mehr Energie haben? Verstehe die Zusammenhänge und welche Hinweise deine Blutwerte liefern können." />
   <meta name="robots" content="noindex, follow" />
   <meta name="author" content="Jasmin Schmidtke" />
 
@@ -511,7 +511,7 @@
     .mbar { display: none; }
 
     /* ───── Reveal ───── */
-    .rv { opacity: 0; transform: translateY(22px); transition: opacity .8s ease, transform .8s ease; }
+    .rv { opacity: 0; transform: translateY(12px); transition: opacity .45s ease, transform .45s ease; }
     .rv.in { opacity: 1; transform: none; }
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
@@ -911,6 +911,21 @@
       .mc-what li { font-size: 15px; }
       .mc-h { font-size: 20px; }
     }
+
+    /* ═══════ Flüssiges Scrollen (07.10.2026) ═══════ */
+    /* Puls nur noch über transform/opacity (läuft auf der Grafikkarte statt jedes Bild neu zu malen) */
+    .btn.pulse { animation: none; }
+    .btn.pulse::after { content: ''; position: absolute; inset: 0; border-radius: inherit; box-shadow: 0 0 0 3px rgba(215,53,79,.5); pointer-events: none; animation: pulseRing 2.4s ease-out infinite; will-change: transform, opacity; }
+    @keyframes pulseRing { 0% { transform: scale(1); opacity: .9; } 70%, 100% { transform: scale(1.06, 1.3); opacity: 0; } }
+    /* Kein Weichzeichner über scrollendem Inhalt */
+    .float { -webkit-backdrop-filter: none; backdrop-filter: none; background: rgba(255,255,255,.98); }
+    .mbar { -webkit-backdrop-filter: none; backdrop-filter: none; background: rgba(251,247,244,.98); }
+    .g-vid i svg { -webkit-backdrop-filter: none; backdrop-filter: none; background: rgba(255,255,255,.3); }
+    /* Video und Schleier als eigene Ebenen: neue Videobilder malen den Rest nicht neu */
+    .hero-bg video, .hero-bg::after { transform: translateZ(0); }
+    .zr { will-change: transform; }
+    .final .bg img { width: 100%; height: 100%; object-fit: cover; opacity: .16; }
+    @media (prefers-reduced-motion: reduce) { .btn.pulse::after { display: none; } }
   </style>
 </head>
 <body>
@@ -923,10 +938,10 @@
     <section class="hero" aria-label="Kostenloses Live-Webinar">
       <div class="hero-bg" aria-hidden="true">
         <video class="bgv" autoplay muted loop playsinline preload="auto" poster="warteliste-bg-poster.jpg">
-          <source src="warteliste-bg.webm" type="video/webm" />
           <source src="warteliste-bg.mp4" type="video/mp4" />
+          <source src="warteliste-bg.webm" type="video/webm" />
         </video>
-        <img src="warteliste-bg-poster.jpg" alt="" />
+        <img decoding="async" src="warteliste-bg-poster.jpg" alt="" />
       </div>
 
       <header class="logo" aria-label="Jasmin Schmidtke">
@@ -941,8 +956,8 @@
         <div class="hero-grid">
           <div class="hero-txt">
             <span class="pill"><span class="dot"></span>Kostenloses Live-Webinar für Frauen ab&nbsp;40</span>
-            <h1>Du willst ab&nbsp;40 endlich wieder <span class="ac">abnehmen</span><br class="br-d" /> und mehr&nbsp;Energie&nbsp;haben?<span class="h1-a">Deine <b>Blutwerte</b> zeigen dir, wo es bei dir&nbsp;hakt.</span></h1>
-            <p class="lead">Heilpraktikerin Jasmin&nbsp;Schmidtke zeigt dir im kostenlosen Live-Webinar die <strong>Zahnrad-Methode</strong>: wie Essen, Schlaf, Stress und Bewegung ineinandergreifen. Mit deinen <strong>Blutwerten als&nbsp;Kompass</strong>.</p>
+            <h1>Du willst ab&nbsp;40 endlich wieder <span class="ac">abnehmen</span><br class="br-d" /> und mehr&nbsp;Energie&nbsp;haben?<span class="h1-a">Deine <b>Blutwerte</b> geben dir Hinweise, wo du genauer hinschauen&nbsp;solltest.</span></h1>
+            <p class="lead">Heilpraktikerin Jasmin&nbsp;Schmidtke zeigt dir im kostenlosen Live-Webinar, welche Zusammenhänge hinter Müdigkeit, Heißhunger und verändertem Gewicht stecken: die <strong>Zahnrad-Methode</strong>. Und welche <strong>Hinweise deine Blutwerte</strong> dabei liefern&nbsp;können.</p>
             <ul class="when" aria-label="Termin"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4.5" width="18" height="16.5" rx="2.5"/><path d="M16 2.5v4M8 2.5v4M3 9.5h18"/></svg><span><b>Dienstag, 20.&nbsp;Oktober</b></span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span><b>19:00&nbsp;Uhr</b></span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="4" width="19" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg><span><b>live online</b>, im Browser</span></li></ul>
             <a class="btn pulse js-open" href="#anmeldung">
               <span class="t"><b>Platz im Webinar sichern</b><small>kostenlos · Di., 20.&nbsp;Okt. · 19&nbsp;Uhr</small></span>
@@ -952,7 +967,7 @@
           </div>
           <div class="wb rv">
             <div class="wb-vis">
-              <img src="jasmin-live-webinar.jpg" width="900" height="817" alt="Jasmin Schmidtke live vor der Kamera" fetchpriority="high" />
+              <img decoding="async" src="jasmin-live-webinar.jpg" width="900" height="817" alt="Jasmin Schmidtke live vor der Kamera" fetchpriority="high" />
               <span class="badge-live"><i></i>LIVE</span>
               <span class="lv-tag">Live · begrenzte Plätze</span>
             </div>
@@ -963,7 +978,7 @@
               <ul class="checks">
                 <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>Warum <strong>weniger essen und mehr Sport</strong> ab&nbsp;40 oft nicht mehr reichen.</span></li>
                 <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>Die <strong>Zahnrad-Methode</strong>: wie Essen, Schlaf, Stress und Bewegung ineinandergreifen.</span></li>
-                <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>Welche <strong>Blutwerte</strong> dir zeigen, wo es bei dir hakt. Und warum <strong>normal nicht gleich optimal</strong>&nbsp;ist.</span></li>
+                <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>Welche Hinweise dir deine <strong>Blutwerte</strong> geben können. Und warum <strong>normal nicht gleich optimal</strong>&nbsp;ist.</span></li>
               </ul>
               <p class="wb-end">Am Ende stellt Jasmin ihre neue Masterclass vor und beantwortet deine Fragen&nbsp;live.</p>
             </div>
@@ -982,19 +997,19 @@
         </div>
         <ul class="gifts">
           <li class="gift rv">
-            <div class="g-vis g-pdf"><img src="5-blutwerte-cover.jpg" width="991" height="1400" alt="Vorschau: Die 5 wichtigsten Blutwerte für mehr Energie ab 40" loading="lazy" /></div>
+            <div class="g-vis g-pdf"><img decoding="async" src="5-blutwerte-cover.jpg" width="991" height="1400" alt="Vorschau: Die 5 wichtigsten Blutwerte für mehr Energie ab 40" loading="lazy" /></div>
             <span class="g-tag"><svg class="pdf-ic" viewBox="0 0 20 24" aria-hidden="true"><path d="M3.5 1h9.5l6 6v14a2 2 0 0 1-2 2H3.5a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2z" fill="#fff" stroke="#D7354F" stroke-width="1.6"/><path d="M13 1v6h6" fill="none" stroke="#D7354F" stroke-width="1.6"/><rect x="0" y="11.5" width="16.5" height="8" rx="1.6" fill="#D7354F"/><text x="8.25" y="17.7" text-anchor="middle" font-size="6.2" font-weight="700" fill="#fff" font-family="Arial, Helvetica, sans-serif">PDF</text></svg>Sofort als PDF</span>
             <h3>Die 5 wichtigsten Blutwerte für mehr Energie ab&nbsp;40</h3>
             <p>Welche fünf Werte du dir ab&nbsp;40 genauer ansehen solltest, wenn du ständig müde bist. <strong>Und warum „im&nbsp;Normbereich“ nicht gleich optimal&nbsp;heißt.</strong></p>
           </li>
           <li class="gift rv">
-            <div class="g-vis g-vid"><img src="a7408939.jpg" width="1600" height="1067" alt="" loading="lazy" /><i><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15l13-7.5z"/></svg></i></div>
+            <div class="g-vis g-vid"><img decoding="async" src="a7408939.jpg" width="1600" height="1067" alt="" loading="lazy" /><i><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15l13-7.5z"/></svg></i></div>
             <span class="g-tag">Vorab-Video 1 · sofort</span>
             <h3>„Alles im Normbereich“ und trotzdem&nbsp;erschöpft?</h3>
             <p>5 Werte, die du kennen solltest, und zu jedem eine Frage für dein Arztgespräch. <strong>Dazu die Checkliste <svg class="pdf-ic" viewBox="0 0 20 24" aria-hidden="true"><path d="M3.5 1h9.5l6 6v14a2 2 0 0 1-2 2H3.5a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2z" fill="#fff" stroke="#D7354F" stroke-width="1.6"/><path d="M13 1v6h6" fill="none" stroke="#D7354F" stroke-width="1.6"/><rect x="0" y="11.5" width="16.5" height="8" rx="1.6" fill="#D7354F"/><text x="8.25" y="17.7" text-anchor="middle" font-size="6.2" font-weight="700" fill="#fff" font-family="Arial, Helvetica, sans-serif">PDF</text></svg>„Mein Laborgespräch“.</strong></p>
           </li>
           <li class="gift rv">
-            <div class="g-vis g-vid"><img src="jasmin-haut-haare.jpg" width="900" height="600" alt="" loading="lazy" /><i><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15l13-7.5z"/></svg></i></div>
+            <div class="g-vis g-vid"><img decoding="async" src="jasmin-haut-haare.jpg" width="900" height="600" alt="" loading="lazy" /><i><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15l13-7.5z"/></svg></i></div>
             <span class="g-tag">Vorab-Video 2 · vor dem Webinar</span>
             <h3>Deine Supplemente wirken vielleicht nur&nbsp;halb</h3>
             <p>6 Einnahmefehler nach&nbsp;40, die viele machen. <strong>Dazu dein Einnahme-Tagesplan <svg class="pdf-ic" viewBox="0 0 20 24" aria-hidden="true"><path d="M3.5 1h9.5l6 6v14a2 2 0 0 1-2 2H3.5a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2z" fill="#fff" stroke="#D7354F" stroke-width="1.6"/><path d="M13 1v6h6" fill="none" stroke="#D7354F" stroke-width="1.6"/><rect x="0" y="11.5" width="16.5" height="8" rx="1.6" fill="#D7354F"/><text x="8.25" y="17.7" text-anchor="middle" font-size="6.2" font-weight="700" fill="#fff" font-family="Arial, Helvetica, sans-serif">PDF</text></svg>zum&nbsp;Ausdrucken.</strong></p>
@@ -1019,7 +1034,7 @@
         </ul>
         <div class="turn rv" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v16"/><path d="M6 14l6 6 6-6"/></svg></div>
         <div class="sol nobtn rv">
-          <div class="sol-img"><img src="jasmin-entspannt.webp" width="800" height="1000" alt="Jasmin Schmidtke, Heilpraktikerin" loading="lazy" /></div>
+          <div class="sol-img"><img decoding="async" src="jasmin-entspannt.webp" width="800" height="1000" alt="Jasmin Schmidtke, Heilpraktikerin" loading="lazy" /></div>
           <div>
             <span class="sol-lbl">Warum bisher nichts geklappt hat</span>
             <b>Es lag nie an deiner Disziplin. Du hast nur an einem Rad&nbsp;gedreht.</b>
@@ -1030,7 +1045,7 @@
           <div class="k-head">
             <span class="sol-lbl k-lbl">Die Lösung</span>
             <h3>Die Zahnrad-Methode</h3>
-            <p>Vier Stellschrauben, die ineinandergreifen. In der Mitte: <strong class="nw">dein Blutwerte-Kompass</strong>. Er zeigt dir, an welchem Rad es bei dir&nbsp;hakt.</p>
+            <p>Vier Stellschrauben, die ineinandergreifen. In der Mitte: <strong class="nw">dein Blutwerte-Kompass</strong>. Er gibt dir Hinweise, wo du zuerst genauer hinschauen&nbsp;solltest.</p>
           </div>
           <div class="k-grid">
             <div class="k-dial"><svg class="zr" viewBox="0 0 260 260" role="img" aria-label="Vier Zahnräder greifen ineinander, in der Mitte der Blutwerte-Kompass"><g class="zr-o" data-i="0" style="--c:#BFA492"><path class="zr-g ccw" style="transform-origin:70px 70px" d="M106.4 64.1 L117.8 65.0 L117.8 75.0 L106.4 75.9 L104.4 83.1 L113.9 89.5 L108.9 98.2 L98.5 93.3 L93.3 98.5 L98.2 108.9 L89.5 113.9 L83.1 104.4 L75.9 106.4 L75.0 117.8 L65.0 117.8 L64.1 106.4 L56.9 104.4 L50.5 113.9 L41.8 108.9 L46.7 98.5 L41.5 93.3 L31.1 98.2 L26.1 89.5 L35.6 83.1 L33.6 75.9 L22.2 75.0 L22.2 65.0 L33.6 64.1 L35.6 56.9 L26.1 50.5 L31.1 41.8 L41.5 46.7 L46.7 41.5 L41.8 31.1 L50.5 26.1 L56.9 35.6 L64.1 33.6 L65.0 22.2 L75.0 22.2 L75.9 33.6 L83.1 35.6 L89.5 26.1 L98.2 31.1 L93.3 41.5 L98.5 46.7 L108.9 41.8 L113.9 50.5 L104.4 56.9 Z"/><circle cx="70" cy="70" r="27.5" fill="#fff"/><g class="zr-ic" transform="translate(57.4 57.4) scale(1.05)" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></g></g><g class="zr-o" data-i="1" style="--c:#A8876F"><path class="zr-g ccw" style="transform-origin:190px 70px" d="M226.4 64.1 L237.8 65.0 L237.8 75.0 L226.4 75.9 L224.4 83.1 L233.9 89.5 L228.9 98.2 L218.5 93.3 L213.3 98.5 L218.2 108.9 L209.5 113.9 L203.1 104.4 L195.9 106.4 L195.0 117.8 L185.0 117.8 L184.1 106.4 L176.9 104.4 L170.5 113.9 L161.8 108.9 L166.7 98.5 L161.5 93.3 L151.1 98.2 L146.1 89.5 L155.6 83.1 L153.6 75.9 L142.2 75.0 L142.2 65.0 L153.6 64.1 L155.6 56.9 L146.1 50.5 L151.1 41.8 L161.5 46.7 L166.7 41.5 L161.8 31.1 L170.5 26.1 L176.9 35.6 L184.1 33.6 L185.0 22.2 L195.0 22.2 L195.9 33.6 L203.1 35.6 L209.5 26.1 L218.2 31.1 L213.3 41.5 L218.5 46.7 L228.9 41.8 L233.9 50.5 L224.4 56.9 Z"/><circle cx="190" cy="70" r="27.5" fill="#fff"/><g class="zr-ic" transform="translate(177.4 57.4) scale(1.05)" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></g></g><g class="zr-o" data-i="2" style="--c:#6B8C5A"><path class="zr-g ccw" style="transform-origin:70px 190px" d="M106.4 184.1 L117.8 185.0 L117.8 195.0 L106.4 195.9 L104.4 203.1 L113.9 209.5 L108.9 218.2 L98.5 213.3 L93.3 218.5 L98.2 228.9 L89.5 233.9 L83.1 224.4 L75.9 226.4 L75.0 237.8 L65.0 237.8 L64.1 226.4 L56.9 224.4 L50.5 233.9 L41.8 228.9 L46.7 218.5 L41.5 213.3 L31.1 218.2 L26.1 209.5 L35.6 203.1 L33.6 195.9 L22.2 195.0 L22.2 185.0 L33.6 184.1 L35.6 176.9 L26.1 170.5 L31.1 161.8 L41.5 166.7 L46.7 161.5 L41.8 151.1 L50.5 146.1 L56.9 155.6 L64.1 153.6 L65.0 142.2 L75.0 142.2 L75.9 153.6 L83.1 155.6 L89.5 146.1 L98.2 151.1 L93.3 161.5 L98.5 166.7 L108.9 161.8 L113.9 170.5 L104.4 176.9 Z"/><circle cx="70" cy="190" r="27.5" fill="#fff"/><g class="zr-ic" transform="translate(57.4 177.4) scale(1.05)" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.4 14.4 9.6 9.6"/><path d="M18.657 21.485a2 2 0 1 1-2.829-2.828l-1.767 1.768a2 2 0 1 1-2.829-2.829l6.364-6.364a2 2 0 1 1 2.829 2.829l-1.768 1.767a2 2 0 1 1 2.828 2.829z"/><path d="m21.5 21.5-1.4-1.4"/><path d="M3.9 3.9 2.5 2.5"/><path d="M6.404 12.768a2 2 0 1 1-2.829-2.829l1.768-1.767a2 2 0 1 1-2.828-2.829l2.828-2.828a2 2 0 1 1 2.829 2.828l1.767-1.768a2 2 0 1 1 2.829 2.829z"/></g></g><g class="zr-o" data-i="3" style="--c:#8C6743"><path class="zr-g ccw" style="transform-origin:190px 190px" d="M226.4 184.1 L237.8 185.0 L237.8 195.0 L226.4 195.9 L224.4 203.1 L233.9 209.5 L228.9 218.2 L218.5 213.3 L213.3 218.5 L218.2 228.9 L209.5 233.9 L203.1 224.4 L195.9 226.4 L195.0 237.8 L185.0 237.8 L184.1 226.4 L176.9 224.4 L170.5 233.9 L161.8 228.9 L166.7 218.5 L161.5 213.3 L151.1 218.2 L146.1 209.5 L155.6 203.1 L153.6 195.9 L142.2 195.0 L142.2 185.0 L153.6 184.1 L155.6 176.9 L146.1 170.5 L151.1 161.8 L161.5 166.7 L166.7 161.5 L161.8 151.1 L170.5 146.1 L176.9 155.6 L184.1 153.6 L185.0 142.2 L195.0 142.2 L195.9 153.6 L203.1 155.6 L209.5 146.1 L218.2 151.1 L213.3 161.5 L218.5 166.7 L228.9 161.8 L233.9 170.5 L224.4 176.9 Z"/><circle cx="190" cy="190" r="27.5" fill="#fff"/><g class="zr-ic" transform="translate(177.4 177.4) scale(1.05)" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m10.5 20.5 10-10a4.95 4.95 0 1 0-7-7l-10 10a4.95 4.95 0 1 0 7 7Z"/><path d="m8.5 8.5 7 7"/></g></g><g class="zr-c"><path class="zr-g" style="transform-origin:130px 130px" d="M166.6 133.7 L177.4 137.5 L174.8 147.2 L163.6 145.1 L159.9 151.5 L167.3 160.2 L160.2 167.3 L151.5 159.9 L145.1 163.6 L147.2 174.8 L137.5 177.4 L133.7 166.6 L126.3 166.6 L122.5 177.4 L112.8 174.8 L114.9 163.6 L108.5 159.9 L99.8 167.3 L92.7 160.2 L100.1 151.5 L96.4 145.1 L85.2 147.2 L82.6 137.5 L93.4 133.7 L93.4 126.3 L82.6 122.5 L85.2 112.8 L96.4 114.9 L100.1 108.5 L92.7 99.8 L99.8 92.7 L108.5 100.1 L114.9 96.4 L112.8 85.2 L122.5 82.6 L126.3 93.4 L133.7 93.4 L137.5 82.6 L147.2 85.2 L145.1 96.4 L151.5 100.1 L160.2 92.7 L167.3 99.8 L159.9 108.5 L163.6 114.9 L174.8 112.8 L177.4 122.5 L166.6 126.3 Z"/><circle cx="130" cy="130" r="30" fill="#fff"/><circle cx="130" cy="130" r="25" fill="none" stroke="#E7CBB4" stroke-width="1.5"/><path d="M155.0 130.0 L151.0 130.0" stroke="#BFA492" stroke-width="2" stroke-linecap="round"/><path d="M130.0 155.0 L130.0 151.0" stroke="#BFA492" stroke-width="2" stroke-linecap="round"/><path d="M105.0 130.0 L109.0 130.0" stroke="#BFA492" stroke-width="2" stroke-linecap="round"/><path d="M130.0 105.0 L130.0 109.0" stroke="#BFA492" stroke-width="2" stroke-linecap="round"/><g class="zr-nd" style="transform-origin:130px 130px"><path d="M130 111 L134.6 130 L125.4 130 Z" fill="#D7354F"/><path d="M130 149 L134.6 130 L125.4 130 Z" fill="#8A817A"/></g><circle cx="130" cy="130" r="3.4" fill="#2D2B30"/></g></svg></div>
@@ -1066,7 +1081,7 @@
     <!-- ═══════ PERSÖNLICH ═══════ -->
     <section class="sec white" aria-label="Über Jasmin Schmidtke">
       <div class="wrap about">
-        <div class="rv about-vis"><div class="arch"><img src="jasmin.jpg" width="933" height="1400" alt="Jasmin Schmidtke" loading="lazy" /></div><figure class="about-sub about-sub2"><img src="jasmin-a7409424.webp" width="1400" height="933" alt="Jasmin Schmidtke im Kopfstand" loading="lazy" /></figure><figure class="about-sub"><img src="jasmin-gym.webp" width="1400" height="933" alt="Jasmin Schmidtke beim Krafttraining im Studio" loading="lazy" /></figure></div>
+        <div class="rv about-vis"><div class="arch"><img decoding="async" src="jasmin.jpg" width="933" height="1400" alt="Jasmin Schmidtke" loading="lazy" /></div><figure class="about-sub about-sub2"><img decoding="async" src="jasmin-a7409424.webp" width="1400" height="933" alt="Jasmin Schmidtke im Kopfstand" loading="lazy" /></figure><figure class="about-sub"><img decoding="async" src="jasmin-gym.webp" width="1400" height="933" alt="Jasmin Schmidtke beim Krafttraining im Studio" loading="lazy" /></figure></div>
         <div class="rv">
           <span class="pill">Persönlich von Jasmin</span>
           <h2>Im Webinar zeige ich dir, wie alles <span class="ac">zusammenhängt</span>.</h2>
@@ -1149,11 +1164,11 @@
           </details>
           <details>
             <summary>Geht es auch ums Abnehmen?<span class="pl">+</span></summary>
-            <p><strong>Ja.</strong> Jasmin zeigt dir, warum Abnehmen ab&nbsp;40 anders funktioniert und warum weniger essen oft nicht hilft. Ein bestimmtes Gewicht kann dir niemand seriös versprechen. <strong>Aber du weißt danach, wo du bei dir ansetzt.</strong></p>
+            <p><strong>Ja.</strong> Jasmin zeigt dir, warum Abnehmen ab&nbsp;40 anders funktioniert und warum weniger essen oft nicht hilft. Ein bestimmtes Gewicht kann dir niemand seriös versprechen. <strong>Du weißt danach, welche Bereiche du zuerst beobachten solltest und welche Fragen du in einem fachlichen Gespräch stellen&nbsp;kannst.</strong></p>
           </details>
           <details>
             <summary>Brauche ich aktuelle Blutwerte?<span class="pl">+</span></summary>
-            <p><strong>Nein.</strong> Im Webinar erfährst du, welche Werte für dich relevant sind. Die kostenlose <svg class="pdf-ic" viewBox="0 0 20 24" aria-hidden="true"><path d="M3.5 1h9.5l6 6v14a2 2 0 0 1-2 2H3.5a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2z" fill="#fff" stroke="#D7354F" stroke-width="1.6"/><path d="M13 1v6h6" fill="none" stroke="#D7354F" stroke-width="1.6"/><rect x="0" y="11.5" width="16.5" height="8" rx="1.6" fill="#D7354F"/><text x="8.25" y="17.7" text-anchor="middle" font-size="6.2" font-weight="700" fill="#fff" font-family="Arial, Helvetica, sans-serif">PDF</text></svg>Blutwerte-Übersicht als PDF gibt dir schon vorab eine erste Orientierung.</p>
+            <p><strong>Nein.</strong> Im Webinar erfährst du, welche Werte ab&nbsp;40 oft aufschlussreich sind und welche Fragen du dazu stellen kannst. Ein einzelner Wert sagt selten genug aus, wichtig sind du und der Verlauf. <strong>Jasmin bewertet keine einzelnen Befunde</strong>, Diagnose und Behandlung gehören zu deiner Ärztin oder deinem Arzt. Die kostenlose <svg class="pdf-ic" viewBox="0 0 20 24" aria-hidden="true"><path d="M3.5 1h9.5l6 6v14a2 2 0 0 1-2 2H3.5a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2z" fill="#fff" stroke="#D7354F" stroke-width="1.6"/><path d="M13 1v6h6" fill="none" stroke="#D7354F" stroke-width="1.6"/><rect x="0" y="11.5" width="16.5" height="8" rx="1.6" fill="#D7354F"/><text x="8.25" y="17.7" text-anchor="middle" font-size="6.2" font-weight="700" fill="#fff" font-family="Arial, Helvetica, sans-serif">PDF</text></svg>Blutwerte-Übersicht als PDF gibt dir vorab eine erste Orientierung.</p>
           </details>
         </div>
       </div>
@@ -1161,12 +1176,7 @@
 
     <!-- ═══════ FINAL / FORMULAR ═══════ -->
     <section class="final" id="anmeldung" aria-label="Anmeldung zum Live-Webinar">
-      <div class="bg" aria-hidden="true">
-        <video class="bgv" autoplay muted loop playsinline preload="metadata">
-          <source src="warteliste-bg.webm" type="video/webm" />
-          <source src="warteliste-bg.mp4" type="video/mp4" />
-        </video>
-      </div>
+      <div class="bg" aria-hidden="true"><img src="warteliste-bg-poster.jpg" width="1280" height="720" alt="" loading="lazy" decoding="async" /></div>
       <div class="wrap final-grid">
         <div class="rv">
           <h2>Sichere dir deinen <span class="ac">Platz im&nbsp;Webinar</span>.</h2>
@@ -1274,7 +1284,7 @@
       /* Reveal */
       var rv = document.querySelectorAll('.rv');
       if ('IntersectionObserver' in window && !reduce) {
-        var io = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }); }, { threshold: 0.12 });
+        var io = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }); }, { threshold: 0, rootMargin: '0px 0px 140px 0px' });
         rv.forEach(function (el) { io.observe(el); });
       } else { rv.forEach(function (el) { el.classList.add('in'); }); }
 
