@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Geschenkvideo 2: Deine Supplemente wirken vielleicht nur halb | Jasmin Schmidtke</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="favicon-32x32.png" sizes="32x32" type="image/png" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  <meta name="theme-color" content="#D7354F" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root { --cream:#FBF7F4; --cream2:#F5EFE9; --paper:#FFFFFF; --ink:#2D2B30; --body:#5A5550; --muted:#8A817A; --line:#ECE4DC; --accent:#BFA492; --accent-deep:#A8876F; --accent-text:#8C6743; --green:#6B8C5A; --dark:#2D2B30; --sand:#E7CBB4; --red:#D7354F; --cta:#C92D47; --cta2:#DC4A3E; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { overflow-x: clip; }
+    body { background: var(--cream); color: var(--ink); font: 400 16px/1.7 'Poppins', sans-serif; -webkit-font-smoothing: antialiased; overflow-x: clip; }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; height: auto; }
+    ul, ol { list-style: none; }
+    strong { font-weight: 600; color: var(--ink); }
+    h1, h2, h3 { font-family: 'Playfair Display', Georgia, serif; font-weight: 500; color: var(--ink); text-wrap: balance; letter-spacing: -0.012em; }
+    h1 { font-size: clamp(30px, 4vw, 46px); line-height: 1.14; margin-bottom: 14px; }
+    h2 { font-size: clamp(26px, 3vw, 36px); line-height: 1.2; margin-bottom: 18px; }
+    .ac { font-style: italic; color: var(--accent-deep); }
+    p { text-wrap: pretty; }
+    .wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+    .narrow { max-width: 860px; }
+    .pill { display: inline-flex; align-items: center; gap: 8px; background: var(--paper); border: 1px solid var(--line); border-radius: 50px; padding: 7px 16px; font-size: 12.5px; font-weight: 500; color: var(--accent-text); margin-bottom: 18px; }
+    .pill .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--green); }
+    .ck { width: 24px; height: 24px; flex: none; border-radius: 50%; background: rgba(107,140,90,.14); color: var(--green); display: inline-flex; align-items: center; justify-content: center; }
+    .ck svg { width: 13px; height: 13px; }
+    .zm { white-space: nowrap; }
+    .zb { color: #0B5CFF; font-weight: 600; }
+    .zoom-ic { display: inline-block; width: 1.1em; height: 1.1em; vertical-align: -0.2em; margin-right: 4px; }
+    .pdf-ic { display: inline-block; width: 17px; height: 20px; flex: none; vertical-align: -4px; }
+    .logo { display: flex; justify-content: center; align-items: center; gap: 10px; padding: 26px 20px 30px; }
+    .logo svg { width: 34px; height: 34px; }
+    .logo span { display: flex; flex-direction: column; font-family: 'Playfair Display', Georgia, serif; font-weight: 600; font-size: 15.5px; line-height: 1.15; }
+
+    /* Video */
+    .vhero { text-align: center; padding-bottom: 56px; background: radial-gradient(ellipse 70% 60% at 50% 0%, #fff 0%, rgba(255,255,255,0) 70%); }
+    .lead { font-size: 17.5px; color: var(--body); max-width: 640px; margin: 0 auto 30px; }
+    .player { position: relative; aspect-ratio: 16 / 9; border-radius: 20px; overflow: hidden; background: var(--dark); box-shadow: 0 30px 70px rgba(80,55,40,.22), 0 8px 18px rgba(80,55,40,.10); }
+    .player iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+    .ph { position: absolute; inset: 0; }
+    .ph img { width: 100%; height: 100%; object-fit: cover; object-position: center 30%; filter: saturate(.9); }
+    .ph::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(45,43,48,.15), rgba(45,43,48,.55)); }
+    .ph .msg { position: absolute; left: 0; right: 0; bottom: 22px; z-index: 2; color: #fff; font-size: 14px; font-weight: 500; }
+    .ph .play { position: absolute; left: 50%; top: 50%; width: 84px; height: 84px; margin: -42px 0 0 -42px; border-radius: 50%; background: rgba(255,255,255,.22); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); z-index: 2; display: flex; align-items: center; justify-content: center; }
+    .ph .play svg { width: 30px; height: 30px; margin-left: 5px; color: #fff; }
+    .meta { margin-top: 14px; font-size: 13.5px; color: var(--muted); }
+    .kap { margin: 34px auto 0; max-width: 860px; text-align: left; background: var(--paper); border: 1px solid var(--line); border-radius: 20px; padding: 22px 24px; }
+    .kap h3 { font-size: 18px; margin-bottom: 12px; }
+    .kap ol { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 24px; }
+    .kp { all: unset; box-sizing: border-box; width: 100%; display: flex; gap: 12px; align-items: baseline; padding: 7px 8px; border-radius: 10px; font-size: 14.5px; color: var(--body); cursor: default; }
+    .kp .kt { font-variant-numeric: tabular-nums; font-size: 12.5px; font-weight: 600; color: var(--accent-text); min-width: 36px; }
+    .kap:not(.live) .kt { display: none; }
+    .kap.live .kp { cursor: pointer; }
+    .kap.live .kp:hover, .kap.live .kp:focus-visible { background: var(--cream2); color: var(--ink); }
+    .kap.live .kp.on { background: rgba(215,53,79,.07); color: var(--ink); }
+
+    /* Download */
+    .dl { padding: 0 0 64px; }
+    .dl-card { display: grid; grid-template-columns: 76px 1fr auto; gap: 22px; align-items: center; background: var(--dark); color: #fff; border-radius: 22px; padding: 26px 28px; }
+    .dl-ic { width: 76px; height: 90px; display: flex; align-items: center; justify-content: center; background: rgba(255,255,255,.06); border-radius: 14px; }
+    .dl-ic .pdf-ic { width: 44px; height: 52px; }
+    .dl-card small { display: block; font-size: 11.5px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--sand); margin-bottom: 4px; }
+    .dl-card h2 { color: #fff; font-size: 24px; margin-bottom: 6px; }
+    .dl-card p { color: rgba(255,255,255,.8); font-size: 14.5px; }
+    .btn { display: inline-flex; align-items: center; gap: 12px; background: linear-gradient(100deg, var(--cta), var(--cta2)); color: #fff; border: 0; cursor: pointer; border-radius: 16px; padding: 14px 20px; font: 600 15.5px/1.2 'Poppins', sans-serif; box-shadow: 0 12px 30px rgba(201,45,71,.28); white-space: nowrap; transition: filter .2s ease, transform .2s ease; }
+    .btn:hover { filter: brightness(1.07); transform: translateY(-2px); }
+    .btn svg { width: 18px; height: 18px; }
+    .btn.off { background: rgba(255,255,255,.12); box-shadow: none; cursor: default; color: rgba(255,255,255,.75); font-weight: 500; }
+    .btn.off:hover { transform: none; filter: none; }
+
+    /* Weiter */
+    .next { padding: 72px 0; background: var(--cream2); text-align: center; }
+    .steps { max-width: 620px; margin: 8px auto 0; text-align: left; display: flex; flex-direction: column; gap: 12px; }
+    .steps li { display: flex; gap: 14px; align-items: flex-start; background: var(--paper); border: 1px solid var(--line); border-radius: 16px; padding: 16px 18px; }
+    .steps li .ck, .steps .sn { margin-top: 2px; }
+    .steps .sn { width: 24px; height: 24px; flex: none; border-radius: 50%; background: var(--dark); color: #fff; font-family: 'Playfair Display', Georgia, serif; font-style: italic; font-size: 13px; display: inline-flex; align-items: center; justify-content: center; }
+    .steps b.zb { display: inline; }
+    .steps div > b { display: block; font-size: 15.5px; font-weight: 600; line-height: 1.4; }
+    .steps small { display: block; font-size: 13.5px; color: var(--muted); margin-top: 2px; }
+    .steps li.done { border-color: rgba(107,140,90,.35); }
+    .live-card { display: grid; grid-template-columns: 260px 1fr; gap: 30px; align-items: center; text-align: left; background: var(--paper); border: 1px solid var(--line); border-radius: 24px; padding: 18px 30px 18px 18px; box-shadow: 0 18px 44px rgba(80,55,40,.08); }
+    .live-card img { width: 100%; aspect-ratio: 1; object-fit: cover; object-position: 54% 32%; border-radius: 16px; }
+    .live-card h2 { font-size: clamp(22px, 2.6vw, 30px); margin: 6px 0 10px; }
+    .live-card p { font-size: 15px; color: var(--body); }
+    .live-card .when { margin-top: 10px; font-weight: 600; color: var(--ink); }
+    .lv { display: inline-flex; align-items: center; gap: 7px; font-size: 12px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--red); }
+    .lv i { width: 8px; height: 8px; border-radius: 50%; background: var(--red); animation: blink 1.6s ease-in-out infinite; }
+    .lv .zb, .lv .zm { text-transform: none; letter-spacing: 0; }
+    @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: .35; } }
+
+    /* Gruß */
+    .gruss { padding: 64px 0 40px; text-align: center; }
+    .gruss img { width: 88px; height: 88px; border-radius: 50%; object-fit: cover; margin: 0 auto 14px; box-shadow: 0 10px 24px rgba(80,55,40,.15); }
+    .gruss p { max-width: 560px; margin: 0 auto; color: var(--body); }
+    .gruss .sig { font-family: 'Playfair Display', Georgia, serif; font-style: italic; font-size: 22px; color: var(--accent-text); margin-top: 10px; }
+    .hinweis { max-width: 720px; margin: 28px auto 0; font-size: 12.5px; color: var(--muted); }
+
+    footer { padding: 36px 24px 48px; text-align: center; border-top: 1px solid var(--line); }
+    .foot-links { display: flex; justify-content: center; gap: 20px; margin-bottom: 10px; }
+    .foot-links a { font-size: 13px; color: var(--muted); }
+    .foot-copy { font-size: 12px; color: var(--muted); }
+
+    @media (max-width: 760px) {
+      .kap ol { grid-template-columns: 1fr; }
+      .dl-card { grid-template-columns: 56px 1fr; padding: 22px 20px; }
+      .dl-ic { width: 56px; height: 68px; }
+      .dl-ic .pdf-ic { width: 32px; height: 38px; }
+      .dl-card .btn { grid-column: 1 / -1; justify-content: center; }
+      .live-card { grid-template-columns: 1fr; padding: 16px 16px 22px; }
+      .live-card img { aspect-ratio: 16 / 10; }
+    }
+    @media (max-width: 600px) {
+      .wrap { padding: 0 16px; }
+      .player { border-radius: 14px; margin: 0 -4px; }
+      .lead { font-size: 16px; }
+      .kap { padding: 18px 14px; }
+    }
+    @media (prefers-reduced-motion: reduce) { .lv i { animation: none; } .btn { transition: none; } }
+  </style>
+</head>
+<body>
+  <header class="logo" aria-label="Jasmin Schmidtke">
+    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="100" cy="100" r="82" fill="none" stroke="#BFA492" stroke-width="11"/><path d="M 18,100 C 45,118 65,118 100,95 C 135,72 155,72 182,100" fill="none" stroke="#BFA492" stroke-width="7" stroke-linecap="round"/></svg>
+    <span><span>Jasmin</span><span>Schmidtke</span></span>
+  </header>
+
+  <main>
+    <section class="vhero">
+      <div class="wrap narrow">
+        <span class="pill"><span class="dot"></span>Dein Geschenk 2 von 2</span>
+        <h1>Deine Supplemente wirken vielleicht <span class="ac">nur&nbsp;halb</span></h1>
+        <p class="lead">6 Einnahmefehler nach 40. Und wie du sie mit kleinen Änderungen löst, <strong>ohne einen Cent mehr auszugeben</strong>.</p>
+        <div class="player" id="player">
+          <div class="ph"><img src="jasmin-haut-haare.jpg" width="900" height="600" alt="" /><span class="play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15l13-7.5z"/></svg></span><p class="msg">Dein Video wird gerade fertig gemacht.</p></div>
+        </div>
+        <p class="meta">ca. 6 Minuten · am besten mit Ton</p>
+        <div class="kap" id="kap">
+          <h3>Das erwartet dich</h3>
+          <ol><li><button type="button" class="kp" data-t="60"><span class="kt">1:00</span><span class="kn">Warum das nach 40 wichtiger wird</span></button></li><li><button type="button" class="kp" data-t="92"><span class="kt">1:32</span><span class="kn">Fehler 1: Omega-3 nüchtern</span></button></li><li><button type="button" class="kp" data-t="127"><span class="kt">2:07</span><span class="kn">Fehler 2: Eisen zum Kaffee</span></button></li><li><button type="button" class="kp" data-t="160"><span class="kt">2:40</span><span class="kn">Fehler 3: Zink zum Müsli</span></button></li><li><button type="button" class="kp" data-t="182"><span class="kt">3:02</span><span class="kn">Fehler 4: Selen mit Orangensaft</span></button></li><li><button type="button" class="kp" data-t="213"><span class="kt">3:33</span><span class="kn">Fehler 5: Alles auf einmal</span></button></li><li><button type="button" class="kp" data-t="238"><span class="kt">3:58</span><span class="kn">Fehler 6: Die Etikett-Falle</span></button></li><li><button type="button" class="kp" data-t="267"><span class="kt">4:27</span><span class="kn">Dein Tag auf einen Blick</span></button></li><li><button type="button" class="kp" data-t="299"><span class="kt">4:59</span><span class="kn">Wichtig bei Medikamenten</span></button></li></ol>
+        </div>
+      </div>
+    </section>
+
+    <section class="dl">
+      <div class="wrap narrow">
+        <div class="dl-card">
+          <div class="dl-ic"><svg class="pdf-ic" viewBox="0 0 20 24" aria-hidden="true"><path d="M3.5 1h9.5l6 6v14a2 2 0 0 1-2 2H3.5a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2z" fill="#fff" stroke="#D7354F" stroke-width="1.6"/><path d="M13 1v6h6" fill="none" stroke="#D7354F" stroke-width="1.6"/><rect x="0" y="11.5" width="16.5" height="8" rx="1.6" fill="#D7354F"/><text x="8.25" y="17.7" text-anchor="middle" font-size="6.2" font-weight="700" fill="#fff" font-family="Arial, Helvetica, sans-serif">PDF</text></svg></div>
+          <div>
+            <small>Als PDF</small>
+            <h2>Dein Einnahme-Tagesplan zum Ausdrucken</h2>
+            <p>Jeder Stoff mit seiner eigenen Uhrzeit. Druck ihn aus und häng ihn dorthin, wo deine Kapseln stehen. Bei Medikamenten lass ihn einmal in der Apotheke abgleichen.</p>
+          </div>
+          <a class="btn" id="pdfBtn" href="#" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M5 21h14"/></svg>Tagesplan herunterladen</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="next">
+      <div class="wrap narrow">
+        <div class="live-card">
+          <img src="jasmin-live-webinar.jpg" width="900" height="817" alt="Jasmin Schmidtke live vor der Kamera" loading="lazy" />
+          <div>
+            <span class="lv"><i></i>Als Nächstes: live auf <span class="zm"><svg class="zoom-ic" viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="6" fill="#0B5CFF"/><path d="M5.2 9.1a1.6 1.6 0 0 1 1.6-1.6h6.3a1.8 1.8 0 0 1 1.8 1.8v5.6a1.6 1.6 0 0 1-1.6 1.6H7a1.8 1.8 0 0 1-1.8-1.8z" fill="#fff"/><path d="M15.6 10.7l3.2-2.2v7l-3.2-2.2z" fill="#fff"/></svg><b class="zb">Zoom</b></span></span>
+            <h2>Warum du ständig müde bist und nicht mehr&nbsp;abnimmst</h2>
+            <p>Im Live-Webinar zeige ich dir, wie alles zusammenhängt, und beantworte deine Fragen. <strong>Direkt danach gibt es 72 Stunden den Frühbucher&#8209;Preis mit 3 Start&#8209;Boni</strong>, nur für die Warteliste.</p>
+            <p class="when" data-when="live">Termin und Link bekommst du per Mail.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="gruss">
+      <div class="wrap narrow">
+        <img src="jasmin-avatar.webp" width="240" height="240" alt="Jasmin Schmidtke" loading="lazy" />
+        <p>Schön, dass du dir die Zeit für dich nimmst. Ich freue mich, wenn wir uns im Live-Webinar sehen.</p>
+        <p class="sig">Deine Jasmin</p>
+        <p class="hinweis">Dieses Video dient der allgemeinen Information. Es ersetzt keine ärztliche oder pharmazeutische Beratung. Setz Medikamente nie eigenmächtig ab und nimm Eisen nur, wenn es gemessen und besprochen wurde.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer role="contentinfo">
+    <nav class="foot-links" aria-label="Rechtliches">
+      <a href="impressum.html" target="_blank" rel="noopener">Impressum</a>
+      <a href="datenschutz.html" target="_blank" rel="noopener">Datenschutz</a>
+    </nav>
+    <p class="foot-copy">© 2026 Jasmin Schmidtke · Schmidtke GmbH, Neckartal 200, 78628 Rottweil</p>
+  </footer>
+
+  <script>
+    /* ═══════════════════════════════════════════════════════════════
+       EINSTELLUNGEN: hier eintragen, sobald vorhanden.
+       bunnyLibrary / bunnyVideo: aus Bunny Stream, beim Video unter „Embed“
+       (https://iframe.mediadelivery.net/embed/LIBRARY/VIDEO).
+       pdf: Dateiname des PDFs neben dieser Seite, z. B. 'Checkliste-Mein-Laborgespraech.pdf'.
+       sprungmarken: auf true setzen, sobald die Kapitelzeiten (data-t im HTML,
+       in Sekunden) zum fertig geschnittenen Video passen. Dann sind die Kapitel klickbar.
+       termine: wie auf der Warteliste, Format '2026-10-20T19:00'. Leer = Text bleibt.
+       ═══════════════════════════════════════════════════════════════ */
+    var VIDEO = {
+      nr: 2,
+      bunnyLibrary: '',
+      bunnyVideo: '',
+      pdf: '',
+      sprungmarken: false
+    };
+    var TERMINE = { video2: '', live: '' };
+  </script>
+  <script src="//assets.mediadelivery.net/playerjs/playerjs-latest.min.js"></script>
+  <script>
+  (function () {
+    /* ── Kontakt aus der Mail erkennen (?c=%SUBSCRIBERID%), danach aus der Adresse entfernen ── */
+    var cid = null;
+    try {
+      var m = location.search.match(/[?&]c=(\d{1,12})(?:&|$)/);
+      if (m) { cid = m[1]; sessionStorage.setItem('js_cid', cid); }
+      else { cid = sessionStorage.getItem('js_cid'); }
+    } catch (e) {}
+    if (location.search && history.replaceState) {
+      var rest = location.search.replace(/^\?/, '').split('&').filter(function (p) { return p && !/^c=/.test(p); }).join('&');
+      history.replaceState(null, '', location.pathname + (rest ? '?' + rest : '') + location.hash);
+    }
+    /* ── Ereignis an ActiveCampaign melden (über /api/video-event), jedes nur einmal ── */
+    function track(e) {
+      if (!cid) return;
+      var key = 'js_v' + VIDEO.nr + '_' + e;
+      try { if (sessionStorage.getItem(key)) return; sessionStorage.setItem(key, '1'); } catch (x) {}
+      var body = JSON.stringify({ c: cid, v: VIDEO.nr, e: e });
+      try {
+        if (navigator.sendBeacon && navigator.sendBeacon('/api/video-event', new Blob([body], { type: 'application/json' }))) return;
+      } catch (x) {}
+      try { fetch('/api/video-event', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: body, keepalive: true }); } catch (x) {}
+    }
+    window.__track = track;
+    track('seite');
+
+    /* ── PDF ── */
+    var pdfBtn = document.getElementById('pdfBtn');
+    if (VIDEO.pdf) {
+      pdfBtn.href = VIDEO.pdf;
+      pdfBtn.addEventListener('click', function () { track('pdf'); });
+    } else {
+      pdfBtn.classList.add('off'); pdfBtn.removeAttribute('href'); pdfBtn.removeAttribute('download');
+      pdfBtn.lastChild.textContent = 'Kommt in Kürze';
+    }
+
+    /* ── Termine ── */
+    var WTG = ['Sonntag','Montag','Dienstag','Mittwoch','Donnerstag','Freitag','Samstag'];
+    function fmt(s) {
+      var d = new Date(s); if (isNaN(d)) return '';
+      return WTG[d.getDay()] + ', ' + d.getDate() + '.' + (d.getMonth() + 1) + '. um ' + d.getHours() + (d.getMinutes() ? ':' + ('0' + d.getMinutes()).slice(-2) : '') + ' Uhr';
+    }
+    [['video2', 'Kommt per Mail am '], ['live', 'Live am ']].forEach(function (k) {
+      var t = TERMINE[k[0]]; if (!t) return; var txt = fmt(t); if (!txt) return;
+      document.querySelectorAll('[data-when="' + k[0] + '"]').forEach(function (el) { el.textContent = k[1] + txt; });
+    });
+
+    /* ── Video ── */
+    if (!VIDEO.bunnyLibrary || !VIDEO.bunnyVideo) return;
+    var box = document.getElementById('player');
+    var f = document.createElement('iframe');
+    f.src = 'https://iframe.mediadelivery.net/embed/' + encodeURIComponent(VIDEO.bunnyLibrary) + '/' + encodeURIComponent(VIDEO.bunnyVideo) + '?autoplay=false&loop=false&muted=false&preload=true&responsive=true';
+    f.title = document.querySelector('h1').textContent;
+    f.allow = 'accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture; fullscreen';
+    f.allowFullscreen = true;
+    f.referrerPolicy = 'strict-origin-when-cross-origin';
+    f.loading = 'eager';
+    box.innerHTML = ''; box.appendChild(f);
+    if (!window.playerjs) return;
+    var player = new playerjs.Player(f);
+    var kap = document.getElementById('kap');
+    var btns = [].slice.call(document.querySelectorAll('.kp'));
+    player.on('ready', function () {
+      player.on('play', function () { track('start'); });
+      player.on('timeupdate', function (d) {
+        if (!d || !d.duration) return;
+        var p = d.seconds / d.duration;
+        if (p >= 0.5) track('50');
+        if (p >= 0.9) track('90');
+        if (VIDEO.sprungmarken) {
+          var cur = -1;
+          btns.forEach(function (b, i) { if (d.seconds >= +b.getAttribute('data-t')) cur = i; });
+          btns.forEach(function (b, i) { b.classList.toggle('on', i === cur); });
+        }
+      });
+      if (VIDEO.sprungmarken) {
+        kap.classList.add('live');
+        btns.forEach(function (b) {
+          b.addEventListener('click', function () { player.setCurrentTime(+b.getAttribute('data-t')); player.play(); box.scrollIntoView({ behavior: 'smooth', block: 'center' }); });
+        });
+      }
+    });
+  })();
+  </script>
+</body>
+</html>
