@@ -973,6 +973,29 @@
     .mc-mock { max-width: 900px; margin: -18px auto 26px; }
     .mc-mock img { width: 100%; height: auto; display: block; filter: drop-shadow(0 24px 30px rgba(80,55,40,.16)); }
     @media (max-width: 600px) { .mc-mock { margin: -10px -6px 18px; } }
+    /* ───── Hero-Karte: Live-Q&A und Klapp-Countdown (07.10.2026) ───── */
+    .checks li.qa { margin-top: 4px; padding: 12px 14px; border-radius: 14px; background: rgba(215,53,79,.06); border: 1px solid rgba(215,53,79,.22); color: var(--ink); align-items: center; }
+    .checks li.qa .qa-ic { width: 34px; height: 34px; flex: none; border-radius: 50%; background: var(--red); color: #fff; display: inline-flex; align-items: center; justify-content: center; box-shadow: 0 6px 14px rgba(215,53,79,.25); }
+    .checks li.qa .qa-ic svg { width: 18px; height: 18px; }
+    .checks li.qa strong { color: var(--red); }
+    .wb .cd.flipcd { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; max-width: 380px; margin: 2px 0 20px; }
+    .flipcd .fu { text-align: center; background: none; padding: 0; }
+    .flipcd small { display: block; margin-top: 6px; font-size: 10.5px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+    .flip { position: relative; height: 58px; perspective: 260px; font: 600 31px/58px 'Poppins', sans-serif; color: #fff; text-align: center; font-variant-numeric: tabular-nums; letter-spacing: .02em; border-radius: 10px; box-shadow: 0 10px 20px rgba(45,43,48,.22); }
+    .flip > span { position: absolute; left: 0; right: 0; height: 50%; overflow: hidden; backface-visibility: hidden; -webkit-backface-visibility: hidden; padding: 0; font-size: inherit; line-height: inherit; color: inherit; text-align: center; }
+    .flip i { display: block; height: 58px; font-style: normal; }
+    .flip .f-top, .flip .f-ftop { top: 0; border-radius: 10px 10px 0 0; background: #3A363C; }
+    .flip .f-bot, .flip .f-fbot { bottom: 0; border-radius: 0 0 10px 10px; background: #2D2B30; }
+    .flip .f-bot i, .flip .f-fbot i { transform: translateY(-50%); }
+    .flip .f-ftop { z-index: 3; transform-origin: 50% 100%; }
+    .flip .f-fbot { z-index: 2; transform-origin: 50% 0; transform: rotateX(90deg); }
+    .flip::after { content: ''; position: absolute; z-index: 4; left: 0; right: 0; top: 50%; height: 1px; background: rgba(0,0,0,.5); }
+    .flip.go .f-ftop { animation: flipTop .28s ease-in forwards; }
+    .flip.go .f-fbot { animation: flipBot .28s ease-out .28s forwards; }
+    @keyframes flipTop { from { transform: rotateX(0); } to { transform: rotateX(-90deg); } }
+    @keyframes flipBot { from { transform: rotateX(90deg); } to { transform: rotateX(0); } }
+    @media (max-width: 600px) { .wb .cd.flipcd { gap: 6px; max-width: none; } .flip { height: 52px; font-size: 27px; line-height: 52px; } .flip i { height: 52px; } }
+    @media (prefers-reduced-motion: reduce) { .flip.go .f-ftop, .flip.go .f-fbot { animation: none; } }
   </style>
 </head>
 <body>
@@ -1021,13 +1044,13 @@
             <div class="wb-body">
               <span class="excl"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="6"/></svg>Das erwartet dich am 20.&nbsp;Oktober</span>
               <h2 class="wb-h">Warum du ab&nbsp;40 nicht mehr abnimmst und was deine Blutwerte damit zu tun&nbsp;haben</h2>
-              <div class="cd" data-cd hidden><span><b data-u="d">0</b>Tage</span><span><b data-u="h">00</b>Std.</span><span><b data-u="m">00</b>Min.</span><span><b data-u="s">00</b>Sek.</span></div>
+              <div class="cd flipcd" data-cd hidden aria-label="Zeit bis zum Live-Webinar"><div class="fu"><div class="flip" data-u="d"></div><small>Tage</small></div><div class="fu"><div class="flip" data-u="h"></div><small>Std.</small></div><div class="fu"><div class="flip" data-u="m"></div><small>Min.</small></div><div class="fu"><div class="flip" data-u="s"></div><small>Sek.</small></div></div>
               <ul class="checks">
                 <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>Warum <strong>weniger essen und mehr Sport</strong> ab&nbsp;40 oft nicht mehr reichen.</span></li>
                 <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>Die <strong>Zahnrad-Methode</strong>: wie Essen, Schlaf, Stress und Bewegung ineinandergreifen.</span></li>
                 <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>Welche Hinweise dir deine <strong>Blutwerte</strong> geben können. Und warum <strong>normal nicht gleich optimal</strong>&nbsp;ist.</span></li>
+                <li class="qa"><span class="qa-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5.5h10a2 2 0 0 1 2 2V13a2 2 0 0 1-2 2H9l-3.5 3v-3H4a2 2 0 0 1-2-2V7.5a2 2 0 0 1 2-2z"/><path d="M16 9.5h4a2 2 0 0 1 2 2V17a2 2 0 0 1-2 2h-1.5v3L15 19h-3.5a2 2 0 0 1-1.9-1.4"/><path d="M6.5 9.3h5M6.5 11.8h3"/></svg></span><span><strong>Live-Q&amp;A mit Jasmin:</strong> Stell deine Fragen und bekomm die Antworten direkt im&nbsp;Webinar.</span></li>
               </ul>
-              <p class="wb-end">Am Ende stellt Jasmin ihre neue Masterclass vor und beantwortet deine Fragen&nbsp;live.</p>
             </div>
           </div>
         </div>
@@ -1377,6 +1400,22 @@
       var mbTxt = document.querySelector('.mb-txt');
       var mbDefault = mbTxt ? mbTxt.textContent : '';
       function two(n) { return (n < 10 ? '0' : '') + n; }
+      /* Klapp-Uhr: blättert nur, wenn die Karte sichtbar ist (sonst nur Zahl tauschen) */
+      var flipStill = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var cdSeen = true;
+      if (cdBox && 'IntersectionObserver' in window) { new IntersectionObserver(function (es) { cdSeen = es[0].isIntersecting; }).observe(cdBox); }
+      if (cdBox) { [].forEach.call(cdBox.querySelectorAll('.flip'), function (el) { el.innerHTML = '<span class="f-top"><i></i></span><span class="f-bot"><i></i></span><span class="f-ftop"><i></i></span><span class="f-fbot"><i></i></span>'; }); }
+      function setFlip(el, v) {
+        if (!el) { return; }
+        var old = el.getAttribute('data-v'); if (old === v) { return; }
+        var q = function (c) { return el.querySelector(c + ' i'); };
+        el.setAttribute('data-v', v);
+        if (old === null || flipStill || !cdSeen) { q('.f-top').textContent = q('.f-bot').textContent = q('.f-ftop').textContent = q('.f-fbot').textContent = v; el.classList.remove('go'); return; }
+        q('.f-top').textContent = v; q('.f-ftop').textContent = old; q('.f-fbot').textContent = v; q('.f-bot').textContent = old;
+        el.classList.remove('go'); void el.offsetWidth; el.classList.add('go');
+        clearTimeout(el._t);
+        el._t = setTimeout(function () { q('.f-bot').textContent = v; q('.f-ftop').textContent = v; el.classList.remove('go'); }, 600);
+      }
       function tick() {
         if (!live) { return false; }
         var now = Date.now(), ziel, label;
@@ -1386,10 +1425,10 @@
         var d = Math.floor(s / 86400), h = Math.floor(s % 86400 / 3600), m = Math.floor(s % 3600 / 60), sec = s % 60;
         if (cdBox && now < live.getTime()) {
           cdBox.hidden = false;
-          cdBox.querySelector('[data-u="d"]').textContent = d;
-          cdBox.querySelector('[data-u="h"]').textContent = two(h);
-          cdBox.querySelector('[data-u="m"]').textContent = two(m);
-          cdBox.querySelector('[data-u="s"]').textContent = two(sec);
+          setFlip(cdBox.querySelector('[data-u="d"]'), String(d));
+          setFlip(cdBox.querySelector('[data-u="h"]'), two(h));
+          setFlip(cdBox.querySelector('[data-u="m"]'), two(m));
+          setFlip(cdBox.querySelector('[data-u="s"]'), two(sec));
         } else if (cdBox) { cdBox.hidden = true; }
         var zeit = (d ? d + ' T ' : '') + two(h) + ':' + two(m) + ':' + two(sec);
         if (tbCd) { tbCd.hidden = false; tbCd.innerHTML = ' · ' + label + '<b>' + zeit + '</b>'; }
