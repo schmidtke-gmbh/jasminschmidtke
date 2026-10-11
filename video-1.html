@@ -198,7 +198,7 @@
     /* ═══════════════════════════════════════════════════════════════
        EINSTELLUNGEN: hier eintragen, sobald vorhanden.
        bunnyLibrary / bunnyVideo: aus Bunny Stream, beim Video unter „Embed“
-       (https://iframe.mediadelivery.net/embed/LIBRARY/VIDEO).
+       (https://player.mediadelivery.net/embed/LIBRARY/VIDEO).
        pdf: Dateiname des PDFs neben dieser Seite, z. B. 'Checkliste-Mein-Laborgespraech.pdf'.
        sprungmarken: auf true setzen, sobald die Kapitelzeiten (data-t im HTML,
        in Sekunden) zum fertig geschnittenen Video passen. Dann sind die Kapitel klickbar.
@@ -206,8 +206,8 @@
        ═══════════════════════════════════════════════════════════════ */
     var VIDEO = {
       nr: 1,
-      bunnyLibrary: '',
-      bunnyVideo: '',
+      bunnyLibrary: '752909',
+      bunnyVideo: '37cbcbd7-dfc2-4249-8d18-5310c47da01e',
       pdf: '',
       sprungmarken: false
     };
@@ -266,7 +266,7 @@
     if (!VIDEO.bunnyLibrary || !VIDEO.bunnyVideo) return;
     var box = document.getElementById('player');
     var f = document.createElement('iframe');
-    f.src = 'https://iframe.mediadelivery.net/embed/' + encodeURIComponent(VIDEO.bunnyLibrary) + '/' + encodeURIComponent(VIDEO.bunnyVideo) + '?autoplay=false&loop=false&muted=false&preload=true&responsive=true';
+    f.src = 'https://player.mediadelivery.net/embed/' + encodeURIComponent(VIDEO.bunnyLibrary) + '/' + encodeURIComponent(VIDEO.bunnyVideo) + '?autoplay=false&loop=false&muted=false&preload=true&responsive=true';
     f.title = document.querySelector('h1').textContent;
     f.allow = 'accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture; fullscreen';
     f.allowFullscreen = true;
