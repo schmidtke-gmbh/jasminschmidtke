@@ -1,10 +1,30 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
+  <meta charset="UTF-8" />
   <!-- Cookiebot Consent Management, muss als ERSTES im head stehen -->
   <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="d7edd666-c373-4b8b-b522-fe1891c11381" data-blockingmode="auto" type="text/javascript"></script>
 
-  <meta charset="UTF-8" />
+  <!-- Merkt sich VOR allen Tracking-Skripten, ob die Seite direkt nach einer Anmeldung kommt (?angemeldet=1).
+       Noetig, weil das Meta-Skript den Parameter danach aus der Adresszeile entfernt. -->
+  <script type="text/javascript" data-cookieconsent="ignore">
+    window.jsWebinarLead = /[?&]angemeldet=1(&|$)/.test(window.location.search);
+  </script>
+
+  <!-- Google Analytics 4, von Cookiebot blockiert bis Statistik-Consent.
+       Sendet generate_lead nur nach echter Anmeldung, nicht bei Neuladen oder Direktaufruf. -->
+  <script type="text/plain" data-cookieconsent="statistics" async src="https://www.googletagmanager.com/gtag/js?id=G-D2D1N21BTL"></script>
+  <script type="text/plain" data-cookieconsent="statistics">
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-D2D1N21BTL', { anonymize_ip: true });
+    if (window.jsWebinarLead && !window.jsWebinarLeadGA) {
+      window.jsWebinarLeadGA = true;
+      gtag('event', 'generate_lead', { form_name: 'webinar-anmeldung', lead_source: 'webinar-20-10' });
+    }
+  </script>
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Bitte E-Mail bestätigen | Live-Webinar mit Jasmin Schmidtke</title>
   <meta name="robots" content="noindex, nofollow" />
