@@ -166,6 +166,57 @@
     @media (max-width: 600px) { .gift-badge { width: 58px; height: 58px; top: -22px; right: 12px; } }
     @media (prefers-reduced-motion: reduce) { .gift-badge { animation: none; } }
     .gift { position: relative; margin-top: 34px; }
+  
+    /* ───── Umfrage vor dem PDF (Entwurf 12.10.) ───── */
+    .sv-card { position: relative; text-align: left; background: #fff; border: 1.5px solid var(--accent); border-radius: 20px;
+      padding: 24px 24px 22px; margin: 24px 0 8px; box-shadow: 0 16px 40px rgba(80,55,40,.10); }
+    .sv-who { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
+    .sv-who img { width: 46px; height: 46px; border-radius: 50%; object-fit: cover; border: 2px solid var(--cream2); }
+    .sv-who span { font-size: 11.5px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--accent-text); line-height: 1.35; }
+    .sv-who span small { display: block; font-size: 13px; letter-spacing: 0; text-transform: none; font-weight: 400; color: var(--text-body); }
+    .sv-card .sv-h { font-family: 'Playfair Display', Georgia, serif; font-weight: 700; font-size: 23px; line-height: 1.25; color: var(--text-dark); margin-bottom: 8px; }
+    .sv-card p { font-size: 15px; }
+    .sv-card .btn { border: 0; cursor: pointer; font-family: 'Poppins', sans-serif; font-size: 15px; padding: 14px 26px; }
+    .sv-card .btn[disabled] { opacity: .45; cursor: default; transform: none; }
+    .sv-card .sv-fine { font-size: 12px; line-height: 1.5; color: var(--text-muted); margin: 12px 0 0; }
+    .sv-fine a, .sv-skip { text-decoration: underline; text-underline-offset: 2px; }
+    .sv-skip { display: inline-block; background: none; border: 0; font: 400 13.5px 'Poppins', sans-serif; color: var(--text-body); cursor: pointer; margin-top: 12px; padding: 4px 0; }
+    .sv-prog { display: flex; align-items: center; gap: 10px; font-size: 12.5px; font-weight: 600; color: var(--accent-text); margin-bottom: 12px; }
+    .sv-prog i { flex: 1; height: 6px; border-radius: 9px; background: var(--cream2); position: relative; overflow: hidden; }
+    .sv-prog i b { position: absolute; inset: 0; width: var(--w); background: linear-gradient(90deg, #A9C29B, var(--green-btn)); border-radius: 9px; transition: width .35s ease; }
+    .sv-card .sv-q { font-family: 'Playfair Display', Georgia, serif; font-weight: 700; font-size: 20px; line-height: 1.3; color: var(--text-dark); margin-bottom: 4px; }
+    .sv-card .sv-sub { font-size: 13px; color: var(--text-muted); margin-bottom: 12px; }
+    .sv-card .chips { display: flex; flex-direction: column; gap: 8px; margin-bottom: 16px; }
+    .sv-card .chips label { position: relative; display: grid; grid-template-columns: 22px 1fr; gap: 12px; align-items: center; cursor: pointer;
+      border: 1px solid var(--border); border-radius: 14px; padding: 12px 14px; font-size: 14.5px; color: var(--text-dark); background: var(--cream);
+      transition: border-color .15s ease, background .15s ease; }
+    .sv-card .chips input { position: absolute; opacity: 0; pointer-events: none; }
+    .sv-card .chips .bx { width: 22px; height: 22px; border-radius: 7px; border: 1.5px solid var(--accent); background: #fff; display: flex; align-items: center; justify-content: center; }
+    .sv-card .chips input[type="radio"] + .bx { border-radius: 50%; }
+    .sv-card .chips .bx svg { width: 13px; height: 13px; color: #fff; opacity: 0; }
+    .sv-card .chips input:checked + .bx { background: var(--green-btn); border-color: var(--green-btn); }
+    .sv-card .chips input:checked + .bx svg { opacity: 1; }
+    .sv-card .chips label:has(input:checked) { border-color: var(--green-btn); background: #F3F7F0; }
+    .sv-card .chips label:has(input:disabled) { opacity: .45; cursor: default; }
+    .sv-card .chips input:focus-visible + .bx { outline: 2px solid var(--accent-deep); outline-offset: 2px; }
+    .sv-card input[type="text"], .sv-card input[type="email"], .sv-card textarea { width: 100%; font: 400 14.5px/1.4 'Poppins', sans-serif; color: var(--text-dark);
+      border: 1px solid var(--border); border-radius: 12px; padding: 11px 13px; background: #fff; margin: 6px 0 0; }
+    .sv-card textarea { resize: vertical; min-height: 60px; }
+    .sv-card .lbl { display: block; font-weight: 600; font-size: 14px; color: var(--text-dark); margin: 0 0 14px; }
+    .sv-card .lbl small { font-weight: 400; color: var(--text-muted); font-size: 12.5px; margin-left: 4px; }
+    .sv-card .other { margin: -8px 0 16px; }
+    .sv-card .hp { display: none; }
+    .sv-done { display: flex; gap: 12px; align-items: center; }
+    .sv-done .ck { width: 38px; height: 38px; border-radius: 50%; background: #F3F7F0; color: var(--green-btn); display: flex; align-items: center; justify-content: center; flex: none; }
+    .sv-done .ck svg { width: 18px; height: 18px; }
+    .sv-done b { display: block; font-weight: 600; color: var(--text-dark); }
+    .sv-done p { margin: 0; font-size: 14px; }
+    .gated .after { display: none; }
+    .sv-card[hidden], .sv-scr[hidden] { display: none; }
+    @keyframes svIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+    .sv-scr { animation: svIn .3s ease both; }
+    @media (prefers-reduced-motion: reduce) { .sv-scr { animation: none; } }
+    @media (max-width: 480px) { .sv-card { padding: 20px 16px 18px; } .sv-card .btn { width: 100%; } .sv-card .sv-h { font-size: 21px; } .sv-card .sv-q { font-size: 18.5px; } }
   </style>
 </head>
 <body>
@@ -186,6 +237,51 @@
       <h1>Bestätigt. <span class="accent">Wir sehen uns!</span></h1>
       <p class="when">Deine E-Mail-Adresse ist bestätigt. Dein Live-Webinar:<br /><strong>Dienstag, 20.&nbsp;Oktober, 19&nbsp;Uhr, live&nbsp;online.</strong></p>
       <div class="progress done" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="100" aria-label="Anmeldung zu 100 Prozent abgeschlossen"><div class="progress-top"><span><b>Anmeldung abgeschlossen</b></span><span class="pct">100&nbsp;%</span></div><div class="bar"><i style="--p:1"></i></div></div>
+      <form class="sv-card" id="umfrage" name="webinar-umfrage" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/webinar-bestaetigt.html" hidden>
+        <input type="hidden" name="form-name" value="webinar-umfrage" />
+        <input type="hidden" name="vorname" value="" />
+        <input type="hidden" name="einwilligung" value="" />
+        <p class="hp"><label>Bitte freilassen: <input name="bot-field" /></label></p>
+
+        <div class="sv-scr" data-s="0">
+          <div class="sv-who"><img src="jasmin-avatar.webp" width="92" height="92" alt="Jasmin Schmidtke" /><span>Kurze Bitte<small>von Jasmin</small></span></div>
+          <p class="sv-h">Darf ich dir 2&nbsp;kurze&nbsp;Fragen&nbsp;stellen?</p>
+          <p>Dann kann ich im Webinar genau auf deine Themen eingehen. Dauert 20&nbsp;Sekunden, <strong>danach bekommst du direkt dein&nbsp;PDF.</strong></p>
+          <button class="btn" type="button" data-go="1">Ja, gerne</button>
+          <p class="sv-fine">Mit „Ja, gerne“ bist du einverstanden, dass ich deine Antworten nutze, um das Webinar und meine Mails an dich auf deine Themen abzustimmen. Freiwillig und jederzeit widerrufbar, mehr in der <a href="datenschutz.html" target="_blank" rel="noopener">Datenschutzerklärung</a>.</p>
+          <button class="sv-skip" type="button" data-skip>Nein danke, direkt zum PDF</button>
+        </div>
+
+        <div class="sv-scr" data-s="1" hidden>
+          <div class="sv-prog"><span>Frage 1 von 2</span><i><b style="--w:50%"></b></i></div>
+          <p class="sv-q">Was belastet dich im Alltag gerade am meisten?</p>
+          <p class="sv-sub">Bis zu 2 Antworten</p>
+          <div class="chips" data-max="2">
+            <label><input type="checkbox" name="belastung" value="Ständig müde, Energie unberechenbar" /><span class="bx"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span><span>Ständig müde, Energie unberechenbar</span></label><label><input type="checkbox" name="belastung" value="Das Gewicht bewegt sich nicht mehr" /><span class="bx"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span><span>Das Gewicht bewegt sich nicht mehr</span></label><label><input type="checkbox" name="belastung" value="Heißhunger" /><span class="bx"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span><span>Heißhunger</span></label><label><input type="checkbox" name="belastung" value="Schlechter Schlaf" /><span class="bx"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span><span>Schlechter Schlaf</span></label><label><input type="checkbox" name="belastung" value="Stress, gereizt, nicht mehr ich selbst" /><span class="bx"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span><span>Stress, gereizt, nicht mehr ich selbst</span></label><label><input type="checkbox" name="belastung" value="Etwas anderes" /><span class="bx"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span><span>Etwas anderes</span></label>
+          </div>
+          <input class="other" type="text" name="belastung_anderes" placeholder="Was genau?" maxlength="160" hidden />
+          <button class="btn" type="button" data-go="2" disabled>Weiter</button>
+        </div>
+
+        <div class="sv-scr" data-s="2" hidden>
+          <div class="sv-prog"><span>Frage 2 von 2</span><i><b style="--w:100%"></b></i></div>
+          <p class="sv-q">Was würde dir am meisten helfen?</p>
+          <p class="sv-sub">Eine Antwort</p>
+          <div class="chips">
+            <label><input type="radio" name="hilfe" value="Verstehen, was in meinem Körper los ist" /><span class="bx"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span><span>Verstehen, was in meinem Körper los ist</span></label><label><input type="radio" name="hilfe" value="Ein Plan, der in meinen Alltag passt" /><span class="bx"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span><span>Ein Plan, der in meinen Alltag passt</span></label><label><input type="radio" name="hilfe" value="Jemand, der mich begleitet, damit ich dranbleibe" /><span class="bx"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span><span>Jemand, der mich begleitet, damit ich dranbleibe</span></label><label><input type="radio" name="hilfe" value="Wissen, welche Werte ich prüfen lassen sollte" /><span class="bx"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span><span>Wissen, welche Werte ich prüfen lassen sollte</span></label>
+          </div>
+          <label class="lbl">Deine Frage an mich fürs Webinar<small>freiwillig</small><textarea name="frage" rows="2" maxlength="400" placeholder="Was möchtest du unbedingt wissen?"></textarea></label>
+          <label class="lbl em" hidden>Deine E-Mail<small>damit ich deine Antwort zuordnen kann</small><input type="email" name="email" placeholder="deine@email.de" autocomplete="email" /></label>
+          <button class="btn" type="submit" disabled>Fertig, zu meinem PDF</button>
+        </div>
+
+        <div class="sv-scr sv-done" data-s="3" hidden>
+          <span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <div><b>Danke dir!</b><p>Deine Antworten sind bei mir. Hier ist dein&nbsp;PDF.</p></div>
+        </div>
+      </form>
+
+      <div class="after">
       <div class="gift">
         <img class="gift-badge" src="geschenk.webp" width="256" height="256" alt="" aria-hidden="true" decoding="async" loading="lazy" />
         <img src="5-blutwerte-cover-scharf.jpg" alt="PDF: Die 5 wichtigsten Blutwerte für mehr Energie ab 40" loading="lazy" />
@@ -213,6 +309,7 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
         <span>Damit du nichts verpasst: Falls Jasmins Mails im Spam- oder Werbung-Ordner landen, markiere sie als „Kein Spam".</span>
       </div>
+      </div>
     </div>
   </main>
 
@@ -230,5 +327,66 @@
     © 2026 Jasmin Schmidtke · <a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a>
   </footer>
 
+
+  <script>
+    /* Umfrage vor dem PDF: zwei Fragen in Schritten, PDF und Termin danach; Überspringen jederzeit möglich */
+    (function () {
+      var form = document.getElementById('umfrage'); if (!form) return;
+      var after = document.querySelector('.after');
+      var state = null, known = null;
+      try { state = localStorage.getItem('js_wb_umfrage'); known = JSON.parse(localStorage.getItem('js_wb') || 'null'); } catch (e) {}
+      if (state) return;                         /* schon beantwortet oder übersprungen: Seite wie bisher */
+      document.body.classList.add('gated');
+      form.hidden = false;
+
+      var scr = form.querySelectorAll('.sv-scr');
+      function show(n) { scr.forEach(function (el) { el.hidden = el.getAttribute('data-s') !== String(n); }); }
+      function open(mark) {
+        try { localStorage.setItem('js_wb_umfrage', mark); } catch (e) {}
+        document.body.classList.remove('gated');
+        if (mark === 'skip') { form.hidden = true; }
+        var g = document.querySelector('.gift');
+        if (g && g.scrollIntoView) { setTimeout(function () { g.scrollIntoView({ behavior: 'smooth', block: 'center' }); }, 60); }
+      }
+      if (known && known.e) { form.elements['email'].value = known.e; form.elements['vorname'].value = known.n || ''; }
+      else { form.querySelector('.em').hidden = false; }
+
+      form.querySelectorAll('[data-go]').forEach(function (b) { b.addEventListener('click', function () { show(b.getAttribute('data-go')); }); });
+      form.querySelector('[data-skip]').addEventListener('click', function () { open('skip'); });
+
+      var g1 = form.querySelector('.chips[data-max]');
+      var other = form.elements['belastung_anderes'];
+      var next1 = form.querySelector('[data-s="1"] .btn');
+      g1.addEventListener('change', function () {
+        var boxes = g1.querySelectorAll('input'), n = 0;
+        boxes.forEach(function (b) { if (b.checked) n++; });
+        boxes.forEach(function (b) { b.disabled = !b.checked && n >= 2; });
+        var o = g1.querySelector('input[value="Etwas anderes"]');
+        other.hidden = !o.checked;
+        next1.disabled = n === 0;
+      });
+      var send = form.querySelector('[data-s="2"] .btn');
+      form.querySelectorAll('input[name="hilfe"]').forEach(function (r) { r.addEventListener('change', function () { send.disabled = false; }); });
+
+      form.addEventListener('submit', function (ev) {
+        ev.preventDefault();
+        var bel = [].map.call(g1.querySelectorAll('input:checked'), function (b) { return b.value === 'Etwas anderes' && other.value.trim() ? 'Anderes: ' + other.value.trim() : b.value; });
+        var hilfe = form.querySelector('input[name="hilfe"]:checked');
+        var data = new URLSearchParams();
+        data.append('form-name', 'webinar-umfrage');
+        data.append('vorname', form.elements['vorname'].value);
+        data.append('email', form.elements['email'].value.trim());
+        data.append('belastung', bel.join(' | '));
+        data.append('hilfe', hilfe ? hilfe.value : '');
+        data.append('frage', form.elements['frage'].value.trim());
+        data.append('einwilligung', 'ja');
+        send.disabled = true; send.textContent = 'Einen Moment bitte';
+        var sent = false;
+        var fin = function () { if (sent) return; sent = true; show(3); open('done'); };
+        fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: data.toString() }).then(fin, fin);
+        setTimeout(fin, 2500);
+      });
+    })();
+  </script>
 </body>
 </html>
