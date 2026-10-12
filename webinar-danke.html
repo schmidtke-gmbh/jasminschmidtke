@@ -6,9 +6,11 @@
   <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="d7edd666-c373-4b8b-b522-fe1891c11381" data-blockingmode="auto" type="text/javascript"></script>
 
   <!-- Merkt sich VOR allen Tracking-Skripten, ob die Seite direkt nach einer Anmeldung kommt (?angemeldet=1).
-       Noetig, weil das Meta-Skript den Parameter danach aus der Adresszeile entfernt. -->
+       Entfernt den Parameter danach aus der Adresszeile, GA4 und Meta lesen nur noch diese Variable. -->
   <script type="text/javascript" data-cookieconsent="ignore">
     window.jsWebinarLead = /[?&]angemeldet=1(&|$)/.test(window.location.search);
+    // Parameter sofort entfernen, damit Neuladen keinen zweiten Lead zaehlt (GA4 und Meta)
+    if (window.jsWebinarLead && window.history && history.replaceState) { history.replaceState(null, '', window.location.pathname); }
   </script>
 
   <!-- Google Analytics 4, von Cookiebot blockiert bis Statistik-Consent.
@@ -44,9 +46,9 @@
     fbq('init', '1626754815196504');
     fbq('track', 'PageView');
     // Lead nur nach echter Anmeldung (Weiterleitung mit ?angemeldet=1), nicht bei Neuladen oder Direktaufruf
-    if (/[?&]angemeldet=1(&|$)/.test(window.location.search)) {
+    if (window.jsWebinarLead && !window.jsWebinarLeadFB) {
+      window.jsWebinarLeadFB = true;
       fbq('track', 'Lead');
-      if (window.history && history.replaceState) { history.replaceState(null, '', window.location.pathname); }
     }
   </script>
 
