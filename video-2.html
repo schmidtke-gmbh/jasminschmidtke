@@ -200,7 +200,7 @@
     /* ═══════════════════════════════════════════════════════════════
        EINSTELLUNGEN: hier eintragen, sobald vorhanden.
        bunnyLibrary / bunnyVideo: aus Bunny Stream, beim Video unter „Embed“
-       (https://iframe.mediadelivery.net/embed/LIBRARY/VIDEO).
+       (https://player.mediadelivery.net/embed/LIBRARY/VIDEO).
        pdf: Dateiname des PDFs neben dieser Seite, z. B. 'Checkliste-Mein-Laborgespraech.pdf'.
        sprungmarken: auf true setzen, sobald die Kapitelzeiten (data-t im HTML,
        in Sekunden) zum fertig geschnittenen Video passen. Dann sind die Kapitel klickbar.
@@ -208,9 +208,9 @@
        ═══════════════════════════════════════════════════════════════ */
     var VIDEO = {
       nr: 2,
-      bunnyLibrary: '',
-      bunnyVideo: '',
-      pdf: '',
+      bunnyLibrary: '752909',
+      bunnyVideo: '37521a07-5856-4fc1-b8f6-cf831d596cce',   /* Video 2 aus Bunny (eingetragen 16.10.) */
+      pdf: 'Einnahme-Tagesplan-Jasmin-Schmidtke.pdf',
       sprungmarken: false
     };
     var TERMINE = { video2: '', live: '2026-10-20T19:00:00+02:00' };
@@ -268,7 +268,7 @@
     if (!VIDEO.bunnyLibrary || !VIDEO.bunnyVideo) return;
     var box = document.getElementById('player');
     var f = document.createElement('iframe');
-    f.src = 'https://iframe.mediadelivery.net/embed/' + encodeURIComponent(VIDEO.bunnyLibrary) + '/' + encodeURIComponent(VIDEO.bunnyVideo) + '?autoplay=false&loop=false&muted=false&preload=true&responsive=true';
+    f.src = 'https://player.mediadelivery.net/embed/' + encodeURIComponent(VIDEO.bunnyLibrary) + '/' + encodeURIComponent(VIDEO.bunnyVideo) + '?autoplay=false&loop=false&muted=false&preload=true&responsive=true';
     f.title = document.querySelector('h1').textContent;
     f.allow = 'accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture; fullscreen';
     f.allowFullscreen = true;
