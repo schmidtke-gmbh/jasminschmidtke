@@ -1,5 +1,8 @@
-# Warteliste zeigt bis zum Webinar am 20.10.2026 auf die Webinar-Seite.
-# 302 = vorübergehend (kann später ohne Browser-Cache-Probleme zurückgenommen werden).
-# Das ! sorgt dafür, dass die Regel auch greift, obwohl warteliste.html als Datei existiert.
-/warteliste        /webinar   302!
-/warteliste.html   /webinar   302!
+# Ab 20.10.2026 (nach dem Live-Webinar): Warteliste und Webinar zeigen auf die Masterclass Phönixjahre.
+# 302 = vorübergehend (kann später ohne Browser-Cache-Probleme geändert werden).
+# Das ! sorgt dafür, dass die Regel auch greift, obwohl warteliste.html und webinar.html als Dateien existieren.
+# UTM-Parameter in der Adresse werden automatisch mitgenommen.
+/warteliste        /masterclass   302!
+/warteliste.html   /masterclass   302!
+/webinar           /masterclass   302!
+/webinar.html      /masterclass   302!
