@@ -86,6 +86,10 @@
   .hx-lead b{color:var(--ink);font-weight:600}
   .hx-micro{font-size:.76em;color:var(--ink-faint);margin:.9em 0 0}
   .hx-micro a{color:var(--taupe-deep)}
+  .hx-mc{font-size:.84em;line-height:1.5;color:var(--ink-soft);margin:-.4em 0 1.4em}
+  .hx-mc a,.mc-link{color:var(--red);font-weight:600;text-decoration:underline;text-underline-offset:3px}
+  .dark-start .hx-mc{color:rgba(255,255,255,.7)}
+  .dark-start .hx-mc a{color:#F2A7B4}
   .hx-author{display:flex;align-items:center;gap:10px;margin-top:1.3em;text-align:left;font-size:.78em;line-height:1.35;color:var(--ink-soft)}
   .hx-author img{width:40px;height:40px;border-radius:50%;object-fit:cover;box-shadow:0 0 0 3px #fff,0 2px 8px rgba(45,43,48,.12)}
   .hx-author b{color:var(--ink);font-weight:600}
@@ -265,7 +269,7 @@
   <input type="text" name="b_blutanalyse" /><input type="text" name="b_handouts" />
   <input type="text" name="format" />
   <textarea name="perfekt"></textarea><textarea name="hoffnung"></textarea><textarea name="wunsch"></textarea>
-  <input type="text" name="alter" /><input type="text" name="gespraech" />
+  <input type="text" name="alter" />
   <input type="text" name="vorname" /><input type="email" name="email" />
   <input type="text" name="gewinnspiel" /><input type="text" name="einwilligung" />
   <input type="text" name="utm_source" /><input type="text" name="utm_medium" /><input type="text" name="utm_campaign" /><input type="text" name="utm_content" />
@@ -277,7 +281,7 @@
       <circle cx="100" cy="100" r="82" fill="none" stroke="#BFA492" stroke-width="11"/>
       <path d="M 18,100 C 45,118 65,118 100,95 C 135,72 155,72 182,100" fill="none" stroke="#BFA492" stroke-width="7" stroke-linecap="round"/>
     </svg>
-    <div class="name">Jasmin Schmidtke<span>Heilpraktikerin · Ü40 Coach</span></div>
+    <div class="name">Jasmin Schmidtke<span>Heilpraktikerin</span></div>
   </div>
 
   <div id="app" aria-live="polite"></div>
@@ -287,10 +291,10 @@
     <summary>Teilnahmebedingungen Gewinnspiel</summary>
     <ol>
       <li><b>Veranstalter:</b> Schmidtke GmbH, Neckartal 200, 78628 Rottweil, für Jasmin Schmidtke (im Folgenden „wir“).</li>
-      <li><b>Zeitraum:</b> Teilnahme bis <span class="js-deadline">Sonntag, 1. November 2026</span>, 23:59 Uhr.</li>
+      <li><b>Zeitraum:</b> Teilnahme bis <span class="js-deadline">Sonntag, 29. November 2026</span>, 23:59 Uhr.</li>
       <li><b>Teilnahme:</b> Mitmachen kann jede Person ab 18 Jahren mit Wohnsitz in Deutschland, Österreich oder der Schweiz, die die Umfrage absendet, beim Gewinnspiel den Haken setzt und eine gültige E-Mail-Adresse angibt. Pro Person ist eine Teilnahme möglich. Die Teilnahme ist kostenlos und hängt nicht von einem Kauf ab. Ausgeschlossen sind Mitarbeitende der Schmidtke GmbH und ihre Angehörigen.</li>
       <li><b>Gewinne:</b> 2 Amazon.de-Gutscheine im Wert von je 50 €, Versand per E-Mail. Keine Barauszahlung, kein Umtausch.</li>
-      <li><b>Ziehung und Benachrichtigung:</b> Wir ziehen die zwei Gewinnerinnen oder Gewinner am <span class="js-draw">Montag, 2. November 2026</span> per Zufall unter allen gültigen Teilnahmen und benachrichtigen sie per E-Mail. Meldet sich jemand nicht innerhalb von 14 Tagen, ziehen wir neu.</li>
+      <li><b>Ziehung und Benachrichtigung:</b> Wir ziehen die zwei Gewinnerinnen oder Gewinner am <span class="js-draw">Montag, 30. November 2026</span> per Zufall unter allen gültigen Teilnahmen und benachrichtigen sie per E-Mail. Meldet sich jemand nicht innerhalb von 14 Tagen, ziehen wir neu.</li>
       <li><b>Ausschluss:</b> Bei Verstößen gegen diese Bedingungen oder Manipulationsversuchen können wir Teilnehmende ausschließen. Aus wichtigem Grund dürfen wir das Gewinnspiel ändern oder beenden.</li>
       <li><b>Datenschutz:</b> Vorname und E-Mail-Adresse nutzen wir nur für das Gewinnspiel und die Benachrichtigung. Mehr dazu in Abschnitt 4b der <a href="/datenschutz" target="_blank" rel="noopener">Datenschutzerklärung</a>.</li>
       <li>Amazon ist kein Sponsor dieser Aktion. Für die Gutscheine gelten die Geschenkgutschein-Bedingungen von Amazon.de.</li>
@@ -315,22 +319,23 @@
 
 <script>
 /* ============================================================
-   UMFRAGE PHÖNIXJAHRE · v2 (Stand 2026-10-21, Farben Masterclass)
+   UMFRAGE PHÖNIXJAHRE · v3 (Stand 2026-10-21: Pflichtfragen, ohne Gespräch, Ziehung 30.11.)
    Netlify-Formular „phoenixjahre-umfrage“ (AJAX an „/“).
    Die Netlify-Funktion submission-created meldet neue Antworten
-   ohne Namen und E-Mail in Slack und setzt in ActiveCampaign die
-   Tags 30 „Umfrage Phönixjahre: teilgenommen“ und 31 „Gespräch ja“.
+   ohne Namen und E-Mail in Slack und setzt in ActiveCampaign den
+   Tag 30 „Umfrage Phönixjahre: teilgenommen“.
    ============================================================ */
 
 const CONFIG = {
-  deadlineText: 'Sonntag, 1. November 2026',
-  drawText: 'Montag, 2. November 2026',
-  deadline: '2026-11-01T23:59:59+01:00',   // danach: Umfrage weiter möglich, Gewinnspiel-Haken ausgeblendet
+  deadlineText: 'Sonntag, 29. November 2026',
+  drawText: 'Montag, 30. November 2026',
+  deadline: '2026-11-29T23:59:59+01:00',   // danach: Umfrage weiter möglich, Gewinnspiel-Haken ausgeblendet
   storageKey: 'umfrage_phx_v1',
   consentVersion: '2026-10-21',
   formName: 'phoenixjahre-umfrage'
 };
 
+const MC_LINK = '/masterclass?utm_source=umfrage&utm_medium=link&utm_campaign=phoenixjahre-umfrage';
 const GIFT_CARDS = '<svg viewBox="0 0 132 92" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">'
   + '<g transform="rotate(-9 82 40)"><rect x="34" y="6" width="92" height="58" rx="10" fill="#D7354F"/><text x="118" y="22" text-anchor="end" font-family="Poppins,Arial,sans-serif" font-weight="700" font-size="12" fill="#fff">50 €</text></g>'
   + '<rect x="4" y="26" width="96" height="60" rx="10" fill="#2D2B30"/>'
@@ -368,7 +373,7 @@ const STEPS = [
     options: ['Ja, bis zum Ende', 'Ja, aber nur einen Teil', 'Ich war angemeldet, habe es aber nicht geschafft', 'Ich war nicht angemeldet', 'Ich wusste nichts davon'] },
   { id: 'hindernis', type: 'multi', max: 3, eyebrow: 'Phönixjahre',
     title: 'Was hat dich davon abgehalten, <em>Phönixjahre</em> zu kaufen?',
-    helper: 'Ganz ehrlich, hier gibt es keine falschen Antworten. Wähle bis zu 3 Gründe.',
+    helper: 'Ganz ehrlich, hier gibt es keine falschen Antworten. Wähle bis zu 3 Gründe.<br><a class="mc-link" href="' + MC_LINK + '" target="_blank" rel="noopener">Was ist Phönixjahre? Masterclass ansehen ↗</a>',
     other: { id: 'hindernis_sonstiges', label: 'Etwas anderes', placeholder: 'Was war es bei dir?' },
     exclusive: 'Ich habe Phönixjahre gekauft',
     options: [
@@ -388,8 +393,8 @@ const STEPS = [
     helper: 'Für 13 Wochen Plan, 6 Monate Live-Calls und 2 Jahre Zugang.',
     options: ['Unter 100 €', '100 bis 200 €', '200 bis 400 €', '400 bis 700 €', 'Mehr als 700 €', 'Kann ich nicht sagen'] },
   { id: 'raten', type: 'single', eyebrow: 'Phönixjahre', skipIf: a => bought(a),
-    title: 'Hätte dir eine <em>Ratenzahlung</em> geholfen?',
-    options: ['Ja, das hätte es leichter gemacht', 'Nein, daran lag es nicht', 'Weiß ich nicht'] },
+    title: 'Wusstest du, dass du Phönixjahre auch in <em>3 Raten</em> zahlen konntest?',
+    options: ['Ja, das wusste ich', 'Nein, das habe ich nicht mitbekommen', 'Ja, aber kleinere Raten über mehr Monate hätten mir geholfen', 'Für mich spielt das keine Rolle'] },
   { id: 'bausteine', type: 'grid', eyebrow: 'Dein Wunsch-Programm',
     title: 'Wie wichtig sind dir diese <em>Bausteine</em>?',
     helper: 'Tippe pro Zeile an, was für dich stimmt.',
@@ -413,7 +418,7 @@ const STEPS = [
     placeholder: 'Schreib einfach drauflos …' },
   { id: 'hoffnung', type: 'text', eyebrow: 'Deine Ziele',
     title: 'Was <em>erhoffst</em> du dir für die nächsten Monate?',
-    helper: 'Was soll sich in deinem Alltag verändern? Teile nur, was du teilen möchtest.',
+    helper: 'Was soll sich in deinem Alltag verändern?',
     placeholder: 'Zum Beispiel: mehr Energie am Nachmittag, wieder Freude an Bewegung …' },
   { id: 'wunsch', type: 'text', eyebrow: 'Deine Wünsche',
     title: 'Was <em>wünschst</em> du dir von mir?',
@@ -422,10 +427,6 @@ const STEPS = [
   { id: 'alter', type: 'single', eyebrow: 'Fast geschafft',
     title: 'Wie <em>alt</em> bist du?',
     options: ['Unter 40', '40 bis 44', '45 bis 49', '50 bis 54', '55 bis 59', '60 oder älter', 'Möchte ich nicht sagen'] },
-  { id: 'gespraech', type: 'single', eyebrow: 'Fast geschafft',
-    title: 'Darf ich dich für ein kurzes <em>Gespräch</em> kontaktieren?',
-    helper: '15 Minuten am Telefon oder per Zoom, damit ich noch besser verstehe, was dir hilft. Ganz freiwillig.',
-    options: ['Ja, gerne', 'Lieber nicht'] },
   { id: 'abschluss', type: 'final' }
 ];
 
@@ -501,7 +502,8 @@ function renderHero() {
         <span class="gb-text">unter allen, die bis ${CONFIG.deadlineText} mitmachen. Am Ende einfach den Haken setzen. <a href="#teilnahmebedingungen" onclick="openTerms(event)">Teilnahmebedingungen</a></span></div>
       </div>` : ''}
       <p class="hx-lead">Gerade wenn du <b>nicht gekauft</b> hast, helfen mir deine Antworten am meisten. So kann ich mein Angebot weiterentwickeln, damit es noch besser für Frauen ab&nbsp;40 passt.</p>
-      <div class="facts"><span>13 kurze Fragen</span><span>Meist nur anklicken</span><span>Auch ohne Namen möglich</span></div>
+      <div class="facts"><span>12 kurze Fragen</span><span>Meist nur anklicken</span><span>Auch ohne Namen möglich</span></div>
+      <p class="hx-mc">Du weißt nicht genau, was Phönixjahre ist? <a href="${MC_LINK}" target="_blank" rel="noopener">Hier kannst du dir die Masterclass ansehen ↗</a></p>
       <button class="btn pulse" onclick="start()">${state.step > 0 ? 'Weiter, wo ich war' : 'Umfrage starten'} <span class="arrow">→</span></button>
       <div class="hx-author"><img src="jasmin-avatar.webp" alt="Jasmin Schmidtke" width="40" height="40"><div><b>Jasmin Schmidtke</b><br>Heilpraktikerin für Frauen ab 40</div></div>
     </div>
@@ -528,7 +530,7 @@ function renderMulti(s) {
   const helper = s.max ? `Bis zu ${s.max} Antworten · bei der ${s.max === 3 ? 'dritten' : s.max + '.'} geht es automatisch weiter` : 'Mehrere Antworten möglich';
   return head(s) + `<div class="answers">${list}</div>
     <p class="multi-helper" id="multi-hint">${helper}</p>
-    <div class="continue-bar"><button class="btn" id="next-btn" onclick="next()" ${cur.length ? '' : 'disabled'}>Weiter <span class="arrow">→</span></button></div>`;
+    <div class="continue-bar"><button class="btn" id="next-btn" onclick="next()" ${multiOk(s, cur) ? '' : 'disabled'}>Weiter <span class="arrow">→</span></button></div>`;
 }
 
 function renderGrid(s) {
@@ -541,16 +543,14 @@ function renderGrid(s) {
     </div>`).join('');
   const missing = s.rows.length - Object.keys(cur).length;
   return head(s) + `<div class="grid-list">${rows}</div>
-    <div class="continue-bar"><button class="btn" id="next-btn" onclick="next()" ${missing ? 'disabled' : ''}>Weiter <span class="arrow">→</span></button>
-    <button class="btn-ghost" onclick="next()">Überspringen</button></div>`;
+    <div class="continue-bar"><button class="btn" id="next-btn" onclick="next()" ${missing ? 'disabled' : ''}>Weiter <span class="arrow">→</span></button></div>`;
 }
 
 function renderText(s) {
   const v = state.answers[s.id] || '';
   return head(s) + `<div class="text-wrap"><textarea class="text-area" data-main maxlength="1500" placeholder="${esc(s.placeholder || '')}" oninput="setText('${s.id}', this.value)">${esc(v)}</textarea>
-    <div class="char-hint">freiwillig</div></div>
-    <div class="continue-bar"><button class="btn" onclick="next()">Weiter <span class="arrow">→</span></button>
-    <button class="btn-ghost" onclick="next()">Diese Frage überspringen</button></div>`;
+    <div class="char-hint">Ein paar Stichworte reichen.</div></div>
+    <div class="continue-bar"><button class="btn" id="next-btn" onclick="next()" ${textOk(v) ? '' : 'disabled'}>Weiter <span class="arrow">→</span></button></div>`;
 }
 
 function renderFinal() {
@@ -628,17 +628,21 @@ function toggleMulti(id, i) {
   save();
   app.querySelectorAll('.answer').forEach((b, j) => { const on = cur.includes(all[j]); b.classList.toggle('selected', on); b.setAttribute('aria-pressed', on); });
   const ow = document.getElementById('other-' + id); if (ow) ow.hidden = !cur.includes(s.other.label);
-  const nb = document.getElementById('next-btn'); if (nb) nb.disabled = !cur.length;
+  const nb = document.getElementById('next-btn'); if (nb) nb.disabled = !multiOk(s, cur);
+  if (s.exclusive) { const pt = app.querySelector('.progress-text'); if (pt) pt.textContent = `Frage ${state.step + 1} von ${questionCount()}`; }
   // Fertig, wenn „gekauft“ gewählt ist oder die Höchstzahl erreicht ist.
   // Ist „Etwas anderes“ dabei und noch leer, bleibt die Frage offen zum Ausfüllen.
-  const otherOpen = cur.includes(s.other.label) && !(state.answers[s.other.id] || '').trim();
+  const otherOpen = cur.includes(s.other.label) && !textOk(state.answers[s.other.id]);
   const complete = (s.exclusive && cur.includes(s.exclusive)) || (s.max && cur.length >= s.max);
   if (complete && !otherOpen) autoNext(550);
 }
 
 function flashHint(t) { const h = document.getElementById('multi-hint'); if (!h) return; const old = h.textContent; h.textContent = t; h.style.color = '#8E3B2C'; setTimeout(() => { h.textContent = old; h.style.color = ''; }, 1800); }
-function setOther(id, v) { state.answers[id] = v; save(); }
-function setText(id, v) { state.answers[id] = v; save(); }
+const MIN_TEXT = 5;
+const textOk = v => String(v || '').trim().length >= MIN_TEXT;
+function multiOk(s, cur) { return cur.length > 0 && !(cur.includes(s.other.label) && !textOk(state.answers[s.other.id])); }
+function setOther(id, v) { state.answers[id] = v; save(); const s = STEPS.find(x => x.other && x.other.id === id); const nb = document.getElementById('next-btn'); if (s && nb) nb.disabled = !multiOk(s, state.answers[s.id] || []); }
+function setText(id, v) { state.answers[id] = v; save(); const nb = document.getElementById('next-btn'); if (nb) nb.disabled = !textOk(v); }
 
 function pickGrid(sid, rid, i) {
   const s = STEPS.find(x => x.id === sid);
@@ -680,7 +684,7 @@ function submitSurvey() {
     hindernis: (a.hindernis || []).join(' | '), hindernis_sonstiges: a.hindernis_sonstiges || '',
     preis: bought(a) ? '' : (a.preis || ''), raten: bought(a) ? '' : (a.raten || ''),
     format: a.format || '', perfekt: a.perfekt || '', hoffnung: a.hoffnung || '', wunsch: a.wunsch || '',
-    alter: a.alter || '', gespraech: a.gespraech || '',
+    alter: a.alter || '',
     vorname: name, email: email, gewinnspiel: raffle ? 'ja' : 'nein',
     einwilligung: `ja · Version ${CONFIG.consentVersion} · ${new Date().toISOString()}`
   };
