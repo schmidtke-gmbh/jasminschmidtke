@@ -16,7 +16,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Deine Meinung zu Phönixjahre · Jasmin Schmidtke</title>
-<meta name="description" content="Hilf mir mit 5 bis 8 Minuten, Phönixjahre noch besser zu machen. Als Dankeschön verlose ich 2 Amazon-Gutscheine à 50 €.">
+<meta name="description" content="Hilf mir mit 5 bis 8 Minuten, Phönixjahre noch besser zu machen. Als Dankeschön kannst du 1 von 2 Amazon-Gutscheinen à 50 € gewinnen.">
 <meta name="robots" content="noindex, nofollow" />
 <link rel="canonical" href="https://www.jasminschmidtke.de/umfrage" />
 <link rel="icon" href="favicon.svg" type="image/svg+xml" />
@@ -221,6 +221,20 @@
   .mc-chip{display:inline-flex;align-items:center;gap:8px;background:rgba(231,203,180,.14);color:var(--sand);border-radius:40px;padding:7px 14px 7px 7px;font-size:.92em;font-weight:600;text-decoration:none}
   .mc-chip .q{width:22px;height:22px;border-radius:50%;background:var(--sand);color:var(--dark);display:inline-flex;align-items:center;justify-content:center;font-size:.85em;font-weight:700}
   .mc-chip:hover{background:rgba(231,203,180,.24)}
+  .cq-head{display:flex;align-items:center;justify-content:space-between;margin:0 0 4px}
+  .cq-eyebrow{font-size:.68em;letter-spacing:.2em;text-transform:uppercase;color:var(--red);font-weight:700}
+  .cq-title{font-size:1.18em;line-height:1.3;color:var(--ink);font-weight:600;margin:0 0 12px}
+  .cq-title em{font-style:italic;font-weight:500;background:var(--phx-light);-webkit-background-clip:text;background-clip:text;color:transparent;padding:0 .08em 0 .02em}
+  .cq-answers{gap:8px;max-width:none}
+  .cq-answers .answer{padding:12px 16px;font-size:.94em;border-radius:14px}
+  .cq-resume{margin:0 0 12px;color:var(--ink-soft);font-size:.92em;text-align:center}
+  .snd{width:36px;height:36px;border-radius:50%;border:1px solid var(--border);background:#fff;color:var(--ink-soft);display:inline-flex;align-items:center;justify-content:center;cursor:pointer;padding:0;flex:none}
+  .snd svg{width:18px;height:18px}
+  .snd:hover{color:var(--red);border-color:var(--red-line)}
+  .consent-card{background:#fff;border:1px solid var(--border);border-radius:20px;padding:18px 20px;max-width:520px;margin:0 auto;width:100%;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:14px}
+  .consent-card p{margin:0;font-size:.84em;line-height:1.55;color:var(--ink-soft)}
+  .consent-card a{color:var(--red)}
+  .consent-card .btn{align-self:stretch;justify-content:space-between;padding-left:24px}
   .form-error{background:#FBEDEA;color:#8E3B2C;border-radius:10px;padding:10px 12px;font-size:.84em;line-height:1.45;margin:10px 0 4px;text-align:left}
   .small-note{font-size:.74em;color:var(--ink-faint);line-height:1.5;text-align:center;margin:12px 0 0}
 
@@ -393,26 +407,12 @@ const ICON_GIFT = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" st
    type: single | multi | grid | text | final
    ------------------------------------------------------------ */
 const STEPS = [
-  { id: 'gruende', type: 'multi', max: 3, eyebrow: 'Über dich',
-    title: 'Warum hast du dich in meinen <em>Newsletter</em> eingetragen?',
-    helper: 'Wähle bis zu 3 Antworten, die am ehesten passen.',
-    other: { id: 'gruende_sonstiges', label: 'Etwas anderes', placeholder: 'Erzähl gern kurz …' },
-    options: [
-      'Ich möchte verstehen, was sich ab 40 in meinem Körper verändert',
-      'Mehr Energie im Alltag',
-      'Mein Gewicht',
-      'Wechseljahre und Hormone',
-      'Meine Blutwerte besser verstehen',
-      'Ein Plan, der in meinen Alltag passt',
-      'Ich mag deine Inhalte und deine Art',
-      'Wegen eines kostenlosen Geschenks (z. B. PDF oder Quiz)'
-    ] },
+  { id: 'webinar', type: 'single', eyebrow: 'Das Live-Webinar',
+    title: 'Warst du beim Live-Webinar am <em>20. Oktober</em> dabei?',
+    options: ['Ja, bis zum Ende', 'Ja, einen Teil davon', 'Angemeldet, aber nicht geschafft', 'Nicht angemeldet', 'Wusste nichts davon'] },
   { id: 'quelle', type: 'single', eyebrow: 'Über dich',
     title: 'Wie bist du auf mich <em>aufmerksam</em> geworden?',
     options: ['Instagram', 'Facebook', 'Eine Anzeige auf Instagram oder Facebook', 'YouTube', 'Empfehlung von einer Freundin', 'Google-Suche', 'Weiß ich nicht mehr', 'Anders'] },
-  { id: 'webinar', type: 'single', eyebrow: 'Das Live-Webinar',
-    title: 'Warst du beim Live-Webinar am <em>20. Oktober</em> dabei?',
-    options: ['Ja, bis zum Ende', 'Ja, aber nur einen Teil', 'Ich war angemeldet, habe es aber nicht geschafft', 'Ich war nicht angemeldet', 'Ich wusste nichts davon'] },
   { id: 'hindernis', type: 'multi', max: 3, eyebrow: 'Phönixjahre',
     title: 'Was hat dich davon abgehalten, <em>Phönixjahre</em> zu kaufen?',
     helper: 'Ganz ehrlich, hier gibt es keine falschen Antworten. Wähle bis zu 3 Gründe.<br><a class="mc-link" href="' + MC_LINK + '" target="_blank" rel="noopener">Was ist Phönixjahre? Masterclass ansehen ↗</a>',
@@ -454,21 +454,37 @@ const STEPS = [
   { id: 'format', type: 'single', eyebrow: 'Dein Wunsch-Programm',
     title: 'Welche <em>Form</em> passt am besten zu dir?',
     options: ['Online-Kurs in meinem eigenen Tempo', 'Gruppe mit festen Live-Terminen', 'Persönliche 1:1-Begleitung', 'Mischung aus Kurs und persönlicher Begleitung', 'Workshop vor Ort', 'Ein kurzer Mini-Kurs zum Reinschnuppern'] },
-  { id: 'perfekt', type: 'text', eyebrow: 'Dein Wunsch-Programm',
-    title: 'Wie sähe das <em>perfekte Programm</em> für dich aus?',
-    helper: 'Was wäre drin, wie lange ginge es, wie viel Begleitung hättest du gern?',
-    placeholder: 'Schreib einfach drauflos …' },
-  { id: 'hoffnung', type: 'text', eyebrow: 'Deine Ziele',
+  { id: 'alter', type: 'single', eyebrow: 'Über dich',
+    title: 'Wie <em>alt</em> bist du?',
+    options: ['Unter 40', '40 bis 44', '45 bis 49', '50 bis 54', '55 bis 59', '60 oder älter', 'Möchte ich nicht sagen'] },
+  // Einwilligung (Art. 9 DSGVO) per Klick, erst vor den Fragen, die Rückschlüsse auf Gesundheit zulassen können
+  { id: 'einwilligung', type: 'consent' },
+  { id: 'gruende', type: 'multi', max: 3, eyebrow: 'Deine Ziele', sensitive: true, skipIf: () => state.skipSensitive,
+    title: 'Warum hast du dich in meinen <em>Newsletter</em> eingetragen?',
+    helper: 'Wähle bis zu 3 Antworten, die am ehesten passen.',
+    other: { id: 'gruende_sonstiges', label: 'Etwas anderes', placeholder: 'Erzähl gern kurz …' },
+    options: [
+      'Ich möchte verstehen, was sich ab 40 in meinem Körper verändert',
+      'Mehr Energie im Alltag',
+      'Mein Gewicht',
+      'Wechseljahre und Hormone',
+      'Meine Blutwerte besser verstehen',
+      'Ein Plan, der in meinen Alltag passt',
+      'Ich mag deine Inhalte und deine Art',
+      'Wegen eines kostenlosen Geschenks (z. B. PDF oder Quiz)'
+    ] },
+  { id: 'hoffnung', type: 'text', eyebrow: 'Deine Ziele', sensitive: true, skipIf: () => state.skipSensitive,
     title: 'Was <em>erhoffst</em> du dir für die nächsten Monate?',
     helper: 'Was soll sich in deinem Alltag verändern?',
     placeholder: 'Zum Beispiel: mehr Energie am Nachmittag, wieder Freude an Bewegung …' },
-  { id: 'wunsch', type: 'text', eyebrow: 'Deine Wünsche',
+  { id: 'perfekt', type: 'text', eyebrow: 'Dein Wunsch-Programm', sensitive: true, skipIf: () => state.skipSensitive,
+    title: 'Wie sähe das <em>perfekte Programm</em> für dich aus?',
+    helper: 'Was wäre drin, wie lange ginge es, wie viel Begleitung hättest du gern?',
+    placeholder: 'Schreib einfach drauflos …' },
+  { id: 'wunsch', type: 'text', eyebrow: 'Fast geschafft', sensitive: true, skipIf: () => state.skipSensitive,
     title: 'Was <em>wünschst</em> du dir von mir?',
     helper: 'Themen für Newsletter, Videos oder ein nächstes Webinar. Oder eine Frage, die dir am Herzen liegt.',
     placeholder: 'Ich wünsche mir …' },
-  { id: 'alter', type: 'single', eyebrow: 'Fast geschafft',
-    title: 'Wie <em>alt</em> bist du?',
-    options: ['Unter 40', '40 bis 44', '45 bis 49', '50 bis 54', '55 bis 59', '60 oder älter', 'Möchte ich nicht sagen'] },
   { id: 'abschluss', type: 'final' }
 ];
 
@@ -478,7 +494,7 @@ const allOptions = s => s.options.concat([s.other.label], s.exclusive ? [s.exclu
 /* ------------------------------------------------------------
    ZUSTAND (mit Zwischenspeicher im Browser, falls möglich)
    ------------------------------------------------------------ */
-let state = { step: -1, answers: {}, done: false, raffle: false, name: '', sid: '', consentAt: '', lastSent: '', lastAnswered: 0 };
+let state = { step: -1, answers: {}, done: false, raffle: false, name: '', sid: '', consentAt: '', skipSensitive: false, lastSent: '', lastAnswered: 0, soundOff: false };
 const newSid = () => (window.crypto && crypto.randomUUID) ? crypto.randomUUID().slice(0, 13) : Math.random().toString(36).slice(2, 15);
 function load() { try { const s = JSON.parse(localStorage.getItem(CONFIG.storageKey) || 'null'); if (s && typeof s === 'object') state = Object.assign(state, s); } catch (e) {} }
 function save() { try { localStorage.setItem(CONFIG.storageKey, JSON.stringify(state)); } catch (e) {} }
@@ -488,7 +504,10 @@ const raffleOpen = () => Date.now() <= new Date(CONFIG.deadline).getTime();
 const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 
 function visibleSteps() { return STEPS.filter(s => !(s.skipIf && s.skipIf(state.answers))); }
-function questionCount() { return visibleSteps().filter(s => s.type !== 'final').length; }
+const isQ = s => s.type !== 'final' && s.type !== 'consent';
+function questionCount() { return visibleSteps().filter(isQ).length; }
+function qPos(idx) { return visibleSteps().slice(0, idx + 1).filter(isQ).length; }   // Nummer der Frage an Position idx
+const SENSITIVE = STEPS.filter(x => x.sensitive);
 
 /* ------------------------------------------------------------
    RENDERING
@@ -507,13 +526,13 @@ function render() {
   if (state.step >= steps.length) state.step = steps.length - 1;
   const s = steps[state.step];
   const total = questionCount();
-  const pos = Math.min(state.step + 1, total);
+  const pos = qPos(state.step);
   const pct = Math.round((state.step / steps.length) * 100);
   const bar = `
     <div class="top-bar">
       <button class="progress-back" onclick="goBack()">← zurück</button>
-      <span class="progress-text">${s.type === 'final' ? 'Letzter Schritt' : `Frage ${pos} von ${total}`}</span>
-      <span style="width:60px"></span>
+      <span class="progress-text">${s.type === 'final' ? 'Letzter Schritt' : s.type === 'consent' ? 'Kurz vorab' : `Frage ${pos} von ${total}`}</span>
+      ${soundBtn()}
     </div>
     <div class="progress-bar"><div class="progress-fill" style="width:${pct}%"></div></div>`;
   let body = '';
@@ -521,6 +540,7 @@ function render() {
   else if (s.type === 'multi') body = renderMulti(s);
   else if (s.type === 'grid') body = renderGrid(s);
   else if (s.type === 'text') body = renderText(s);
+  else if (s.type === 'consent') body = renderConsent();
   else body = renderFinal();
   app.innerHTML = `<section class="screen question" data-qid="${s.id}">${bar}${body}</section>`;
   window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -533,6 +553,21 @@ function head(s) {
 
 function renderHero() {
   const open = raffleOpen();
+  const q1 = STEPS[0];
+  const cur = state.answers[q1.id];
+  const resume = state.step > 0;
+  const card = resume
+    ? `<div class="card-start">
+        <p class="cq-resume">Schön, dass du wieder da bist. Du warst schon bei Frage ${qPos(state.step)} von ${questionCount()}.</p>
+        <button class="btn" onclick="start()">Weiter, wo ich war <span class="arrow">→</span></button>
+      </div>`
+    : `<div class="card-start card-q">
+        <div class="cq-head"><span class="cq-eyebrow">Frage 1 von ${questionCount()}</span>${soundBtn()}</div>
+        <h2 class="cq-title">${q1.title}</h2>
+        <div class="answers cq-answers">${q1.options.map((o, i) =>
+          `<button class="answer radio${cur === o ? ' selected' : ''}" aria-pressed="${cur === o}" onclick="heroPick(${i})"><span class="check"></span><span class="a-text"><span>${esc(o)}</span></span></button>`).join('')}</div>
+        <p class="start-meta">Einfach antippen, es geht sofort weiter · ${questionCount()} Fragen · auch ohne Namen</p>
+      </div>`;
   app.innerHTML = `
   <section class="screen hero">
     <div class="hx-text">
@@ -542,15 +577,10 @@ function renderHero() {
       ${open ? `<div class="card-gift">
         <div class="gb-visual">${GIFT_CARDS}</div>
         <div><span class="gb-kicker">Mein Dankeschön an dich</span>
-        <b class="gb-title">2 Amazon-Gutscheine à&nbsp;50&nbsp;€ zu gewinnen</b>
+        <b class="gb-title">Gewinne 1 von 2 Amazon-Gutscheinen à&nbsp;50&nbsp;€</b>
         <span class="gb-text">Unter allen, die bis ${CONFIG.deadlineShort} mitmachen. <a href="#teilnahmebedingungen" onclick="openTerms(event)">Teilnahmebedingungen</a></span></div>
       </div>` : ''}
-      <div class="card-start">
-        <label class="consent-check hx-consent"><input type="checkbox" id="h-consent" ${state.consentAt ? 'checked' : ''} onchange="document.getElementById('h-error').innerHTML=''"><span>Ich bin einverstanden, dass Jasmin meine Antworten nach jeder Frage speichert und auswertet, um ihre Angebote zu verbessern. Sie können Hinweise auf meine Gesundheit enthalten. Widerruf jederzeit, <a href="/datenschutz" target="_blank" rel="noopener">Datenschutz</a>.</span></label>
-        <div id="h-error"></div>
-        <button class="btn pulse" onclick="start()">${state.step > 0 ? 'Weiter, wo ich war' : 'Umfrage starten'} <span class="arrow">→</span></button>
-        <p class="start-meta">12 Fragen · meist nur anklicken · auch ohne Namen</p>
-      </div>
+      ${card}
       <div class="card-why">
         <p><b>Gerade wenn du nicht gekauft hast,</b> helfen mir deine Antworten am meisten. So kann ich mein Angebot weiterentwickeln, damit es noch besser für Frauen ab&nbsp;40 passt.</p>
         <a class="mc-chip" href="${MC_LINK}" target="_blank" rel="noopener"><span class="q">?</span>Was ist Phönixjahre? Ansehen ↗</a>
@@ -559,7 +589,7 @@ function renderHero() {
     </div>
     <div class="hx-visual">
       <img src="jasmin-entspannt.webp" alt="Jasmin Schmidtke" width="800" height="1000">
-      ${open ? `<div class="gift-sticker"><b>2 × 50 €</b><span>Amazon-Gutschein zu gewinnen</span></div>` : ''}
+      ${open ? `<div class="gift-sticker"><b>1 von 2</b><span>Amazon-Gutscheinen à 50 € gewinnen</span></div>` : ''}
     </div>
   </section>`;
 }
@@ -580,7 +610,7 @@ function renderMulti(s) {
   const helper = s.max ? `Bis zu ${s.max} Antworten · bei der ${s.max === 3 ? 'dritten' : s.max + '.'} geht es automatisch weiter` : 'Mehrere Antworten möglich';
   return head(s) + `<div class="answers">${list}</div>
     <p class="multi-helper" id="multi-hint">${helper}</p>
-    <div class="continue-bar"><button class="btn" id="next-btn" onclick="next()" ${multiOk(s, cur) ? '' : 'disabled'}>Weiter <span class="arrow">→</span></button></div>`;
+    <div class="continue-bar"><button class="btn" id="next-btn" onclick="goNext()" ${multiOk(s, cur) ? '' : 'disabled'}>Weiter <span class="arrow">→</span></button></div>`;
 }
 
 function renderGrid(s) {
@@ -593,14 +623,26 @@ function renderGrid(s) {
     </div>`).join('');
   const missing = s.rows.length - Object.keys(cur).length;
   return head(s) + `<div class="grid-list">${rows}</div>
-    <div class="continue-bar"><button class="btn" id="next-btn" onclick="next()" ${missing ? 'disabled' : ''}>Weiter <span class="arrow">→</span></button></div>`;
+    <div class="continue-bar"><button class="btn" id="next-btn" onclick="goNext()" ${missing ? 'disabled' : ''}>Weiter <span class="arrow">→</span></button></div>`;
 }
 
 function renderText(s) {
   const v = state.answers[s.id] || '';
   return head(s) + `<div class="text-wrap"><textarea class="text-area" data-main maxlength="1500" placeholder="${esc(s.placeholder || '')}" oninput="setText('${s.id}', this.value)">${esc(v)}</textarea>
     <div class="char-hint">Ein paar Stichworte reichen.</div></div>
-    <div class="continue-bar"><button class="btn" id="next-btn" onclick="next()" ${textOk(v) ? '' : 'disabled'}>Weiter <span class="arrow">→</span></button></div>`;
+    <div class="continue-bar"><button class="btn" id="next-btn" onclick="goNext()" ${textOk(v) ? '' : 'disabled'}>Weiter <span class="arrow">→</span></button></div>`;
+}
+
+function renderConsent() {
+  const ok = !!state.consentAt;
+  return `<div class="q-eyebrow">Kurz vorab</div>
+    <h2>Jetzt geht es um <em>deine Ziele</em></h2>
+    <p class="q-helper">Noch ${SENSITIVE.length} Fragen, dann hast du es geschafft. Dabei kann es auch um Themen wie Gewicht, Energie oder Wechseljahre gehen. Damit ich deine Antworten speichern darf, brauche ich kurz dein Okay.</p>
+    <div class="consent-card">
+      <p>Ich bin einverstanden, dass Jasmin meine Antworten, auch mit Hinweisen auf meine Gesundheit, speichert und auswertet, um ihre Angebote zu verbessern. Ich kann das jederzeit per E-Mail widerrufen. Mehr in der <a href="/datenschutz" target="_blank" rel="noopener">Datenschutzerklärung</a>.</p>
+      <button class="btn" id="consent-btn" onclick="giveConsent()">${ok ? 'Weiter' : 'Ja, einverstanden, weiter'} <span class="arrow">→</span></button>
+    </div>
+    <div class="continue-bar"><button class="btn-ghost" onclick="skipSensitive()">Ohne diese Fragen zum Abschluss</button></div>`;
 }
 
 function renderFinal() {
@@ -610,7 +652,7 @@ function renderFinal() {
     <h2>Danke dir! Jetzt noch <em>absenden</em></h2>
     <p class="q-helper">${open ? 'Wenn du beim Gewinnspiel mitmachen möchtest, brauche ich deinen Vornamen und deine E-Mail-Adresse, damit ich dich im Gewinnfall erreiche.' : 'Name und E-Mail sind freiwillig. Du kannst auch anonym absenden.'}</p>
     <div class="final-card">
-      ${open ? `<div class="gift-row"><span class="gr-visual">${GIFT_CARDS}</span><p><b>2 Amazon-Gutscheine à 50 €</b> verlose ich unter allen, die bis ${CONFIG.deadlineText} mitmachen.</p></div>` : ''}
+      ${open ? `<div class="gift-row"><span class="gr-visual">${GIFT_CARDS}</span><p><b>Gewinne 1 von 2 Amazon-Gutscheinen à 50 €.</b> Ich verlose sie unter allen, die bis ${CONFIG.deadlineText} mitmachen.</p></div>` : ''}
       <label class="field-label" for="f-name">Vorname</label>
       <input class="input-field" id="f-name" type="text" autocomplete="given-name" maxlength="60" value="${esc(a.vorname || '')}" placeholder="Dein Vorname">
       <label class="field-label" for="f-email">E-Mail-Adresse</label>
@@ -644,16 +686,27 @@ function renderThanks() {
    AKTIONEN
    ------------------------------------------------------------ */
 function start() {
-  const c = document.getElementById('h-consent');
-  if (c && !c.checked) { document.getElementById('h-error').innerHTML = '<div class="form-error">Bitte bestätige kurz die Einwilligung, dann geht es los.</div>'; return; }
-  if (!state.consentAt) state.consentAt = new Date().toISOString();
   if (!state.sid) state.sid = newSid();
   if (state.step < 0) state.step = 0; save(); render();
+}
+function heroPick(i) {
+  if (!state.sid) state.sid = newSid();
+  state.step = 0;
+  pickSingle(STEPS[0].id, i);
+}
+function giveConsent() {
+  if (!state.consentAt) { state.consentAt = new Date().toISOString(); playSound('chime'); } else playSound('next');
+  state.skipSensitive = false; save(); next();
+}
+function skipSensitive() {
+  state.skipSensitive = true; save();
+  sendPartial(qPos(state.step), false);
+  state.step = visibleSteps().length - 1; save(); render();
 }
 function goBack() { if (state.step <= 0) { state.step = -1; } else { state.step--; } save(); render(); }
 function next() {
   const steps = visibleSteps();
-  sendPartial(state.step + 1, false);   // gerade beantwortete Frage sofort speichern
+  sendPartial(qPos(state.step), false);   // gerade beantwortete Frage sofort speichern
   state.step = Math.min(state.step + 1, steps.length - 1); save(); render();
 }
 /* ------------------------------------------------------------
@@ -668,13 +721,15 @@ function answerFields(a) {
     preis: bought(a) ? '' : (a.preis || ''), raten: bought(a) ? '' : (a.raten || ''),
     format: a.format || '', perfekt: a.perfekt || '', hoffnung: a.hoffnung || '', wunsch: a.wunsch || '',
     alter: a.alter || '',
-    einwilligung: state.consentAt ? `ja · Version ${CONFIG.consentVersion} · ${state.consentAt}` : ''
+    einwilligung: state.consentAt ? `ja · Version ${CONFIG.consentVersion} · ${state.consentAt}` : (state.skipSensitive ? 'nein, Fragen mit Gesundheitsbezug übersprungen' : '')
   };
+  // Ohne Einwilligung werden Antworten mit möglichem Gesundheitsbezug nie gesendet
+  if (!state.consentAt) ['gruende', 'gruende_sonstiges', 'hoffnung', 'perfekt', 'wunsch'].forEach(k => f[k] = '');
   STEPS.find(s => s.id === 'bausteine').rows.forEach(r => f[r.id] = grid[r.id] || '');
   return Object.assign(f, utm);
 }
 function sendPartial(answered, leaving) {
-  if (!state.consentAt || state.done || state.step < 0) return;
+  if (state.done || state.step < 0) return;
   if (!state.sid) state.sid = newSid();
   const steps = visibleSteps();
   const cur = steps[Math.min(state.step, steps.length - 1)];
@@ -701,8 +756,45 @@ function sendPartial(answered, leaving) {
   state.lastSent = sig; if (!leaving) state.lastAnswered = Math.max(answered, state.lastAnswered || 0); save();
 }
 /* Beim Verlassen (Tab zu, App-Wechsel, Bildschirm aus) den aktuellen Stand sichern, z. B. halb getippten Text */
-document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'hidden') sendPartial(Math.max(state.step, 0), true); });
-window.addEventListener('pagehide', () => sendPartial(Math.max(state.step, 0), true));
+const answeredBefore = () => state.step > 0 ? qPos(state.step - 1) : 0;
+document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'hidden') sendPartial(answeredBefore(), true); });
+window.addEventListener('pagehide', () => sendPartial(answeredBefore(), true));
+
+/* ------------------------------------------------------------
+   TÖNE (Web Audio, keine Dateien). Ausschaltbar über das Lautsprecher-Symbol.
+   ------------------------------------------------------------ */
+let actx = null;
+function audioCtx() {
+  try { actx = actx || new (window.AudioContext || window.webkitAudioContext)(); if (actx.state === 'suspended') actx.resume(); } catch (e) { actx = null; }
+  return actx;
+}
+function tone(c, freq, at, dur, vol, type) {
+  const t0 = c.currentTime + at, o = c.createOscillator(), g = c.createGain();
+  o.type = type || 'sine'; o.frequency.setValueAtTime(freq, t0);
+  g.gain.setValueAtTime(0.0001, t0); g.gain.exponentialRampToValueAtTime(vol, t0 + 0.012); g.gain.exponentialRampToValueAtTime(0.0001, t0 + dur);
+  o.connect(g); g.connect(c.destination); o.start(t0); o.stop(t0 + dur + 0.03);
+}
+function playSound(kind) {
+  if (state.soundOff) return;
+  const c = audioCtx(); if (!c) return;
+  try {
+    if (kind === 'pick') { tone(c, 784, 0, 0.11, 0.07); tone(c, 1175, 0.05, 0.13, 0.045); }
+    else if (kind === 'unpick') { tone(c, 587, 0, 0.09, 0.045); }
+    else if (kind === 'next') { tone(c, 659, 0, 0.1, 0.05); tone(c, 988, 0.07, 0.16, 0.05); }
+    else if (kind === 'error') { tone(c, 247, 0, 0.14, 0.05, 'triangle'); }
+    else if (kind === 'chime') { [523, 659, 784, 1047].forEach((f, i) => tone(c, f, i * 0.08, 0.35, 0.05, 'triangle')); }
+    else if (kind === 'win') { [523, 659, 784, 1047, 1319].forEach((f, i) => tone(c, f, i * 0.09, 0.5, 0.055, 'triangle')); tone(c, 1568, 0.5, 0.7, 0.04); }
+  } catch (e) {}
+}
+const ICON_SND_ON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg>';
+const ICON_SND_OFF = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4V5z"/><path d="m16 9 6 6M22 9l-6 6"/></svg>';
+const soundBtn = () => `<button class="snd" onclick="toggleSound()" aria-label="${state.soundOff ? 'Töne einschalten' : 'Töne ausschalten'}" title="${state.soundOff ? 'Töne einschalten' : 'Töne ausschalten'}">${state.soundOff ? ICON_SND_OFF : ICON_SND_ON}</button>`;
+function toggleSound() {
+  state.soundOff = !state.soundOff; save();
+  document.querySelectorAll('.snd').forEach(b => b.outerHTML = soundBtn());
+  playSound('pick');
+}
+function goNext() { playSound('next'); next(); }
 
 /* Automatisch zur nächsten Frage, sobald die Antwort komplett ist */
 let autoTimer = null;
@@ -711,7 +803,7 @@ function autoNext(ms) { clearTimeout(autoTimer); autoTimer = setTimeout(() => { 
 function pickSingle(id, i) {
   const s = STEPS.find(x => x.id === id);
   state.answers[id] = s.options[i];
-  save();
+  save(); playSound('pick');
   app.querySelectorAll('.answer').forEach((b, j) => { b.classList.toggle('selected', j === i); b.setAttribute('aria-pressed', j === i); });
   autoNext(320);
 }
@@ -722,12 +814,13 @@ function toggleMulti(id, i) {
   const all = allOptions(s);
   const o = all[i];
   let cur = (state.answers[id] || []).slice();
-  if (cur.includes(o)) cur = cur.filter(x => x !== o);
+  if (cur.includes(o)) { cur = cur.filter(x => x !== o); playSound('unpick'); }
   else {
+    playSound('pick');
     if (s.exclusive && o === s.exclusive) cur = [o];
     else {
       cur = cur.filter(x => x !== s.exclusive);
-      if (s.max && cur.length >= s.max) { flashHint(`Bitte höchstens ${s.max} Antworten wählen.`); return; }
+      if (s.max && cur.length >= s.max) { playSound('error'); flashHint(`Bitte höchstens ${s.max} Antworten wählen.`); return; }
       cur.push(o);
     }
   }
@@ -736,7 +829,7 @@ function toggleMulti(id, i) {
   app.querySelectorAll('.answer').forEach((b, j) => { const on = cur.includes(all[j]); b.classList.toggle('selected', on); b.setAttribute('aria-pressed', on); });
   const ow = document.getElementById('other-' + id); if (ow) ow.hidden = !cur.includes(s.other.label);
   const nb = document.getElementById('next-btn'); if (nb) nb.disabled = !multiOk(s, cur);
-  if (s.exclusive) { const pt = app.querySelector('.progress-text'); if (pt) pt.textContent = `Frage ${state.step + 1} von ${questionCount()}`; }
+  if (s.exclusive) { const pt = app.querySelector('.progress-text'); if (pt) pt.textContent = `Frage ${qPos(state.step)} von ${questionCount()}`; }
   // Fertig, wenn „gekauft“ gewählt ist oder die Höchstzahl erreicht ist.
   // Ist „Etwas anderes“ dabei und noch leer, bleibt die Frage offen zum Ausfüllen.
   const otherOpen = cur.includes(s.other.label) && !textOk(state.answers[s.other.id]);
@@ -755,7 +848,7 @@ function pickGrid(sid, rid, i) {
   const s = STEPS.find(x => x.id === sid);
   const cur = Object.assign({}, state.answers[sid] || {});
   const wasDone = Object.keys(cur).length >= s.rows.length;
-  cur[rid] = s.scale[i];
+  cur[rid] = s.scale[i]; playSound('pick');
   state.answers[sid] = cur;
   save();
   const row = app.querySelector(`[aria-label="${CSS.escape(s.rows.find(r => r.id === rid).label)}"]`);
@@ -792,7 +885,7 @@ function submitSurvey() {
   fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: data.toString() })
     .then(r => {
       if (!r.ok) throw new Error('HTTP ' + r.status);
-      state.done = true; state.name = name;
+      state.done = true; state.name = name; playSound('win');
       state.answers = {}; // Antworten nach dem Absenden nicht im Browser behalten
       save(); render();
     })
