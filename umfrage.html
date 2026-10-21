@@ -86,10 +86,6 @@
   .hx-lead b{color:var(--ink);font-weight:600}
   .hx-micro{font-size:.76em;color:var(--ink-faint);margin:.9em 0 0}
   .hx-micro a{color:var(--taupe-deep)}
-  .hx-mc{font-size:.84em;line-height:1.5;color:var(--ink-soft);margin:-.4em 0 1.4em}
-  .hx-mc a,.mc-link{color:var(--red);font-weight:600;text-decoration:underline;text-underline-offset:3px}
-  .dark-start .hx-mc{color:rgba(255,255,255,.7)}
-  .dark-start .hx-mc a{color:#F2A7B4}
   .hx-author{display:flex;align-items:center;gap:10px;margin-top:1.3em;text-align:left;font-size:.78em;line-height:1.35;color:var(--ink-soft)}
   .hx-author img{width:40px;height:40px;border-radius:50%;object-fit:cover;box-shadow:0 0 0 3px #fff,0 2px 8px rgba(45,43,48,.12)}
   .hx-author b{color:var(--ink);font-weight:600}
@@ -118,8 +114,6 @@
   .dark-start .terms{border-color:transparent}
   .hx-visual img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:50% 20%;border-radius:24px;box-shadow:0 24px 60px rgba(45,43,48,.12);display:block}
   /* Dankeschön-Box mit Gutschein-Grafik */
-  .gift-box{position:relative;display:flex;align-items:center;gap:16px;background:#fff;border:1.5px solid #F2CDD3;border-radius:22px;padding:16px 18px 16px 14px;margin:.4em 0 1.3em;max-width:480px;width:100%;text-align:left;box-shadow:0 18px 40px rgba(0,0,0,.22)}
-  .gift-box::before{content:'';position:absolute;inset:5px;border:1px dashed #F3D3D9;border-radius:17px;pointer-events:none}
   .gb-visual{width:104px;flex-shrink:0}
   .gb-visual svg,.gr-visual svg{width:100%;height:auto;display:block}
   .gb-kicker{display:block;font-size:.66em;letter-spacing:.16em;text-transform:uppercase;color:var(--gift);font-weight:700;margin-bottom:3px}
@@ -204,11 +198,29 @@
   .consent-check input{width:20px;height:20px;margin-top:1px;accent-color:var(--red);cursor:pointer}
   .consent-check a{color:var(--red);text-decoration:underline}
   .consent-check b{color:var(--ink);font-weight:600}
-  .hx-consent{max-width:480px;margin:0 0 1.1em;font-size:.76em}
-  .dark-start .hx-consent{color:rgba(255,255,255,.72)}
-  .dark-start .hx-consent a{color:#F2A7B4}
-  #h-error{max-width:480px;width:100%}
-  #h-error .form-error{margin:-.4em 0 1em}
+  /* Startseite: drei Karten, farblich getrennt (rot = Gewinnspiel, weiß = Start, dunkel = Infos) */
+  .card-gift,.card-start,.card-why{width:100%;max-width:480px;border-radius:22px;text-align:left}
+  .card-gift{position:relative;display:flex;align-items:center;gap:14px;background:linear-gradient(150deg,#E04C66 0%,#D7354F 48%,#B8263F 100%);color:#fff;padding:14px 16px 14px 12px;margin:.2em 0 12px;box-shadow:0 16px 36px rgba(184,38,63,.32)}
+  .card-gift::before{content:'';position:absolute;inset:5px;border:1px dashed rgba(255,255,255,.35);border-radius:17px;pointer-events:none}
+  .card-gift .gb-kicker{color:#FFE3DA}
+  .card-gift .gb-title{color:#fff}
+  .card-gift .gb-text{color:rgba(255,255,255,.88)}
+  .card-gift .gb-text a{color:#fff;text-decoration:underline;text-underline-offset:2px}
+  .card-start{background:#fff;padding:16px 18px 14px;margin:0 0 12px;box-shadow:0 16px 36px rgba(0,0,0,.25);display:flex;flex-direction:column;align-items:stretch}
+  .card-start .btn{align-self:stretch;justify-content:space-between;padding-left:24px;box-shadow:0 8px 18px rgba(201,45,71,.22)}
+  .card-start .btn.pulse{animation:pulseSoft 2.4s ease-out infinite}
+  @keyframes pulseSoft{0%{box-shadow:0 8px 18px rgba(201,45,71,.22),0 0 0 0 rgba(215,53,79,.35)}70%{box-shadow:0 8px 18px rgba(201,45,71,.22),0 0 0 9px rgba(215,53,79,0)}100%{box-shadow:0 8px 18px rgba(201,45,71,.22),0 0 0 0 rgba(215,53,79,0)}}
+  .hx-consent{margin:0 0 12px;font-size:.74em;line-height:1.45;color:var(--ink-soft)}
+  .hx-consent a{color:var(--red)}
+  .start-meta{margin:10px 0 0;text-align:center;font-size:.74em;color:var(--ink-faint)}
+  #h-error .form-error{margin:-4px 0 10px}
+  .card-why{background:rgba(255,255,255,.06);border:1px solid rgba(231,203,180,.28);padding:16px 18px;margin:0 0 4px;color:rgba(255,255,255,.8);font-size:.88em;line-height:1.55}
+  .card-why p{margin:0 0 12px}
+  .card-why b{color:var(--sand);font-weight:600}
+  .mc-link{color:var(--red);font-weight:600;text-decoration:underline;text-underline-offset:3px}
+  .mc-chip{display:inline-flex;align-items:center;gap:8px;background:rgba(231,203,180,.14);color:var(--sand);border-radius:40px;padding:7px 14px 7px 7px;font-size:.92em;font-weight:600;text-decoration:none}
+  .mc-chip .q{width:22px;height:22px;border-radius:50%;background:var(--sand);color:var(--dark);display:inline-flex;align-items:center;justify-content:center;font-size:.85em;font-weight:700}
+  .mc-chip:hover{background:rgba(231,203,180,.24)}
   .form-error{background:#FBEDEA;color:#8E3B2C;border-radius:10px;padding:10px 12px;font-size:.84em;line-height:1.45;margin:10px 0 4px;text-align:left}
   .small-note{font-size:.74em;color:var(--ink-faint);line-height:1.5;text-align:center;margin:12px 0 0}
 
@@ -242,12 +254,16 @@
     .container{padding:18px 16px 28px}
     .question h2{font-size:1.4em}
     .answer{padding:14px 16px;font-size:.93em}
-    .hx-h1{font-size:2.05em}
-    .hx-sub{font-size:1.08em}
+    .hx-h1{font-size:1.95em;margin-bottom:.45em}
+    .hx-sub{display:none}
+    .hx-pill{margin-bottom:.8em;font-size:.76em}
+    .brand-mark{margin-bottom:18px}
+    .hero{gap:22px}
     .hx-lead{font-size:.93em}
     .hx-visual{max-width:250px}
     .gb-visual{width:80px}
-    .gift-box{gap:12px;padding:14px 14px 14px 12px}
+    .card-gift{gap:12px;padding:12px 14px 12px 10px}
+    .card-gift .gb-title{font-size:.98em}
     .gift-sticker{width:96px;height:96px;right:-10px;top:14px}
     .gift-sticker b{font-size:.95em}
     .gift-sticker span{font-size:.5em;padding:0 9px;margin-top:3px}
@@ -352,6 +368,7 @@
 
 const CONFIG = {
   deadlineText: 'Sonntag, 29. November 2026',
+  deadlineShort: '29. November',
   drawText: 'Montag, 30. November 2026',
   deadline: '2026-11-29T23:59:59+01:00',   // danach: Umfrage weiter möglich, Gewinnspiel-Haken ausgeblendet
   storageKey: 'umfrage_phx_v1',
@@ -362,7 +379,7 @@ const CONFIG = {
 
 const MC_LINK = '/masterclass?utm_source=umfrage&utm_medium=link&utm_campaign=phoenixjahre-umfrage';
 const GIFT_CARDS = '<svg viewBox="0 0 132 92" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">'
-  + '<g transform="rotate(-9 82 40)"><rect x="34" y="6" width="92" height="58" rx="10" fill="#D7354F"/><text x="118" y="22" text-anchor="end" font-family="Poppins,Arial,sans-serif" font-weight="700" font-size="12" fill="#fff">50 €</text></g>'
+  + '<g transform="rotate(-9 82 40)"><rect x="34" y="6" width="92" height="58" rx="10" fill="#E7CBB4"/><text x="118" y="22" text-anchor="end" font-family="Poppins,Arial,sans-serif" font-weight="700" font-size="12" fill="#2D2B30">50 €</text></g>'
   + '<rect x="4" y="26" width="96" height="60" rx="10" fill="#2D2B30"/>'
   + '<rect x="80" y="26" width="9" height="60" fill="#BFA492"/>'
   + '<path d="M84.5 33c-4-7-13-8-13-2.5s7.5 4.5 13 2.5zm0 0c4-7 13-8 13-2.5s-7.5 4.5-13 2.5z" fill="none" stroke="#E8D9CC" stroke-width="2.4"/>'
@@ -515,29 +532,34 @@ function head(s) {
 }
 
 function renderHero() {
+  const open = raffleOpen();
   app.innerHTML = `
   <section class="screen hero">
     <div class="hx-text">
       <span class="hx-pill"><span class="dot"></span>Kurze Umfrage · 5 bis 8 Minuten</span>
       <h1 class="hx-h1">Hilf mir, <span class="phx">Phönixjahre</span> <em>noch besser</em> zu machen</h1>
       <p class="hx-sub">Deine ehrliche Meinung ist mir wichtig.</p>
-      ${raffleOpen() ? `<div class="gift-box">
+      ${open ? `<div class="card-gift">
         <div class="gb-visual">${GIFT_CARDS}</div>
         <div><span class="gb-kicker">Mein Dankeschön an dich</span>
-        <b class="gb-title">Ich verlose 2 Amazon-Gutscheine à&nbsp;50&nbsp;€</b>
-        <span class="gb-text">unter allen, die bis ${CONFIG.deadlineText} mitmachen. Am Ende einfach den Haken setzen. <a href="#teilnahmebedingungen" onclick="openTerms(event)">Teilnahmebedingungen</a></span></div>
+        <b class="gb-title">2 Amazon-Gutscheine à&nbsp;50&nbsp;€ zu gewinnen</b>
+        <span class="gb-text">Unter allen, die bis ${CONFIG.deadlineShort} mitmachen. <a href="#teilnahmebedingungen" onclick="openTerms(event)">Teilnahmebedingungen</a></span></div>
       </div>` : ''}
-      <p class="hx-lead">Gerade wenn du <b>nicht gekauft</b> hast, helfen mir deine Antworten am meisten. So kann ich mein Angebot weiterentwickeln, damit es noch besser für Frauen ab&nbsp;40 passt.</p>
-      <div class="facts"><span>12 kurze Fragen</span><span>Meist nur anklicken</span><span>Auch ohne Namen möglich</span></div>
-      <p class="hx-mc">Du weißt nicht genau, was Phönixjahre ist? <a href="${MC_LINK}" target="_blank" rel="noopener">Hier kannst du dir die Masterclass ansehen ↗</a></p>
-      <label class="consent-check hx-consent"><input type="checkbox" id="h-consent" ${state.consentAt ? 'checked' : ''} onchange="document.getElementById('h-error').innerHTML=''"><span>Ich bin einverstanden, dass Jasmin meine Antworten nach jeder Frage speichert und auswertet, um ihre Angebote zu verbessern, auch wenn ich nicht bis zum Ende mitmache. Meine Antworten können Rückschlüsse auf meine Gesundheit zulassen. Widerruf jederzeit per E-Mail. Mehr in der <a href="/datenschutz" target="_blank" rel="noopener">Datenschutzerklärung</a>.</span></label>
-      <div id="h-error"></div>
-      <button class="btn pulse" onclick="start()">${state.step > 0 ? 'Weiter, wo ich war' : 'Umfrage starten'} <span class="arrow">→</span></button>
+      <div class="card-start">
+        <label class="consent-check hx-consent"><input type="checkbox" id="h-consent" ${state.consentAt ? 'checked' : ''} onchange="document.getElementById('h-error').innerHTML=''"><span>Ich bin einverstanden, dass Jasmin meine Antworten nach jeder Frage speichert und auswertet, um ihre Angebote zu verbessern. Sie können Hinweise auf meine Gesundheit enthalten. Widerruf jederzeit, <a href="/datenschutz" target="_blank" rel="noopener">Datenschutz</a>.</span></label>
+        <div id="h-error"></div>
+        <button class="btn pulse" onclick="start()">${state.step > 0 ? 'Weiter, wo ich war' : 'Umfrage starten'} <span class="arrow">→</span></button>
+        <p class="start-meta">12 Fragen · meist nur anklicken · auch ohne Namen</p>
+      </div>
+      <div class="card-why">
+        <p><b>Gerade wenn du nicht gekauft hast,</b> helfen mir deine Antworten am meisten. So kann ich mein Angebot weiterentwickeln, damit es noch besser für Frauen ab&nbsp;40 passt.</p>
+        <a class="mc-chip" href="${MC_LINK}" target="_blank" rel="noopener"><span class="q">?</span>Was ist Phönixjahre? Ansehen ↗</a>
+      </div>
       <div class="hx-author"><img src="jasmin-avatar.webp" alt="Jasmin Schmidtke" width="40" height="40"><div><b>Jasmin Schmidtke</b><br>Heilpraktikerin für Frauen ab 40</div></div>
     </div>
     <div class="hx-visual">
       <img src="jasmin-entspannt.webp" alt="Jasmin Schmidtke" width="800" height="1000">
-      ${raffleOpen() ? `<div class="gift-sticker"><b>2 × 50 €</b><span>Amazon-Gutschein zu gewinnen</span></div>` : ''}
+      ${open ? `<div class="gift-sticker"><b>2 × 50 €</b><span>Amazon-Gutschein zu gewinnen</span></div>` : ''}
     </div>
   </section>`;
 }
