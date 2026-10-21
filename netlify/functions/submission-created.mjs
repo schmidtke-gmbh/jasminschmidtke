@@ -47,9 +47,8 @@ async function saveSurveyToAC(d) {
 }
 
 // Umfrage Phönixjahre (umfrage.html): nur bestehende Kontakte markieren, keine neuen Kontakte anlegen.
-//   Tag 30 „Umfrage Phönixjahre: teilgenommen“, Tag 31 „Umfrage Phönixjahre: Gespräch ja“ (angelegt am 21.10.2026)
+//   Tag 30 „Umfrage Phönixjahre: teilgenommen“ (angelegt am 21.10.2026). Die Gesprächsfrage ist entfallen.
 const AC_TAG_UMFRAGE = '30';
-const AC_TAG_GESPRAECH = '31';
 
 async function tagSurveyInAC(d) {
   const email = String(d.email || '').trim();
@@ -58,7 +57,6 @@ async function tagSurveyInAC(d) {
   const id = found?.contacts?.[0]?.id;
   if (!id) return ':grey_question: E-Mail nicht in ActiveCampaign, nur in Netlify gespeichert';
   const tags = [AC_TAG_UMFRAGE];
-  if (/^ja/i.test(String(d.gespraech || ''))) tags.push(AC_TAG_GESPRAECH);
   const base = (process.env.AC_API_URL || '').replace(/\/+$/, '');
   for (const tag of tags) {
     const r = await fetch(`${base}/api/3/contactTags`, {
@@ -69,7 +67,7 @@ async function tagSurveyInAC(d) {
     });
     if (!r.ok) throw new Error(`ActiveCampaign: HTTP ${r.status}`);
   }
-  return tags.length > 1 ? ':white_check_mark: in ActiveCampaign markiert (teilgenommen + Gespräch ja)' : ':white_check_mark: in ActiveCampaign markiert (teilgenommen)';
+  return ':white_check_mark: in ActiveCampaign markiert (teilgenommen)';
 }
 
 export default async (req) => {
@@ -118,7 +116,7 @@ export default async (req) => {
   const long = (v) => esc(String(v ?? '').slice(0, 400)) || 'keine Angabe';
   const text = form === 'phoenixjahre-umfrage'
     // Ohne Name und E-Mail (Gesundheitsangaben möglich), Zuordnung über die Tags in ActiveCampaign
-    ? `:memo: *${title}*\nHindernis: ${long(d.hindernis)}${d.hindernis_sonstiges ? ` (${long(d.hindernis_sonstiges)})` : ''}\nFairer Preis: ${long(d.preis)} · Raten: ${long(d.raten)}\nFormat: ${long(d.format)}\nGespräch: ${esc(d.gespraech) || 'keine Angabe'} · Gewinnspiel: ${esc(d.gewinnspiel) || 'nein'}\n${status}`
+    ? `:memo: *${title}*\nHindernis: ${long(d.hindernis)}${d.hindernis_sonstiges ? ` (${long(d.hindernis_sonstiges)})` : ''}\nFairer Preis: ${long(d.preis)} · Raten: ${long(d.raten)}\nFormat: ${long(d.format)}\nGewinnspiel: ${esc(d.gewinnspiel) || 'nein'}\n${status}`
     : form === 'webinar-umfrage'
     // Umfrage ohne Name und E-Mail in Slack (Gesundheitsangaben), Zuordnung steht in ActiveCampaign
     ? `:memo: *${title}*\nBelastet: ${long(d.belastung)}\nWürde helfen: ${long(d.hilfe)}\nFrage an Jasmin: ${long(d.frage)}\n${status}`

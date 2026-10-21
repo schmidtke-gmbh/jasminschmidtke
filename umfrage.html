@@ -204,6 +204,11 @@
   .consent-check input{width:20px;height:20px;margin-top:1px;accent-color:var(--red);cursor:pointer}
   .consent-check a{color:var(--red);text-decoration:underline}
   .consent-check b{color:var(--ink);font-weight:600}
+  .hx-consent{max-width:480px;margin:0 0 1.1em;font-size:.76em}
+  .dark-start .hx-consent{color:rgba(255,255,255,.72)}
+  .dark-start .hx-consent a{color:#F2A7B4}
+  #h-error{max-width:480px;width:100%}
+  #h-error .form-error{margin:-.4em 0 1em}
   .form-error{background:#FBEDEA;color:#8E3B2C;border-radius:10px;padding:10px 12px;font-size:.84em;line-height:1.45;margin:10px 0 4px;text-align:left}
   .small-note{font-size:.74em;color:var(--ink-faint);line-height:1.5;text-align:center;margin:12px 0 0}
 
@@ -271,7 +276,26 @@
   <textarea name="perfekt"></textarea><textarea name="hoffnung"></textarea><textarea name="wunsch"></textarea>
   <input type="text" name="alter" />
   <input type="text" name="vorname" /><input type="email" name="email" />
-  <input type="text" name="gewinnspiel" /><input type="text" name="einwilligung" />
+  <input type="text" name="gewinnspiel" /><input type="text" name="einwilligung" /><input type="text" name="sid" />
+  <input type="text" name="utm_source" /><input type="text" name="utm_medium" /><input type="text" name="utm_campaign" /><input type="text" name="utm_content" />
+</form>
+
+<!-- Zwischenstände: nach jeder beantworteten Frage (und beim Verlassen der Seite) mit derselben Kennung „sid“.
+     Pro Teilnehmerin zählt die jüngste Zeile. Wer abschließt, steht zusätzlich komplett im Formular „phoenixjahre-umfrage“. -->
+<form name="phoenixjahre-umfrage-zwischenstand" data-netlify="true" netlify-honeypot="bot-field" hidden>
+  <input type="text" name="bot-field" />
+  <input type="text" name="sid" /><input type="text" name="stand" /><input type="text" name="letzte_frage" />
+  <input type="text" name="gruende" /><input type="text" name="gruende_sonstiges" />
+  <input type="text" name="quelle" /><input type="text" name="webinar" />
+  <input type="text" name="hindernis" /><input type="text" name="hindernis_sonstiges" />
+  <input type="text" name="preis" /><input type="text" name="raten" />
+  <input type="text" name="b_videos" /><input type="text" name="b_kompass" /><input type="text" name="b_livecalls" />
+  <input type="text" name="b_community" /><input type="text" name="b_rezepte" /><input type="text" name="b_bewegung" />
+  <input type="text" name="b_blutanalyse" /><input type="text" name="b_handouts" />
+  <input type="text" name="format" />
+  <textarea name="perfekt"></textarea><textarea name="hoffnung"></textarea><textarea name="wunsch"></textarea>
+  <input type="text" name="alter" />
+  <input type="text" name="einwilligung" />
   <input type="text" name="utm_source" /><input type="text" name="utm_medium" /><input type="text" name="utm_campaign" /><input type="text" name="utm_content" />
 </form>
 
@@ -319,7 +343,7 @@
 
 <script>
 /* ============================================================
-   UMFRAGE PHÖNIXJAHRE · v3 (Stand 2026-10-21: Pflichtfragen, ohne Gespräch, Ziehung 30.11.)
+   UMFRAGE PHÖNIXJAHRE · v4 (Stand 2026-10-21: Zwischenstand nach jeder Frage, Einwilligung beim Start)
    Netlify-Formular „phoenixjahre-umfrage“ (AJAX an „/“).
    Die Netlify-Funktion submission-created meldet neue Antworten
    ohne Namen und E-Mail in Slack und setzt in ActiveCampaign den
@@ -332,7 +356,8 @@ const CONFIG = {
   deadline: '2026-11-29T23:59:59+01:00',   // danach: Umfrage weiter möglich, Gewinnspiel-Haken ausgeblendet
   storageKey: 'umfrage_phx_v1',
   consentVersion: '2026-10-21',
-  formName: 'phoenixjahre-umfrage'
+  formName: 'phoenixjahre-umfrage',
+  partialFormName: 'phoenixjahre-umfrage-zwischenstand'
 };
 
 const MC_LINK = '/masterclass?utm_source=umfrage&utm_medium=link&utm_campaign=phoenixjahre-umfrage';
@@ -436,7 +461,8 @@ const allOptions = s => s.options.concat([s.other.label], s.exclusive ? [s.exclu
 /* ------------------------------------------------------------
    ZUSTAND (mit Zwischenspeicher im Browser, falls möglich)
    ------------------------------------------------------------ */
-let state = { step: -1, answers: {}, done: false, raffle: false, name: '' };
+let state = { step: -1, answers: {}, done: false, raffle: false, name: '', sid: '', consentAt: '', lastSent: '', lastAnswered: 0 };
+const newSid = () => (window.crypto && crypto.randomUUID) ? crypto.randomUUID().slice(0, 13) : Math.random().toString(36).slice(2, 15);
 function load() { try { const s = JSON.parse(localStorage.getItem(CONFIG.storageKey) || 'null'); if (s && typeof s === 'object') state = Object.assign(state, s); } catch (e) {} }
 function save() { try { localStorage.setItem(CONFIG.storageKey, JSON.stringify(state)); } catch (e) {} }
 
@@ -504,6 +530,8 @@ function renderHero() {
       <p class="hx-lead">Gerade wenn du <b>nicht gekauft</b> hast, helfen mir deine Antworten am meisten. So kann ich mein Angebot weiterentwickeln, damit es noch besser für Frauen ab&nbsp;40 passt.</p>
       <div class="facts"><span>12 kurze Fragen</span><span>Meist nur anklicken</span><span>Auch ohne Namen möglich</span></div>
       <p class="hx-mc">Du weißt nicht genau, was Phönixjahre ist? <a href="${MC_LINK}" target="_blank" rel="noopener">Hier kannst du dir die Masterclass ansehen ↗</a></p>
+      <label class="consent-check hx-consent"><input type="checkbox" id="h-consent" ${state.consentAt ? 'checked' : ''} onchange="document.getElementById('h-error').innerHTML=''"><span>Ich bin einverstanden, dass Jasmin meine Antworten nach jeder Frage speichert und auswertet, um ihre Angebote zu verbessern, auch wenn ich nicht bis zum Ende mitmache. Meine Antworten können Rückschlüsse auf meine Gesundheit zulassen. Widerruf jederzeit per E-Mail. Mehr in der <a href="/datenschutz" target="_blank" rel="noopener">Datenschutzerklärung</a>.</span></label>
+      <div id="h-error"></div>
       <button class="btn pulse" onclick="start()">${state.step > 0 ? 'Weiter, wo ich war' : 'Umfrage starten'} <span class="arrow">→</span></button>
       <div class="hx-author"><img src="jasmin-avatar.webp" alt="Jasmin Schmidtke" width="40" height="40"><div><b>Jasmin Schmidtke</b><br>Heilpraktikerin für Frauen ab 40</div></div>
     </div>
@@ -566,10 +594,9 @@ function renderFinal() {
       <label class="field-label" for="f-email">E-Mail-Adresse</label>
       <input class="input-field" id="f-email" type="email" autocomplete="email" maxlength="120" value="${esc(a.email || '')}" placeholder="deine@email.de">
       ${open ? `<label class="consent-check"><input type="checkbox" id="f-raffle" ${state.raffle ? 'checked' : ''}><span><b>Ja, ich mache beim Gewinnspiel mit.</b> Ich bin mindestens 18 Jahre alt und habe die <a href="#teilnahmebedingungen" onclick="openTerms(event)">Teilnahmebedingungen</a> gelesen.</span></label>` : ''}
-      <label class="consent-check"><input type="checkbox" id="f-consent"><span>Ich bin einverstanden, dass Jasmin meine Antworten speichert und auswertet, um ihre Angebote und Inhalte zu verbessern. Meine Antworten können Rückschlüsse auf meine Gesundheit zulassen. Ich kann meine Einwilligung jederzeit per E-Mail widerrufen. Mehr in der <a href="/datenschutz" target="_blank" rel="noopener">Datenschutzerklärung</a>.</span></label>
       <div id="f-error"></div>
       <div class="continue-bar" style="margin-top:1.2em"><button class="btn" id="send-btn" onclick="submitSurvey()">Antworten absenden <span class="arrow">→</span></button></div>
-      <p class="small-note">Ohne Gewinnspiel kannst du Name und E-Mail einfach leer lassen und anonym absenden.</p>
+      <p class="small-note">Ohne Gewinnspiel kannst du Name und E-Mail einfach leer lassen und anonym absenden. Deine Antworten sind schon gespeichert, mit dem Absenden schließt du die Umfrage ab.</p>
     </div>
     <input type="text" id="f-hp" name="bot-field" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true">`;
 }
@@ -594,9 +621,67 @@ function renderThanks() {
 /* ------------------------------------------------------------
    AKTIONEN
    ------------------------------------------------------------ */
-function start() { if (state.step < 0) state.step = 0; save(); render(); }
+function start() {
+  const c = document.getElementById('h-consent');
+  if (c && !c.checked) { document.getElementById('h-error').innerHTML = '<div class="form-error">Bitte bestätige kurz die Einwilligung, dann geht es los.</div>'; return; }
+  if (!state.consentAt) state.consentAt = new Date().toISOString();
+  if (!state.sid) state.sid = newSid();
+  if (state.step < 0) state.step = 0; save(); render();
+}
 function goBack() { if (state.step <= 0) { state.step = -1; } else { state.step--; } save(); render(); }
-function next() { const steps = visibleSteps(); state.step = Math.min(state.step + 1, steps.length - 1); save(); render(); }
+function next() {
+  const steps = visibleSteps();
+  sendPartial(state.step + 1, false);   // gerade beantwortete Frage sofort speichern
+  state.step = Math.min(state.step + 1, steps.length - 1); save(); render();
+}
+/* ------------------------------------------------------------
+   ZWISCHENSTAND: nach jeder Frage an Netlify (Formular „phoenixjahre-umfrage-zwischenstand“)
+   ------------------------------------------------------------ */
+function answerFields(a) {
+  const grid = a.bausteine || {};
+  const f = {
+    gruende: (a.gruende || []).join(' | '), gruende_sonstiges: a.gruende_sonstiges || '',
+    quelle: a.quelle || '', webinar: a.webinar || '',
+    hindernis: (a.hindernis || []).join(' | '), hindernis_sonstiges: a.hindernis_sonstiges || '',
+    preis: bought(a) ? '' : (a.preis || ''), raten: bought(a) ? '' : (a.raten || ''),
+    format: a.format || '', perfekt: a.perfekt || '', hoffnung: a.hoffnung || '', wunsch: a.wunsch || '',
+    alter: a.alter || '',
+    einwilligung: state.consentAt ? `ja · Version ${CONFIG.consentVersion} · ${state.consentAt}` : ''
+  };
+  STEPS.find(s => s.id === 'bausteine').rows.forEach(r => f[r.id] = grid[r.id] || '');
+  return Object.assign(f, utm);
+}
+function sendPartial(answered, leaving) {
+  if (!state.consentAt || state.done || state.step < 0) return;
+  if (!state.sid) state.sid = newSid();
+  const steps = visibleSteps();
+  const cur = steps[Math.min(state.step, steps.length - 1)];
+  const fields = Object.assign(answerFields(state.answers), {
+    sid: state.sid,
+    stand: `${answered} von ${questionCount()} beantwortet${leaving ? ' (Seite verlassen)' : ''}`,
+    letzte_frage: cur ? cur.id : ''
+  });
+  const sig = JSON.stringify(answerFields(state.answers));
+  // Nichts Neues seit dem letzten Speichern? Beim Weiterklicken trotzdem senden, wenn eine Frage mehr beantwortet ist.
+  if (sig === state.lastSent && (leaving || answered <= (state.lastAnswered || 0))) return;
+  const data = new URLSearchParams();
+  data.append('form-name', CONFIG.partialFormName);
+  data.append('bot-field', '');
+  Object.entries(fields).forEach(([k, v]) => data.append(k, String(v).slice(0, 1500)));
+  const body = data.toString();
+  let queued = false;
+  if (leaving && navigator.sendBeacon) {
+    try { queued = navigator.sendBeacon('/', new Blob([body], { type: 'application/x-www-form-urlencoded' })); } catch (e) {}
+  }
+  if (!queued) {
+    try { fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body, keepalive: true }).catch(() => {}); } catch (e) {}
+  }
+  state.lastSent = sig; if (!leaving) state.lastAnswered = Math.max(answered, state.lastAnswered || 0); save();
+}
+/* Beim Verlassen (Tab zu, App-Wechsel, Bildschirm aus) den aktuellen Stand sichern, z. B. halb getippten Text */
+document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'hidden') sendPartial(Math.max(state.step, 0), true); });
+window.addEventListener('pagehide', () => sendPartial(Math.max(state.step, 0), true));
+
 /* Automatisch zur nächsten Frage, sobald die Antwort komplett ist */
 let autoTimer = null;
 function autoNext(ms) { clearTimeout(autoTimer); autoTimer = setTimeout(() => { autoTimer = null; next(); }, ms); }
@@ -667,29 +752,17 @@ function submitSurvey() {
   const email = document.getElementById('f-email').value.trim();
   const raffleEl = document.getElementById('f-raffle');
   const raffle = !!(raffleEl && raffleEl.checked);
-  const consent = document.getElementById('f-consent').checked;
   a.vorname = name; a.email = email; state.raffle = raffle; save();
-  if (!consent) return showError('Bitte bestätige noch die Einwilligung zur Auswertung deiner Antworten.');
   if (email && !/^\S+@\S+\.\S+$/.test(email)) return showError('Bitte prüfe deine E-Mail-Adresse.');
   if (raffle && (!name || !email)) return showError('Für das Gewinnspiel brauche ich deinen Vornamen und deine E-Mail-Adresse.');
   showError('');
 
-  const grid = a.bausteine || {};
   const data = new URLSearchParams();
   data.append('form-name', CONFIG.formName);
   data.append('bot-field', document.getElementById('f-hp').value);
-  const fields = {
-    gruende: (a.gruende || []).join(' | '), gruende_sonstiges: a.gruende_sonstiges || '',
-    quelle: a.quelle || '', webinar: a.webinar || '',
-    hindernis: (a.hindernis || []).join(' | '), hindernis_sonstiges: a.hindernis_sonstiges || '',
-    preis: bought(a) ? '' : (a.preis || ''), raten: bought(a) ? '' : (a.raten || ''),
-    format: a.format || '', perfekt: a.perfekt || '', hoffnung: a.hoffnung || '', wunsch: a.wunsch || '',
-    alter: a.alter || '',
-    vorname: name, email: email, gewinnspiel: raffle ? 'ja' : 'nein',
-    einwilligung: `ja · Version ${CONFIG.consentVersion} · ${new Date().toISOString()}`
-  };
-  STEPS.find(s => s.id === 'bausteine').rows.forEach(r => fields[r.id] = grid[r.id] || '');
-  Object.assign(fields, utm);
+  const fields = Object.assign(answerFields(a), {
+    vorname: name, email: email, gewinnspiel: raffle ? 'ja' : 'nein', sid: state.sid || ''
+  });
   Object.entries(fields).forEach(([k, v]) => data.append(k, String(v).slice(0, 1500)));
 
   const btn = document.getElementById('send-btn');
