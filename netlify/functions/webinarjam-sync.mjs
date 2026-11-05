@@ -1,4 +1,7 @@
-// Netlify-Funktion, läuft automatisch alle 15 Minuten (geplante Funktion, hat keine Adresse zum Aufrufen).
+// GESTOPPT am 05.11.2026 auf Wunsch von Fabian: läuft nicht mehr automatisch und tut nichts mehr.
+// Wieder einschalten: Zeile mit config.schedule unten wieder aktivieren und AKTIV auf true setzen.
+//
+// Netlify-Funktion, lief automatisch alle 15 Minuten (geplante Funktion).
 //
 // 1. Link nachtragen: Wer in ActiveCampaign den Tag „Webinar 20.10.“ hat (Webinar-Seite bestätigt
 //    oder Klick auf „Ja, ich bin dabei“ in der Wartelisten-Einladung), aber noch keinen Webinar-Link,
@@ -12,7 +15,8 @@
 
 import { AC_FIELD_LINK, registerToWebinar, saveLinkToAC, acGet } from '../lib/webinar.mjs';
 
-export const config = { schedule: '*/15 * * * *' };
+// export const config = { schedule: '*/15 * * * *' };   // gestoppt 05.11.2026
+const AKTIV = false;
 
 const TAG_WEBINAR = '17';      // „Webinar 20.10.“
 const TAG_DOI = '20';          // „DOI-Erinnerung gesendet“
@@ -56,6 +60,7 @@ async function slack(text) {
 }
 
 export default async () => {
+  if (!AKTIV) return new Response('gestoppt');
   const start = Date.now();
   const zeitUebrig = () => Date.now() - start < BUDGET_MS;
   const ergebnis = { links: 0, erinnerungen: 0, fehler: [] };
