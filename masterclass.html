@@ -2170,6 +2170,49 @@
       .v4-kits .kc.kc-bonus { grid-template-columns: 96px minmax(0, 1fr); gap: 0 14px; padding: 10px 14px 10px 10px; }
       .v4-kits .kc.kc-bonus .kv { width: 96px; grid-row: 1 / span 3; }
     }
+
+    /* ── Feedback 09.11. nachmittags (2) ── */
+    /* Dein Weg: große Karten, die sich beim Scrollen übereinanderschieben */
+    .v4-way { background: linear-gradient(180deg, #FFFFFF 0%, #FBF3EE 100%); overflow: visible; }
+    .v4-way .head { max-width: 760px; }
+    .way { max-width: 1060px; margin: 0 auto; display: grid; gap: 34px; }
+    .way-c { position: sticky; top: calc(84px + var(--k) * 28px); display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr); gap: 46px; align-items: center; min-height: 460px; padding: 46px 50px; border-radius: 30px; background: #fff; border: 1px solid var(--line); box-shadow: 0 -10px 40px rgba(120,80,60,.08), 0 30px 60px rgba(120,80,60,.12); transform-origin: 50% 0; will-change: transform, opacity; }
+    .way-c.c2 { background: #FFFAF8; border: 1px solid rgba(215,53,79,.2); }
+    .way-c.c3 { background: linear-gradient(160deg, #FFFFFF 0%, #FCEFF1 100%); border: 2px solid rgba(215,53,79,.3); }
+    .way-n { display: inline-flex; align-items: center; gap: 12px; font-size: 13px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--red); }
+    .way-n i { width: 38px; height: 38px; border-radius: 50%; background: var(--red); color: #fff; font-family: 'Playfair Display', Georgia, serif; font-size: 19px; letter-spacing: 0; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 18px rgba(215,53,79,.28); }
+    .way-c h3 { font-family: 'Playfair Display', Georgia, serif; font-weight: 500; font-size: clamp(36px, 3.8vw, 52px); line-height: 1.08; color: var(--ink); margin: 16px 0 12px; }
+    .way-lead { font-size: 18px; line-height: 1.6; color: var(--ink); margin-bottom: 18px; }
+    .way-c ul { display: flex; flex-direction: column; gap: 9px; margin-bottom: 22px; }
+    .way-c li { display: grid; grid-template-columns: 22px 1fr; gap: 12px; align-items: start; font-size: 15.5px; line-height: 1.5; color: var(--body); }
+    .way-res { padding: 13px 16px; border-radius: 14px; background: rgba(107,140,90,.10); font-size: 15.5px; line-height: 1.5; color: var(--ink); }
+    .way-res b { color: var(--green); }
+    .way-v { position: relative; border-radius: 22px; overflow: hidden; aspect-ratio: 4 / 3.3; background: linear-gradient(160deg, #F8F2EC, #EDE2D6); box-shadow: inset 0 0 0 1px rgba(140,103,67,.08); }
+    .way-v img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; padding: 4%; }
+    .way-v.ph img { object-fit: cover; object-position: 50% 22%; padding: 0; }
+    @media (max-width: 900px) {
+      .way { gap: 24px; }
+      .way-c { grid-template-columns: 1fr; gap: 18px; min-height: 0; padding: 22px 20px 22px; top: calc(16px + var(--k) * 16px); border-radius: 24px; }
+      .way-v { order: -1; aspect-ratio: 16 / 9; border-radius: 16px; }
+      .way-c h3 { font-size: 32px; margin: 10px 0 8px; }
+      .way-lead { font-size: 16px; margin-bottom: 12px; }
+      .way-c ul { margin-bottom: 14px; gap: 7px; }
+      .way-c li { font-size: 14.5px; }
+      .way-res { font-size: 14.5px; padding: 11px 14px; }
+      .way-n i { width: 32px; height: 32px; font-size: 16px; }
+    }
+    @media (prefers-reduced-motion: reduce) { .way-c { position: relative; top: auto; transform: none !important; opacity: 1 !important; } }
+
+    /* Ohne roten Faden: dunkel und gut lesbar */
+    .vn2 .vn-off { background: #2D2B30; border: 0; box-shadow: 0 24px 50px rgba(45,43,48,.22); }
+    .vn2 .vn-off .vn-lbl { color: var(--sand); }
+    .vn2 .vn-off .vn-knot { color: rgba(231,203,180,.6); }
+    .vn2 .vn-off li { color: rgba(255,255,255,.88); }
+    .vn2 .vn-off .x { background: rgba(215,53,79,.22); color: #F2A3B0; }
+
+    /* Für wen: Selbstwirksamkeit als erster Punkt hervorgehoben */
+    .v4-vs .vs .with li.vs-key { font-weight: 600; color: var(--ink); background: #FBEDEF; border-radius: 14px; padding: 12px 14px; margin: -4px -6px 2px; }
+    .v4-vs .vs .with li.vs-key .ck { background: var(--red); color: #fff; }
   </style>
 </head>
 <body>
@@ -2278,11 +2321,49 @@
           <p class="v4-mid"><span class="v4-mid-ic" aria-hidden="true"><svg class="pdf-ic" viewBox="0 0 20 24" aria-hidden="true"><path d="M3.5 1h9.5l6 6v14a2 2 0 0 1-2 2H3.5a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2z" fill="#fff" stroke="#D7354F" stroke-width="1.6"/><path d="M13 1v6h6" fill="none" stroke="#D7354F" stroke-width="1.6"/><rect x="0" y="11.5" width="16.5" height="8" rx="1.6" fill="#D7354F"/><text x="8.25" y="17.7" text-anchor="middle" font-size="6.2" font-weight="700" fill="#fff" font-family="Arial, Helvetica, sans-serif">PDF</text></svg></span><span><b>In der Mitte: dein Blutwerte-Kompass.</b> Blutwerte können zusätzliche Hinweise geben und helfen, die vier Bereiche besser&nbsp;einzuordnen.</span></p>
         </div>
 
-        <div class="steps3-head rv"><h3>So wird aus Wissen dein&nbsp;<span class="ac">Alltag</span></h3></div>
-        <ol class="steps3">
-          <li class="rv"><span class="s3-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M10 8.6v6.8l5.4-3.4z"/></svg></span><span class="s3-n">Schritt 1</span><b>Verstehen</b><p>In kurzen Videos erkläre ich dir, was in deinem Körper passiert und&nbsp;warum.</p></li>
-          <li class="rv"><span class="s3-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 6h10M10 12h10M10 18h10"/><path d="M4 6l1.2 1.2L7.5 5M4 12l1.2 1.2L7.5 11M4 18l1.2 1.2L7.5 17"/></svg></span><span class="s3-n">Schritt 2</span><b>Umsetzen</b><p>Jede Woche ein Schwerpunkt, mit Handouts, Checklisten und konkreten&nbsp;Wochenaufgaben.</p></li>
-          <li class="rv"><span class="s3-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 2l3 3-3 3"/><path d="M4 11V9a4 4 0 0 1 4-4h12"/><path d="M7 22l-3-3 3-3"/><path d="M20 13v2a4 4 0 0 1-4 4H4"/></svg></span><span class="s3-n">Schritt 3</span><b>Dranbleiben</b><p>Es entstehen Routinen, die zu deinem Leben passen. Ohne Verzicht und kurzfristige&nbsp;Challenges.</p></li>
+      </div>
+    </section>
+
+
+    <!-- ═══════ 3b DEIN WEG: drei Schritte, Karten schieben sich beim Scrollen übereinander ═══════ -->
+    <section class="sec v4-way" aria-label="So wird aus Wissen dein Alltag">
+      <div class="wrap">
+        <div class="head rv">
+          <span class="pill">Dein Weg mit Phönixjahre</span>
+          <h2>So wird aus Wissen dein <span class="ac">Alltag</span>.</h2>
+          <p>In drei Schritten vom Verstehen zu Routinen, die zu deinem Leben&nbsp;passen.</p>
+        </div>
+        <ol class="way">
+          <li class="way-c c1" style="--k:0">
+            <div class="way-t">
+              <span class="way-n"><i>1</i>Schritt 1</span>
+              <h3>Verstehen</h3>
+              <p class="way-lead">In kurzen Videos erkläre ich dir, was in deinem Körper ab&nbsp;40 passiert und&nbsp;warum.</p>
+              <ul><li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>16 Module mit über 75&nbsp;Videos</span></li><li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>Zahnrad-Methode und Blutwerte-Kompass</span></li><li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>Verständlich erklärt, in deinem&nbsp;Tempo</span></li></ul>
+              <p class="way-res"><b>Dein Ergebnis:</b> Du verstehst, warum dein Körper heute anders reagiert als&nbsp;früher.</p>
+            </div>
+            <div class="way-v"><img src="bestandteil-videokurs.webp" width="1200" height="660" alt="Mitgliederbereich von Phönixjahre mit Modulen und Videos auf Laptop und Handy" loading="lazy" decoding="async" /></div>
+          </li>
+          <li class="way-c c2" style="--k:1">
+            <div class="way-t">
+              <span class="way-n"><i>2</i>Schritt 2</span>
+              <h3>Umsetzen</h3>
+              <p class="way-lead">Jede Woche ein Schwerpunkt, mit Handouts, Checklisten und konkreten&nbsp;Wochenaufgaben.</p>
+              <ul><li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>Etwa 40 Minuten Video pro&nbsp;Woche</span></li><li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>Rezepte und Essens-Baukasten</span></li><li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>Krafttraining für zu Hause und im&nbsp;Studio</span></li></ul>
+              <p class="way-res"><b>Dein Ergebnis:</b> Ernährung, Schlaf, Stress und Bewegung bekommen eine klare Struktur in deinem&nbsp;Alltag.</p>
+            </div>
+            <div class="way-v"><img src="bestandteil-druck-sets.webp" width="800" height="560" alt="Handouts zum Ausdrucken, zum Beispiel ein Frühstücks-Protokoll" loading="lazy" decoding="async" /></div>
+          </li>
+          <li class="way-c c3" style="--k:2">
+            <div class="way-t">
+              <span class="way-n"><i>3</i>Schritt 3</span>
+              <h3>Dranbleiben</h3>
+              <p class="way-lead">Es entstehen Routinen, die zu deinem Leben passen. Ohne Verzicht und kurzfristige&nbsp;Challenges.</p>
+              <ul><li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>Dein 13-Wochen-Fahrplan als roter&nbsp;Faden</span></li><li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>Pausieren und wiederholen, wann du&nbsp;möchtest</span></li><li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>Mit konkreten Fragen in dein&nbsp;Arztgespräch</span></li></ul>
+              <p class="way-res"><b>Dein Ergebnis:</b> Du kümmerst dich selbst aktiv um deine Gesundheit, mit einem Plan, der&nbsp;bleibt.</p>
+            </div>
+            <div class="way-v ph"><img src="jasmin-entspannt.webp" width="800" height="1000" alt="Jasmin Schmidtke, Heilpraktikerin" loading="lazy" decoding="async" /></div>
+          </li>
         </ol>
       </div>
     </section>
@@ -2445,6 +2526,7 @@
             <span class="lbl">Für dich</span>
             <h3>Phönixjahre ist für dich, wenn …</h3>
             <ul>
+              <li class="vs-key"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>du dich wieder selbst aktiv um deine Gesundheit kümmern möchtest, mit Werkzeugen für deinen Alltag, statt dich nur von außen abhängig zu&nbsp;fühlen.</span></li>
               <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>du zwischen 40 und 55 bist: in der Perimenopause, mitten in den Wechseljahren oder&nbsp;danach.</span></li>
               <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>du verstehen möchtest, was hormonell und im Stoffwechsel&nbsp;passiert.</span></li>
               <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>du Ernährung, Schlaf, Stress und Bewegung besser auf deinen Körper abstimmen&nbsp;möchtest.</span></li>
@@ -2542,6 +2624,10 @@
           <details>
             <summary>Wann kann ich starten?<span class="pl">+</span></summary>
             <p>Direkt nach deinem Kauf erhältst du deinen Zugang per E-Mail und kannst <strong>sofort&nbsp;loslegen.</strong></p>
+          </details>
+          <details>
+            <summary>Wie lange habe ich Zugang?<span class="pl">+</span></summary>
+            <p>Du hast <strong>zwei Jahre</strong> Zugang zu <span class="pj">Phönixjahre</span>. In dieser Zeit kannst du alle Videos und Materialien so oft ansehen, wie du möchtest, pausieren und&nbsp;wiederholen.</p>
           </details>
           <details>
             <summary>Wie viel Zeit muss ich einplanen?<span class="pl">+</span></summary>
@@ -2768,6 +2854,23 @@
         window.addEventListener('scroll', function () { if (!tick) { tick = true; requestAnimationFrame(upd); } }, { passive: true });
         window.addEventListener('resize', upd);
         upd();
+      }
+      /* Dein Weg: Karten schieben sich übereinander, die untere wird kleiner und blasser */
+      var way = document.querySelectorAll('.way-c');
+      if (way.length > 1 && !reduce) {
+        var wt = false;
+        function wupd() {
+          wt = false;
+          for (var i = 0; i < way.length - 1; i++) {
+            var a = way[i].getBoundingClientRect(), b = way[i + 1].getBoundingClientRect();
+            var q = Math.max(0, Math.min(1, (a.bottom - b.top) / a.height));
+            way[i].style.transform = 'scale(' + (1 - q * 0.06).toFixed(4) + ')';
+            way[i].style.opacity = (1 - q * 0.3).toFixed(3);
+          }
+        }
+        window.addEventListener('scroll', function () { if (!wt) { wt = true; requestAnimationFrame(wupd); } }, { passive: true });
+        window.addEventListener('resize', wupd);
+        wupd();
       }
     })();
   </script>
