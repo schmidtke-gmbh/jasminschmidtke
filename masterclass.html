@@ -2096,6 +2096,80 @@
       .hv3-sys ul { display: grid; grid-template-columns: 1fr 1fr; width: 100%; }
       .hv3-sys li { justify-content: center; }
     }
+
+    /* ── Jasmins Feedback 09.11. nachmittags ── */
+    /* Kopfbereich: Blutwerte als erster, hervorgehobener Bereich */
+    .hv3-sys li.bw { background: #FBEDEF; border-color: rgba(215,53,79,.35); color: #A3243A; }
+    .hv3-sys li.bw svg { width: 14px; height: 17px; margin: 0; }
+    .hv-sub strong { display: block; color: var(--ink); font-weight: 600; font-size: 1.08em; margin-bottom: 2px; }
+    @media (max-width: 700px) { .hv3-sys li.bw { grid-column: 1 / -1; } }
+
+    /* Mit Phönixjahre links, „anstatt“, ohne roten Faden rechts */
+    .vn2 { grid-template-columns: minmax(0, 1fr) 104px minmax(0, 1fr); max-width: 1000px; }
+    .vn2 .vn-c { padding: 30px 30px 28px; }
+    .vn2 .vn-lbl { display: flex; align-items: center; gap: 10px; font-size: 13px; }
+    .vn2 .vn-lbl svg { width: 46px; height: 15px; flex: none; }
+    .vn2 .vn-on { background: linear-gradient(180deg, #FFFFFF 0%, #FFFBFA 100%); border: 2px solid rgba(215,53,79,.3); box-shadow: 0 26px 56px rgba(215,53,79,.10), 0 10px 24px rgba(120,80,60,.06); }
+    .vn2 .vn-on .vn-lbl { color: var(--red); }
+    .vn2 .vn-on li { color: var(--ink); font-weight: 500; }
+    .vn2 .vn-off { background: #FBF8F5; border: 1.5px dashed #D9CBBE; box-shadow: none; }
+    .vn2 .vn-off .vn-lbl { color: #9A8F87; }
+    .vn2 .vn-off .vn-knot { color: #BFAFA3; }
+    .vn2 .vn-off li { color: #8A817A; }
+    .vn2 .vn-off .x { background: rgba(215,53,79,.07); color: #C98A94; }
+    .vn2 li { min-height: 3.05em; }
+    .vn2 .vn-statt { width: auto; height: auto; background: none; box-shadow: none; display: flex; flex-direction: column; align-items: center; gap: 8px; color: #fff; }
+    .vn2 .vn-statt small { font-size: 12px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--accent-text); }
+    .vn2 .vn-statt svg { width: 46px; height: 46px; padding: 13px; border-radius: 50%; background: var(--red); color: #fff; box-shadow: 0 10px 22px rgba(215,53,79,.3); }
+    .vn2 .vn-off.rv { transition-delay: .25s; }
+    .vn2 .vn-on.rv { transition-delay: 0s; }
+    @media (max-width: 800px) {
+      .vn2 { grid-template-columns: 1fr; }
+      .vn2 .vn-statt { transform: none; flex-direction: row; margin: 14px 0; justify-self: center; }
+      .vn2 .vn-statt svg { transform: rotate(90deg); width: 40px; height: 40px; padding: 11px; }
+      .vn2 li { min-height: 0; }
+      .vn2 .vn-c { padding: 24px 20px; }
+    }
+
+    /* Das bekommst du: zuerst das System */
+    .v4-kits .head p { margin-top: 4px; }
+    .kv-sys { background: radial-gradient(circle at 50% 50%, #FFFFFF 0%, #F4EAE2 72%); }
+    .kv-sys .k-dial { width: 58%; max-width: 250px; filter: drop-shadow(0 18px 30px rgba(80,55,40,.16)); }
+    .kc-lbl.kc-lbl-r { background: #FBEDEF; color: var(--red); font-weight: 600; }
+    .kc-lbl.kc-lbl-r i { color: var(--red); }
+    .kc-sys { border: 2px solid rgba(215,53,79,.22); }
+    .kc-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+    .kc-chips li { display: inline-flex; align-items: center; gap: 7px; background: #fff; border: 1px solid rgba(215,53,79,.18); color: var(--ink); font-size: 13.5px; font-weight: 600; line-height: 1; border-radius: 30px; padding: 8px 13px 8px 10px; }
+    .kc-chips li svg { width: 16px; height: 16px; color: var(--red); flex: none; }
+    .kc .kv.kv-dev img { top: 5%; height: 90%; }
+    .v4-kits .kc-bonus { grid-column: 1 / -1; display: grid; grid-template-columns: 230px minmax(0, 1fr); gap: 26px; align-items: center; padding: 10px 28px 10px 10px; }
+    .v4-kits .kc-bonus .kv { aspect-ratio: 16 / 10; margin: 0; }
+    .v4-kits .kc-bonus .txt .kc-lbl { margin: 0 0 8px; }
+    .v4-kits .kc-bonus h3, .v4-kits .kc-bonus p { margin-left: 0; margin-right: 0; }
+    @media (max-width: 600px) {
+      .v4-kits .kc.kc-sys { display: block; padding: 12px 12px 18px; }
+      .v4-kits .kc.kc-sys .kv { width: 100%; aspect-ratio: 16 / 10; margin: 0 0 14px; }
+      .v4-kits .kc.kc-sys .txt { display: block; padding: 0 6px; }
+      .v4-kits .kc.kc-sys h3 { font-size: 21px; }
+      .v4-kits .kc.kc-sys p { font-size: 14px; }
+      .v4-kits .kc-bonus .txt { display: contents; }
+      .v4-kits .kc-bonus .kv { aspect-ratio: 1; }
+      .kc-chips li { font-size: 12.5px; padding: 7px 11px 7px 9px; }
+    }
+
+    /* Angebot: „Deine Jasmin“ größer */
+    .offer-l .f-sig { justify-content: center; gap: 18px; margin-top: 30px; }
+    .offer-l .f-sig img { width: 86px; height: 86px; border-width: 3px; }
+    .offer-l .f-sig b { font-size: 38px; }
+    .offer-l .f-sig small { font-size: 15px; }
+    @media (max-width: 600px) { .offer-l .f-sig img { width: 70px; height: 70px; } .offer-l .f-sig b { font-size: 32px; } }
+    @media (min-width: 801px) { .v4-kits .kc.kc-sys { grid-template-columns: minmax(0, 1fr) minmax(0, 1.08fr); gap: 34px; } }
+    .kc-sys .kc-chips { gap: 6px; }
+    .kc-sys .kc-chips li { font-size: 13px; padding: 7px 11px 7px 9px; }
+    @media (max-width: 600px) {
+      .v4-kits .kc.kc-bonus { grid-template-columns: 96px minmax(0, 1fr); gap: 0 14px; padding: 10px 14px 10px 10px; }
+      .v4-kits .kc.kc-bonus .kv { width: 96px; grid-row: 1 / span 3; }
+    }
   </style>
 </head>
 <body>
@@ -2120,7 +2194,7 @@
         <div class="hv3-top">
           <span class="hv-pill"><i aria-hidden="true"></i>Videomasterclass für Frauen ab&nbsp;40</span>
           <h1><span class="hv-name">Phönixjahre</span><span class="hv-h">Dein Körper hat sich verändert. Es ist Zeit, ihn neu zu verstehen und richtig zu&nbsp;unterstützen.</span></h1>
-          <p class="hv-sub">Mit meinem klaren System lernst du, wie du <strong>Ernährung, Schlaf, Stress und Bewegung</strong> ab&nbsp;40 in deinen Alltag integrierst. Verständlich erklärt, Schritt für Schritt, in deinem&nbsp;Tempo.</p>
+          <p class="hv-sub">Die Videomasterclass für Frauen ab&nbsp;40, die verstehen möchten, was in ihrem Körper passiert und wie sie ihre Gesundheit, Energie und Vitalität aktiv unterstützen&nbsp;können.</p>
         </div>
         <div class="hv3-grid">
           <div class="hv3-left">
@@ -2132,7 +2206,7 @@
               <span class="hs"><b data-count="13">13</b><small>Wochen Fahrplan</small></span>
             </div>
             <div class="hv3-sys"><span class="hv3-sys-l">Dein klares System für</span><ul>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3v8M4.5 3v5a2.5 2.5 0 0 0 5 0V3M7 11v10"/><path d="M17 21V3c-2.2 1.2-3.5 3.6-3.5 7v3H17"/></svg>Ernährung</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></svg>Schlaf</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10a3 3 0 1 0-3-3"/><path d="M3 12h15a3 3 0 1 1-3 3"/><path d="M3 16h7"/></svg>Stress</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.5 6.5v11M17.5 6.5v11M3.5 9v6M20.5 9v6M6.5 12h11"/></svg>Bewegung</li>
+              <li class="bw"><svg class="pdf-ic" viewBox="0 0 20 24" aria-hidden="true"><path d="M3.5 1h9.5l6 6v14a2 2 0 0 1-2 2H3.5a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2z" fill="#fff" stroke="#D7354F" stroke-width="1.6"/><path d="M13 1v6h6" fill="none" stroke="#D7354F" stroke-width="1.6"/><rect x="0" y="11.5" width="16.5" height="8" rx="1.6" fill="#D7354F"/><text x="8.25" y="17.7" text-anchor="middle" font-size="6.2" font-weight="700" fill="#fff" font-family="Arial, Helvetica, sans-serif">PDF</text></svg>Blutwerte</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3v8M4.5 3v5a2.5 2.5 0 0 0 5 0V3M7 11v10"/><path d="M17 21V3c-2.2 1.2-3.5 3.6-3.5 7v3H17"/></svg>Ernährung</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></svg>Schlaf</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10a3 3 0 1 0-3-3"/><path d="M3 12h15a3 3 0 1 1-3 3"/><path d="M3 16h7"/></svg>Stress</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.5 6.5v11M17.5 6.5v11M3.5 9v6M20.5 9v6M6.5 12h11"/></svg>Bewegung</li>
             </ul></div>
             <span class="hv3-who"><img src="jasmin-avatar.webp" width="240" height="240" alt="Jasmin Schmidtke" decoding="async" /><span><b>Jasmin Schmidtke</b>Heilpraktikerin und Mutter von vier&nbsp;Kindern</span></span>
           </div>
@@ -2140,10 +2214,10 @@
             <span class="hv3-k">Dein Zugang zu Phönixjahre</span>
             <div class="hv-price"><span class="hv-eur">69&nbsp;€</span><span class="hv-terms"><b>Dein Zugang: einmalig</b>Kein Abo · Sofortiger Zugang</span></div>
             <div class="hv-list hv3-list"><span class="hv-lbl">Phönixjahre auf einen Blick</span><ul>
+              <li><span class="hv-pdf"><svg class="pdf-ic" viewBox="0 0 20 24" aria-hidden="true"><path d="M3.5 1h9.5l6 6v14a2 2 0 0 1-2 2H3.5a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2z" fill="#fff" stroke="#D7354F" stroke-width="1.6"/><path d="M13 1v6h6" fill="none" stroke="#D7354F" stroke-width="1.6"/><rect x="0" y="11.5" width="16.5" height="8" rx="1.6" fill="#D7354F"/><text x="8.25" y="17.7" text-anchor="middle" font-size="6.2" font-weight="700" fill="#fff" font-family="Arial, Helvetica, sans-serif">PDF</text></svg></span><span><b>Der Blutwerte-Kompass</b> für Frauen ab&nbsp;40</span></li>
               <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span><b>16 Module</b> mit über 75&nbsp;Videos</span></li>
               <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span><b>Rund 8 Stunden</b> fundiertes Wissen</span></li>
               <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span><b>Meine Zahnrad-Methode</b> für deinen Stoffwechsel</span></li>
-              <li><span class="hv-pdf"><svg class="pdf-ic" viewBox="0 0 20 24" aria-hidden="true"><path d="M3.5 1h9.5l6 6v14a2 2 0 0 1-2 2H3.5a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2z" fill="#fff" stroke="#D7354F" stroke-width="1.6"/><path d="M13 1v6h6" fill="none" stroke="#D7354F" stroke-width="1.6"/><rect x="0" y="11.5" width="16.5" height="8" rx="1.6" fill="#D7354F"/><text x="8.25" y="17.7" text-anchor="middle" font-size="6.2" font-weight="700" fill="#fff" font-family="Arial, Helvetica, sans-serif">PDF</text></svg></span><span><b>Der Blutwerte-Kompass</b> für Frauen ab&nbsp;40</span></li>
               <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span><b>Rezepte, Essens-Baukasten</b> und Krafttraining</span></li>
               <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span><b>Handouts, Checklisten</b> und konkrete Wochenaufgaben</span></li>
               <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span><b>Sofortiger Zugang</b>, du lernst in deinem eigenen&nbsp;Tempo</span></li>
@@ -2214,31 +2288,31 @@
     </section>
 
 
-    <!-- ═══════ 4 VORHER / NACHHER ═══════ -->
+    <!-- ═══════ 4 MIT PHÖNIXJAHRE / ANSTATT OHNE ROTEN FADEN ═══════ -->
     <section class="sec alt v4-vn" aria-label="Was du mit Phönixjahre erreichen kannst">
       <div class="wrap">
         <div class="head rv">
           <span class="pill">Stell dir vor</span>
           <h2>Was du mit Phönixjahre für dich <span class="ac">erreichen</span>&nbsp;kannst</h2>
         </div>
-        <div class="vn">
-          <div class="vn-c vn-off rv">
-            <span class="vn-lbl">Ohne roten Faden</span>
-            <ul>
-              <li><span class="x"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></span><span>Jeder neue Ernährungstrend wird&nbsp;ausprobiert.</span></li>
-              <li><span class="x"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></span><span>Einzelne Tipps, aber kein&nbsp;Zusammenhang.</span></li>
-              <li><span class="x"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></span><span>Rätselraten auf dem&nbsp;Laborzettel.</span></li>
-              <li><span class="x"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></span><span>Was früher half, funktioniert nicht&nbsp;mehr.</span></li>
-            </ul>
-          </div>
-          <span class="vn-arr" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></span>
+        <div class="vn vn2">
           <div class="vn-c vn-on rv">
-            <span class="vn-lbl">Mit Phönixjahre</span>
+            <span class="vn-lbl"><svg class="vn-thread" viewBox="0 0 64 20" aria-hidden="true"><path d="M2 14 C 14 2, 26 2, 34 10 S 52 18, 62 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>Mit Phönixjahre</span>
             <ul>
               <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>Du verstehst, warum dein Körper anders reagiert als&nbsp;früher.</span></li>
               <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>Ernährung, Schlaf, Stress und Bewegung greifen&nbsp;ineinander.</span></li>
               <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>Du gehst mit konkreten Fragen in dein&nbsp;Arztgespräch.</span></li>
               <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>Deine Routinen passen zu deinem Leben, statt auf Verzicht zu&nbsp;basieren.</span></li>
+            </ul>
+          </div>
+          <span class="vn-arr vn-statt" aria-hidden="true"><small>anstatt</small><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></span>
+          <div class="vn-c vn-off rv">
+            <span class="vn-lbl"><svg class="vn-knot" viewBox="0 0 64 20" aria-hidden="true"><path d="M2 12 C 8 2, 14 18, 20 8 S 30 2, 26 12 S 36 18, 40 6 S 50 14, 46 8 S 56 4, 62 14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>Ohne roten Faden</span>
+            <ul>
+              <li><span class="x"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></span><span>Was früher half, funktioniert plötzlich nicht&nbsp;mehr.</span></li>
+              <li><span class="x"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></span><span>Einzelne Tipps, aber kein&nbsp;Zusammenhang.</span></li>
+              <li><span class="x"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></span><span>Rätselraten auf dem&nbsp;Laborzettel.</span></li>
+              <li><span class="x"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></span><span>Jeder neue Ernährungstrend wird&nbsp;ausprobiert.</span></li>
             </ul>
           </div>
         </div>
@@ -2270,20 +2344,28 @@
       <div class="wrap">
         <div class="head rv">
           <span class="pill">Das bekommst du</span>
-          <h2>Alles für deinen Alltag ab&nbsp;40, <span class="ac">in einer Masterclass</span>.</h2>
+          <h2>Du bekommst ein klares System, <span class="ac">nicht nur Einzelwissen</span>.</h2>
+          <p>Alles in <span class="pj">Phönixjahre</span> baut auf deinem System auf: von den Videos über den Blutwerte-Kompass bis zu Rezepten, Training und&nbsp;Fahrplan.</p>
         </div>
         <div class="kits k2">
-          <article class="kc wide rv">
-            <div class="kv"><img src="bestandteil-videokurs.webp" width="1200" height="660" alt="Mitgliederbereich mit Modulen und Videos auf Laptop und Handy" loading="lazy" decoding="async" /></div>
+          <article class="kc wide kc-sys rv">
+            <div class="kv kv-sys"><div class="k-dial" aria-hidden="true"><svg class="zr run" viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg"><g class="zr-c"><path class="zr-g ccw" style="transform-origin:120px 120px;animation-duration:18s" d="M168.5 124.8 L176.2 127.8 L174.9 134.3 L166.6 134.1 L162.9 143.0 L168.9 148.7 L165.2 154.2 L157.6 150.9 L150.9 157.6 L154.2 165.2 L148.7 168.9 L143.0 162.9 L134.1 166.6 L134.3 174.9 L127.8 176.2 L124.8 168.5 L115.2 168.5 L112.2 176.2 L105.7 174.9 L105.9 166.6 L97.0 162.9 L91.3 168.9 L85.8 165.2 L89.1 157.6 L82.4 150.9 L74.8 154.2 L71.1 148.7 L77.1 143.0 L73.4 134.1 L65.1 134.3 L63.8 127.8 L71.5 124.8 L71.5 115.2 L63.8 112.2 L65.1 105.7 L73.4 105.9 L77.1 97.0 L71.1 91.3 L74.8 85.8 L82.4 89.1 L89.1 82.4 L85.8 74.8 L91.3 71.1 L97.0 77.1 L105.9 73.4 L105.7 65.1 L112.2 63.8 L115.2 71.5 L124.8 71.5 L127.8 63.8 L134.3 65.1 L134.1 73.4 L143.0 77.1 L148.7 71.1 L154.2 74.8 L150.9 82.4 L157.6 89.1 L165.2 85.8 L168.9 91.3 L162.9 97.0 L166.6 105.9 L174.9 105.7 L176.2 112.2 L168.5 115.2Z"/></g><g class="zr-o" style="--c:#6B8C5A"><path class="zr-g" style="transform-origin:64.1px 64.1px;animation-duration:9s" d="M86.0 59.7 L94.2 60.5 L94.2 67.7 L86.0 68.5 L82.6 76.5 L87.9 82.9 L82.9 87.9 L76.5 82.6 L68.5 86.0 L67.7 94.2 L60.5 94.2 L59.7 86.0 L51.7 82.6 L45.3 87.9 L40.3 82.9 L45.6 76.5 L42.2 68.5 L34.0 67.7 L34.0 60.5 L42.2 59.7 L45.6 51.7 L40.3 45.3 L45.3 40.3 L51.7 45.6 L59.7 42.2 L60.5 34.0 L67.7 34.0 L68.5 42.2 L76.5 45.6 L82.9 40.3 L87.9 45.3 L82.6 51.7Z"/><circle cx="64.1" cy="64.1" r="17" fill="#fff"/><g class="zr-ic" transform="translate(55.1,55.1) scale(.75)" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></g></g><g class="zr-o" style="--c:#A8876F"><path class="zr-g" style="transform-origin:175.9px 64.1px;animation-duration:9s" d="M197.8 59.7 L206.0 60.5 L206.0 67.7 L197.8 68.5 L194.4 76.5 L199.7 82.9 L194.7 87.9 L188.3 82.6 L180.3 86.0 L179.5 94.2 L172.3 94.2 L171.5 86.0 L163.5 82.6 L157.1 87.9 L152.1 82.9 L157.4 76.5 L154.0 68.5 L145.8 67.7 L145.8 60.5 L154.0 59.7 L157.4 51.7 L152.1 45.3 L157.1 40.3 L163.5 45.6 L171.5 42.2 L172.3 34.0 L179.5 34.0 L180.3 42.2 L188.3 45.6 L194.7 40.3 L199.7 45.3 L194.4 51.7Z"/><circle cx="175.9" cy="64.1" r="17" fill="#fff"/><g class="zr-ic" transform="translate(166.9,55.1) scale(.75)" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l3-8 4 16 3-8h4"/></g></g><g class="zr-o" style="--c:#D4A88C"><path class="zr-g" style="transform-origin:64.1px 175.9px;animation-duration:9s" d="M86.0 171.5 L94.2 172.3 L94.2 179.5 L86.0 180.3 L82.6 188.3 L87.9 194.7 L82.9 199.7 L76.5 194.4 L68.5 197.8 L67.7 206.0 L60.5 206.0 L59.7 197.8 L51.7 194.4 L45.3 199.7 L40.3 194.7 L45.6 188.3 L42.2 180.3 L34.0 179.5 L34.0 172.3 L42.2 171.5 L45.6 163.5 L40.3 157.1 L45.3 152.1 L51.7 157.4 L59.7 154.0 L60.5 145.8 L67.7 145.8 L68.5 154.0 L76.5 157.4 L82.9 152.1 L87.9 157.1 L82.6 163.5Z"/><circle cx="64.1" cy="175.9" r="17" fill="#fff"/><g class="zr-ic" transform="translate(55.1,166.9) scale(.75)" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 7v10M18 7v10M3 10v4M21 10v4M6 12h12"/></g></g><g class="zr-o" style="--c:#8C6743"><path class="zr-g" style="transform-origin:175.9px 175.9px;animation-duration:9s" d="M197.8 171.5 L206.0 172.3 L206.0 179.5 L197.8 180.3 L194.4 188.3 L199.7 194.7 L194.7 199.7 L188.3 194.4 L180.3 197.8 L179.5 206.0 L172.3 206.0 L171.5 197.8 L163.5 194.4 L157.1 199.7 L152.1 194.7 L157.4 188.3 L154.0 180.3 L145.8 179.5 L145.8 172.3 L154.0 171.5 L157.4 163.5 L152.1 157.1 L157.1 152.1 L163.5 157.4 L171.5 154.0 L172.3 145.8 L179.5 145.8 L180.3 154.0 L188.3 157.4 L194.7 152.1 L199.7 157.1 L194.4 163.5Z"/><circle cx="175.9" cy="175.9" r="17" fill="#fff"/><g class="zr-ic" transform="translate(166.9,166.9) scale(.75)" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21c0-9 6-15 15-16-1 9-7 15-15 16z"/><path d="M5 21l8-8"/></g></g><circle cx="120" cy="120" r="43" fill="#FBF7F4"/><circle cx="120" cy="120" r="43" fill="none" stroke="#E7CBB4" stroke-width="2"/><g stroke="#BFA492" stroke-width="1.6" stroke-linecap="round"><line x1="155.0" y1="120.0" x2="160.0" y2="120.0"/><line x1="156.2" y1="129.7" x2="158.6" y2="130.4"/><line x1="152.5" y1="138.8" x2="154.6" y2="140.0"/><line x1="146.5" y1="146.5" x2="148.3" y2="148.3"/><line x1="138.8" y1="152.5" x2="140.0" y2="154.6"/><line x1="129.7" y1="156.2" x2="130.4" y2="158.6"/><line x1="120.0" y1="155.0" x2="120.0" y2="160.0"/><line x1="110.3" y1="156.2" x2="109.6" y2="158.6"/><line x1="101.2" y1="152.5" x2="100.0" y2="154.6"/><line x1="93.5" y1="146.5" x2="91.7" y2="148.3"/><line x1="87.5" y1="138.8" x2="85.4" y2="140.0"/><line x1="83.8" y1="129.7" x2="81.4" y2="130.4"/><line x1="85.0" y1="120.0" x2="80.0" y2="120.0"/><line x1="83.8" y1="110.3" x2="81.4" y2="109.6"/><line x1="87.5" y1="101.3" x2="85.4" y2="100.0"/><line x1="93.5" y1="93.5" x2="91.7" y2="91.7"/><line x1="101.2" y1="87.5" x2="100.0" y2="85.4"/><line x1="110.3" y1="83.8" x2="109.6" y2="81.4"/><line x1="120.0" y1="85.0" x2="120.0" y2="80.0"/><line x1="129.7" y1="83.8" x2="130.4" y2="81.4"/><line x1="138.8" y1="87.5" x2="140.0" y2="85.4"/><line x1="146.5" y1="93.5" x2="148.3" y2="91.7"/><line x1="152.5" y1="101.2" x2="154.6" y2="100.0"/><line x1="156.2" y1="110.3" x2="158.6" y2="109.6"/></g><g class="zr-nd" style="transform-origin:120px 120px"><path d="M120 87 L126 120 L114 120Z" fill="#D7354F"/><path d="M120 153 L126 120 L114 120Z" fill="#2D2B30"/></g><circle cx="120" cy="120" r="9" fill="#fff" stroke="#E7CBB4" stroke-width="1.5"/><path d="M120 114 C121.5 117 124.5 120 124.5 122.3 A4.5 4.5 0 0 1 115.5 122.3 C115.5 120 118.5 117 120 114Z" fill="#D7354F"/></svg></div></div>
             <div class="txt">
-              <span class="kc-lbl">Bestandteil <i>01</i></span>
-              <h3><strong>16 Module</strong> mit über 75&nbsp;Videos</h3>
-              <p>Rund acht Stunden Wissen, verständlich aufbereitet. <strong>Kein Informationschaos, sondern ein aufeinander aufbauendes&nbsp;System.</strong></p>
+              <span class="kc-lbl kc-lbl-r">Bestandteil <i>01</i> · Dein System</span>
+              <h3><strong>Die Zahnrad-Methode</strong> mit deinem 13&#8209;Wochen&#8209;Fahrplan</h3>
+              <p>Vier Bereiche, die ineinandergreifen, und dein Blutwerte-Kompass in der Mitte. <strong>Jede Woche ein Schwerpunkt, Schritt für Schritt in deinen&nbsp;Alltag.</strong></p>
+              <ul class="kc-chips"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3v8M4.5 3v5a2.5 2.5 0 0 0 5 0V3M7 11v10"/><path d="M17 21V3c-2.2 1.2-3.5 3.6-3.5 7v3H17"/></svg>Ernährung</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></svg>Schlaf</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10a3 3 0 1 0-3-3"/><path d="M3 12h15a3 3 0 1 1-3 3"/><path d="M3 16h7"/></svg>Stress</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.5 6.5v11M17.5 6.5v11M3.5 9v6M20.5 9v6M6.5 12h11"/></svg>Bewegung</li></ul>
             </div>
           </article>
           <article class="kc rv">
-            <div class="kv contain"><img src="kompass-system.webp" width="560" height="560" alt="Grafik: der Blutwerte-Kompass" loading="lazy" decoding="async" /></div>
+            <div class="kv contain kv-dev"><img src="bestandteil-videokurs.webp" width="1200" height="660" alt="Mitgliederbereich mit Modulen und Videos auf Laptop und Handy" loading="lazy" decoding="async" /></div>
             <span class="kc-lbl">Bestandteil <i>02</i></span>
+            <h3><strong>16 Module</strong> mit über 75&nbsp;Videos</h3>
+            <p>Rund acht Stunden Wissen, verständlich aufbereitet und aufeinander&nbsp;aufbauend.</p>
+          </article>
+          <article class="kc rv">
+            <div class="kv contain"><img src="kompass-system.webp" width="560" height="560" alt="Grafik: der Blutwerte-Kompass" loading="lazy" decoding="async" /></div>
+            <span class="kc-lbl">Bestandteil <i>03</i></span>
             <h3><svg class="pdf-ic" viewBox="0 0 20 24" aria-hidden="true"><path d="M3.5 1h9.5l6 6v14a2 2 0 0 1-2 2H3.5a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2z" fill="#fff" stroke="#D7354F" stroke-width="1.6"/><path d="M13 1v6h6" fill="none" stroke="#D7354F" stroke-width="1.6"/><rect x="0" y="11.5" width="16.5" height="8" rx="1.6" fill="#D7354F"/><text x="8.25" y="17.7" text-anchor="middle" font-size="6.2" font-weight="700" fill="#fff" font-family="Arial, Helvetica, sans-serif">PDF</text></svg><strong>Mein Blutwerte&#8209;Kompass</strong></h3>
             <p>Deine Orientierung zu wichtigen Blutwerten ab&nbsp;40, inklusive hormoneller&nbsp;Parameter.</p>
           </article>
@@ -2292,33 +2374,35 @@
               <div class="rz-c rz-back"><small>Rezept</small><b>Abendessen</b><i></i><i></i><i class="s"></i></div>
               <div class="rz-c rz-front"><small>Rezept</small><b>Frühstück mit Eiweiß</b><span class="rz-l"><i></i><i></i><i class="s"></i><i></i></span><span class="rz-tags"><em class="g">Eiweiß</em><em>Ballaststoffe</em><em class="o">Gute Fette</em></span></div>
             </div></div>
-            <span class="kc-lbl">Bestandteil <i>03</i></span>
+            <span class="kc-lbl">Bestandteil <i>04</i></span>
             <h3><strong>Rezepte</strong> und dein Essens&#8209;Baukasten</h3>
             <p>Dein Eiweißziel und alltagstaugliche Rezeptideen. Satt essen statt ständig&nbsp;hungern.</p>
           </article>
           <article class="kc rv">
             <div class="kv"><img src="jasmingym3.jpg" width="1600" height="1067" alt="Jasmin Schmidtke beim Krafttraining im Studio" loading="lazy" decoding="async" style="object-position:38% 50%" /></div>
-            <span class="kc-lbl">Bestandteil <i>04</i></span>
+            <span class="kc-lbl">Bestandteil <i>05</i></span>
             <h3><strong>Krafttraining</strong> für zu Hause und im&nbsp;Studio</h3>
             <p>Mit Übungen und Inhalten zu Krafttraining, Beckenboden und&nbsp;Mobility.</p>
           </article>
           <article class="kc rv">
             <div class="kv"><img src="bestandteil-druck-sets.webp" width="800" height="560" alt="Handouts zum Ausdrucken, zum Beispiel ein Frühstücks-Protokoll" loading="lazy" decoding="async" /></div>
-            <span class="kc-lbl">Bestandteil <i>05</i></span>
+            <span class="kc-lbl">Bestandteil <i>06</i></span>
             <h3><svg class="pdf-ic" viewBox="0 0 20 24" aria-hidden="true"><path d="M3.5 1h9.5l6 6v14a2 2 0 0 1-2 2H3.5a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2z" fill="#fff" stroke="#D7354F" stroke-width="1.6"/><path d="M13 1v6h6" fill="none" stroke="#D7354F" stroke-width="1.6"/><rect x="0" y="11.5" width="16.5" height="8" rx="1.6" fill="#D7354F"/><text x="8.25" y="17.7" text-anchor="middle" font-size="6.2" font-weight="700" fill="#fff" font-family="Arial, Helvetica, sans-serif">PDF</text></svg><strong>Handouts</strong> und Wochenpläne</h3>
             <p>Zum Nachlesen, Ausdrucken und Umsetzen, damit das Wissen in deinem Alltag&nbsp;ankommt.</p>
           </article>
           <article class="kc rv">
             <div class="kv"><div class="book" aria-hidden="true"><svg class="pdf-ic" viewBox="0 0 20 24" aria-hidden="true"><path d="M3.5 1h9.5l6 6v14a2 2 0 0 1-2 2H3.5a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2z" fill="#fff" stroke="#D7354F" stroke-width="1.6"/><path d="M13 1v6h6" fill="none" stroke="#D7354F" stroke-width="1.6"/><rect x="0" y="11.5" width="16.5" height="8" rx="1.6" fill="#D7354F"/><text x="8.25" y="17.7" text-anchor="middle" font-size="6.2" font-weight="700" fill="#fff" font-family="Arial, Helvetica, sans-serif">PDF</text></svg><svg class="bk-logo" viewBox="0 0 200 200"><circle cx="100" cy="100" r="82" fill="none" stroke="#BFA492" stroke-width="11"/><path d="M 18,100 C 45,118 65,118 100,95 C 135,72 155,72 182,100" fill="none" stroke="#BFA492" stroke-width="7" stroke-linecap="round"/></svg><small>Extra</small><b>Mikro&shy;nährstoff&shy;liste Ü40</b><i>Jasmin Schmidtke</i></div></div>
-            <span class="kc-lbl">Bestandteil <i>06</i></span>
+            <span class="kc-lbl">Bestandteil <i>07</i></span>
             <h3><svg class="pdf-ic" viewBox="0 0 20 24" aria-hidden="true"><path d="M3.5 1h9.5l6 6v14a2 2 0 0 1-2 2H3.5a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2z" fill="#fff" stroke="#D7354F" stroke-width="1.6"/><path d="M13 1v6h6" fill="none" stroke="#D7354F" stroke-width="1.6"/><rect x="0" y="11.5" width="16.5" height="8" rx="1.6" fill="#D7354F"/><text x="8.25" y="17.7" text-anchor="middle" font-size="6.2" font-weight="700" fill="#fff" font-family="Arial, Helvetica, sans-serif">PDF</text></svg><strong>Deine Mikronährstoffliste&nbsp;Ü40</strong></h3>
             <p>Als Orientierung und Vorbereitung für Gespräche mit Ärztin, Arzt oder&nbsp;Apotheke.</p>
           </article>
-          <article class="kc rv">
+          <article class="kc kc-bonus rv">
             <div class="kv vid"><img src="jasmin-wohlfuehlkoerper.jpg" width="1400" height="933" alt="" loading="lazy" decoding="async" /><span class="play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15l13-7.5z"/></svg></span></div>
-            <span class="kc-lbl gold">Bonus <i>07</i></span>
-            <h3><strong>Bonus:</strong> Langfristig&nbsp;abnehmen</h3>
-            <p>Was sich beim Abnehmen ab&nbsp;40 verändert und welche Grundlagen dafür wichtig&nbsp;sind.</p>
+            <div class="txt">
+              <span class="kc-lbl gold">Bonus <i>08</i></span>
+              <h3><strong>Bonus:</strong> Langfristig&nbsp;abnehmen</h3>
+              <p>Was sich beim Abnehmen ab&nbsp;40 verändert und welche Grundlagen dafür wichtig&nbsp;sind.</p>
+            </div>
           </article>
         </div>
       </div>
